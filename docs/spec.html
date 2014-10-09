@@ -233,24 +233,34 @@ linked when the package is installed.  The directory delimiter for the files
 in <tt class="docutils literal"><span class="pre">info/files</span></tt> should always be <tt class="docutils literal"><span class="pre">/</span></tt>, even on Windows.  This matches the
 directory delimiter used in the tarball.</p>
 <p><tt class="docutils literal"><span class="pre">info/has_prefix</span></tt>: This optional file lists all files that contain a
-placeholder for the install prefix, which upon install is replaced by the real
-install prefix.</p>
+hard-coded build prefix or placeholder prefix, which needs to be replaced by
+the install prefix at installation time. Note that due to the way the binary
+replacement works, the placeholder prefix must be longer than the install
+prefix.</p>
 <p>Each line of this file should either be a path, in which case it is considered
-a text file with the default placeholder,
-<tt class="docutils literal"><span class="pre">/opt/anaconda1anaconda2anaconda3</span></tt>, or a space separate list of
-<tt class="docutils literal"><span class="pre">placeholder</span></tt>, <tt class="docutils literal"><span class="pre">mode</span></tt>, <tt class="docutils literal"><span class="pre">path</span></tt>, where <tt class="docutils literal"><span class="pre">placeholder</span></tt> is the placeholder
-prefix, <tt class="docutils literal"><span class="pre">mode</span></tt> is either <tt class="docutils literal"><span class="pre">text</span></tt> or <tt class="docutils literal"><span class="pre">binary</span></tt>, and <tt class="docutils literal"><span class="pre">path</span></tt> is the
-relative path of the file to be updated. For instance</p>
+a text file with the default placeholder, <tt class="docutils literal"><span class="pre">/opt/anaconda1anaconda2anaconda3</span></tt>,
+or a space-separated list of <tt class="docutils literal"><span class="pre">placeholder</span></tt>, <tt class="docutils literal"><span class="pre">mode</span></tt>, <tt class="docutils literal"><span class="pre">path</span></tt>, where
+<tt class="docutils literal"><span class="pre">placeholder</span></tt> is the build or placeholder prefix, <tt class="docutils literal"><span class="pre">mode</span></tt> is either <tt class="docutils literal"><span class="pre">text</span></tt>
+or <tt class="docutils literal"><span class="pre">binary</span></tt>, and <tt class="docutils literal"><span class="pre">path</span></tt> is the relative path of the file to be updated. For
+instance, on Linux or OS X</p>
 <div class="highlight-python"><div class="highlight"><pre>bin/script.sh
 /Users/username/anaconda/envs/_build binary bin/binary
 /Users/username/anaconda/envs/_build text share/text
 </pre></div>
 </div>
-<p>Note that due to the way the binary replacement works, the placeholder prefix
-must be longer than the install prefix.</p>
-<p>The directory delimiter for the path must always be <tt class="docutils literal"><span class="pre">/</span></tt>, even on
-Windows. The placeholder can use <tt class="docutils literal"><span class="pre">\</span></tt> or <tt class="docutils literal"><span class="pre">/</span></tt> on Windows; the replacement
-prefix will match the delimiter used in the placeholder.</p>
+<p>or on Windows</p>
+<div class="highlight-python"><div class="highlight"><pre>&quot;Scripts/script1.py&quot;
+&quot;C:\Users\username\anaconda\envs\_build&quot; text &quot;Scripts/script2.bat&quot;
+&quot;C:/Users/username/anaconda/envs/_build&quot; binary &quot;Scripts/binary&quot;
+</pre></div>
+</div>
+<p>Note the directory delimiter for the relative <tt class="docutils literal"><span class="pre">path</span></tt> must always be <tt class="docutils literal"><span class="pre">/</span></tt>,
+even on Windows. The placeholder may contain either <tt class="docutils literal"><span class="pre">\</span></tt> or <tt class="docutils literal"><span class="pre">/</span></tt> on Windows;
+the replacement prefix will match the delimiter used in the placeholder. (The
+default placeholder <tt class="docutils literal"><span class="pre">/opt/anaconda1anaconda2anaconda3</span></tt> is an exception, being
+replaced with the install prefix using the native path delimiter.) On Windows,
+the <tt class="docutils literal"><span class="pre">placeholder</span></tt> and <tt class="docutils literal"><span class="pre">path</span></tt> always appear in &#8220;quotes&#8221; to support paths
+with spaces.</p>
 <p><tt class="docutils literal"><span class="pre">info/no_softlink</span></tt>: This optional file lists all files which cannot
 be soft-linked into environments (and are copied instead).</p>
 </div>
