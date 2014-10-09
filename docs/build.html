@@ -215,16 +215,25 @@ repositories, such as <a class="reference external" href="https://pypi.python.or
   <span class="l-Scalar-Plain">md5</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">29f6089290505fc1a852e176bd276c43</span>
   <span class="l-Scalar-Plain">sha1</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">f0a2c9a30073449cfb7d171c57552f3109d93894</span>
   <span class="l-Scalar-Plain">sha256</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">5a022ff4c1d1de87232b1c70bde50afbb98212fd246be4a867d8737173cf1f8f</span>
+
   <span class="c1"># or from git:</span>
+  <span class="c1"># git_url can also be a relative path to the recipe directory</span>
   <span class="l-Scalar-Plain">git_url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">git@github.com:ilanschnell/bsdiff4.git</span>
   <span class="l-Scalar-Plain">git_tag</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1.1.4</span>
+
   <span class="c1"># or from hg:</span>
   <span class="l-Scalar-Plain">hg_url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ssh://hg@bitbucket.org/ilanschnell/bsdiff4</span>
   <span class="l-Scalar-Plain">hg_tag</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1.1.4</span>
+
   <span class="c1"># or from svn:</span>
   <span class="l-Scalar-Plain">svn_url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">https://github.com/ilanschnell/bsdiff</span>
   <span class="l-Scalar-Plain">svn_rev</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1.1.4</span>
   <span class="l-Scalar-Plain">svn_ignore_externals</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">yes</span> <span class="c1"># (defaults to no)</span>
+
+  <span class="c1"># or from a local path:</span>
+  <span class="c1"># if the path is relative it is taken relative to the recipe</span>
+  <span class="c1"># directory. The source is copied to the work directory before building.</span>
+  <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">../src</span>
 
   <span class="c1"># Patches may optionally be applied to the source</span>
   <span class="l-Scalar-Plain">patches</span><span class="p-Indicator">:</span>
