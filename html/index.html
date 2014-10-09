@@ -1,0 +1,270 @@
+<!--Copyright (c) 2011-2014 Ryan Roemer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.-->
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Conda &mdash; Conda</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/bootswatch-spacelab.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+<!--[if IE 7]>
+<link rel="stylesheet" href="_static/css/font-awesome-ie7.min.css">
+<![endif]-->
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+}
+</style>
+<link rel="stylesheet" href="_static/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/table_styling.css" type="text/css" />
+<link rel="stylesheet" href="_static/css/bootstrap-responsive.min.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     ' ',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+<script type="text/javascript" src="_static/js/jquery.min.js"></script>
+<script type="text/javascript" src="_static/underscore.js"></script>
+<script type="text/javascript" src="_static/doctools.js"></script>
+<script type="text/javascript" src="_static/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.show-sidebar').click(function(e) {
+       e.preventDefault();
+       if ($(".show-sidebar").html() == "Open Table Of Contents") {
+          $('.for-mobile').removeClass('hidden-phone');
+          $(".show-sidebar").html("Close Table Of Contents");
+       } else {
+          $(".show-sidebar").html("Open Table Of Contents");
+       }
+    });
+  });
+</script>
+    <link rel="top" title="Conda" href="#" />
+    <link rel="next" title="Miniconda" href="miniconda.html" /> 
+  </head>
+  <body>
+  
+    <div class="navbar navbar-fixed-top ">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Conda</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+              
+                <li><a class="uplink" href="#">Contents</a></li>
+                <li><a href="miniconda.html">Miniconda&nbsp;<i class="icon icon-double-angle-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+<a href="https://github.com/conda/conda"
+   class="visible-desktop hidden-xs">
+  <img style="position: absolute; top: 30px;
+              right: -10px; border: 0;"
+       src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"
+       id="gh-banner"
+       alt="Fork me on GitHub"
+       data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+  <script>
+    // Adjust banner height.
+    $(function () {
+      var navHeight = $(".navbar .container").css("height");
+      $("#gh-banner").css("top", navHeight);
+    });
+  </script>
+
+
+    <!-- container -->
+    <div class="container-fluid">
+
+
+      
+      <div class="row-fluid hidden-desktop hidden-tablet">
+      
+      </div>
+      
+
+      <!-- row -->
+      <div class="row-fluid">
+          
+        
+
+        <div class="span12">
+          <div class="document">
+            <div class="documentwrapper">
+                <div class="body">
+                  
+  <div class="section" id="conda">
+<h1>Conda<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h1>
+<p>Conda is a cross-platform, Python-agnostic binary package manager. It is the
+package manager used by <a class="reference external" href="http://docs.continuum.io/anaconda/index.html">Anaconda</a> installations, but it may be
+used for other systems as well.  Conda makes environments first-class
+citizens, making it easy to create independent environments even for C
+libraries. Conda is written entirely in Python, and is BSD licensed open
+source.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Conda is a part of the <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Anaconda distribution</a>.  You can also download a
+minimal installation that only includes conda and its dependencies, called
+<a class="reference internal" href="miniconda.html#miniconda"><em>Miniconda</em></a>.</p>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>If you install Anaconda, you will already have hundreds of packages
+installed.  You can see what packages are installed by running</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda list
+</pre></div>
+</div>
+<p>to see all the packages that are available, use</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda search
+</pre></div>
+</div>
+<p>and to install a package, use</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda install &lt;package-name&gt;
+</pre></div>
+</div>
+<p>The real power of conda comes from its ability to manage environments. In
+conda, an environment can be thought of as a completely separate installation.
+Conda installs packages into environments efficiently using <a class="reference external" href="http://en.wikipedia.org/wiki/Hard_links">hard links</a> by default when it is possible, so
+environments are space efficient, and take seconds to create.</p>
+<p>The default environment, which <tt class="docutils literal"><span class="pre">conda</span></tt> itself is installed into is called
+<tt class="docutils literal"><span class="pre">root</span></tt>.  To create another environment, use the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span></tt>
+command. For instance, to create an environment with the IPython notebook and
+NumPy 1.6, which is older than the version that comes with Anaconda by
+default, you would run</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create -n numpy16 ipython-notebook <span class="nv">numpy</span><span class="o">=</span>1.6
+</pre></div>
+</div>
+<p>This creates an environment called <tt class="docutils literal"><span class="pre">numpy16</span></tt> with the latest version of
+the IPython notebook, NumPy 1.6, and their dependencies.</p>
+<p>We can now activate this environment. On Linux and Mac OS X, use</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>activate numpy16
+</pre></div>
+</div>
+<p>This puts the bin directory of the <tt class="docutils literal"><span class="pre">numpy16</span></tt> environment in the front of the
+<tt class="docutils literal"><span class="pre">PATH</span></tt>, and sets it as the default environment for all subsequent conda commands.</p>
+<p>To go back to the root environment, use</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>deactivate
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-your-own-packages">
+<h2>Building Your Own Packages<a class="headerlink" href="#building-your-own-packages" title="Permalink to this headline">¶</a></h2>
+<p>You can easily build your own packages for conda, and upload them to <a class="reference external" href="https://binstar.org">Binstar</a>, a free service for hosting packages for conda, as
+well as other package managers.  To build a package, create a recipe.  See
+<a class="reference external" href="https://github.com/conda/conda-recipes">https://github.com/conda/conda-recipes</a> for many example recipes, and
+<a class="reference external" href="http://conda.pydata.org/docs/build.html">http://conda.pydata.org/docs/build.html</a> for documentation on how to build
+recipes.</p>
+<p>To upload to Binstar, create an account on binstar.org.  Then, install the
+binstar client and login</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda install binstar
+<span class="nv">$ </span>binstar login
+</pre></div>
+</div>
+<p>Then, after you build your recipe</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda build &lt;recipe-dir&gt;
+</pre></div>
+</div>
+<p>you will be prompted to upload to binstar.</p>
+<p>To add your Binstar channel, or the channel of others to conda so that <tt class="docutils literal"><span class="pre">conda</span>
+<span class="pre">install</span></tt> will find and install their packages, run</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda config --add channels https://conda.binstar.org/username
+</pre></div>
+</div>
+<p>(replacing <tt class="docutils literal"><span class="pre">username</span></tt> with the user name of the person whose channel you want
+to add).</p>
+</div>
+<div class="section" id="getting-help">
+<h2>Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<p>The documentation for conda is at <a class="reference external" href="http://conda.pydata.org/docs/">http://conda.pydata.org/docs/</a>. You can
+subscribe to the <a class="reference external" href="https://groups.google.com/a/continuum.io/forum/#!forum/conda">conda mailing list</a>.  The source
+code and issue tracker for conda are on <a class="reference external" href="https://github.com/conda/conda">GitHub</a>.</p>
+<hr class="docutils" />
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="miniconda.html">Miniconda</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+                </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row-fluid">
+<div class="related navbar ">
+  <div class="navbar-inner">
+    <ul class="nav pull-right">
+      
+        <li><a class="uplink" href="#">Contents</a></li>
+        <li><a href="miniconda.html">Miniconda&nbsp;<i class="icon icon-double-angle-right"></i></a></li>
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer>
+          &copy; Copyright 2014, Continuum Anaytics.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>
