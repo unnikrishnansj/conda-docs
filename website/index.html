@@ -157,13 +157,16 @@ minimal installation that only includes conda and its dependencies, called
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>If you install Anaconda, you will already have hundreds of packages
 installed.  You can see what packages are installed by running</p>
-<div class="highlight-bash"><pre>$ conda list</pre>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda list
+</pre></div>
 </div>
 <p>to see all the packages that are available, use</p>
-<div class="highlight-bash"><pre>$ conda search</pre>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda search
+</pre></div>
 </div>
 <p>and to install a package, use</p>
-<div class="highlight-bash"><pre>$ conda install &lt;package-name&gt;</pre>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda install &lt;package-name&gt;
+</pre></div>
 </div>
 <p>The real power of conda comes from its ability to manage environments. In
 conda, an environment can be thought of as a completely separate installation.
@@ -174,17 +177,20 @@ environments are space efficient, and take seconds to create.</p>
 command. For instance, to create an environment with the IPython notebook and
 NumPy 1.6, which is older than the version that comes with Anaconda by
 default, you would run</p>
-<div class="highlight-bash"><pre>$ conda create -n numpy16 ipython-notebook numpy=1.6</pre>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create -n numpy16 ipython-notebook <span class="nv">numpy</span><span class="o">=</span>1.6
+</pre></div>
 </div>
 <p>This creates an environment called <tt class="docutils literal"><span class="pre">numpy16</span></tt> with the latest version of
 the IPython notebook, NumPy 1.6, and their dependencies.</p>
 <p>We can now activate this environment. On Linux and Mac OS X, use</p>
-<div class="highlight-bash"><pre>$ source activate numpy16</pre>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>activate numpy16
+</pre></div>
 </div>
 <p>This puts the bin directory of the <tt class="docutils literal"><span class="pre">numpy16</span></tt> environment in the front of the
 <tt class="docutils literal"><span class="pre">PATH</span></tt>, and sets it as the default environment for all subsequent conda commands.</p>
 <p>To go back to the root environment, use</p>
-<div class="highlight-bash"><pre>$ source deactivate</pre>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>deactivate
+</pre></div>
 </div>
 </div>
 <div class="section" id="building-your-own-packages">
@@ -196,16 +202,19 @@ well as other package managers.  To build a package, create a recipe.  See
 recipes.</p>
 <p>To upload to Binstar, create an account on binstar.org.  Then, install the
 binstar client and login</p>
-<div class="highlight-bash"><pre>$ conda install binstar
-$ binstar login</pre>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda install binstar
+<span class="nv">$ </span>binstar login
+</pre></div>
 </div>
 <p>Then, after you build your recipe</p>
-<div class="highlight-bash"><pre>$ conda build &lt;recipe-dir&gt;</pre>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda build &lt;recipe-dir&gt;
+</pre></div>
 </div>
 <p>you will be prompted to upload to binstar.</p>
 <p>To add your Binstar channel, or the channel of others to conda so that <tt class="docutils literal"><span class="pre">conda</span>
 <span class="pre">install</span></tt> will find and install their packages, run</p>
-<div class="highlight-bash"><pre>$ conda config --add channels https://conda.binstar.org/username</pre>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda config --add channels https://conda.binstar.org/username
+</pre></div>
 </div>
 <p>(replacing <tt class="docutils literal"><span class="pre">username</span></tt> with the user name of the person whose channel you want
 to add).</p>
@@ -250,7 +259,7 @@ code and issue tracker for conda are on <a class="reference external" href="http
       <!-- footer -->
       <footer>
           &copy; Copyright 2014, Continuum Anaytics.
-        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.
       </footer>
       <!-- /footer -->
 
