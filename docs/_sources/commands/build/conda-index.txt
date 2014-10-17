@@ -1,0 +1,38 @@
+
+.. _index_ref:
+
+conda index
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda index
+   
+   DESCRIPTION
+          usage: conda-index [-h] [-f] [-q] [dir [dir ...]]
+   
+          Update package index metadata files in given directories
+   
+      positional arguments:
+          dir    Directory that contains an index to be updated.
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          -f, --force
+                 force reading all files
+   
+          -q, --quiet
+   
+   
+   
+   Continuum Analytics              October 2014                         <B>CONDA(1)</B>
+   </PRE>

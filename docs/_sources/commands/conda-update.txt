@@ -1,0 +1,103 @@
+
+.. _update_ref:
+
+conda update
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda update
+   
+   DESCRIPTION
+          usage:  conda  update  [-h]  [--yes]  [--dry-run]  [-f]  [--file  FILE]
+          [--unknown]
+   
+          [--no-deps] [-m] [--use-index-cache] [--use-local]
+                 [--no-pin] [-c CHANNEL]  [--override-channels]  [-n  NAME  |  -p
+                 PATH]  [-q]  [--alt-hint]  [--all]  [package_spec  [package_spec
+                 ...]]
+   
+          Update conda packages.
+   
+      positional arguments:
+          package_spec
+                 package versions to install into conda environment
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          --yes  do not ask for confirmation
+   
+          --dry-run
+                 only display what would have been done
+   
+          -f, --force
+                 force install (even when  package  already  installed),  implies
+                 --no-deps
+   
+          --file FILE
+                 read package versions from FILE
+   
+          --unknown
+                 use  index metadata from the local package cache (which are from
+                 unknown channels)
+   
+          --no-deps
+                 do not install dependencies
+   
+          -m, --mkdir
+                 create prefix directory if necessary
+   
+          --use-index-cache
+                 use cache of channel index files
+   
+          --use-local
+                 use locally built packages
+   
+          --no-pin
+                 don't use pinned packages
+   
+          -c CHANNEL, --channel CHANNEL
+                 additional channel  to  search  for  packages.  These  are  URLs
+                 searched  in  the  order  they  are given (including file:// for
+                 local directories). Then, the defaults or channels from .condarc
+                 are  searched (unless --override-channels is given). You can use
+                 'defaults' to get the default packages for conda,  and  'system'
+                 to  get  the  system  packages,  which  also takes .condarc into
+                 account. You can also  use  any  name  and  the  .condarc  chan‐
+                 nel_alias  value will be prepended. The default channel_alias is
+                 http://conda.binstar.org/
+   
+          --override-channels
+                 Do not search default or .condarc channels. Requires --channel.
+   
+          -n NAME, --name NAME
+                 name of environment (in envs dirs)
+   
+          -p PATH, --prefix PATH
+                 full path to environment prefix (default: envs  dirs/build-envi‐
+                 ronment)
+   
+          -q, --quiet
+                 do not display progress bar
+   
+          --alt-hint
+                 Use an alternate algorithm to generate an unsatisfiable hint
+   
+          --all  Update all installed packages in the environment
+   
+      examples:
+                 conda update -p ~/anaconda/envs/myenv scipy
+   
+   
+   
+   Continuum Analytics              October 2014                         <B>CONDA(1)</B>
+   </PRE>

@@ -1,0 +1,61 @@
+
+.. _package_ref:
+
+conda package
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda package
+   
+   DESCRIPTION
+          usage: conda package [-h] [-n NAME | -p PATH] [-w PATH [PATH ...]]
+   
+          [-L PKG-NAME] [-r] [-u] [--pkg-name PKG_NAME]
+                 [--pkg-version PKG_VERSION] [--pkg-build PKG_BUILD]
+   
+          Low-level conda package utility. (EXPERIMENTAL)
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          -n NAME, --name NAME
+                 name of environment (in envs dirs)
+   
+          -p PATH, --prefix PATH
+                 full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment)
+   
+          -w PATH [PATH ...], --which PATH [PATH ...]
+                 given some PATH print which conda package the file came from
+   
+          -L PKG-NAME, --ls-files PKG-NAME
+                 list all files belonging to specified package
+   
+          -r, --reset
+                 remove all untracked files and exit
+   
+          -u, --untracked
+                 display all untracked files and exit
+   
+          --pkg-name PKG_NAME
+                 package name of the created package
+   
+          --pkg-version PKG_VERSION
+                 package version of the created package
+   
+          --pkg-build PKG_BUILD
+                 package build number of the created package
+   
+   
+   
+   Continuum Analytics              October 2014                         <B>CONDA(1)</B>
+   </PRE>

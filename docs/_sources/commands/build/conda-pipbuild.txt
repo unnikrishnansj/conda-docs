@@ -1,0 +1,52 @@
+
+.. _pipbuild_ref:
+
+conda pipbuild
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda pipbuild
+   
+   DESCRIPTION
+          usage: conda-pipbuild [-h] [--no-binstar-upload] [--binstar-upload]
+   
+          [--release RELEASE] [--pypi-url PYPI_URL] [-V]
+                 &lt;PYPI_NAME&gt;
+   
+          tool for building conda packages just using pip install
+   
+      positional arguments:
+          &lt;PYPI_NAME&gt;
+                 name of package on PYPI
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          --no-binstar-upload
+                 do not ask to upload the package to binstar
+   
+          --binstar-upload
+                 upload the package to binstar
+   
+          --release RELEASE
+                 specify version of package to build
+   
+          --pypi-url PYPI_URL
+                 Url to use for PyPI
+   
+          -V, --version
+                 show program's version number and exit
+   
+   
+   
+   Continuum Analytics              October 2014                         <B>CONDA(1)</B>
+   </PRE>
