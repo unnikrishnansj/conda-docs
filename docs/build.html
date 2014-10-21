@@ -328,11 +328,10 @@ sections are optional except for package/name and package/version.</p>
   <span class="c1"># that use setuptools specific features.</span>
   <span class="l-Scalar-Plain">preserve_egg_dir</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">yes</span> <span class="c1"># (default no)</span>
 
-  <span class="c1"># A regular expression describing files to not install using soft</span>
-  <span class="c1"># links. If hard links are not possible and this is set, the package</span>
-  <span class="c1"># will be installed via copying. By default all files are considered</span>
-  <span class="c1"># safe for soft linking.</span>
-  <span class="l-Scalar-Plain">no_softlink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">(bin/path1\.py|bin/path2)</span> <span class="c1"># Don&#39;t softlink bin/path1.py or bin/path2</span>
+  <span class="c1"># A list of globs for files that should not be linked (soft or</span>
+  <span class="c1"># hard). They will always be copied.</span>
+  <span class="l-Scalar-Plain">no_softlink</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">bin/*.py</span> <span class="c1"># Don&#39;t link any .py files in bin/</span>
 
   <span class="c1"># Used instead of build.sh or bld.bat. For short build scripts, this can</span>
   <span class="c1"># be more convenient. You may need to use selectors (see below) to use</span>
