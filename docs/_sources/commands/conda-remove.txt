@@ -16,7 +16,7 @@ conda remove
           conda - conda remove
    
    DESCRIPTION
-          usage:  conda  remove  [-h]  [--yes]  [--dry-run]  [--all] [--features]
+          usage:   conda   remove  [-h]  [-y]  [--dry-run]  [--all]  [--features]
           [--no-pin]
    
           [-c CHANNEL] [--override-channels] [-n NAME | -p PATH]
@@ -36,7 +36,8 @@ conda remove
           -h, --help
                  show this help message and exit
    
-          --yes  do not ask for confirmation
+          -y, --yes
+                 do not ask for confirmation
    
           --dry-run
                  only display what would have been done

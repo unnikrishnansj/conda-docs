@@ -22,7 +22,7 @@ conda info
    
       positional arguments:
           packages
-                 display information about packages or files
+                 display information about packages
    
       optional arguments:
           -h, --help

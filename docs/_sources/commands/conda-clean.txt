@@ -16,7 +16,7 @@ conda clean
           conda - conda clean
    
    DESCRIPTION
-          usage: conda clean [-h] [--yes] [--dry-run] [-i] [-l] [-t] [-p]
+          usage: conda clean [-h] [-y] [--dry-run] [-i] [-l] [-t] [-p]
    
           Remove unused packages and caches
    
@@ -24,7 +24,8 @@ conda clean
           -h, --help
                  show this help message and exit
    
-          --yes  do not ask for confirmation
+          -y, --yes
+                 do not ask for confirmation
    
           --dry-run
                  only display what would have been done
