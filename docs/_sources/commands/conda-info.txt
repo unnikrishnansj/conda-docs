@@ -1,0 +1,47 @@
+
+.. _info_ref:
+
+conda info
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda info
+   
+   DESCRIPTION
+          usage: conda info [-h] [-a] [-e] [-l] [-s] [packages [packages ...]]
+   
+          Display information about current conda install.
+   
+      positional arguments:
+          packages
+                 display information about packages
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          -a, --all
+                 show  all information, (environments, license, and system infor‐
+                 mation
+   
+          -e, --envs
+                 list all known conda environments
+   
+          -l, --license
+                 display information about local conda licenses list
+   
+          -s, --system
+                 list environment variables
+   
+   
+   
+   Continuum Analytics              November 2014                        <B>CONDA(1)</B>
+   </PRE>

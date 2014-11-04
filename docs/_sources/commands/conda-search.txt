@@ -1,0 +1,92 @@
+
+.. _search_ref:
+
+conda search
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda search
+   
+   DESCRIPTION
+          usage: conda search [-h] [-n NAME | -p PATH] [--canonical] [--unknown]
+   
+          [--use-index-cache] [-o] [-v]
+                 [--platform  {win-32,win-64,osx-64,linux-32,linux-64}]  [--spec]
+                 [-c CHANNEL] [--override-channels] [--use-local] [regex]
+   
+          Search for packages and display their information. The input is a regu‐
+          lar  expression.   To perform a search with a search string that starts
+          with a -, separate the search from the options  with  --,  like  'conda
+          search -- -h'.
+   
+      positional arguments:
+          regex  package  specification  or  regular  expression  to  search  for
+                 (default: display all packages)
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          -n NAME, --name NAME
+                 name of environment (in envs dirs)
+   
+          -p PATH, --prefix PATH
+                 full path to environment prefix (default: envs  dirs/build-envi‐
+                 ronment)
+   
+          --canonical
+                 output canonical names of packages only
+   
+          --unknown
+                 use  index metadata from the local package cache (which are from
+                 unknown channels)
+   
+          --use-index-cache
+                 use cache of channel index files
+   
+          -o, --outdated
+                 only display installed but outdated packages
+   
+          -v, --verbose
+                 Show available packages as blocks of data
+   
+          --platform {win-32,win-64,osx-64,linux-32,linux-64}
+                 Search the given platform. Should be  formatted  like  'osx-64',
+                 'linux-32',  'win-64',  and  so on. The default is to search the
+                 current platform.
+   
+          --spec Treat regex argument as a package specification  instead  (pack‐
+                 age_name[=version[=build]])
+   
+          -c CHANNEL, --channel CHANNEL
+                 additional  channel  to  search  for  packages.  These  are URLs
+                 searched in the order they  are  given  (including  file://  for
+                 local directories). Then, the defaults or channels from .condarc
+                 are searched (unless --override-channels is given). You can  use
+                 'defaults'  to  get the default packages for conda, and 'system'
+                 to get the system  packages,  which  also  takes  .condarc  into
+                 account.  You  can  also  use  any  name  and the .condarc chan‐
+                 nel_alias value will be prepended. The default channel_alias  is
+                 http://conda.binstar.org/
+   
+          --override-channels
+                 Do not search default or .condarc channels. Requires --channel.
+   
+          --use-local
+                 use locally built packages
+   
+      examples:
+                 conda search -p ~/anaconda/envs/myenv/ scipy
+   
+   
+   
+   Continuum Analytics              November 2014                        <B>CONDA(1)</B>
+   </PRE>

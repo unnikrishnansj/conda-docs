@@ -1,0 +1,49 @@
+
+.. _run_ref:
+
+conda run
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda run
+   
+   DESCRIPTION
+          usage: conda run [-h] [-n NAME | -p PATH] [-q]
+   
+                 [COMMAND] [ARGUMENTS [ARGUMENTS ...]]
+   
+          Launches an application installed with Conda.
+   
+      positional arguments:
+          COMMAND
+                 package to launch
+   
+          ARGUMENTS
+                 additional arguments to application
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          -n NAME, --name NAME
+                 name of environment (in envs dirs)
+   
+          -p PATH, --prefix PATH
+                 full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment)
+   
+          -q, --quiet
+                 do not display progress bar
+   
+   
+   
+   Continuum Analytics              November 2014                        <B>CONDA(1)</B>
+   </PRE>

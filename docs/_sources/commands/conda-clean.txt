@@ -1,0 +1,52 @@
+
+.. _clean_ref:
+
+conda clean
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda clean
+   
+   DESCRIPTION
+          usage: conda clean [-h] [-y] [--dry-run] [-i] [-l] [-t] [-p]
+   
+          Remove unused packages and caches
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          -y, --yes
+                 do not ask for confirmation
+   
+          --dry-run
+                 only display what would have been done
+   
+          -i, --index-cache
+                 remove index cache
+   
+          -l, --lock
+                 remove all conda lock files
+   
+          -t, --tarballs
+                 remove cached package tarballs
+   
+          -p, --packages
+                 remove  unused cached packages. Warning: this does not check for
+                 symlinked packages.
+   
+      examples:
+                 conda clean --tarballs
+   
+   
+   
+   Continuum Analytics              November 2014                        <B>CONDA(1)</B>
+   </PRE>
