@@ -21,8 +21,8 @@ conda create
    
           [--no-deps] [-m] [--use-index-cache] [--use-local]
                  [--no-pin] [-c CHANNEL]  [--override-channels]  [-n  NAME  |  -p
-                 PATH]  [-q]  [--alt-hint]  [--clone ENV] [--no-default-packages]
-                 [package_spec [package_spec ...]]
+                 PATH]     [-q]     [--alt-hint]     [--json]    [--clone    ENV]
+                 [--no-default-packages] [package_spec [package_spec ...]]
    
           Create a new conda environment from a list of  specified  packages.  To
           use the created environment, use 'source activate envname' look in that
@@ -52,7 +52,8 @@ conda create
    
           --unknown
                  use index metadata from the local package cache (which are  from
-                 unknown channels)
+                 unknown  channels)  (installing  local packages directly implies
+                 this option)
    
           --no-deps
                  do not install dependencies
@@ -70,14 +71,14 @@ conda create
                  don't use pinned packages
    
           -c CHANNEL, --channel CHANNEL
-                 additional  channel  to  search  for  packages.  These  are URLs
-                 searched in the order they  are  given  (including  file://  for
+                 additional channel  to  search  for  packages.  These  are  URLs
+                 searched  in  the  order  they  are given (including file:// for
                  local directories). Then, the defaults or channels from .condarc
-                 are searched (unless --override-channels is given). You can  use
-                 'defaults'  to  get the default packages for conda, and 'system'
-                 to get the system  packages,  which  also  takes  .condarc  into
-                 account.  You  can  also  use  any  name  and the .condarc chan‐
-                 nel_alias value will be prepended. The default channel_alias  is
+                 are  searched (unless --override-channels is given). You can use
+                 'defaults' to get the default packages for conda,  and  'system'
+                 to  get  the  system  packages,  which  also takes .condarc into
+                 account. You can also  use  any  name  and  the  .condarc  chan‐
+                 nel_alias  value will be prepended. The default channel_alias is
                  http://conda.binstar.org/
    
           --override-channels
@@ -87,7 +88,7 @@ conda create
                  name of environment (in envs dirs)
    
           -p PATH, --prefix PATH
-                 full  path to environment prefix (default: envs dirs/build-envi‐
+                 full path to environment prefix (default: envs  dirs/build-envi‐
                  ronment)
    
           -q, --quiet
@@ -95,6 +96,9 @@ conda create
    
           --alt-hint
                  Use an alternate algorithm to generate an unsatisfiable hint
+   
+          --json report all output as json. Suitable for using conda programmati‐
+                 cally.
    
           --clone ENV
                  path to (or name of) existing local environment

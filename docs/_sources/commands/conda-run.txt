@@ -16,7 +16,7 @@ conda run
           conda - conda run
    
    DESCRIPTION
-          usage: conda run [-h] [-n NAME | -p PATH] [-q]
+          usage: conda run [-h] [-n NAME | -p PATH] [-q] [--json]
    
                  [COMMAND] [ARGUMENTS [ARGUMENTS ...]]
    
@@ -42,6 +42,9 @@ conda run
    
           -q, --quiet
                  do not display progress bar
+   
+          --json report all output as json. Suitable for using conda programmati‐
+                 cally.
    
    
    

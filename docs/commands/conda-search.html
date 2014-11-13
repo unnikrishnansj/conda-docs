@@ -130,6 +130,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="">conda search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-update.html">conda update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">conda-build commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../build-commands.html">conda-build commands</a><ul>
@@ -213,11 +214,12 @@ DESCRIPTION
 
        [--use-index-cache] [-o] [-v]
               [--platform  {win-32,win-64,osx-64,linux-32,linux-64}]  [--spec]
-              [-c CHANNEL] [--override-channels] [--use-local] [regex]
+              [-c  CHANNEL]   [--override-channels]   [--json]   [--use-local]
+              [regex]
 
        Search for packages and display their information. The input is a regu‐
-       lar  expression.   To perform a search with a search string that starts
-       with a -, separate the search from the options  with  --,  like  'conda
+       lar expression.  To perform a search with a search string  that  starts
+       with  a  -,  separate  the search from the options with --, like 'conda
        search -- -h'.
 
    positional arguments:
@@ -232,15 +234,16 @@ DESCRIPTION
               name of environment (in envs dirs)
 
        -p PATH, --prefix PATH
-              full path to environment prefix (default: envs  dirs/build-envi‐
+              full  path to environment prefix (default: envs dirs/build-envi‐
               ronment)
 
        --canonical
               output canonical names of packages only
 
        --unknown
-              use  index metadata from the local package cache (which are from
-              unknown channels)
+              use index metadata from the local package cache (which are  from
+              unknown  channels)  (installing  local packages directly implies
+              this option)
 
        --use-index-cache
               use cache of channel index files
@@ -272,6 +275,9 @@ DESCRIPTION
 
        --override-channels
               Do not search default or .condarc channels. Requires --channel.
+
+       --json report all output as json. Suitable for using conda programmati‐
+              cally.
 
        --use-local
               use locally built packages

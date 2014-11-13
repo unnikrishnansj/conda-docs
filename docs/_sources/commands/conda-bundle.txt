@@ -20,7 +20,7 @@ conda bundle
           PATH]
    
           [-q] [--bundle-name NAME] [--data-path PATH]
-                 [--extra-meta PATH] [--no-env]
+                 [--extra-meta PATH] [--no-env] [--json]
    
           Create or extract a "bundle package" (EXPERIMENTAL)
    
@@ -58,6 +58,9 @@ conda bundle
    
           --no-env
                  no environment
+   
+          --json report all output as json. Suitable for using conda programmati‐
+                 cally.
    
    
    

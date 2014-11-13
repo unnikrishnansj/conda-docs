@@ -16,7 +16,8 @@ conda info
           conda - conda info
    
    DESCRIPTION
-          usage: conda info [-h] [-a] [-e] [-l] [-s] [packages [packages ...]]
+          usage: conda info [-h] [--json] [-a] [-e] [-l] [-s] [packages [packages
+          ...]]
    
           Display information about current conda install.
    
@@ -27,6 +28,9 @@ conda info
       optional arguments:
           -h, --help
                  show this help message and exit
+   
+          --json report all output as json. Suitable for using conda programmati‐
+                 cally.
    
           -a, --all
                  show  all information, (environments, license, and system infor‐

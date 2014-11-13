@@ -130,6 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-search.html">conda search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-update.html">conda update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">conda-build commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../build-commands.html">conda-build commands</a><ul>
@@ -209,7 +210,7 @@ NAME
        conda - conda clean
 
 DESCRIPTION
-       usage: conda clean [-h] [-y] [--dry-run] [-i] [-l] [-t] [-p]
+       usage: conda clean [-h] [-y] [--dry-run] [--json] [-i] [-l] [-t] [-p]
 
        Remove unused packages and caches
 
@@ -223,6 +224,9 @@ DESCRIPTION
        --dry-run
               only display what would have been done
 
+       --json report all output as json. Suitable for using conda programmati‐
+              cally.
+
        -i, --index-cache
               remove index cache
 
@@ -233,7 +237,7 @@ DESCRIPTION
               remove cached package tarballs
 
        -p, --packages
-              remove  unused cached packages. Warning: this does not check for
+              remove unused cached packages. Warning: this does not check  for
               symlinked packages.
 
    examples:

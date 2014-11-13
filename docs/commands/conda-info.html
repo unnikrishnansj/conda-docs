@@ -130,6 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-search.html">conda search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-update.html">conda update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">conda-build commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../build-commands.html">conda-build commands</a><ul>
@@ -209,7 +210,8 @@ NAME
        conda - conda info
 
 DESCRIPTION
-       usage: conda info [-h] [-a] [-e] [-l] [-s] [packages [packages ...]]
+       usage: conda info [-h] [--json] [-a] [-e] [-l] [-s] [packages [packages
+       ...]]
 
        Display information about current conda install.
 
@@ -220,6 +222,9 @@ DESCRIPTION
    optional arguments:
        -h, --help
               show this help message and exit
+
+       --json report all output as json. Suitable for using conda programmati‐
+              cally.
 
        -a, --all
               show  all information, (environments, license, and system infor‐

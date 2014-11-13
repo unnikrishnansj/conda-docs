@@ -130,6 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-search.html">conda search</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">conda update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">conda-build commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../build-commands.html">conda-build commands</a><ul>
@@ -214,8 +215,8 @@ DESCRIPTION
 
        [--no-deps] [-m] [--use-index-cache] [--use-local]
               [--no-pin] [-c CHANNEL]  [--override-channels]  [-n  NAME  |  -p
-              PATH]  [-q]  [--alt-hint]  [--all]  [package_spec  [package_spec
-              ...]]
+              PATH]  [-q]  [--alt-hint]  [--json] [--all] [package_spec [pack‐
+              age_spec ...]]
 
        Update conda packages.
 
@@ -242,7 +243,8 @@ DESCRIPTION
 
        --unknown
               use  index metadata from the local package cache (which are from
-              unknown channels)
+              unknown channels) (installing local  packages  directly  implies
+              this option)
 
        --no-deps
               do not install dependencies
@@ -260,21 +262,22 @@ DESCRIPTION
               don't use pinned packages
 
        -c CHANNEL, --channel CHANNEL
-              additional channel  to  search  for  packages.  These  are  URLs
-              searched  in  the  order  they  are given (including file:// for
+              additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
               local directories). Then, the defaults or channels from .condarc
-              are  searched (unless --override-channels is given). You can use
-              'defaults' to get the default packages for conda,  and  'system'
-              to  get  the  system  packages,  which  also takes .condarc into
-              account. You can also  use  any  name  and  the  .condarc  chan‐
-              nel_alias  value will be prepended. The default channel_alias is
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
               http://conda.binstar.org/
 
        --override-channels
               Do not search default or .condarc channels. Requires --channel.
 
        -n NAME, --name NAME
-              name of environment (in envs dirs)
+              name    of    environment   (in   /home/travis/.conda/envs:/home
+              /travis/envs:envs dirs)
 
        -p PATH, --prefix PATH
               full path to environment prefix (default: envs  dirs/build-envi‐
@@ -285,6 +288,9 @@ DESCRIPTION
 
        --alt-hint
               Use an alternate algorithm to generate an unsatisfiable hint
+
+       --json report all output as json. Suitable for using conda programmati‐
+              cally.
 
        --all  Update all installed packages in the environment
 
