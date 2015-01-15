@@ -1,7 +1,7 @@
 
-.. _remove_ref:
+.. _uninstall_ref:
 
-conda remove
+conda uninstall
 =======================
 
 .. raw:: html
@@ -13,23 +13,24 @@ conda remove
    
    
    NAME
-          conda - conda remove
+          conda - conda uninstall
    
    DESCRIPTION
-          usage: conda remove [-h] [-y] [--dry-run] [--json] [--all] [--features]
+          usage:  conda  uninstall [-h] [-y] [--dry-run] [--json] [--all] [--fea‐
+          tures]
    
           [--no-pin] [-c CHANNEL] [--override-channels]
-                 [-n  NAME  |  -p  PATH]  [-q]  [--use-index-cache] [--use-local]
+                 [-n NAME  |  -p  PATH]  [-q]  [--use-index-cache]  [--use-local]
                  [--offline] [package_name [package_name ...]]
    
-          remove a list of packages from a  specified  conda  environment.   Nor‐
-          mally,  only  the  specified  package  is removed, and not the packages
-          which may depend on the package.  Hence this  command  should  be  used
+          uninstall  a list of packages from a specified conda environment.  Nor‐
+          mally, only the specified package is  removed,  and  not  the  packages
+          which  may  depend  on  the package.  Hence this command should be used
           with caution.  Note that conda uninstall is an alias for conda remove
    
       positional arguments:
           package_name
-                 package names to remove from environment
+                 package names to uninstall from environment
    
       optional arguments:
           -h, --help
@@ -44,34 +45,34 @@ conda remove
           --json report all output as json. Suitable for using conda programmati‐
                  cally.
    
-          --all  remove all packages, i.e. the entire environment
+          --all  uninstall all packages, i.e. the entire environment
    
           --features
-                 remove features (instead of packages)
+                 uninstall features (instead of packages)
    
           --no-pin
                  don't use pinned packages
    
           -c CHANNEL, --channel CHANNEL
-                 additional channel  to  search  for  packages.  These  are  URLs
-                 searched  in  the  order  they  are given (including file:// for
+                 additional  channel  to  search  for  packages.  These  are URLs
+                 searched in the order they  are  given  (including  file://  for
                  local directories). Then, the defaults or channels from .condarc
-                 are  searched (unless --override-channels is given). You can use
-                 'defaults' to get the default packages for conda,  and  'system'
-                 to  get  the  system  packages,  which  also takes .condarc into
-                 account. You can also  use  any  name  and  the  .condarc  chan‐
-                 nel_alias  value will be prepended. The default channel_alias is
+                 are searched (unless --override-channels is given). You can  use
+                 'defaults'  to  get the default packages for conda, and 'system'
+                 to get the system  packages,  which  also  takes  .condarc  into
+                 account.  You  can  also  use  any  name  and the .condarc chan‐
+                 nel_alias value will be prepended. The default channel_alias  is
                  http://conda.binstar.org/
    
           --override-channels
                  Do not search default or .condarc channels. Requires --channel.
    
           -n NAME, --name NAME
-                 name of environment (in envs dirs)
+                 name of environment (in root prefix/envs)
    
           -p PATH, --prefix PATH
-                 full path to environment prefix (default: envs  dirs/build-envi‐
-                 ronment)
+                 full   path   to   environment   prefix   (default:   root  pre‐
+                 fix/envs/build-environment)
    
           -q, --quiet
                  do not display progress bar
@@ -86,7 +87,7 @@ conda remove
                  offline mode, don't connect to internet
    
       examples:
-                 conda remove -n myenv scipy
+                 conda uninstall -n myenv scipy
    
    
    

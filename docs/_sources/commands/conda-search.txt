@@ -37,18 +37,19 @@ conda search
                  show this help message and exit
    
           -n NAME, --name NAME
-                 name of environment (in envs dirs)
+                 name    of    environment   (in   /home/travis/.conda/envs:/home
+                 /travis/envs:envs dirs)
    
           -p PATH, --prefix PATH
-                 full  path to environment prefix (default: envs dirs/build-envi‐
+                 full path to environment prefix (default: envs  dirs/build-envi‐
                  ronment)
    
           --canonical
                  output canonical names of packages only
    
           --unknown
-                 use index metadata from the local package cache (which are  from
-                 unknown  channels)  (installing  local packages directly implies
+                 use  index metadata from the local package cache (which are from
+                 unknown channels) (installing local  packages  directly  implies
                  this option)
    
           --use-index-cache
@@ -61,22 +62,22 @@ conda search
                  Show available packages as blocks of data
    
           --platform {win-32,win-64,osx-64,linux-32,linux-64}
-                 Search the given platform. Should be  formatted  like  'osx-64',
-                 'linux-32',  'win-64',  and  so on. The default is to search the
+                 Search  the  given  platform. Should be formatted like 'osx-64',
+                 'linux-32', 'win-64', and so on. The default is  to  search  the
                  current platform.
    
-          --spec Treat regex argument as a package specification  instead  (pack‐
+          --spec Treat  regex  argument as a package specification instead (pack‐
                  age_name[=version[=build]])
    
           -c CHANNEL, --channel CHANNEL
-                 additional  channel  to  search  for  packages.  These  are URLs
-                 searched in the order they  are  given  (including  file://  for
+                 additional channel  to  search  for  packages.  These  are  URLs
+                 searched  in  the  order  they  are given (including file:// for
                  local directories). Then, the defaults or channels from .condarc
-                 are searched (unless --override-channels is given). You can  use
-                 'defaults'  to  get the default packages for conda, and 'system'
-                 to get the system  packages,  which  also  takes  .condarc  into
-                 account.  You  can  also  use  any  name  and the .condarc chan‐
-                 nel_alias value will be prepended. The default channel_alias  is
+                 are  searched (unless --override-channels is given). You can use
+                 'defaults' to get the default packages for conda,  and  'system'
+                 to  get  the  system  packages,  which  also takes .condarc into
+                 account. You can also  use  any  name  and  the  .condarc  chan‐
+                 nel_alias  value will be prepended. The default channel_alias is
                  http://conda.binstar.org/
    
           --override-channels
@@ -93,5 +94,5 @@ conda search
    
    
    
-   Continuum Analytics              December 2014                        <B>CONDA(1)</B>
+   Continuum Analytics              January 2015                         <B>CONDA(1)</B>
    </PRE>

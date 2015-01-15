@@ -127,6 +127,7 @@
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-remove.html">conda remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-run.html">conda run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-search.html">conda search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands/conda-uninstall.html">conda uninstall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-update.html">conda update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html#conda-build-commands">conda-build commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
@@ -222,6 +223,9 @@ channels:
   - http://some.custom/channel
   - file:///some/local/directory
   - defaults
+
+# filters out all channels URL&#39;s which do not start with &#39;file:&#39;
+offline: True
 
 # Alias to use for non-url channels used with the -c flag. Default is https://conda.binstar.org/
 

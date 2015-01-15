@@ -31,7 +31,7 @@
     <link rel="top" title="Conda   documentation" href="../index.html"/>
         <link rel="up" title="Command Reference" href="../commands.html"/>
         <link rel="next" title="conda build" href="build/conda-build.html"/>
-        <link rel="prev" title="conda search" href="conda-search.html"/> 
+        <link rel="prev" title="conda uninstall" href="conda-uninstall.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -128,6 +128,7 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-remove.html">conda remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-run.html">conda run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-search.html">conda search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-uninstall.html">conda uninstall</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">conda update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">conda-build commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
@@ -214,9 +215,9 @@ DESCRIPTION
        [--unknown]
 
        [--no-deps] [-m] [--use-index-cache] [--use-local]
-              [--no-pin] [-c CHANNEL]  [--override-channels]  [-n  NAME  |  -p
-              PATH]  [-q]  [--alt-hint]  [--json] [--all] [package_spec [pack‐
-              age_spec ...]]
+              [--offline] [--no-pin] [-c  CHANNEL]  [--override-channels]  [-n
+              NAME  |  -p  PATH]  [-q]  [--copy] [--alt-hint] [--json] [--all]
+              [package_spec [package_spec ...]]
 
        Update conda packages.
 
@@ -258,6 +259,9 @@ DESCRIPTION
        --use-local
               use locally built packages
 
+       --offline
+              offline mode, don't connect to internet
+
        --no-pin
               don't use pinned packages
 
@@ -285,6 +289,9 @@ DESCRIPTION
        -q, --quiet
               do not display progress bar
 
+       --copy Install all packages using copies instead of hard- or soft-link‐
+              ing.
+
        --alt-hint
               Use an alternate algorithm to generate an unsatisfiable hint
 
@@ -298,7 +305,7 @@ DESCRIPTION
 
 
 
-Continuum Analytics              December 2014                        <B>CONDA(1)</B>
+Continuum Analytics              January 2015                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -310,7 +317,7 @@ Continuum Analytics              December 2014                        <B>CONDA(1
         <a href="build/conda-build.html" class="btn btn-neutral float-right" title="conda build">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conda-search.html" class="btn btn-neutral" title="conda search"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-uninstall.html" class="btn btn-neutral" title="conda uninstall"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

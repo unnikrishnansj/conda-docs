@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conda package &mdash; Conda   documentation</title>
+  <title>conda uninstall &mdash; Conda   documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
         <link rel="up" title="Command Reference" href="../commands.html"/>
-        <link rel="next" title="conda remove" href="conda-remove.html"/>
-        <link rel="prev" title="conda list" href="conda-list.html"/> 
+        <link rel="next" title="conda update" href="conda-update.html"/>
+        <link rel="prev" title="conda search" href="conda-search.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -124,11 +124,11 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-init.html">conda init</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-install.html">conda install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-list.html">conda list</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">conda package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-package.html">conda package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-remove.html">conda remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-run.html">conda run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-search.html">conda search</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-uninstall.html">conda uninstall</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">conda uninstall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-update.html">conda update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">conda-build commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
@@ -188,10 +188,10 @@
       
           <li><a href="../commands.html">Command Reference</a> &raquo;</li>
       
-    <li>conda package</li>
+    <li>conda uninstall</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/conda-package.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/conda-uninstall.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -199,8 +199,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-package">
-<span id="package-ref"></span><h1>conda package<a class="headerlink" href="#conda-package" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="conda-uninstall">
+<span id="uninstall-ref"></span><h1>conda uninstall<a class="headerlink" href="#conda-uninstall" title="Permalink to this headline">¶</a></h1>
 <PRE>
 <!-- Manpage converted by man2html 3.0.1 -->
 <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
@@ -208,19 +208,59 @@
 
 
 NAME
-       conda - conda package
+       conda - conda uninstall
 
 DESCRIPTION
-       usage: conda package [-h] [-n NAME | -p PATH] [-w PATH [PATH ...]]
+       usage:  conda  uninstall [-h] [-y] [--dry-run] [--json] [--all] [--fea‐
+       tures]
 
-       [-L PKG-NAME] [-r] [-u] [--pkg-name PKG_NAME]
-              [--pkg-version PKG_VERSION] [--pkg-build PKG_BUILD]
+       [--no-pin] [-c CHANNEL] [--override-channels]
+              [-n NAME  |  -p  PATH]  [-q]  [--use-index-cache]  [--use-local]
+              [--offline] [package_name [package_name ...]]
 
-       Low-level conda package utility. (EXPERIMENTAL)
+       uninstall  a list of packages from a specified conda environment.  Nor‐
+       mally, only the specified package is  removed,  and  not  the  packages
+       which  may  depend  on  the package.  Hence this command should be used
+       with caution.  Note that conda uninstall is an alias for conda remove
+
+   positional arguments:
+       package_name
+              package names to uninstall from environment
 
    optional arguments:
        -h, --help
               show this help message and exit
+
+       -y, --yes
+              do not ask for confirmation
+
+       --dry-run
+              only display what would have been done
+
+       --json report all output as json. Suitable for using conda programmati‐
+              cally.
+
+       --all  uninstall all packages, i.e. the entire environment
+
+       --features
+              uninstall features (instead of packages)
+
+       --no-pin
+              don't use pinned packages
+
+       -c CHANNEL, --channel CHANNEL
+              additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
+              local directories). Then, the defaults or channels from .condarc
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
+              http://conda.binstar.org/
+
+       --override-channels
+              Do not search default or .condarc channels. Requires --channel.
 
        -n NAME, --name NAME
               name of environment (in root prefix/envs)
@@ -229,26 +269,20 @@ DESCRIPTION
               full   path   to   environment   prefix   (default:   root  pre‐
               fix/envs/build-environment)
 
-       -w PATH [PATH ...], --which PATH [PATH ...]
-              given some PATH print which conda package the file came from
+       -q, --quiet
+              do not display progress bar
 
-       -L PKG-NAME, --ls-files PKG-NAME
-              list all files belonging to specified package
+       --use-index-cache
+              use cache of channel index files
 
-       -r, --reset
-              remove all untracked files and exit
+       --use-local
+              use locally built packages
 
-       -u, --untracked
-              display all untracked files and exit
+       --offline
+              offline mode, don't connect to internet
 
-       --pkg-name PKG_NAME
-              package name of the created package
-
-       --pkg-version PKG_VERSION
-              package version of the created package
-
-       --pkg-build PKG_BUILD
-              package build number of the created package
+   examples:
+              conda uninstall -n myenv scipy
 
 
 
@@ -261,10 +295,10 @@ Continuum Analytics              January 2015                         <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-remove.html" class="btn btn-neutral float-right" title="conda remove">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-update.html" class="btn btn-neutral float-right" title="conda update">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conda-list.html" class="btn btn-neutral" title="conda list"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-search.html" class="btn btn-neutral" title="conda search"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

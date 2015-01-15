@@ -75,5 +75,5 @@ conda build
    
    
    
-   Continuum Analytics              December 2014                        <B>CONDA(1)</B>
+   Continuum Analytics              January 2015                         <B>CONDA(1)</B>
    </PRE>

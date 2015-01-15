@@ -16,8 +16,9 @@ conda info
           conda - conda info
    
    DESCRIPTION
-          usage: conda info [-h] [--json] [-a] [-e] [-l] [-s] [packages [packages
-          ...]]
+          usage: conda info [-h] [--json] [-a] [-e] [-l] [-s] [--root]
+   
+                 [packages [packages ...]]
    
           Display information about current conda install.
    
@@ -33,7 +34,7 @@ conda info
                  cally.
    
           -a, --all
-                 show  all information, (environments, license, and system infor‐
+                 show all information, (environments, license, and system  infor‐
                  mation
    
           -e, --envs
@@ -45,7 +46,9 @@ conda info
           -s, --system
                  list environment variables
    
+          --root display root environment path
    
    
-   Continuum Analytics              December 2014                        <B>CONDA(1)</B>
+   
+   Continuum Analytics              January 2015                         <B>CONDA(1)</B>
    </PRE>

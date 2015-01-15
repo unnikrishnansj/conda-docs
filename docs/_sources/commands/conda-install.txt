@@ -19,9 +19,9 @@ conda install
           usage: conda install [-h] [--revision REVISION] [-y] [--dry-run] [-f]
    
           [--file FILE] [--unknown] [--no-deps] [-m]
-                 [--use-index-cache]   [--use-local]   [--no-pin]   [-c  CHANNEL]
-                 [--override-channels] [-n NAME  |  -p  PATH]  [-q]  [--alt-hint]
-                 [--json] [package_spec [package_spec ...]]
+                 [--use-index-cache]  [--use-local]  [--offline]  [--no-pin]  [-c
+                 CHANNEL] [--override-channels] [-n NAME | -p PATH] [-q] [--copy]
+                 [--alt-hint] [--json] [package_spec [package_spec ...]]
    
           Install  a  list  of  packages into a specified conda environment.  The
           arguments  may  be  packages  specifications  (e.g.  bitarray=0.8),  or
@@ -71,6 +71,9 @@ conda install
           --use-local
                  use locally built packages
    
+          --offline
+                 offline mode, don't connect to internet
+   
           --no-pin
                  don't use pinned packages
    
@@ -98,6 +101,9 @@ conda install
           -q, --quiet
                  do not display progress bar
    
+          --copy Install all packages using copies instead of hard- or soft-link‐
+                 ing.
+   
           --alt-hint
                  Use an alternate algorithm to generate an unsatisfiable hint
    
@@ -109,5 +115,5 @@ conda install
    
    
    
-   Continuum Analytics              December 2014                        <B>CONDA(1)</B>
+   Continuum Analytics              January 2015                         <B>CONDA(1)</B>
    </PRE>

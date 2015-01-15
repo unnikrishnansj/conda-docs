@@ -128,6 +128,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="">conda remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-run.html">conda run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-search.html">conda search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-uninstall.html">conda uninstall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-update.html">conda update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">conda-build commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
@@ -214,12 +215,12 @@ DESCRIPTION
 
        [--no-pin] [-c CHANNEL] [--override-channels]
               [-n  NAME  |  -p  PATH]  [-q]  [--use-index-cache] [--use-local]
-              [package_name [package_name ...]]
+              [--offline] [package_name [package_name ...]]
 
-       Remove a list of packages from a  specified  conda  environment.   Nor‐
+       remove a list of packages from a  specified  conda  environment.   Nor‐
        mally,  only  the  specified  package  is removed, and not the packages
        which may depend on the package.  Hence this  command  should  be  used
-       with caution.
+       with caution.  Note that conda uninstall is an alias for conda remove
 
    positional arguments:
        package_name
@@ -276,12 +277,15 @@ DESCRIPTION
        --use-local
               use locally built packages
 
+       --offline
+              offline mode, don't connect to internet
+
    examples:
               conda remove -n myenv scipy
 
 
 
-Continuum Analytics              December 2014                        <B>CONDA(1)</B>
+Continuum Analytics              January 2015                         <B>CONDA(1)</B>
 </PRE></div>
 
 

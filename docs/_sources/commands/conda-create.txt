@@ -20,9 +20,9 @@ conda create
           [--unknown]
    
           [--no-deps] [-m] [--use-index-cache] [--use-local]
-                 [--no-pin] [-c CHANNEL]  [--override-channels]  [-n  NAME  |  -p
-                 PATH]     [-q]     [--alt-hint]     [--json]    [--clone    ENV]
-                 [--no-default-packages] [package_spec [package_spec ...]]
+                 [--offline] [--no-pin] [-c  CHANNEL]  [--override-channels]  [-n
+                 NAME  |  -p  PATH]  [-q] [--copy] [--alt-hint] [--json] [--clone
+                 ENV] [--no-default-packages] [package_spec [package_spec ...]]
    
           Create a new conda environment from a list of  specified  packages.  To
           use the created environment, use 'source activate envname' look in that
@@ -67,6 +67,9 @@ conda create
           --use-local
                  use locally built packages
    
+          --offline
+                 offline mode, don't connect to internet
+   
           --no-pin
                  don't use pinned packages
    
@@ -85,14 +88,17 @@ conda create
                  Do not search default or .condarc channels. Requires --channel.
    
           -n NAME, --name NAME
-                 name of environment (in envs dirs)
+                 name of environment (in root prefix/envs)
    
           -p PATH, --prefix PATH
-                 full path to environment prefix (default: envs  dirs/build-envi‐
-                 ronment)
+                 full  path   to   environment   prefix   (default:   root   pre‐
+                 fix/envs/build-environment)
    
           -q, --quiet
                  do not display progress bar
+   
+          --copy Install all packages using copies instead of hard- or soft-link‐
+                 ing.
    
           --alt-hint
                  Use an alternate algorithm to generate an unsatisfiable hint
@@ -111,5 +117,5 @@ conda create
    
    
    
-   Continuum Analytics              December 2014                        <B>CONDA(1)</B>
+   Continuum Analytics              January 2015                         <B>CONDA(1)</B>
    </PRE>
