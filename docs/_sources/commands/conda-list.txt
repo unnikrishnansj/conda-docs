@@ -31,11 +31,11 @@ conda list
                  show this help message and exit
    
           -n NAME, --name NAME
-                 name of environment (in root prefix/envs)
+                 name of environment (in envs dirs)
    
           -p PATH, --prefix PATH
-                 full  path   to   environment   prefix   (default:   root   pre‐
-                 fix/envs/build-environment)
+                 full path to environment prefix (default: envs  dirs/build-envi‐
+                 ronment)
    
           --json report all output as json. Suitable for using conda programmati‐
                  cally.

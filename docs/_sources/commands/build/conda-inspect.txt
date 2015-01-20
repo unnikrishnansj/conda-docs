@@ -1,0 +1,36 @@
+
+.. _inspect_ref:
+
+conda inspect
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda inspect
+   
+   DESCRIPTION
+          usage: conda-inspect [-h] {linkages} ...
+   
+          tool for inspecting conda packages
+   
+      positional arguments:
+                 {linkages}
+   
+          linkages
+                 Tools to investigate linkages of binary libraries in a package
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+   
+   
+   Continuum Analytics              January 2015                         <B>CONDA(1)</B>
+   </PRE>

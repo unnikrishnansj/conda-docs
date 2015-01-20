@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conda skeleton &mdash; Conda   documentation</title>
+  <title>conda inspect &mdash; Conda   documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
         <link rel="up" title="conda-build commands" href="../../build-commands.html"/>
-        <link rel="next" title="Conda package specification" href="../../spec.html"/>
-        <link rel="prev" title="conda pipbuild" href="conda-pipbuild.html"/> 
+        <link rel="next" title="conda metapackage" href="conda-metapackage.html"/>
+        <link rel="prev" title="conda index" href="conda-index.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -139,10 +139,10 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-convert.html">conda convert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-develop.html">conda develop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-index.html">conda index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-inspect.html">conda inspect</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">conda inspect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">conda skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../spec.html">Conda package specification</a><ul>
@@ -189,10 +189,10 @@
       
           <li><a href="../../build-commands.html">conda-build commands</a> &raquo;</li>
       
-    <li>conda skeleton</li>
+    <li>conda inspect</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/build/conda-skeleton.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/build/conda-inspect.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -200,8 +200,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-skeleton">
-<span id="skeleton-ref"></span><h1>conda skeleton<a class="headerlink" href="#conda-skeleton" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="conda-inspect">
+<span id="inspect-ref"></span><h1>conda inspect<a class="headerlink" href="#conda-inspect" title="Permalink to this headline">¶</a></h1>
 <PRE>
 <!-- Manpage converted by man2html 3.0.1 -->
 <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
@@ -209,19 +209,18 @@
 
 
 NAME
-       conda - conda skeleton
+       conda - conda inspect
 
 DESCRIPTION
-       usage: conda-skeleton [-h] {pypi,cpan} ...
+       usage: conda-inspect [-h] {linkages} ...
 
-       create skeleton recipes for packages from hosting sites
+       tool for inspecting conda packages
 
    positional arguments:
-              {pypi,cpan}
+              {linkages}
 
-       pypi   Create recipes from packages on PyPI
-
-       cpan   Create recipes from packages on CPAN
+       linkages
+              Tools to investigate linkages of binary libraries in a package
 
    optional arguments:
        -h, --help
@@ -238,10 +237,10 @@ Continuum Analytics              January 2015                         <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../spec.html" class="btn btn-neutral float-right" title="Conda package specification">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-metapackage.html" class="btn btn-neutral float-right" title="conda metapackage">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conda-pipbuild.html" class="btn btn-neutral" title="conda pipbuild"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-index.html" class="btn btn-neutral" title="conda index"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

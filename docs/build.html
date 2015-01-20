@@ -138,6 +138,7 @@
 <li class="toctree-l2"><a class="reference internal" href="commands/build/conda-convert.html">conda convert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/build/conda-develop.html">conda develop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/build/conda-index.html">conda index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-inspect.html">conda inspect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/build/conda-metapackage.html">conda metapackage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/build/conda-pipbuild.html">conda pipbuild</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/build/conda-skeleton.html">conda skeleton</a></li>
@@ -339,6 +340,12 @@ sections are optional except for package/name and package/version.</p>
   <span class="c1"># be more convenient. You may need to use selectors (see below) to use</span>
   <span class="c1"># different scripts for different platforms.</span>
   <span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python setup.py install</span>
+
+  <span class="c1"># Set which RPATHs are used when making executables relocatable. This</span>
+  <span class="c1"># currently only works on Linux.  The default is lib/</span>
+  <span class="l-Scalar-Plain">rpaths</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">lib/</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">lib/R/lib/</span>
 
   <span class="c1">#########################################################################</span>
   <span class="c1"># binary_relocation, has_prefix_files, binary_has_prefix_files, and     #</span>
