@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conda build &mdash; Conda   documentation</title>
+  <title>conda inspect linkages &mdash; Conda   documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
         <link rel="up" title="conda-build commands" href="../../build-commands.html"/>
-        <link rel="next" title="conda convert" href="conda-convert.html"/>
-        <link rel="prev" title="conda-build commands" href="../../build-commands.html"/> 
+        <link rel="next" title="conda metapackage" href="conda-metapackage.html"/>
+        <link rel="prev" title="conda inspect" href="conda-inspect.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -135,12 +135,12 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../build-commands.html">conda-build commands</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">conda build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-build.html">conda build</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-convert.html">conda convert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-develop.html">conda develop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-index.html">conda index</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-inspect.html">conda inspect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-inspect-linkages.html">conda inspect linkages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">conda inspect linkages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
@@ -192,10 +192,10 @@
       
           <li><a href="../../build-commands.html">conda-build commands</a> &raquo;</li>
       
-    <li>conda build</li>
+    <li>conda inspect linkages</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/build/conda-build.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/build/conda-inspect-linkages.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -203,8 +203,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-build">
-<span id="build-ref"></span><h1>conda build<a class="headerlink" href="#conda-build" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="conda-inspect-linkages">
+<span id="inspect-linkages-ref"></span><h1>conda inspect linkages<a class="headerlink" href="#conda-inspect-linkages" title="Permalink to this headline">¶</a></h1>
 <PRE>
 <!-- Manpage converted by man2html 3.0.1 -->
 <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
@@ -212,65 +212,30 @@
 
 
 NAME
-       conda - conda build
+       conda - conda inspect linkages
 
 DESCRIPTION
-       usage: conda-build [-h] [-c] [--no-binstar-upload] [--output] [-s] [-t]
+       usage: conda-inspect linkages [-h] [--show-files] [-n NAME | -p PATH]
 
-              [--no-test]  [-b]  [-p]  [-V] [-q] [--python PYTHON_VER] [--perl
-              PERL_VER] [--numpy NUMPY_VER] RECIPE_PATH [RECIPE_PATH ...]
-
-       tool for building conda packages
+              packages [packages ...]
 
    positional arguments:
-       RECIPE_PATH
-              path to recipe directory
+       packages
+              conda packages to inspect
 
    optional arguments:
        -h, --help
               show this help message and exit
 
-       -c, --check
-              only check (validate) the recipe
+       --show-files
+              Show the files in the package that link to each library
 
-       --no-binstar-upload
-              do not ask to upload the package to binstar
+       -n NAME, --name NAME
+              name of environment (in envs dirs)
 
-       --output
-              output the conda package filename which would have been  created
-              and exit
-
-       -s, --source
-              only obtain the source (but don't build)
-
-       -t, --test
-              test package (assumes package is already build)
-
-       --no-test
-              do not test the package
-
-       -b, --build-only
-              only  run  the  build,  without  any post processing or testing.
-              Implies --no-test and --no-binstar-upload
-
-       -p, --post
-              run  the  post-build  logic.  Implies  --no-test  and   --nobin‐
-              star-upload
-
-       -V, --version
-              show program's version number and exit
-
-       -q, --quiet
-              do not display progress bar
-
-       --python PYTHON_VER
-              Set the Python version used by conda build
-
-       --perl PERL_VER
-              Set the Perl version used by conda build
-
-       --numpy NUMPY_VER
-              Set the NumPy version used by conda build
+       -p PATH, --prefix PATH
+              full  path to environment prefix (default: envs dirs/build-envi‐
+              ronment)
 
 
 
@@ -283,10 +248,10 @@ Continuum Analytics              January 2015                         <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-convert.html" class="btn btn-neutral float-right" title="conda convert">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-metapackage.html" class="btn btn-neutral float-right" title="conda metapackage">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../build-commands.html" class="btn btn-neutral" title="conda-build commands"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-inspect.html" class="btn btn-neutral" title="conda inspect"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

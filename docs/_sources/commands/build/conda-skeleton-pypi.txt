@@ -1,0 +1,70 @@
+
+.. _skeleton pypi_ref:
+
+conda skeleton pypi
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda skeleton pypi
+   
+   DESCRIPTION
+          usage:  conda-skeleton  pypi  [-h] [--output-dir OUTPUT_DIR] [--version
+          VERSION]
+   
+          [--all-urls] [--pypi-url PYPI_URL] [--no-download]
+                 [--no-prompt]  [--all-extras]  [--recursive]   [--python-version
+                 {2.6,2.7,3.3,3.4}] packages [packages ...]
+   
+      positional arguments:
+          packages
+                 PyPi packages to create recipe skeletons for. You can also spec‐
+                 ify package[extra,...] features.
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          --output-dir OUTPUT_DIR
+                 Directory to write recipes to
+   
+          --version VERSION
+                 Version to use. Applies to all packages
+   
+          --all-urls
+                 Look at all URLs, not just source URLs. Use  this  if  it  can't
+                 find the right URL.
+   
+          --pypi-url PYPI_URL
+                 URL to use for PyPI
+   
+          --no-download
+                 Don't download the package. This will keep the recipe from find‐
+                 ing the right dependencies and entry points if the package  uses
+                 distribute.  WARNING:  The default option downloads and runs the
+                 package's setup.py script.
+   
+          --no-prompt
+                 Don't prompt the user on ambiguous choices.  Instead,  make  the
+                 best possible choice and continue.
+   
+          --all-extras
+                 Add all extra feature requirements. Applies to all packages.
+   
+          --recursive
+                 Create recipes for dependencies if they do not already exist.
+   
+          --python-version {2.6,2.7,3.3,3.4}
+                 Version of Python to use to run setup.py. Default is 3.4.
+   
+   
+   
+   Continuum Analytics              January 2015                         <B>CONDA(1)</B>
+   </PRE>

@@ -1,0 +1,44 @@
+
+.. _inspect linkages_ref:
+
+conda inspect linkages
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda inspect linkages
+   
+   DESCRIPTION
+          usage: conda-inspect linkages [-h] [--show-files] [-n NAME | -p PATH]
+   
+                 packages [packages ...]
+   
+      positional arguments:
+          packages
+                 conda packages to inspect
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          --show-files
+                 Show the files in the package that link to each library
+   
+          -n NAME, --name NAME
+                 name of environment (in envs dirs)
+   
+          -p PATH, --prefix PATH
+                 full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment)
+   
+   
+   
+   Continuum Analytics              January 2015                         <B>CONDA(1)</B>
+   </PRE>
