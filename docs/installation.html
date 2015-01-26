@@ -212,8 +212,9 @@
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>Conda is part of the Anaconda Python distribution which can be downloaded from the <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Continuum store</a>.</p>
-<p>Conda can also be installed as a stand-alone packages known as <em>Miniconda</em>. Installers for Linux, OSX and Windows are
+<p>Conda is part of the Anaconda Python distribution which can be downloaded from <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">here</a>.</p>
+<p>Conda can also be installed as a stand-alone packages known as
+<em>Miniconda</em>. Installers for Linux, OS X and Windows are
 available on <a class="reference external" href="http://conda.pydata.org/miniconda.html#miniconda">the Conda site</a>.</p>
 <div class="section" id="silent-installation">
 <h2>Silent installation<a class="headerlink" href="#silent-installation" title="Permalink to this headline">¶</a></h2>
@@ -252,6 +253,8 @@ bash installer. The following arguments are supported:</p>
 <li><tt class="docutils literal"><span class="pre">-p</span></tt>, installation prefix/path</li>
 <li><tt class="docutils literal"><span class="pre">-f</span></tt>, force installation even if prefix <tt class="docutils literal"><span class="pre">-p</span></tt> already exists</li>
 </ul>
+<p>Batch mode assumes that you agree to the license agreement, and it does not
+edit the .bashrc or .bash_profile files.</p>
 <p>A complete example:</p>
 <div class="highlight-bash"><div class="highlight"><pre>wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
