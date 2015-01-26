@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using Conda with Travis CI &mdash; Conda   documentation</title>
+  <title>Installation &mdash; Conda   documentation</title>
   
 
   
@@ -29,8 +29,8 @@
 
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
-        <link rel="next" title="setup.py bdist_conda" href="bdist_conda.html"/>
-        <link rel="prev" title="Conda package specification" href="spec.html"/> 
+        <link rel="next" title="Examples" href="examples.html"/>
+        <link rel="prev" title="Introduction" href="intro.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -57,7 +57,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#conda-overview">Conda Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#package-naming-conventions">Package Naming Conventions</a></li>
@@ -67,8 +67,8 @@
 <li class="toctree-l2"><a class="reference internal" href="intro.html#update-anaconda-to-latest-version">Update Anaconda to latest version</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#silent-installation">Silent installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#silent-installation">Silent installation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
@@ -116,7 +116,7 @@
 <li class="toctree-l1"><a class="reference internal" href="admin.html">Administrative channel management for a centralized conda installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom-channels.html">Custom Channels</a></li>
 </ul>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="commands.html">Command Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-bundle.html">conda bundle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-clean.html">conda clean</a></li>
@@ -164,11 +164,11 @@
 <li class="toctree-l2"><a class="reference internal" href="spec.html#package-match-specifications">Package Match Specifications</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Using Conda with Travis CI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-travis-yml">The .travis.yml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#additional-steps">Additional Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#building-a-conda-recipe">Building a Conda Recipe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#appveyor">AppVeyor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="travis.html">Using Conda with Travis CI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="travis.html#the-travis-yml">The .travis.yml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="travis.html#additional-steps">Additional Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="travis.html#building-a-conda-recipe">Building a Conda Recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="travis.html#appveyor">AppVeyor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bdist_conda.html">setup.py bdist_conda</a><ul>
@@ -199,10 +199,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Using Conda with Travis CI</li>
+    <li>Installation</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/travis.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/installation.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -210,93 +210,59 @@
 </div>
           <div role="main">
             
-  <div class="section" id="using-conda-with-travis-ci">
-<h1>Using Conda with Travis CI<a class="headerlink" href="#using-conda-with-travis-ci" title="Permalink to this headline">¶</a></h1>
-<p>Using conda with <a class="reference external" href="https://travis-ci.org/">Travis CI</a> is often a preferable
-alternative, as the Debian repos provided by Travis often do not include
-versions of Python packages for all versions of Python, or may not be updated
-fast enough.  <cite>pip</cite> installing such packages may also be undesirable, as this
-can take a while, eating up a large chunk of the 50 minutes that Travis allows
-for each build.  Using conda also lets you test the building of conda recipes
-on Travis.</p>
-<p>Conda is cross-platform, so it can be used for anything, not just Python, but
-the following guide shows how to use it to test a Python package on Travis CI.</p>
-<div class="section" id="the-travis-yml">
-<h2>The .travis.yml<a class="headerlink" href="#the-travis-yml" title="Permalink to this headline">¶</a></h2>
-<p>We assume here that you are already familiar with the <a class="reference external" href="http://docs.travis-ci.com/user/languages/python/#Examples">basic configuration for
-Travis</a>.  The
-following shows how to modify <tt class="docutils literal"><span class="pre">.travis.yml</span></tt> to use <a class="reference external" href="http://conda.pydata.org/miniconda.html">Miniconda</a> for a project that supports Python
-2.6, 2.7, 3.3, and 3.4.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">language</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python</span>
-<span class="l-Scalar-Plain">python</span><span class="p-Indicator">:</span>
-  <span class="c1"># We don&#39;t actually use the Travis Python, but this keeps it organized.</span>
-  <span class="p-Indicator">-</span> <span class="s">&quot;2.6&quot;</span>
-  <span class="p-Indicator">-</span> <span class="s">&quot;2.7&quot;</span>
-  <span class="p-Indicator">-</span> <span class="s">&quot;3.3&quot;</span>
-  <span class="p-Indicator">-</span> <span class="s">&quot;3.4&quot;</span>
-<span class="l-Scalar-Plain">install</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">sudo apt-get update</span>
-  <span class="c1"># You may want to periodically update this, although the conda update</span>
-  <span class="c1"># conda line below will keep everything up-to-date.  We do this</span>
-  <span class="c1"># conditionally because it saves us some downloading if the version is</span>
-  <span class="c1"># the same.</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">if [[ &quot;$TRAVIS_PYTHON_VERSION&quot; == &quot;2.7&quot; ]]; then</span>
-      <span class="l-Scalar-Plain">wget http://repo.continuum.io/miniconda/Miniconda-3.4.2-Linux-x86_64.sh -O miniconda.sh;</span>
-    <span class="l-Scalar-Plain">else</span>
-      <span class="l-Scalar-Plain">wget http://repo.continuum.io/miniconda/Miniconda3-3.4.2-Linux-x86_64.sh -O miniconda.sh;</span>
-    <span class="l-Scalar-Plain">fi</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">bash miniconda.sh -b -p $HOME/miniconda</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">export PATH=&quot;$HOME/miniconda/bin:$PATH&quot;</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hash -r</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">conda config --set always_yes yes --set changeps1 no</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">conda update -q conda</span>
-  <span class="c1"># Useful for debugging any issues with conda</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">conda info -a</span>
-
-  <span class="c1"># Replace dep1 dep2 ... with your dependencies</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION dep1 dep2 ...</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">source activate test-environment</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">python setup.py install</span>
-
-<span class="l-Scalar-Plain">script</span><span class="p-Indicator">:</span>
-  <span class="c1"># Your test script goes here</span>
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>Conda is part of the Anaconda Python distribution which can be downloaded from the <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Continuum store</a>.</p>
+<p>Conda can also be installed as a stand-alone packages known as <em>Miniconda</em>. Installers for Linux, OSX and Windows are
+available on <a class="reference external" href="http://conda.pydata.org/miniconda.html#miniconda">the Conda site</a>.</p>
+<div class="section" id="silent-installation">
+<h2>Silent installation<a class="headerlink" href="#silent-installation" title="Permalink to this headline">¶</a></h2>
+<p>Silent installation of Miniconda can be used for deployment or testing or building services such as Travis CI and
+Appveyor.</p>
+<p>The lastest version of the Miniconda installer can be found <a class="reference external" href="http://repo.continuum.io/miniconda/">in the repo</a>. In any
+case, an out of date installation can be updated with a simple:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">conda update conda</span>
+</pre></div>
+</div>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>The Windows installer of Miniconda can be run in silent mode using the <tt class="docutils literal"><span class="pre">/S</span></tt> argument. The following optional arguments
+are supported:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">/InstallationType=[JustMe|AllUsers]</span></tt>, default: <tt class="docutils literal"><span class="pre">JustMe</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">/AddToPath=[0|1]</span></tt>, default: <tt class="docutils literal"><span class="pre">1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">/RegisterPython=[0|1]</span></tt>, make this the system&#8217;s default Python, default: <tt class="docutils literal"><span class="pre">0</span></tt> (Just me), <tt class="docutils literal"><span class="pre">1</span></tt> (All users)</li>
+<li><tt class="docutils literal"><span class="pre">/S</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">/D=&lt;installation</span> <span class="pre">path&gt;</span></tt></li>
+</ul>
+<p>All arguments are case-sensitive. The installation path must be the last argument and should <strong>NOT</strong> be wrapped in
+quotation marks.</p>
+<p>The following command installs Miniconda for all users without registering Python as the system&#8217;s default:</p>
+<div class="highlight-bat"><div class="highlight"><pre>Miniconda<span class="m">-3</span>.<span class="m">7</span>.<span class="m">3</span>-Windows-x<span class="m">86</span>_<span class="m">64</span>.exe <span class="n">/InstallationType=AllUsers</span> <span class="n">/RegisterPython=0</span> \
+    <span class="n">/S</span> <span class="n">/D=C:\Program</span> Files\Miniconda<span class="m">3</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="additional-steps">
-<h2>Additional Steps<a class="headerlink" href="#additional-steps" title="Permalink to this headline">¶</a></h2>
-<p>If you need to support a package that doesn&#8217;t have official Continuum builds,
-you may need to build it yourself, and add it to a Binstar channel. You can
-then add</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">conda config --add channels your_binstar_username</span>
+<div class="section" id="linux-and-os-x">
+<h3>Linux and OS X<a class="headerlink" href="#linux-and-os-x" title="Permalink to this headline">¶</a></h3>
+<p>Silent installation of Miniconda for Linux and OS X is a simple as specifying the <tt class="docutils literal"><span class="pre">-b</span></tt> and <tt class="docutils literal"><span class="pre">-p</span></tt> arguments of the
+bash installer. The following arguments are supported:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">-b</span></tt>, batch mode</li>
+<li><tt class="docutils literal"><span class="pre">-p</span></tt>, installation prefix/path</li>
+<li><tt class="docutils literal"><span class="pre">-f</span></tt>, force installation even if prefix <tt class="docutils literal"><span class="pre">-p</span></tt> already exists</li>
+</ul>
+<p>A complete example:</p>
+<div class="highlight-bash"><div class="highlight"><pre>wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
+bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/miniconda/bin:$PATH&quot;</span>
 </pre></div>
 </div>
-<p>to the install steps in <tt class="docutils literal"><span class="pre">.travis.yml</span></tt> so that it finds the packages on that
-channel.</p>
-<p>For more information on building conda packages, see the <a class="reference internal" href="build.html"><em>conda build Recipe Reference</em></a> docs and
-the example recipes in the <a class="reference external" href="https://github.com/conda/conda-recipes">conda-recipes repo</a>.</p>
-</div>
-<div class="section" id="building-a-conda-recipe">
-<h2>Building a Conda Recipe<a class="headerlink" href="#building-a-conda-recipe" title="Permalink to this headline">¶</a></h2>
-<p>If you support official conda packages for your project, you may want to use
-<tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt> in Travis, so that the building of your recipe is tested as
-well.  It is suggested to include the conda recipe along side your source
-code. You would then replace</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">python setup.py install</span>
-</pre></div>
-</div>
-<p>with</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">conda build your-conda-recipe</span>
-<span class="p-Indicator">-</span> <span class="l-Scalar-Plain">conda install your-package --use-local</span>
-</pre></div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="travis.html"><em>Using Conda with Travis CI</em></a></p>
 </div>
 </div>
-<div class="section" id="appveyor">
-<h2>AppVeyor<a class="headerlink" href="#appveyor" title="Permalink to this headline">¶</a></h2>
-<p>Another option is <a class="reference external" href="http://www.appveyor.com/">AppVeyor</a>, a continuous build
-service for Windows built on Azure.  An example project for building conda
-packages on AppVeyor is at
-<a class="reference external" href="https://github.com/rmcgibbo/python-appveyor-conda-example">https://github.com/rmcgibbo/python-appveyor-conda-example</a>.</p>
 </div>
 </div>
 
@@ -306,10 +272,10 @@ packages on AppVeyor is at
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="bdist_conda.html" class="btn btn-neutral float-right" title="setup.py bdist_conda">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="spec.html" class="btn btn-neutral" title="Conda package specification"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro.html" class="btn btn-neutral" title="Introduction"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

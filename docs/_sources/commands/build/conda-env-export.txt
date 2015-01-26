@@ -1,0 +1,38 @@
+
+.. _env export_ref:
+
+conda env export
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda env export
+   
+   DESCRIPTION
+          usage: conda-env export [-h] [-n NAME] [-f FILE]
+   
+          Export a given environment
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          -n NAME, --name NAME
+                 name of environment (in envs dirs)
+   
+          -f FILE, --file FILE
+   
+      examples:
+                 conda env export conda env export --file SOME_FILE
+   
+   
+   
+   Continuum Analytics              January 2015                         <B>CONDA(1)</B>
+   </PRE>
