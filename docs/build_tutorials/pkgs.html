@@ -342,6 +342,16 @@ with the <tt class="docutils literal"><span class="pre">--use-local</span></tt> 
 </pre></div>
 </div>
 </div>
+<div class="section" id="building-packages-for-other-platforms">
+<h2>Building packages for other platforms<a class="headerlink" href="#building-packages-for-other-platforms" title="Permalink to this headline">¶</a></h2>
+<p>Once a package is built for the current platform with <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt>,
+you can convert it for use on other platforms with the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">convert</span></tt> command
+and a <tt class="docutils literal"><span class="pre">-p</span></tt> platform specifier from <tt class="docutils literal"><span class="pre">{osx-64,linux-32,linux-64,win-32,win-64,all}</span></tt>.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda convert -p all ~/miniconda/conda-bld/linux-64/pyinstrument-0.12_py270.tar.bz2 -o outputdir/
+</pre></div>
+</div>
+<p>These converted packages can then also be individually uploaded to Binstar.</p>
+</div>
 <div class="section" id="writing-the-meta-yaml-by-hand">
 <h2>Writing the meta.yaml by hand<a class="headerlink" href="#writing-the-meta-yaml-by-hand" title="Permalink to this headline">¶</a></h2>
 <p>Suppose you stick with the same package, <tt class="docutils literal"><span class="pre">pyinstrument</span></tt>, but don&#8217;t start
