@@ -360,6 +360,13 @@ sections are optional except for package/name and package/version.</p>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">lib/</span>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">lib/R/lib/</span>
 
+  <span class="c1"># Force files to always be included, even if they are already in the</span>
+  <span class="c1"># environment from the build dependencies. This is needed, for instance,</span>
+  <span class="c1"># to create a recipe for conda itself.</span>
+  <span class="l-Scalar-Plain">always_include_files</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">bin/file1</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">bin/file2</span>
+
   <span class="c1">#########################################################################</span>
   <span class="c1"># binary_relocation, has_prefix_files, binary_has_prefix_files, and     #</span>
   <span class="c1"># detect_binary_files_with_prefix may be required to relocate files     #</span>

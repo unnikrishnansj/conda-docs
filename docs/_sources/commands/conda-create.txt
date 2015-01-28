@@ -71,7 +71,7 @@ conda create
                  offline mode, don't connect to internet
    
           --no-pin
-                 don't use pinned packages
+                 ignore pinned file
    
           -c CHANNEL, --channel CHANNEL
                  additional channel  to  search  for  packages.  These  are  URLs
