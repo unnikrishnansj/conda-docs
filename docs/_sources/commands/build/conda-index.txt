@@ -34,5 +34,5 @@ conda index
    
    
    
-   Continuum Analytics              January 2015                         <B>CONDA(1)</B>
+   Continuum Analytics              February 2015                        <B>CONDA(1)</B>
    </PRE>
