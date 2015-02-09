@@ -16,16 +16,18 @@ conda skeleton
           conda - conda skeleton
    
    DESCRIPTION
-          usage: conda-skeleton [-h] {pypi,cpan} ...
+          usage: conda-skeleton [-h] {pypi,cpan,cran} ...
    
           create skeleton recipes for packages from hosting sites
    
       positional arguments:
-                 {pypi,cpan}
+                 {pypi,cpan,cran}
    
           pypi   Create recipes from packages on PyPI
    
           cpan   Create recipes from packages on CPAN
+   
+          cran   Create recipes from packages on CRAN
    
       optional arguments:
           -h, --help

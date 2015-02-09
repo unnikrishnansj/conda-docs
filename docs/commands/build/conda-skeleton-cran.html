@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conda build &mdash; Conda   documentation</title>
+  <title>conda skeleton cran &mdash; Conda   documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
         <link rel="up" title="conda-build commands" href="../../build-commands.html"/>
-        <link rel="next" title="conda convert" href="conda-convert.html"/>
-        <link rel="prev" title="conda-build commands" href="../../build-commands.html"/> 
+        <link rel="next" title="conda skeleton pypi" href="conda-skeleton-pypi.html"/>
+        <link rel="prev" title="conda skeleton cpan" href="conda-skeleton-cpan.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -139,7 +139,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../build-commands.html">conda-build commands</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">conda build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-build.html">conda build</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-convert.html">conda convert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-develop.html">conda develop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-env.html">conda env</a></li>
@@ -155,7 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-skeleton-cpan.html">conda skeleton cpan</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-skeleton-cran.html">conda skeleton cran</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">conda skeleton cran</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-skeleton-pypi.html">conda skeleton pypi</a></li>
 </ul>
 </li>
@@ -203,10 +203,10 @@
       
           <li><a href="../../build-commands.html">conda-build commands</a> &raquo;</li>
       
-    <li>conda build</li>
+    <li>conda skeleton cran</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/build/conda-build.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/build/conda-skeleton-cran.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -214,8 +214,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-build">
-<span id="build-ref"></span><h1>conda build<a class="headerlink" href="#conda-build" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="conda-skeleton-cran">
+<span id="skeleton-cran-ref"></span><h1>conda skeleton cran<a class="headerlink" href="#conda-skeleton-cran" title="Permalink to this headline">¶</a></h1>
 <PRE>
 <!-- Manpage converted by man2html 3.0.1 -->
 <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
@@ -223,65 +223,46 @@
 
 
 NAME
-       conda - conda build
+       conda - conda skeleton cran
 
 DESCRIPTION
-       usage: conda-build [-h] [-c] [--no-binstar-upload] [--output] [-s] [-t]
+       usage:  conda-skeleton  cran  [-h] [--output-dir OUTPUT_DIR] [--version
+       VERSION]
 
-              [--no-test]  [-b]  [-p]  [-V] [-q] [--python PYTHON_VER] [--perl
-              PERL_VER] [--numpy NUMPY_VER] RECIPE_PATH [RECIPE_PATH ...]
-
-       tool for building conda packages
+       [--all-urls] [--cran-url CRAN_URL] [--recursive]
+              [--no-recursive] [--no-archive] packages [packages ...]
 
    positional arguments:
-       RECIPE_PATH
-              path to recipe directory
+       packages
+              CRAN packages to create recipe skeletons for. You can also spec‐
+              ify package[extra,...] features.
 
    optional arguments:
        -h, --help
               show this help message and exit
 
-       -c, --check
-              only check (validate) the recipe
+       --output-dir OUTPUT_DIR
+              Directory to write recipes to
 
-       --no-binstar-upload
-              do not ask to upload the package to binstar
+       --version VERSION
+              Version to use. Applies to all packages
 
-       --output
-              output the conda package filename which would have been  created
-              and exit
+       --all-urls
+              Look  at  all  URLs,  not just source URLs. Use this if it can't
+              find the right URL.
 
-       -s, --source
-              only obtain the source (but don't build)
+       --cran-url CRAN_URL
+              URL to use for CRAN (default: http://cran.r-project.org/)
 
-       -t, --test
-              test package (assumes package is already build)
+       --recursive
+              Create recipes for dependencies if they do not already exist.
 
-       --no-test
-              do not test the package
+       --no-recursive
+              Don't create recipes for dependencies if  they  do  not  already
+              exist.
 
-       -b, --build-only
-              only  run  the  build,  without  any post processing or testing.
-              Implies --no-test and --no-binstar-upload
-
-       -p, --post
-              run  the  post-build  logic.  Implies  --no-test  and   --nobin‐
-              star-upload
-
-       -V, --version
-              show program's version number and exit
-
-       -q, --quiet
-              do not display progress bar
-
-       --python PYTHON_VER
-              Set the Python version used by conda build
-
-       --perl PERL_VER
-              Set the Perl version used by conda build
-
-       --numpy NUMPY_VER
-              Set the NumPy version used by conda build
+       --no-archive
+              Don't include an Archive download url (default True)
 
 
 
@@ -294,10 +275,10 @@ Continuum Analytics              February 2015                        <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-convert.html" class="btn btn-neutral float-right" title="conda convert">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-skeleton-pypi.html" class="btn btn-neutral float-right" title="conda skeleton pypi">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../build-commands.html" class="btn btn-neutral" title="conda-build commands"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-skeleton-cpan.html" class="btn btn-neutral" title="conda skeleton cpan"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

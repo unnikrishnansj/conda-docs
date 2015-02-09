@@ -20,8 +20,8 @@ conda convert
           {osx-64,linux-32,linux-64,win-32,win-64,all}]
    
           [--dependencies [DEPENDENCIES [DEPENDENCIES ...]]]
-                 [--show-imports] [-f] [-o  OUTPUT_DIR]  [-v]  [--dry-run]  pack‐
-                 age-files [package-files ...]
+                 [--show-imports] [-f]  [-o  OUTPUT_DIR]  [-v]  [--dry-run]  [-q]
+                 package-files [package-files ...]
    
           various tools to convert conda packages
    
@@ -59,6 +59,9 @@ conda convert
    
           --dry-run
                  only display what would have been done
+   
+          -q, --quiet
+                 Don't print as much output
    
           Tool to convert packages ------------------------
    

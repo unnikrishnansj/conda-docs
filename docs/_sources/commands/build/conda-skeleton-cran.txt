@@ -1,0 +1,60 @@
+
+.. _skeleton cran_ref:
+
+conda skeleton cran
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda skeleton cran
+   
+   DESCRIPTION
+          usage:  conda-skeleton  cran  [-h] [--output-dir OUTPUT_DIR] [--version
+          VERSION]
+   
+          [--all-urls] [--cran-url CRAN_URL] [--recursive]
+                 [--no-recursive] [--no-archive] packages [packages ...]
+   
+      positional arguments:
+          packages
+                 CRAN packages to create recipe skeletons for. You can also spec‐
+                 ify package[extra,...] features.
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          --output-dir OUTPUT_DIR
+                 Directory to write recipes to
+   
+          --version VERSION
+                 Version to use. Applies to all packages
+   
+          --all-urls
+                 Look  at  all  URLs,  not just source URLs. Use this if it can't
+                 find the right URL.
+   
+          --cran-url CRAN_URL
+                 URL to use for CRAN (default: http://cran.r-project.org/)
+   
+          --recursive
+                 Create recipes for dependencies if they do not already exist.
+   
+          --no-recursive
+                 Don't create recipes for dependencies if  they  do  not  already
+                 exist.
+   
+          --no-archive
+                 Don't include an Archive download url (default True)
+   
+   
+   
+   Continuum Analytics              February 2015                        <B>CONDA(1)</B>
+   </PRE>
