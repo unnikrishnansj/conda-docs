@@ -730,7 +730,7 @@ example, the recipe is included at the base directory of the git repository,
 so the <tt class="docutils literal"><span class="pre">git_url</span></tt> is <tt class="docutils literal"><span class="pre">../</span></tt>:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">package</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mypkg</span>
-  <span class="l-Scalar-Plain">version</span><span class="p-Indicator">:</span> <span class="p-Indicator">{{</span> <span class="nv">environ</span><span class="p-Indicator">[</span><span class="s">&#39;GIT_DESCRIBE_TAG&#39;</span><span class="p-Indicator">]</span> <span class="p-Indicator">}}</span>
+  <span class="l-Scalar-Plain">version</span><span class="p-Indicator">:</span> <span class="p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_TAG&#39;</span><span class="p-Indicator">,</span> <span class="s">&#39;&#39;</span><span class="nv">)</span> <span class="p-Indicator">}}</span>
 
 <span class="l-Scalar-Plain">build</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">number</span><span class="p-Indicator">:</span> <span class="p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_NUMBER&#39;</span><span class="p-Indicator">,</span> <span class="nv">0)</span> <span class="p-Indicator">}}</span>
