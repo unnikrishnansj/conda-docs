@@ -408,9 +408,12 @@ sections are optional except for package/name and package/version.</p>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">python</span>
   <span class="c1"># Packages required to run the package. These are the dependencies that</span>
   <span class="c1"># will be installed automatically whenever the package is installed.</span>
+  <span class="c1"># Package names should be any valid conda spec (see &quot;Specifying versions</span>
+  <span class="c1"># in requirements&quot; below).</span>
   <span class="l-Scalar-Plain">run</span><span class="p-Indicator">:</span>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">python</span>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">argparse</span> <span class="c1"># [py26]</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">six &gt;=1.8.0</span>
 
 <span class="l-Scalar-Plain">test</span><span class="p-Indicator">:</span>
   <span class="c1"># files which are copied from the recipe into the (temporary) test</span>

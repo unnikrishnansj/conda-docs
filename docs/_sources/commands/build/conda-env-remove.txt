@@ -16,22 +16,23 @@ conda env remove
           conda - conda env remove
    
    DESCRIPTION
-          usage: conda-env remove [-h] [-n NAME | -p PATH] [--json] [-q] [-y]
+          usage:  conda-env  remove [-h] [-n ENVIRONMENT | -p PATH] [--json] [-q]
+          [-y]
    
                  [--dry-run]
    
-          Remove  an environmentRemoves a provided environment.  You must deacti‐
+          Remove an environmentRemoves a provided environment.  You must  deacti‐
           vate the existing environment before you can remove it.
    
       optional arguments:
           -h, --help
                  show this help message and exit
    
-          -n NAME, --name NAME
+          -n ENVIRONMENT, --name ENVIRONMENT
                  name of environment (in envs dirs)
    
           -p PATH, --prefix PATH
-                 full path to environment prefix (default: envs  dirs/build-envi‐
+                 full  path to environment prefix (default: envs dirs/build-envi‐
                  ronment)
    
           --json report all output as json. Suitable for using conda programmati‐

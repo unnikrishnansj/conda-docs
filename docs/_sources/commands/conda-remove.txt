@@ -19,8 +19,8 @@ conda remove
           usage: conda remove [-h] [-y] [--dry-run] [--json] [--all] [--features]
    
           [--no-pin] [-c CHANNEL] [--override-channels]
-                 [-n  NAME  |  -p  PATH]  [-q]  [--use-index-cache] [--use-local]
-                 [--offline] [package_name [package_name ...]]
+                 [-n    ENVIRONMENT   |   -p   PATH]   [-q]   [--use-index-cache]
+                 [--use-local] [--offline] [package_name [package_name ...]]
    
           remove a list of packages from a  specified  conda  environment.   Nor‐
           mally,  only  the  specified  package  is removed, and not the packages
@@ -66,7 +66,7 @@ conda remove
           --override-channels
                  Do not search default or .condarc channels. Requires --channel.
    
-          -n NAME, --name NAME
+          -n ENVIRONMENT, --name ENVIRONMENT
                  name of environment (in envs dirs)
    
           -p PATH, --prefix PATH

@@ -16,7 +16,7 @@ conda develop
           conda - conda develop
    
    DESCRIPTION
-          usage: conda-develop [-h] [-n NAME | -p PATH] PATH [PATH ...]
+          usage: conda-develop [-h] [-n ENVIRONMENT | -p PATH] PATH [PATH ...]
    
           Install  a Python package in 'development mode'. This works by creating
           a conda.pth file in site-packages, and using setup.py to determine  any
@@ -29,7 +29,7 @@ conda develop
           -h, --help
                  show this help message and exit
    
-          -n NAME, --name NAME
+          -n ENVIRONMENT, --name ENVIRONMENT
                  name of environment (in envs dirs)
    
           -p PATH, --prefix PATH

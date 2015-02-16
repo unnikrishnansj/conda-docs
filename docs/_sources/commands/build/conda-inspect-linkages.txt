@@ -16,7 +16,8 @@ conda inspect linkages
           conda - conda inspect linkages
    
    DESCRIPTION
-          usage: conda-inspect linkages [-h] [--show-files] [-n NAME | -p PATH]
+          usage:  conda-inspect linkages [-h] [--show-files] [-n ENVIRONMENT | -p
+          PATH]
    
                  packages [packages ...]
    
@@ -31,11 +32,11 @@ conda inspect linkages
           --show-files
                  Show the files in the package that link to each library
    
-          -n NAME, --name NAME
+          -n ENVIRONMENT, --name ENVIRONMENT
                  name of environment (in envs dirs)
    
           -p PATH, --prefix PATH
-                 full  path to environment prefix (default: envs dirs/build-envi‐
+                 full path to environment prefix (default: envs  dirs/build-envi‐
                  ronment)
    
    

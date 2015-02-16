@@ -363,6 +363,10 @@ distinguished by the repository sub-directory they are contained in.</p>
 </div>
 <div class="section" id="package-match-specifications">
 <span id="build-version-spec"></span><h2>Package Match Specifications<a class="headerlink" href="#package-match-specifications" title="Permalink to this headline">¶</a></h2>
+<p>Note that this is not the same as the syntax used at the command line with
+conda install (like <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">python=3.4</span></tt>). Internally, conda
+translates the command line syntax to the spec defined below (for example,
+<tt class="docutils literal"><span class="pre">python=3.4</span></tt> is translated to <tt class="docutils literal"><span class="pre">python</span> <span class="pre">3.4*</span></tt>).</p>
 <p>Package dependencies are specified using a match specification.  A match
 specification a space separated string of 1, 2 or 3 parts:</p>
 <ul>
@@ -396,7 +400,9 @@ parts, the second part has to be the exact version.</p>
 </ul>
 <p>Remember that the version specification cannot contain spaces, as spaces are
 used to delimit the package, version, and build string in the whole match
-specification. <tt class="docutils literal"><span class="pre">python</span> <span class="pre">&gt;=</span> <span class="pre">2.7</span></tt> is an invalid match specification.</p>
+specification. <tt class="docutils literal"><span class="pre">python</span> <span class="pre">&gt;=</span> <span class="pre">2.7</span></tt> is an invalid match
+specification. Furthermore, <tt class="docutils literal"><span class="pre">python&gt;=2.7</span></tt> will be matched as any version of
+a package named &#8220;python&gt;=2.7&#8221;.</p>
 <div class="section" id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <p>The following are all valid match specifications for numpy-1.8.1-py27_0:</p>

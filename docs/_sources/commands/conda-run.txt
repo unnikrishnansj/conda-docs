@@ -16,7 +16,7 @@ conda run
           conda - conda run
    
    DESCRIPTION
-          usage: conda run [-h] [-n NAME | -p PATH] [-q] [--json]
+          usage: conda run [-h] [-n ENVIRONMENT | -p PATH] [-q] [--json]
    
                  [COMMAND] [ARGUMENTS [ARGUMENTS ...]]
    
@@ -33,7 +33,7 @@ conda run
           -h, --help
                  show this help message and exit
    
-          -n NAME, --name NAME
+          -n ENVIRONMENT, --name ENVIRONMENT
                  name of environment (in envs dirs)
    
           -p PATH, --prefix PATH

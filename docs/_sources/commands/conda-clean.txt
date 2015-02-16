@@ -19,7 +19,7 @@ conda clean
           usage:  conda  clean [-h] [-y] [--dry-run] [--json] [-i] [-l] [-t] [-p]
           [-s]
    
-          Remove unused packages and caches
+          Remove unused packages and caches.
    
       optional arguments:
           -h, --help

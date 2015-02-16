@@ -226,11 +226,10 @@ NAME
        conda - conda bundle
 
 DESCRIPTION
-       usage: conda bundle [-h] [-c | -x PATH | --metadump PATH] [-n NAME | -p
-       PATH]
+       usage: conda bundle [-h] [-c | -x PATH | --metadump PATH]
 
-       [-q] [--bundle-name NAME] [--data-path PATH]
-              [--extra-meta PATH] [--no-env] [--json]
+       [-n ENVIRONMENT | -p PATH] [-q] [--bundle-name NAME]
+              [--data-path PATH] [--extra-meta PATH] [--no-env] [--json]
 
        Create or extract a "bundle package" (EXPERIMENTAL)
 
@@ -247,11 +246,11 @@ DESCRIPTION
        --metadump PATH
               dump metadata of bundle at PATH
 
-       -n NAME, --name NAME
+       -n ENVIRONMENT, --name ENVIRONMENT
               name of environment (in envs dirs)
 
        -p PATH, --prefix PATH
-              full path to environment prefix (default: envs  dirs/build-envi‐
+              full  path to environment prefix (default: envs dirs/build-envi‐
               ronment)
 
        -q, --quiet
@@ -264,7 +263,7 @@ DESCRIPTION
               path to data to be included in bundle
 
        --extra-meta PATH
-              path to json file with additional meta-data no
+              path to json file with additional meta-data
 
        --no-env
               no environment

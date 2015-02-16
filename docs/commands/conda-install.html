@@ -230,8 +230,8 @@ DESCRIPTION
 
        [--file FILE] [--unknown] [--no-deps] [-m]
               [--use-index-cache]  [--use-local]  [--offline]  [--no-pin]  [-c
-              CHANNEL] [--override-channels] [-n NAME | -p PATH] [-q] [--copy]
-              [--alt-hint] [--json] [package_spec [package_spec ...]]
+              CHANNEL] [--override-channels] [-n ENVIRONMENT | -p  PATH]  [-q]
+              [--copy] [--alt-hint] [--json] [package_spec [package_spec ...]]
 
        Install  a  list  of  packages into a specified conda environment.  The
        arguments  may  be  packages  specifications  (e.g.  bitarray=0.8),  or
@@ -301,7 +301,7 @@ DESCRIPTION
        --override-channels
               Do not search default or .condarc channels. Requires --channel.
 
-       -n NAME, --name NAME
+       -n ENVIRONMENT, --name ENVIRONMENT
               name of environment (in envs dirs)
 
        -p PATH, --prefix PATH

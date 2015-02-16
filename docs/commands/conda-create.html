@@ -231,10 +231,11 @@ DESCRIPTION
 
        [--no-deps] [-m] [--use-index-cache] [--use-local]
               [--offline] [--no-pin] [-c  CHANNEL]  [--override-channels]  [-n
-              NAME  |  -p  PATH]  [-q] [--copy] [--alt-hint] [--json] [--clone
-              ENV] [--no-default-packages] [package_spec [package_spec ...]]
+              ENVIRONMENT  |  -p  PATH]  [-q]  [--copy]  [--alt-hint] [--json]
+              [--clone  ENV]  [--no-default-packages]   [package_spec   [pack‐
+              age_spec ...]]
 
-       Create a new conda environment from a list of  specified  packages.  To
+       Create  a  new  conda environment from a list of specified packages. To
        use the created environment, use 'source activate envname' look in that
        directory first.  This command requires either the -n NAME or -p PREFIX
        option.
@@ -254,15 +255,15 @@ DESCRIPTION
               only display what would have been done
 
        -f, --force
-              force  install  (even  when  package already installed), implies
+              force install (even when  package  already  installed),  implies
               --no-deps
 
        --file FILE
               read package versions from FILE
 
        --unknown
-              use index metadata from the local package cache (which are  from
-              unknown  channels)  (installing  local packages directly implies
+              use  index metadata from the local package cache (which are from
+              unknown channels) (installing local  packages  directly  implies
               this option)
 
        --no-deps
@@ -284,24 +285,24 @@ DESCRIPTION
               ignore pinned file
 
        -c CHANNEL, --channel CHANNEL
-              additional channel  to  search  for  packages.  These  are  URLs
-              searched  in  the  order  they  are given (including file:// for
+              additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
               local directories). Then, the defaults or channels from .condarc
-              are  searched (unless --override-channels is given). You can use
-              'defaults' to get the default packages for conda,  and  'system'
-              to  get  the  system  packages,  which  also takes .condarc into
-              account. You can also  use  any  name  and  the  .condarc  chan‐
-              nel_alias  value will be prepended. The default channel_alias is
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
               http://conda.binstar.org/
 
        --override-channels
               Do not search default or .condarc channels. Requires --channel.
 
-       -n NAME, --name NAME
+       -n ENVIRONMENT, --name ENVIRONMENT
               name of environment (in envs dirs)
 
        -p PATH, --prefix PATH
-              full path to environment prefix (default: envs  dirs/build-envi‐
+              full  path to environment prefix (default: envs dirs/build-envi‐
               ronment)
 
        -q, --quiet

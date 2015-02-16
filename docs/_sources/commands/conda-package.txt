@@ -16,7 +16,8 @@ conda package
           conda - conda package
    
    DESCRIPTION
-          usage: conda package [-h] [-n NAME | -p PATH] [-w PATH [PATH ...]]
+          usage:  conda  package  [-h]  [-n ENVIRONMENT | -p PATH] [-w PATH [PATH
+          ...]]
    
           [-L PKG-NAME] [-r] [-u] [--pkg-name PKG_NAME]
                  [--pkg-version PKG_VERSION] [--pkg-build PKG_BUILD]
@@ -27,11 +28,11 @@ conda package
           -h, --help
                  show this help message and exit
    
-          -n NAME, --name NAME
+          -n ENVIRONMENT, --name ENVIRONMENT
                  name of environment (in envs dirs)
    
           -p PATH, --prefix PATH
-                 full  path to environment prefix (default: envs dirs/build-envi‐
+                 full path to environment prefix (default: envs  dirs/build-envi‐
                  ronment)
    
           -w PATH [PATH ...], --which PATH [PATH ...]

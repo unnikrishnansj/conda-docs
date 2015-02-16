@@ -16,10 +16,10 @@ conda list
           conda - conda list
    
    DESCRIPTION
-          usage:  conda  list  [-h]  [-n  NAME | -p PATH] [--json] [-c] [-e] [-r]
-          [--no-pip]
+          usage:  conda  list  [-h] [-n ENVIRONMENT | -p PATH] [--json] [-c] [-e]
+          [-r]
    
-                 [regex]
+                 [--no-pip] [regex]
    
           List linked packages in a conda environment.
    
@@ -30,7 +30,7 @@ conda list
           -h, --help
                  show this help message and exit
    
-          -n NAME, --name NAME
+          -n ENVIRONMENT, --name ENVIRONMENT
                  name of environment (in envs dirs)
    
           -p PATH, --prefix PATH
