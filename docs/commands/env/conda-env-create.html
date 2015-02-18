@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conda env export &mdash; Conda   documentation</title>
+  <title>conda env create &mdash; Conda   documentation</title>
   
 
   
@@ -29,9 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
-        <link rel="up" title="conda-build commands" href="../../build-commands.html"/>
-        <link rel="next" title="conda env list" href="conda-env-list.html"/>
-        <link rel="prev" title="conda env create" href="conda-env-create.html"/> 
+        <link rel="up" title="conda-env commands" href="../../env-commands.html"/>
+        <link rel="next" title="conda env export" href="conda-env-export.html"/>
+        <link rel="prev" title="conda env" href="conda-env.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -134,29 +134,33 @@
 <li class="toctree-l2"><a class="reference internal" href="../conda-search.html">conda search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../conda-uninstall.html">conda uninstall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../conda-update.html">conda update</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../commands.html#conda-build-commands">conda-build commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commands.html#conda-build-commands">conda-build commands</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../commands.html#conda-env-commands">conda-env commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../commands.html#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../build-commands.html">conda-build commands</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="conda-build.html">conda build</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-convert.html">conda convert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-develop.html">conda develop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build-commands.html">conda-build commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-build.html">conda build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-convert.html">conda convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-develop.html">conda develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-index.html">conda index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-inspect.html">conda inspect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-inspect-linkages.html">conda inspect linkages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-metapackage.html">conda metapackage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-pipbuild.html">conda pipbuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-skeleton.html">conda skeleton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-skeleton-cpan.html">conda skeleton cpan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-skeleton-cran.html">conda skeleton cran</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build/conda-skeleton-pypi.html">conda skeleton pypi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../env-commands.html">conda-env commands</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="conda-env.html">conda env</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-env-create.html">conda env create</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">conda env export</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">conda env create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-env-export.html">conda env export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-env-list.html">conda env list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-env-remove.html">conda env remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-env-update.html">conda env update</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-index.html">conda index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-inspect.html">conda inspect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-inspect-linkages.html">conda inspect linkages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-skeleton-cpan.html">conda skeleton cpan</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-skeleton-cran.html">conda skeleton cran</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-skeleton-pypi.html">conda skeleton pypi</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../spec.html">Conda package specification</a><ul>
@@ -201,12 +205,12 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../../build-commands.html">conda-build commands</a> &raquo;</li>
+          <li><a href="../../env-commands.html">conda-env commands</a> &raquo;</li>
       
-    <li>conda env export</li>
+    <li>conda env create</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/build/conda-env-export.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/env/conda-env-create.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -214,8 +218,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-env-export">
-<span id="env-export-ref"></span><h1>conda env export<a class="headerlink" href="#conda-env-export" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="conda-env-create">
+<span id="env-create-ref"></span><h1>conda env create<a class="headerlink" href="#conda-env-create" title="Permalink to this headline">¶</a></h1>
 <PRE>
 <!-- Manpage converted by man2html 3.0.1 -->
 <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
@@ -223,12 +227,12 @@
 
 
 NAME
-       conda - conda env export
+       conda - conda env create
 
 DESCRIPTION
-       usage: conda-env export [-h] [-n NAME] [-f FILE]
+       usage: conda-env create [-h] [-n NAME] [-f FILE] [-q QUIET] [--json]
 
-       Export a given environment
+       Create an environment based on an environment file
 
    optional arguments:
        -h, --help
@@ -238,9 +242,18 @@ DESCRIPTION
               name of environment (in envs dirs)
 
        -f FILE, --file FILE
+              environment definition (default: environment.yml)
+
+       -q QUIET, --quiet QUIET
+
+       --json
+              report all output as json. Suitable for using conda programmati‐
+              cally.
 
    examples:
-              conda env export conda env export --file SOME_FILE
+              conda env create  conda  env  create  -n=foo  conda  env  create
+              -f=/path/to/environment.yml    conda   env   create   --name=foo
+              --file=environment.yml
 
 
 
@@ -253,10 +266,10 @@ Continuum Analytics              February 2015                        <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-env-list.html" class="btn btn-neutral float-right" title="conda env list">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-env-export.html" class="btn btn-neutral float-right" title="conda env export">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conda-env-create.html" class="btn btn-neutral" title="conda env create"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-env.html" class="btn btn-neutral" title="conda env"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
