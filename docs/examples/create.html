@@ -92,6 +92,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#issue-permission-denied-errors-during-install">Issue:  permission denied errors during install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be">Issue: Conda claims that a package is installed, but it appears not to be.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#issue-pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty">Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#issue-valueerror-unknown-locale-utf-8-on-mac-os-x">Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on Mac OS X</a></li>
@@ -233,7 +234,7 @@ default.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create -p ~/anaconda/envs/test2 <span class="nv">anaconda</span><span class="o">=</span>1.4.0 <span class="nv">python</span><span class="o">=</span>2.7 <span class="nv">numpy</span><span class="o">=</span>1.6
 
 
-Package plan <span class="k">for </span>creating environment at /Users/test/anaconda/envs/test2:
+Package plan <span class="k">for</span> creating environment at /Users/test/anaconda/envs/test2:
 
 The following packages will be downloaded:
 
@@ -243,31 +244,31 @@ The following packages will be downloaded:
 
 The following packages will be linked:
 
-    package                    |  build
-    -------------------------  |  ---------------
-    _license-1.1               |           py27_0
-    anaconda-1.4.0             |       np16py27_0
-    astropy-0.2                |       np16py27_0
-    biopython-1.60             |       np16py27_0
+    package                    <span class="p">|</span>  build
+    -------------------------  <span class="p">|</span>  ---------------
+    _license-1.1               <span class="p">|</span>           py27_0
+    anaconda-1.4.0             <span class="p">|</span>       np16py27_0
+    astropy-0.2                <span class="p">|</span>       np16py27_0
+    biopython-1.60             <span class="p">|</span>       np16py27_0
 
     ...
 
-    xlwt-0.7.4                 |           py27_0
-    yaml-0.1.4                 |                0
-    zeromq-2.2.0               |                0
-    zlib-1.2.7                 |                0
+    xlwt-0.7.4                 <span class="p">|</span>           py27_0
+    yaml-0.1.4                 <span class="p">|</span>                0
+    zeromq-2.2.0               <span class="p">|</span>                0
+    zlib-1.2.7                 <span class="p">|</span>                0
 
 
 Proceed <span class="o">(</span>y/n<span class="o">)</span>? y
 
 Fetching packages...
 
-redis-py-2.7.2-py27_0.tar.bz2 100% |##################################################################################| Time: 0:00:00 689.67 kB/s
-scikit-image-0.8.2-np16py27_0.tar.bz2 100% |##########################################################################| Time: 0:00:02   1.46 MB/s
+redis-py-2.7.2-py27_0.tar.bz2 100% <span class="p">|</span><span class="c">##################################################################################| Time: 0:00:00 689.67 kB/s</span>
+scikit-image-0.8.2-np16py27_0.tar.bz2 100% <span class="p">|</span><span class="c">##########################################################################| Time: 0:00:02   1.46 MB/s</span>
 
 Linking packages...
 
-<span class="o">[</span>      COMPLETE      <span class="o">]</span> |###################################################################################################################| 100%
+<span class="o">[</span>      COMPLETE      <span class="o">]</span> <span class="p">|</span><span class="c">###################################################################################################################| 100%</span>
 
 To activate this environment, <span class="nb">type</span> <span class="s1">&#39;source activate test2&#39;</span>
 
@@ -283,7 +284,7 @@ where it will be discoverable by using conda&#8217;s
 packages conda has to download.  You can also skip the <tt class="docutils literal"><span class="pre">Proceed(y/n)?</span></tt> check with <tt class="docutils literal"><span class="pre">--yes</span></tt></p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create --quiet --yes -n foo python
 
-Package plan <span class="k">for </span>creating environment at /Users/test/anaconda/envs/foo:
+Package plan <span class="k">for</span> creating environment at /Users/test/anaconda/envs/foo:
 
 The following packages will be downloaded:
 
@@ -294,13 +295,13 @@ The following packages will be downloaded:
 
 The following packages will be linked:
 
-    package                    |  build
-    -------------------------  |  ---------------
-    python-2.7.4               |                0
-    readline-6.2               |                1
-    sqlite-3.7.13              |                1
-    tk-8.5.13                  |                1
-    zlib-1.2.7                 |                1
+    package                    <span class="p">|</span>  build
+    -------------------------  <span class="p">|</span>  ---------------
+    python-2.7.4               <span class="p">|</span>                0
+    readline-6.2               <span class="p">|</span>                1
+    sqlite-3.7.13              <span class="p">|</span>                1
+    tk-8.5.13                  <span class="p">|</span>                1
+    zlib-1.2.7                 <span class="p">|</span>                1
 
 
 To activate this environment, <span class="nb">type</span> <span class="s1">&#39;source activate foo&#39;</span>
@@ -311,17 +312,17 @@ To deactivate this environment, <span class="nb">type</span> <span class="s1">&#
 <p>To see what packages will be downloaded and/or used in an environment before creating it, you can use the <tt class="docutils literal"><span class="pre">--dry-run</span></tt> option.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create --dry-run -n foo2 python
 
-Package plan <span class="k">for </span>creating environment at /Users/maggie/anaconda/envs/foo2:
+Package plan <span class="k">for</span> creating environment at /Users/maggie/anaconda/envs/foo2:
 
 The following packages will be linked:
 
-    package                    |  build
-    -------------------------  |  ---------------
-    python-2.7.4               |                0
-    readline-6.2               |                1
-    sqlite-3.7.13              |                1
-    tk-8.5.13                  |                1
-    zlib-1.2.7                 |                1
+    package                    <span class="p">|</span>  build
+    -------------------------  <span class="p">|</span>  ---------------
+    python-2.7.4               <span class="p">|</span>                0
+    readline-6.2               <span class="p">|</span>                1
+    sqlite-3.7.13              <span class="p">|</span>                1
+    tk-8.5.13                  <span class="p">|</span>                1
+    zlib-1.2.7                 <span class="p">|</span>                1
 </pre></div>
 </div>
 </div>

@@ -91,6 +91,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-permission-denied-errors-during-install">Issue:  permission denied errors during install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be">Issue: Conda claims that a package is installed, but it appears not to be.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty">Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-valueerror-unknown-locale-utf-8-on-mac-os-x">Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on Mac OS X</a></li>
@@ -332,7 +333,7 @@ package. First, make sure that <tt class="docutils literal"><span class="pre">ar
 </pre></div>
 </div>
 <p>Then add</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">eval</span> <span class="s2">&quot;$(register-python-argcomplete conda)&quot;</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>register-python-argcomplete conda<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>to your bash profile. You can test that it works by opening a new terminal

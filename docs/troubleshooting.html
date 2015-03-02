@@ -91,6 +91,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#issue-permission-denied-errors-during-install">Issue:  permission denied errors during install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be">Issue: Conda claims that a package is installed, but it appears not to be.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#issue-pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty">Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#issue-valueerror-unknown-locale-utf-8-on-mac-os-x">Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on Mac OS X</a></li>
@@ -217,6 +218,23 @@
             
   <div class="section" id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="issue-permission-denied-errors-during-install">
+<h2>Issue:  permission denied errors during install<a class="headerlink" href="#issue-permission-denied-errors-during-install" title="Permalink to this headline">¶</a></h2>
+<p>umask is a command that determines the mask settings that control how file permissions are set for newly created files. If you have a very restrictive umask (such as 077), you will see &#8220;permission denied&#8221; errors.</p>
+<div class="section" id="resolution-set-less-restrictive-umask-before-calling-conda-commands">
+<h3>Resolution:  set less restrictive umask before calling conda commands.<a class="headerlink" href="#resolution-set-less-restrictive-umask-before-calling-conda-commands" title="Permalink to this headline">¶</a></h3>
+<p>Conda was intended as a user space tool, but often users need to use it in a global environment. One place this can go awry is with restrictive file permissions.  Conda creates links when you install files that have to be read by others on the system.</p>
+<p>To give yourself full permissions for files and directories, but prevent the group and other users from having access, before installing set the umask to 007, install conda, then return the umask to the original setting afterwards:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">umask </span>007
+<span class="nv">$ </span>conda install
+<span class="nv">$ </span><span class="nb">umask </span>077
+</pre></div>
+</div>
+</div></blockquote>
+<p>For more information on umask, please visit <a class="reference external" href="http://en.wikipedia.org/wiki/Umask">http://en.wikipedia.org/wiki/Umask</a>.</p>
+</div>
+</div>
 <div class="section" id="issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be">
 <h2>Issue: Conda claims that a package is installed, but it appears not to be.<a class="headerlink" href="#issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes conda will claim that a package is already installed, but it will

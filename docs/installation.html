@@ -91,6 +91,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-permission-denied-errors-during-install">Issue:  permission denied errors during install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be">Issue: Conda claims that a package is installed, but it appears not to be.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty">Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-valueerror-unknown-locale-utf-8-on-mac-os-x">Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on Mac OS X</a></li>
@@ -263,7 +264,7 @@ edit the .bashrc or .bash_profile files.</p>
 <p>A complete example:</p>
 <div class="highlight-bash"><div class="highlight"><pre>wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/miniconda/bin:$PATH&quot;</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <div class="admonition seealso">

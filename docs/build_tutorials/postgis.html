@@ -92,6 +92,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#issue-permission-denied-errors-during-install">Issue:  permission denied errors during install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be">Issue: Conda claims that a package is installed, but it appears not to be.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#issue-pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty">Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html#issue-valueerror-unknown-locale-utf-8-on-mac-os-x">Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on Mac OS X</a></li>
@@ -490,19 +491,19 @@ non-standard dependencies. I uploaded my package as <tt class="docutils literal"
 <span class="pre">proj</span></tt> under the build and run requirements in <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> and add the flag
 <tt class="docutils literal"><span class="pre">--with-projdir=$PREFIX</span></tt> in <tt class="docutils literal"><span class="pre">build.sh</span></tt> file.</p>
 <p>At this point the series of dependencies I have assembled is reflected by the conda build script&#8217;s output:</p>
-<div class="highlight-bash"><div class="highlight"><pre>package                    |            build
----------------------------|-----------------
-geos-3.4.2                 |                0   hard-link
-postgresql-9.3.4           |                0   hard-link
-proj-4.8.0                 |                0   hard-link
-zlib-1.2.7                 |                0   hard-link
+<div class="highlight-bash"><div class="highlight"><pre>package                    <span class="p">|</span>            build
+---------------------------<span class="p">|</span>-----------------
+geos-3.4.2                 <span class="p">|</span>                <span class="m">0</span>   hard-link
+postgresql-9.3.4           <span class="p">|</span>                <span class="m">0</span>   hard-link
+proj-4.8.0                 <span class="p">|</span>                <span class="m">0</span>   hard-link
+zlib-1.2.7                 <span class="p">|</span>                <span class="m">0</span>   hard-link
 </pre></div>
 </div>
 </div>
 <div class="section" id="error-gdal">
 <h3>ERROR - gdal<a class="headerlink" href="#error-gdal" title="Permalink to this headline">¶</a></h3>
 <p>Next I encountered:</p>
-<div class="highlight-bash"><div class="highlight"><pre>checking <span class="k">for </span>gdal-config... no
+<div class="highlight-bash"><div class="highlight"><pre>checking <span class="k">for</span> gdal-config... no
 
 checking GDAL version... not found
 
@@ -535,7 +536,7 @@ that I need a <tt class="docutils literal"><span class="pre">json-c</span></tt> 
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda search json-c
 Fetching package metadata: ...............
 
-json-c                       0.11.20130402                 0  trent
+json-c                       0.11.20130402                 <span class="m">0</span>  trent
 </pre></div>
 </div>
 <p>Notice that in my <tt class="docutils literal"><span class="pre">.condarc</span></tt> file I have trent channel, where <tt class="docutils literal"><span class="pre">json-c</span></tt> is available.
@@ -598,7 +599,7 @@ make install
 </pre></div>
 </div>
 <p>The next error message from <tt class="docutils literal"><span class="pre">configure</span></tt> is:</p>
-<div class="highlight-bash"><div class="highlight"><pre>checking <span class="k">for </span>xml2-config... no
+<div class="highlight-bash"><div class="highlight"><pre>checking <span class="k">for</span> xml2-config... no
 
 configure: error: could not find xml2-config from libxml2 within the current path. You may need to try re-running configure with a --with-xml2config parameter.
 </pre></div>
@@ -656,7 +657,7 @@ Fetching package metadata: ......
 </pre></div>
 </div>
 <p>And my <tt class="docutils literal"><span class="pre">build.sh</span></tt> is</p>
-<div class="highlight-bash"><div class="highlight"><pre>chmod 755 configure
+<div class="highlight-bash"><div class="highlight"><pre>chmod <span class="m">755</span> configure
 ./configure <span class="se">\</span>
     --prefix<span class="o">=</span><span class="nv">$PREFIX</span> <span class="se">\</span>
     --with-pgconfig<span class="o">=</span><span class="nv">$PREFIX</span>/bin/pg_config <span class="se">\</span>
