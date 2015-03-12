@@ -16,7 +16,7 @@ conda index
           conda - conda index
    
    DESCRIPTION
-          usage: conda-index [-h] [-f] [-q] [dir [dir ...]]
+          usage: conda-index [-h] [-c] [-f] [-q] [dir [dir ...]]
    
           Update package index metadata files in given directories
    
@@ -26,6 +26,10 @@ conda index
       optional arguments:
           -h, --help
                  show this help message and exit
+   
+          -c, --check-md5
+                 Use  MD5 values instead of file modification times for determin‐
+                 ing if a package's metadata needs to be updated.
    
           -f, --force
                  force reading all files

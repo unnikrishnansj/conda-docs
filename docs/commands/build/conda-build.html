@@ -231,10 +231,12 @@ NAME
        conda - conda build
 
 DESCRIPTION
-       usage: conda-build [-h] [-c] [--no-binstar-upload] [--output] [-s] [-t]
+       usage: conda-build [-h] [--check] [--no-binstar-upload] [--output] [-s]
+       [-t]
 
-              [--no-test]  [-b]  [-p]  [-V] [-q] [--python PYTHON_VER] [--perl
-              PERL_VER] [--numpy NUMPY_VER] RECIPE_PATH [RECIPE_PATH ...]
+              [--no-test] [-b] [-p] [-V] [-q]  [--python  PYTHON_VER]  [--perl
+              PERL_VER] [--numpy NUMPY_VER] [-c CHANNEL] [--override-channels]
+              RECIPE_PATH [RECIPE_PATH ...]
 
        tool for building conda packages
 
@@ -246,7 +248,7 @@ DESCRIPTION
        -h, --help
               show this help message and exit
 
-       -c, --check
+       --check
               only check (validate) the recipe
 
        --no-binstar-upload
@@ -287,6 +289,20 @@ DESCRIPTION
 
        --numpy NUMPY_VER
               Set the NumPy version used by conda build
+
+       -c CHANNEL, --channel CHANNEL
+              additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
+              local directories). Then, the defaults or channels from .condarc
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
+              http://conda.binstar.org/
+
+       --override-channels
+              Do not search default or .condarc channels. Requires --channel.
 
 
 
