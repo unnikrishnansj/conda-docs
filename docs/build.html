@@ -302,18 +302,6 @@ sections are optional except for package/name and package/version.</p>
   <span class="l-Scalar-Plain">patches</span><span class="p-Indicator">:</span>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">my.patch</span>    <span class="c1"># the patch file is expected to be found in the recipe</span>
 
-  <span class="c1">#########################################################################</span>
-  <span class="c1"># Note, the source section is optional. If you want to specify a source #</span>
-  <span class="c1"># location locally, the easiest way is to not specify the source here,  #</span>
-  <span class="c1"># but to just add something like                                        #</span>
-  <span class="c1">#                                                                       #</span>
-  <span class="c1"># cp -r $RECIPE_DIR/../src .                                            #</span>
-  <span class="c1"># cd src                                                                #</span>
-  <span class="c1"># ...                                                                   #</span>
-  <span class="c1">#                                                                       #</span>
-  <span class="c1"># in build.sh (and similarly in bld.bat). This assumes the source is    #</span>
-  <span class="c1"># shipped alongside the recipe in src.                                  #</span>
-  <span class="c1">#########################################################################</span>
 
 <span class="l-Scalar-Plain">build</span><span class="p-Indicator">:</span>
   <span class="c1"># The build number should be incremented for new builds of the same version</span>
