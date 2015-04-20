@@ -30,7 +30,7 @@
   
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
         <link rel="up" title="conda-build commands" href="../../build-commands.html"/>
-        <link rel="next" title="conda metapackage" href="conda-metapackage.html"/>
+        <link rel="next" title="conda inspect objects" href="conda-inspect-objects.html"/>
         <link rel="prev" title="conda inspect" href="conda-inspect.html"/> 
 
   
@@ -147,6 +147,7 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-index.html">conda index</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-inspect.html">conda inspect</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">conda inspect linkages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-inspect-objects.html">conda inspect objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
@@ -231,10 +232,10 @@ NAME
        conda - conda inspect linkages
 
 DESCRIPTION
-       usage:  conda-inspect linkages [-h] [--show-files] [-n ENVIRONMENT | -p
-       PATH]
+       usage: conda-inspect linkages [-h] [--untracked] [--show-files]
 
-              packages [packages ...]
+       [-n ENVIRONMENT | -p PATH]
+              [packages [packages ...]]
 
    positional arguments:
        packages
@@ -243,6 +244,10 @@ DESCRIPTION
    optional arguments:
        -h, --help
               show this help message and exit
+
+       --untracked
+              Inspect the untracked files in the environment. Useful when used
+              in conjunction with conda build --buildonly.
 
        --show-files
               Show the files in the package that link to each library
@@ -265,7 +270,7 @@ Continuum Analytics               April 2015                          <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-metapackage.html" class="btn btn-neutral float-right" title="conda metapackage">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-inspect-objects.html" class="btn btn-neutral float-right" title="conda inspect objects">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="conda-inspect.html" class="btn btn-neutral" title="conda inspect"><span class="fa fa-arrow-circle-left"></span> Previous</a>

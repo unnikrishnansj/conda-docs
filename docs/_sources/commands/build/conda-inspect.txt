@@ -16,15 +16,20 @@ conda inspect
           conda - conda inspect
    
    DESCRIPTION
-          usage: conda-inspect [-h] {linkages} ...
+          usage: conda-inspect [-h] {linkages,objects} ...
    
-          tool for inspecting conda packages
+          Tools for inspecting conda packages
    
       positional arguments:
-                 {linkages}
+                 {linkages,objects}
    
           linkages
-                 Tools to investigate linkages of binary libraries in a package
+                 Investigate  linkages  of  binary  libraries  in a package (only
+                 works in Linux and OS X)
+   
+          objects
+                 Investigate binary object files in a package (only works  in  OS
+                 X)
    
       optional arguments:
           -h, --help

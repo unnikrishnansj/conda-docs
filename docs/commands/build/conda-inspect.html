@@ -147,6 +147,7 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-index.html">conda index</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">conda inspect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-inspect-linkages.html">conda inspect linkages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-inspect-objects.html">conda inspect objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
@@ -231,15 +232,20 @@ NAME
        conda - conda inspect
 
 DESCRIPTION
-       usage: conda-inspect [-h] {linkages} ...
+       usage: conda-inspect [-h] {linkages,objects} ...
 
-       tool for inspecting conda packages
+       Tools for inspecting conda packages
 
    positional arguments:
-              {linkages}
+              {linkages,objects}
 
        linkages
-              Tools to investigate linkages of binary libraries in a package
+              Investigate  linkages  of  binary  libraries  in a package (only
+              works in Linux and OS X)
+
+       objects
+              Investigate binary object files in a package (only works  in  OS
+              X)
 
    optional arguments:
        -h, --help

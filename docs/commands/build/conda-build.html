@@ -147,6 +147,7 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-index.html">conda index</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-inspect.html">conda inspect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-inspect-linkages.html">conda inspect linkages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-inspect-objects.html">conda inspect objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
@@ -235,8 +236,8 @@ DESCRIPTION
        [-t]
 
               [--no-test] [-b] [-p] [-V] [-q]  [--python  PYTHON_VER]  [--perl
-              PERL_VER] [--numpy NUMPY_VER] [-c CHANNEL] [--override-channels]
-              RECIPE_PATH [RECIPE_PATH ...]
+              PERL_VER]  [--numpy NUMPY_VER] [--R R_VER] [-c CHANNEL] [--over‐
+              ride-channels] RECIPE_PATH [RECIPE_PATH ...]
 
        tool for building conda packages
 
@@ -289,6 +290,9 @@ DESCRIPTION
 
        --numpy NUMPY_VER
               Set the NumPy version used by conda build
+
+       --R R_VER
+              Set the R version used by conda build
 
        -c CHANNEL, --channel CHANNEL
               additional  channel  to  search  for  packages.  These  are URLs

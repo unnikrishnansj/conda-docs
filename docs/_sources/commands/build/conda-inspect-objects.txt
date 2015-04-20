@@ -1,7 +1,7 @@
 
-.. _inspect linkages_ref:
+.. _inspect objects_ref:
 
-conda inspect linkages
+conda inspect objects
 =======================
 
 .. raw:: html
@@ -13,13 +13,13 @@ conda inspect linkages
    
    
    NAME
-          conda - conda inspect linkages
+          conda - conda inspect objects
    
    DESCRIPTION
-          usage: conda-inspect linkages [-h] [--untracked] [--show-files]
+          usage: conda-inspect objects [-h] [--untracked]
    
-          [-n ENVIRONMENT | -p PATH]
-                 [packages [packages ...]]
+          [--groupby {filename,filetype,rpath}]
+                 [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
    
       positional arguments:
           packages
@@ -33,8 +33,8 @@ conda inspect linkages
                  Inspect the untracked files in the environment. Useful when used
                  in conjunction with conda build --buildonly.
    
-          --show-files
-                 Show the files in the package that link to each library
+          --groupby {filename,filetype,rpath}
+                 Attribute to group by (default: filename)
    
           -n ENVIRONMENT, --name ENVIRONMENT
                  name of environment (in envs dirs)

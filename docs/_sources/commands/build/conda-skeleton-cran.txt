@@ -52,7 +52,7 @@ conda skeleton cran
                  exist.
    
           --no-archive
-                 Don't include an Archive download url (default True)
+                 Don't include an Archive download url
    
    
    

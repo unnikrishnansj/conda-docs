@@ -20,8 +20,8 @@ conda build
           [-t]
    
                  [--no-test] [-b] [-p] [-V] [-q]  [--python  PYTHON_VER]  [--perl
-                 PERL_VER] [--numpy NUMPY_VER] [-c CHANNEL] [--override-channels]
-                 RECIPE_PATH [RECIPE_PATH ...]
+                 PERL_VER]  [--numpy NUMPY_VER] [--R R_VER] [-c CHANNEL] [--over‐
+                 ride-channels] RECIPE_PATH [RECIPE_PATH ...]
    
           tool for building conda packages
    
@@ -74,6 +74,9 @@ conda build
    
           --numpy NUMPY_VER
                  Set the NumPy version used by conda build
+   
+          --R R_VER
+                 Set the R version used by conda build
    
           -c CHANNEL, --channel CHANNEL
                  additional  channel  to  search  for  packages.  These  are URLs
