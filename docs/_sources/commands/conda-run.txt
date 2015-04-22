@@ -22,29 +22,33 @@ conda run
    
           Launches an application installed with Conda.
    
+   OPTIONS
       positional arguments:
           COMMAND
-                 package to launch
+                 Package to launch.
    
           ARGUMENTS
-                 additional arguments to application
+                 Additional arguments to application.
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           -n ENVIRONMENT, --name ENVIRONMENT
-                 name of environment (in envs dirs)
+                 Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 full  path to environment prefix (default: envs dirs/build-envi‐
-                 ronment)
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment).
    
           -q, --quiet
-                 do not display progress bar
+                 Do not display progress bar.
    
-          --json report all output as json. Suitable for using conda programmati‐
+          --json Report all output as json. Suitable for using conda programmati‐
                  cally.
+   
+   EXAMPLES
+                 conda run ipython-notebook
    
    
    

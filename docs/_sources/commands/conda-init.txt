@@ -21,9 +21,18 @@ conda init
           Initialize  conda  into a regular environment (when conda was installed
           as a Python package, e.g. using pip). (DEPRECATED)
    
+   OPTIONS
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
+   
+          WARNING: conda init is deprecated. The recommended way  to  manage  pip
+          installed  conda is to use pip to manage the root environment and conda
+          to manage new conda environments.
+   
+          Note that pip installing conda is not the recommended way  for  setting
+          up  your  system.  The recommended way for setting up a conda system is
+          by installing Miniconda. See http://conda.pydata.org/miniconda.html.
    
    
    

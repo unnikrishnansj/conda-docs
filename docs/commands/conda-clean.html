@@ -237,36 +237,37 @@ DESCRIPTION
 
        Remove unused packages and caches.
 
+OPTIONS
    optional arguments:
        -h, --help
-              show this help message and exit
+              Show this help message and exit.
 
        -y, --yes
-              do not ask for confirmation
+              Do not ask for confirmation.
 
        --dry-run
-              only display what would have been done
+              Only display what would have been done.
 
-       --json report all output as json. Suitable for using conda programmati‐
+       --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
        -i, --index-cache
-              remove index cache
+              Remove index cache.
 
        -l, --lock
-              remove all conda lock files
+              Remove all conda lock files.
 
        -t, --tarballs
-              remove cached package tarballs
+              Remove cached package tarballs.
 
        -p, --packages
-              remove  unused cached packages. Warning: this does not check for
+              Remove  unused cached packages. Warning: this does not check for
               symlinked packages.
 
        -s, --source-cache
-              remove files from the source cache of conda build
+              Remove files from the source cache of conda build.
 
-   examples:
+EXAMPLES
               conda clean --tarballs
 
 

@@ -33,7 +33,7 @@ conda env update
           -q QUIET, --quiet QUIET
    
           --json
-                 report all output as json. Suitable for using conda programmati‐
+                 Report all output as json. Suitable for using conda programmati‐
                  cally.
    
       examples:

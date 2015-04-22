@@ -24,54 +24,55 @@ conda update
                  ENVIRONMENT  |  -p  PATH]  [-q]  [--copy]  [--alt-hint] [--json]
                  [--all] [package_spec [package_spec ...]]
    
-          Update conda packages.
+          Update conda packages to the current version.
    
+   OPTIONS
       positional arguments:
           package_spec
-                 package versions to install into conda environment
+                 Package versions to install into the conda environment.
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           -y, --yes
-                 do not ask for confirmation
+                 Do not ask for confirmation.
    
           --dry-run
-                 only display what would have been done
+                 Only display what would have been done.
    
           -f, --force
-                 force install (even when  package  already  installed),  implies
-                 --no-deps
+                 Force install (even when  package  already  installed),  implies
+                 --no-deps.
    
           --file FILE
-                 read package versions from FILE
+                 Read package versions from FILE.
    
           --unknown
-                 use  index metadata from the local package cache (which are from
-                 unknown channels) (installing local  packages  directly  implies
-                 this option)
+                 Use  index metadata from the local package cache, which are from
+                 unknown channels (installing  local  packages  directly  implies
+                 this option).
    
           --no-deps
-                 do not install dependencies
+                 Do not install dependencies.
    
           -m, --mkdir
-                 create prefix directory if necessary
+                 Create prefix directory if necessary.
    
           --use-index-cache
-                 use cache of channel index files
+                 Use cache of channel index files.
    
           --use-local
-                 use locally built packages
+                 Use locally built packages.
    
           --offline
-                 offline mode, don't connect to internet
+                 Offline mode, don't connect to the Internet.
    
           --no-pin
-                 ignore pinned file
+                 Ignore pinned file.
    
           -c CHANNEL, --channel CHANNEL
-                 additional  channel  to  search  for  packages.  These  are URLs
+                 Additional  channel  to  search  for  packages.  These  are URLs
                  searched in the order they  are  given  (including  file://  for
                  local directories). Then, the defaults or channels from .condarc
                  are searched (unless --override-channels is given). You can  use
@@ -79,33 +80,33 @@ conda update
                  to get the system  packages,  which  also  takes  .condarc  into
                  account.  You  can  also  use  any  name  and the .condarc chan‐
                  nel_alias value will be prepended. The default channel_alias  is
-                 http://conda.binstar.org/
+                 http://conda.binstar.org/.
    
           --override-channels
                  Do not search default or .condarc channels. Requires --channel.
    
           -n ENVIRONMENT, --name ENVIRONMENT
-                 name of environment (in envs dirs)
+                 Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 full  path to environment prefix (default: envs dirs/build-envi‐
-                 ronment)
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 ronment).
    
           -q, --quiet
-                 do not display progress bar
+                 Do not display progress bar.
    
           --copy Install all packages using copies instead of hard- or soft-link‐
                  ing.
    
           --alt-hint
-                 Use an alternate algorithm to generate an unsatisfiable hint
+                 Use an alternate algorithm to generate an unsatisfiability hint.
    
-          --json report all output as json. Suitable for using conda programmati‐
+          --json Report all output as json. Suitable for using conda programmati‐
                  cally.
    
-          --all  Update all installed packages in the environment
+          --all  Update all installed packages in the environment.
    
-      examples:
+   EXAMPLES
                  conda update -n myenv scipy
    
    

@@ -79,7 +79,7 @@ conda build
                  Set the R version used by conda build
    
           -c CHANNEL, --channel CHANNEL
-                 additional  channel  to  search  for  packages.  These  are URLs
+                 Additional  channel  to  search  for  packages.  These  are URLs
                  searched in the order they  are  given  (including  file://  for
                  local directories). Then, the defaults or channels from .condarc
                  are searched (unless --override-channels is given). You can  use
@@ -87,7 +87,7 @@ conda build
                  to get the system  packages,  which  also  takes  .condarc  into
                  account.  You  can  also  use  any  name  and the .condarc chan‐
                  nel_alias value will be prepended. The default channel_alias  is
-                 http://conda.binstar.org/
+                 http://conda.binstar.org/.
    
           --override-channels
                  Do not search default or .condarc channels. Requires --channel.

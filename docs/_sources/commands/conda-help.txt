@@ -20,13 +20,18 @@ conda help
    
           Displays a list of available conda commands and their help strings.
    
+   OPTIONS
       positional arguments:
           COMMAND
-                 print help information for COMMAND (same as: conda COMMAND -h)
+                 Print  help  information  for  COMMAND  (same  as: conda COMMAND
+                 --help).
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
+   
+   EXAMPLES
+                 conda help install
    
    
    

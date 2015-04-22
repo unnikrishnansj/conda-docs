@@ -234,7 +234,7 @@ NAME
 DESCRIPTION
        usage: conda search [-h] [-n ENVIRONMENT | -p PATH] [--canonical] [-f]
 
-       [--names-only] [--unknown] [--use-index-cache] [-o] [-v]
+       [--names-only] [--unknown] [--use-index-cache] [-o]
               [--platform  {win-32,win-64,osx-64,linux-32,linux-64}]  [--spec]
               [--offline]   [-c   CHANNEL]   [--override-channels]    [--json]
               [--use-local] [regex]
@@ -244,57 +244,59 @@ DESCRIPTION
        with  a  -,  separate  the search from the options with --, like 'conda
        search -- -h'.
 
+       A * in the results means that package is installed in the current envi‐
+       ronment.  A  . means that package is not installed but is cached in the
+       pkgs directory.
+
+OPTIONS
    positional arguments:
-       regex  package  specification  or  regular  expression  to  search  for
-              (default: display all packages)
+       regex  Package  specification  or  regular  expression  to  search  for
+              (default: display all packages).
 
    optional arguments:
        -h, --help
-              show this help message and exit
+              Show this help message and exit.
 
        -n ENVIRONMENT, --name ENVIRONMENT
-              name of environment (in envs dirs)
+              Name of environment (in envs dirs).
 
        -p PATH, --prefix PATH
-              full  path to environment prefix (default: envs dirs/build-envi‐
-              ronment)
+              Full  path to environment prefix (default: envs dirs/build-envi‐
+              ronment).
 
        --canonical
-              output canonical names of packages only
+              Output canonical names of packages only.
 
        -f, --full-name
-              only search for full name, ie. ^&lt;regex&gt;$
+              Only search for full name, ie. ^&lt;regex&gt;$.
 
        --names-only
-              output only package names
+              Output only package names.
 
        --unknown
-              use index metadata from the local package cache (which are  from
-              unknown  channels)  (installing  local packages directly implies
-              this option)
+              Use index metadata from the local package cache, which are  from
+              unknown  channels  (installing  local  packages directly implies
+              this option).
 
        --use-index-cache
-              use cache of channel index files
+              Use cache of channel index files.
 
        -o, --outdated
-              only display installed but outdated packages
-
-       -v, --verbose
-              Show available packages as blocks of data
+              Only display installed but outdated packages.
 
        --platform {win-32,win-64,osx-64,linux-32,linux-64}
               Search the given platform. Should be  formatted  like  'osx-64',
               'linux-32',  'win-64',  and  so on. The default is to search the
               current platform.
 
-       --spec Treat regex argument as a package specification  instead  (pack‐
-              age_name[=version[=build]])
+       --spec Treat the regex argument  as  a  package  specification  instead
+              (package_name[=version[=build]]).
 
        --offline
-              offline mode, don't connect to internet
+              Offline mode, don't connect to the Internet.
 
        -c CHANNEL, --channel CHANNEL
-              additional  channel  to  search  for  packages.  These  are URLs
+              Additional  channel  to  search  for  packages.  These  are URLs
               searched in the order they  are  given  (including  file://  for
               local directories). Then, the defaults or channels from .condarc
               are searched (unless --override-channels is given). You can  use
@@ -302,19 +304,31 @@ DESCRIPTION
               to get the system  packages,  which  also  takes  .condarc  into
               account.  You  can  also  use  any  name  and the .condarc chan‐
               nel_alias value will be prepended. The default channel_alias  is
-              http://conda.binstar.org/
+              http://conda.binstar.org/.
 
        --override-channels
               Do not search default or .condarc channels. Requires --channel.
 
-       --json report all output as json. Suitable for using conda programmati‐
+       --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
        --use-local
-              use locally built packages
+              Use locally built packages.
 
-   examples:
-              conda search -p ~/anaconda/envs/myenv/ scipy
+EXAMPLES
+       Search for packages with 'scikit' in the name:
+
+              conda search scikit
+
+       Search for the 'python'  package  (but  no  other  packages  that  have
+       'python' in the name):
+
+              conda search -f python
+
+       Search  for  packages  for  64-bit Linux (by default, packages for your
+       current platform are shown):
+
+              conda search --platform linux-64
 
 
 

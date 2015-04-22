@@ -234,7 +234,7 @@ NAME
 DESCRIPTION
        usage: conda-inspect objects [-h] [--untracked]
 
-       [--groupby {filename,rpath,filetype}]
+       [--groupby {rpath,filename,filetype}]
               [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
 
    positional arguments:
@@ -249,15 +249,15 @@ DESCRIPTION
               Inspect the untracked files in the environment. Useful when used
               in conjunction with conda build --buildonly.
 
-       --groupby {filename,rpath,filetype}
+       --groupby {rpath,filename,filetype}
               Attribute to group by (default: filename)
 
        -n ENVIRONMENT, --name ENVIRONMENT
-              name of environment (in envs dirs)
+              Name of environment (in envs dirs).
 
        -p PATH, --prefix PATH
-              full path to environment prefix (default: envs  dirs/build-envi‐
-              ronment)
+              Full path to environment prefix (default: envs  dirs/build-envi‐
+              ronment).
 
 
 

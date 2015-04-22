@@ -37,11 +37,11 @@ conda inspect linkages
                  Show the files in the package that link to each library
    
           -n ENVIRONMENT, --name ENVIRONMENT
-                 name of environment (in envs dirs)
+                 Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 full path to environment prefix (default: envs  dirs/build-envi‐
-                 ronment)
+                 Full path to environment prefix (default: envs  dirs/build-envi‐
+                 ronment).
    
    
    
