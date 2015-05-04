@@ -54,5 +54,5 @@ conda info
    
    
    
-   Continuum Analytics               April 2015                          <B>CONDA(1)</B>
+   Continuum Analytics                May 2015                           <B>CONDA(1)</B>
    </PRE>

@@ -551,7 +551,11 @@ need to put the same selector on multiple lines.</p>
 <div class="section" id="environment-variables-set-during-the-build-process">
 <h2>Environment variables set during the build process<a class="headerlink" href="#environment-variables-set-during-the-build-process" title="Permalink to this headline">¶</a></h2>
 <p>The following environment variables are set, both on Unix (<tt class="docutils literal"><span class="pre">build.sh</span></tt>) and on
-Windows (<tt class="docutils literal"><span class="pre">bld.bat</span></tt>) during the build process:</p>
+Windows (<tt class="docutils literal"><span class="pre">bld.bat</span></tt>) during the build process.
+(By default, these are the only variables available to your build script &#8211;
+unless otherwise noted, no variables are inherited from the shell environment
+in which you invoked <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt>. See <a class="reference internal" href="#inherited-env-vars"><em>Inherited Environment Variables</em></a> to
+override this behavior.)</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="50%" />
@@ -607,9 +611,25 @@ installed in the build prefix when it is listed as a build requirement).</td>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">PY_VER</span></tt></td>
 <td>Python version building against</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">CPU_COUNT</span></tt></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">R</span></tt></td>
+<td>Path to R executable in build prefix (note that R is only
+installed in the build prefix when it is listed as a build requirement).</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">CPU_COUNT</span></tt></td>
 <td>Number of CPUs on the system, as reported by
 <tt class="docutils literal"><span class="pre">multiprocessing.cpu_count()</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">LANG</span></tt></td>
+<td>Inherited from your shell environment.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">HTTP_PROXY</span></tt></td>
+<td>Inherited from your shell environment.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">HTTPS_PROXY</span></tt></td>
+<td>Inherited from your shell environment.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">PATH</span></tt></td>
+<td>Inherited from your shell environment, and augmented with <tt class="docutils literal"><span class="pre">$PREFIX/bin</span></tt></td>
 </tr>
 </tbody>
 </table>
@@ -637,6 +657,9 @@ defined in Windows:</p>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">SCRIPTS</span></tt></td>
 <td><tt class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Scripts</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">CYGWIN_PREFIX</span></tt></td>
+<td>Same as <tt class="docutils literal"><span class="pre">PREFIX</span></tt>, but as a unix-style path, e.g. <tt class="docutils literal"><span class="pre">/cygdrive/c/path/to/prefix</span></tt></td>
 </tr>
 </tbody>
 </table>
@@ -681,7 +704,7 @@ defined in Windows:</p>
 <td>Same as <tt class="docutils literal"><span class="pre">CFLAGS</span></tt>.</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">MACOSX_DEPLOYMENT_TARGET</span></tt></td>
-<td>Same as the Anaconda Python. Currently <tt class="docutils literal"><span class="pre">10.5</span></tt>.</td>
+<td>Same as the Anaconda Python. Currently <tt class="docutils literal"><span class="pre">10.6</span></tt>.</td>
 </tr>
 </tbody>
 </table>
@@ -749,6 +772,25 @@ command that is run, and the <tt class="docutils literal"><span class="pre">-e</
 script returns nonzero exit status).  You can revert this in the script if you
 need to by using the <tt class="docutils literal"><span class="pre">set</span></tt> command.</p>
 </div>
+<div class="section" id="inherited-environment-variables">
+<span id="inherited-env-vars"></span><h3>Inherited Environment Variables<a class="headerlink" href="#inherited-environment-variables" title="Permalink to this headline">¶</a></h3>
+<p>Other than those mentioned above, no variables are inherited from the
+environment in which you invoked <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt>. You can choose to inherit
+additional environment variables by adding them to <tt class="docutils literal"><span class="pre">meta.yaml</span></tt>:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">build</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">script_env</span><span class="p-Indicator">:</span>
+   <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">TMPDIR</span>
+   <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">LD_LIBRARY_PATH</span> <span class="c1"># [linux]</span>
+   <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">DYLD_LIBRARY_PATH</span> <span class="c1"># [osx]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Inheriting environment variables like this can make it difficult for others
+to reproduce binaries from source with your recipe. This feature should be
+used with caution or avoided altogether.</p>
+</div>
+</div>
 </div>
 <div class="section" id="environment-variables-that-affect-the-build-process">
 <span id="build-envs"></span><h2>Environment variables that affect the build process<a class="headerlink" href="#environment-variables-that-affect-the-build-process" title="Permalink to this headline">¶</a></h2>
@@ -793,6 +835,9 @@ these scripts exit nonzero the installation/removal will fail.</p>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">PKG_BUILDNUM</span></tt></td>
 <td>The build number of the package.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">RECIPE_DIR</span></tt></td>
+<td>Path to the recipe files.</td>
 </tr>
 </tbody>
 </table>
