@@ -86,11 +86,11 @@ conda update
                  Do not search default or .condarc channels. Requires --channel.
    
           -n ENVIRONMENT, --name ENVIRONMENT
-                 Name of environment (in envs dirs).
+                 Name of environment (in root prefix/envs).
    
           -p PATH, --prefix PATH
-                 Full  path to environment prefix (default: envs dirs/build-envi‐
-                 ronment).
+                 Full   path   to   environment   prefix   (default:   root  pre‐
+                 fix/envs/build-environment).
    
           -q, --quiet
                  Do not display progress bar.
