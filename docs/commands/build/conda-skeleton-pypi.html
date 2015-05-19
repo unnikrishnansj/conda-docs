@@ -237,7 +237,7 @@ DESCRIPTION
 
        [--all-urls] [--pypi-url PYPI_URL] [--no-download]
               [--no-prompt]  [--all-extras]  [--recursive]   [--python-version
-              {2.6,2.7,3.3,3.4}] packages [packages ...]
+              {2.6,2.7,3.3,3.4}] [--manual-url] packages [packages ...]
 
    positional arguments:
        packages
@@ -279,6 +279,10 @@ DESCRIPTION
 
        --python-version {2.6,2.7,3.3,3.4}
               Version of Python to use to run setup.py. Default is 3.4.
+
+       --manual-url
+              Manually   choose  source  url  when  more  than  one  urls  are
+              present.Default is the one with least source size.
 
 
 

@@ -235,8 +235,9 @@ DESCRIPTION
        usage:  conda-skeleton  cran  [-h] [--output-dir OUTPUT_DIR] [--version
        VERSION]
 
-       [--all-urls] [--cran-url CRAN_URL] [--recursive]
-              [--no-recursive] [--no-archive] packages [packages ...]
+       [--git-tag GIT_TAG] [--all-urls]
+              [--cran-url CRAN_URL] [--recursive]  [--no-recursive]  [--no-ar‐
+              chive] packages [packages ...]
 
    positional arguments:
        packages
@@ -253,8 +254,11 @@ DESCRIPTION
        --version VERSION
               Version to use. Applies to all packages
 
+       --git-tag GIT_TAG
+              Git tag to use for GitHub recipes.
+
        --all-urls
-              Look  at  all  URLs,  not just source URLs. Use this if it can't
+              Look at all URLs, not just source URLs. Use  this  if  it  can't
               find the right URL.
 
        --cran-url CRAN_URL
@@ -264,7 +268,7 @@ DESCRIPTION
               Create recipes for dependencies if they do not already exist.
 
        --no-recursive
-              Don't create recipes for dependencies if  they  do  not  already
+              Don't  create  recipes  for  dependencies if they do not already
               exist.
 
        --no-archive

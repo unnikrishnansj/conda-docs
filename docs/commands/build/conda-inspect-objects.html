@@ -234,8 +234,12 @@ NAME
 DESCRIPTION
        usage: conda-inspect objects [-h] [--untracked]
 
-       [--groupby {filename,filetype,rpath}]
+       [--groupby {filetype,filename,rpath}] [--all]
               [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
+
+       Investigate  binary  object  files  in  a package (only works in OS X).
+       Aggregates the output of otool on all the  binary  object  files  in  a
+       package.
 
    positional arguments:
        packages
@@ -249,8 +253,10 @@ DESCRIPTION
               Inspect the untracked files in the environment. Useful when used
               in conjunction with conda build --buildonly.
 
-       --groupby {filename,filetype,rpath}
+       --groupby {filetype,filename,rpath}
               Attribute to group by (default: filename)
+
+       --all  Generate a report for all packages in the environment.
 
        -n ENVIRONMENT, --name ENVIRONMENT
               Name of environment (in envs dirs).

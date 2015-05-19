@@ -25,11 +25,15 @@ conda inspect
    
           linkages
                  Investigate  linkages  of  binary  libraries  in a package (only
-                 works in Linux and OS X)
+                 works in Linux and OS X).  Aggregates  the  output  of  ldd  (on
+                 Linux)  and otool -L (on OS X). Useful for finding broken links,
+                 or links against system libraries that  ought  to  be  dependent
+                 conda packages.
    
           objects
-                 Investigate binary object files in a package (only works  in  OS
-                 X)
+                 Investigate  binary  object files in a package (only works in OS
+                 X). Aggregates the output of otool  on  all  the  binary  object
+                 files in a package.
    
       optional arguments:
           -h, --help

@@ -16,10 +16,15 @@ conda inspect linkages
           conda - conda inspect linkages
    
    DESCRIPTION
-          usage: conda-inspect linkages [-h] [--untracked] [--show-files]
+          usage: conda-inspect linkages [-h] [--untracked] [--show-files] [--all]
    
           [-n ENVIRONMENT | -p PATH]
                  [packages [packages ...]]
+   
+          Investigate  linkages  of  binary libraries in a package (only works in
+          Linux and OS X). Aggregates the output of ldd (on Linux) and  otool  -L
+          (on  OS  X).  Useful  for finding broken links, or links against system
+          libraries that ought to be dependent conda packages.
    
       positional arguments:
           packages
@@ -36,11 +41,13 @@ conda inspect linkages
           --show-files
                  Show the files in the package that link to each library
    
+          --all  Generate a report for all packages in the environment.
+   
           -n ENVIRONMENT, --name ENVIRONMENT
                  Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 Full path to environment prefix (default: envs  dirs/build-envi‐
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
                  ronment).
    
    
