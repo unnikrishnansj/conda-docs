@@ -18,7 +18,7 @@ conda inspect objects
    DESCRIPTION
           usage: conda-inspect objects [-h] [--untracked]
    
-          [--groupby {rpath,filetype,filename}]
+          [--groupby {filename,filetype,rpath}]
                  [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
    
       positional arguments:
@@ -33,7 +33,7 @@ conda inspect objects
                  Inspect the untracked files in the environment. Useful when used
                  in conjunction with conda build --buildonly.
    
-          --groupby {rpath,filetype,filename}
+          --groupby {filename,filetype,rpath}
                  Attribute to group by (default: filename)
    
           -n ENVIRONMENT, --name ENVIRONMENT
