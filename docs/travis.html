@@ -253,14 +253,12 @@ Travis</a>.</p>
   <span class="p-Indicator">-</span> <span class="s">&quot;3.4&quot;</span>
 <span class="l-Scalar-Plain">install</span><span class="p-Indicator">:</span>
   <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">sudo apt-get update</span>
-  <span class="c1"># You may want to periodically update this, although the conda update</span>
-  <span class="c1"># conda line below will keep everything up-to-date.  We do this</span>
-  <span class="c1"># conditionally because it saves us some downloading if the version is</span>
-  <span class="c1"># the same.</span>
+  <span class="c1"># We do this conditionally because it saves us some downloading if the</span>
+  <span class="c1"># version is the same.</span>
   <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">if [[ &quot;$TRAVIS_PYTHON_VERSION&quot; == &quot;2.7&quot; ]]; then</span>
-      <span class="l-Scalar-Plain">wget http://repo.continuum.io/miniconda/Miniconda-3.4.2-Linux-x86_64.sh -O miniconda.sh;</span>
+      <span class="l-Scalar-Plain">wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;</span>
     <span class="l-Scalar-Plain">else</span>
-      <span class="l-Scalar-Plain">wget http://repo.continuum.io/miniconda/Miniconda3-3.4.2-Linux-x86_64.sh -O miniconda.sh;</span>
+      <span class="l-Scalar-Plain">wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;</span>
     <span class="l-Scalar-Plain">fi</span>
   <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">bash miniconda.sh -b -p $HOME/miniconda</span>
   <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">export PATH=&quot;$HOME/miniconda/bin:$PATH&quot;</span>
