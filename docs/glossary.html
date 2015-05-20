@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Administrative channel management for a centralized conda installation &mdash; Conda   documentation</title>
+  <title>Conda Glossary &mdash; Conda   documentation</title>
   
 
   
@@ -29,8 +29,8 @@
 
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
-        <link rel="next" title="Custom Channels" href="custom-channels.html"/>
-        <link rel="prev" title="Tutorial: Building the postgis package" href="build_tutorials/postgis.html"/> 
+        <link rel="next" title="Configuration" href="config.html"/>
+        <link rel="prev" title="Troubleshooting" href="troubleshooting.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -102,7 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-valueerror-unknown-locale-utf-8-on-mac-os-x">Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on Mac OS X</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Conda Glossary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Conda Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html#tab-completion">Tab Completion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="build.html">conda build Recipe Reference</a><ul>
@@ -120,7 +120,7 @@
 <li class="toctree-l2"><a class="reference internal" href="build_tutorials/postgis.html">Tutorial: Building the postgis package</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Administrative channel management for a centralized conda installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Administrative channel management for a centralized conda installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom-channels.html">Custom Channels</a></li>
 </ul>
 <ul>
@@ -212,10 +212,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Administrative channel management for a centralized conda installation</li>
+    <li>Conda Glossary</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/admin.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/glossary.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -223,84 +223,30 @@
 </div>
           <div role="main">
             
-  <div class="section" id="administrative-channel-management-for-a-centralized-conda-installation">
-<h1>Administrative channel management for a centralized conda installation<a class="headerlink" href="#administrative-channel-management-for-a-centralized-conda-installation" title="Permalink to this headline">¶</a></h1>
-<p>By default, conda (and all packages it installs, including Anaconda) installs
-locally with a user-specific configuration. No administrative privileges are
-required, and no upstream files or other users are affected by the
-installation.</p>
-<p>However, it is also possible to install conda (and packages) in an
-admin-controlled location that a group of users have access to. In this
-configuration, each user may use the central conda installation with a
-personalized configuration specified by a .condarc file located in their $HOME
-directory. This user configuration is governed by a &#8220;system&#8221; .condarc file
-located in the top-level conda installation directory given by <tt class="docutils literal"><span class="pre">$PREFIX</span></tt>
-(precisely, the path returned by <tt class="docutils literal"><span class="pre">sys.prefix</span></tt>).</p>
-<p>The administrative <tt class="docutils literal"><span class="pre">.condarc</span></tt> may specify a set of allowed channels as well
-as the (optional) boolean flag <tt class="docutils literal"><span class="pre">allow_other_channels</span></tt>. If
-<tt class="docutils literal"><span class="pre">allow_other_channels</span></tt> is set to true or not specified, each user will have
-access to the channels specified in their local <tt class="docutils literal"><span class="pre">.condarc</span></tt> file (or the
-default channels if none are specified at all). If <tt class="docutils literal"><span class="pre">allow_other_channels</span></tt> is
-set to <tt class="docutils literal"><span class="pre">false</span></tt>, only those channels explicitly specified in the
-administrative <tt class="docutils literal"><span class="pre">.condarc</span></tt> file are allowed. If the user specifies other
-channels, they will be blocked and the user will receive a message explaining
-this.</p>
-<p>Additionally, if the system <tt class="docutils literal"><span class="pre">.condarc</span></tt> file specifies the <tt class="docutils literal"><span class="pre">channel_alias</span></tt>,
-it will override any channel aliases set in users&#8217; <tt class="docutils literal"><span class="pre">.condarc</span></tt> files.</p>
-<p>To illustrate the usage and syntax, look at the following example. The first
-command shows you that the administrative <tt class="docutils literal"><span class="pre">.condarc</span></tt> file is located in the
-top-level conda installation directory. Here, the administrative <tt class="docutils literal"><span class="pre">.condarc</span></tt>
-file restricts allowed channels and specifies only a channel called &#8220;admin&#8221;
-(this will also restrict access to the default channels because the &#8220;defaults&#8221;
-channel is not explicitly specified):</p>
-<div class="highlight-python"><div class="highlight"><pre>$ which conda
-/tmp/miniconda/bin/conda
-
-$ more /tmp/miniconda/.condarc
-allow_other_channels : false
-channel_alias: https://conda.binstar.org/
-channels:
-  - admin
-</pre></div>
-</div>
-<p>The user&#8217;s <tt class="docutils literal"><span class="pre">.condarc</span></tt> file specifies only the default channels:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ more ~/.condarc
-channels:
-  - defaults
-</pre></div>
-</div>
-<p>which is reflected in the information conda displays to the user:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ conda info
-Current conda install:
-
-             platform : osx-64
-        conda version : 3.4.2
-       python version : 3.3.5.final.0
-     root environment : /tmp/miniconda  (read only)
-  default environment : /tmp/miniconda
-     envs directories : /Users/gergely/envs
-                        /tmp/miniconda/envs
-        package cache : /Users/gergely/envs/.pkgs
-                        /tmp/miniconda/pkgs
-         channel URLs : http://repo.continuum.io/pkgs/free/osx-64/
-                        http://repo.continuum.io/pkgs/pro/osx-64/
-          config file : /Users/gergely/.condarc
-    is foreign system : False
-</pre></div>
-</div>
-<p>However, because all channels are blocked except for &#8220;admin&#8221;, the user will
-receive this kind of message when seeking a package that is not available on
-the restricted channels:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ conda search flask
-Fetching package metadata:
-Error: URL &#39;http://repo.continuum.io/pkgs/pro/osx-64/&#39; not in allowed channels.
-
-Allowed channels are:
-  - https://conda.binstar.org/admin/osx-64/
-</pre></div>
-</div>
-<p>The user now knows they must add the &#8220;admin&#8221; channel to their local
-<tt class="docutils literal"><span class="pre">.condarc</span></tt> to access allowed packages.</p>
+  <div class="section" id="conda-glossary">
+<h1>Conda Glossary<a class="headerlink" href="#conda-glossary" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>.condarc:</dt>
+<dd>Conda configuration file, an optional runtime configuration YAML file which allows users to configure many aspects of conda, such as which channels it searches for packages, proxy settings, environment directories, etc. A .condarc file is not included by default, but when you use the ‘conda config’ command it is automatically created in the user’s home directory. The .condarc file can also be located in a root environment, in which case it overrides any in the home directory.  See conda configuration documentation for more information.</dd>
+<dt>Activate/deactivate environment:</dt>
+<dd>Conda commands used to switch or move between installed environments. Activate prepends the path of your current environment to PATH environment variable, and deactivate removes it. Even when an environment is not activated, programs in that environment can still be executed by specifying their path directly, as in ‘~/anaconda/envs/envname/bin/program_name’. When an environment is activated, you can just use ‘program_name’.</dd>
+<dt>Anaconda:</dt>
+<dd>An easy-to-install, free collection of Open Source packages, including Python and the conda package manager, with free community support. About 140 packages are installed with Anaconda. The Anaconda repository contains about 300 Open Source packages that can be installed or updated after installing Anaconda with the conda command.</dd>
+<dt>Channels:</dt>
+<dd>The URLs to the repositories where conda looks for packages. Channels may point to a remote repository website, binstar.org repository, a private repository or a local repository that you have created. The conda channel command starts with a default set of channels to search, but users may override this, for example, to maintain a private or internal channel. These default channels are referred to in conda commands and in the .condarc by the channel name ‘defaults’.</dd>
+<dt>Conda:</dt>
+<dd>The conda package manager and environment manager program that installs and updates packages and their dependencies, and lets you easily switch between environments on your local computer.</dd>
+<dt>Conda environment:</dt>
+<dd>A directory that contains a specific collection of conda packages. For example, you can have one environment for Python 2 and Python 2 packages, and another environment with Python 3 and Python 3 packages.  Environments are normally stored in the envs directory of your conda directory, but they may just as easily be stored anywhere.</dd>
+<dt>Conda package:</dt>
+<dd>A tarball (compressed file) containing system-level libraries, Python modules, executable programs, or other components. For a package to be a “conda package” it must follow the conda package specification.</dd>
+<dt>Metapackage:</dt>
+<dd>A conda package that only lists dependencies, and does not include any functional programs of libraries itself. The metapackage may contain links to software files that will be automatically downloaded when executed. An example of a metapackage is ‘anaconda’, which collects together all the packages in the Anaconda installer, thus, ‘conda create -n envname anaconda’ will create an environment that exactly matches what would be created from the Anaconda installer.</dd>
+<dt>Miniconda:</dt>
+<dd>A minimal installer for conda. Like Anaconda, Miniconda is a software package that includes the conda package manager and Python and its dependencies, but Miniconda does not include any other packages. Once conda is installed by installing either Anaconda or miniconda, other software packages may be installed directly from the command line with ‘conda install’. See also Anaconda and conda.</dd>
+<dt>Repository:</dt>
+<dd>A storage location from which software packages may be retrieved and installed on a computer.  A repository needs to be indexed with ‘conda index’ (to generate the repodata.json file) to be usable by conda.</dd>
+</dl>
 </div>
 
 
@@ -309,10 +255,10 @@ Allowed channels are:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="custom-channels.html" class="btn btn-neutral float-right" title="Custom Channels">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="config.html" class="btn btn-neutral float-right" title="Configuration">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="build_tutorials/postgis.html" class="btn btn-neutral" title="Tutorial: Building the postgis package"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="troubleshooting.html" class="btn btn-neutral" title="Troubleshooting"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
