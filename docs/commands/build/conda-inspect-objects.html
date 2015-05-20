@@ -122,7 +122,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../admin.html">Administrative channel management for a centralized conda installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../custom-channels.html">Custom Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../custom-channels.html">Custom Channels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../custom-channels.html#custom-channel-private-repository-summary">Custom channel/private repository summary</a></li>
+</ul>
+</li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../commands.html">Command Reference</a><ul class="current">
@@ -240,7 +243,7 @@ NAME
 DESCRIPTION
        usage: conda-inspect objects [-h] [--untracked]
 
-       [--groupby {filename,rpath,filetype}] [--all]
+       [--groupby {filetype,filename,rpath}] [--all]
               [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
 
        Investigate  binary  object  files  in  a package (only works in OS X).
@@ -259,7 +262,7 @@ DESCRIPTION
               Inspect the untracked files in the environment. Useful when used
               in conjunction with conda build --buildonly.
 
-       --groupby {filename,rpath,filetype}
+       --groupby {filetype,filename,rpath}
               Attribute to group by (default: filename)
 
        --all  Generate a report for all packages in the environment.

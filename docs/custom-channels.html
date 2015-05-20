@@ -121,7 +121,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="admin.html">Administrative channel management for a centralized conda installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Custom Channels</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Custom Channels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#custom-channel-private-repository-summary">Custom channel/private repository summary</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commands.html">Command Reference</a><ul>
@@ -225,42 +228,78 @@
             
   <div class="section" id="custom-channels">
 <h1>Custom Channels<a class="headerlink" href="#custom-channels" title="Permalink to this headline">¶</a></h1>
-<p>The easiest way to use and manage custom channels is to use <a class="reference external" href="https://binstar.org/">Binstar</a>.  Binstar hosts and serves conda packages
-automatically, and there is support built into conda for Binstar, like the
-ability to use a Binstar username as a channel url, without having to type
-<tt class="docutils literal"><span class="pre">https://conda.binstar.org/</span></tt>.</p>
-<p>However, sometimes Binstar is too heavyweight, or you may not want to upload
-your packages to the internet.</p>
-<p>Conda allows building custom repositories, which can then be served either
-through a webserver, or locally using a <tt class="docutils literal"><span class="pre">file://</span></tt> url.</p>
-<p>To create a custom channel, first organize all the packages in platform
-subdirectories, like</p>
-<div class="code highlight-python"><div class="highlight"><pre>channel/
-  linux-64/
-    package-1.0-0.tar.bz2
-  osx-64/
-    package-1.0.0-0.tar.bz2
+<p>Channels are the path that conda takes to look for packages, and the easiest
+way to use and manage custom channels is to use a private or public repository
+on <a class="reference external" href="https://binstar.org/">Binstar</a>.   If you designate your Binstar.org
+repository as private, then only you, and those you grant access, can access
+your private repository.</p>
+<p>If you do not wish to upload your packages to the internet, however, you can
+build a custom repository served either through a web server, or locally
+using a <tt class="docutils literal"><span class="pre">file://</span></tt> url.</p>
+<div class="section" id="custom-channel-private-repository-summary">
+<h2>Custom channel/private repository summary<a class="headerlink" href="#custom-channel-private-repository-summary" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Organize packages into platform subdirectories.</li>
+<li>Run conda index on each of the platform subdirectories.</li>
+<li>Test custom channels.</li>
+</ol>
+<div class="section" id="organize-packages-into-platform-subdirectories">
+<h3>1. Organize packages into platform subdirectories<a class="headerlink" href="#organize-packages-into-platform-subdirectories" title="Permalink to this headline">¶</a></h3>
+<p>To create a custom channel, first organize all the packages in subdirectories for
+the platforms you wish to serve.</p>
+<p>Example:</p>
+<div class="code highlight-python"><div class="highlight"><pre> channel/
+linux-64/
+   package-1.0-0.tar.bz2
+linux-32/
+   package-1.0-0.tar.bz2
+osx-64/
+   package-1.0-0.tar.bz2
+win-64/
+   package-1.0-0.tar.bz2
+win-32/
+   package-1.0-0.tar.bz2
 </pre></div>
 </div>
-<p>The common platform names are <tt class="docutils literal"><span class="pre">win-64</span></tt>, <tt class="docutils literal"><span class="pre">win-32</span></tt>, <tt class="docutils literal"><span class="pre">linux-64</span></tt>,
-<tt class="docutils literal"><span class="pre">linux-32</span></tt>, and <tt class="docutils literal"><span class="pre">osx-64</span></tt>.</p>
-<p>Next, run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></tt> on each of the platform subdirectories, like</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda index channel/linux-64 channel/osx-64
+</div>
+<div class="section" id="run-conda-index-on-each-of-the-platform-subdirectories">
+<h3>2. Run conda index on each of the platform subdirectories<a class="headerlink" href="#run-conda-index-on-each-of-the-platform-subdirectories" title="Permalink to this headline">¶</a></h3>
+<p>The ‘conda index’ command is part of the conda-build package. If you have not yet used
+conda build, begin by installing conda build:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda install conda-build
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></tt> command is part of the <tt class="docutils literal"><span class="pre">conda-build</span></tt> package, so you may
-need to <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">conda-build</span></tt> to get it.</p>
+<p>Now run conda index on each of the platform subdirectories as shown:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda index channel/linux-64 channel/osx-64
+</pre></div>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></tt> command generates the <tt class="docutils literal"><span class="pre">repodata.json</span></tt> file, which conda
-uses to get the metadata for the packages in the channel. Whenever you add or
-modify a package in the channel, you will need to re-run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></tt>.</p>
-<p>This is it. You can now serve <tt class="docutils literal"><span class="pre">channel</span></tt> up using a webserver, or using a
-<tt class="docutils literal"><span class="pre">file://</span></tt> url to the <tt class="docutils literal"><span class="pre">channel</span></tt> directory.  The channel url should not
-include the platform part, as conda will add it automatically. For example,
-the <tt class="docutils literal"><span class="pre">file://</span></tt> url for the above example, if <tt class="docutils literal"><span class="pre">channel</span></tt> were at
-<tt class="docutils literal"><span class="pre">/opt/channel</span></tt> would be <tt class="docutils literal"><span class="pre">file:///opt/channel</span></tt>.</p>
+<p>The conda index command generates a file <tt class="docutils literal"><span class="pre">repodata.json</span></tt>, saved to each repository directory,
+which conda uses to get the metadata for the packages in the channel.</p>
+<p>Note: Each time you add or modify a package in the channel, you must re-run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></tt> for
+conda to see the update.</p>
+</div>
+<div class="section" id="test-custom-channels">
+<h3>3. Test custom channels<a class="headerlink" href="#test-custom-channels" title="Permalink to this headline">¶</a></h3>
+<p>You can now serve the custom channel using a web server, or using a <tt class="docutils literal"><span class="pre">file://</span> <span class="pre">url</span></tt> to the channel
+directory. Test by sending a search command to the custom channel.</p>
+<p>Example: if a file you want from the custom channel location is located at <tt class="docutils literal"><span class="pre">/opt/channel/linux-64/</span></tt></p>
+<p>Then search for files in that location as shown:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda search -c file://opt/channel/ --override-channels
+</pre></div>
+</div>
+<p>Note: The channel url does NOT include the platform, as conda will automatically detect and add
+the platform.</p>
+<p>Note: the &#8211;override-channels is to be sure conda only searches your specified channel and no
+other channels, such as default channels or any other channels you may have listed in your <tt class="docutils literal"><span class="pre">.condarc</span></tt>
+file.</p>
+<p>If you have set up your private repository correctly, you will see:</p>
+<div class="code highlight-python"><div class="highlight"><pre>Fetching package metadata: . . . .
+</pre></div>
+</div>
+<p>This will be followed by a list of the conda packages found.
+This verifies that you have set up and indexed your private repository successfully.</p>
+</div>
+</div>
 </div>
 
 
