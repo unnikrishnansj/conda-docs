@@ -30,11 +30,11 @@ conda package
                  Show this help message and exit.
    
           -n ENVIRONMENT, --name ENVIRONMENT
-                 Name of environment (in root prefix/envs).
+                 Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 Full  path   to   environment   prefix   (default:   root   pre‐
-                 fix/envs/build-environment).
+                 Full path to environment prefix (default: envs  dirs/build-envi‐
+                 ronment).
    
           -w PATH [PATH ...], --which PATH [PATH ...]
                  Given some PATH print which conda package the file came from.
