@@ -183,7 +183,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../travis.html">Using Conda with Travis CI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../travis.html#the-travis-yml">The .travis.yml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../travis.html#the-travis-yml-file">The .travis.yml file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../travis.html#additional-steps">Additional Steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../travis.html#building-a-conda-recipe">Building a Conda Recipe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../travis.html#appveyor">AppVeyor</a></li>
@@ -251,7 +251,7 @@ NAME
 DESCRIPTION
        usage: conda-inspect objects [-h] [--untracked]
 
-       [--groupby {filetype,filename,rpath}] [--all]
+       [--groupby {filename,rpath,filetype}] [--all]
               [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
 
        Investigate  binary  object  files  in  a package (only works in OS X).
@@ -270,7 +270,7 @@ DESCRIPTION
               Inspect the untracked files in the environment. Useful when used
               in conjunction with conda build --buildonly.
 
-       --groupby {filetype,filename,rpath}
+       --groupby {filename,rpath,filetype}
               Attribute to group by (default: filename)
 
        --all  Generate a report for all packages in the environment.

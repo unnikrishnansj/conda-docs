@@ -182,7 +182,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Using Conda with Travis CI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-travis-yml">The .travis.yml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-travis-yml-file">The .travis.yml file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#additional-steps">Additional Steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#building-a-conda-recipe">Building a Conda Recipe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#appveyor">AppVeyor</a></li>
@@ -245,10 +245,10 @@ of the 50 minutes that Travis allows for each build. Using conda also lets
 you test the building of conda recipes on Travis.</p>
 <p>Conda is cross-platform, so it can be used for anything, not just Python, but
 the following guide shows how to use it to test a Python package on Travis CI.</p>
-<div class="section" id="the-travis-yml">
-<h2>The .travis.yml<a class="headerlink" href="#the-travis-yml" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-travis-yml-file">
+<h2>The .travis.yml file<a class="headerlink" href="#the-travis-yml-file" title="Permalink to this headline">¶</a></h2>
 <p>The
-following shows how to modify <tt class="docutils literal"><span class="pre">.travis.yml</span></tt> to use <a class="reference external" href="http://conda.pydata.org/miniconda.html">Miniconda</a> for a project that supports Python
+following shows how to modify the <tt class="docutils literal"><span class="pre">.travis.yml</span></tt> file to use <a class="reference external" href="http://conda.pydata.org/miniconda.html">Miniconda</a> for a project that supports Python
 2.6, 2.7, 3.3, and 3.4.</p>
 <p>NOTE: Please see the Travis CI website for information about the <a class="reference external" href="http://docs.travis-ci.com/user/languages/python/#Examples">basic configuration for
 Travis</a>.</p>
@@ -296,8 +296,6 @@ then add</p>
 </div>
 <p>to the install steps in <tt class="docutils literal"><span class="pre">.travis.yml</span></tt> so that it finds the packages on that
 channel.</p>
-<p>For more information on building conda packages, see the <a class="reference internal" href="build.html"><em>conda build Recipe Reference</em></a> docs and
-the example recipes in the <a class="reference external" href="https://github.com/conda/conda-recipes">conda-recipes repo</a>.</p>
 </div>
 <div class="section" id="building-a-conda-recipe">
 <h2>Building a Conda Recipe<a class="headerlink" href="#building-a-conda-recipe" title="Permalink to this headline">¶</a></h2>
@@ -313,6 +311,8 @@ as your source code. Then replace the following:</p>
 <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">conda install your-package --use-local</span>
 </pre></div>
 </div>
+<p>For more information on building conda packages, see the <a class="reference external" href="http://conda.pydata.org/docs/build.html">conda build</a> section
+and the example recipes in the <a class="reference external" href="https://github.com/conda/conda-recipes">conda-recipes repo</a>.</p>
 </div>
 <div class="section" id="appveyor">
 <h2>AppVeyor<a class="headerlink" href="#appveyor" title="Permalink to this headline">¶</a></h2>
