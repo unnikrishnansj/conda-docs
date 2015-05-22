@@ -18,7 +18,7 @@ conda inspect objects
    DESCRIPTION
           usage: conda-inspect objects [-h] [--untracked]
    
-          [--groupby {filename,rpath,filetype}] [--all]
+          [--groupby {filename,filetype,rpath}] [--all]
                  [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
    
           Investigate  binary  object  files  in  a package (only works in OS X).
@@ -37,7 +37,7 @@ conda inspect objects
                  Inspect the untracked files in the environment. Useful when used
                  in conjunction with conda build --buildonly.
    
-          --groupby {filename,rpath,filetype}
+          --groupby {filename,filetype,rpath}
                  Attribute to group by (default: filename)
    
           --all  Generate a report for all packages in the environment.
