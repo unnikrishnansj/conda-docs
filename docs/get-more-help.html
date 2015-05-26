@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Conda Glossary &mdash; Conda   documentation</title>
+  <title>Get more help &mdash; Conda   documentation</title>
   
 
   
@@ -29,8 +29,8 @@
 
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
-        <link rel="next" title="Configuration" href="config.html"/>
-        <link rel="prev" title="Advanced Package Management" href="examples/advanced.html"/> 
+        <link rel="next" title="Conda FAQ" href="faq.html"/>
+        <link rel="prev" title="Conda test drive" href="test-drive.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -84,14 +84,14 @@
 <li class="toctree-l2"><a class="reference internal" href="test-drive.html#removing-packages-environments-or-conda">5. Removing packages, environments, or conda</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="get-more-help.html">Get more help</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Get more help</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Conda FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-pip-translator.html">Conda/PIP translator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Conda Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Conda Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html#tab-completion">Tab Completion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="build.html">conda build Recipe Reference</a><ul>
@@ -219,10 +219,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Conda Glossary</li>
+    <li>Get more help</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/glossary.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/get-more-help.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -230,30 +230,39 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-glossary">
-<h1>Conda Glossary<a class="headerlink" href="#conda-glossary" title="Permalink to this headline">¶</a></h1>
-<dl class="docutils">
-<dt>.condarc:</dt>
-<dd>Conda configuration file, an optional runtime configuration YAML file which allows users to configure many aspects of conda, such as which channels it searches for packages, proxy settings, environment directories, etc. A .condarc file is not included by default, but when you use the ‘conda config’ command it is automatically created in the user’s home directory. The .condarc file can also be located in a root environment, in which case it overrides any in the home directory.  See conda configuration documentation for more information.</dd>
-<dt>Activate/deactivate environment:</dt>
-<dd>Conda commands used to switch or move between installed environments. Activate prepends the path of your current environment to PATH environment variable, and deactivate removes it. Even when an environment is not activated, programs in that environment can still be executed by specifying their path directly, as in ‘~/anaconda/envs/envname/bin/program_name’. When an environment is activated, you can just use ‘program_name’.</dd>
-<dt>Anaconda:</dt>
-<dd>An easy-to-install, free collection of Open Source packages, including Python and the conda package manager, with free community support. About 140 packages are installed with Anaconda. The Anaconda repository contains about 300 Open Source packages that can be installed or updated after installing Anaconda with the conda command.</dd>
-<dt>Channels:</dt>
-<dd>The URLs to the repositories where conda looks for packages. Channels may point to a remote repository website, binstar.org repository, a private repository or a local repository that you have created. The conda channel command starts with a default set of channels to search, but users may override this, for example, to maintain a private or internal channel. These default channels are referred to in conda commands and in the .condarc by the channel name ‘defaults’.</dd>
-<dt>Conda:</dt>
-<dd>The conda package manager and environment manager program that installs and updates packages and their dependencies, and lets you easily switch between environments on your local computer.</dd>
-<dt>Conda environment:</dt>
-<dd>A directory that contains a specific collection of conda packages. For example, you can have one environment for Python 2 and Python 2 packages, and another environment with Python 3 and Python 3 packages.  Environments are normally stored in the envs directory of your conda directory, but they may just as easily be stored anywhere.</dd>
-<dt>Conda package:</dt>
-<dd>A tarball (compressed file) containing system-level libraries, Python modules, executable programs, or other components. For a package to be a “conda package” it must follow the conda package specification.</dd>
-<dt>Metapackage:</dt>
-<dd>A conda package that only lists dependencies, and does not include any functional programs of libraries itself. The metapackage may contain links to software files that will be automatically downloaded when executed. An example of a metapackage is ‘anaconda’, which collects together all the packages in the Anaconda installer, thus, ‘conda create -n envname anaconda’ will create an environment that exactly matches what would be created from the Anaconda installer.</dd>
-<dt>Miniconda:</dt>
-<dd>A minimal installer for conda. Like Anaconda, Miniconda is a software package that includes the conda package manager and Python and its dependencies, but Miniconda does not include any other packages. Once conda is installed by installing either Anaconda or miniconda, other software packages may be installed directly from the command line with ‘conda install’. See also Anaconda and conda.</dd>
-<dt>Repository:</dt>
-<dd>A storage location from which software packages may be retrieved and installed on a computer.  A repository needs to be indexed with ‘conda index’ (to generate the repodata.json file) to be usable by conda.</dd>
-</dl>
+  <div class="section" id="get-more-help">
+<h1>Get more help<a class="headerlink" href="#get-more-help" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Conda FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#table-of-contents">Table of contents:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#general-questions">General questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#getting-help">Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#searching-info">Searching &amp; info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#customization-condarc-file">Customization (.condarc file)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#package-installation-in-the-root-environment">Package installation (in the root environment)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#updating-packages-in-the-root-environment">Updating packages (in the root environment)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#removing-packages-from-the-root-environment">Removing packages (from the root environment)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#environments">Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#recipes">Recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-permission-denied-errors-during-install">Issue:  permission denied errors during install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be">Issue: Conda claims that a package is installed, but it appears not to be.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty">Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#issue-valueerror-unknown-locale-utf-8-on-mac-os-x">Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on Mac OS X</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conda-pip-translator.html">Conda/PIP translator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/information.html">Informational Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/basic.html">Basic Package Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/advanced.html">Advanced Package Management</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 
 
@@ -262,10 +271,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="config.html" class="btn btn-neutral float-right" title="Configuration">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="Conda FAQ">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="examples/advanced.html" class="btn btn-neutral" title="Advanced Package Management"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="test-drive.html" class="btn btn-neutral" title="Conda test drive"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
