@@ -129,7 +129,11 @@
 <li class="toctree-l2"><a class="reference internal" href="build_tutorials/postgis.html">Tutorial: Building the postgis package</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Administrative channel management for a centralized conda installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Administrative channel management for a centralized conda installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-configuration-settings">System configuration settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-admin-controlled-installation">Example admin-controlled installation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="custom-channels.html">Custom Channels</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="custom-channels.html#custom-channel-private-repository-summary">Custom channel/private repository summary</a></li>
 </ul>
@@ -244,82 +248,178 @@
             
   <div class="section" id="administrative-channel-management-for-a-centralized-conda-installation">
 <h1>Administrative channel management for a centralized conda installation<a class="headerlink" href="#administrative-channel-management-for-a-centralized-conda-installation" title="Permalink to this headline">¶</a></h1>
-<p>By default, conda (and all packages it installs, including Anaconda) installs
-locally with a user-specific configuration. No administrative privileges are
-required, and no upstream files or other users are affected by the
-installation.</p>
-<p>However, it is also possible to install conda (and packages) in an
-admin-controlled location that a group of users have access to. In this
-configuration, each user may use the central conda installation with a
-personalized configuration specified by a .condarc file located in their $HOME
-directory. This user configuration is governed by a &#8220;system&#8221; .condarc file
-located in the top-level conda installation directory given by <tt class="docutils literal"><span class="pre">$PREFIX</span></tt>
-(precisely, the path returned by <tt class="docutils literal"><span class="pre">sys.prefix</span></tt>).</p>
-<p>The administrative <tt class="docutils literal"><span class="pre">.condarc</span></tt> may specify a set of allowed channels as well
-as the (optional) boolean flag <tt class="docutils literal"><span class="pre">allow_other_channels</span></tt>. If
-<tt class="docutils literal"><span class="pre">allow_other_channels</span></tt> is set to true or not specified, each user will have
-access to the channels specified in their local <tt class="docutils literal"><span class="pre">.condarc</span></tt> file (or the
-default channels if none are specified at all). If <tt class="docutils literal"><span class="pre">allow_other_channels</span></tt> is
-set to <tt class="docutils literal"><span class="pre">false</span></tt>, only those channels explicitly specified in the
-administrative <tt class="docutils literal"><span class="pre">.condarc</span></tt> file are allowed. If the user specifies other
-channels, they will be blocked and the user will receive a message explaining
-this.</p>
-<p>Additionally, if the system <tt class="docutils literal"><span class="pre">.condarc</span></tt> file specifies the <tt class="docutils literal"><span class="pre">channel_alias</span></tt>,
-it will override any channel aliases set in users&#8217; <tt class="docutils literal"><span class="pre">.condarc</span></tt> files.</p>
-<p>To illustrate the usage and syntax, look at the following example. The first
-command shows you that the administrative <tt class="docutils literal"><span class="pre">.condarc</span></tt> file is located in the
-top-level conda installation directory. Here, the administrative <tt class="docutils literal"><span class="pre">.condarc</span></tt>
-file restricts allowed channels and specifies only a channel called &#8220;admin&#8221;
-(this will also restrict access to the default channels because the &#8220;defaults&#8221;
-channel is not explicitly specified):</p>
-<div class="highlight-python"><div class="highlight"><pre>$ which conda
+<p>Administrators who wish to restrict what programs users can install may do so with a system configuration file,
+or .condarc that follows the simple <a class="reference external" href="http://docs.ansible.com/YAMLSyntax.html/">YAML syntax</a>. The system
+configuration file overrides any  .condarc configuration files installed by the user.</p>
+<p>By default, conda and all packages it installs, including Anaconda, are installed locally with a user-specific
+configuration. Administrative privileges are not required, and no upstream files or other users are affected by
+the installation.</p>
+<p>An administrator may make conda and any number of packages available to a group of one or more users, while
+still preventing these users from installing unwanted packages with conda. To do this, the administrator installs
+conda and the packages, if any, in a location that is controlled by the administrator and accessible by the users.</p>
+<p>Each user may then use the central conda installation, and with their own “user” .condarc configuration file
+located in their home directory. The users’ configuration is limited by the second “system” .condarc file, and the path to it is the same as the
+root environment prefix displayed by “conda info”. See example below.</p>
+<p>The following settings are commonly used in a system configuration file, although they may also be used in a
+user configuration file.  All user configuration settings may also be used in a system configuration file.</p>
+<p>See also: <a class="reference external" href="http://conda.pydata.org/docs/config.html/">Conda configuration file</a>.</p>
+<div class="section" id="system-configuration-settings">
+<h2>System configuration settings<a class="headerlink" href="#system-configuration-settings" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#allow-other-channels"><em>Allow other channels</em></a></li>
+<li><a class="reference internal" href="#ssl-verification"><em>SSL verification</em></a></li>
+<li><a class="reference internal" href="#offline-mode-only"><em>Offline mode only</em></a></li>
+<li><a class="reference internal" href="#channel-alias"><em>Channel alias</em></a></li>
+<li><a class="reference internal" href="#disallow-installation-of-specific-packages"><em>Disallow installation of specific packages</em></a></li>
+<li><a class="reference internal" href="#add-binstar-token-to-automatically-see-private-packages-on-binstar-org"><em>Add Binstar token to automatically see private packages</em></a></li>
+<li><a class="reference internal" href="#specify-environment-directories"><em>Specify environment directories</em></a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="allow-other-channels">
+<span id="id1"></span><h3>Allow other channels<a class="headerlink" href="#allow-other-channels" title="Permalink to this headline">¶</a></h3>
+<p>The administrative system configuration .condarc may specify a set of allowed channels, and may allow the
+users to install packages from other channels with the boolean flag allow_other_channels.  The default is
+True.</p>
+<p>If allow_other_channels is set to false, only those channels explicitly specified in the administrative
+.condarc file are allowed:</p>
+<div class="code highlight-python"><div class="highlight"><pre>allow_other_channels: False
+</pre></div>
+</div>
+<p>When set to true or not specified, then each user will have access to the default channels and to any
+channels that the user specifies in their local .condarc file. If the user specifies other channels, the
+other channels will be blocked and the user will receive a message explaining this. See example below.</p>
+<p>If the system .condarc  file specifies a channel_alias, it will override any channel aliases set in users’
+.condarc  files. See channel alias below.</p>
+</div>
+<div class="section" id="ssl-verification">
+<span id="id2"></span><h3>SSL verification<a class="headerlink" href="#ssl-verification" title="Permalink to this headline">¶</a></h3>
+<p>By default ssl verification is used. This can be turned off, but this disables the connection’s normal
+security, and is not recommended. The default is True.</p>
+<div class="code highlight-python"><div class="highlight"><pre>ssl_verify: False
+</pre></div>
+</div>
+</div>
+<div class="section" id="offline-mode-only">
+<span id="id3"></span><h3>Offline mode only<a class="headerlink" href="#offline-mode-only" title="Permalink to this headline">¶</a></h3>
+<p>Offline mode filters out all channels URLs which do not start with &#8216;file:&#8217;. The default is False.</p>
+<div class="code highlight-python"><div class="highlight"><pre>offline: True
+</pre></div>
+</div>
+</div>
+<div class="section" id="channel-alias">
+<span id="id4"></span><h3>Channel alias<a class="headerlink" href="#channel-alias" title="Permalink to this headline">¶</a></h3>
+<p>Alias for non-url channels used with the -c or &#8211;channel flag. The default is <tt class="docutils literal"><span class="pre">https://conda.binstar.org/</span></tt></p>
+<div class="code highlight-python"><div class="highlight"><pre>channel_alias: https://your.repo/
+</pre></div>
+</div>
+</div>
+<div class="section" id="disallow-installation-of-specific-packages">
+<span id="id5"></span><h3>Disallow installation of specific packages<a class="headerlink" href="#disallow-installation-of-specific-packages" title="Permalink to this headline">¶</a></h3>
+<p>Package specifications to disallow installing. The default is to allow all packages.</p>
+<div class="code highlight-python"><div class="highlight"><pre>disallow:
+- anaconda
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-binstar-token-to-automatically-see-private-packages">
+<span id="add-binstar-token-to-automatically-see-private-packages-on-binstar-org"></span><h3>Add Binstar token to automatically see private packages<a class="headerlink" href="#add-binstar-token-to-automatically-see-private-packages" title="Permalink to this headline">¶</a></h3>
+<p>When the channel alias is binstar.org or an Anaconda Server GUI, the system configuration file can be set so users
+automatically see private packages. This uses the binstar command line client (which can be installed with &#8216;conda
+install binstar&#8217;) to automatically add the token to the channel urls.</p>
+<p>The default is True.</p>
+<div class="code highlight-python"><div class="highlight"><pre>add_binstar_token: False
+</pre></div>
+</div>
+<p>NOTE: Even when set to True, this is enabled only if the binstar command line client is installed and you
+are logged in <tt class="docutils literal"><span class="pre">binstar</span> <span class="pre">login</span></tt></p>
+</div>
+<div class="section" id="specify-environment-directories">
+<span id="id6"></span><h3>Specify environment directories<a class="headerlink" href="#specify-environment-directories" title="Permalink to this headline">¶</a></h3>
+<p>Specify directories in which environments are located. If this key is set, the root prefix envs_dir is not used
+unless explicitly included. This key also determines where the package caches will be located.</p>
+<p>For each <tt class="docutils literal"><span class="pre">envs</span></tt> here, <tt class="docutils literal"><span class="pre">envs/pkgs</span></tt> will be used as the pkgs cache, except for the standard envs directory
+in the root directory, for which the normal``root_dir/pkgs`` is used. The <tt class="docutils literal"><span class="pre">CONDA_ENVS_PATH</span></tt> environment
+variable will overwrite this configuration file setting.</p>
+<div class="code highlight-python"><div class="highlight"><pre>envs_dirs:
+- ~/my-envs
+- /opt/anaconda/envs
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>Linux, Mac:</strong> <tt class="docutils literal"><span class="pre">CONDA_ENVS_PATH=~/my-envs:/opt/anaconda/envs</span></tt></li>
+<li><strong>Windows:</strong> <tt class="docutils literal"><span class="pre">set</span> <span class="pre">CONDA_ENVS_PATH=C:\Users\joe\envs;C:\Anaconda\envs</span></tt></li>
+</ul>
+</div>
+</div>
+<div class="section" id="example-admin-controlled-installation">
+<h2>Example admin-controlled installation<a class="headerlink" href="#example-admin-controlled-installation" title="Permalink to this headline">¶</a></h2>
+<p>In the following example, we take a look at the system configuration file, review the settings,
+compare it to the user’s configuration file, and see what happens when the user attempts to access a
+file from a channel that is blocked. We then show how the user must modify their configuration file to
+access the channels allowed by the administrator.</p>
+<p><strong>System configuration file</strong></p>
+<p>The system configuration file must be located in the top-level conda installation directory. So first we
+check to see the path where conda is located:</p>
+<div class="code highlight-python"><div class="highlight"><pre>which conda
 /tmp/miniconda/bin/conda
-
-$ more /tmp/miniconda/.condarc
+</pre></div>
+</div>
+<p>Now we can look at the contents of the .condarc file located in the administrator&#8217;s directory:</p>
+<div class="code highlight-python"><div class="highlight"><pre>cat /tmp/miniconda/.condarc
+</pre></div>
+</div>
+<p>This administrative .condarc file sets allow_other_channels to false, and specifies that users may
+download packages from only the ‘admin’ channel:</p>
+<div class="code highlight-python"><div class="highlight"><pre>cat /tmp/miniconda/.condarc
 allow_other_channels : false
 channel_alias: https://conda.binstar.org/
 channels:
-  - admin
+ - admin
 </pre></div>
 </div>
-<p>The user&#8217;s <tt class="docutils literal"><span class="pre">.condarc</span></tt> file specifies only the default channels:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ more ~/.condarc
+<p>Because <tt class="docutils literal"><span class="pre">allow_other_channels</span></tt> is false and the channel ‘defaults’ are not explicitly specified, users
+are disallowed from downloading packages from the default channels. We will check this in the next step.</p>
+<p>Note: The admin channel can also be expressed as <a class="reference external" href="https://conda.binstar.org/admin/">https://conda.binstar.org/admin/</a></p>
+<p><strong>User configuration file</strong></p>
+<p>Let’s check to see where the user’s conda install is located:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda info
+Current conda install:
+. . .
+      channel URLs : http://repo.continuum.io/pkgs/free/osx-64/
+                     http://repo.continuum.io/pkgs/pro/osx-64/
+       config file : /Users/gergely/.condarc
+</pre></div>
+</div>
+<p>The ‘conda info’ command shows us that conda is using the user’s .condarc file, located at
+<tt class="docutils literal"><span class="pre">/Users/gergely/.condarc</span></tt> and that the default channels such as <tt class="docutils literal"><span class="pre">repo.continuum.io</span></tt> are
+listed as channel URLs.</p>
+<p>Now let’s look at the contents of the administrative .condarc file located in that directory:</p>
+<div class="code highlight-python"><div class="highlight"><pre> cat ~/.condarc
 channels:
   - defaults
 </pre></div>
 </div>
-<p>which is reflected in the information conda displays to the user:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ conda info
-Current conda install:
-
-             platform : osx-64
-        conda version : 3.4.2
-       python version : 3.3.5.final.0
-     root environment : /tmp/miniconda  (read only)
-  default environment : /tmp/miniconda
-     envs directories : /Users/gergely/envs
-                        /tmp/miniconda/envs
-        package cache : /Users/gergely/envs/.pkgs
-                        /tmp/miniconda/pkgs
-         channel URLs : http://repo.continuum.io/pkgs/free/osx-64/
-                        http://repo.continuum.io/pkgs/pro/osx-64/
-          config file : /Users/gergely/.condarc
-    is foreign system : False
-</pre></div>
-</div>
-<p>However, because all channels are blocked except for &#8220;admin&#8221;, the user will
-receive this kind of message when seeking a package that is not available on
-the restricted channels:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ conda search flask
+<p>This user’s .condarc file specifies only the default channels.</p>
+<p>But the administrator config file has blocked default channels by specifying that only “admin” is
+allowed. If this user attempts to search for  a package in the default channels, they will see a
+message telling them what channels are allowed:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda search flask
 Fetching package metadata:
 Error: URL &#39;http://repo.continuum.io/pkgs/pro/osx-64/&#39; not in allowed channels.
-
 Allowed channels are:
-  - https://conda.binstar.org/admin/osx-64/
+ - https://conda.binstar.org/admin/osx-64/
 </pre></div>
 </div>
-<p>The user now knows they must add the &#8220;admin&#8221; channel to their local
-<tt class="docutils literal"><span class="pre">.condarc</span></tt> to access allowed packages.</p>
+<p>This error message tells the user to add the “admin” channel to their configuration file.</p>
+<p>Conclusion: The user must edit their local .condarc configuration file to access the package
+through the admin channel:</p>
+<div class="code highlight-python"><div class="highlight"><pre>channels:
+- admin
+</pre></div>
+</div>
+<p>Now the user can search for packages in the allowed admin channel.</p>
+</div>
 </div>
 
 
