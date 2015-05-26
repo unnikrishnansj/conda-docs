@@ -141,6 +141,12 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Command Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-commands"><tt class="docutils literal"><span class="pre">general-commands</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#env-commands"><tt class="docutils literal"><span class="pre">env-commands</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-commands"><tt class="docutils literal"><span class="pre">build-commands</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="general-commands.html">General conda commands</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-bundle.html">conda bundle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-clean.html">conda clean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-config.html">conda config</a></li>
@@ -156,9 +162,15 @@
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-search.html">conda search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-uninstall.html">conda uninstall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-update.html">conda update</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#conda-build-commands">conda-build commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#conda-env-commands">conda-env commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="env-commands.html">conda-env commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env.html">conda env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-create.html">conda env create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-export.html">conda env export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-list.html">conda env list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-remove.html">conda env remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-update.html">conda env update</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="build-commands.html">conda-build commands</a><ul>
@@ -175,15 +187,6 @@
 <li class="toctree-l2"><a class="reference internal" href="commands/build/conda-skeleton-cpan.html">conda skeleton cpan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/build/conda-skeleton-cran.html">conda skeleton cran</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/build/conda-skeleton-pypi.html">conda skeleton pypi</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="env-commands.html">conda-env commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env.html">conda env</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-create.html">conda env create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-export.html">conda env export</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-list.html">conda env list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-remove.html">conda env remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-update.html">conda env update</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spec.html">Conda package specification</a><ul>
@@ -250,11 +253,12 @@
 <h1>Command Reference<a class="headerlink" href="#command-reference" title="Permalink to this headline">¶</a></h1>
 <p>Conda provides many commands for managing packages and environments.  The
 following pages have help for each command. The help for a command can also be
-accessed from the command line with the <tt class="docutils literal"><span class="pre">--help</span></tt> flag, like</p>
+accessed from the command line with the <tt class="docutils literal"><span class="pre">--help</span></tt> flag:</p>
 <div class="highlight-bash"><div class="highlight"><pre>conda install --help
 </pre></div>
 </div>
-<p>Contents:</p>
+<div class="section" id="general-commands">
+<h2><a class="reference internal" href="general-commands.html"><em>General conda commands</em></a><a class="headerlink" href="#general-commands" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="commands/conda-bundle.html">conda bundle</a></li>
@@ -274,8 +278,24 @@ accessed from the command line with the <tt class="docutils literal"><span class
 <li class="toctree-l1"><a class="reference internal" href="commands/conda-update.html">conda update</a></li>
 </ul>
 </div>
-<div class="section" id="conda-build-commands">
-<h2>conda-build commands<a class="headerlink" href="#conda-build-commands" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="env-commands">
+<h2><a class="reference internal" href="env-commands.html"><em>conda-env commands</em></a><a class="headerlink" href="#env-commands" title="Permalink to this headline">¶</a></h2>
+<p>The following commands are part of the <tt class="docutils literal"><span class="pre">conda-env</span></tt> package, which is
+installed automatically with conda.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env.html">conda env</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-create.html">conda env create</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-export.html">conda env export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-list.html">conda env list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-remove.html">conda env remove</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-update.html">conda env update</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="build-commands">
+<h2><a class="reference internal" href="build-commands.html"><em>conda-build commands</em></a><a class="headerlink" href="#build-commands" title="Permalink to this headline">¶</a></h2>
 <p>The following commands are part of the <tt class="docutils literal"><span class="pre">conda-build</span></tt> package, which can be
 installed with <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">conda-build</span></tt>.</p>
 <div class="toctree-wrapper compound">
@@ -295,80 +315,6 @@ installed with <tt class="docutils literal"><span class="pre">conda</span> <span
 <li class="toctree-l1"><a class="reference internal" href="commands/build/conda-skeleton-pypi.html">conda skeleton pypi</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="conda-env-commands">
-<h2>conda-env commands<a class="headerlink" href="#conda-env-commands" title="Permalink to this headline">¶</a></h2>
-<p>The following commands are part of the <tt class="docutils literal"><span class="pre">conda-env</span></tt> package, which is
-installed automatically with conda.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env.html">conda env</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-create.html">conda env create</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-export.html">conda env export</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-list.html">conda env list</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-remove.html">conda env remove</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-update.html">conda env update</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="conda-pip-rosetta-stone">
-<h2>conda-pip rosetta stone<a class="headerlink" href="#conda-pip-rosetta-stone" title="Permalink to this headline">¶</a></h2>
-<p>If you&#8217;ve used pip and virtualenv in the past, you can use conda to perform the operations you are used to.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="36%" />
-<col width="39%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Operation</th>
-<th class="head">Pip Command</th>
-<th class="head">Conda Command</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Install a package</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Uninstall a package</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-</tr>
-<tr class="row-even"><td>Create an environment</td>
-<td><tt class="docutils literal"><span class="pre">cd</span> <span class="pre">$ENV_BASE_DIR;</span> <span class="pre">virtualenv</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">python</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Activate an environment</td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">$ENV_BASE_DIR/$ENVIRONMENT_NAME/bin/activate</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
-</tr>
-<tr class="row-even"><td>Deactivate an environment</td>
-<td><tt class="docutils literal"><span class="pre">deactivate</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Search available packages</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></tt></td>
-</tr>
-<tr class="row-even"><td>Install package from specific source</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--index-url</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-</tr>
-<tr class="row-odd"><td>List installed packages</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">list</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
-</tr>
-<tr class="row-even"><td>Create requirements file</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">freeze</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--export</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Update a package</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--name</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 

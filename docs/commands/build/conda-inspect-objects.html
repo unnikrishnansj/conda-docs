@@ -142,6 +142,12 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../commands.html">Command Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../commands.html#general-commands"><tt class="docutils literal"><span class="pre">general-commands</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commands.html#env-commands"><tt class="docutils literal"><span class="pre">env-commands</span></tt></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../commands.html#build-commands"><tt class="docutils literal"><span class="pre">build-commands</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../general-commands.html">General conda commands</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../conda-bundle.html">conda bundle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../conda-clean.html">conda clean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../conda-config.html">conda config</a></li>
@@ -157,9 +163,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../conda-search.html">conda search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../conda-uninstall.html">conda uninstall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../conda-update.html">conda update</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../commands.html#conda-build-commands">conda-build commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../commands.html#conda-env-commands">conda-env commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../commands.html#conda-pip-rosetta-stone">conda-pip rosetta stone</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../env-commands.html">conda-env commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../env/conda-env.html">conda env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env/conda-env-create.html">conda env create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env/conda-env-export.html">conda env export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env/conda-env-list.html">conda env list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env/conda-env-remove.html">conda env remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../env/conda-env-update.html">conda env update</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../build-commands.html">conda-build commands</a><ul class="current">
@@ -176,15 +188,6 @@
 <li class="toctree-l2"><a class="reference internal" href="conda-skeleton-cpan.html">conda skeleton cpan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-skeleton-cran.html">conda skeleton cran</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conda-skeleton-pypi.html">conda skeleton pypi</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../env-commands.html">conda-env commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../env/conda-env.html">conda env</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env/conda-env-create.html">conda env create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env/conda-env-export.html">conda env export</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env/conda-env-list.html">conda env list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env/conda-env-remove.html">conda env remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../env/conda-env-update.html">conda env update</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../spec.html">Conda package specification</a><ul>
@@ -263,7 +266,7 @@ NAME
 DESCRIPTION
        usage: conda-inspect objects [-h] [--untracked]
 
-       [--groupby {rpath,filetype,filename}] [--all]
+       [--groupby {filetype,filename,rpath}] [--all]
               [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
 
        Investigate  binary  object  files  in  a package (only works in OS X).
@@ -282,7 +285,7 @@ DESCRIPTION
               Inspect the untracked files in the environment. Useful when used
               in conjunction with conda build --buildonly.
 
-       --groupby {rpath,filetype,filename}
+       --groupby {filetype,filename,rpath}
               Attribute to group by (default: filename)
 
        --all  Generate a report for all packages in the environment.
