@@ -246,7 +246,7 @@ NAME
 DESCRIPTION
        usage: conda-inspect objects [-h] [--untracked]
 
-       [--groupby {filename,filetype,rpath}] [--all]
+       [--groupby {filetype,rpath,filename}] [--all]
               [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
 
        Investigate  binary  object  files  in  a package (only works in OS X).
@@ -265,7 +265,7 @@ DESCRIPTION
               Inspect the untracked files in the environment. Useful when used
               in conjunction with conda build --buildonly.
 
-       --groupby {filename,filetype,rpath}
+       --groupby {filetype,rpath,filename}
               Attribute to group by (default: filename)
 
        --all  Generate a report for all packages in the environment.
