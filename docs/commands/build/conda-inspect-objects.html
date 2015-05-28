@@ -74,6 +74,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#anaconda-requirements">Anaconda requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#install-instructions">Install instructions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#silent-installation">Silent installation</a></li>
 </ul>
 </li>
@@ -244,7 +246,7 @@ NAME
 DESCRIPTION
        usage: conda-inspect objects [-h] [--untracked]
 
-       [--groupby {filetype,filename,rpath}] [--all]
+       [--groupby {rpath,filetype,filename}] [--all]
               [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
 
        Investigate  binary  object  files  in  a package (only works in OS X).
@@ -263,7 +265,7 @@ DESCRIPTION
               Inspect the untracked files in the environment. Useful when used
               in conjunction with conda build --buildonly.
 
-       --groupby {filetype,filename,rpath}
+       --groupby {rpath,filetype,filename}
               Attribute to group by (default: filename)
 
        --all  Generate a report for all packages in the environment.
