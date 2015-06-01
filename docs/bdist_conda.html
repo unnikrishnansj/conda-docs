@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>setup.py bdist_conda &mdash; Conda   documentation</title>
+  <title>Building Python packages &mdash; Conda   documentation</title>
   
 
   
@@ -186,9 +186,11 @@
 <li class="toctree-l2"><a class="reference internal" href="travis.html#appveyor">AppVeyor</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">setup.py bdist_conda</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Building Python packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#with-setup-py-bdist-conda">with setup.py bdist_conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-options">Setup options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#command-line-options">Command line options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#options">Options</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License - Conda</a><ul>
@@ -218,7 +220,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>setup.py bdist_conda</li>
+    <li>Building Python packages</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="https://github.com/conda/conda-docs/edit/master/docs/source/bdist_conda.rst" class="fa fa-github"> Edit on GitHub</a>
@@ -229,83 +231,129 @@
 </div>
           <div role="main">
             
-  <div class="section" id="setup-py-bdist-conda">
-<h1>setup.py bdist_conda<a class="headerlink" href="#setup-py-bdist-conda" title="Permalink to this headline">¶</a></h1>
-<p>You can build a conda package for a Python library using <tt class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span>
-<span class="pre">bdist_conda</span></tt>.   <tt class="docutils literal"><span class="pre">python</span></tt> in this case must be the Python where conda is
-installed, as <tt class="docutils literal"><span class="pre">bdist_conda</span></tt> uses <tt class="docutils literal"><span class="pre">conda-build</span></tt>.</p>
-<p><tt class="docutils literal"><span class="pre">bdist_conda</span></tt> will use the metadata provided to the <tt class="docutils literal"><span class="pre">setup()</span></tt> function.</p>
-<p>In addition, several options to <tt class="docutils literal"><span class="pre">setup()</span></tt> are supported.</p>
-<p>If you want to pass any <tt class="docutils literal"><span class="pre">bdist_conda</span></tt> specific options to <tt class="docutils literal"><span class="pre">setup()</span></tt>, you
-must set <tt class="docutils literal"><span class="pre">distclass=distutils.command.bdist_conda.CondaDistribution</span></tt> in
-<tt class="docutils literal"><span class="pre">setup()</span></tt>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you use <tt class="docutils literal"><span class="pre">setuptools</span></tt>, you must import <tt class="docutils literal"><span class="pre">setuptools</span></tt> <em>before</em>
-importing <tt class="docutils literal"><span class="pre">distutils.command.bdist_conda</span></tt>, as <tt class="docutils literal"><span class="pre">setuptools</span></tt>
-monkeypatches <tt class="docutils literal"><span class="pre">distutils.dist.Distribution</span></tt>.</p>
+  <div class="section" id="building-python-packages">
+<h1>Building Python packages<a class="headerlink" href="#building-python-packages" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="with-setup-py-bdist-conda">
+<h2>with setup.py bdist_conda<a class="headerlink" href="#with-setup-py-bdist-conda" title="Permalink to this headline">¶</a></h2>
+<p>You can use conda build to build packages for Python to install rather than
+conda, by using <tt class="docutils literal"><span class="pre">setup.py</span> <span class="pre">bdist_conda</span></tt>. This is a “quick and dirty” way to
+build packages without using a recipe, but it has limitations. The script
+is limited to the Python version used in the build. And it is not as
+reproducible as using a recipe. We recommend using a recipe with conda
+build.</p>
+<p>NOTE: If you use Setuptools, you must first import Setuptools and then
+import <tt class="docutils literal"><span class="pre">distutils.command.bdist_conda</span></tt>, because Setuptools monkeypatches
+<tt class="docutils literal"><span class="pre">distutils.dist.Distribution</span></tt>.</p>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>A minimal setup.py file using setup options name and version:</p>
+<div class="code highlight-python"><div class="highlight"><pre> from distutils.core import setup, Extension
+ import distutils.command.bdist_conda
+
+setup(
+    name=&quot;foo&quot;,
+    version=&quot;1.0&quot;,
+    distclass=distutils.command.bdist_conda.CondaDistribution,
+    conda_buildnum=1,
+    conda_features=[&#39;mkl&#39;],
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="setup-options">
+<h2>Setup options<a class="headerlink" href="#setup-options" title="Permalink to this headline">¶</a></h2>
+<p>Options that can be passed to <tt class="docutils literal"><span class="pre">setup()</span></tt> (must include
+<tt class="docutils literal"><span class="pre">distclass=distutils.command.bdist_conda.CondaDistribution)</span></tt>:</p>
+<div class="section" id="build-number">
+<h3>Build number<a class="headerlink" href="#build-number" title="Permalink to this headline">¶</a></h3>
+<p>The number of the build. Can be overridden on the command line with the <tt class="docutils literal"><span class="pre">--buildnum</span></tt> flag.
+Defaults to 0.</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_buildnum</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-string">
+<h3>Build string<a class="headerlink" href="#build-string" title="Permalink to this headline">¶</a></h3>
+<p>The build string. Default is generated automatically from the Python version, NumPy version
+if relevant, and the build number, like <tt class="docutils literal"><span class="pre">py34_0</span></tt>.</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_buildstr</span><span class="o">=</span><span class="n">py34_0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="import-tests">
+<h3>Import tests<a class="headerlink" href="#import-tests" title="Permalink to this headline">¶</a></h3>
+<p>Whether to automatically run import tests. The default is True, which runs import tests for the all
+the modules in “packages”. Also allowed are False, which runs no tests, or a list of module names to
+be tested on import.</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_import_tests</span><span class="o">=</span><span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="command-line-tests">
+<h3>Command line tests<a class="headerlink" href="#command-line-tests" title="Permalink to this headline">¶</a></h3>
+<p>Command line tests to run. Default is True, which runs <tt class="docutils literal"><span class="pre">command</span> <span class="pre">--help</span></tt> for each command in the
+<tt class="docutils literal"><span class="pre">console_scripts</span></tt> and <tt class="docutils literal"><span class="pre">gui_scripts</span> <span class="pre">entry_points</span></tt>. Also allowed are False, which doesn’t run any
+command tests, or a list of command tests to run.</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_command_tests</span><span class="o">=</span><span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="binary-files-relocatable">
+<h3>Binary files relocatable<a class="headerlink" href="#binary-files-relocatable" title="Permalink to this headline">¶</a></h3>
+<p>Whether binary files should be made relocatable (using <tt class="docutils literal"><span class="pre">install_name_tool</span></tt> on OS X or <tt class="docutils literal"><span class="pre">patchelf</span></tt> on Linux).
+The default is True.</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_binary_relocation</span><span class="o">=</span><span class="bp">False</span>
+</pre></div>
+</div>
+<p>SEE ALSO:  <a class="reference internal" href="build.html#relocatable"><em>Making Packages Relocatable</em></a>  section in the conda build documentation for more information.</p>
+</div>
+<div class="section" id="preserve-egg-directory">
+<h3>Preserve egg directory<a class="headerlink" href="#preserve-egg-directory" title="Permalink to this headline">¶</a></h3>
+<p>Whether to preserve the egg directory as installed by Setuptools. The default is True if the package depends
+on Setuptools or has Setuptools <tt class="docutils literal"><span class="pre">entry_points</span></tt> other than <tt class="docutils literal"><span class="pre">console_scripts</span></tt> and <tt class="docutils literal"><span class="pre">gui_scripts</span></tt>.</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_preserve_egg_dir</span><span class="o">=</span><span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<p>List of features for the package.</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_features</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;mkl&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>SEE ALSO:  <a class="reference internal" href="build.html#features"><em>Features</em></a> section of the conda build documentation for more information about features in conda.</p>
+</div>
+<div class="section" id="track-features">
+<h3>Track features<a class="headerlink" href="#track-features" title="Permalink to this headline">¶</a></h3>
+<p>List of features that this package should track (enable when installed).</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_track_features</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;mkl&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>SEE ALSO:  <a class="reference internal" href="build.html#features"><em>Features</em></a> section of the conda build documentation for more information about
+features in conda.</p>
+</div>
+</div>
+<div class="section" id="command-line-options">
+<h2>Command line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Build number<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Set the build number. Defaults to the <tt class="docutils literal"><span class="pre">conda_buildnum</span></tt> passed to <tt class="docutils literal"><span class="pre">setup()</span></tt>, or 0. Overrides any <tt class="docutils literal"><span class="pre">conda_buildnum</span></tt> passed to <tt class="docutils literal"><span class="pre">setup()</span></tt>.</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="o">--</span><span class="n">buildnum</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">bdist_conda</span></tt> can only be installed into a root conda environment, as it
-imports <tt class="docutils literal"><span class="pre">conda</span></tt> and <tt class="docutils literal"><span class="pre">conda_build</span></tt>.</li>
-<li>All metadata is gathered from the standard metadata from the <tt class="docutils literal"><span class="pre">setup()</span></tt>
-function. Metadata that is not directly supported by <tt class="docutils literal"><span class="pre">setup()</span></tt> can be
-added using one of the options specified below.</li>
-<li>By default, import tests are run for each subpackage specified by
-<tt class="docutils literal"><span class="pre">packages</span></tt>, and command line tests (<tt class="docutils literal"><span class="pre">command</span> <span class="pre">--help</span></tt>) are run for each
-setuptools <tt class="docutils literal"><span class="pre">entry_points</span></tt> command.  This is done to ensure that the
-package is built correctly. These can be disabled or changed using the
-<tt class="docutils literal"><span class="pre">conda_import_tests</span></tt> and <tt class="docutils literal"><span class="pre">conda_command_tests</span></tt> options specified below.</li>
+<li><tt class="docutils literal"><span class="pre">bdist_conda</span></tt> must be installed into a root conda environment, as it imports <tt class="docutils literal"><span class="pre">conda</span></tt> and <tt class="docutils literal"><span class="pre">conda_build</span></tt>. It is included as part of the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt> package.</li>
+<li>All metadata is gathered from the standard metadata from the <tt class="docutils literal"><span class="pre">setup()</span></tt> function. Metadata that are not directly supported by <tt class="docutils literal"><span class="pre">setup()</span></tt> can be added using one of the options specified below.</li>
+<li>By default, import tests are run for each subpackage specified by packages, and command line tests <tt class="docutils literal"><span class="pre">command</span> <span class="pre">--help</span></tt> are run for each <tt class="docutils literal"><span class="pre">setuptools</span> <span class="pre">entry_points</span></tt> command. This is done to ensure that the package is built correctly. These can be disabled or changed using the <tt class="docutils literal"><span class="pre">conda_import_tests</span></tt> and <tt class="docutils literal"><span class="pre">conda_command_tests</span></tt> options specified below.</li>
+<li>The Python version used in the build must be the same as where conda is installed, as <tt class="docutils literal"><span class="pre">bdist_conda</span></tt> uses <tt class="docutils literal"><span class="pre">conda-build</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">bdist_conda</span></tt> uses the metadata provided to the <tt class="docutils literal"><span class="pre">setup()</span></tt> function.</li>
+<li>If you want to pass any <tt class="docutils literal"><span class="pre">bdist_conda</span></tt> specific options to <tt class="docutils literal"><span class="pre">setup()</span></tt>, in <tt class="docutils literal"><span class="pre">setup()</span></tt> you must set <tt class="docutils literal"><span class="pre">distclass=distutils.command.bdist_conda.CondaDistribution</span></tt>.</li>
 </ul>
-</div>
-<div class="section" id="options">
-<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<p>All of the following options are optional.</p>
-<div class="section" id="setup-options">
-<h3><tt class="docutils literal"><span class="pre">setup()</span></tt> Options<a class="headerlink" href="#setup-options" title="Permalink to this headline">¶</a></h3>
-<p>Options that can be passed to <tt class="docutils literal"><span class="pre">setup()</span></tt> (must include
-<tt class="docutils literal"><span class="pre">distclass=CondaDistribution</span></tt>):</p>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">conda_buildnum</span></tt>: The build number. Defaults to 0. Can be overridden on
-the command line with the <tt class="docutils literal"><span class="pre">--buildnum</span></tt> flag.</li>
-<li><tt class="docutils literal"><span class="pre">conda_buildstr</span></tt>: The build string. Default is generated automatically
-from the Python version, NumPy version if relevant, and the build number,
-like <tt class="docutils literal"><span class="pre">py34_0</span></tt>.</li>
-<li><tt class="docutils literal"><span class="pre">conda_import_tests</span></tt>: Whether to automatically run import tests. The
-default is <tt class="docutils literal"><span class="pre">True</span></tt>, which runs import tests for the all the modules in
-&#8220;packages&#8221;. Also allowed are <tt class="docutils literal"><span class="pre">False</span></tt>, which runs no tests, or a list of
-module names to be tested on import.</li>
-<li><tt class="docutils literal"><span class="pre">conda_command_tests</span></tt>: Command line tests to run. Default is <tt class="docutils literal"><span class="pre">True</span></tt>,
-which runs <tt class="docutils literal"><span class="pre">command</span> <span class="pre">--help</span></tt> for each <tt class="docutils literal"><span class="pre">command</span></tt> in the
-<tt class="docutils literal"><span class="pre">console_scripts</span></tt> and <tt class="docutils literal"><span class="pre">gui_scripts</span></tt> <tt class="docutils literal"><span class="pre">entry_points</span></tt>. Also allowed are
-<tt class="docutils literal"><span class="pre">False</span></tt>, which doesn&#8217;t run any command tests, or a list of command tests
-to run.</li>
-<li><tt class="docutils literal"><span class="pre">conda_binary_relocation</span></tt>: Whether binary files should be made relocatable
-(using <tt class="docutils literal"><span class="pre">install_name_tool</span></tt> on OS X or <tt class="docutils literal"><span class="pre">patchelf</span></tt> on Linux). The default
-is <tt class="docutils literal"><span class="pre">True</span></tt>. See the <a class="reference internal" href="build.html#relocatable"><em>Making Packages Relocatable</em></a> section in the conda build
-documentation for more information on this.</li>
-<li><tt class="docutils literal"><span class="pre">conda_preserve_egg_dir</span></tt>: Whether to preserve the egg directory as
-installed by setuptools.  The default is <tt class="docutils literal"><span class="pre">True</span></tt> if the package depends on
-setuptools or has a setuptools <tt class="docutils literal"><span class="pre">entry_points</span></tt> other than
-<tt class="docutils literal"><span class="pre">console_scripts</span></tt> and <tt class="docutils literal"><span class="pre">gui_scripts</span></tt>.</li>
-<li><tt class="docutils literal"><span class="pre">conda_features</span></tt>: List of features for the package. See the
-<a class="reference internal" href="build.html#features"><em>Features</em></a> section of the conda build documentation for more
-information about features in conda.</li>
-<li><tt class="docutils literal"><span class="pre">conda_track_features</span></tt>: List of features that this package should track
-(enable when installed).  See the <a class="reference internal" href="build.html#features"><em>Features</em></a> section of the conda build
-documentation for more information about features in conda.</li>
-</ul>
-</div>
-<div class="section" id="command-line-options">
-<h3>Command line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">--buildnum</span></tt>: Set the build number. Defaults to the <tt class="docutils literal"><span class="pre">conda_buildnum</span></tt>
-passed to <tt class="docutils literal"><span class="pre">setup()</span></tt>, or 0. Overrides any <tt class="docutils literal"><span class="pre">conda_buildnum</span></tt> passed to
-<tt class="docutils literal"><span class="pre">setup()</span></tt>.</li>
-</ul>
-</div>
 </div>
 </div>
 
