@@ -405,9 +405,9 @@ from the Continuum repos (i.e., from Anaconda)?</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">How can I keep a package from being updated?</p>
+<li><p class="first">How can I prevent a package from being updated?</p>
 <p>You can pin a package specification in an environment, which will prevent
-it from being changed, unless the <tt class="docutils literal"><span class="pre">--no-pin</span></tt> flag is passed to conda. To
+it from being updated, unless the <tt class="docutils literal"><span class="pre">--no-pin</span></tt> flag is passed to conda. To
 do so, add a file called <tt class="docutils literal"><span class="pre">pinned</span></tt> to the environment&#8217;s <tt class="docutils literal"><span class="pre">conda-meta</span></tt>
 directory with a list of specs. For example</p>
 <div class="highlight-python"><div class="highlight"><pre>numpy 1.7.*
@@ -416,11 +416,11 @@ scipy ==0.13.2
 </div>
 <p>will force numpy to stay on the 1.7 series (any version that starts with
 &#8220;1.7.&#8221;), and scipy to stay at exactly version 0.13.2.</p>
-<p>With this pinned file, <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span></tt> will keep numpy at 0.7.1, and
+<p>With this pinned file, <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span></tt> will keep numpy at 1.7.1, and
 <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">scipy=0.14.0</span></tt> will lead to an error. To force either of
-these, use the <tt class="docutils literal"><span class="pre">-no-pin</span></tt> flag, like <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span> <span class="pre">--no-pin</span></tt>. The
-way pinning works is that the pined specs are included with each conda
-install, so subsequent commands without <tt class="docutils literal"><span class="pre">--no-pin</span></tt> will revert numpy back
+these, use the <tt class="docutils literal"><span class="pre">--no-pin</span></tt> flag, like <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span> <span class="pre">--no-pin</span></tt>. The
+way pinning works is that the pinned specs are included with each conda
+install, so subsequent <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span></tt> commands without <tt class="docutils literal"><span class="pre">--no-pin</span></tt> will revert numpy back
 to the 1.7 series.</p>
 </li>
 </ol>
@@ -599,7 +599,8 @@ to the 1.7 series.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda config --add create_default_packages pip
 </pre></div>
 </div>
-<p>After performing the above command you can create a new environment in the standard way (pip will be installed in all of them).</p>
+<p>After performing the above command you can create new environments in the standard way (scipy
+will be installed in all of them).</p>
 </li>
 <li><p class="first">How can I automatically install Y package (e.g. <em>scipy</em>) during creation of any of new environment?</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda config --add create_default_packages scipy
@@ -612,9 +613,8 @@ standard way (the <em>scipy</em> will be installed in all of them).</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda config --add create_default_packages <span class="nv">scipy</span><span class="o">=</span>0.12.0
 </pre></div>
 </div>
-<p>After performing the above command you can create a new environments in the
-standard way (the <em>scipy</em> in 0.12.0 version will be installed in all of
-them).</p>
+<p>After performing the above command you can create new environments in the standard way
+(scipy version 0.12.0 will be installed in all of them).</p>
 </li>
 <li><p class="first">How can I ignore packages from automatic installation during creation of new and clean environment X (e.g. <tt class="docutils literal"><span class="pre">myenv</span></tt>)?</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create --no-default-packages -n myenv python
