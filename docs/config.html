@@ -29,7 +29,7 @@
 
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
-        <link rel="next" title="conda build Recipe Reference" href="build.html"/>
+        <link rel="next" title="Sample .condarc file" href="sample-condarc.html"/>
         <link rel="prev" title="Conda Glossary" href="glossary.html"/> 
 
   
@@ -94,8 +94,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Conda Glossary</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#tab-completion">Tab Completion</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-configuration">General configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-configuration">Advanced configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conda-build-configuration">Conda build configuration</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="build.html">conda build Recipe Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="build.html#the-meta-yaml-file">The meta.yaml file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build.html#environment-variables-set-during-the-build-process">Environment variables set during the build process</a></li>
@@ -232,160 +236,213 @@
           <div role="main">
             
   <div class="section" id="configuration">
-<span id="config"></span><h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
-<p>There is very little user configuration that conda requires; however, conda
-will read minimal configuration from a <tt class="docutils literal"><span class="pre">$HOME/.condarc</span></tt> file, if it is
-present. The <tt class="docutils literal"><span class="pre">.condarc</span></tt> file follows simple <tt class="docutils literal"><span class="pre">YAML</span> <span class="pre">syntax</span></tt>.</p>
-<p>The condarc file can be used to affect</p>
+<span id="config"></span><h1><a class="toc-backref" href="#id1">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>The conda configuration file  (.condarc) is an optional runtime configuration
+file which allows users to configure various aspects of conda, such as which
+channels it searches for packages, proxy settings, environment directories, etc.</p>
+<p>A .condarc file is not included by default, but it is automatically created in
+the user’s home directory when you use the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></tt> command.</p>
+<p>A .condarc file may also be located in the root environment, in which case it
+overrides any in the home directory.</p>
+<p>Note: A .condarc file can also be used in an administrator-controlled
+installation to override the users’ configuration. Please see <a class="reference internal" href="admin.html"><em>Administrative channel management for a centralized conda installation</em></a>.</p>
+<p>The conda configuration file can be used to change:</p>
 <ul class="simple">
-<li>Channels - Where conda looks for packages</li>
-<li>Proxy Settings - Configure to use conda behind a proxy server</li>
-<li>Environment Directories - Where conda lists known environments</li>
-<li>Bash prompt - Whether to update the bash prompt with the current activated environment name</li>
-<li>Binstar Upload - Whether user-built packages should be uploaded to Binstar.org</li>
-<li>Environment defaults - Default packages or features to include in new environments</li>
+<li>Where conda looks for packages</li>
+<li>If and how conda uses a proxy server</li>
+<li>Where conda lists known environments</li>
+<li>Whether to update the bash prompt with the current activated environment name</li>
+<li>Whether user-built packages should be uploaded to Binstar.org</li>
+<li>Default packages or features to include in new environments</li>
+<li>And more.</li>
 </ul>
-<p>Here is an example:</p>
-<div class="code yaml highlight-python"><div class="highlight"><pre># This is a sample .condarc file
-
-# channel locations. These override conda defaults, i.e., conda will
-# search *only* the channels listed here, in the order given. Use &quot;defaults&quot; to
-# automatically include all default channels. Non-url channels will be
-# interpreted as binstar usernames (this can be changed by modifying the
-# channel_alias key; see below). The default is just &#39;defaults&#39;.
-channels:
-  - &lt;binstar_username&gt;
-  - http://some.custom/channel
-  - file:///some/local/directory
-  - defaults
-
-# Always choose the yes option option whenever asked to proceed, e.g., when
-# installing. Same as using the --yes flag at the command line. The default is
-# False.
-always_yes: True
-
-# Show channel URLs when displaying what is going to be downloaded and
-# in &#39;conda list&#39;. The default is False.
-show_channel_urls: True
-
-# Change the command prompt ($PS1) when using activate to include the
-# activated environment. The default is True.
-changeps1: False
-
-# Use pip when listing packages with &#39;conda list&#39;. Note that this does not
-# affect any conda command or functionality other than the output of the
-# command &#39;conda list&#39;. The default is True.
-use_pip: False
-
-# Proxy settings: http://[username]:[password]@[server]:[port]. By default,
-# proxy settings are pulled from the HTTP_PROXY and HTTPS_PROXY environment
-# variables. If you do not include the username and password, of if
-# authentication fails, conda will prompt for a username and password.
-proxy_servers:
-    http: http://user:pass@corp.com:8080
-    https: https://user:pass@corp.com:8080
-
-#############################################################################
-
-# Disable ssl verification. The default is True.
-ssl_verify: False
-
-# Filters out all channels URLs which do not start with &#39;file:&#39;. The default
-# is False.
-offline: True
-
-# Alias to use for non-url channels used with the -c flag. The default is
-# https://conda.binstar.org/
-channel_alias: https://your.repo/
-
-# Package specifications to disallow installing. The default is to allow all
-# packages.
-disallow:
-  - anaconda
-
-# When the channel alias is binstar.org or an Anaconda Server GUI, this will
-# use the binstar command line client (which can be installed with &#39;conda
-# install binstar&#39;) to automatically add the token to the channel urls, so
-# that you can see private packages. The default is True, but it is only
-# enabled if the binstar command line client is installed and you are logged
-# in (&#39;binstar login&#39;).
-add_binstar_token: False
-
-# Directories in which environments are located. If this key is set, the root
-# prefix envs dir is not used unless explicitly included. This key also
-# determines where the package caches will be located. For each envs here,
-# envs/.pkgs will be used as the pkgs cache, except for the standard envs
-# directory in the root directory, for which the normal root_dir/pkgs is used.
-# The CONDA_ENVS_PATH environment variable, which is a colon separated list,
-# allows overwriting this setting here.
-envs_dirs:
-  - ~/my-envs
-  - /opt/anaconda/envs
-
-#############################################################################
-
-# Disallow soft-linking. When this is True, conda uses hard-links when
-# possible, and soft-links (i.e., symlinks) when hard-links are not possible
-# (e.g., when installing on another filesystem).  When this is False, conda
-# still uses hard-links when possible, but when they are not possible, it
-# copies files. Note that individual packages may specify that specific files
-# should never be soft-linked, independent of this option (see the no_link
-# option in the build recipe documentation). The default is True.
-allow_softlinks: False
-
-# When creating new environments add these packages by default. You can
-# override this option with the --no-default-packages flag. The default is not
-# to include any packages.
-create_default_packages:
-  - python
-  - pip
-
-# Enable certain features to be tracked by default. The default is to not
-# track any features.
-track_features:
-  # This is similar to adding &#39;mkl&#39; to the create_default_packages list.
-  - mkl
-
-#############################################################################
-
-# Conda Build Options
-
-# Automatically upload packages built with conda build to binstar.org. The
-# default is False.
-binstar_upload: True
-
-# Build output root directory. (default &lt;CONDA_PREFIX&gt;/conda-bld/, or
-# ~/conda-bld if you do not have write permissions to
-# &lt;CONDA_PREFIX&gt;/conda-bld) This can also be set with the CONDA_BLD_PATH
-# environment variable.
-conda-build:
-  root-dir: ~/conda-builds
+<p>To create or modify a .condarc configuration file, from the command line, use
+the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></tt> command, or use a text editor to create a new file named
+.condarc and save to your user home directory or root directory.</p>
+<p>The .condarc configuration file follows
+simple <a class="reference external" href="http://docs.ansible.com/YAMLSyntax.html">YAML syntax</a>.</p>
+<p><a class="reference internal" href="sample-condarc.html"><em>Download a sample .condarc file</em></a>.</p>
+<p>Conda supports <a class="reference internal" href="tab-completion.html"><em>tab completion</em></a> with external packages
+instead of internal configuration.</p>
+<p>For more configuration information see: <a class="reference external" href="http://continuum.io/blog/advanced-conda-part-1#configuration">http://continuum.io/blog/advanced-conda-part-1#configuration</a></p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#configuration" id="id1">Configuration</a><ul>
+<li><a class="reference internal" href="#general-configuration" id="id2">General configuration</a><ul>
+<li><a class="reference internal" href="#channel-locations" id="id3">Channel locations</a></li>
+<li><a class="reference internal" href="#always-yes" id="id4">Always yes</a></li>
+<li><a class="reference internal" href="#show-channel-urls" id="id5">Show Channel URLs</a></li>
+<li><a class="reference internal" href="#change-command-prompt" id="id6">Change command prompt</a></li>
+<li><a class="reference internal" href="#use-pip" id="id7">Use PIP</a></li>
+<li><a class="reference internal" href="#configure-conda-for-use-behind-a-proxy-server" id="id8">Configure conda for use behind a proxy server</a></li>
+<li><a class="reference internal" href="#offline-mode-only" id="id9">Offline mode only</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-configuration" id="id10">Advanced configuration</a><ul>
+<li><a class="reference internal" href="#disallow-soft-linking" id="id11">Disallow soft-linking</a></li>
+<li><a class="reference internal" href="#set-a-channel-alias" id="id12">Set a channel alias</a></li>
+<li><a class="reference internal" href="#always-add-packages-by-default" id="id13">Always add packages by default</a></li>
+<li><a class="reference internal" href="#track-features" id="id14">Track features</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conda-build-configuration" id="id15">Conda build configuration</a><ul>
+<li><a class="reference internal" href="#automatically-upload-conda-build-packages-to-binstar-org" id="id16">Automatically upload conda build packages to binstar.org</a></li>
+<li><a class="reference internal" href="#specify-conda-build-output-root-directory" id="id17">Specify conda build output root directory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general-configuration">
+<h2><a class="toc-backref" href="#id2">General configuration</a><a class="headerlink" href="#general-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="channel-locations">
+<h3><a class="toc-backref" href="#id3">Channel locations</a><a class="headerlink" href="#channel-locations" title="Permalink to this headline">¶</a></h3>
+<p>Listing channel locations in the .condarc file will override conda defaults,
+causing conda to search only the channels listed here, in the order given.</p>
+<p>Use <tt class="docutils literal"><span class="pre">defaults</span></tt> to automatically include all default channels. Non-url channels
+will be interpreted as binstar usernames, and this can be changed by modifying
+the <tt class="docutils literal"><span class="pre">channel_alias</span></tt> key as explained below. The default is just <tt class="docutils literal"><span class="pre">defaults</span></tt>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">channels</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">&lt;binstar_username&gt;</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">http://some.custom/channel</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">file:///some/local/directory</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">defaults</span>
 </pre></div>
 </div>
-<p>You can use the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></tt> command to modify configuration options in
-<tt class="docutils literal"><span class="pre">.condarc</span></tt> from the command line.</p>
 </div>
-<div class="section" id="tab-completion">
-<h1>Tab Completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">¶</a></h1>
-<p><tt class="docutils literal"><span class="pre">conda</span></tt> supports tab completion in bash shells via the <tt class="docutils literal"><span class="pre">argcomplete</span></tt>
-package. First, make sure that <tt class="docutils literal"><span class="pre">argcomplete</span></tt> is installed</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda install argcomplete
+<div class="section" id="always-yes">
+<h3><a class="toc-backref" href="#id4">Always yes</a><a class="headerlink" href="#always-yes" title="Permalink to this headline">¶</a></h3>
+<p>Choose the yes option whenever asked to proceed, such as when installing. Same
+as using the <tt class="docutils literal"><span class="pre">--yes</span></tt> flag at the command line. The default is <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">always_yes</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">True</span>
 </pre></div>
 </div>
-<p>Then add</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>register-python-argcomplete conda<span class="k">)</span><span class="s2">&quot;</span>
+</div>
+<div class="section" id="show-channel-urls">
+<h3><a class="toc-backref" href="#id5">Show Channel URLs</a><a class="headerlink" href="#show-channel-urls" title="Permalink to this headline">¶</a></h3>
+<p>Show channel URLs when displaying what is going to be downloaded and
+in <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></tt>. The default is <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">show_channel_urls</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">True</span>
 </pre></div>
 </div>
-<p>to your bash profile. You can test that it works by opening a new terminal
-window and typing</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda ins&lt;TAB&gt;
+</div>
+<div class="section" id="change-command-prompt">
+<h3><a class="toc-backref" href="#id6">Change command prompt</a><a class="headerlink" href="#change-command-prompt" title="Permalink to this headline">¶</a></h3>
+<p>When using <tt class="docutils literal"><span class="pre">activate</span></tt>, change the command prompt (<tt class="docutils literal"><span class="pre">$PS1</span></tt>) to include the activated
+environment. The default is <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">changeps1</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">False</span>
 </pre></div>
 </div>
-<p>It should complete to</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda install
+</div>
+<div class="section" id="use-pip">
+<h3><a class="toc-backref" href="#id7">Use PIP</a><a class="headerlink" href="#use-pip" title="Permalink to this headline">¶</a></h3>
+<p>Use pip when listing packages with <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></tt>. Note that this does not affect
+any conda command or functionality other than the output of the
+command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></tt>. The default is <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">use_pip</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">False</span>
 </pre></div>
 </div>
-<p>To get tab completion in zsh, see <a class="reference external" href="https://github.com/esc/conda-zsh-completion">conda-zsh-completion</a>.</p>
+</div>
+<div class="section" id="configure-conda-for-use-behind-a-proxy-server">
+<h3><a class="toc-backref" href="#id8">Configure conda for use behind a proxy server</a><a class="headerlink" href="#configure-conda-for-use-behind-a-proxy-server" title="Permalink to this headline">¶</a></h3>
+<p>By default, proxy settings are pulled from the <tt class="docutils literal"><span class="pre">HTTP_PROXY</span></tt> and <tt class="docutils literal"><span class="pre">HTTPS_PROXY</span></tt>
+environment variables or the system. Setting them here overrides that default.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">proxy_servers</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">http</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://user:pass@corp.com:8080</span>
+    <span class="l-Scalar-Plain">https</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">https://user:pass@corp.com:8080</span>
+</pre></div>
+</div>
+<p>Note: If you do not include the username and password, of if authentication
+fails, conda will prompt for a username and password.</p>
+<p>Note: If your password contains special characters they will need to be escaped
+as follows: <a class="reference external" href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters">https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters</a></p>
+<p>Note: Be careful not to use <tt class="docutils literal"><span class="pre">http</span></tt> when you mean <tt class="docutils literal"><span class="pre">https</span></tt>, or <tt class="docutils literal"><span class="pre">https</span></tt> when you mean <tt class="docutils literal"><span class="pre">http</span></tt>.</p>
+</div>
+<div class="section" id="offline-mode-only">
+<h3><a class="toc-backref" href="#id9">Offline mode only</a><a class="headerlink" href="#offline-mode-only" title="Permalink to this headline">¶</a></h3>
+<p>Filters out all channels URLs which do not use the <tt class="docutils literal"><span class="pre">file://</span></tt> protocol. The
+default is <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">offline</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-configuration">
+<h2><a class="toc-backref" href="#id10">Advanced configuration</a><a class="headerlink" href="#advanced-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="disallow-soft-linking">
+<h3><a class="toc-backref" href="#id11">Disallow soft-linking</a><a class="headerlink" href="#disallow-soft-linking" title="Permalink to this headline">¶</a></h3>
+<p>When <tt class="docutils literal"><span class="pre">allow_softlinks</span></tt> is <tt class="docutils literal"><span class="pre">True</span></tt>, conda uses hard-links when possible, and soft-links
+(symlinks) when hard-links are not possible, such as when installing on a
+different filesystem than the one that the package cache is on.</p>
+<p>When <tt class="docutils literal"><span class="pre">allow_softlinks</span></tt> is <tt class="docutils literal"><span class="pre">False</span></tt>, conda still uses hard-links when possible, but when it is
+not possible, conda copies files. Note that individual packages can override
+this, specifying that certain files should never be soft-linked, independent of
+this option (see the <tt class="docutils literal"><span class="pre">no_link</span></tt> option in the build recipe documentation).</p>
+<p>The default is <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">allow_softlinks</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-a-channel-alias">
+<h3><a class="toc-backref" href="#id12">Set a channel alias</a><a class="headerlink" href="#set-a-channel-alias" title="Permalink to this headline">¶</a></h3>
+<p>By default, <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">asmeurer</span> <span class="pre">&lt;package&gt;</span></tt> is the same
+as <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">https://conda.binstar.org/asmeurer</span> <span class="pre">&lt;package&gt;</span></tt>. This
+is because the default <tt class="docutils literal"><span class="pre">channel_alias</span></tt> is <a class="reference external" href="https://conda.binstar.org/">https://conda.binstar.org/</a> . Whenever
+conda is given a channel name that is not a URL, it prepends the <tt class="docutils literal"><span class="pre">channel_alias</span></tt>
+to the front of the name it was given.</p>
+<p>You can set the <tt class="docutils literal"><span class="pre">channel_alias</span></tt> to your own repository. If your repository is at
+<a class="reference external" href="https://yourrepo.com">https://yourrepo.com</a> then <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">jsmith</span> <span class="pre">&lt;package&gt;</span></tt> would be
+the same as <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">https://yourrepo.com/jsmith</span> <span class="pre">&lt;package&gt;</span></tt> .</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">channel_alias</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">https://your.repo/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="always-add-packages-by-default">
+<h3><a class="toc-backref" href="#id13">Always add packages by default</a><a class="headerlink" href="#always-add-packages-by-default" title="Permalink to this headline">¶</a></h3>
+<p>When creating new environments add these packages by default. You can override
+this option at the command prompt with the <tt class="docutils literal"><span class="pre">--no-default-packages</span></tt> flag. The
+default is not to include any packages.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">create_default_packages</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">ipython</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="track-features">
+<h3><a class="toc-backref" href="#id14">Track features</a><a class="headerlink" href="#track-features" title="Permalink to this headline">¶</a></h3>
+<p>Enable certain features to be tracked by default. The default is to not track
+any features. This is similar to adding <tt class="docutils literal"><span class="pre">mkl</span></tt> to the <tt class="docutils literal"><span class="pre">create_default_packages</span></tt>
+list.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">track_features</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">mkl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="conda-build-configuration">
+<h2><a class="toc-backref" href="#id15">Conda build configuration</a><a class="headerlink" href="#conda-build-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="automatically-upload-conda-build-packages-to-binstar-org">
+<h3><a class="toc-backref" href="#id16">Automatically upload conda build packages to binstar.org</a><a class="headerlink" href="#automatically-upload-conda-build-packages-to-binstar-org" title="Permalink to this headline">¶</a></h3>
+<p>Automatically upload packages built with <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt> to binstar.org. The
+default is <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">binstar_upload</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="specify-conda-build-output-root-directory">
+<h3><a class="toc-backref" href="#id17">Specify conda build output root directory</a><a class="headerlink" href="#specify-conda-build-output-root-directory" title="Permalink to this headline">¶</a></h3>
+<p>Build output root directory. This can also be set with the <tt class="docutils literal"><span class="pre">CONDA_BLD_PATH</span></tt>
+environment variable. The default is <tt class="docutils literal"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></tt>, or if you do
+not have write permissions to <tt class="docutils literal"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></tt> , <tt class="docutils literal"><span class="pre">~/conda-bld/</span></tt> .</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">conda-build</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">root-dir</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">~/conda-builds</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
 </div>
 
 
@@ -394,7 +451,7 @@ window and typing</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="build.html" class="btn btn-neutral float-right" title="conda build Recipe Reference">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sample-condarc.html" class="btn btn-neutral float-right" title="Sample .condarc file">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="glossary.html" class="btn btn-neutral" title="Conda Glossary"><span class="fa fa-arrow-circle-left"></span> Previous</a>

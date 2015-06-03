@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conda-env commands &mdash; Conda   documentation</title>
+  <title>Sample .condarc file &mdash; Conda   documentation</title>
   
 
   
@@ -29,8 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
-        <link rel="next" title="conda env" href="commands/env/conda-env.html"/>
-        <link rel="prev" title="conda update" href="commands/conda-update.html"/> 
+        <link rel="up" title="Configuration" href="config.html"/>
+        <link rel="next" title="Tab Completion" href="tab-completion.html"/>
+        <link rel="prev" title="Configuration" href="config.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -57,7 +58,7 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#conda-overview">Conda Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#package-naming-conventions">Package Naming Conventions</a></li>
@@ -94,10 +95,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Conda Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="config.html">Configuration</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="config.html#general-configuration">General configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html#advanced-configuration">Advanced configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html#conda-build-configuration">Conda build configuration</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="config.html#conda-build-configuration">Conda build configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="build.html">conda build Recipe Reference</a><ul>
@@ -126,7 +127,7 @@
 </ul>
 </li>
 </ul>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="commands.html">Command Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="commands.html#general-commands"><tt class="docutils literal"><span class="pre">general-commands</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html#env-commands"><tt class="docutils literal"><span class="pre">env-commands</span></tt></a></li>
@@ -151,7 +152,7 @@
 <li class="toctree-l2"><a class="reference internal" href="commands/conda-update.html">conda update</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">conda-env commands</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="env-commands.html">conda-env commands</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env.html">conda env</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-create.html">conda env create</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-export.html">conda env export</a></li>
@@ -224,10 +225,12 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>conda-env commands</li>
+          <li><a href="config.html">Configuration</a> &raquo;</li>
+      
+    <li>Sample .condarc file</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/env-commands.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/sample-condarc.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -235,19 +238,27 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-env-commands">
-<h1>conda-env commands<a class="headerlink" href="#conda-env-commands" title="Permalink to this headline">¶</a></h1>
-<p>The following commands are part of the <tt class="docutils literal"><span class="pre">conda-env</span></tt> package, which is
-installed automatically with conda.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env.html">conda env</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-create.html">conda env create</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-export.html">conda env export</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-list.html">conda env list</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-remove.html">conda env remove</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commands/env/conda-env-update.html">conda env update</a></li>
-</ul>
+  <div class="section" id="sample-condarc-file">
+<h1>Sample .condarc file<a class="headerlink" href="#sample-condarc-file" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># This is a sample .condarc file. It adds the r binstar channel and enables</span>
+<span class="c1"># the show_channel_urls option.</span>
+
+<span class="c1"># channel locations. These override conda defaults, i.e., conda will</span>
+<span class="c1"># search *only* the channels listed here, in the order given. Use &quot;defaults&quot; to</span>
+<span class="c1"># automatically include all default channels. Non-url channels will be</span>
+<span class="c1"># interpreted as binstar usernames (this can be changed by modifying the</span>
+<span class="c1"># channel_alias key; see below). The default is just &#39;defaults&#39;.</span>
+<span class="l-Scalar-Plain">channels</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">r</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">defaults</span>
+
+<span class="c1"># Show channel URLs when displaying what is going to be downloaded and</span>
+<span class="c1"># in &#39;conda list&#39;. The default is False.</span>
+<span class="l-Scalar-Plain">show_channel_urls</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">True</span>
+
+
+<span class="c1"># See http://conda.pydata.org/docs/config.html for more information about this file.</span>
+</pre></div>
 </div>
 </div>
 
@@ -257,10 +268,10 @@ installed automatically with conda.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="commands/env/conda-env.html" class="btn btn-neutral float-right" title="conda env">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tab-completion.html" class="btn btn-neutral float-right" title="Tab Completion">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="commands/conda-update.html" class="btn btn-neutral" title="conda update"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="config.html" class="btn btn-neutral" title="Configuration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
