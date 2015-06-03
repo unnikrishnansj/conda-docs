@@ -121,8 +121,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../get-more-help.html">Get more help</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../faq.html">Conda FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../conda-pip-translator.html">Conda/PIP translator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../support.html">Support options</a></li>
 </ul>
 </li>
 </ul>
@@ -251,7 +252,7 @@ NAME
 DESCRIPTION
        usage: conda-inspect objects [-h] [--untracked]
 
-       [--groupby {filetype,filename,rpath}] [--all]
+       [--groupby {filename,rpath,filetype}] [--all]
               [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
 
        Investigate  binary  object  files  in  a package (only works in OS X).
@@ -270,7 +271,7 @@ DESCRIPTION
               Inspect the untracked files in the environment. Useful when used
               in conjunction with conda build --buildonly.
 
-       --groupby {filetype,filename,rpath}
+       --groupby {filename,rpath,filetype}
               Attribute to group by (default: filename)
 
        --all  Generate a report for all packages in the environment.

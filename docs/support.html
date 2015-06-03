@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Conda/PIP translator &mdash; Conda   documentation</title>
+  <title>Support options &mdash; Conda   documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
         <link rel="up" title="Get more help" href="get-more-help.html"/>
-        <link rel="next" title="Examples" href="examples.html"/>
-        <link rel="prev" title="Troubleshooting" href="troubleshooting.html"/> 
+        <link rel="next" title="Command Reference" href="commands.html"/>
+        <link rel="prev" title="Advanced Package Management" href="examples/advanced.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -121,8 +121,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="get-more-help.html">Get more help</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Conda FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Conda/PIP translator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Support options</a></li>
 </ul>
 </li>
 </ul>
@@ -226,10 +227,10 @@
       
           <li><a href="get-more-help.html">Get more help</a> &raquo;</li>
       
-    <li>Conda/PIP translator</li>
+    <li>Support options</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/conda-pip-translator.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/support.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -237,64 +238,13 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-pip-translator">
-<h1>Conda/PIP translator<a class="headerlink" href="#conda-pip-translator" title="Permalink to this headline">¶</a></h1>
-<p>If you&#8217;ve used pip and virtualenv in the past, you can use conda to perform the operations you are used to.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="36%" />
-<col width="39%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Operation</th>
-<th class="head">Pip Command</th>
-<th class="head">Conda Command</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Install a package</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Uninstall a package</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-</tr>
-<tr class="row-even"><td>Create an environment</td>
-<td><tt class="docutils literal"><span class="pre">cd</span> <span class="pre">$ENV_BASE_DIR;</span> <span class="pre">virtualenv</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">python</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Activate an environment</td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">$ENV_BASE_DIR/$ENVIRONMENT_NAME/bin/activate</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
-</tr>
-<tr class="row-even"><td>Deactivate an environment</td>
-<td><tt class="docutils literal"><span class="pre">deactivate</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Search available packages</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></tt></td>
-</tr>
-<tr class="row-even"><td>Install package from specific source</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--index-url</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-</tr>
-<tr class="row-odd"><td>List installed packages</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">list</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
-</tr>
-<tr class="row-even"><td>Create requirements file</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">freeze</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--export</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Update a package</td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--name</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-</tr>
-</tbody>
-</table>
+  <div class="section" id="support-options">
+<h1>Support options<a class="headerlink" href="#support-options" title="Permalink to this headline">¶</a></h1>
+<p>Need help from a person? The open source community is usually ready to help at no
+charge, Continuum Analytics offers hourly support packages, and support is included
+in some purchases. See
+the <a class="reference external" href="http://continuum.io/support">Continuum Analytics support page</a> for
+current support options.</p>
 </div>
 
 
@@ -303,10 +253,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="examples.html" class="btn btn-neutral float-right" title="Examples">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="commands.html" class="btn btn-neutral float-right" title="Command Reference">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="troubleshooting.html" class="btn btn-neutral" title="Troubleshooting"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="examples/advanced.html" class="btn btn-neutral" title="Advanced Package Management"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

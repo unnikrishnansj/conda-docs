@@ -30,7 +30,7 @@
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
         <link rel="up" title="Get more help" href="get-more-help.html"/>
-        <link rel="next" title="Conda/PIP translator" href="conda-pip-translator.html"/>
+        <link rel="next" title="conda vs. pip vs. virtualenv" href="conda-pip-virtualenv-translator.html"/>
         <link rel="prev" title="Conda FAQ" href="faq.html"/> 
 
   
@@ -121,8 +121,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="get-more-help.html">Get more help</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="faq.html">Conda FAQ</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-pip-translator.html">Conda/PIP translator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html">Support options</a></li>
 </ul>
 </li>
 </ul>
@@ -239,8 +240,16 @@
             
   <div class="section" id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<p>Table of contents:</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="#permission-denied"><em>Issue:  permission denied errors during install</em></a></li>
+<li><a class="reference internal" href="#conda-claims-installed"><em>Issue: Conda claims that a package is installed, but it appears not to be.</em></a></li>
+<li><a class="reference internal" href="#distributionnotfound"><em>Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</em></a></li>
+<li><a class="reference internal" href="#unknown-locale"><em>Issue: ValueError unknown locale: UTF-8 on Mac OS X</em></a></li>
+<li><a class="reference internal" href="#attributeerror-getproxies"><em>Issue: AttributeError or missing getproxies</em></a></li>
+</ol>
 <div class="section" id="issue-permission-denied-errors-during-install">
-<h2>Issue:  permission denied errors during install<a class="headerlink" href="#issue-permission-denied-errors-during-install" title="Permalink to this headline">¶</a></h2>
+<span id="permission-denied"></span><h2>Issue:  permission denied errors during install<a class="headerlink" href="#issue-permission-denied-errors-during-install" title="Permalink to this headline">¶</a></h2>
 <p>umask is a command that determines the mask settings that control how file permissions are set for newly created files. If you have a very restrictive umask (such as 077), you will see &#8220;permission denied&#8221; errors.</p>
 <div class="section" id="resolution-set-less-restrictive-umask-before-calling-conda-commands">
 <h3>Resolution:  set less restrictive umask before calling conda commands.<a class="headerlink" href="#resolution-set-less-restrictive-umask-before-calling-conda-commands" title="Permalink to this headline">¶</a></h3>
@@ -257,7 +266,7 @@
 </div>
 </div>
 <div class="section" id="issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be">
-<h2>Issue: Conda claims that a package is installed, but it appears not to be.<a class="headerlink" href="#issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be" title="Permalink to this headline">¶</a></h2>
+<span id="conda-claims-installed"></span><h2>Issue: Conda claims that a package is installed, but it appears not to be.<a class="headerlink" href="#issue-conda-claims-that-a-package-is-installed-but-it-appears-not-to-be" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes conda will claim that a package is already installed, but it will
 not appear to be, e.g., a Python package that gives ImportError.</p>
 <p>There are a few possible causes of this issue:</p>
@@ -322,7 +331,7 @@ the <tt class="docutils literal"><span class="pre">-f</span></tt> flag to <tt cl
 </div>
 </div>
 <div class="section" id="issue-pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty">
-<h2>Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty<a class="headerlink" href="#issue-pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty" title="Permalink to this headline">¶</a></h2>
+<span id="distributionnotfound"></span><h2>Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty<a class="headerlink" href="#issue-pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="resolution-force-reinstall-conda">
 <h3>Resolution: Force reinstall conda<a class="headerlink" href="#resolution-force-reinstall-conda" title="Permalink to this headline">¶</a></h3>
 <p>A useful way to work off the development version of conda is to run <tt class="docutils literal"><span class="pre">python</span>
@@ -340,7 +349,7 @@ not a git checkout (the version should not include any hashes).</p>
 </div>
 </div>
 <div class="section" id="issue-valueerror-unknown-locale-utf-8-on-mac-os-x">
-<h2>Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on Mac OS X<a class="headerlink" href="#issue-valueerror-unknown-locale-utf-8-on-mac-os-x" title="Permalink to this headline">¶</a></h2>
+<span id="unknown-locale"></span><h2>Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on Mac OS X<a class="headerlink" href="#issue-valueerror-unknown-locale-utf-8-on-mac-os-x" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="resolution-uncheck-set-locale-environment-variables-on-startup-setting-in-terminal-settings">
 <h3>Resolution: Uncheck &#8220;set locale environment variables on startup&#8221; setting in Terminal settings<a class="headerlink" href="#resolution-uncheck-set-locale-environment-variables-on-startup-setting-in-terminal-settings" title="Permalink to this headline">¶</a></h3>
 <p>This is a bug in the OS X Terminal app that only shows up in certain locales
@@ -361,6 +370,22 @@ translations are used when they are available, and also how dates,
 currencies, and decimals are formatted.</p>
 </div>
 </div>
+<div class="section" id="issue-attributeerror-or-missing-getproxies">
+<span id="attributeerror-getproxies"></span><h2>Issue: <tt class="docutils literal"><span class="pre">AttributeError</span></tt> or missing <tt class="docutils literal"><span class="pre">getproxies</span></tt><a class="headerlink" href="#issue-attributeerror-or-missing-getproxies" title="Permalink to this headline">¶</a></h2>
+<p>When running a command such as <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">ipython</span></tt>, you may get an
+<tt class="docutils literal"><span class="pre">AttributeError:</span> <span class="pre">'module'</span> <span class="pre">object</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'getproxies'</span></tt>.</p>
+<div class="section" id="resolution-update-requests-and-be-sure-pythonpath-is-not-set">
+<h3>Resolution: Update <tt class="docutils literal"><span class="pre">requests</span></tt> and be sure <tt class="docutils literal"><span class="pre">PYTHONPATH</span></tt> is not set.<a class="headerlink" href="#resolution-update-requests-and-be-sure-pythonpath-is-not-set" title="Permalink to this headline">¶</a></h3>
+<p>This can be caused by an old version of <tt class="docutils literal"><span class="pre">requests</span></tt>, or by having the <tt class="docutils literal"><span class="pre">PYTHONPATH</span></tt>
+environment variable set.</p>
+<p><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">-a</span></tt> will show the <tt class="docutils literal"><span class="pre">requests</span></tt> version and various environment
+variables such as <tt class="docutils literal"><span class="pre">PYTHONPATH</span></tt>.</p>
+<p>The <tt class="docutils literal"><span class="pre">requests</span></tt> version can be updated with <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">requests</span></tt>.</p>
+<p>On Windows <tt class="docutils literal"><span class="pre">PYTHONPATH</span></tt> can be cleared in the environment variable settings.
+On OS X and Linux it can typically be cleared by removing it from the bash
+profile and restarting the shell.</p>
+</div>
+</div>
 </div>
 
 
@@ -369,7 +394,7 @@ currencies, and decimals are formatted.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-pip-translator.html" class="btn btn-neutral float-right" title="Conda/PIP translator">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-pip-virtualenv-translator.html" class="btn btn-neutral float-right" title="conda vs. pip vs. virtualenv">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="faq.html" class="btn btn-neutral" title="Conda FAQ"><span class="fa fa-arrow-circle-left"></span> Previous</a>
