@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Administrative channel management for a centralized conda installation &mdash; Conda   documentation</title>
+  <title>Centralized installation &mdash; Conda   documentation</title>
   
 
   
@@ -29,8 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
-        <link rel="next" title="Custom Channels" href="custom-channels.html"/>
-        <link rel="prev" title="Tutorial: Building the postgis package" href="build_tutorials/postgis.html"/> 
+        <link rel="up" title="Installation" href="installation.html"/>
+        <link rel="next" title="Conda test drive" href="test-drive.html"/>
+        <link rel="prev" title="Installation" href="installation.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -71,10 +72,10 @@
 <li class="toctree-l2"><a class="reference internal" href="quick-install.html#miniconda-quick-install-requirements">Miniconda quick install requirements</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="installation.html">Installation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="installation.html#anaconda-requirements">Anaconda requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#install-instructions">Install instructions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#silent-installation">Silent installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="installation.html#silent-installation">Silent installation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="test-drive.html">Conda test drive</a><ul>
@@ -106,11 +107,6 @@
 <li class="toctree-l2"><a class="reference internal" href="build_tutorials/pkgs.html">Tutorial: Intro to building conda packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build_tutorials/pkgs2.html">Tutorial: Building conda packages part 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build_tutorials/postgis.html">Tutorial: Building the postgis package</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Administrative channel management for a centralized conda installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#system-configuration-settings">System configuration settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example-admin-controlled-installation">Example admin-controlled installation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="custom-channels.html">Custom Channels</a><ul>
@@ -224,7 +220,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Administrative channel management for a centralized conda installation</li>
+          <li><a href="installation.html">Installation</a> &raquo;</li>
+      
+    <li>Centralized installation</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="https://github.com/conda/conda-docs/edit/master/docs/source/admin.rst" class="fa fa-github"> Edit on GitHub</a>
@@ -235,8 +233,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="administrative-channel-management-for-a-centralized-conda-installation">
-<h1>Administrative channel management for a centralized conda installation<a class="headerlink" href="#administrative-channel-management-for-a-centralized-conda-installation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="centralized-installation">
+<h1>Centralized installation<a class="headerlink" href="#centralized-installation" title="Permalink to this headline">¶</a></h1>
 <p>Administrators who wish to restrict what programs users can install may do so with a system configuration file,
 or .condarc that follows the simple <a class="reference external" href="http://docs.ansible.com/YAMLSyntax.html">YAML syntax</a>. The system
 configuration file overrides any  .condarc configuration files installed by the user.</p>
@@ -417,10 +415,10 @@ through the admin channel:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="custom-channels.html" class="btn btn-neutral float-right" title="Custom Channels">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="test-drive.html" class="btn btn-neutral float-right" title="Conda test drive">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="build_tutorials/postgis.html" class="btn btn-neutral" title="Tutorial: Building the postgis package"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral" title="Installation"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
