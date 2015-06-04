@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sample .condarc file &mdash; Conda   documentation</title>
+  <title>Get involved &mdash; Conda   documentation</title>
   
 
   
@@ -29,9 +29,8 @@
 
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
-        <link rel="up" title="Configuration" href="config.html"/>
-        <link rel="next" title="Tab Completion" href="tab-completion.html"/>
-        <link rel="prev" title="Configuration" href="config.html"/> 
+        <link rel="next" title="Get more help" href="get-more-help.html"/>
+        <link rel="prev" title="Custom Channels" href="custom-channels.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -87,10 +86,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Conda Glossary</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="config.html">Configuration</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="config.html#general-configuration">General configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html#advanced-configuration">Advanced configuration</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="config.html#conda-build-configuration">Conda build configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#conda-build-configuration">Conda build configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="build.html">conda build Recipe Reference</a><ul>
@@ -113,10 +112,10 @@
 <li class="toctree-l2"><a class="reference internal" href="custom-channels.html#custom-channel-private-repository-summary">Custom channel/private repository summary</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="get-involved.html#join-a-conda-mailing-list">Join a conda mailing list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="get-involved.html#contribute-recipes-to-github">Contribute recipes to Github</a></li>
-<li class="toctree-l2"><a class="reference internal" href="get-involved.html#report-a-bug">Report a bug</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Get involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#join-a-conda-mailing-list">Join a conda mailing list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contribute-recipes-to-github">Contribute recipes to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#report-a-bug">Report a bug</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="get-more-help.html">Get more help</a><ul>
@@ -226,12 +225,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-          <li><a href="config.html">Configuration</a> &raquo;</li>
-      
-    <li>Sample .condarc file</li>
+    <li>Get involved</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/sample-condarc.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/get-involved.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -239,27 +236,32 @@
 </div>
           <div role="main">
             
-  <div class="section" id="sample-condarc-file">
-<h1>Sample .condarc file<a class="headerlink" href="#sample-condarc-file" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="c1"># This is a sample .condarc file. It adds the r binstar channel and enables</span>
-<span class="c1"># the show_channel_urls option.</span>
-
-<span class="c1"># channel locations. These override conda defaults, i.e., conda will</span>
-<span class="c1"># search *only* the channels listed here, in the order given. Use &quot;defaults&quot; to</span>
-<span class="c1"># automatically include all default channels. Non-url channels will be</span>
-<span class="c1"># interpreted as binstar usernames (this can be changed by modifying the</span>
-<span class="c1"># channel_alias key; see below). The default is just &#39;defaults&#39;.</span>
-<span class="l-Scalar-Plain">channels</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">r</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">defaults</span>
-
-<span class="c1"># Show channel URLs when displaying what is going to be downloaded and</span>
-<span class="c1"># in &#39;conda list&#39;. The default is False.</span>
-<span class="l-Scalar-Plain">show_channel_urls</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">True</span>
-
-
-<span class="c1"># See http://conda.pydata.org/docs/config.html for more information about this file.</span>
-</pre></div>
+  <div class="section" id="get-involved">
+<h1>Get involved<a class="headerlink" href="#get-involved" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="join-a-conda-mailing-list">
+<h2>Join a conda mailing list<a class="headerlink" href="#join-a-conda-mailing-list" title="Permalink to this headline">¶</a></h2>
+<p>Please feel welcome to join the mailing lists for both
+<a class="reference external" href="https://groups.google.com/a/continuum.io/forum/?fromgroups#!forum/anaconda">Anaconda</a> and
+<a class="reference external" href="https://groups.google.com/a/continuum.io/forum/#!forum/conda">Conda</a>, ask questions,
+answer questions, and discuss ways to use conda, requests for new features, and any
+other comments you may have.</p>
+</div>
+<div class="section" id="contribute-recipes-to-github">
+<h2>Contribute recipes to Github<a class="headerlink" href="#contribute-recipes-to-github" title="Permalink to this headline">¶</a></h2>
+<p>The GitHub repository at <a class="reference external" href="https://github.com/conda/conda-recipes">https://github.com/conda/conda-recipes</a> is always happy to
+accept new recipes for programs not yet there. Building recipes is described in
+the <a class="reference internal" href="build.html"><em>conda build Recipe Reference</em></a>. When you build a new conda recipe for a program not yet listed
+in the repository, please use a GitHub pull request to submit it to the repository,
+so that others using that program in the future can reuse it. Recipes are welcome
+for programs that use any license, whether GPL, BSD, MIT, Apache, or any other, and
+all of the recipes in this repository are released into the public domain.</p>
+</div>
+<div class="section" id="report-a-bug">
+<h2>Report a bug<a class="headerlink" href="#report-a-bug" title="Permalink to this headline">¶</a></h2>
+<p>Issues with conda are tracked on GitHub at <a class="reference external" href="https://github.com/conda/conda/issues">https://github.com/conda/conda/issues</a>, and
+issues with conda build at <a class="reference external" href="https://github.com/conda/conda-build/issues">https://github.com/conda/conda-build/issues</a>. If you find
+a bug, please search to see if it has been reported, and please report it if no one
+else has.</p>
 </div>
 </div>
 
@@ -269,10 +271,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tab-completion.html" class="btn btn-neutral float-right" title="Tab Completion">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="get-more-help.html" class="btn btn-neutral float-right" title="Get more help">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="config.html" class="btn btn-neutral" title="Configuration"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="custom-channels.html" class="btn btn-neutral" title="Custom Channels"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

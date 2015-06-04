@@ -84,7 +84,7 @@ conda create
                  to get the system  packages,  which  also  takes  .condarc  into
                  account.  You  can  also  use  any  name  and the .condarc chan‐
                  nel_alias value will be prepended. The default channel_alias  is
-                 http://conda.binstar.org/.
+                 http://conda.anaconda.org/.
    
           --override-channels
                  Do not search default or .condarc channels. Requires --channel.
