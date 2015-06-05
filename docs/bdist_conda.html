@@ -30,7 +30,7 @@
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
         <link rel="next" title="License - Conda" href="license.html"/>
-        <link rel="prev" title="Using Conda with Travis CI" href="travis.html"/> 
+        <link rel="prev" title="Conda package specification" href="spec.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -62,14 +62,12 @@
 <li class="toctree-l2"><a class="reference internal" href="intro.html#conda-overview">Conda Overview</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="quick-install.html">Quick Install</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="quick-install.html#miniconda-quick-install-requirements">Miniconda quick install requirements</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#anaconda-requirements">Anaconda requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#install-instructions">Install instructions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#silent-installation">Silent installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install/install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install/full.html">Full Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/quick.html">Quick Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/config.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/central.html">Centralized installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/silent.html">Silent installation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="test-drive.html">Conda test drive</a><ul>
@@ -82,12 +80,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="py2or3.html">Create Python 2 or 3 environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Conda Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="config.html#general-configuration">General configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html#advanced-configuration">Advanced configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html#conda-build-configuration">Conda build configuration</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="building/pkg-name-conv.html">Package Naming Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building/meta-pkg.html">Metapackages</a></li>
@@ -111,12 +103,13 @@
 <li class="toctree-l2"><a class="reference internal" href="get-involved.html#report-a-bug">Report a bug</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="get-more-help.html">Get more help</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="faq.html">Conda FAQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="support.html">Support options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Get more help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="help/faq.html">Conda FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/examples/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/travis.html">Using Conda with Travis CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="help/support.html">Support options</a></li>
 </ul>
 </li>
 </ul>
@@ -175,13 +168,6 @@
 <li class="toctree-l2"><a class="reference internal" href="spec.html#link-and-unlink-scripts">Link and unlink scripts:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spec.html#repository-structure-and-index">Repository structure and index</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spec.html#package-match-specifications">Package Match Specifications</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="travis.html">Using Conda with Travis CI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="travis.html#the-travis-yml-file">The .travis.yml file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="travis.html#additional-steps">Additional Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="travis.html#building-a-conda-recipe">Building a Conda Recipe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="travis.html#appveyor">AppVeyor</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Building Python packages</a><ul>
@@ -364,7 +350,7 @@ features in conda.</p>
         <a href="license.html" class="btn btn-neutral float-right" title="License - Conda">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="travis.html" class="btn btn-neutral" title="Using Conda with Travis CI"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="spec.html" class="btn btn-neutral" title="Conda package specification"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

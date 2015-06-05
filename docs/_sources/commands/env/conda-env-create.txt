@@ -25,7 +25,7 @@ conda env create
                  show this help message and exit
    
           -n NAME, --name NAME
-                 name of environment (in root prefix/envs)
+                 name of environment (in envs dirs)
    
           -f FILE, --file FILE
                  environment definition (default: environment.yml)
