@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Informational Commands &mdash; Conda   documentation</title>
+  <title>Building packages &mdash; Conda   documentation</title>
   
 
   
@@ -29,9 +29,8 @@
 
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="up" title="Examples" href="../examples.html"/>
-        <link rel="next" title="Info" href="info.html"/>
-        <link rel="prev" title="Examples" href="../examples.html"/> 
+        <link rel="next" title="Package Naming Conventions" href="pkg-name-conv.html"/>
+        <link rel="prev" title="Tab Completion" href="../tab-completion.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -89,10 +88,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../config.html#conda-build-configuration">Conda build configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../building/pkg-name-conv.html">Package Naming Conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/meta-pkg.html">Metapackages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/dirs.html">Directory Structure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Building packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pkg-name-conv.html">Package Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta-pkg.html">Metapackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dirs.html">Directory Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../build.html">conda build Recipe Reference</a></li>
 </ul>
 </li>
@@ -112,11 +111,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../get-involved.html#report-a-bug">Report a bug</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../get-more-help.html">Get more help</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-more-help.html">Get more help</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html">Conda FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html">Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../support.html">Support options</a></li>
 </ul>
 </li>
@@ -219,14 +218,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../get-more-help.html">Get more help</a> &raquo;</li>
-      
-          <li><a href="../examples.html">Examples</a> &raquo;</li>
-      
-    <li>Informational Commands</li>
+    <li>Building packages</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/examples/information.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/building/build.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -234,13 +229,31 @@
 </div>
           <div role="main">
             
-  <div class="section" id="informational-commands">
-<h1>Informational Commands<a class="headerlink" href="#informational-commands" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="building-packages">
+<h1>Building packages<a class="headerlink" href="#building-packages" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="info.html">Info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list.html">List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pkg-name-conv.html">Package Naming Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meta-pkg.html">Metapackages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dirs.html">Directory Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">conda build Recipe Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#the-meta-yaml-file">The meta.yaml file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build.html#specifying-versions-in-requirements">Specifying versions in requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../build.html#preprocessing-selectors">Preprocessing selectors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#environment-variables-set-during-the-build-process">Environment variables set during the build process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build.html#git-environment-variables">Git Environment Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../build.html#inherited-environment-variables">Inherited Environment Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#environment-variables-that-affect-the-build-process">Environment variables that affect the build process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#pre-post-link-unlink-scripts">Pre/Post link/unlink scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#post-build-version">Post-build version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#making-packages-relocatable">Making Packages Relocatable</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -251,10 +264,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="info.html" class="btn btn-neutral float-right" title="Info">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pkg-name-conv.html" class="btn btn-neutral float-right" title="Package Naming Conventions">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../examples.html" class="btn btn-neutral" title="Examples"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../tab-completion.html" class="btn btn-neutral" title="Tab Completion"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

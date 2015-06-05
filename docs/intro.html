@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introduction &mdash; Conda   documentation</title>
+  <title>Getting Started &mdash; Conda   documentation</title>
   
 
   
@@ -58,13 +58,8 @@
         
         
             <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Introduction</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#conda-overview">Conda Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#package-naming-conventions">Package Naming Conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#meta-packages">Meta-Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#directory-structure">Directory Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-python-3-4-or-python-2-6-environments">Creating Python 3.4 or Python 2.6 environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#update-anaconda-to-latest-version">Update Anaconda to latest version</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick-install.html">Quick Install</a><ul>
@@ -85,6 +80,7 @@
 <li class="toctree-l2"><a class="reference internal" href="test-drive.html#removing-packages-environments-or-conda">5. Removing packages, environments, or conda</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="py2or3.html">Create Python 2 or 3 environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Conda Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="config.html#general-configuration">General configuration</a></li>
@@ -92,14 +88,11 @@
 <li class="toctree-l2"><a class="reference internal" href="config.html#conda-build-configuration">Conda build configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="build.html">conda build Recipe Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="build.html#the-meta-yaml-file">The meta.yaml file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html#environment-variables-set-during-the-build-process">Environment variables set during the build process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html#environment-variables-that-affect-the-build-process">Environment variables that affect the build process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html#pre-post-link-unlink-scripts">Pre/Post link/unlink scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html#post-build-version">Post-build version</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html#features">Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html#making-packages-relocatable">Making Packages Relocatable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="building/pkg-name-conv.html">Package Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/meta-pkg.html">Metapackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/dirs.html">Directory Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">conda build Recipe Reference</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="build_tutorials.html">Build tutorials</a><ul>
@@ -225,7 +218,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Introduction</li>
+    <li>Getting Started</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="https://github.com/conda/conda-docs/edit/master/docs/source/intro.rst" class="fa fa-github"> Edit on GitHub</a>
@@ -236,8 +229,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <p>The <cite>conda</cite> command is the primary interface for managing installations
 of various packages.  It can query and search the package index and current
 installation, create new environments, and install and update packages
@@ -269,156 +262,13 @@ The conda command starts with a default set of channels to search, but users may
 </dd>
 </dl>
 <p>To view all available packages, you can use <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span></tt>.  See the <a class="reference internal" href="examples/search.html#search-example"><em>search command examples</em></a> for more information.</p>
-<p>Once a conda package has been downloaded, it is said to
-be <cite>locally available</cite>.
-A locally available package that has been linked into an conda environment
-is said to be <cite>linked</cite>.
-Conversely, unlinking a package from an environment causes it to be <cite>unlinked</cite>.</p>
 <span class="target" id="location"></span><span class="target" id="known"><span id="index-6"></span></span><p id="index-7">Since conda environments are simply directories, they may be created
 anywhere.  However, conda has a notion of <cite>locations</cite> which are also
 simply directories that are known to conda, and contain environments
 within.  Conda environments created in such locations are said to
 be <cite>known</cite>, and can be displayed for easy reference.  Conda has a default
-system location, but additional locations may be specified (see <a class="reference internal" href="#id1">Directory
-Structure</a> and <a class="reference internal" href="config.html#config"><em>Configuration</em></a>, respectively, for more details).</p>
-</div>
-<div class="section" id="package-naming-conventions">
-<h2>Package Naming Conventions<a class="headerlink" href="#package-naming-conventions" title="Permalink to this headline">¶</a></h2>
-<p>Names and versions of software packages do not follow any prescribed rules.
-However, in order to facilitate communication and documentation,
-conda employs the following naming conventions with respect to packages:</p>
-<span class="target" id="package-name"></span><dl class="docutils" id="index-8">
-<dt><strong>package name</strong></dt>
-<dd>The name of a package, without any reference to a particular version.
-Conda package names are normalized, and may contain only lowercase alpha
-characters, numeric digits, underscores, or hyphens.  In usage
-documentation, these will be referred to by <cite>package_name</cite>.</dd>
-</dl>
-<span class="target" id="package-version"></span><dl class="docutils" id="index-9">
-<dt><strong>package version</strong></dt>
-<dd>A version number or string, often similar to <em>X.Y</em> or <em>X.Y.Z</em>, but may
-take other forms as well.</dd>
-</dl>
-<span class="target" id="build-string"></span><dl class="docutils" id="index-10">
-<dt><strong>build string</strong></dt>
-<dd>An arbitrary string that identifies a particular build of a package for
-conda.  It may contain suggestive mnemonics but these are subject to
-change and should not be relied upon or attempted to be parsed for any
-specific information.</dd>
-</dl>
-<span class="target" id="canonical-name"></span><dl class="docutils" id="index-11">
-<dt><strong>canonical name</strong></dt>
-<dd>The canonical name consists of the package name, version, and build
-string joined together by hyphens: <em>name</em>-<em>version</em>-<em>buildstring</em>.
-In usage documentation, these will be referred to by <cite>canonical_name</cite>.</dd>
-</dl>
-<span class="target" id="filename"></span><dl class="docutils" id="index-12">
-<dt><strong>file name</strong></dt>
-<dd>conda package filenames are canonical names, plus the suffix <em>.tar.bz2</em>.</dd>
-</dl>
-<p>These components are illustrated in the following figure:</p>
-<div class="figure align-center">
-<img alt="_images/conda_names.png" src="_images/conda_names.png" />
-<p class="caption">Different parts of conda package names.</p>
-</div>
-<span class="target" id="package-spec"></span><p id="index-13">Additionally, a <cite>package specification</cite> is a package name, together with a package version (which may be partial or absent), joined by &#8220;=&#8221;. Here are some examples:</p>
-<ul class="simple">
-<li><em>python=2.7.3</em></li>
-<li><em>python=2.7</em></li>
-<li><em>python</em></li>
-</ul>
-<p>In usage documentation, these will be referred to by <cite>package_spec</cite>.</p>
-</div>
-<div class="section" id="meta-packages">
-<span id="meta-package"></span><h2>Meta-Packages<a class="headerlink" href="#meta-packages" title="Permalink to this headline">¶</a></h2>
-<p>conda also provides the notion of <cite>meta-packages</cite>.  A meta-package is a conda
-package that only has dependencies, no files. An easy way to make a
-meta-package is with the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">metapackage</span></tt> command.</p>
-</div>
-<div class="section" id="directory-structure">
-<span id="id1"></span><h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
-<p>The conda system has the following directory structure:</p>
-<dl class="docutils">
-<dt><strong>ROOT_DIR</strong></dt>
-<dd><p class="first">The directory that Anaconda (or Miniconda) was installed
-into; for example, <em>/opt/Anaconda</em> or <em>C:\Anaconda</em></p>
-<dl class="docutils">
-<dt><em>/pkgs</em></dt>
-<dd>Also referred to as <em>PKGS_DIR</em>. This directory contains exploded
-packages, ready to be linked in conda environments.
-Each package resides in a subdirectory corresponding to its
-canonical name.</dd>
-<dt><em>/envs</em></dt>
-<dd>The system location for additional conda environments to be created.</dd>
-</dl>
-<div class="last line-block">
-<div class="line"><em>/bin</em></div>
-<div class="line"><em>/include</em></div>
-<div class="line"><em>/lib</em></div>
-<div class="line"><em>/share</em></div>
-<div class="line-block">
-<div class="line">These subdirectories comprise the default Anaconda environment.</div>
-</div>
-</div>
-</dd>
-</dl>
-<p>Other conda environments usually contain the same subdirectories as the
-default environment.</p>
-</div>
-<div class="section" id="creating-python-3-4-or-python-2-6-environments">
-<h2>Creating Python 3.4 or Python 2.6 environments<a class="headerlink" href="#creating-python-3-4-or-python-2-6-environments" title="Permalink to this headline">¶</a></h2>
-<p>Anaconda supports Python 2.6, 2.7, 3.3, and 3.4.  The default is Python 2.7 or
-3.4, depending on which installer you used.</p>
-<p>To get started, you need to create an environment using the <a class="reference internal" href="examples/create.html#create-example"><em>conda create</em></a>
-command.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create -n py34 <span class="nv">python</span><span class="o">=</span>3.4 anaconda
-</pre></div>
-</div>
-<p>Here, &#8216;py34&#8217; is the name of the environment to create, and &#8216;anaconda&#8217; is the
-meta-package that includes all of the actual Python packages comprising
-the Anaconda distribution.  When creating a new environment and installing
-the Anaconda meta-package, the NumPy and Python versions can be specified,
-e.g. <cite>numpy=1.7</cite> or <cite>python=3.4</cite>.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create -n py26 <span class="nv">python</span><span class="o">=</span>2.6 anaconda
-</pre></div>
-</div>
-<p>After the environment creation process completes, adjust your <strong>PATH</strong> variable
-to point to this directory.  On Linux/MacOSX systems, this can be easily
-done using:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>activate &lt;env name&gt;
-
-<span class="c"># This command assumes ~/anaconda/bin/activate is the first &#39;activate&#39; on your current PATH</span>
-</pre></div>
-</div>
-<p>This will modify your Bash PS1 to include the name of the environment.</p>
-<div class="highlight-bash"><div class="highlight"><pre>$ source activate myenv
-(myenv)$
-</pre></div>
-</div>
-<p>You can disable this with <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">changeps1</span> <span class="pre">no</span></tt>. The environment
-variable <tt class="docutils literal"><span class="pre">CONDA_DEFAULT_ENV</span></tt> is set to the currently activated environment.</p>
-<p>On Windows systems, use <tt class="docutils literal"><span class="pre">activate</span></tt> instead of <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span></tt>.</p>
-<p>Now you&#8217;re ready to begin using the Python located in your created
-environment.</p>
-<p>If you would like to deactivate this environment and revert your <strong>PATH</strong> to
-its previous state, use:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>deactivate
-</pre></div>
-</div>
-<p>On Windows, this is just <tt class="docutils literal"><span class="pre">deactivate</span></tt>.</p>
-</div>
-<div class="section" id="update-anaconda-to-latest-version">
-<h2>Update Anaconda to latest version<a class="headerlink" href="#update-anaconda-to-latest-version" title="Permalink to this headline">¶</a></h2>
-<p>To update to the latest version of Anaconda, it is best to first
-ensure you have the latest version of conda:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda update conda
-
-<span class="c"># Now you are ready to update Anaconda</span>
-
-<span class="nv">$ </span>conda update anaconda
-</pre></div>
-</div>
-<p>Look here for additional <a class="reference internal" href="examples/update.html#update-example"><em>update examples</em></a>.</p>
+system location, but additional locations may be specified (see <a class="reference internal" href="building/dirs.html"><em>Directory Structure</em></a>
+and <a class="reference internal" href="config.html#config"><em>Configuration</em></a>, respectively, for more details).</p>
 </div>
 </div>
 

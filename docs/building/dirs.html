@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Informational Commands &mdash; Conda   documentation</title>
+  <title>Directory Structure &mdash; Conda   documentation</title>
   
 
   
@@ -29,9 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="up" title="Examples" href="../examples.html"/>
-        <link rel="next" title="Info" href="info.html"/>
-        <link rel="prev" title="Examples" href="../examples.html"/> 
+        <link rel="up" title="Building packages" href="build.html"/>
+        <link rel="next" title="conda build Recipe Reference" href="../build.html"/>
+        <link rel="prev" title="Metapackages" href="meta-pkg.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -89,10 +89,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../config.html#conda-build-configuration">Conda build configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../building/pkg-name-conv.html">Package Naming Conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/meta-pkg.html">Metapackages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/dirs.html">Directory Structure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pkg-name-conv.html">Package Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta-pkg.html">Metapackages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Directory Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../build.html">conda build Recipe Reference</a></li>
 </ul>
 </li>
@@ -112,11 +112,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../get-involved.html#report-a-bug">Report a bug</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../get-more-help.html">Get more help</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-more-help.html">Get more help</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html">Conda FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html">Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../support.html">Support options</a></li>
 </ul>
 </li>
@@ -219,14 +219,12 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../get-more-help.html">Get more help</a> &raquo;</li>
+          <li><a href="build.html">Building packages</a> &raquo;</li>
       
-          <li><a href="../examples.html">Examples</a> &raquo;</li>
-      
-    <li>Informational Commands</li>
+    <li>Directory Structure</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/examples/information.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/building/dirs.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -234,15 +232,35 @@
 </div>
           <div role="main">
             
-  <div class="section" id="informational-commands">
-<h1>Informational Commands<a class="headerlink" href="#informational-commands" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="info.html">Info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list.html">List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
-</ul>
+  <div class="section" id="directory-structure">
+<h1>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h1>
+<p>The conda system has the following directory structure:</p>
+<dl class="docutils">
+<dt><strong>ROOT_DIR</strong></dt>
+<dd><p class="first">The directory that Anaconda (or Miniconda) was installed
+into; for example, <em>/opt/Anaconda</em> or <em>C:\Anaconda</em></p>
+<dl class="docutils">
+<dt><em>/pkgs</em></dt>
+<dd>Also referred to as <em>PKGS_DIR</em>. This directory contains exploded
+packages, ready to be linked in conda environments.
+Each package resides in a subdirectory corresponding to its
+canonical name.</dd>
+<dt><em>/envs</em></dt>
+<dd>The system location for additional conda environments to be created.</dd>
+</dl>
+<div class="last line-block">
+<div class="line"><em>/bin</em></div>
+<div class="line"><em>/include</em></div>
+<div class="line"><em>/lib</em></div>
+<div class="line"><em>/share</em></div>
+<div class="line-block">
+<div class="line">These subdirectories comprise the default Anaconda environment.</div>
 </div>
+</div>
+</dd>
+</dl>
+<p>Other conda environments usually contain the same subdirectories as the
+default environment.</p>
 </div>
 
 
@@ -251,10 +269,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="info.html" class="btn btn-neutral float-right" title="Info">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../build.html" class="btn btn-neutral float-right" title="conda build Recipe Reference">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../examples.html" class="btn btn-neutral" title="Examples"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="meta-pkg.html" class="btn btn-neutral" title="Metapackages"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

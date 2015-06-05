@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Informational Commands &mdash; Conda   documentation</title>
+  <title>Package Naming Conventions &mdash; Conda   documentation</title>
   
 
   
@@ -29,9 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="up" title="Examples" href="../examples.html"/>
-        <link rel="next" title="Info" href="info.html"/>
-        <link rel="prev" title="Examples" href="../examples.html"/> 
+        <link rel="up" title="Building packages" href="build.html"/>
+        <link rel="next" title="Metapackages" href="meta-pkg.html"/>
+        <link rel="prev" title="Building packages" href="build.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -89,10 +89,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../config.html#conda-build-configuration">Conda build configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../building/pkg-name-conv.html">Package Naming Conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/meta-pkg.html">Metapackages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/dirs.html">Directory Structure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Package Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meta-pkg.html">Metapackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dirs.html">Directory Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../build.html">conda build Recipe Reference</a></li>
 </ul>
 </li>
@@ -112,11 +112,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../get-involved.html#report-a-bug">Report a bug</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../get-more-help.html">Get more help</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-more-help.html">Get more help</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html">Conda FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html">Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../support.html">Support options</a></li>
 </ul>
 </li>
@@ -219,14 +219,12 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../get-more-help.html">Get more help</a> &raquo;</li>
+          <li><a href="build.html">Building packages</a> &raquo;</li>
       
-          <li><a href="../examples.html">Examples</a> &raquo;</li>
-      
-    <li>Informational Commands</li>
+    <li>Package Naming Conventions</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/examples/information.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/building/pkg-name-conv.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -234,15 +232,52 @@
 </div>
           <div role="main">
             
-  <div class="section" id="informational-commands">
-<h1>Informational Commands<a class="headerlink" href="#informational-commands" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="info.html">Info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="list.html">List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
-</ul>
+  <div class="section" id="package-naming-conventions">
+<h1>Package Naming Conventions<a class="headerlink" href="#package-naming-conventions" title="Permalink to this headline">¶</a></h1>
+<p>Names and versions of software packages do not follow any prescribed rules.
+However, in order to facilitate communication and documentation,
+conda employs the following naming conventions with respect to packages:</p>
+<span class="target" id="package-name"></span><dl class="docutils" id="index-0">
+<dt><strong>package name</strong></dt>
+<dd>The name of a package, without any reference to a particular version.
+Conda package names are normalized, and may contain only lowercase alpha
+characters, numeric digits, underscores, or hyphens.  In usage
+documentation, these will be referred to by <cite>package_name</cite>.</dd>
+</dl>
+<span class="target" id="package-version"></span><dl class="docutils" id="index-1">
+<dt><strong>package version</strong></dt>
+<dd>A version number or string, often similar to <em>X.Y</em> or <em>X.Y.Z</em>, but may
+take other forms as well.</dd>
+</dl>
+<span class="target" id="build-string"></span><dl class="docutils" id="index-2">
+<dt><strong>build string</strong></dt>
+<dd>An arbitrary string that identifies a particular build of a package for
+conda.  It may contain suggestive mnemonics but these are subject to
+change and should not be relied upon or attempted to be parsed for any
+specific information.</dd>
+</dl>
+<span class="target" id="canonical-name"></span><dl class="docutils" id="index-3">
+<dt><strong>canonical name</strong></dt>
+<dd>The canonical name consists of the package name, version, and build
+string joined together by hyphens: <em>name</em>-<em>version</em>-<em>buildstring</em>.
+In usage documentation, these will be referred to by <cite>canonical_name</cite>.</dd>
+</dl>
+<span class="target" id="filename"></span><dl class="docutils" id="index-4">
+<dt><strong>file name</strong></dt>
+<dd>conda package filenames are canonical names, plus the suffix <em>.tar.bz2</em>.</dd>
+</dl>
+<p>These components are illustrated in the following figure:</p>
+<div class="figure align-center">
+<img alt="../_images/conda_names.png" src="../_images/conda_names.png" />
+<p class="caption">Different parts of conda package names.</p>
 </div>
+<span class="target" id="package-spec"></span><p id="index-5">Additionally, a <cite>package specification</cite> is a package name, together with a package version (which may be partial or absent), joined by &#8220;=&#8221;. Here are some examples:</p>
+<ul class="simple">
+<li><em>python=2.7.3</em></li>
+<li><em>python=2.7</em></li>
+<li><em>python</em></li>
+</ul>
+<p>In usage documentation, these will be referred to by <cite>package_spec</cite>.</p>
 </div>
 
 
@@ -251,10 +286,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="info.html" class="btn btn-neutral float-right" title="Info">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="meta-pkg.html" class="btn btn-neutral float-right" title="Metapackages">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../examples.html" class="btn btn-neutral" title="Examples"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="build.html" class="btn btn-neutral" title="Building packages"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
