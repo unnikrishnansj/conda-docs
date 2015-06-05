@@ -241,6 +241,7 @@
 <li><a class="reference internal" href="#distributionnotfound"><em>Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</em></a></li>
 <li><a class="reference internal" href="#unknown-locale"><em>Issue: ValueError unknown locale: UTF-8 on Mac OS X</em></a></li>
 <li><a class="reference internal" href="#attributeerror-getproxies"><em>Issue: AttributeError or missing getproxies</em></a></li>
+<li><a class="reference internal" href="#shell-command-location"><em>Issue:  Shell commands open from wrong location</em></a></li>
 </ol>
 <div class="section" id="issue-permission-denied-errors-during-install">
 <span id="permission-denied"></span><h2>Issue:  permission denied errors during install<a class="headerlink" href="#issue-permission-denied-errors-during-install" title="Permalink to this headline">¶</a></h2>
@@ -378,6 +379,35 @@ variables such as <tt class="docutils literal"><span class="pre">PYTHONPATH</spa
 <p>On Windows <tt class="docutils literal"><span class="pre">PYTHONPATH</span></tt> can be cleared in the environment variable settings.
 On OS X and Linux it can typically be cleared by removing it from the bash
 profile and restarting the shell.</p>
+</div>
+</div>
+<div class="section" id="issue-shell-commands-open-from-wrong-location">
+<span id="shell-command-location"></span><h2>Issue:  Shell commands open from wrong location<a class="headerlink" href="#issue-shell-commands-open-from-wrong-location" title="Permalink to this headline">¶</a></h2>
+<p>When I run a command within a conda environment, conda does not access the correct package executable.</p>
+<div class="section" id="resolution-reactivate-the-environment-or-run-hash-r-in-bash-or-rehash-in-zsh">
+<h3>Resolution:  Reactivate the environment or run <tt class="docutils literal"><span class="pre">hash</span> <span class="pre">-r</span></tt> (in bash) or <tt class="docutils literal"><span class="pre">rehash</span></tt> (in zsh)<a class="headerlink" href="#resolution-reactivate-the-environment-or-run-hash-r-in-bash-or-rehash-in-zsh" title="Permalink to this headline">¶</a></h3>
+<p>The way both bash and zsh work is that when you enter a command, the shell
+searches the paths in <tt class="docutils literal"><span class="pre">PATH</span></tt> one by one until it finds the command. The shell
+then caches the location (this is called &#8220;hashing&#8221; in shell terminology), so that
+when you type the command again, the shell doesn&#8217;t have to search the <tt class="docutils literal"><span class="pre">PATH</span></tt>
+again.</p>
+<p>The problem is that before you conda installed the program, you ran the command
+which loaded and hashed the one in some other location on the <tt class="docutils literal"><span class="pre">PATH</span></tt> (such as
+<tt class="docutils literal"><span class="pre">/usr/bin</span></tt>). Then you installed the program using <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></tt>, but the
+shell still had the old instance hashed.</p>
+<p>When you run <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span></tt>, conda automatically runs <tt class="docutils literal"><span class="pre">hash</span> <span class="pre">-r</span></tt> in bash and
+<tt class="docutils literal"><span class="pre">rehash</span></tt> in zsh to clear the hashed commands, so conda will find things in the
+new path on the <tt class="docutils literal"><span class="pre">PATH</span></tt>. But there is no way to do this when <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></tt>
+is run (the command must be run inside the shell itself, meaning either you
+have to type the command yourself or source a file that contains the command).</p>
+<p>This is a relatively rare problem, since this will only happen if you activate
+an environment or use the root environment, run a command from somewhere else,
+then conda install a program and try to run the program again without running <tt class="docutils literal"><span class="pre">source</span>
+<span class="pre">activate</span></tt> or <tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></tt>.</p>
+<p>The command <tt class="docutils literal"><span class="pre">type</span> <span class="pre">command_name</span></tt> will always tell you exactly what is being
+run (this is better than <tt class="docutils literal"><span class="pre">which</span> <span class="pre">command_name</span></tt>, which ignores hashed commands
+and searches the <tt class="docutils literal"><span class="pre">PATH</span></tt> directly), and <tt class="docutils literal"><span class="pre">hash</span> <span class="pre">-r</span></tt> (in bash) or <tt class="docutils literal"><span class="pre">rehash</span></tt>
+(in zsh) will reset the hash, or you can run <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span></tt>.</p>
 </div>
 </div>
 </div>
