@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Conda test drive &mdash; Conda   documentation</title>
+  <title>Test drive &mdash; Conda   documentation</title>
   
 
   
@@ -29,8 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
-        <link rel="next" title="Create Python 2 or 3 environments" href="py2or3.html"/>
-        <link rel="prev" title="Silent installation" href="install/silent.html"/> 
+        <link rel="up" title="Redirects" href="redirects.html"/>
+        <link rel="next" title="Travis CI" href="travis.html"/>
+        <link rel="prev" title="Specification" href="spec.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -58,127 +59,55 @@
         
         
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#conda-overview">Conda Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started/get-started.html">Get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-started/condaintro.html">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-started/glossary.html">Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="install/install.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install/full.html">Full Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install/quick.html">Quick Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/quick.html">Quick install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/full.html">Full installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install/config.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install/central.html">Centralized installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install/silent.html">Silent installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Conda test drive</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#managing-conda">1. Managing conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#managing-environments">2. Managing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#managing-python">3. Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#managing-packages">4. Managing packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#removing-packages-environments-or-conda">5. Removing packages, environments, or conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using/index.html">Using conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/test-drive.html">Test drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/py.html">Managing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="py2or3.html">Create Python 2 or 3 environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Conda Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="building/pkg-name-conv.html">Package Naming Conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building/meta-pkg.html">Metapackages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building/dirs.html">Directory Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html">conda build Recipe Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/bpp.html">Building Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building/sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="build_tutorials.html">Build tutorials</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Command reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#conda-general-commands">Conda general commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#conda-build-commands">Conda build commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#conda-environment-commands">Conda environment commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build_tutorials/build_tutorials.html">Build tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="build_tutorials/pkgs.html">Tutorial: Intro to building conda packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build_tutorials/pkgs2.html">Tutorial: Building conda packages part 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build_tutorials/postgis.html">Tutorial: Building the postgis package</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="custom-channels.html">Custom Channels</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="custom-channels.html#custom-channel-private-repository-summary">Custom channel/private repository summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_tutorials/postgis.html">Tutorial: Building the PostGIS package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="get-involved.html#join-a-conda-mailing-list">Join a conda mailing list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-involved.html#join-conda-email-group">Join conda email group</a></li>
 <li class="toctree-l2"><a class="reference internal" href="get-involved.html#contribute-recipes-to-github">Contribute recipes to Github</a></li>
 <li class="toctree-l2"><a class="reference internal" href="get-involved.html#report-a-bug">Report a bug</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="help/help.html">Get more help</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="help/faq.html">Conda FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="help/help.html">Get more help</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="help/faq.html">FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="help/troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="help/conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="help/examples/examples.html">Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="help/travis.html">Using Conda with Travis CI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="help/support.html">Support options</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">Command Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#general-commands"><tt class="docutils literal"><span class="pre">general-commands</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#env-commands"><tt class="docutils literal"><span class="pre">env-commands</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands.html#build-commands"><tt class="docutils literal"><span class="pre">build-commands</span></tt></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="general-commands.html">General conda commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-bundle.html">conda bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-clean.html">conda clean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-config.html">conda config</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-create.html">conda create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-help.html">conda help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-info.html">conda info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-init.html">conda init</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-install.html">conda install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-list.html">conda list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-package.html">conda package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-remove.html">conda remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-run.html">conda run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-search.html">conda search</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-uninstall.html">conda uninstall</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/conda-update.html">conda update</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="env-commands.html">conda-env commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env.html">conda env</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-create.html">conda env create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-export.html">conda env export</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-list.html">conda env list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-remove.html">conda env remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/env/conda-env-update.html">conda env update</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="build-commands.html">conda-build commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-build.html">conda build</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-convert.html">conda convert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-develop.html">conda develop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-index.html">conda index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-inspect.html">conda inspect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-inspect-linkages.html">conda inspect linkages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-inspect-objects.html">conda inspect objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-metapackage.html">conda metapackage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-pipbuild.html">conda pipbuild</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-skeleton.html">conda skeleton</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-skeleton-cpan.html">conda skeleton cpan</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-skeleton-cran.html">conda skeleton cran</a></li>
-<li class="toctree-l2"><a class="reference internal" href="commands/build/conda-skeleton-pypi.html">conda skeleton pypi</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="spec.html">Conda package specification</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="spec.html#package-metadata">Package metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spec.html#link-and-unlink-scripts">Link and unlink scripts:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spec.html#repository-structure-and-index">Repository structure and index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spec.html#package-match-specifications">Package Match Specifications</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bdist_conda.html">Building Python packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html#with-setup-py-bdist-conda">with setup.py bdist_conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html#setup-options">Setup options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html#command-line-options">Command line options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html#notes">Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License - Conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="license.html#exceptions">Exceptions</a></li>
 </ul>
 </li>
 </ul>
@@ -204,7 +133,13 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Conda test drive</li>
+          <li><a href="help/help.html">Get more help</a> &raquo;</li>
+      
+          <li><a href="help/faq.html">FAQ</a> &raquo;</li>
+      
+          <li><a href="redirects.html">Redirects</a> &raquo;</li>
+      
+    <li>Test drive</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="https://github.com/conda/conda-docs/edit/master/docs/source/test-drive.rst" class="fa fa-github"> Edit on GitHub</a>
@@ -215,338 +150,9 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-test-drive">
-<h1>Conda test drive<a class="headerlink" href="#conda-test-drive" title="Permalink to this headline">¶</a></h1>
-<p>To start the conda 30-minute test drive, you should have already followed our 2-minute <a class="reference internal" href="install/quick.html"><em>Quick Install</em></a> guide to download, install and update Miniconda, OR have downloaded, installed and updated Anaconda or Miniconda on your own.
-NOTE: After installing, be sure you have closed and then re-opened the terminal window so the changes can take effect.
-Conda test drive milestones:</p>
-<ol class="arabic simple">
-<li>USING CONDA. First we will verify that you have installed Anaconda or Miniconda, and check that it is updated to the current version. 3 min.</li>
-<li>MANAGING ENVIRONMENTS. Next we will play with environments by creating a few environments, so you can learn to move easily between the environments. We will also verify which environment you are in, and make an exact copy of an environment as a backup. 10 min.</li>
-<li>MANAGING PYTHON. Then we will check to see which versions of Python are available to install, install another version of Python, and switch between versions. 4 min.</li>
-<li>MANAGING PACKAGES. We play with packages. We will a) list packages installed on your computer, b) see a list of available packages, and c) install and remove some packages using conda install. For packages not available using conda install, we will d) search on binstar.org. For packages that are in neither location, we’ll e) install a package with the pip package manager. We will also install a free 30 day trial of Continuum’s commercial package IOPro. 10 min.</li>
-<li>REMOVING PACKAGES, ENVIRONMENTS, OR CONDA. We’ll end the test drive by removing one or more of your test packages, environments, and/or conda,  if you wish. 3 min.</li>
-</ol>
-<p>TOTAL 30 Minutes</p>
-<p>TIP:  Anytime you wish to see the full documentation for any command, type the command followed by  &#8211;help.
-For example, to learn about the conda update command:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda update --help
-</pre></div>
-</div>
-<div class="section" id="managing-conda">
-<h2>1. Managing conda<a class="headerlink" href="#managing-conda" title="Permalink to this headline">¶</a></h2>
-<p>Conda is both a package manager and an environment manager. You know that a package manager helps you find and
-install packages. But let’s say that you want to use a package that requires a different version of Python than
-you are currently using. With just a few commands you can set up a totally separate environment to run that
-different version of Python, and yet continue to run your usual version of Python in your normal environment.
-That’s the power of having an environment manager like conda.</p>
-<p>TIP: Whether you are using Linux, Mac or the Windows command prompt, in your terminal window the conda commands
-are all the same unless noted.</p>
-<p><strong>Verify that conda is installed</strong></p>
-<p>To be sure that you are starting in the right place, let’s verify that you have successfully installed Anaconda.
-In your terminal window, enter the following:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
-</pre></div>
-</div>
-<p>Conda will respond with the version number that you have installed, like:  <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">3.11.0</span></tt></p>
-<p>NOTE: If you see an error message, check to see that you are logged into the same user account that you used
-to install Anaconda or Miniconda, and that you have closed and re-opened the terminal window after installing it.</p>
-<p><strong>Update conda to the current version</strong></p>
-<p>Next, let’s use the conda update command to update conda:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda update conda
-</pre></div>
-</div>
-<p>Conda will compare versions and let you know what is available to install. It will also tell you about other
-packages that will be automatically updated or changed with the update.</p>
-<p>If a newer version of conda is available,
-type Y to update:</p>
-<div class="code highlight-python"><div class="highlight"><pre>Proceed ([y]/n)? y
-</pre></div>
-</div>
-<p>When conda is updated, move to the next topic.</p>
-</div>
-<div class="section" id="managing-environments">
-<h2>2. Managing environments<a class="headerlink" href="#managing-environments" title="Permalink to this headline">¶</a></h2>
-<p>Now let’s play with environments by creating a few, then moving between them.</p>
-<p><strong>Create and activate an environment</strong></p>
-<p>Use the conda create command, followed by any name you wish to call it:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda create --name snowflakes biopython
-</pre></div>
-</div>
-<p>This will create a new environment named /envs/snowflakes with the program Biopython.</p>
-<p>TIP:  Many frequently used options after two dashes (&#8211;) can be abbreviated with just a dash and the
-first letter. So <tt class="docutils literal"><span class="pre">--name</span></tt> and <tt class="docutils literal"><span class="pre">-n</span></tt> options are the same and <tt class="docutils literal"><span class="pre">--envs</span></tt> and <tt class="docutils literal"><span class="pre">-e</span></tt> are the same. See <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">--help</span></tt> or
-<tt class="docutils literal"><span class="pre">conda</span> <span class="pre">-h</span></tt> for a list of abbreviations.</p>
-<p><strong>Activate the new environment:</strong></p>
-<ul class="simple">
-<li>Linux, Mac: <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></tt></li>
-<li>Windows:  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></tt></li>
-</ul>
-<p>TIP: Environments are installed by default into the envs directory in your conda directory. You can specify a
-different path, see conda create &#8211;help for details.</p>
-<p>TIP: Since we did not specify a version of Python, conda installs the same version that you used when you
-download and installed conda.</p>
-<p><strong>Create a second environment</strong></p>
-<p>This time let’s create and name a new environment, AND install a different version of Python, and two packages
-named Astroid and Babel:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda create --name bunnies python=3 astroid babel
-</pre></div>
-</div>
-<p>This will create a second new environment named /envs/bunnies with Python 3 and Astroid and Babel installed.</p>
-<p>TIP: Install all the programs you will want in this environment at the same time. Installing one program at
-a time can lead to dependency conflicts.</p>
-<p>TIP: You can add much more to the conda create command, type conda create &#8211;help for details.</p>
-<p><strong>List all environments</strong></p>
-<p>Now let’s check to see which environments you have installed so far. Use the conda environment info command
-to find out:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
-</pre></div>
-</div>
-<p>You will see a list of environments like the following:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda environments:
-
-     snowflakes            /home/username/miniconda/envs/snowflakes
-     bunnies               /home/username/miniconda/envs/bunnies
-</pre></div>
-</div>
-<p><strong>Verify current environment</strong></p>
-<p>Which of these environments are you using right now &#8211; snowflakes or bunnies? To find out, type the command:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
-</pre></div>
-</div>
-<p>Conda displays the list of all environments, with the current environment shown in (parenthesis) in front
-of your prompt:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="p">(</span><span class="n">snowflakes</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Switch to another environment (activate/deactivate)</strong></p>
-<p>To change to another environment, type the following with the name of the environment:</p>
-<ul class="simple">
-<li>Linux, Mac: <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt></li>
-<li>Windows:  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></tt></li>
-</ul>
-<p>To change your path from the current environment back to the root:</p>
-<ul class="simple">
-<li>Linux, Mac: <cite>source deactivate</cite></li>
-<li>Windows:  <cite>deactivate</cite></li>
-</ul>
-<p>TIP: When the environment is deactivated, <tt class="docutils literal"><span class="pre">(bunnies)</span></tt> will no longer be shown in the prompt.</p>
-<p><strong>Make an exact copy of an environment</strong></p>
-<p>Make an exact copy of an environment by creating a clone of it. Here we will clone snowflakes to
-create an exact copy named flowers:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda create --name flowers --clone snowflakes
-</pre></div>
-</div>
-<p><strong>Check to see the exact copy was made:</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
-</pre></div>
-</div>
-<p>You should now see the three environments listed:  flowers, bunnies, and snowflakes.</p>
-<p><strong>Delete an environment</strong></p>
-<p>If you didn’t really want an environment named flowers, just remove it as follows:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda remove --name flowers --all
-</pre></div>
-</div>
-<p>To verify that the flowers environment has now been removed, type the command:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
-</pre></div>
-</div>
-<p>Flowers is no longer in your environment list, so we know it was deleted.</p>
-<p><strong>Learn more about environments</strong></p>
-<p>To learn more about any conda command, just type the command followed by  <tt class="docutils literal"><span class="pre">--help</span></tt>:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda remove --help
-</pre></div>
-</div>
-</div>
-<div class="section" id="managing-python">
-<h2>3. Managing Python<a class="headerlink" href="#managing-python" title="Permalink to this headline">¶</a></h2>
-<p>Conda treats Python the same as any other package, so it’s very easy to manage and update multiple installations.</p>
-<p><strong>Check Python versions</strong></p>
-<p>First let’s check to see which versions of Python are available to install:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda search python
-</pre></div>
-</div>
-<p><strong>Install a different version of Python</strong></p>
-<p>So now let’s say you need Python 3 to learn programming, but you don’t want to overwrite your Python 2.7
-environment by updating Python. You can create and activate a new environment named snakes, and install
-the latest version of Python 3 as follows:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda create --name snakes python=3
-</pre></div>
-</div>
-<ul class="simple">
-<li>Linux, Mac: <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></tt></li>
-<li>Windows:  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">snakes</span></tt></li>
-</ul>
-<p>TIP: It would be wise to name this environment a descriptive name like <tt class="docutils literal"><span class="pre">python3</span></tt> but that is not as much fun.</p>
-<p><strong>Verify environment added</strong></p>
-<p>To verify that the snakes environment has now been added, type the command:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
-</pre></div>
-</div>
-<p>Conda displays the list of all environments, with the current environment shown in (parenthesis)
-in front of your prompt:  <tt class="docutils literal"><span class="pre">(snakes)</span></tt></p>
-<p><strong>Verify Python version in new environment</strong></p>
-<p>Verify that the snakes environment uses python version 3:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
-</pre></div>
-</div>
-<p><strong>Use a different version of Python</strong></p>
-<p>To switch to the new environment with a different version of Python, you simply need to activate it.
-Let’s switch back to the default, 2.7:</p>
-<ul class="simple">
-<li>Linux, Mac: <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></tt></li>
-<li>Windows:  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></tt></li>
-</ul>
-<p><strong>Verify Python version in environment</strong></p>
-<p>Verify that the snowflakes environment uses python version 2:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
-</pre></div>
-</div>
-<p><strong>Deactivate this environment</strong></p>
-<p>After you are finished working in the snowflakes environment, deactivate this environment and
-revert your PATH to its previous state:</p>
-<ul class="simple">
-<li>Linux, Macintosh: <tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></tt></li>
-<li>Windows: <tt class="docutils literal"><span class="pre">deactivate</span></tt></li>
-</ul>
-</div>
-<div class="section" id="managing-packages">
-<h2>4. Managing packages<a class="headerlink" href="#managing-packages" title="Permalink to this headline">¶</a></h2>
-<p>Now let’s play with packages. We’ve already installed several packages (Astroid, Babel and a specific
-version of Python) when we created a new environment. We’ll check what packages we have, check what
-are available, look for a specific package and install it. Then we’ll look for and install specific
-packages on the Binstar.org repository, install more using pip install instead of conda install, and
-install a commercial package.</p>
-<p><strong>View a list of packages and versions installed in an environment</strong></p>
-<p>Use this to see which version of Python or another program is installed in the environment, or to confirm that a package has been added or removed.
-In your terminal window, simply type:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda list
-</pre></div>
-</div>
-<p><strong>View a list of packages available with the conda install command</strong></p>
-<p>A list of packages available for conda install, sorted by Python version, is available
-from <a class="reference external" href="http://docs.continuum.io/anaconda/pkg-docs.html">http://docs.continuum.io/anaconda/pkg-docs.html</a></p>
-<p><strong>Search for a package</strong></p>
-<p>First let’s check to see if a package we want is available for conda to install:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda search beautiful-soup
-</pre></div>
-</div>
-<p>This displays the package, so we know it is available.</p>
-<p><strong>Install a new package</strong></p>
-<p>We will install Beautiful Soup into the current environment, using conda install as follows:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda install --name bunnies beautiful-soup
-</pre></div>
-</div>
-<p>NOTE: You must tell conda the name of the environment (&#8211;name bunnies) OR it will install in
-the current environment.</p>
-<p>Now activate the bunnies environment , and do a conda list to see the new program installed:</p>
-<ul class="simple">
-<li>Linux, Mac: <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt></li>
-<li>Windows:  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></tt></li>
-</ul>
-<p>All platforms:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda list
-</pre></div>
-</div>
-<p><strong>Install a package from Binstar.org</strong></p>
-<p>For packages that are not available using conda install, we can next look on binstar.org.
-Binstar is a package management service for both public and private package repositories.
-Binstar is a Continuum Analytics product, just like Anaconda and Miniconda.</p>
-<p>TIP: You are not required to register with Binstar.org to download files.</p>
-<p>To download into the current environment from Binstar.org, we will specify Binstar as the
-“channel” by typing the full URL to the package we want.</p>
-<p>In a browser, go to <a class="reference external" href="http://binstar.org">http://binstar.org</a>.  We are looking for a package named “bottleneck” so in
-the top left box named “Search Packages” type “bottleneck” and click the Search button.</p>
-<p>There are more than a dozen copies of bottleneck available on Binstar, but we want the most
-frequently downloaded copy. So you can sort by number of downloads by clicking the “Downloads” heading.</p>
-<p>One version of bottleneck has over 24,000 downloads, so select that one by clicking the package name.
-This brings you to the Binstar detail page that shows the exact command to use to download it:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda install --channel https://conda.binstar.org/pandas bottleneck
-</pre></div>
-</div>
-<p><strong>Check to see that the package downloaded</strong></p>
-<div class="code highlight-python"><div class="highlight"><pre>conda list
-</pre></div>
-</div>
-<p><strong>Install a package with PIP</strong></p>
-<p>For packages that are not available from conda or Binstar, we can often install the package with pip.</p>
-<p>TIP:  Pip is only a package manager, so it cannot manage environments for you. Pip cannot even update
-Python, because unlike conda it does not consider Python a package. But it does install some things
-that conda does not, and vice versa. Both pip and conda are included in Anaconda and Miniconda.
-Pip install packages</p>
-<p>We activate the environment where we want to put the program, then pip install a program named “See”:</p>
-<ul class="simple">
-<li>Linux, Mac: source activate bunnies</li>
-<li>Windows:  activate bunnies</li>
-</ul>
-<p>All platforms:</p>
-<div class="code highlight-python"><div class="highlight"><pre>pip install see
-</pre></div>
-</div>
-<p><strong>Verify pip installs</strong></p>
-<p>Check to see that See was installed:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda list
-</pre></div>
-</div>
-<p><strong>Install commercial package</strong></p>
-<p>Installing commercial packages is the same as installing any other package with conda. So, as an example,
-let’s install and then delete a free trial of one of Continuum’s commercial packages IOPro, which can speed
-up your Python processing:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda install iopro
-</pre></div>
-</div>
-<p>TIP: Except for academic use, this free trial expires after 30 days.</p>
-<p>You can now install and verify any package you want using conda, whether using the conda command, downloading from Binstar.org, or using pip install, and whether open source or commercial.</p>
-</div>
-<div class="section" id="removing-packages-environments-or-conda">
-<h2>5. Removing packages, environments, or conda<a class="headerlink" href="#removing-packages-environments-or-conda" title="Permalink to this headline">¶</a></h2>
-<p>Let’s end this test drive by removing one or more of your test packages, environments, and/or conda,  if you wish.</p>
-<p><strong>Remove a package</strong></p>
-<p>Let’s say that you decided not to continue using the commercial package IOPro.  You can remove it from the
-bunnies environment with:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda remove --name bunnies iopro
-</pre></div>
-</div>
-<p><strong>Confirm that program has been removed</strong></p>
-<p>Use conda list to confirm that IOPro has been removed:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda list
-</pre></div>
-</div>
-<p><strong>Remove an environment</strong></p>
-<p>We no longer need the snakes environment, so type the command:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda remove --name snakes --all
-</pre></div>
-</div>
-<p><strong>Verify environment was removed</strong></p>
-<p>To verify that the snakes environment has now been removed, type the command:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
-</pre></div>
-</div>
-<p>Snakes is no longer shown in the environment list, so we know it was deleted.</p>
-<p><strong>Remove conda</strong></p>
-<ul class="simple">
-<li>Linux, Mac:</li>
-</ul>
-<p>Remove the Anaconda OR Miniconda install directory:</p>
-<div class="code highlight-python"><div class="highlight"><pre>rm -rf ~/miniconda OR  rm -rf ~/anaconda
-</pre></div>
-</div>
-<ul class="simple">
-<li>Windows:  Go to Control Panel, click “Add or remove Program,” select “Python 2.7 (Anaconda)” OR “Python 2.7 Miniconda)” and click Remove Program.</li>
-</ul>
-<p><strong>More resources</strong></p>
-<ul class="simple">
-<li>To read the full documentation for any conda command, type the command
-followed by  <tt class="docutils literal"><span class="pre">--h</span></tt> for “help.” For example, to learn about the conda update
-command: <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--h</span></tt></li>
-<li>Full documentation:   <a class="reference external" href="http://conda.pydata.org/docs/">http://conda.pydata.org/docs/</a></li>
-<li>FAQ:                          <a class="reference external" href="http://docs.continuum.io/anaconda/faq.html">http://docs.continuum.io/anaconda/faq.html</a></li>
-<li>Free community support:        <a class="reference external" href="https://groups.google.com/a/continuum.io/forum/#!forum/anaconda">https://groups.google.com/a/continuum.io/forum/#!forum/anaconda</a></li>
-<li>Paid support options: <a class="reference external" href="http://continuum.io/support">http://continuum.io/support</a></li>
-<li>Continuum Analytics Training &amp; Consulting: Continuum Analytics offers Python training courses. Our teaching philosophy is that the best way to learn is with hands-on experience to real world problems. Courses are available to individuals online, at numerous sites, or in-house at your place of business. We also offer consulting services for the analysis, management and visualization of scientific and business data or optimizing your processing workflows on modern hardware and GPUs.</li>
-</ul>
-</div>
-</div>
+  <div class="section" id="test-drive">
+<h1>Test drive<a class="headerlink" href="#test-drive" title="Permalink to this headline">¶</a></h1>
+<html><head><meta http-equiv="refresh" content="0; URL='using/test-drive.html'" /></head><body></body></html></div>
 
 
           </div>
@@ -554,10 +160,10 @@ command: <tt class="docutils literal"><span class="pre">conda</span> <span class
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="py2or3.html" class="btn btn-neutral float-right" title="Create Python 2 or 3 environments">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="travis.html" class="btn btn-neutral float-right" title="Travis CI">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="install/silent.html" class="btn btn-neutral" title="Silent installation"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="spec.html" class="btn btn-neutral" title="Specification"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

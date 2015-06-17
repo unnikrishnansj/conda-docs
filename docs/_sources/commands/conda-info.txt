@@ -18,7 +18,7 @@ conda info
    DESCRIPTION
           usage: conda info [-h] [--json] [-a] [-e] [-l] [-s] [--root]
    
-                 [packages [packages ...]]
+                 [--unsafe-channels] [packages [packages ...]]
    
           Display information about current conda install.
    
@@ -48,6 +48,9 @@ conda info
                  List environment variables.
    
           --root Display root environment path.
+   
+          --unsafe-channels
+                 Display list of channels with tokens exposed.
    
    EXAMPLES
                  conda info -a

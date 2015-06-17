@@ -1,0 +1,60 @@
+
+.. _env upload_ref:
+
+conda env upload
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda env upload
+   
+   DESCRIPTION
+          usage:  conda-env  upload  [-h] [-n OLD_NAME] [-f FILE] [--summary SUM‐
+          MARY]
+   
+          [--force] [-q] [--json]
+                 [name]
+   
+          Upload an environment to binstar
+   
+      positional arguments:
+          name   environment definition
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          -n OLD_NAME, --name OLD_NAME
+                 environment definition [Deprecated]
+   
+          -f FILE, --file FILE
+                 environment definition file (default: environment.yml)
+   
+          --summary SUMMARY
+                 Short summary of the environment
+   
+          --force
+                 Replace existing environment definition
+   
+          -q, --quiet
+   
+          --json
+                 Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+      examples:
+                 conda  env  upload  conda  env  upload  project conda env upload
+                 --file=/path/to/environment.yml      conda      env       upload
+                 --file=/path/to/environment.yml project conda env upload --force
+   
+   
+   
+   Continuum Analytics                June 2015                          <B>CONDA(1)</B>
+   </PRE>

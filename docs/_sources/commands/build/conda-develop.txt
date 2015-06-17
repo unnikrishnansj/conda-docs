@@ -18,16 +18,17 @@ conda develop
    DESCRIPTION
           usage: conda-develop [-h] [-n ENVIRONMENT | -p PATH] PATH [PATH ...]
    
-          Install  a Python package in 'development mode'. This works by creating
-          a conda.pth file in site-packages, and using setup.py to determine  any
-          entrypoints to install.
+          Install a Python package in 'development mode'.
    
+          This works by creating a conda.pth file in site-packages.
+   
+   OPTIONS
       positional arguments:
-          PATH   path to the source directory
+          PATH   Path to the source directory.
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           -n ENVIRONMENT, --name ENVIRONMENT
                  Name of environment (in envs dirs).

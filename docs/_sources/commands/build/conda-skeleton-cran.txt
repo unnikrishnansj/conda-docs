@@ -25,38 +25,37 @@ conda skeleton cran
    
       positional arguments:
           packages
-                 CRAN packages to create recipe skeletons for. You can also spec‐
-                 ify package[extra,...] features.
+                 CRAN packages to create recipe skeletons for.
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           --output-dir OUTPUT_DIR
-                 Directory to write recipes to
+                 Directory to write recipes to.
    
           --version VERSION
-                 Version to use. Applies to all packages
+                 Version to use. Applies to all packages.
    
           --git-tag GIT_TAG
                  Git tag to use for GitHub recipes.
    
           --all-urls
-                 Look at all URLs, not just source URLs. Use  this  if  it  can't
+                 Look  at  all  URLs,  not just source URLs. Use this if it can't
                  find the right URL.
    
           --cran-url CRAN_URL
-                 URL to use for CRAN (default: http://cran.r-project.org/)
+                 URL to use for CRAN (default: http://cran.r-project.org/).
    
           --recursive
                  Create recipes for dependencies if they do not already exist.
    
           --no-recursive
-                 Don't  create  recipes  for  dependencies if they do not already
+                 Don't create recipes for dependencies if  they  do  not  already
                  exist.
    
           --no-archive
-                 Don't include an Archive download url
+                 Don't include an Archive download url.
    
    
    

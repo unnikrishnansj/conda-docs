@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing environments &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../index.html"/>
+        <link rel="up" title="Using conda" href="index.html"/>
+        <link rel="next" title="Managing Python" href="py.html"/>
+        <link rel="prev" title="Test drive" href="test-drive.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Conda</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-started/get-started.html">Get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/condaintro.html">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/glossary.html">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install/install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install/quick.html">Quick install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/full.html">Full installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/config.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/central.html">Centralized installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Using conda</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test-drive.html">Test drive</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py.html">Managing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkgs.html">Managing packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Command reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">Conda build commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-environment-commands">Conda environment commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs.html">Tutorial: Intro to building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs2.html">Tutorial: Building conda packages part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/postgis.html">Tutorial: Building the PostGIS package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#join-conda-email-group">Join conda email group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#contribute-recipes-to-github">Contribute recipes to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#report-a-bug">Report a bug</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Get more help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../help/faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/examples/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/support.html">Support options</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Using conda</a> &raquo;</li>
+      
+    <li>Managing environments</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/using/envs.rst" class="fa fa-github"> Edit on GitHub</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="managing-environments">
+<h1>Managing environments<a class="headerlink" href="#managing-environments" title="Permalink to this headline">¶</a></h1>
+<p>With conda, you can create, export, list, remove, and update environments that have different versions of Python and/or packages installed in them. Switching or moving between environments is called  activating the environment. You can even share an environment file with a coworker.</p>
+<p>Anytime you wish to see the full documentation for any command, type the command followed by  &#8211;help. For example, to learn about the conda environment command:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda env --help
+</pre></div>
+</div>
+<p>The same help that is available in conda is also available online from our <a class="reference internal" href="../commands.html"><em>command reference documentation</em></a>.</p>
+<div class="section" id="create-an-environment">
+<h2>Create an environment<a class="headerlink" href="#create-an-environment" title="Permalink to this headline">¶</a></h2>
+<p>In order to manage environments, we need to create at least two so you can move or switch between them.</p>
+<p>To create a new environment, use the conda create command, followed by any name you wish to call it:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda create --name snowflakes biopython
+</pre></div>
+</div>
+<p>When conda asks you</p>
+<div class="code highlight-python"><div class="highlight"><pre>proceed ([y]/n)?
+</pre></div>
+</div>
+<p>Type “y” for “yes.”</p>
+<p>This will create a new environment named <tt class="docutils literal"><span class="pre">/envs/snowflakes</span></tt> that contains the program Biopython. This environment will use the same version of Python that you are currently using, because you did not specify a version.</p>
+<p>TIP:  Many frequently used options after two dashes (&#8211;) can be abbreviated with just a dash and the first letter. So &#8211;name and -n options are the same and &#8211;envs and -e are the same. See conda &#8211;help or conda -h for a list of abbreviations.</p>
+</div>
+<div class="section" id="change-environments-activate-deactivate">
+<h2>Change environments (activate/deactivate)<a class="headerlink" href="#change-environments-activate-deactivate" title="Permalink to this headline">¶</a></h2>
+<p><strong>Linux, Mac:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></tt></p>
+<p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></tt></p>
+<p>Conda prepends the path name (snowflakes) onto your system command.</p>
+<p>TIP: Environments are installed by default into the envs directory in your conda directory. You can specify a different path, see conda create &#8211;help for details.</p>
+<p>Deactivate the environment with the following:</p>
+<p><strong>Linux, Mac:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span> <span class="pre">snowflakes</span></tt></p>
+<p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">deactivate</span> <span class="pre">snowflakes</span></tt></p>
+<p>Conda removes the path name (snowflakes) from your system command.</p>
+</div>
+<div class="section" id="create-a-separate-environment">
+<h2>Create a separate environment<a class="headerlink" href="#create-a-separate-environment" title="Permalink to this headline">¶</a></h2>
+<p>So you can try switching or moving between environments, create and name a new environment. With this second environment, you can install a different version of Python, and a couple of packages:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda create --name bunnies python=3 astroid babel
+</pre></div>
+</div>
+<p>This will create a second new environment named /envs/bunnies with Python 3 and Astroid and Babel installed.</p>
+<p>TIP: Install all the programs you will want in this environment at the same time. Installing one program at a time can lead to dependency conflicts.</p>
+<p>TIP: You can add much more to the conda create command, type conda create &#8211;help for details.
+List all environments</p>
+<p>Now you can use conda to see which environments you have installed so far. Use the conda environment info command to find out:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
+</pre></div>
+</div>
+<p>You will see a list of environments like the following:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda environments:
+snowflakes            /home/username/miniconda/envs/snowflakes
+bunnies               /home/username/miniconda/envs/bunnies
+</pre></div>
+</div>
+<p>You can also use the conda environments list command as follows:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda env list
+</pre></div>
+</div>
+<p>The list of all environments will be the same with either command.</p>
+<div class="section" id="verify-current-environment">
+<h3>Verify current environment<a class="headerlink" href="#verify-current-environment" title="Permalink to this headline">¶</a></h3>
+<p>Which environment are you using right now &#8211; snowflakes or bunnies? To find out, type the command:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
+</pre></div>
+</div>
+<p>Conda displays the list of all environments, with the current environment shown in (parenthesis) in front of your prompt:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">(</span><span class="n">snowflakes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clone-an-environment">
+<h2>Clone an environment<a class="headerlink" href="#clone-an-environment" title="Permalink to this headline">¶</a></h2>
+<p>Make an exact copy of an environment by creating a clone of it. Here we will clone snowflakes to create an exact copy named flowers:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda create --name flowers --clone snowflakes
+</pre></div>
+</div>
+<p>Check to see the exact copy was made:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
+</pre></div>
+</div>
+<p>You should now see the three environments listed:  flowers, bunnies, and snowflakes.</p>
+</div>
+<div class="section" id="remove-an-environment">
+<h2>Remove an environment<a class="headerlink" href="#remove-an-environment" title="Permalink to this headline">¶</a></h2>
+<p>If you didn’t really want an environment named flowers, just remove it as follows:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda remove --name flowers --all
+</pre></div>
+</div>
+<p>To verify that the flowers environment has now been removed, type the command:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
+</pre></div>
+</div>
+<p>Flowers is no longer in your environment list, so we know it was deleted.</p>
+</div>
+<div class="section" id="share-an-environment">
+<h2>Share an environment<a class="headerlink" href="#share-an-environment" title="Permalink to this headline">¶</a></h2>
+<p>You may want to share your environment with another person, for example, so they can re-create a test that you have done. To allow them to quickly reproduce your environment, with all of its packages and versions, you can give them a copy of your environment.yml file.</p>
+<div class="section" id="export-the-environment-file">
+<h3>Export the environment file<a class="headerlink" href="#export-the-environment-file" title="Permalink to this headline">¶</a></h3>
+<p>To enable another person to create an exact copy of your environment, you will export the active environment file.</p>
+<p>Activate the environment you wish to export:</p>
+<p><strong>Mac, Linux:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">peppermint</span></tt></p>
+<p><strong>Windows:</strong> <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">peppermint</span></tt></p>
+<p>NOTE: Replace “peppermint” with the name of the environment.</p>
+<p>NOTE: If you already have an environment.yml file in your current directory, it will be overwritten with the new file.</p>
+<p>Export your active environment to the new file:</p>
+<p><strong>All users:</strong> <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></tt></p>
+<p>Email or copy the exported environment.yml file to the other person.</p>
+</div>
+<div class="section" id="use-environment-from-file">
+<h3>Use environment from file<a class="headerlink" href="#use-environment-from-file" title="Permalink to this headline">¶</a></h3>
+<p>To create a copy of another developer’s environment from their environment.yml file:</p>
+<p>Deactivate your current environment:</p>
+<p><strong>Mac, Linux:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span> <span class="pre">starfish</span></tt></p>
+<p><strong>Windows:</strong> <tt class="docutils literal"><span class="pre">deactivate</span> <span class="pre">starfish</span></tt></p>
+<p>NOTE: Replace “starfish” with the name of your current environment.</p>
+<p>Make a new directory, change to the directory, and copy the environment.yml file into it.</p>
+<div class="code highlight-python"><div class="highlight"><pre>mkdir peppermint
+cd peppermint
+cp environment.yml
+</pre></div>
+</div>
+<p>NOTE: Replace “peppermint” with the name of your directory.</p>
+<p>In the same directory as the environment.yml file, create the new environment:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda env create
+</pre></div>
+</div>
+<p>Activate the new environment:</p>
+<p><strong>Mac, Linux:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">peppermint</span></tt></p>
+<p><strong>Windows:</strong> <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">peppermint</span></tt></p>
+<p>NOTE: Replace “peppermint” with the name of the environment.</p>
+<p>Verify that the new environment was installed correctly:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda list
+</pre></div>
+</div>
+<p>Next, we&#8217;ll take a look at managing Python.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="py.html" class="btn btn-neutral float-right" title="Managing Python">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="test-drive.html" class="btn btn-neutral" title="Test drive"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Continuum Analytics.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

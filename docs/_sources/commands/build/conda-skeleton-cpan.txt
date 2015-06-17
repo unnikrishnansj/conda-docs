@@ -24,20 +24,20 @@ conda skeleton cpan
    
       positional arguments:
           packages
-                 CPAN packages to create recipe skeletons for
+                 CPAN packages to create recipe skeletons for.
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           --output-dir OUTPUT_DIR
-                 Directory to write recipes to
+                 Directory to write recipes to.
    
           --version VERSION
-                 Version to use. Applies to all packages
+                 Version to use. Applies to all packages.
    
           --meta-cpan-url META_CPAN_URL
-                 URL to use for MetaCPAN API
+                 URL to use for MetaCPAN API.
    
           --recursive
                  Create recipes for dependencies if they do not already exist.

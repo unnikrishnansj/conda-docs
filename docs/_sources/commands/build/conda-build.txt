@@ -16,67 +16,76 @@ conda build
           conda - conda build
    
    DESCRIPTION
-          usage: conda-build [-h] [--check] [--no-binstar-upload] [--output] [-s]
-          [-t]
+          usage: conda-build [-h] [-V] [--check] [--no-binstar-upload] [--output]
+          [-s]
    
-                 [--no-test] [-b] [-p] [-V] [-q]  [--python  PYTHON_VER]  [--perl
+                 [-t] [--no-test] [-b] [-p] [-q]  [--python  PYTHON_VER]  [--perl
                  PERL_VER]  [--numpy NUMPY_VER] [--R R_VER] [-c CHANNEL] [--over‐
                  ride-channels] RECIPE_PATH [RECIPE_PATH ...]
    
-          tool for building conda packages
+          Tool for building conda packages. A conda package is a  binary  tarball
+          containing system-level libraries, Python modules, executable programs,
+          or other components. conda keeps track of dependencies between packages
+          and platform specifics, making it simple to create working environments
+          from different sets of packages.
    
+   OPTIONS
       positional arguments:
           RECIPE_PATH
-                 path to recipe directory
+                 Path to recipe directory.
    
       optional arguments:
           -h, --help
-                 show this help message and exit
-   
-          --check
-                 only check (validate) the recipe
-   
-          --no-binstar-upload
-                 do not ask to upload the package to binstar
-   
-          --output
-                 output the conda package filename which would have been  created
-                 and exit
-   
-          -s, --source
-                 only obtain the source (but don't build)
-   
-          -t, --test
-                 test package (assumes package is already build)
-   
-          --no-test
-                 do not test the package
-   
-          -b, --build-only
-                 only  run  the  build,  without  any post processing or testing.
-                 Implies --no-test and --no-binstar-upload
-   
-          -p, --post
-                 run  the  post-build  logic.  Implies  --no-test  and   --nobin‐
-                 star-upload
+                 Show this help message and exit.
    
           -V, --version
-                 show program's version number and exit
+                 Show the conda-build version number and exit.
+   
+          --check
+                 Only check (validate) the recipe.
+   
+          --no-binstar-upload
+                 Do not ask to upload the package to binstar.
+   
+          --output
+                 Output the conda package filename which would have been  created
+                 and exit.
+   
+          -s, --source
+                 Only obtain the source (but don't build).
+   
+          -t, --test
+                 Test package (assumes package is already build).
+   
+          --no-test
+                 Do not test the package.
+   
+          -b, --build-only
+                 Only  run  the  build,  without  any post processing or testing.
+                 Implies --no-test and --no-binstar-upload.
+   
+          -p, --post
+                 Run  the  post-build  logic.  Implies  --no-test  and   --nobin‐
+                 star-upload.
    
           -q, --quiet
                  do not display progress bar
    
           --python PYTHON_VER
-                 Set the Python version used by conda build
+                 Set the Python version used by conda build. Can be passed multi‐
+                 ple times to build against multiple versions.
    
           --perl PERL_VER
-                 Set the Perl version used by conda build
+                 Set the Perl version used by conda build. Can be passed multiple
+                 times to build against multiple versions.
    
           --numpy NUMPY_VER
-                 Set the NumPy version used by conda build
+                 Set  the NumPy version used by conda build. Can be passed multi‐
+                 ple times to build against multiple versions.
    
           --R R_VER
-                 Set the R version used by conda build
+                 Set the R version used by conda build. Can  be  passed  multiple
+                 times to build against multiple versions.
    
           -c CHANNEL, --channel CHANNEL
                  Additional  channel  to  search  for  packages.  These  are URLs

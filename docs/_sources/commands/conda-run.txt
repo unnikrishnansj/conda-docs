@@ -20,7 +20,12 @@ conda run
    
                  [COMMAND] [ARGUMENTS [ARGUMENTS ...]]
    
-          Launches an application installed with Conda.
+          Launches an application installed with conda.
+   
+          To include command line options in a command, separate the command from
+          the other options with --, like
+   
+                 conda run -- ipython --matplotlib
    
    OPTIONS
       positional arguments:
@@ -38,7 +43,7 @@ conda run
                  Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 Full path to environment prefix (default: envs  dirs/build-envi‐
                  ronment).
    
           -q, --quiet

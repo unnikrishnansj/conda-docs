@@ -19,9 +19,10 @@ conda skeleton pypi
           usage:  conda-skeleton  pypi  [-h] [--output-dir OUTPUT_DIR] [--version
           VERSION]
    
-          [--all-urls] [--pypi-url PYPI_URL] [--no-download]
-                 [--no-prompt]  [--all-extras]  [--recursive]   [--python-version
-                 {2.6,2.7,3.3,3.4}] [--manual-url] packages [packages ...]
+          [--all-urls] [--pypi-url PYPI_URL] [--no-prompt]
+                 [--all-extras] [--recursive] [--version-compare]  [--python-ver‐
+                 sion  {2.6,2.7,3.3,3.4}]  [--manual-url] [--noarch-python] pack‐
+                 ages [packages ...]
    
       positional arguments:
           packages
@@ -30,26 +31,20 @@ conda skeleton pypi
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           --output-dir OUTPUT_DIR
-                 Directory to write recipes to
+                 Directory to write recipes to.
    
           --version VERSION
-                 Version to use. Applies to all packages
+                 Version to use. Applies to all packages.
    
           --all-urls
-                 Look at all URLs, not just source URLs. Use  this  if  it  can't
+                 Look  at  all  URLs,  not just source URLs. Use this if it can't
                  find the right URL.
    
           --pypi-url PYPI_URL
-                 URL to use for PyPI
-   
-          --no-download
-                 Don't download the package. This will keep the recipe from find‐
-                 ing the right dependencies and entry points if the package  uses
-                 distribute.  WARNING:  The default option downloads and runs the
-                 package's setup.py script.
+                 URL to use for PyPI (default: https://pypi.python.org/pypi).
    
           --no-prompt
                  Don't prompt the user on ambiguous choices.  Instead,  make  the
@@ -61,12 +56,32 @@ conda skeleton pypi
           --recursive
                  Create recipes for dependencies if they do not already exist.
    
+          --version-compare
+                 Compare  the  package  version of the recipe with the one avail‐
+                 ableon PyPI
+   
           --python-version {2.6,2.7,3.3,3.4}
                  Version of Python to use to run setup.py. Default is 3.4.
    
           --manual-url
-                 Manually   choose  source  url  when  more  than  one  urls  are
+                 Manually  choose  source  url  when  more  than  one  urls   are
                  present.Default is the one with least source size.
+   
+          --noarch-python
+                 Creates recipe as noarch python
+   
+   EXAMPLES
+          Create a recipe for the sympy package:
+   
+                 conda skeleton pypi sympy
+   
+          Create a recipes for the flake8 package and all its dependencies:
+   
+                 conda skeleton pypi --recursive flake8
+   
+          Use the --pypi-url flag to point to a PyPI mirror url:
+   
+                 conda skeleton pypi --pypi-url &lt;mirror-url&gt; package_name
    
    
    

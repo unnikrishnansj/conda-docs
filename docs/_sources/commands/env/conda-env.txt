@@ -16,10 +16,10 @@ conda env
           conda - conda env
    
    DESCRIPTION
-          usage: conda-env [-h] {create,export,list,remove,update} ...
+          usage: conda-env [-h] {create,export,list,remove,upload,update} ...
    
       positional arguments:
-                 {create,export,list,remove,update}
+                 {create,export,list,remove,upload,update}
    
           create Create an environment based on an environment file
    
@@ -28,6 +28,8 @@ conda env
           list   List the Conda environments
    
           remove Remove an environment
+   
+          upload Upload an environment to binstar
    
           update Update the current environment based on environment file
    

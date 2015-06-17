@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing packages &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../index.html"/>
+        <link rel="up" title="Using conda" href="index.html"/>
+        <link rel="next" title="Building packages" href="../building/build.html"/>
+        <link rel="prev" title="Managing Python" href="py.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Conda</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-started/get-started.html">Get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/condaintro.html">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/glossary.html">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install/install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install/quick.html">Quick install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/full.html">Full installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/config.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/central.html">Centralized installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Using conda</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test-drive.html">Test drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="envs.html">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py.html">Managing Python</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Managing packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Command reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">Conda build commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-environment-commands">Conda environment commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs.html">Tutorial: Intro to building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs2.html">Tutorial: Building conda packages part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/postgis.html">Tutorial: Building the PostGIS package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#join-conda-email-group">Join conda email group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#contribute-recipes-to-github">Contribute recipes to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#report-a-bug">Report a bug</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Get more help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../help/faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/examples/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/support.html">Support options</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Using conda</a> &raquo;</li>
+      
+    <li>Managing packages</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/using/pkgs.rst" class="fa fa-github"> Edit on GitHub</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="managing-packages">
+<h1>Managing packages<a class="headerlink" href="#managing-packages" title="Permalink to this headline">¶</a></h1>
+<p>Before you begin, you should have installed Miniconda or Anaconda, and gone through the previous <a class="reference internal" href="envs.html"><em>Managing environments</em></a> section. That means you have already installed a few packages when you created a new environment.</p>
+<p>NOTE: There are many options available for each of these commands. See the <a class="reference internal" href="../commands.html"><em>Command reference</em></a> for more detail.</p>
+<div class="section" id="list-all-packages">
+<h2>List all packages<a class="headerlink" href="#list-all-packages" title="Permalink to this headline">¶</a></h2>
+<p>List all of your packages in the active environment:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda list
+</pre></div>
+</div>
+<p>To list all of your packages installed into a non-active environment named snowflakes:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda list -n snowflakes
+</pre></div>
+</div>
+</div>
+<div class="section" id="search-for-a-package">
+<h2>Search for a package<a class="headerlink" href="#search-for-a-package" title="Permalink to this headline">¶</a></h2>
+<p>To see if a specific package is available for conda to install:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda search beautiful-soup
+</pre></div>
+</div>
+<p>This displays the package name, so we know it is available.</p>
+</div>
+<div class="section" id="install-a-package">
+<h2>Install a package<a class="headerlink" href="#install-a-package" title="Permalink to this headline">¶</a></h2>
+<p>Install a package such as “Beautiful Soup” into the current environment, using conda install as follows:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda install --name bunnies beautiful-soup
+</pre></div>
+</div>
+<p>NOTE: If you do not specify the name of the environment where you want it installed (&#8211;name bunnies) it will install in the current environment.</p>
+<p>Activate the bunnies environment , and do a conda list to see the new program installed:</p>
+<p><strong>Linux, OSX:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt>
+<strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></tt></p>
+<p><strong>All:</strong>  <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></tt></p>
+<p>NOTE: installing a commercial package (such as IOPro) is the same as installing any other package: conda install &#8211;name bunnies iopro</p>
+</div>
+<div class="section" id="install-a-package-from-anaconda-org">
+<h2>Install a package from Anaconda.org<a class="headerlink" href="#install-a-package-from-anaconda-org" title="Permalink to this headline">¶</a></h2>
+<p>For packages that are not available using conda install, we can look in the repository Anaconda.org. Anaconda.org, formerly Binstar.org, is a package management service for both public and private package repositories. Anaconda.org is a Continuum Analytics product, just like Anaconda and Miniconda.</p>
+<p>In a browser, go to <a class="reference external" href="http://anaconda.org">http://anaconda.org</a>.  To find the package named “bottleneck” enter that search term in the top left box named “Search Packages.”</p>
+<p>Find the package you want and click to go to the detail page. There you will see the name of the channel &#8211; in this case it is the “pandas” channel.</p>
+<p>Now that you know the channel name, you can use the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></tt> command to get it:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda install -c pandas bottleneck
+</pre></div>
+</div>
+<p>That means “Conda install the Bottleneck package from the Pandas channel on Anaconda.org.”</p>
+<p>The package will install.</p>
+<p>Check to see that the package is now installed:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda list
+</pre></div>
+</div>
+<p>You will see a list of packages, including Bottleneck.</p>
+</div>
+<div class="section" id="install-non-conda-packages">
+<h2>Install non-conda packages<a class="headerlink" href="#install-non-conda-packages" title="Permalink to this headline">¶</a></h2>
+<p>If a package is not available from conda or Anaconda.org, you may be able to find and install the package with another package manager like PIP.</p>
+<p>NOTE: Both pip and conda are already included in Anaconda and Miniconda, you do not need to install them separately.</p>
+<p>Activate the environment where you want to put the program, then pip install a program named “See”:</p>
+<p><strong>Linux, OSX:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt></p>
+<p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></tt></p>
+<p><strong>All:</strong>  <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">see</span></tt></p>
+<p>Check to see that the See package was installed by pip:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda list
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-a-commercial-package">
+<h2>Install a commercial package<a class="headerlink" href="#install-a-commercial-package" title="Permalink to this headline">¶</a></h2>
+<p>Installing commercial packages is the same as installing any other package with conda. So as an example, let’s install and then delete a free trial of one of Continuum’s commercial packages IOPro, which can speed up your Python processing:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda install iopro
+</pre></div>
+</div>
+<p>TIP: Except for academic use, this free trial expires after 30 days.</p>
+<p>You can now install and verify any package you want using conda, whether using the conda command, downloading from Anaconda.org, or using pip install, and whether open source or commercial.</p>
+</div>
+<div class="section" id="package-update">
+<h2>Package update<a class="headerlink" href="#package-update" title="Permalink to this headline">¶</a></h2>
+<p>You can check to see if a new update is available with the conda update command. If conda tells you an update is available, you can then choose whether or not to install it.</p>
+<p>Use the conda update command to update a specific package:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda update biopython
+</pre></div>
+</div>
+<p>You can use the conda update command to update conda itself:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda update conda
+</pre></div>
+</div>
+<p>You can also update Python with the update command:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda update python
+</pre></div>
+</div>
+<p>NOTE: Conda will update to the highest version in its series, i.e. Python 2.7 will update to the highest available in the 2.x series, 3.4 will update to the highest 3.x available.</p>
+<p>Regardless of what package you are updating, conda will compare versions, then let you know what is available to install. If none are available, conda will reply “All requested packages are already installed.”</p>
+<p>If a newer version of your package is available, and you wish to update it, type Y to update:</p>
+<div class="code highlight-python"><div class="highlight"><pre>Proceed ([y]/n)? y
+</pre></div>
+</div>
+<p>Type “y” for yes.</p>
+</div>
+<div class="section" id="package-remove">
+<h2>Package remove<a class="headerlink" href="#package-remove" title="Permalink to this headline">¶</a></h2>
+<p>If you decide not to continue using a package, for example, the commercial package IOPro, you can remove it from the bunnies environment with:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda remove --name bunnies iopro
+</pre></div>
+</div>
+<p>Confirm that the package has been removed:</p>
+<p>conda list</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../building/build.html" class="btn btn-neutral float-right" title="Building packages">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="py.html" class="btn btn-neutral" title="Managing Python"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Continuum Analytics.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>

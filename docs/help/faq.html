@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Conda FAQ &mdash; Conda   documentation</title>
+  <title>FAQ &mdash; Conda   documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
         <link rel="up" title="Get more help" href="help.html"/>
-        <link rel="next" title="Troubleshooting" href="troubleshooting.html"/>
+        <link rel="next" title="conda vs. pip vs. virtualenv" href="conda-pip-virtualenv-translator.html"/>
         <link rel="prev" title="Get more help" href="help.html"/> 
 
   
@@ -59,127 +59,55 @@
         
         
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../intro.html#conda-overview">Conda Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get-started/get-started.html">Get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/condaintro.html">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/glossary.html">Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../install/install.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../install/full.html">Full Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../install/quick.html">Quick Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/quick.html">Quick install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/full.html">Full installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../install/config.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../install/central.html">Centralized installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../install/silent.html">Silent installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../test-drive.html">Conda test drive</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../test-drive.html#managing-conda">1. Managing conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../test-drive.html#managing-environments">2. Managing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../test-drive.html#managing-python">3. Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../test-drive.html#managing-packages">4. Managing packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../test-drive.html#removing-packages-environments-or-conda">5. Removing packages, environments, or conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/test-drive.html">Test drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/py.html">Managing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../py2or3.html">Create Python 2 or 3 environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Conda Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../building/pkg-name-conv.html">Package Naming Conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/meta-pkg.html">Metapackages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/dirs.html">Directory Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../build.html">conda build Recipe Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../build_tutorials.html">Build tutorials</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Command reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">Conda build commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-environment-commands">Conda environment commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs.html">Tutorial: Intro to building conda packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs2.html">Tutorial: Building conda packages part 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/postgis.html">Tutorial: Building the postgis package</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../custom-channels.html">Custom Channels</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../custom-channels.html#custom-channel-private-repository-summary">Custom channel/private repository summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/postgis.html">Tutorial: Building the PostGIS package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#join-a-conda-mailing-list">Join a conda mailing list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#join-conda-email-group">Join conda email group</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../get-involved.html#contribute-recipes-to-github">Contribute recipes to Github</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../get-involved.html#report-a-bug">Report a bug</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="help.html">Get more help</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Conda FAQ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="conda-pip-virtualenv-translator.html">conda vs. pip vs. virtualenv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples/examples.html">Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="travis.html">Using Conda with Travis CI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="support.html">Support options</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../commands.html">Command Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../commands.html#general-commands"><tt class="docutils literal"><span class="pre">general-commands</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands.html#env-commands"><tt class="docutils literal"><span class="pre">env-commands</span></tt></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands.html#build-commands"><tt class="docutils literal"><span class="pre">build-commands</span></tt></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../general-commands.html">General conda commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-bundle.html">conda bundle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-clean.html">conda clean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-config.html">conda config</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-create.html">conda create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-help.html">conda help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-info.html">conda info</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-init.html">conda init</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-install.html">conda install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-list.html">conda list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-package.html">conda package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-remove.html">conda remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-run.html">conda run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-search.html">conda search</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-uninstall.html">conda uninstall</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/conda-update.html">conda update</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../env-commands.html">conda-env commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../commands/env/conda-env.html">conda env</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/env/conda-env-create.html">conda env create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/env/conda-env-export.html">conda env export</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/env/conda-env-list.html">conda env list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/env/conda-env-remove.html">conda env remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/env/conda-env-update.html">conda env update</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../build-commands.html">conda-build commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-build.html">conda build</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-convert.html">conda convert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-develop.html">conda develop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-index.html">conda index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-inspect.html">conda inspect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-inspect-linkages.html">conda inspect linkages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-inspect-objects.html">conda inspect objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-metapackage.html">conda metapackage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-pipbuild.html">conda pipbuild</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-skeleton.html">conda skeleton</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-skeleton-cpan.html">conda skeleton cpan</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-skeleton-cran.html">conda skeleton cran</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/build/conda-skeleton-pypi.html">conda skeleton pypi</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../spec.html">Conda package specification</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../spec.html#package-metadata">Package metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../spec.html#link-and-unlink-scripts">Link and unlink scripts:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../spec.html#repository-structure-and-index">Repository structure and index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../spec.html#package-match-specifications">Package Match Specifications</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../bdist_conda.html">Building Python packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html#with-setup-py-bdist-conda">with setup.py bdist_conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html#setup-options">Setup options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html#command-line-options">Command line options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html#notes">Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../license.html">License - Conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../license.html#exceptions">Exceptions</a></li>
 </ul>
 </li>
 </ul>
@@ -207,7 +135,7 @@
       
           <li><a href="help.html">Get more help</a> &raquo;</li>
       
-    <li>Conda FAQ</li>
+    <li>FAQ</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="https://github.com/conda/conda-docs/edit/master/docs/source/help/faq.rst" class="fa fa-github"> Edit on GitHub</a>
@@ -218,12 +146,12 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-faq">
-<h1><a class="toc-backref" href="#id1">Conda FAQ</a><a class="headerlink" href="#conda-faq" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="faq">
+<h1><a class="toc-backref" href="#id1">FAQ</a><a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#conda-faq" id="id1">Conda FAQ</a><ul>
+<li><a class="reference internal" href="#faq" id="id1">FAQ</a><ul>
 <li><a class="reference internal" href="#general-questions" id="id2">General questions</a></li>
 <li><a class="reference internal" href="#getting-help" id="id3">Getting help</a></li>
 <li><a class="reference internal" href="#searching-info" id="id4">Searching &amp; info</a></li>
@@ -240,6 +168,9 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#recipes" id="id15">Recipes</a></li>
+<li><a class="reference internal" href="#conda-pip-and-virtualenv" id="id16">Conda, pip, and virtualenv</a></li>
+<li><a class="reference internal" href="#silent-installation" id="id17">Silent installation</a></li>
+<li><a class="reference internal" href="#using-conda-with-travis-ci" id="id18">Using conda with Travis CI</a></li>
 </ul>
 </li>
 </ul>
@@ -292,8 +223,8 @@ from the Continuum repos (i.e., from Anaconda)?</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">How do I check if package X (e.g. <em>iminuit</em>) exists in channel Y (e.g. <a class="reference external" href="http://conda.binstar.org/mutirri">http://conda.binstar.org/mutirri</a>) and is available for installation?</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda search --override-channels --channel http://conda.binstar.org/mutirri iminuit
+<li><p class="first">How do I check if package X (e.g. <em>iminuit</em>) exists in channel Y (e.g. <a class="reference external" href="http://conda.anaconda.org/mutirri">http://conda.anaconda.org/mutirri</a>) and is available for installation?</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda search --override-channels --channel http://conda.anaconda.org/mutirri iminuit
 </pre></div>
 </div>
 </li>
@@ -317,13 +248,13 @@ from the Continuum repos (i.e., from Anaconda)?</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">How can I add a new value Y (e.g. <a class="reference external" href="http://conda.binstar.org/mutirri">http://conda.binstar.org/mutirri</a>) to key X (e.g. channels)?</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda config --add channels http://conda.binstar.org/mutirri
+<li><p class="first">How can I add a new value Y (e.g. <a class="reference external" href="http://conda.anaconda.org/mutirri">http://conda.anaconda.org/mutirri</a>) to key X (e.g. channels)?</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda config --add channels http://conda.anaconda.org/mutirri
 </pre></div>
 </div>
 </li>
-<li><p class="first">How can I remove existing value Y (e.g. <a class="reference external" href="http://conda.binstar.org/mutirri">http://conda.binstar.org/mutirri</a>) from key X?</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda config --remove channels http://conda.binstar.org/mutirri
+<li><p class="first">How can I remove existing value Y (e.g. <a class="reference external" href="http://conda.anaconda.org/mutirri">http://conda.anaconda.org/mutirri</a>) from key X?</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda config --remove channels http://conda.anaconda.org/mutirri
 </pre></div>
 </div>
 </li>
@@ -635,14 +566,14 @@ know that this package is on PyPI?</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda build bottle
 </pre></div>
 </div>
-<p>It is recommended to upload the package to binstar when you are done. Then
-if you add your binstar channel to your .condarc (see <a class="reference internal" href="#customization"><em>Customization (.condarc file)</em></a>
+<p>It is recommended to upload the package to Anaconda.org when you are done. Then
+if you add your Anaconda.org channel to your .condarc (see <a class="reference internal" href="#customization"><em>Customization (.condarc file)</em></a>
 above), you will be able to install the package with</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda install bottle
 </pre></div>
 </div>
 <ul>
-<li><p class="first">If you did not upload the package to binstar, to install this package in
+<li><p class="first">If you did not upload the package to Anaconda.org, to install this package in
 the root environment, you need to find out where the built package is:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda info
 </pre></div>
@@ -657,6 +588,23 @@ the root environment, you need to find out where the built package is:</p>
 <p>This information is also shown at the end of the build process.</p>
 </li>
 </ol>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="conda-pip-and-virtualenv">
+<h2><a class="toc-backref" href="#id16">Conda, pip, and virtualenv</a><a class="headerlink" href="#conda-pip-and-virtualenv" title="Permalink to this headline">¶</a></h2>
+<p>If you are already familiar with pip or virtualenv, please see our chart comparing
+<a class="reference download internal" href="../_downloads/conda-pip-virtualenv-translator.html"><tt class="xref download docutils literal"><span class="pre">Conda,</span> <span class="pre">pip,</span> <span class="pre">and</span> <span class="pre">virtualenv</span></tt></a>.</p>
+</div>
+<div class="section" id="silent-installation">
+<h2><a class="toc-backref" href="#id17">Silent installation</a><a class="headerlink" href="#silent-installation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="silent.html"><em>Silent installation</em></a>  of Miniconda or Anaconda can be used for deployment
+or testing or building services such as Travis CI and Appveyor.</p>
+</div>
+<div class="section" id="using-conda-with-travis-ci">
+<h2><a class="toc-backref" href="#id18">Using conda with Travis CI</a><a class="headerlink" href="#using-conda-with-travis-ci" title="Permalink to this headline">¶</a></h2>
+<p>Conda can be combined with <a class="reference internal" href="travis.html"><em>continuous integration systems</em></a> such as Travis CI
+and AppVeyor to provide frequent, automated testing of your code.</p>
 </div>
 </div>
 
@@ -666,7 +614,7 @@ the root environment, you need to find out where the built package is:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-pip-virtualenv-translator.html" class="btn btn-neutral float-right" title="conda vs. pip vs. virtualenv">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="help.html" class="btn btn-neutral" title="Get more help"><span class="fa fa-arrow-circle-left"></span> Previous</a>

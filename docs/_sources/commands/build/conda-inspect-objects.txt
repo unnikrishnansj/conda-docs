@@ -18,27 +18,29 @@ conda inspect objects
    DESCRIPTION
           usage: conda-inspect objects [-h] [--untracked]
    
-          [--groupby {rpath,filename,filetype}] [--all]
+          [--groupby {filename,filetype,rpath}] [--all]
                  [-n ENVIRONMENT | -p PATH] [packages [packages ...]]
    
-          Investigate  binary  object  files  in  a package (only works in OS X).
-          Aggregates the output of otool on all the  binary  object  files  in  a
-          package.
+          Investigate binary object files in a package (only works on OS X). This
+          is an advanced command to aid  building  packages  that  have  compiled
+          libraries.  Aggregates  the  output  of  otool on all the binary object
+          files in a package.
    
+   OPTIONS
       positional arguments:
           packages
-                 conda packages to inspect
+                 Conda packages to inspect.
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           --untracked
-                 Inspect the untracked files in the environment. Useful when used
-                 in conjunction with conda build --buildonly.
+                 Inspect the untracked files in the environment. This  is  useful
+                 when used in conjunction with conda build --build-only.
    
-          --groupby {rpath,filename,filetype}
-                 Attribute to group by (default: filename)
+          --groupby {filename,filetype,rpath}
+                 Attribute to group by (default: filename).
    
           --all  Generate a report for all packages in the environment.
    
@@ -46,7 +48,7 @@ conda inspect objects
                  Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 Full path to environment prefix (default: envs  dirs/build-envi‐
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
                  ronment).
    
    

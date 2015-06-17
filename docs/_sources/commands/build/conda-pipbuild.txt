@@ -18,33 +18,36 @@ conda pipbuild
    DESCRIPTION
           usage: conda-pipbuild [-h] [--no-binstar-upload] [--binstar-upload]
    
-          [--release RELEASE] [--pypi-url PYPI_URL] [-V]
-                 &lt;PYPI_NAME&gt;
+          [--release RELEASE] [--pypi-url PYPI_URL]
+                 [--noarch-python] &lt;PYPI_NAME&gt;
    
-          tool for building conda packages just using pip install
+          Tool  for building conda packages using pip install. NOTE: this command
+          is experimental.  The recommended way  to  build  conda  packages  from
+          packages on PyPI is using conda skeleton pypi and conda build.
    
+   OPTIONS
       positional arguments:
           &lt;PYPI_NAME&gt;
-                 name of package on PYPI
+                 Name of package on PyPI.
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           --no-binstar-upload
-                 do not ask to upload the package to binstar
+                 Do not ask to upload the package to binstar.
    
           --binstar-upload
-                 upload the package to binstar
+                 Upload the package to binstar.
    
           --release RELEASE
-                 specify version of package to build
+                 Version of the package to build.
    
           --pypi-url PYPI_URL
-                 Url to use for PyPI
+                 Url to use for PyPI.
    
-          -V, --version
-                 show program's version number and exit
+          --noarch-python
+                 Creates package as noarch
    
    
    

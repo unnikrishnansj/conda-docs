@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Intro to conda &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../index.html"/>
+        <link rel="up" title="Get started" href="get-started.html"/>
+        <link rel="next" title="Download conda" href="download.html"/>
+        <link rel="prev" title="Get started" href="get-started.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Conda</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="get-started.html">Get started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install/install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install/quick.html">Quick install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/full.html">Full installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/config.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/central.html">Centralized installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/test-drive.html">Test drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/py.html">Managing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Command reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">Conda build commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-environment-commands">Conda environment commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs.html">Tutorial: Intro to building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs2.html">Tutorial: Building conda packages part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/postgis.html">Tutorial: Building the PostGIS package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#join-conda-email-group">Join conda email group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#contribute-recipes-to-github">Contribute recipes to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#report-a-bug">Report a bug</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Get more help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../help/faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/examples/examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/support.html">Support options</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="get-started.html">Get started</a> &raquo;</li>
+      
+    <li>Intro to conda</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/get-started/condaintro.rst" class="fa fa-github"> Edit on GitHub</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="intro-to-conda">
+<h1>Intro to conda<a class="headerlink" href="#intro-to-conda" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="package"></span><span class="target" id="environment"><span id="index-0"></span></span><p id="index-1">Conda is an application for finding and installing software packages.
+A conda <cite>package</cite> is a binary tarball containing system-level libraries,
+Python modules, executable programs, or other components.
+conda keeps track of dependencies between packages and platform
+specifics, making it simple to create working environments from different
+sets of packages.</p>
+<p>The <cite>conda</cite> command is the primary interface for managing installations
+of various packages.  It can query and search the package index and current
+installation, create new environments, and install and update packages
+into existing conda environments.</p>
+<p>A <cite>conda environment</cite> is a filesystem directory that contains a specific
+collection of conda packages.  As a concrete example, you might want to
+have one environment that provides NumPy 1.7, and another environment that
+provides NumPy 1.6 for legacy testing.  conda makes this kind of mixing
+and matching easy.  To begin using an environment, simply set
+your <strong>PATH</strong> variable to point to its <cite>bin</cite> directory.</p>
+<span class="target" id="channel"></span><span class="target" id="locally-available"><span id="index-2"></span></span><span class="target" id="activated"><span id="index-3"></span></span><span class="target" id="deactivated"><span id="index-4"></span></span><p id="index-5">Conda packages are downloaded from remote <tt class="docutils literal"><span class="pre">channels</span></tt>, which are simply URLs
+to directories containing conda packages.
+The conda command starts with a default set of channels to search, but users may
+exert control over this list; for example, if they wish to maintain a private or
+internal channel (see <a class="reference internal" href="../install/config.html"><em>Configuration</em></a> for details).</p>
+<dl class="docutils">
+<dt>Continuum provides the following standard channels:</dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">http://repo.continuum.io/pkgs/dev</span></tt> - Experimental or developmental versions of packages</li>
+<li><tt class="docutils literal"><span class="pre">http://repo.continuum.io/pkgs/gpl</span></tt> - GPL licensed packages</li>
+<li><tt class="docutils literal"><span class="pre">http://repo.continuum.io/pkgs/free</span></tt> - non GPL open source packages</li>
+</ul>
+</dd>
+</dl>
+<p>To view all available packages, you can use <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span></tt>.  See the
+<a class="reference internal" href="../help/examples/search.html"><em>search command examples</em></a> for more information.</p>
+<span class="target" id="location"></span><span class="target" id="known"><span id="index-6"></span></span><p id="index-7">Since conda environments are simply directories, they may be created
+anywhere.  However, conda has a notion of <cite>locations</cite> which are also
+simply directories that are known to conda, and contain environments
+within.  Conda environments created in such locations are said to
+be <cite>known</cite>, and can be displayed for easy reference.  Conda has a default
+system location, but additional locations may be specified (see <a class="reference internal" href="../building/dirs.html"><em>Directory structure</em></a>
+and <a class="reference internal" href="../install/config.html"><em>Configuration</em></a>, respectively, for more details).</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="download.html#should-i-download-anaconda-or-miniconda">Should I download Anaconda or Miniconda?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#which-version-of-anaconda-or-miniconda-should-i-choose">Which version of Anaconda or Miniconda should I choose?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#should-i-choose-gui-installer-or-command-line-installer">Should I choose GUI installer or command line installer?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#what-version-of-python-should-i-choose">What version of Python should I choose?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#what-about-md5-or-sha-verification">What about MD5 or SHA verification?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License - Conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="what-s-new-in-version-3-13-0">
+<h2>What&#8217;s new in version 3.13.0<a class="headerlink" href="#what-s-new-in-version-3-13-0" title="Permalink to this headline">¶</a></h2>
+<p>The latest changes in each new version are published at <a class="reference external" href="https://github.com/conda/conda/blob/master/CHANGELOG.txt">https://github.com/conda/conda/blob/master/CHANGELOG.txt</a> .</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="download.html" class="btn btn-neutral float-right" title="Download conda">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="get-started.html" class="btn btn-neutral" title="Get started"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Continuum Analytics.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>
