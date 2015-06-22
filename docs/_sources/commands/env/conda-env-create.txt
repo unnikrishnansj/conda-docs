@@ -16,13 +16,15 @@ conda env create
           conda - conda env create
    
    DESCRIPTION
-          usage:  conda-env  create  [-h]  [-f  FILE] [-n OLD_NAME] [-q] [--json]
-          [name]
+          usage: conda-env create [-h] [-f FILE] [-n NAME] [-q] [--json]
+   
+                 [remote_definition]
    
           Create an environment based on an environment file
    
       positional arguments:
-          name   environment definition
+          remote_definition
+                 remote environment definition
    
       optional arguments:
           -h, --help
@@ -31,8 +33,8 @@ conda env create
           -f FILE, --file FILE
                  environment definition file (default: environment.yml)
    
-          -n OLD_NAME, --name OLD_NAME
-                 environment definition [Deprecated]
+          -n NAME, --name NAME
+                 environment definition
    
           -q, --quiet
    
@@ -41,8 +43,8 @@ conda env create
                  cally.
    
       examples:
-                 conda env create conda env create vader/deathstar conda env cre‐
-                 ate -f=/path/to/environment.yml
+                 conda env create conda env  create  -n  name  conda  env  create
+                 vader/deathstar conda env create -f=/path/to/environment.yml
    
    
    
