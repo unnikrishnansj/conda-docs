@@ -251,7 +251,7 @@ sections are optional except for package/name and package/version.</p>
     <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">bspatch4 = bsdiff4.cli:main_bspatch4</span>
 
   <span class="c1"># If osx_is_app is set, entry points will use python.app instead of</span>
-  <span class="c1"># python in Mac OS X</span>
+  <span class="c1"># python in OS X</span>
   <span class="l-Scalar-Plain">osx_is_app</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">yes</span> <span class="c1"># (defaults to no)</span>
 
   <span class="c1"># See the Features section below for more information on features</span>
@@ -596,7 +596,7 @@ defined in Windows:</p>
 </tr>
 </tbody>
 </table>
-<p>On non-Windows (Linux and Mac OS X), we have:</p>
+<p>On non-Windows (Linux and OS X), we have:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="50%" />
@@ -617,7 +617,7 @@ defined in Windows:</p>
 </tr>
 </tbody>
 </table>
-<p>On Mac OS X, we have:</p>
+<p>On OS X, we have:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="50%" />
@@ -847,7 +847,7 @@ in which it was built.</p>
 relocatable:</p>
 <ul class="simple">
 <li>Binary object files are converted to use relative paths using
-<tt class="docutils literal"><span class="pre">install_name_tool</span></tt> on Mac OS X and <tt class="docutils literal"><span class="pre">patchelf</span></tt> on Linux.</li>
+<tt class="docutils literal"><span class="pre">install_name_tool</span></tt> on OS X and <tt class="docutils literal"><span class="pre">patchelf</span></tt> on Linux.</li>
 <li>Any text file (containing no NULL bytes) containing the build prefix or the
 placeholder prefix <tt class="docutils literal"><span class="pre">/opt/anaconda1anaconda2anaconda3</span></tt> is registered in the
 <tt class="docutils literal"><span class="pre">info/has_prefix</span></tt> file in the package metadata.  When conda installs the

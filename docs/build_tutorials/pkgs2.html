@@ -332,13 +332,13 @@ the results in Section 4 above.</p>
 <span id="build-sh-bld-bat"></span><h3>Write the build script files build.sh and bld.bat<a class="headerlink" href="#write-the-build-script-files-build-sh-and-bld-bat" title="Permalink to this headline">¶</a></h3>
 <p>The other two files you need for a build  are</p>
 <ul class="simple">
-<li><strong>build.sh</strong> shell script for Unix and Mac, and</li>
+<li><strong>build.sh</strong> shell script for Linux and OS X, and</li>
 <li><strong>bld.bat</strong> batch file for Windows.</li>
 </ul>
 <p>These two build files contain all the variables such as for 32-bit or 64-bit architecture (the ARCH
 variable) and the build environment prefix (PREFIX). The two files <tt class="docutils literal"><span class="pre">build.sh</span></tt> and <tt class="docutils literal"><span class="pre">bld.bat</span></tt> files must be
 in the same directory as your <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file.</p>
-<p>First, we&#8217;ll write the build file for Linux and Macintosh, then the next file for Windows.
+<p>First, we&#8217;ll write the build file for Linux and OS X, then the next file for Windows.
 All users, in your favorite text editor, create a new file named <tt class="docutils literal"><span class="pre">build.sh</span></tt> and enter the text exactly as
 shown:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c">#!/bin/bash                 # This “shebang” tells what program to use to interpret the script.</span>

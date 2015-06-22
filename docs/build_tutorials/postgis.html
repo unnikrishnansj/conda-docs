@@ -166,7 +166,7 @@ platforms.</p>
 <div class="section" id="abstract-description-of-conda-build">
 <h3>Abstract Description of conda build<a class="headerlink" href="#abstract-description-of-conda-build" title="Permalink to this headline">¶</a></h3>
 <p>We begin building a package by pointing conda to a directory with a <tt class="docutils literal"><span class="pre">build.sh</span></tt>
-(for Linux and MacOSX, Windows uses <tt class="docutils literal"><span class="pre">bld.bat</span></tt> file) and <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file.
+(for Linux and OS X, Windows uses <tt class="docutils literal"><span class="pre">bld.bat</span></tt> file) and <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file.
 Respectively, these files specify the command line instructions to build a
 particular package from source, and information about where to download the
 source files and dependencies that the package requires. If these files are
@@ -219,7 +219,7 @@ you&#8217;ll encounter for packaging C source code distributions. Including
 key instruction to have conda configure and install in its custom build
 environment, rather than try to access root-level directories such as
 <tt class="docutils literal"><span class="pre">/usr</span></tt>, which is the default installation path in normal circumstances in
-Linux and Mac OS X. If you want to follow more details of what conda is doing
+Linux and OS X. If you want to follow more details of what conda is doing
 to configure the environment, add to your <tt class="docutils literal"><span class="pre">build.sh</span></tt> file:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> <span class="nv">$PREFIX</span>
 </pre></div>

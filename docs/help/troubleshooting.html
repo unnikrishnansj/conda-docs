@@ -154,7 +154,7 @@
 <li><a class="reference internal" href="#permission-denied"><em>Issue:  permission denied errors during install</em></a></li>
 <li><a class="reference internal" href="#conda-claims-installed"><em>Issue: Conda claims that a package is installed, but it appears not to be.</em></a></li>
 <li><a class="reference internal" href="#distributionnotfound"><em>Issue: pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</em></a></li>
-<li><a class="reference internal" href="#unknown-locale"><em>Issue: ValueError unknown locale: UTF-8 on Mac OS X</em></a></li>
+<li><a class="reference internal" href="#unknown-locale"><em>Issue: ValueError unknown locale: UTF-8 on OS X</em></a></li>
 <li><a class="reference internal" href="#attributeerror-getproxies"><em>Issue: AttributeError or missing getproxies</em></a></li>
 <li><a class="reference internal" href="#shell-command-location"><em>Issue:  Shell commands open from wrong location</em></a></li>
 </ol>
@@ -213,8 +213,8 @@ site-specific packages can be found is in <a class="reference external" href="ht
 Python may try importing packages from this directory, which can cause
 issues. The recommended fix is to remove the site-specific directory.</p>
 </div>
-<div class="section" id="resolution-for-c-libraries-unset-the-environment-variables-ld-library-path-on-linux-and-dyld-library-path-on-mac-os-x">
-<h3>Resolution: For C libraries, unset the environment variables <tt class="docutils literal"><span class="pre">LD_LIBRARY_PATH</span></tt> on Linux and <tt class="docutils literal"><span class="pre">DYLD_LIBRARY_PATH</span></tt> on Mac OS X.<a class="headerlink" href="#resolution-for-c-libraries-unset-the-environment-variables-ld-library-path-on-linux-and-dyld-library-path-on-mac-os-x" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="resolution-for-c-libraries-unset-the-environment-variables-ld-library-path-on-linux-and-dyld-library-path-on-os-x">
+<h3>Resolution: For C libraries, unset the environment variables <tt class="docutils literal"><span class="pre">LD_LIBRARY_PATH</span></tt> on Linux and <tt class="docutils literal"><span class="pre">DYLD_LIBRARY_PATH</span></tt> on OS X.<a class="headerlink" href="#resolution-for-c-libraries-unset-the-environment-variables-ld-library-path-on-linux-and-dyld-library-path-on-os-x" title="Permalink to this headline">¶</a></h3>
 <p>These act similarly to <tt class="docutils literal"><span class="pre">PYTHONPATH</span></tt> for Python. If they are set, they can
 cause libraries to be loaded from locations other than the Conda
 environment. Again, Conda environments obviate most use-cases for these
@@ -258,8 +258,8 @@ then verify with <tt class="docutils literal"><span class="pre">conda</span> <sp
 not a git checkout (the version should not include any hashes).</p>
 </div>
 </div>
-<div class="section" id="issue-valueerror-unknown-locale-utf-8-on-mac-os-x">
-<span id="unknown-locale"></span><h2>Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on Mac OS X<a class="headerlink" href="#issue-valueerror-unknown-locale-utf-8-on-mac-os-x" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="issue-valueerror-unknown-locale-utf-8-on-os-x">
+<span id="unknown-locale"></span><h2>Issue: <tt class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></tt> on OS X<a class="headerlink" href="#issue-valueerror-unknown-locale-utf-8-on-os-x" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="resolution-uncheck-set-locale-environment-variables-on-startup-setting-in-terminal-settings">
 <h3>Resolution: Uncheck &#8220;set locale environment variables on startup&#8221; setting in Terminal settings<a class="headerlink" href="#resolution-uncheck-set-locale-environment-variables-on-startup-setting-in-terminal-settings" title="Permalink to this headline">¶</a></h3>
 <p>This is a bug in the OS X Terminal app that only shows up in certain locales
