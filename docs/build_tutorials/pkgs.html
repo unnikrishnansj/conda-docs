@@ -153,7 +153,7 @@
 makes it simple to install the program in any location. Many packages can be built using just the conda
 skeleton command with a few minor edits. Building conda packages can also be complex, especially if many
 dependencies are involved.</p>
-<p>TIP: A skeleton command generates a template that may be used as-is or with very few edits. See <a class="reference external" href="https://en.wikipedia.org/wiki/Skeleton_(computer_programming)/">skeleton (computer programming)</a>.</p>
+<p>TIP: A skeleton command generates a template that may be used as-is or with very few edits. See <a class="reference external" href="https://en.wikipedia.org/wiki/Skeleton_(computer_programming)">skeleton (computer programming)</a>.</p>
 <p>This is the first of three tutorials on building conda packages.</p>
 <div class="section" id="conda-build-summary">
 <h2>Conda build summary<a class="headerlink" href="#conda-build-summary" title="Permalink to this headline">¶</a></h2>
@@ -199,12 +199,12 @@ and bld.bat. Use the ‘ls’ command on OS X or Linux or the “dir” command 
 have been created.</p>
 <p>Next, edit the new 50-line file meta.yaml.  This skeleton file can be fleshed out by filling in settings and
 commands, but for pyinstrument, any changes are optional.</p>
-<dl class="docutils">
-<dt>What are these three files?</dt>
-<dd><strong>meta.yaml:</strong> Contains all the metadata in the recipe. Only package/name and package/version are required; everything else is optional.
-<strong>build.sh:</strong> Environment and other variables for Linux and OS X - whether 32 or 64-bit, path info, etc.
-<strong>bld.bat:</strong> The same environment and other variables for Windows.</dd>
-</dl>
+<p>What are these three files?</p>
+<blockquote>
+<div><p><strong>meta.yaml:</strong> Contains all the metadata in the recipe. Only package/name and package/version are required; everything else is optional.</p>
+<p><strong>build.sh:</strong> Environment and other variables for Linux and OS X - whether 32 or 64-bit, path info, etc.</p>
+<p><strong>bld.bat:</strong> The same environment and other variables for Windows.</p>
+</div></blockquote>
 <p>Now that you have the skeleton ready, you can use the conda build tool. Let’s try it:</p>
 <div class="highlight-bash"><div class="highlight"><pre>conda build pyinstrument
 </pre></div>
@@ -219,7 +219,7 @@ commands, but for pyinstrument, any changes are optional.</p>
 </pre></div>
 </div>
 <p>Windows example file path:</p>
-<div class="highlight-bash"><div class="highlight"><pre>C:<span class="se">\U</span>sers<span class="se">\j</span>smith<span class="se">\M</span>iniconda<span class="se">\c</span>onda-bld<span class="se">\w</span>in-64<span class="se">\p</span>yinstrument-0.13.1-py27_0.tar.bz2
+<div class="highlight-none"><div class="highlight"><pre>C:\Users\jsmith\Miniconda\conda-bld\win-64\pyinstrument-0.13.1-py27_0.tar.bz2
 </pre></div>
 </div>
 <p>NOTE: Your path and filename will vary depending on your installation and operating system. Save the
