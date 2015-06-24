@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Tutorial: Building conda packages part 2 &mdash; Conda   documentation</title>
+  <title>Building conda packages from scratch &mdash; Conda   documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
         <link rel="up" title="Build tutorials" href="build_tutorials.html"/>
-        <link rel="next" title="Tutorial: Building the PostGIS package" href="postgis.html"/>
-        <link rel="prev" title="Tutorial: Intro to building conda packages" href="pkgs.html"/> 
+        <link rel="next" title="Deconstructing the PostGIS package" href="postgis.html"/>
+        <link rel="prev" title="Building conda packages with conda skeleton" href="pkgs.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -80,9 +80,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building Python packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../building/build.html">Building packages</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/custom-channels.html">Custom channels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/bdist_conda.html">Bdist_conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
@@ -90,12 +93,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">Conda build commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-environment-commands">Conda environment commands</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="reference internal" href="build_tutorials.html">Build tutorials</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html">Tutorial: Intro to building conda packages</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Tutorial: Building conda packages part 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgis.html">Tutorial: Building the PostGIS package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
@@ -134,9 +131,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
+          <li><a href="../building/build.html">Building packages</a> &raquo;</li>
+      
           <li><a href="build_tutorials.html">Build tutorials</a> &raquo;</li>
       
-    <li>Tutorial: Building conda packages part 2</li>
+    <li>Building conda packages from scratch</li>
       <li class="wy-breadcrumbs-aside">
         
           <a href="https://github.com/conda/conda-docs/edit/master/docs/source/build_tutorials/pkgs2.rst" class="fa fa-github"> Edit on GitHub</a>
@@ -147,13 +146,13 @@
 </div>
           <div role="main">
             
-  <div class="section" id="tutorial-building-conda-packages-part-2">
-<h1>Tutorial: Building conda packages part 2<a class="headerlink" href="#tutorial-building-conda-packages-part-2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="building-conda-packages-from-scratch">
+<h1>Building conda packages from scratch<a class="headerlink" href="#building-conda-packages-from-scratch" title="Permalink to this headline">¶</a></h1>
 <p>This second tutorial is about building a conda package without using the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span> <span class="pre">pypi</span></tt>
 command. In this tutorial we will build the same recipe as in the first tutorial, Pyinstrument, but
 this time we will find a similar recipe and edit it to make a new recipe. We also write the recipe
 completely from scratch. We also explore the elements of a conda package in more detail.</p>
-<p>You should have already completed <a class="reference internal" href="pkgs.html"><em>Tutorial: Intro to building conda packages</em></a>.</p>
+<p>You should have already completed <a class="reference internal" href="pkgs.html"><em>Building conda packages with conda skeleton</em></a>.</p>
 <div class="section" id="building-conda-packages-summary">
 <h2>Building conda packages summary<a class="headerlink" href="#building-conda-packages-summary" title="Permalink to this headline">¶</a></h2>
 <p>This tutorial includes the following:</p>
@@ -202,7 +201,7 @@ the single <tt class="docutils literal"><span class="pre">conda</span> <span cla
 <li>Other resources, which are not included in the source and cannot be generated by the build scripts.</li>
 </ul>
 <p>NOTE: When you use the conda skeleton command, the first three files (<tt class="docutils literal"><span class="pre">meta.yaml</span></tt>, <tt class="docutils literal"><span class="pre">build.sh</span></tt> and <tt class="docutils literal"><span class="pre">bld.bat</span></tt>)
-are automatically generated for you. See the previous tutorial <a class="reference internal" href="pkgs.html"><em>Tutorial: Intro to building conda packages</em></a> for
+are automatically generated for you. See the previous tutorial <a class="reference internal" href="pkgs.html"><em>Building conda packages with conda skeleton</em></a> for
 more information.</p>
 </div>
 <div class="section" id="edit-a-similar-conda-recipe">
@@ -427,10 +426,10 @@ with the command: <tt class="docutils literal"><span class="pre">conda</span> <s
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="postgis.html" class="btn btn-neutral float-right" title="Tutorial: Building the PostGIS package">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="postgis.html" class="btn btn-neutral float-right" title="Deconstructing the PostGIS package">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pkgs.html" class="btn btn-neutral" title="Tutorial: Intro to building conda packages"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pkgs.html" class="btn btn-neutral" title="Building conda packages with conda skeleton"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

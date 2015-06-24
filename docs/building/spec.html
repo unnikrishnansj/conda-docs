@@ -29,9 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="up" title="Building Python packages" href="bpp.html"/>
-        <link rel="next" title="Signing conda packages" href="../signed-packages.html"/>
-        <link rel="prev" title="Conda build recipe reference" href="recipe.html"/> 
+        <link rel="up" title="Building conda packages" href="bpp.html"/>
+        <link rel="next" title="Custom channels" href="custom-channels.html"/>
+        <link rel="prev" title="Pre/Post link/unlink scripts" href="build-scripts.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -81,8 +81,11 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="bpp.html">Building Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bpp.html">Building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-channels.html">Custom channels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
@@ -90,12 +93,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">Conda build commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-environment-commands">Conda environment commands</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs.html">Tutorial: Intro to building conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs2.html">Tutorial: Building conda packages part 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/postgis.html">Tutorial: Building the PostGIS package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
@@ -136,7 +133,7 @@
       
           <li><a href="build.html">Building packages</a> &raquo;</li>
       
-          <li><a href="bpp.html">Building Python packages</a> &raquo;</li>
+          <li><a href="bpp.html">Building conda packages</a> &raquo;</li>
       
     <li>Conda package specification</li>
       <li class="wy-breadcrumbs-aside">
@@ -198,7 +195,7 @@ three values, that is <tt class="docutils literal"><span class="pre">&lt;name&gt
 number of the package.</dd>
 <dt><tt class="docutils literal"><span class="pre">depends</span></tt>: list of strings</dt>
 <dd>List of dependency specifications, where each element is a string
-as outlined in <a class="reference internal" href="#build-version-spec"><em>Package Match Specifications</em></a>.</dd>
+as outlined in <a class="reference internal" href="#build-version-spec"><em>Package match specifications</em></a>.</dd>
 <dt><tt class="docutils literal"><span class="pre">arch</span></tt>: string (optional)</dt>
 <dd>The architecture the package is built for, e.g. <tt class="docutils literal"><span class="pre">x86_64</span></tt>.
 Conda currently does not do anything with this key.</dd>
@@ -300,7 +297,7 @@ object in <tt class="docutils literal"><span class="pre">info/index.json</span><
 distinguished by the repository sub-directory they are contained in.</p>
 </div>
 <div class="section" id="package-match-specifications">
-<span id="build-version-spec"></span><h2>Package Match Specifications<a class="headerlink" href="#package-match-specifications" title="Permalink to this headline">¶</a></h2>
+<span id="build-version-spec"></span><h2>Package match specifications<a class="headerlink" href="#package-match-specifications" title="Permalink to this headline">¶</a></h2>
 <p>Note that this is not the same as the syntax used at the command line with
 conda install (like <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">python=3.4</span></tt>). Internally, conda
 translates the command line syntax to the spec defined below (for example,
@@ -365,10 +362,10 @@ a package named &#8220;python&gt;=2.7&#8221;.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../signed-packages.html" class="btn btn-neutral float-right" title="Signing conda packages">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="custom-channels.html" class="btn btn-neutral float-right" title="Custom channels">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="recipe.html" class="btn btn-neutral" title="Conda build recipe reference"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="build-scripts.html" class="btn btn-neutral" title="Pre/Post link/unlink scripts"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

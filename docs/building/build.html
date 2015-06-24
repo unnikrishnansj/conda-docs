@@ -29,7 +29,7 @@
 
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="next" title="Building Python packages" href="bpp.html"/>
+        <link rel="next" title="Build tutorials" href="../build_tutorials/build_tutorials.html"/>
         <link rel="prev" title="Cheat Sheet Source" href="../using/cheatsheetsource.html"/> 
 
   
@@ -80,8 +80,11 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Building packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bpp.html">Building Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bpp.html">Building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-channels.html">Custom channels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
@@ -89,12 +92,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">Conda build commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-environment-commands">Conda environment commands</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs.html">Tutorial: Intro to building conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs2.html">Tutorial: Building conda packages part 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/postgis.html">Tutorial: Building the PostGIS package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
@@ -148,81 +145,11 @@
 <h1>Building packages<a class="headerlink" href="#building-packages" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="bpp.html">Building Python packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pkg-name-conv.html">Package naming conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="meta-pkg.html">Metapackages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dirs.html">Directory structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="bdist_conda.html#example">Example</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="bdist_conda.html#setup-options">Setup options</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="bdist_conda.html#build-number">Build number</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bdist_conda.html#build-string">Build string</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bdist_conda.html#import-tests">Import tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bdist_conda.html#command-line-tests">Command line tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bdist_conda.html#binary-files-relocatable">Binary files relocatable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bdist_conda.html#preserve-egg-directory">Preserve egg directory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bdist_conda.html#features">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bdist_conda.html#track-features">Track features</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="bdist_conda.html#command-line-options">Command line options</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="bdist_conda.html#id1">Build number</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="bdist_conda.html#notes">Notes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="custom-channels.html">Custom channels</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="custom-channels.html#custom-channel-private-repository-summary">Custom channel/private repository summary</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="custom-channels.html#organize-packages-into-platform-subdirectories">1. Organize packages into platform subdirectories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="custom-channels.html#run-conda-index-on-each-of-the-platform-subdirectories">2. Run conda index on each of the platform subdirectories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="custom-channels.html#test-custom-channels">3. Test custom channels</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="recipe.html">Conda build recipe reference</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="recipe.html#the-meta-yaml-file">The meta.yaml file</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="recipe.html#specifying-versions-in-requirements">Specifying versions in requirements</a></li>
-<li class="toctree-l4"><a class="reference internal" href="recipe.html#preprocessing-selectors">Preprocessing selectors</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="recipe.html#environment-variables-set-during-the-build-process">Environment variables set during the build process</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="recipe.html#git-environment-variables">Git Environment Variables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="recipe.html#inherited-environment-variables">Inherited Environment Variables</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="recipe.html#environment-variables-that-affect-the-build-process">Environment variables that affect the build process</a></li>
-<li class="toctree-l3"><a class="reference internal" href="recipe.html#pre-post-link-unlink-scripts">Pre/Post link/unlink scripts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="recipe.html#post-build-version">Post-build version</a></li>
-<li class="toctree-l3"><a class="reference internal" href="recipe.html#features">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="recipe.html#making-packages-relocatable">Making Packages Relocatable</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="spec.html">Conda package specification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spec.html#package-metadata">Package metadata</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spec.html#link-and-unlink-scripts">Link and unlink scripts:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spec.html#repository-structure-and-index">Repository structure and index</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spec.html#package-match-specifications">Package Match Specifications</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="spec.html#examples">Examples</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html#signing-packages-summary">Signing packages summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html#step-one-create-the-public-private-key-pair">Step one: Create the public/private key pair</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html#step-two-sign-the-packages">Step two: Sign the packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html#step-three-verify-that-the-signatures-are-valid">Step three: Verify that the signatures are valid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html#step-four-index-the-repository">Step four: Index the repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html#step-five-use-the-signed-package">Step five: Use the signed package</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bpp.html">Building conda packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-channels.html">Custom channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sample-recipes.html">Sample recipes</a></li>
 </ul>
 </div>
@@ -234,7 +161,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="bpp.html" class="btn btn-neutral float-right" title="Building Python packages">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../build_tutorials/build_tutorials.html" class="btn btn-neutral float-right" title="Build tutorials">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../using/cheatsheetsource.html" class="btn btn-neutral" title="Cheat Sheet Source"><span class="fa fa-arrow-circle-left"></span> Previous</a>

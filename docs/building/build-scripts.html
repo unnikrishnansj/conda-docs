@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Conda cheat sheet &mdash; Conda   documentation</title>
+  <title>Pre/Post link/unlink scripts &mdash; Conda   documentation</title>
   
 
   
@@ -29,9 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="up" title="Using conda" href="index.html"/>
-        <link rel="next" title="Cheat Sheet Source" href="cheatsheetsource.html"/>
-        <link rel="prev" title="Test drive" href="test-drive.html"/> 
+        <link rel="up" title="Building conda packages" href="bpp.html"/>
+        <link rel="next" title="Conda package specification" href="spec.html"/>
+        <link rel="prev" title="Environment variables" href="environment-vars.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -71,22 +71,22 @@
 <li class="toctree-l2"><a class="reference internal" href="../install/central.html">Centralized installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Using conda</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="using.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="envs.html">Managing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="py.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html">Managing packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test-drive.html">Test drive</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Conda cheat sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/py.html">Managing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/test-drive.html">Test drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/custom-channels.html">Custom channels</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bpp.html">Building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-channels.html">Custom channels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/bdist_conda.html">Bdist_conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../commands.html">Command reference</a><ul>
@@ -131,12 +131,14 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="index.html">Using conda</a> &raquo;</li>
+          <li><a href="build.html">Building packages</a> &raquo;</li>
       
-    <li>Conda cheat sheet</li>
+          <li><a href="bpp.html">Building conda packages</a> &raquo;</li>
+      
+    <li>Pre/Post link/unlink scripts</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/using/cheatsheet.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/building/build-scripts.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -144,12 +146,38 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-cheat-sheet">
-<h1>Conda cheat sheet<a class="headerlink" href="#conda-cheat-sheet" title="Permalink to this headline">¶</a></h1>
-<p>The 1MB pdf <a class="reference download internal" href="../_downloads/conda-cheatsheet.pdf"><tt class="xref download docutils literal"><span class="pre">conda</span> <span class="pre">cheat</span> <span class="pre">sheet</span></tt></a> is a single page summary
-of all the most important information about using conda.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="section" id="pre-post-link-unlink-scripts">
+<h1>Pre/Post link/unlink scripts<a class="headerlink" href="#pre-post-link-unlink-scripts" title="Permalink to this headline">¶</a></h1>
+<p>You can add scripts <cite>pre-link.sh</cite>, <cite>post-link.sh</cite>, or <cite>pre-unlink.sh</cite> (or
+<cite>.bat</cite> for Windows) to the recipe, which will be run before the package is
+installed, after it is installed, and before it is removed, respectively. If
+these scripts exit nonzero the installation/removal will fail.</p>
+<p>Environment variables are set in these scripts:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">PREFIX</span></tt></td>
+<td>The install prefix.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">PKG_NAME</span></tt></td>
+<td>The name of the package.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">PKG_VERSION</span></tt></td>
+<td>The version of the package.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">PKG_BUILDNUM</span></tt></td>
+<td>The build number of the package.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">RECIPE_DIR</span></tt></td>
+<td>Path to the recipe files.</td>
+</tr>
+</tbody>
+</table>
+<p>No output is shown from the build script, but it may write to
+<tt class="docutils literal"><span class="pre">$PREFIX/.messages.txt</span></tt>, which is shown after conda completes all actions.</p>
 </div>
 
 
@@ -158,10 +186,10 @@ of all the most important information about using conda.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cheatsheetsource.html" class="btn btn-neutral float-right" title="Cheat Sheet Source">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="spec.html" class="btn btn-neutral float-right" title="Conda package specification">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="test-drive.html" class="btn btn-neutral" title="Test drive"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="environment-vars.html" class="btn btn-neutral" title="Environment variables"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

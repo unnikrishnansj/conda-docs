@@ -29,9 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="up" title="Building Python packages" href="bpp.html"/>
-        <link rel="next" title="Custom channels" href="custom-channels.html"/>
-        <link rel="prev" title="Directory structure" href="dirs.html"/> 
+        <link rel="up" title="Building packages" href="build.html"/>
+        <link rel="next" title="Sample recipes" href="sample-recipes.html"/>
+        <link rel="prev" title="Signing conda packages" href="../signed-packages.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -81,8 +81,11 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="bpp.html">Building Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bpp.html">Building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-channels.html">Custom channels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Bdist_conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
@@ -90,12 +93,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-build-commands">Conda build commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html#conda-environment-commands">Conda environment commands</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../build_tutorials/build_tutorials.html">Build tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs.html">Tutorial: Intro to building conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/pkgs2.html">Tutorial: Building conda packages part 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials/postgis.html">Tutorial: Building the PostGIS package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
@@ -136,8 +133,6 @@
       
           <li><a href="build.html">Building packages</a> &raquo;</li>
       
-          <li><a href="bpp.html">Building Python packages</a> &raquo;</li>
-      
     <li>Bdist_conda</li>
       <li class="wy-breadcrumbs-aside">
         
@@ -175,14 +170,13 @@ setup(
 )
 </pre></div>
 </div>
+</div>
 <div class="section" id="setup-options">
-<h3>Setup options<a class="headerlink" href="#setup-options" title="Permalink to this headline">¶</a></h3>
+<h2>Setup options<a class="headerlink" href="#setup-options" title="Permalink to this headline">¶</a></h2>
 <p>Options that can be passed to <tt class="docutils literal"><span class="pre">setup()</span></tt> (must include
 <tt class="docutils literal"><span class="pre">distclass=distutils.command.bdist_conda.CondaDistribution)</span></tt>:</p>
-</div>
-</div>
 <div class="section" id="build-number">
-<h2>Build number<a class="headerlink" href="#build-number" title="Permalink to this headline">¶</a></h2>
+<h3>Build number<a class="headerlink" href="#build-number" title="Permalink to this headline">¶</a></h3>
 <p>The number of the build. Can be overridden on the command line with the <tt class="docutils literal"><span class="pre">--buildnum</span></tt> flag.
 Defaults to 0.</p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_buildnum</span><span class="o">=</span><span class="mi">1</span>
@@ -190,7 +184,7 @@ Defaults to 0.</p>
 </div>
 </div>
 <div class="section" id="build-string">
-<h2>Build string<a class="headerlink" href="#build-string" title="Permalink to this headline">¶</a></h2>
+<h3>Build string<a class="headerlink" href="#build-string" title="Permalink to this headline">¶</a></h3>
 <p>The build string. Default is generated automatically from the Python version, NumPy version
 if relevant, and the build number, like <tt class="docutils literal"><span class="pre">py34_0</span></tt>.</p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_buildstr</span><span class="o">=</span><span class="n">py34_0</span>
@@ -198,7 +192,7 @@ if relevant, and the build number, like <tt class="docutils literal"><span class
 </div>
 </div>
 <div class="section" id="import-tests">
-<h2>Import tests<a class="headerlink" href="#import-tests" title="Permalink to this headline">¶</a></h2>
+<h3>Import tests<a class="headerlink" href="#import-tests" title="Permalink to this headline">¶</a></h3>
 <p>Whether to automatically run import tests. The default is True, which runs import tests for the all
 the modules in “packages”. Also allowed are False, which runs no tests, or a list of module names to
 be tested on import.</p>
@@ -207,7 +201,7 @@ be tested on import.</p>
 </div>
 </div>
 <div class="section" id="command-line-tests">
-<h2>Command line tests<a class="headerlink" href="#command-line-tests" title="Permalink to this headline">¶</a></h2>
+<h3>Command line tests<a class="headerlink" href="#command-line-tests" title="Permalink to this headline">¶</a></h3>
 <p>Command line tests to run. Default is True, which runs <tt class="docutils literal"><span class="pre">command</span> <span class="pre">--help</span></tt> for each command in the
 <tt class="docutils literal"><span class="pre">console_scripts</span></tt> and <tt class="docutils literal"><span class="pre">gui_scripts</span> <span class="pre">entry_points</span></tt>. Also allowed are False, which doesn’t run any
 command tests, or a list of command tests to run.</p>
@@ -216,16 +210,16 @@ command tests, or a list of command tests to run.</p>
 </div>
 </div>
 <div class="section" id="binary-files-relocatable">
-<h2>Binary files relocatable<a class="headerlink" href="#binary-files-relocatable" title="Permalink to this headline">¶</a></h2>
+<h3>Binary files relocatable<a class="headerlink" href="#binary-files-relocatable" title="Permalink to this headline">¶</a></h3>
 <p>Whether binary files should be made relocatable (using <tt class="docutils literal"><span class="pre">install_name_tool</span></tt> on OS X or <tt class="docutils literal"><span class="pre">patchelf</span></tt> on Linux).
 The default is True.</p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_binary_relocation</span><span class="o">=</span><span class="bp">False</span>
 </pre></div>
 </div>
-<p>SEE ALSO:  <a class="reference internal" href="recipe.html#relocatable"><em>Making Packages Relocatable</em></a>  section in the conda build documentation for more information.</p>
+<p>SEE ALSO:  <a class="reference internal" href="meta-yaml.html#relocatable"><em>Making packages relocatable</em></a>  section in the conda build documentation for more information.</p>
 </div>
 <div class="section" id="preserve-egg-directory">
-<h2>Preserve egg directory<a class="headerlink" href="#preserve-egg-directory" title="Permalink to this headline">¶</a></h2>
+<h3>Preserve egg directory<a class="headerlink" href="#preserve-egg-directory" title="Permalink to this headline">¶</a></h3>
 <p>Whether to preserve the egg directory as installed by Setuptools. The default is True if the package depends
 on Setuptools or has Setuptools <tt class="docutils literal"><span class="pre">entry_points</span></tt> other than <tt class="docutils literal"><span class="pre">console_scripts</span></tt> and <tt class="docutils literal"><span class="pre">gui_scripts</span></tt>.</p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_preserve_egg_dir</span><span class="o">=</span><span class="bp">False</span>
@@ -233,33 +227,35 @@ on Setuptools or has Setuptools <tt class="docutils literal"><span class="pre">e
 </div>
 </div>
 <div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
 <p>List of features for the package.</p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_features</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;mkl&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>SEE ALSO:  <a class="reference internal" href="recipe.html#features"><em>Features</em></a> section of the conda build documentation for more information about features in conda.</p>
+<p>SEE ALSO:  <a class="reference internal" href="meta-yaml.html#id1"><em>Features</em></a> section of the conda build documentation for more information about features in conda.</p>
 </div>
 <div class="section" id="track-features">
-<h2>Track features<a class="headerlink" href="#track-features" title="Permalink to this headline">¶</a></h2>
+<h3>Track features<a class="headerlink" href="#track-features" title="Permalink to this headline">¶</a></h3>
 <p>List of features that this package should track (enable when installed).</p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_track_features</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;mkl&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>SEE ALSO:  <a class="reference internal" href="recipe.html#features"><em>Features</em></a> section of the conda build documentation for more information about
+<p>SEE ALSO:  <a class="reference internal" href="meta-yaml.html#id1"><em>Features</em></a> section of the conda build documentation for more information about
 features in conda.</p>
+</div>
+</div>
 <div class="section" id="command-line-options">
-<h3>Command line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
+<h2>Command line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h2>Build number<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h3>Build number<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Set the build number. Defaults to the <tt class="docutils literal"><span class="pre">conda_buildnum</span></tt> passed to <tt class="docutils literal"><span class="pre">setup()</span></tt>, or 0. Overrides any <tt class="docutils literal"><span class="pre">conda_buildnum</span></tt> passed to <tt class="docutils literal"><span class="pre">setup()</span></tt>.</p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="o">--</span><span class="n">buildnum</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="section" id="notes">
-<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">bdist_conda</span></tt> must be installed into a root conda environment, as it imports <tt class="docutils literal"><span class="pre">conda</span></tt> and <tt class="docutils literal"><span class="pre">conda_build</span></tt>. It is included as part of the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt> package.</li>
 <li>All metadata is gathered from the standard metadata from the <tt class="docutils literal"><span class="pre">setup()</span></tt> function. Metadata that are not directly supported by <tt class="docutils literal"><span class="pre">setup()</span></tt> can be added using one of the options specified below.</li>
@@ -270,7 +266,6 @@ features in conda.</p>
 </ul>
 </div>
 </div>
-</div>
 
 
           </div>
@@ -278,10 +273,10 @@ features in conda.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="custom-channels.html" class="btn btn-neutral float-right" title="Custom channels">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sample-recipes.html" class="btn btn-neutral float-right" title="Sample recipes">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dirs.html" class="btn btn-neutral" title="Directory structure"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../signed-packages.html" class="btn btn-neutral" title="Signing conda packages"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
