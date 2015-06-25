@@ -257,15 +257,14 @@ Next, run <tt class="docutils literal"><span class="pre">conda</span> <span clas
 Next, log into your Anaconda.org account with the command:</p>
 <p><tt class="docutils literal"><span class="pre">binstar</span> <span class="pre">login</span></tt></p>
 <p>Now you can upload the new local packages to Anaconda.org, as in this example:</p>
-<p>binstar upload /home/jsmith/miniconda/conda-bld/linux-64/pyinstrument-0.12-py27_0.tar.bz</p>
+<p><tt class="docutils literal"><span class="pre">binstar</span> <span class="pre">upload</span> <span class="pre">/home/jsmith/miniconda/conda-bld/linux-64/pyinstrument-0.12-py27_0.tar.bz</span></tt></p>
 <p>NOTE: Change your path and filename to the exact path and filename you saved in Step 2.</p>
-<p>TIP: If you want to always automatically upload a successful build to Anaconda.org, run:
-conda config &#8211;set binstar_upload yes</p>
+<p>TIP: If you want to always automatically upload a successful build to Anaconda.org, run:</p>
+<p><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">binstar_upload</span> <span class="pre">yes</span></tt></p>
 <p>You can log out of your Anaconda.org account with the command:</p>
-<p>binstar logout</p>
+<p><tt class="docutils literal"><span class="pre">binstar</span> <span class="pre">logout</span></tt></p>
 <p>For more information about Anaconda.org, see the Anaconda.org documentation page.</p>
-<p>This completes the tutorial Intro to building conda packages using conda skeleton.</p>
-<p>Please see our next tutorial, Building conda packages part 2, to learn more about the files that
+<p>Please see our next tutorial, <a class="reference internal" href="pkgs2.html"><em>Building conda packages from scratch</em></a>, to learn more about the files that
 go into each conda build and how to edit them manually.</p>
 </div>
 </div>
