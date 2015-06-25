@@ -26,7 +26,7 @@ THE SOFTWARE.-->
   <head>
     <meta charset="utf-8" />
     
-    <title>Conda &mdash; Conda</title>
+    <title>&lt;no title&gt; &mdash; Conda</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -139,98 +139,7 @@ THE SOFTWARE.-->
             <div class="documentwrapper">
                 <div class="body">
                   
-  <div class="section" id="conda">
-<h1>Conda<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h1>
-<p>Conda is a cross-platform, Python-agnostic binary package manager. It is the
-package manager used by <a class="reference external" href="http://docs.continuum.io/anaconda/index.html">Anaconda</a> installations, but it may be
-used for other systems as well.  Conda makes environments first-class
-citizens, making it easy to create independent environments even for C
-libraries. Conda is written entirely in Python, and is BSD licensed open
-source.</p>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>Conda is a part of the <a class="reference external" href="https://store.continuum.io/cshop/anaconda/">Anaconda distribution</a>.  You can also download a
-minimal installation that only includes conda and its dependencies, called
-<a class="reference internal" href="miniconda.html#miniconda"><span>Miniconda</span></a>.</p>
-</div>
-<div class="section" id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>If you install Anaconda, you will already have hundreds of packages
-installed.  You can see what packages are installed by running</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda list
-</pre></div>
-</div>
-<p>to see all the packages that are available, use</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda search
-</pre></div>
-</div>
-<p>and to install a package, use</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda install &lt;package-name&gt;
-</pre></div>
-</div>
-<p>The real power of conda comes from its ability to manage environments. In
-conda, an environment can be thought of as a completely separate installation.
-Conda installs packages into environments efficiently using <a class="reference external" href="http://en.wikipedia.org/wiki/Hard_links">hard links</a> by default when it is possible, so
-environments are space efficient, and take seconds to create.</p>
-<p>The default environment, which <code class="docutils literal"><span class="pre">conda</span></code> itself is installed into is called
-<code class="docutils literal"><span class="pre">root</span></code>.  To create another environment, use the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span></code>
-command. For instance, to create an environment with the IPython notebook and
-NumPy 1.6, which is older than the version that comes with Anaconda by
-default, you would run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create -n numpy16 ipython-notebook <span class="nv">numpy</span><span class="o">=</span>1.6
-</pre></div>
-</div>
-<p>This creates an environment called <code class="docutils literal"><span class="pre">numpy16</span></code> with the latest version of
-the IPython notebook, NumPy 1.6, and their dependencies.</p>
-<p>We can now activate this environment. On Linux and Mac OS X, use</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>activate numpy16
-</pre></div>
-</div>
-<p>This puts the bin directory of the <code class="docutils literal"><span class="pre">numpy16</span></code> environment in the front of the
-<code class="docutils literal"><span class="pre">PATH</span></code>, and sets it as the default environment for all subsequent conda commands.</p>
-<p>To go back to the root environment, use</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>deactivate
-</pre></div>
-</div>
-</div>
-<div class="section" id="building-your-own-packages">
-<h2>Building Your Own Packages<a class="headerlink" href="#building-your-own-packages" title="Permalink to this headline">¶</a></h2>
-<p>You can easily build your own packages for conda, and upload them to <a class="reference external" href="https://binstar.org">Binstar</a>, a free service for hosting packages for conda, as
-well as other package managers.  To build a package, create a recipe.  See
-<a class="reference external" href="https://github.com/conda/conda-recipes">https://github.com/conda/conda-recipes</a> for many example recipes, and
-<a class="reference external" href="http://conda.pydata.org/docs/build.html">http://conda.pydata.org/docs/build.html</a> for documentation on how to build
-recipes.</p>
-<p>To upload to Binstar, create an account on binstar.org.  Then, install the
-binstar client and login</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda install binstar
-<span class="nv">$ </span>binstar login
-</pre></div>
-</div>
-<p>Then, after you build your recipe</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda build &lt;recipe-dir&gt;
-</pre></div>
-</div>
-<p>you will be prompted to upload to binstar.</p>
-<p>To add your Binstar channel, or the channel of others to conda so that <code class="docutils literal"><span class="pre">conda</span>
-<span class="pre">install</span></code> will find and install their packages, run</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda config --add channels https://conda.binstar.org/username
-</pre></div>
-</div>
-<p>(replacing <code class="docutils literal"><span class="pre">username</span></code> with the user name of the person whose channel you want
-to add).</p>
-</div>
-<div class="section" id="getting-help">
-<h2>Getting Help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
-<p>The documentation for conda is at <a class="reference external" href="http://conda.pydata.org/docs/">http://conda.pydata.org/docs/</a>. You can
-subscribe to the <a class="reference external" href="https://groups.google.com/a/continuum.io/forum/#!forum/conda">conda mailing list</a>.  The source
-code and issue tracker for conda are on <a class="reference external" href="https://github.com/conda/conda">GitHub</a>.</p>
-</div>
-<div class="section" id="try-images-with-miniconda-for-cloud-services">
-<h2>Try images with miniconda for cloud services<a class="headerlink" href="#try-images-with-miniconda-for-cloud-services" title="Permalink to this headline">¶</a></h2>
-<p>If you are using some of cloud services then you might want to try one of our Minconda images.
-For more information please read <a class="reference external" href="http://docs.continuum.io/anaconda/images.html">this</a></p>
-<hr class="docutils" />
-<p>Contents:</p>
+  <html><head><meta http-equiv="refresh" content="0; URL='docs/'" /></head><body></body></html><p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="miniconda.html">Miniconda</a><ul>
@@ -238,8 +147,6 @@ For more information please read <a class="reference external" href="http://docs
 </ul>
 </li>
 </ul>
-</div>
-</div>
 </div>
 
 
