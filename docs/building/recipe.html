@@ -201,6 +201,10 @@ scripts. This step is not run if there are no tests in the recipe.</li>
 </ol>
 </div></blockquote>
 <p>There are example recipes for many conda packages in the <a class="reference external" href="https://github.com/continuumio/conda-recipes">conda-recipes</a> repo.</p>
+<p>NOTE: All recipe files, including meta.yaml and build scripts, are included in
+the final package archive which is distributed to users, so be careful not to
+put passwords or other sensitive information into recipes where it could leak to
+the public.</p>
 <p>The <a class="reference internal" href="../commands/build/conda-skeleton.html#skeleton-ref"><em>conda skeleton</em></a> command can help to make skeleton
 recipes for common repositories, such as <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a>.</p>
 </div>
