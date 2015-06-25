@@ -148,7 +148,32 @@
             
   <div class="section" id="the-meta-yaml-file">
 <span id="meta-yaml"></span><h1><a class="toc-backref" href="#id3">The meta.yaml file</a><a class="headerlink" href="#the-meta-yaml-file" title="Permalink to this headline">¶</a></h1>
-<p>All the metadata in the conda build recipe is specified in the <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file.</p>
+<p>All the metadata in the conda build recipe is specified in the <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file,
+as in this example of a simple meta.yaml file:</p>
+<div class="highlight-python"><div class="highlight"><pre>package:
+  name: pyinstrument
+  version: &quot;0.13.1&quot;
+ 
+source:
+  git_tag: 0.13.1
+  git_url: https://github.com/joerick/pyinstrument.git
+ 
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+ 
+test:
+  imports:
+    - pyinstrument
+ 
+about:
+  home: https://github.com/joerick/pyinstrument
+  license: BSD
+</pre></div>
+</div>
 <p>NOTE: All sections are optional except for package/name and package/version.</p>
 <p>NOTE: All headers should appear exactly once. If they appear multiple times, only
 the last will be remembered. For example, the &#8220;package:&#8221; header should only appear
