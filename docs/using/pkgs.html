@@ -169,27 +169,27 @@
 </div>
 <div class="section" id="install-a-package">
 <h2>Install a package<a class="headerlink" href="#install-a-package" title="Permalink to this headline">¶</a></h2>
-<p>Install a package such as “Beautiful Soup” into the current environment, using conda install as follows:</p>
+<p>Install a package such as &#8220;Beautiful Soup&#8221; into the current environment, using conda install as follows:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda install --name bunnies beautiful-soup
 </pre></div>
 </div>
 <p>NOTE: If you do not specify the name of the environment where you want it installed (&#8211;name bunnies) it will install in the current environment.</p>
-<p>Activate the bunnies environment , and do a conda list to see the new program installed:</p>
-<p><strong>Linux, OSX:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt>
+<p>Activate the bunnies environment, and do a conda list to see the new program installed:</p>
+<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt>
 <strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></tt></p>
 <p><strong>All:</strong>  <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></tt></p>
-<p>NOTE: installing a commercial package (such as IOPro) is the same as installing any other package: conda install &#8211;name bunnies iopro</p>
+<p>NOTE: Installing a commercial package (such as IOPro) is the same as installing any other package: <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--name</span> <span class="pre">bunnies</span> <span class="pre">iopro</span></tt></p>
 </div>
 <div class="section" id="install-a-package-from-anaconda-org">
 <h2>Install a package from Anaconda.org<a class="headerlink" href="#install-a-package-from-anaconda-org" title="Permalink to this headline">¶</a></h2>
 <p>For packages that are not available using conda install, we can look in the repository Anaconda.org. Anaconda.org, formerly Binstar.org, is a package management service for both public and private package repositories. Anaconda.org is a Continuum Analytics product, just like Anaconda and Miniconda.</p>
-<p>In a browser, go to <a class="reference external" href="http://anaconda.org">http://anaconda.org</a>.  To find the package named “bottleneck” enter that search term in the top left box named “Search Packages.”</p>
-<p>Find the package you want and click to go to the detail page. There you will see the name of the channel &#8211; in this case it is the “pandas” channel.</p>
+<p>In a browser, go to <a class="reference external" href="http://anaconda.org">http://anaconda.org</a>.  To find the package named &#8220;bottleneck&#8221; enter that search term in the top left box named &#8220;Search Packages.&#8221;</p>
+<p>Find the package you want and click to go to the detail page. There you will see the name of the channel &#8211; in this case it is the &#8220;pandas&#8221; channel.</p>
 <p>Now that you know the channel name, you can use the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></tt> command to get it:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda install -c pandas bottleneck
 </pre></div>
 </div>
-<p>That means “Conda install the Bottleneck package from the Pandas channel on Anaconda.org.”</p>
+<p>That means &#8220;Conda install the Bottleneck package from the Pandas channel on Anaconda.org.&#8221;</p>
 <p>The package will install.</p>
 <p>Check to see that the package is now installed:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda list
@@ -199,10 +199,11 @@
 </div>
 <div class="section" id="install-non-conda-packages">
 <h2>Install non-conda packages<a class="headerlink" href="#install-non-conda-packages" title="Permalink to this headline">¶</a></h2>
-<p>If a package is not available from conda or Anaconda.org, you may be able to find and install the package with another package manager like PIP.</p>
-<p>NOTE: Both pip and conda are already included in Anaconda and Miniconda, you do not need to install them separately.</p>
-<p>Activate the environment where you want to put the program, then pip install a program named “See”:</p>
-<p><strong>Linux, OSX:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt></p>
+<p>If a package is not available from conda or Anaconda.org, you may be able to find and install the package with another package manager like pip.</p>
+<p>NOTE: Both pip and conda are already included in Anaconda and Miniconda, so you do not need to install them separately.</p>
+<p>NOTE: Conda environments replace virtualenv so there&#8217;s no need to activate a virtualenv before using pip.</p>
+<p>Activate the environment where you want to put the program, then pip install a program named &#8220;See&#8221;:</p>
+<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt></p>
 <p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></tt></p>
 <p><strong>All:</strong>  <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">see</span></tt></p>
 <p>Check to see that the See package was installed by pip:</p>
@@ -234,13 +235,13 @@
 <div class="code highlight-python"><div class="highlight"><pre>conda update python
 </pre></div>
 </div>
-<p>NOTE: Conda will update to the highest version in its series, i.e. Python 2.7 will update to the highest available in the 2.x series, 3.4 will update to the highest 3.x available.</p>
-<p>Regardless of what package you are updating, conda will compare versions, then let you know what is available to install. If none are available, conda will reply “All requested packages are already installed.”</p>
+<p>NOTE: Conda will update to the highest version in its series, so Python 2.7 will update to the highest available in the 2.x series, and 3.4 will update to the highest available in the 3.x series.</p>
+<p>Regardless of what package you are updating, conda will compare versions, then let you know what is available to install. If none are available, conda will reply &#8220;All requested packages are already installed.&#8221;</p>
 <p>If a newer version of your package is available, and you wish to update it, type Y to update:</p>
 <div class="code highlight-python"><div class="highlight"><pre>Proceed ([y]/n)? y
 </pre></div>
 </div>
-<p>Type “y” for yes.</p>
+<p>Type &#8220;y&#8221; for yes.</p>
 </div>
 <div class="section" id="package-remove">
 <h2>Package remove<a class="headerlink" href="#package-remove" title="Permalink to this headline">¶</a></h2>
