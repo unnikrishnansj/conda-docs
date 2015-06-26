@@ -146,8 +146,8 @@
             
   <div class="section" id="test-drive">
 <h1>Test drive<a class="headerlink" href="#test-drive" title="Permalink to this headline">¶</a></h1>
-<p>To start the conda 30-minute test drive, you should have already followed our 2-minute <a class="reference internal" href="../install/quick.html"><em>Quick install</em></a> guide to download, install and update Miniconda, OR have downloaded, installed and updated Anaconda or Miniconda on your own.
-NOTE: After installing, be sure you have closed and then re-opened the terminal window so the changes can take effect.</p>
+<p>To start the conda 30-minute test drive, you should have already followed our 2-minute <a class="reference internal" href="../install/quick.html"><em>Quick install</em></a> guide to download, install and update Miniconda, OR have downloaded, installed and updated Anaconda or Miniconda on your own.</p>
+<p>NOTE: After installing, be sure you have closed and then re-opened the terminal window so the changes can take effect.</p>
 <div class="section" id="conda-test-drive-milestones">
 <h2>Conda test drive milestones:<a class="headerlink" href="#conda-test-drive-milestones" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -158,7 +158,7 @@ NOTE: After installing, be sure you have closed and then re-opened the terminal 
 <li><a class="reference internal" href="#remove-pkgs-envs-conda"><em>REMOVING PACKAGES, ENVIRONMENTS, OR CONDA</em></a>. We’ll end the test drive by removing one or more of your test packages, environments, and/or conda,  if you wish. 3 min.</li>
 </ol>
 <p>TOTAL 30 Minutes</p>
-<p>TIP:  Anytime you wish to see the full documentation for any command, type the command followed by  &#8211;help.
+<p>TIP:  Anytime you wish to see the full documentation for any command, type the command followed by  <tt class="docutils literal"><span class="pre">--help</span></tt>.
 For example, to learn about the conda update command:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda update --help
 </pre></div>
@@ -205,7 +205,7 @@ type Y to update:</p>
 </pre></div>
 </div>
 <p>This will create a new environment named /envs/snowflakes with the program Biopython.</p>
-<p>TIP:  Many frequently used options after two dashes (&#8211;) can be abbreviated with just a dash and the
+<p>TIP:  Many frequently used options after two dashes (<tt class="docutils literal"><span class="pre">--</span></tt>) can be abbreviated with just a dash and the
 first letter. So <tt class="docutils literal"><span class="pre">--name</span></tt> and <tt class="docutils literal"><span class="pre">-n</span></tt> options are the same and <tt class="docutils literal"><span class="pre">--envs</span></tt> and <tt class="docutils literal"><span class="pre">-e</span></tt> are the same. See <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">--help</span></tt> or
 <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">-h</span></tt> for a list of abbreviations.</p>
 <p><strong>Activate the new environment:</strong></p>
@@ -226,7 +226,7 @@ named Astroid and Babel:</p>
 <p>This will create a second new environment named /envs/bunnies with Python 3 and Astroid and Babel installed.</p>
 <p>TIP: Install all the programs you will want in this environment at the same time. Installing one program at
 a time can lead to dependency conflicts.</p>
-<p>TIP: You can add much more to the conda create command, type conda create &#8211;help for details.</p>
+<p>TIP: You can add much more to the conda create command, type <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--help</span></tt> for details.</p>
 <p><strong>List all environments</strong></p>
 <p>Now let’s check to see which environments you have installed so far. Use the conda environment info command
 to find out:</p>
@@ -246,11 +246,11 @@ to find out:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda info --envs
 </pre></div>
 </div>
-<p>Conda displays the list of all environments, with the current environment shown in (parenthesis) in front of your prompt:</p>
+<p>Conda displays the list of all environments, with the current environment shown in (parentheses) in front of your prompt:</p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">(</span><span class="n">snowflakes</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>NOTE: conda also puts an asterisk (*) in front of the active environment in your environment list, see above in &#8220;List all environments.&#8221;</p>
+<p>NOTE: conda also puts an asterisk (*) in front of the active environment in your environment list; see above in &#8220;List all environments.&#8221;</p>
 <p><strong>Switch to another environment (activate/deactivate)</strong></p>
 <p>To change to another environment, type the following with the name of the environment:</p>
 <ul class="simple">
@@ -315,10 +315,10 @@ the latest version of Python 3 as follows:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda info --envs
 </pre></div>
 </div>
-<p>Conda displays the list of all environments, with the current environment shown in (parenthesis)
+<p>Conda displays the list of all environments, with the current environment shown in (parentheses)
 in front of your prompt:  <tt class="docutils literal"><span class="pre">(snakes)</span></tt></p>
 <p><strong>Verify Python version in new environment</strong></p>
-<p>Verify that the snakes environment uses python version 3:</p>
+<p>Verify that the snakes environment uses Python version 3:</p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
@@ -369,9 +369,9 @@ from <a class="reference external" href="http://docs.continuum.io/anaconda/pkg-d
 <div class="code highlight-python"><div class="highlight"><pre>conda install --name bunnies beautiful-soup
 </pre></div>
 </div>
-<p>NOTE: You must tell conda the name of the environment (&#8211;name bunnies) OR it will install in
+<p>NOTE: You must tell conda the name of the environment (<tt class="docutils literal"><span class="pre">--name</span> <span class="pre">bunnies</span></tt>) OR it will install in
 the current environment.</p>
-<p>Now activate the bunnies environment , and do a conda list to see the new program installed:</p>
+<p>Now activate the bunnies environment, and do a conda list to see the new program installed:</p>
 <ul class="simple">
 <li>Linux, OS X: <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt></li>
 <li>Windows:  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></tt></li>
@@ -401,11 +401,10 @@ This brings you to the Anaconda.org detail page that shows the exact command to 
 </pre></div>
 </div>
 <p><strong>Install a package with pip</strong></p>
-<p>For packages that are not available from conda or Anaconda.org, we can often install the package with pip.</p>
+<p>For packages that are not available from conda or Anaconda.org, we can often install the package with pip (short for &#8220;pip installs packages&#8221;).</p>
 <p>TIP:  Pip is only a package manager, so it cannot manage environments for you. Pip cannot even update
 Python, because unlike conda it does not consider Python a package. But it does install some things
-that conda does not, and vice versa. Both pip and conda are included in Anaconda and Miniconda.
-Pip install packages</p>
+that conda does not, and vice versa. Both pip and conda are included in Anaconda and Miniconda.</p>
 <p>We activate the environment where we want to put the program, then pip install a program named “See”:</p>
 <ul class="simple">
 <li>Linux, OS X: source activate bunnies</li>
@@ -469,14 +468,14 @@ bunnies environment with:</p>
 <p><strong>More resources</strong></p>
 <ul class="simple">
 <li>To read the full documentation for any conda command, type the command
-followed by  <tt class="docutils literal"><span class="pre">--h</span></tt> for “help.” For example, to learn about the conda update
-command: <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--h</span></tt></li>
+followed by  <tt class="docutils literal"><span class="pre">-h</span></tt> for “help.” For example, to learn about the conda update
+command: <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">-h</span></tt></li>
 <li>Full documentation:   <a class="reference external" href="http://conda.pydata.org/docs/">http://conda.pydata.org/docs/</a></li>
 <li>Cheat sheet: <a class="reference internal" href="cheatsheet.html"><em>Conda cheat sheet</em></a></li>
-<li>FAQ:                          <a class="reference external" href="http://docs.continuum.io/anaconda/faq.html">http://docs.continuum.io/anaconda/faq.html</a></li>
+<li>FAQs:                                 <a class="reference external" href="http://docs.continuum.io/anaconda/faq.html">http://docs.continuum.io/anaconda/faq.html</a> and <a class="reference internal" href="../help/faq.html"><em>FAQ</em></a></li>
 <li>Free community support:        <a class="reference external" href="https://groups.google.com/a/continuum.io/forum/#!forum/anaconda">https://groups.google.com/a/continuum.io/forum/#!forum/anaconda</a></li>
 <li>Paid support options: <a class="reference external" href="http://continuum.io/support">http://continuum.io/support</a></li>
-<li>Continuum Analytics Training &amp; Consulting: Continuum Analytics offers Python training courses. Our teaching philosophy is that the best way to learn is with hands-on experience to real world problems. Courses are available to individuals online, at numerous sites, or in-house at your place of business. We also offer consulting services for the analysis, management and visualization of scientific and business data or optimizing your processing workflows on modern hardware and GPUs.</li>
+<li><a class="reference external" href="http://continuum.io/contact-us">Continuum Analytics Training &amp; Consulting</a> : Continuum Analytics offers Python training courses. Our teaching philosophy is that the best way to learn is with hands-on experience to real world problems. Courses are available to individuals online, at numerous sites, or in-house at your place of business. We also offer consulting services for the analysis, management and visualization of scientific and business data or optimizing your processing workflows on modern hardware and GPUs.</li>
 </ul>
 </div>
 </div>
