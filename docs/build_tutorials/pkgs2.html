@@ -186,7 +186,7 @@ Conda-build is not automatically installed, so let&#8217;s do that now.</p>
 <p>The format is identical across platforms and operating systems.  During the install process,
 files are extracted into the install prefix, except for files in the <tt class="docutils literal"><span class="pre">info/</span></tt>
 directory. Installing the files of a conda package into an environment can be thought of as changing the
-directory to an environment, then downloading and extracting the zip file and its dependencies - all with
+directory to an environment, then downloading and extracting the zip file and its dependencies &#8211; all with
 the single <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">[packagename]</span></tt> command.</p>
 </div>
 <div class="section" id="about-conda-build-recipe">
@@ -207,7 +207,7 @@ more information.</p>
 <div class="section" id="edit-a-similar-conda-recipe">
 <span id="edit-similar-recipe"></span><h3>Edit a similar conda recipe<a class="headerlink" href="#edit-a-similar-conda-recipe" title="Permalink to this headline">¶</a></h3>
 <p>Now we will create a recipe for the same package that we did in the first tutorial, Pyinstrument. But this
-time we will find a similar recipe from from the conda-recipes repo on Github, and manually edit  the values
+time we will find a similar recipe from from the conda-recipes repo on GitHub, and manually edit  the values
 in the  meta.yaml file.</p>
 <p>We will edit a copy of the meta.yaml used in a program named Pyfaker. Despite its name, Pyfaker is a real
 Python package that generates fake data for testing. We will edit this file into the meta.yaml file we want
@@ -227,16 +227,34 @@ contents.</p>
 <p>Save this new file as <tt class="docutils literal"><span class="pre">meta-pyfaker.yaml</span></tt></p>
 <p>Next, remove and replace the Pyfaker information with the 6 fields below.</p>
 <p>The fields we want to replace in our pyinstrument script are:</p>
-<ol class="arabic simple">
-<li>Name: pyinstrument</li>
-<li>Git tag: 0.13.1 (or latest from <a class="reference external" href="https://github.com/joerick/pyinstrument/releases">https://github.com/joerick/pyinstrument/releases</a>)</li>
-<li>Git URL: <a class="reference external" href="https://github.com/joerick/pyinstrument.git">https://github.com/joerick/pyinstrument.git</a></li>
-<li>Imports: pyinstrument</li>
-<li>About home: <a class="reference external" href="https://github.com/joerick/pyinstrument">https://github.com/joerick/pyinstrument</a></li>
-<li>License: BSD</li>
-</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Name</td>
+<td>pyinstrument</td>
+</tr>
+<tr class="row-even"><td>Git tag</td>
+<td>0.13.1 (or latest from <a class="reference external" href="https://github.com/joerick/pyinstrument/releases">https://github.com/joerick/pyinstrument/releases</a>)</td>
+</tr>
+<tr class="row-odd"><td>Git URL</td>
+<td><a class="reference external" href="https://github.com/joerick/pyinstrument.git">https://github.com/joerick/pyinstrument.git</a></td>
+</tr>
+<tr class="row-even"><td>Imports</td>
+<td>pyinstrument</td>
+</tr>
+<tr class="row-odd"><td>Home</td>
+<td><a class="reference external" href="https://github.com/joerick/pyinstrument">https://github.com/joerick/pyinstrument</a></td>
+</tr>
+<tr class="row-even"><td>License</td>
+<td>BSD</td>
+</tr>
+</tbody>
+</table>
 <p>When finished, save to the same directory, this time with the correct name, meta.yaml.
-When you are finished, compare your meta .yaml with the answer below:</p>
+When you are finished, compare your meta.yaml with the answer below:</p>
 <div class="highlight-python"><div class="highlight"><pre>package:
   name: pyinstrument
   version: &quot;0.13.1&quot;
@@ -262,10 +280,10 @@ about:
 </pre></div>
 </div>
 <div class="section" id="how-to-use-pypi-as-the-source-instead-of-github">
-<h4>How to use PyPI as the source instead of Github<a class="headerlink" href="#how-to-use-pypi-as-the-source-instead-of-github" title="Permalink to this headline">¶</a></h4>
-<p>What if you wanted to use PyPI or another repository instead of Github? There is little difference to conda build
+<h4>How to use PyPI as the source instead of GitHub<a class="headerlink" href="#how-to-use-pypi-as-the-source-instead-of-github" title="Permalink to this headline">¶</a></h4>
+<p>What if you wanted to use PyPI or another repository instead of GitHub? There is little difference to conda-build
 between building from Git versus building from a tarball on a repository like PyPI. Because the same source
-is hosted on PyPI and Github, you can easily find a script on  PyPI instead of Github. Simply replace this
+is hosted on PyPI and GitHub, you can easily find a script on  PyPI instead of GitHub. Simply replace this
 “source” section:</p>
 <div class="highlight-bash"><div class="highlight"><pre>git_tag: 0.12
 git_url: https://github.com/joerick/pyinstrument.git
@@ -277,7 +295,7 @@ md5: e347036acc50720c0903dc2221b2605d
 url: https://pypi.python.org/packages/source/p/pyinstrument/pyinstrument-0.13.1.tar.gz
 </pre></div>
 </div>
-<p>Note: The md5 is found on the PyPI Pyinstrument page, <a class="reference external" href="https://pypi.python.org/pypi/pyinstrument">https://pypi.python.org/pypi/pyinstrument</a></p>
+<p>NOTE: The md5 is found on the <a class="reference external" href="https://pypi.python.org/pypi/pyinstrument">PyPI Pyinstrument page</a>.</p>
 </div>
 <div class="section" id="more-info-about-the-meta-yaml-file">
 <h4>More info about the meta.yaml file<a class="headerlink" href="#more-info-about-the-meta-yaml-file" title="Permalink to this headline">¶</a></h4>
@@ -287,19 +305,37 @@ url: https://pypi.python.org/packages/source/p/pyinstrument/pyinstrument-0.13.1.
 </div>
 <div class="section" id="manually-edit-the-file-meta-yaml">
 <span id="edit-meta-yaml"></span><h3>Manually edit the file meta.yaml<a class="headerlink" href="#manually-edit-the-file-meta-yaml" title="Permalink to this headline">¶</a></h3>
-<p>This time instead of removing and replacing text, we will manually create a new <tt class="docutils literal"><span class="pre">metal.yaml</span></tt> file. If you
+<p>This time instead of removing and replacing text, we will manually create a new <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file. If you
 want to keep your file from Step 4 above so you can look at it later, rename it something like <tt class="docutils literal"><span class="pre">meta-step4.yaml.</span></tt>
 Later when you are finished, you can rename the file meta.yaml.</p>
 <p>To create a new meta.yaml file, open your favorite editor. Create a new text file and insert the following
 information. A blank sample meta.yaml follows to make it easier to match up the information.</p>
-<ol class="arabic simple">
-<li>Package name: pyinstrument</li>
-<li>Source Git tag: 0.13</li>
-<li>Source Git URL: <a class="reference external" href="https://github.com/joerick/pyinstrument.git">https://github.com/joerick/pyinstrument.git</a></li>
-<li>Test - Imports: pyinstrument</li>
-<li>About home: <a class="reference external" href="https://github.com/joerick/pyinstrument">https://github.com/joerick/pyinstrument</a></li>
-<li>About license: BSD</li>
-</ol>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Name</td>
+<td>pyinstrument</td>
+</tr>
+<tr class="row-even"><td>Git tag</td>
+<td>0.13</td>
+</tr>
+<tr class="row-odd"><td>Git URL</td>
+<td><a class="reference external" href="https://github.com/joerick/pyinstrument.git">https://github.com/joerick/pyinstrument.git</a></td>
+</tr>
+<tr class="row-even"><td>Imports</td>
+<td>pyinstrument</td>
+</tr>
+<tr class="row-odd"><td>Home</td>
+<td><a class="reference external" href="https://github.com/joerick/pyinstrument">https://github.com/joerick/pyinstrument</a></td>
+</tr>
+<tr class="row-even"><td>License</td>
+<td>BSD</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-bash"><div class="highlight"><pre>package:
   name:
 
@@ -308,19 +344,19 @@ information. A blank sample meta.yaml follows to make it easier to match up the 
     git_url:
 
 requirements:
- build:
-   - python
-   - setuptools
+  build:
+    - python
+    - setuptools
 
   run:
-   - python
+    - python
 
 <span class="nb">test</span>:
   imports:
     -
 
 about:
-   home:
+  home:
   license:
 </pre></div>
 </div>
@@ -329,7 +365,7 @@ the results in Section 4 above.</p>
 </div>
 <div class="section" id="write-the-build-script-files-build-sh-and-bld-bat">
 <span id="build-sh-bld-bat"></span><h3>Write the build script files build.sh and bld.bat<a class="headerlink" href="#write-the-build-script-files-build-sh-and-bld-bat" title="Permalink to this headline">¶</a></h3>
-<p>The other two files you need for a build  are</p>
+<p>The other two files you need for a build are</p>
 <ul class="simple">
 <li><strong>build.sh</strong> shell script for Linux and OS X, and</li>
 <li><strong>bld.bat</strong> batch file for Windows.</li>
@@ -337,8 +373,8 @@ the results in Section 4 above.</p>
 <p>These two build files contain all the variables such as for 32-bit or 64-bit architecture (the ARCH
 variable) and the build environment prefix (PREFIX). The two files <tt class="docutils literal"><span class="pre">build.sh</span></tt> and <tt class="docutils literal"><span class="pre">bld.bat</span></tt> files must be
 in the same directory as your <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file.</p>
-<p>First, we&#8217;ll write the build file for Linux and OS X, then the next file for Windows.
-All users, in your favorite text editor, create a new file named <tt class="docutils literal"><span class="pre">build.sh</span></tt> and enter the text exactly as
+<p>First we&#8217;ll write the build file for Linux and OS X and then the build file for Windows.</p>
+<p>All users, in your favorite text editor, create a new file named <tt class="docutils literal"><span class="pre">build.sh</span></tt> and enter the text exactly as
 shown:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="c">#!/bin/bash                 # This “shebang” tells what program to use to interpret the script.</span>
 <span class="nv">$PYTHON</span> setup.py install     <span class="c"># Python command to install the script.</span>
@@ -353,12 +389,12 @@ new file named bld.bat and enter the text exactly as shown:</p>
 </div>
 <p>Bld.bat doesn&#8217;t need the shebang, because it only has to work on Windows. But it must be formatted differently,
 and needs the command that tells it to exit if it encounters an error.</p>
-<p>NOTE: In bld.bat, it is best practices to add the <tt class="docutils literal"><span class="pre">if</span> <span class="pre">errorlevel</span> <span class="pre">1</span> <span class="pre">exit</span> <span class="pre">1</span></tt> so if the build fails,
+<p>NOTE: In bld.bat, the best practice is to to add the <tt class="docutils literal"><span class="pre">if</span> <span class="pre">errorlevel</span> <span class="pre">1</span> <span class="pre">exit</span> <span class="pre">1</span></tt> so if the build fails,
 the command fails.</p>
 <p>Save this new file <tt class="docutils literal"><span class="pre">bld.bat</span></tt> to the same directory where you put your new <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> and <tt class="docutils literal"><span class="pre">build.sh</span></tt> files.</p>
 <div class="section" id="more-information-on-environment-variables">
 <h4>More information on environment variables<a class="headerlink" href="#more-information-on-environment-variables" title="Permalink to this headline">¶</a></h4>
-<p>For more information on build files, see <a class="reference internal" href="../build.html"><em>Conda build recipe reference</em></a></p>
+<p>For more information on build files, see <a class="reference internal" href="../build.html"><em>Conda build recipe reference</em></a>.</p>
 </div>
 </div>
 <div class="section" id="build-and-install">
@@ -377,7 +413,7 @@ In our case the file was saved to:</p>
 <p>NOTE: Save this path and file information for the next step. The exact path and filename will vary depending
 on your operating system, and whether you are using Anaconda or Miniconda. Conda-build tells you the exact
 location and filename.</p>
-<p>Now install your newly-built program on your local computer by using the use-local flag:</p>
+<p>Now install your newly built program on your local computer by using the use-local flag:</p>
 <div class="highlight-bash"><div class="highlight"><pre>conda install --use-local pyinstrument
 </pre></div>
 </div>
@@ -385,20 +421,20 @@ location and filename.</p>
 </div>
 <div class="section" id="convert-package-for-use-on-all-platforms">
 <span id="convert"></span><h3>Convert package for use on all platforms<a class="headerlink" href="#convert-package-for-use-on-all-platforms" title="Permalink to this headline">¶</a></h3>
-<p>Now that you have built a package for your current platform with conda build, you can convert it for use on
+<p>Now that you have built a package for your current platform with conda-build, you can convert it for use on
 other platforms. This is why you made the two build files, <tt class="docutils literal"><span class="pre">build.sh</span></tt> and <tt class="docutils literal"><span class="pre">bld.bat</span></tt> for all platforms.</p>
 <p>Use the conda convert command with a platform specifier from the list
 {osx-64,linux-32,linux-64,win-32,win-64,all}. We will use the platform specifier all, as shown:</p>
 <div class="highlight-bash"><div class="highlight"><pre>conda convert --platform all ~/anaconda/conda-bld/linux-64/pyinstrument-0.13.1-py27_0.tar.bz2 -o outputdir/
 </pre></div>
 </div>
-<p>Note: change your path and filename to the exact path and filename you saved in Step 7.</p>
+<p>NOTE: change your path and filename to the exact path and filename you saved in Step 7.</p>
 </div>
 <div class="section" id="optional-upload-new-packages-to-anaconda-org">
 <span id="anaconda-org"></span><h3>Optional: Upload new packages to Anaconda.org<a class="headerlink" href="#optional-upload-new-packages-to-anaconda-org" title="Permalink to this headline">¶</a></h3>
 <p>After converting your files for use on other platforms, you may choose to upload your files to Anaconda.org, formerly known as binstar.org.
 It only takes a minute to do if you have a free Anaconda.org account.</p>
-<p>If you haven’t already, open a free Anaconda.org account and record your new Anaconda.org username and password.</p>
+<p>If you haven’t already, open a free Anaconda.org account and record your new username and password.</p>
 <p>Next, in your terminal window, run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">binstar</span></tt> and enter your new Anaconda.org username and password.</p>
 <p>Again in your terminal window, log into your Anaconda.org account with the command:</p>
 <div class="highlight-bash"><div class="highlight"><pre>binstar login
