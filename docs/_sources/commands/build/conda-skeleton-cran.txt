@@ -21,7 +21,7 @@ conda skeleton cran
    
           [--git-tag GIT_TAG] [--all-urls]
                  [--cran-url CRAN_URL] [--recursive]  [--no-recursive]  [--no-ar‐
-                 chive] packages [packages ...]
+                 chive] [--version-compare] packages [packages ...]
    
       positional arguments:
           packages
@@ -56,6 +56,11 @@ conda skeleton cran
    
           --no-archive
                  Don't include an Archive download url.
+   
+          --version-compare
+                 Compare the package version of the recipe with the one available
+                 on CRAN. Exits 1 if a newer version is available  and  0  other‐
+                 wise.
    
    
    

@@ -155,12 +155,12 @@ platforms and operating systems.  It is important to note that during the
 install process, all files are basically just extracted into the install
 prefix, with the exception of the ones in <tt class="docutils literal"><span class="pre">info/</span></tt>.  Installing a conda
 package into an environment may be roughly thought of as executing the
-following using command:</p>
+following command:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ cd &lt;environment prefix&gt;
 $ tar xjf some-package-1.0-0.tar.bz2
 </pre></div>
 </div>
-<p>However, it should be noted that only files (which includes symbolic
+<p>However, it should be noted that only files (including symbolic
 links) are part of a conda package, and not directories.  Directories
 are created and removed as needed, but you cannot create an empty directory
 from the tar archive directly.</p>
@@ -169,10 +169,7 @@ the <tt class="docutils literal"><span class="pre">info/</span></tt> directory a
 (<tt class="docutils literal"><span class="pre">repodata.json.bz</span></tt>).</p>
 <div class="section" id="package-metadata">
 <span id="id1"></span><h2>Package metadata<a class="headerlink" href="#package-metadata" title="Permalink to this headline">¶</a></h2>
-<p>All metadata about a package is contained under <tt class="docutils literal"><span class="pre">info/</span></tt>.  Any files within
-this location are not installed under the install prefix, and even though a
-package creator is free to add any file, conda will only inspect the content
-of the following ones:</p>
+<p>All metadata about a package is contained under <tt class="docutils literal"><span class="pre">info/</span></tt>.  Files within this location are not installed under the install prefix. Though a package creator is free to add any file, conda will only inspect the content of the following files:</p>
 <p><tt class="docutils literal"><span class="pre">info/index.json</span></tt>: This file contains basic information about the package,
 such as name, version, build string, and dependencies.  The content of this
 file is what gets stored in the repository index file <tt class="docutils literal"><span class="pre">repodata.json</span></tt> (hence
@@ -256,7 +253,7 @@ with spaces.</p>
 (either soft or hard) into environments, and are copied instead.</p>
 </div>
 <div class="section" id="link-and-unlink-scripts">
-<h2>Link and unlink scripts:<a class="headerlink" href="#link-and-unlink-scripts" title="Permalink to this headline">¶</a></h2>
+<h2>Link and unlink scripts<a class="headerlink" href="#link-and-unlink-scripts" title="Permalink to this headline">¶</a></h2>
 <p>A couple of scripts may optionally be executed before and after the link
 and unlink step.  These scripts are executed in a subprocess by conda,
 using <tt class="docutils literal"><span class="pre">/bin/bash</span> <span class="pre">&lt;script&gt;</span></tt> on Unix and <tt class="docutils literal"><span class="pre">%COMSPEC%</span> <span class="pre">/c</span> <span class="pre">&lt;script&gt;</span></tt> on
@@ -269,7 +266,7 @@ package name, and <tt class="docutils literal"><span class="pre">&lt;action&gt;<
 we don&#8217;t write any package metadata and return here.  This way the package
 is not considered installed.</p>
 <p><tt class="docutils literal"><span class="pre">pre-unlink</span></tt>: executed prior to unlinking, errors are ignored.</p>
-<p>For example, when where is a script named <tt class="docutils literal"><span class="pre">/bin/.foo-post-link.sh</span></tt> in the
+<p>For example, when there is a script named <tt class="docutils literal"><span class="pre">/bin/.foo-post-link.sh</span></tt> in the
 package <tt class="docutils literal"><span class="pre">foo-1.0-0.tar.bz2</span></tt>, it is executed after the linking is completed.
 Moreover, the following environment variables are set while the script is
 being executed: <tt class="docutils literal"><span class="pre">PREFIX</span></tt>, <tt class="docutils literal"><span class="pre">PKG_NAME</span></tt>, <tt class="docutils literal"><span class="pre">PKG_VERSION</span></tt></p>

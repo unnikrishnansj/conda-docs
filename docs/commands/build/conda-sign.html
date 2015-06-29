@@ -156,7 +156,7 @@ NAME
        conda - conda sign
 
 DESCRIPTION
-       usage: conda-sign [-h] [-k NAME] [-v] [FILE [FILE ...]]
+       usage: conda-sign [-h] [-k NAME] [--size BITS] [-v] [FILE [FILE ...]]
 
        Tool  for signing conda packages.  Signatures will be written alongside
        the files as FILE.sig.
@@ -171,6 +171,10 @@ OPTIONS
 
        -k NAME, --keygen NAME
               Generate a public-private key pair ~/.conda/keys/&lt;NAME&gt;(.pub).
+
+       --size BITS
+              Size of generated RSA public-private key pair in bits  (defaults
+              to 2048).
 
        -v, --verify
               Verify FILE(s).
