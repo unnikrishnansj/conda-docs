@@ -150,8 +150,8 @@
 <span id="env-vars"></span><h1>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="environment-variables-set-during-the-build-process">
 <h2>Environment variables set during the build process<a class="headerlink" href="#environment-variables-set-during-the-build-process" title="Permalink to this headline">¶</a></h2>
-<p>The following environment variables are set, both on Unix (<tt class="docutils literal"><span class="pre">build.sh</span></tt>) and on
-Windows (<tt class="docutils literal"><span class="pre">bld.bat</span></tt>) during the build process.
+<p>The following environment variables are set, both on Unix (build.sh) and on
+Windows (bld.bat) during the build process.
 (By default, these are the only variables available to your build script &#8211;
 unless otherwise noted, no variables are inherited from the shell environment
 in which you invoked <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt>. See <a class="reference internal" href="#inherited-env-vars"><em>Inherited Environment Variables</em></a> to
@@ -196,7 +196,7 @@ source file.</td>
 <td>Prepended by the build prefix bin directory.</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">PYTHON</span></tt></td>
-<td>Path to python executable in build prefix (note that python is only
+<td>Path to Python executable in build prefix (note that Python is only
 installed in the build prefix when it is listed as a build requirement).</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">PY3K</span></tt></td>
@@ -233,7 +233,7 @@ installed in the build prefix when it is listed as a build requirement).</td>
 </tr>
 </tbody>
 </table>
-<p>When building &#8220;unix-style&#8221; packages on Windows, which are then usually
+<p>When building &#8220;Unix-style&#8221; packages on Windows, which are then usually
 statically linked to executables, we do this in a special <em>Library</em> directory
 under the build prefix.  The following environment variables are only
 defined in Windows:</p>
@@ -259,7 +259,7 @@ defined in Windows:</p>
 <td><tt class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Scripts</span></tt></td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">CYGWIN_PREFIX</span></tt></td>
-<td>Same as <tt class="docutils literal"><span class="pre">PREFIX</span></tt>, but as a unix-style path, e.g. <tt class="docutils literal"><span class="pre">/cygdrive/c/path/to/prefix</span></tt></td>
+<td>Same as <tt class="docutils literal"><span class="pre">PREFIX</span></tt>, but as a Unix-style path, e.g. <tt class="docutils literal"><span class="pre">/cygdrive/c/path/to/prefix</span></tt></td>
 </tr>
 </tbody>
 </table>
@@ -370,7 +370,7 @@ so the <tt class="docutils literal"><span class="pre">git_url</span></tt> is <tt
 </div>
 <p>All of the above environment variables are also set during the test process,
 except with the test prefix instead of the build prefix everywhere.</p>
-<p>Note that build.sh is run with <tt class="docutils literal"><span class="pre">bash</span> <span class="pre">-x</span> <span class="pre">-e</span></tt> (the <tt class="docutils literal"><span class="pre">-x</span></tt> makes it echos each
+<p>Note that build.sh is run with <tt class="docutils literal"><span class="pre">bash</span> <span class="pre">-x</span> <span class="pre">-e</span></tt> (the <tt class="docutils literal"><span class="pre">-x</span></tt> makes it echo each
 command that is run, and the <tt class="docutils literal"><span class="pre">-e</span></tt> makes it exit whenever a command in the
 script returns nonzero exit status).  You can revert this in the script if you
 need to by using the <tt class="docutils literal"><span class="pre">set</span></tt> command.</p>
@@ -389,12 +389,9 @@ additional environment variables by adding them to <tt class="docutils literal">
 </div>
 <p>If an inherited variable was missing from your shell environment, it will be
 assigned the value <tt class="docutils literal"><span class="pre">&lt;UNDEFINED&gt;</span></tt>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Inheriting environment variables like this can make it difficult for others
+<p>NOTE: Inheriting environment variables like this can make it difficult for others
 to reproduce binaries from source with your recipe. This feature should be
 used with caution or avoided altogether.</p>
-</div>
 </div>
 </div>
 <div class="section" id="environment-variables-that-affect-the-build-process">
