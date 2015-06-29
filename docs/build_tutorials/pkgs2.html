@@ -388,8 +388,7 @@ in the same directory as your <tt class="docutils literal"><span class="pre">met
 <p>First we&#8217;ll write the build file for Linux and OS X and then the build file for Windows.</p>
 <p>All users, in your favorite text editor, create a new file named <tt class="docutils literal"><span class="pre">build.sh</span></tt> and enter the text exactly as
 shown:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="c">#!/bin/bash                 # This “shebang” tells what program to use to interpret the script.</span>
-<span class="nv">$PYTHON</span> setup.py install     <span class="c"># Python command to install the script.</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$PYTHON</span> setup.py install     <span class="c"># Python command to install the script.</span>
 </pre></div>
 </div>
 <p>That&#8217;s it! Save your new build.sh file to the same directory where you put the meta.yaml file.</p>
@@ -399,10 +398,10 @@ new file named bld.bat and enter the text exactly as shown:</p>
 <span class="k">if</span> errorlevel <span class="m">1</span> <span class="nb">exit </span>1
 </pre></div>
 </div>
-<p>Bld.bat doesn&#8217;t need the shebang, because it only has to work on Windows. But it must be formatted differently,
-and needs the command that tells it to exit if it encounters an error.</p>
-<p>NOTE: In bld.bat, the best practice is to to add the <tt class="docutils literal"><span class="pre">if</span> <span class="pre">errorlevel</span> <span class="pre">1</span> <span class="pre">exit</span> <span class="pre">1</span></tt> so if the build fails,
-the command fails.</p>
+<p>bld.bat must be formatted differently, and needs the command that tells it to
+exit if it encounters an error.</p>
+<p>NOTE: In bld.bat, the best practice is to to add the <tt class="docutils literal"><span class="pre">if</span> <span class="pre">errorlevel</span> <span class="pre">1</span> <span class="pre">exit</span> <span class="pre">1</span></tt> after every command so if the commnand fails,
+the build fails.</p>
 <p>Save this new file <tt class="docutils literal"><span class="pre">bld.bat</span></tt> to the same directory where you put your new <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> and <tt class="docutils literal"><span class="pre">build.sh</span></tt> files.</p>
 <div class="section" id="more-information-on-environment-variables">
 <h4>More information on environment variables<a class="headerlink" href="#more-information-on-environment-variables" title="Permalink to this headline">¶</a></h4>
