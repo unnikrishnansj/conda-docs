@@ -29,9 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
-        <link rel="up" title="Redirects" href="redirects.html"/>
-        <link rel="next" title="Commands" href="env-commands.html"/>
-        <link rel="prev" title="Config" href="config.html"/> 
+        <link rel="up" title="Building packages" href="building/build.html"/>
+        <link rel="next" title="Signing conda packages" href="signed-packages.html"/>
+        <link rel="prev" title="Conda package specification" href="spec.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -59,38 +59,38 @@
         
         
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="get-started/get-started.html">Get started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="get-started/condaintro.html">Intro to conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="get-started/download.html">Download conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install/install.html">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using/test-drive.html">Test drive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html">Download conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test-drive.html">Test drive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/cheatsheet.html">Conda cheat sheet</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="using/index.html">Using conda</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using/py.html">Managing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="build_tutorials/build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="building/build.html">Building packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="build_tutorials.html">Build tutorials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building/bpp.html">Building conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building/custom-channels.html">Custom channels</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Custom channels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="signed-packages.html">Signing conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building/bdist_conda.html">Bdist_conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building/sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="help/help.html">Help &amp; reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Help &amp; reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="using/cheatsheet.html">Conda cheat sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="get-started/glossary.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html">Command reference</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="help/faq.html">FAQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="help/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="help/support.html">Support options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="get-started/license.html">Conda license</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html">Conda license</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a><ul>
@@ -123,11 +123,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-          <li><a href="help/help.html">Help &amp; reference</a> &raquo;</li>
-      
-          <li><a href="help/faq.html">FAQ</a> &raquo;</li>
-      
-          <li><a href="redirects.html">Redirects</a> &raquo;</li>
+          <li><a href="building/build.html">Building packages</a> &raquo;</li>
       
     <li>Custom channels</li>
       <li class="wy-breadcrumbs-aside">
@@ -142,7 +138,79 @@
             
   <div class="section" id="custom-channels">
 <h1>Custom channels<a class="headerlink" href="#custom-channels" title="Permalink to this headline">¶</a></h1>
-<html><head><meta http-equiv="refresh" content="0; URL='building/custom-channels.html'" /></head><body></body></html></div>
+<p>Channels are the path that conda takes to look for packages, and the easiest
+way to use and manage custom channels is to use a private or public repository
+on <a class="reference external" href="https://anaconda.org/">Anaconda.org</a>, formerly known as Binstar.org.   If
+you designate your Anaconda.org repository as private, then only you, and those
+you grant access, can access your private repository.</p>
+<p>If you do not wish to upload your packages to the internet, however, you can
+build a custom repository served either through a web server, or locally
+using a <tt class="docutils literal"><span class="pre">file://</span></tt> url.</p>
+<div class="section" id="custom-channel-private-repository-summary">
+<h2>Custom channel/private repository summary<a class="headerlink" href="#custom-channel-private-repository-summary" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Organize packages into platform subdirectories.</li>
+<li>Run conda index on each of the platform subdirectories.</li>
+<li>Test custom channels.</li>
+</ol>
+<div class="section" id="organize-packages-into-platform-subdirectories">
+<h3>1. Organize packages into platform subdirectories<a class="headerlink" href="#organize-packages-into-platform-subdirectories" title="Permalink to this headline">¶</a></h3>
+<p>To create a custom channel, first organize all the packages in subdirectories for
+the platforms you wish to serve.</p>
+<p>Example:</p>
+<div class="code highlight-python"><div class="highlight"><pre> channel/
+linux-64/
+   package-1.0-0.tar.bz2
+linux-32/
+   package-1.0-0.tar.bz2
+osx-64/
+   package-1.0-0.tar.bz2
+win-64/
+   package-1.0-0.tar.bz2
+win-32/
+   package-1.0-0.tar.bz2
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-conda-index-on-each-of-the-platform-subdirectories">
+<h3>2. Run conda index on each of the platform subdirectories<a class="headerlink" href="#run-conda-index-on-each-of-the-platform-subdirectories" title="Permalink to this headline">¶</a></h3>
+<p>The ‘conda index’ command is part of the conda-build package. If you have not yet used
+conda build, begin by installing conda build:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda install conda-build
+</pre></div>
+</div>
+<p>Now run conda index on each of the platform subdirectories as shown:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda index channel/linux-64 channel/osx-64
+</pre></div>
+</div>
+<p>The conda index command generates a file <tt class="docutils literal"><span class="pre">repodata.json</span></tt>, saved to each repository directory,
+which conda uses to get the metadata for the packages in the channel.</p>
+<p>Note: Each time you add or modify a package in the channel, you must re-run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></tt> for
+conda to see the update.</p>
+</div>
+<div class="section" id="test-custom-channels">
+<h3>3. Test custom channels<a class="headerlink" href="#test-custom-channels" title="Permalink to this headline">¶</a></h3>
+<p>You can now serve the custom channel using a web server, or using a <tt class="docutils literal"><span class="pre">file://</span> <span class="pre">url</span></tt> to the channel
+directory. Test by sending a search command to the custom channel.</p>
+<p>Example: if a file you want from the custom channel location is located at <tt class="docutils literal"><span class="pre">/opt/channel/linux-64/</span></tt></p>
+<p>Then search for files in that location as shown:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda search -c file://opt/channel/ --override-channels
+</pre></div>
+</div>
+<p>Note: The channel url does NOT include the platform, as conda will automatically detect and add
+the platform.</p>
+<p>Note: the &#8211;override-channels is to be sure conda only searches your specified channel and no
+other channels, such as default channels or any other channels you may have listed in your <tt class="docutils literal"><span class="pre">.condarc</span></tt>
+file.</p>
+<p>If you have set up your private repository correctly, you will see:</p>
+<div class="code highlight-python"><div class="highlight"><pre>Fetching package metadata: . . . .
+</pre></div>
+</div>
+<p>This will be followed by a list of the conda packages found.
+This verifies that you have set up and indexed your private repository successfully.</p>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -150,10 +218,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="env-commands.html" class="btn btn-neutral float-right" title="Commands">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="signed-packages.html" class="btn btn-neutral float-right" title="Signing conda packages">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="config.html" class="btn btn-neutral" title="Config"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="spec.html" class="btn btn-neutral" title="Conda package specification"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

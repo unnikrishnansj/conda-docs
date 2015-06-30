@@ -29,9 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
-        <link rel="up" title="Redirects" href="redirects.html"/>
-        <link rel="next" title="Specification" href="spec.html"/>
-        <link rel="prev" title="License" href="license.html"/> 
+        <link rel="up" title="Using conda" href="using/index.html"/>
+        <link rel="next" title="Managing packages" href="using/pkgs.html"/>
+        <link rel="prev" title="Managing environments" href="using/envs.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -59,38 +59,38 @@
         
         
             <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="get-started/get-started.html">Get started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="get-started/condaintro.html">Intro to conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="get-started/download.html">Download conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install/install.html">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using/test-drive.html">Test drive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html">Download conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test-drive.html">Test drive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/cheatsheet.html">Conda cheat sheet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="using/index.html">Using conda</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="using/index.html">Using conda</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using/py.html">Managing Python</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Managing Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="build_tutorials/build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_tutorials.html">Build tutorials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building/bpp.html">Building conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building/custom-channels.html">Custom channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-channels.html">Custom channels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="signed-packages.html">Signing conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building/bdist_conda.html">Bdist_conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building/sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="help/help.html">Help &amp; reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="help/help.html">Help &amp; reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="using/cheatsheet.html">Conda cheat sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="get-started/glossary.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html">Command reference</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="help/faq.html">FAQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="help/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="help/support.html">Support options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="get-started/license.html">Conda license</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html">Conda license</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="get-involved.html">Get involved</a><ul>
@@ -123,11 +123,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-          <li><a href="help/help.html">Help &amp; reference</a> &raquo;</li>
-      
-          <li><a href="help/faq.html">FAQ</a> &raquo;</li>
-      
-          <li><a href="redirects.html">Redirects</a> &raquo;</li>
+          <li><a href="using/index.html">Using conda</a> &raquo;</li>
       
     <li>Managing Python</li>
       <li class="wy-breadcrumbs-aside">
@@ -142,7 +138,72 @@
             
   <div class="section" id="managing-python">
 <h1>Managing Python<a class="headerlink" href="#managing-python" title="Permalink to this headline">¶</a></h1>
-<html><head><meta http-equiv="refresh" content="0; URL='using/py.html'" /></head><body></body></html></div>
+<p>Conda treats Python the same as any other package, so it’s very easy to manage and update multiple installations.</p>
+<div class="section" id="check-python-versions">
+<h2>Check Python versions<a class="headerlink" href="#check-python-versions" title="Permalink to this headline">¶</a></h2>
+<p>Check to see which versions of Python are available to install:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda search python
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-a-different-version-of-python">
+<h2>Install a different version of Python<a class="headerlink" href="#install-a-different-version-of-python" title="Permalink to this headline">¶</a></h2>
+<p>So now let’s say you need Python 3 to learn programming, but you don’t want to wipe out your Python 2.7 environment by updating Python. You can create and activate a new environment named snakes, and install the latest version of Python 3 as follows:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda create --name snakes python=3
+</pre></div>
+</div>
+<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></tt></p>
+<p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">snakes</span></tt></p>
+<p>TIP: It would be wise to name this environment a descriptive name like “python3” but that is not as much fun.</p>
+<p>To verify that the snakes environment has now been added, type the command:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda info --envs
+</pre></div>
+</div>
+<p>Conda displays the list of all environments, with the current environment
+highlighted by a &#8216;*&#8217;.</p>
+<p>Verify that the snakes environment uses Python version 3:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-a-different-version-of-python">
+<h2>Use a different version of Python<a class="headerlink" href="#use-a-different-version-of-python" title="Permalink to this headline">¶</a></h2>
+<p>To switch to the new environment with a different version of Python, you simply need to activate it. Let’s switch back to the default, 2.7:</p>
+<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></tt></p>
+<p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></tt></p>
+<p>Verify that the snowflakes environment uses Python version 2:</p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>After you are finished working in the snowflakes environment, to close it you can either deactivate it, or activate a new environment.</p>
+</div>
+<div class="section" id="create-python-2-or-3-environments">
+<h2>Create Python 2 or 3 environments<a class="headerlink" href="#create-python-2-or-3-environments" title="Permalink to this headline">¶</a></h2>
+<p>Anaconda supports Python 2.6, 2.7, 3.3, and 3.4.  The default is Python 2.7 or
+3.4, depending on which installer you used. If the installer you used is Anaconda
+or Miniconda, the default is 2.7. If the installer you used is Anaconda3 or Miniconda3,
+the default is 3.4.</p>
+<div class="section" id="create-a-python-3-4-environment">
+<h3>Create a Python 3.4 environment<a class="headerlink" href="#create-a-python-3-4-environment" title="Permalink to this headline">¶</a></h3>
+<p>To create a new environment with a different version of Python, use the :doc:<tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span></tt> command. In this example, we&#8217;ll make the new environment for Python 3.4:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create -n py34 <span class="nv">python</span><span class="o">=</span>3.4 anaconda
+</pre></div>
+</div>
+<p>Here, the &#8216;py34&#8217; is the name of the environment you want to create, and &#8216;anaconda&#8217; is the
+meta-package that includes all of the actual Python packages comprising
+the Anaconda distribution.  When creating a new environment and installing Anaconda,
+you can specify the exact package and Python versions, for example, <tt class="docutils literal"><span class="pre">numpy=1.7</span></tt> or <tt class="docutils literal"><span class="pre">python=3.4</span></tt>.</p>
+</div>
+<div class="section" id="create-a-python-2-6-environment">
+<h3>Create a Python 2.6 environment<a class="headerlink" href="#create-a-python-2-6-environment" title="Permalink to this headline">¶</a></h3>
+<p>In this example, we&#8217;ll make a new environment for Python 2.6:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create -n py26 <span class="nv">python</span><span class="o">=</span>2.6 anaconda
+</pre></div>
+</div>
+<p>Next, let&#8217;s take a look at managing packages.</p>
+</div>
+</div>
+</div>
 
 
           </div>
@@ -150,10 +211,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="spec.html" class="btn btn-neutral float-right" title="Specification">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="using/pkgs.html" class="btn btn-neutral float-right" title="Managing packages">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="license.html" class="btn btn-neutral" title="License"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="using/envs.html" class="btn btn-neutral" title="Managing environments"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
