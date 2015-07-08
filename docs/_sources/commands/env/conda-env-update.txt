@@ -43,5 +43,5 @@ conda env update
    
    
    
-   Continuum Analytics                June 2015                          <B>CONDA(1)</B>
+   Continuum Analytics                July 2015                          <B>CONDA(1)</B>
    </PRE>
