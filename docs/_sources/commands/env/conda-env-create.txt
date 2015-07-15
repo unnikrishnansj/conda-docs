@@ -16,7 +16,8 @@ conda env create
           conda - conda env create
    
    DESCRIPTION
-          usage: conda-env create [-h] [-f FILE] [-n NAME] [-q] [--json]
+          usage:  conda-env  create  [-h]  [-f  FILE]  [-n  NAME]  [-q] [--force]
+          [--json]
    
                  [remote_definition]
    
@@ -38,8 +39,11 @@ conda env create
    
           -q, --quiet
    
-          --json
-                 Report all output as json. Suitable for using conda programmati‐
+          --force
+                 force creation of environment (removing  a  previously  existing
+                 environment of the same name.
+   
+          --json Report all output as json. Suitable for using conda programmati‐
                  cally.
    
       examples:

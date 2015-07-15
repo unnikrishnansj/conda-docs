@@ -158,6 +158,8 @@
 <dd>A conda package that only lists dependencies, and does not include any functional programs of libraries itself. The metapackage may contain links to software files that will be automatically downloaded when executed. An example of a metapackage is ‘anaconda’, which collects together all the packages in the Anaconda installer, thus, ‘conda create -n envname anaconda’ will create an environment that exactly matches what would be created from the Anaconda installer.</dd>
 <dt>Miniconda:</dt>
 <dd>A minimal installer for conda. Like Anaconda, Miniconda is a software package that includes the conda package manager and Python and its dependencies, but Miniconda does not include any other packages. Once conda is installed by installing either Anaconda or miniconda, other software packages may be installed directly from the command line with ‘conda install’. See also Anaconda and conda.</dd>
+<dt>Noarch package:</dt>
+<dd>A conda package that contains nothing specific to any system architecture, so it may be installed from any system. When conda does a search for packages on any system in a channel, conda always checks both the system-specific subdirectory, for example, &#8220;linux-64&#8221; <em>and</em> the <tt class="docutils literal"><span class="pre">noarch</span></tt> directory.</dd>
 <dt>Repository:</dt>
 <dd>A storage location from which software packages may be retrieved and installed on a computer.  A repository needs to be indexed with ‘conda index’ (to generate the repodata.json file) to be usable by conda.</dd>
 </dl>

@@ -16,10 +16,14 @@ conda env
           conda - conda env
    
    DESCRIPTION
-          usage: conda-env [-h] {create,export,list,remove,upload,update} ...
+          usage:  conda-env [-h] {attach,create,export,list,remove,upload,update}
+          ...
    
       positional arguments:
-                 {create,export,list,remove,upload,update}
+                 {attach,create,export,list,remove,upload,update}
+   
+          attach Embeds information describing your conda  environment  into  the
+                 notebook metadata
    
           create Create an environment based on an environment file
    

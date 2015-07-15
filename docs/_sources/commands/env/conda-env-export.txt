@@ -16,7 +16,7 @@ conda env export
           conda - conda env export
    
    DESCRIPTION
-          usage: conda-env export [-h] [-n NAME] [-f FILE]
+          usage: conda-env export [-h] [-n NAME] [-f FILE] [--no-builds]
    
           Export a given environment
    
@@ -28,6 +28,9 @@ conda env export
                  name of environment (in envs dirs)
    
           -f FILE, --file FILE
+   
+          --no-builds
+                 Remove build specification from dependencies
    
       examples:
                  conda env export conda env export --file SOME_FILE

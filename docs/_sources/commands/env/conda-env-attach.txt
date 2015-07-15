@@ -1,0 +1,52 @@
+
+.. _env attach_ref:
+
+conda env attach
+=======================
+
+.. raw:: html
+
+   <PRE>
+   <!-- Manpage converted by man2html 3.0.1 -->
+   <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
+   
+   
+   
+   NAME
+          conda - conda env attach
+   
+   DESCRIPTION
+          usage:  conda-env  attach [-h] (-n NAME | -r REMOTE) [--force] [--json]
+          notebook
+   
+          Embeds information describing your conda environment into the  notebook
+          metadata
+   
+      positional arguments:
+          notebook
+                 notebook file
+   
+      optional arguments:
+          -h, --help
+                 show this help message and exit
+   
+          -n NAME, --name NAME
+                 local environment definition
+   
+          -r REMOTE, --remote REMOTE
+                 remote environment definition
+   
+          --force
+                 Replace existing environment definition
+   
+          --json Report all output as json. Suitable for using conda programmati‐
+                 cally.
+   
+      examples:
+                 conda env attach -n root  notebook.ipynb  conda  env  attach  -r
+                 user/environment notebook.ipynb
+   
+   
+   
+   Continuum Analytics                July 2015                          <B>CONDA(1)</B>
+   </PRE>

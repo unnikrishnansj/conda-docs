@@ -31,7 +31,7 @@
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
         <link rel="up" title="Command reference" href="../../commands.html"/>
         <link rel="next" title="conda env export" href="conda-env-export.html"/>
-        <link rel="prev" title="conda env" href="conda-env.html"/> 
+        <link rel="prev" title="conda env attach" href="conda-env-attach.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -150,7 +150,8 @@ NAME
        conda - conda env create
 
 DESCRIPTION
-       usage: conda-env create [-h] [-f FILE] [-n NAME] [-q] [--json]
+       usage:  conda-env  create  [-h]  [-f  FILE]  [-n  NAME]  [-q] [--force]
+       [--json]
 
               [remote_definition]
 
@@ -172,8 +173,11 @@ DESCRIPTION
 
        -q, --quiet
 
-       --json
-              Report all output as json. Suitable for using conda programmati‐
+       --force
+              force creation of environment (removing  a  previously  existing
+              environment of the same name.
+
+       --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
    examples:
@@ -194,7 +198,7 @@ Continuum Analytics                July 2015                          <B>CONDA(1
         <a href="conda-env-export.html" class="btn btn-neutral float-right" title="conda env export">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conda-env.html" class="btn btn-neutral" title="conda env"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-env-attach.html" class="btn btn-neutral" title="conda env attach"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

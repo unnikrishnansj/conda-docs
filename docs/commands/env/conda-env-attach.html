@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conda env export &mdash; Conda   documentation</title>
+  <title>conda env attach &mdash; Conda   documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
         <link rel="up" title="Command reference" href="../../commands.html"/>
-        <link rel="next" title="conda env list" href="conda-env-list.html"/>
-        <link rel="prev" title="conda env create" href="conda-env-create.html"/> 
+        <link rel="next" title="conda env create" href="conda-env-create.html"/>
+        <link rel="prev" title="conda env" href="conda-env.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -127,10 +127,10 @@
       
           <li><a href="../../commands.html">Command reference</a> &raquo;</li>
       
-    <li>conda env export</li>
+    <li>conda env attach</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/env/conda-env-export.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/env/conda-env-attach.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -138,8 +138,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-env-export">
-<span id="env-export-ref"></span><h1>conda env export<a class="headerlink" href="#conda-env-export" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="conda-env-attach">
+<span id="env-attach-ref"></span><h1>conda env attach<a class="headerlink" href="#conda-env-attach" title="Permalink to this headline">¶</a></h1>
 <PRE>
 <!-- Manpage converted by man2html 3.0.1 -->
 <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
@@ -147,27 +147,38 @@
 
 
 NAME
-       conda - conda env export
+       conda - conda env attach
 
 DESCRIPTION
-       usage: conda-env export [-h] [-n NAME] [-f FILE] [--no-builds]
+       usage:  conda-env  attach [-h] (-n NAME | -r REMOTE) [--force] [--json]
+       notebook
 
-       Export a given environment
+       Embeds information describing your conda environment into the  notebook
+       metadata
+
+   positional arguments:
+       notebook
+              notebook file
 
    optional arguments:
        -h, --help
               show this help message and exit
 
        -n NAME, --name NAME
-              name of environment (in envs dirs)
+              local environment definition
 
-       -f FILE, --file FILE
+       -r REMOTE, --remote REMOTE
+              remote environment definition
 
-       --no-builds
-              Remove build specification from dependencies
+       --force
+              Replace existing environment definition
+
+       --json Report all output as json. Suitable for using conda programmati‐
+              cally.
 
    examples:
-              conda env export conda env export --file SOME_FILE
+              conda env attach -n root  notebook.ipynb  conda  env  attach  -r
+              user/environment notebook.ipynb
 
 
 
@@ -180,10 +191,10 @@ Continuum Analytics                July 2015                          <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-env-list.html" class="btn btn-neutral float-right" title="conda env list">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-env-create.html" class="btn btn-neutral float-right" title="conda env create">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conda-env-create.html" class="btn btn-neutral" title="conda env create"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-env.html" class="btn btn-neutral" title="conda env"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
