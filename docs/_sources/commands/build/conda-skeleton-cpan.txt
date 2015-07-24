@@ -31,7 +31,7 @@ conda skeleton cpan
                  Show this help message and exit.
    
           --output-dir OUTPUT_DIR
-                 Directory to write recipes to.
+                 Directory to write recipes to (default: .).
    
           --version VERSION
                  Version to use. Applies to all packages.

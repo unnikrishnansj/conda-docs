@@ -19,9 +19,9 @@ conda build
           usage: conda-build [-h] [-V] [--check] [--no-binstar-upload] [--output]
           [-s]
    
-                 [-t] [--no-test] [-b] [-p] [-q]  [--python  PYTHON_VER]  [--perl
-                 PERL_VER]  [--numpy NUMPY_VER] [--R R_VER] [-c CHANNEL] [--over‐
-                 ride-channels] RECIPE_PATH [RECIPE_PATH ...]
+                 [-t] [--no-test]  [-b]  [-p]  [--skip-existing]  [-q]  [--python
+                 PYTHON_VER]  [--perl  PERL_VER]  [--numpy NUMPY_VER] [--R R_VER]
+                 [-c CHANNEL] [--override-channels] RECIPE_PATH [RECIPE_PATH ...]
    
           Tool for building conda packages. A conda package is a  binary  tarball
           containing system-level libraries, Python modules, executable programs,
@@ -68,12 +68,17 @@ conda build
                  Run  the  post-build  logic.  Implies  --no-test  and   --nobin‐
                  star-upload.
    
+          --skip-existing
+                 Skip  recipes  for  which there already exists an existing build
+                 (locally or in the channels).
+   
           -q, --quiet
                  do not display progress bar
    
           --python PYTHON_VER
                  Set the Python version used by conda build. Can be passed multi‐
-                 ple times to build against multiple versions.
+                 ple  times  to  build against multiple versions. Can be 'all' to
+                 build against all known versions (['2.6', '2.7', '3.3', '3.4'])
    
           --perl PERL_VER
                  Set the Perl version used by conda build. Can be passed multiple
@@ -81,21 +86,22 @@ conda build
    
           --numpy NUMPY_VER
                  Set  the NumPy version used by conda build. Can be passed multi‐
-                 ple times to build against multiple versions.
+                 ple times to build against multiple versions. Can  be  'all'  to
+                 build against all known versions (['1.6', '1.7', '1.8', '1.9'])
    
           --R R_VER
-                 Set the R version used by conda build. Can  be  passed  multiple
+                 Set  the  R  version used by conda build. Can be passed multiple
                  times to build against multiple versions.
    
           -c CHANNEL, --channel CHANNEL
-                 Additional  channel  to  search  for  packages.  These  are URLs
-                 searched in the order they  are  given  (including  file://  for
+                 Additional channel  to  search  for  packages.  These  are  URLs
+                 searched  in  the  order  they  are given (including file:// for
                  local directories). Then, the defaults or channels from .condarc
-                 are searched (unless --override-channels is given). You can  use
-                 'defaults'  to  get the default packages for conda, and 'system'
-                 to get the system  packages,  which  also  takes  .condarc  into
-                 account.  You  can  also  use  any  name  and the .condarc chan‐
-                 nel_alias value will be prepended. The default channel_alias  is
+                 are  searched (unless --override-channels is given). You can use
+                 'defaults' to get the default packages for conda,  and  'system'
+                 to  get  the  system  packages,  which  also takes .condarc into
+                 account. You can also  use  any  name  and  the  .condarc  chan‐
+                 nel_alias  value will be prepended. The default channel_alias is
                  http://conda.anaconda.org/.
    
           --override-channels

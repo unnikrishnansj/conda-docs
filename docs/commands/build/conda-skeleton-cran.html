@@ -155,7 +155,8 @@ DESCRIPTION
 
        [--git-tag GIT_TAG] [--all-urls]
               [--cran-url CRAN_URL] [--recursive]  [--no-recursive]  [--no-ar‐
-              chive] [--version-compare] packages [packages ...]
+              chive]  [--version-compare] [--update-outdated] [packages [pack‐
+              ages ...]]
 
    positional arguments:
        packages
@@ -166,7 +167,7 @@ DESCRIPTION
               Show this help message and exit.
 
        --output-dir OUTPUT_DIR
-              Directory to write recipes to.
+              Directory to write recipes to (default: .).
 
        --version VERSION
               Version to use. Applies to all packages.
@@ -175,7 +176,7 @@ DESCRIPTION
               Git tag to use for GitHub recipes.
 
        --all-urls
-              Look  at  all  URLs,  not just source URLs. Use this if it can't
+              Look at all URLs, not just source URLs. Use  this  if  it  can't
               find the right URL.
 
        --cran-url CRAN_URL
@@ -185,7 +186,7 @@ DESCRIPTION
               Create recipes for dependencies if they do not already exist.
 
        --no-recursive
-              Don't create recipes for dependencies if  they  do  not  already
+              Don't  create  recipes  for  dependencies if they do not already
               exist.
 
        --no-archive
@@ -193,8 +194,13 @@ DESCRIPTION
 
        --version-compare
               Compare the package version of the recipe with the one available
-              on CRAN. Exits 1 if a newer version is available  and  0  other‐
+              on  CRAN.  Exits  1 if a newer version is available and 0 other‐
               wise.
+
+       --update-outdated
+              Update outdated packages in the output directory (set by  --out‐
+              put-dir).  If  packages  are given, they are updated; otherwise,
+              all recipes in the output directory are updated.
 
 
 

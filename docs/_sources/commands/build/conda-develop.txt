@@ -16,7 +16,8 @@ conda develop
           conda - conda develop
    
    DESCRIPTION
-          usage: conda-develop [-h] [-n ENVIRONMENT | -p PATH] PATH [PATH ...]
+          usage:  conda-develop [-h] [-npf] [-n ENVIRONMENT | -p PATH] PATH [PATH
+          ...]
    
           Install a Python package in 'development mode'.
    
@@ -29,6 +30,10 @@ conda develop
       optional arguments:
           -h, --help
                  Show this help message and exit.
+   
+          -npf, --no-pth-file
+                 Relink compiled extension dependencies against  libraries  found
+                 in current conda env. Do not add source to conda.pth.
    
           -n ENVIRONMENT, --name ENVIRONMENT
                  Name of environment (in envs dirs).
