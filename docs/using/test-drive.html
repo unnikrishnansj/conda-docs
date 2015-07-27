@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Silent installation &mdash; Conda   documentation</title>
+  <title>Test drive &mdash; Conda   documentation</title>
   
 
   
@@ -29,9 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="up" title="FAQ" href="../faq.html"/>
-        <link rel="next" title="Using conda with Travis CI" href="../travis.html"/>
-        <link rel="prev" title="Test drive" href="../using/test-drive.html"/> 
+        <link rel="up" title="Redirects" href="../redirects.html"/>
+        <link rel="next" title="Silent installation" href="../help/silent.html"/>
+        <link rel="prev" title="Commands" href="../general-commands.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -64,14 +64,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../download.html">Download conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../test-drive.html">Test drive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">Conda cheat sheet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Using conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkgs.html">Managing packages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
@@ -83,13 +83,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="help.html">Help &amp; reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../help/help.html">Help &amp; reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">Conda cheat sheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html">Command reference</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../faq.html">FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="support.html">Support options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/support.html">Support options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../license.html">Conda license</a></li>
 </ul>
 </li>
@@ -123,14 +123,16 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="help.html">Help &amp; reference</a> &raquo;</li>
+          <li><a href="../help/help.html">Help &amp; reference</a> &raquo;</li>
       
           <li><a href="../faq.html">FAQ</a> &raquo;</li>
       
-    <li>Silent installation</li>
+          <li><a href="../redirects.html">Redirects</a> &raquo;</li>
+      
+    <li>Test drive</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/help/silent.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/using/test-drive.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -138,54 +140,9 @@
 </div>
           <div role="main">
             
-  <div class="section" id="silent-installation">
-<h1>Silent installation<a class="headerlink" href="#silent-installation" title="Permalink to this headline">¶</a></h1>
-<p>Silent installation of Miniconda or Anaconda can be used for deployment or testing or building services such as Travis CI and
-Appveyor. In silent mode, screen prompts are not shown on screen and default settings are automatically accepted.</p>
-<p>NOTE: These instructions are written for Miniconda, but you can substitute &#8220;Anaconda&#8221; if you are using that version.</p>
-<p>We recommend starting with the latest version of Miniconda or Anaconda. Check to be sure your version
-is up to date with a simple:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">conda update conda</span>
-</pre></div>
-</div>
-<div class="section" id="windows">
-<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
-<p>The Windows installer of Miniconda can be run in silent mode using the <tt class="docutils literal"><span class="pre">/S</span></tt> argument. The following optional arguments
-are supported:</p>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">/InstallationType=[JustMe|AllUsers]</span></tt>, default: <tt class="docutils literal"><span class="pre">JustMe</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">/AddToPath=[0|1]</span></tt>, default: <tt class="docutils literal"><span class="pre">1</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">/RegisterPython=[0|1]</span></tt>, make this the system&#8217;s default Python, default: <tt class="docutils literal"><span class="pre">0</span></tt> (Just me), <tt class="docutils literal"><span class="pre">1</span></tt> (All users)</li>
-<li><tt class="docutils literal"><span class="pre">/S</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">/D=&lt;installation</span> <span class="pre">path&gt;</span></tt></li>
-</ul>
-<p>All arguments are case-sensitive. The installation path must be the last argument and should <strong>NOT</strong> be wrapped in
-quotation marks.</p>
-<p>The following command installs Miniconda for all users without registering Python as the system&#8217;s default:</p>
-<div class="highlight-bat"><div class="highlight"><pre>Miniconda<span class="m">-3</span>.<span class="m">7</span>.<span class="m">3</span>-Windows-x<span class="m">86</span>_<span class="m">64</span>.exe <span class="n">/InstallationType=AllUsers</span> <span class="n">/RegisterPython=0</span> \
-    <span class="n">/S</span> <span class="n">/D=C:\Program</span> Files\Miniconda<span class="m">3</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="linux-and-os-x">
-<h2>Linux and OS X<a class="headerlink" href="#linux-and-os-x" title="Permalink to this headline">¶</a></h2>
-<p>Silent installation of Miniconda for Linux and OS X is a simple as specifying the <tt class="docutils literal"><span class="pre">-b</span></tt> and <tt class="docutils literal"><span class="pre">-p</span></tt> arguments of the
-bash installer. The following arguments are supported:</p>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">-b</span></tt>, batch mode</li>
-<li><tt class="docutils literal"><span class="pre">-p</span></tt>, installation prefix/path</li>
-<li><tt class="docutils literal"><span class="pre">-f</span></tt>, force installation even if prefix <tt class="docutils literal"><span class="pre">-p</span></tt> already exists</li>
-</ul>
-<p>Batch mode assumes that you agree to the license agreement, and it does not
-edit the .bashrc or .bash_profile files.</p>
-<p>A complete example:</p>
-<div class="highlight-bash"><div class="highlight"><pre>wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
-bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <div class="section" id="test-drive">
+<h1>Test drive<a class="headerlink" href="#test-drive" title="Permalink to this headline">¶</a></h1>
+<html><head><meta http-equiv="refresh" content="0; URL='../test-drive.html'" /></head><body></body></html></div>
 
 
           </div>
@@ -193,10 +150,10 @@ bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../travis.html" class="btn btn-neutral float-right" title="Using conda with Travis CI">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../help/silent.html" class="btn btn-neutral float-right" title="Silent installation">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../using/test-drive.html" class="btn btn-neutral" title="Test drive"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../general-commands.html" class="btn btn-neutral" title="Commands"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
