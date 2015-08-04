@@ -70,5 +70,5 @@ conda skeleton cran
    
    
    
-   Continuum Analytics                July 2015                          <B>CONDA(1)</B>
+   Continuum Analytics               August 2015                         <B>CONDA(1)</B>
    </PRE>

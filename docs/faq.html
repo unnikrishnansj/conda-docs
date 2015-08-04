@@ -171,28 +171,36 @@
 <div class="section" id="general-questions">
 <h2><a class="toc-backref" href="#id3">General questions</a><a class="headerlink" href="#general-questions" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>What is Anaconda?</li>
-</ol>
-<p><em>Anaconda</em> is a meta package for <em>conda</em>. This meta package contains a stable collection of standard
-packages (like <em>scipy</em>, <em>numpy</em>, <em>zlib</em> etc.) for big data and scientific use that have all been tested
-to work well together. These packages are all installed automatically with one quick installation
-routine, so it is convenient and fast. It includes Python, so it is often referred to as a “Python
-distribution” that makes installing Python (and the many other packages) easy and fast, even for new
-Python users.</p>
-<ol class="arabic simple" start="2">
 <li>What is conda?</li>
 </ol>
-<p>Conda is a cross-platform, Python-agnostic “package manager” and “environment manager” program that
-quickly installs, runs, and updates packages and their dependencies, and easily switches between
-environments on your local computer.  Conda is included in all versions of Anaconda, Anaconda Server,
-and Miniconda.</p>
-<ol class="arabic simple" start="3">
+<p>Conda is a cross-platform and Python-agnostic package manager and environment manager
+program that quickly installs, runs and updates packages and their dependencies and
+easily creates, saves, loads and switches between environments on your local computer.
+Conda is included in all versions of Anaconda, Miniconda and Anaconda Server.</p>
+<ol class="arabic simple" start="2">
 <li>What is Miniconda?</li>
 </ol>
-<p>Miniconda mini-installer is a small or “bootstrap” version of Anaconda. It installs only what you need
-to get conda running. If you use Miniconda instead of the full Anaconda, you must then choose each
-package you want, and use conda to download and install them.  Miniconda can be used when disk space
-is a problem or if you do not wish to take the time to download and install all of the over 100 packages at once.</p>
+<p>Miniconda includes conda, Python and a small number of other useful packages including
+pip, zlib and a few others.</p>
+<ol class="arabic simple" start="3">
+<li>What is Anaconda?</li>
+</ol>
+<p>Anaconda includes everything in Miniconda and a stable collection of over 100 standard
+open source packages for data analysis and scientific computing that have all been
+tested to work well together, including scipy, numpy and many others. These packages
+can all be installed automatically with one quick and convenient installation routine.</p>
+<ol class="arabic simple" start="4">
+<li>Do Miniconda and Anaconda include Python?</li>
+</ol>
+<p>Yes. Because Anaconda and Miniconda include Python, they are Python distributions, and
+can make installing Python quick and easy even for new users.</p>
+<ol class="arabic simple" start="5">
+<li>When should I use Miniconda instead of Anaconda?</li>
+</ol>
+<p>If you use Miniconda instead of the full Anaconda then you must choose each package
+you want and use conda to download and install them. Miniconda can be used when disk
+space is limited or if you do not wish to take the time to download and install all
+the Anaconda packages at once.</p>
 </div>
 <div class="section" id="getting-help">
 <h2><a class="toc-backref" href="#id4">Getting help</a><a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
@@ -380,7 +388,7 @@ tested by activating and then deactivating any environment.</p>
 <div class="section" id="creating-new-environments">
 <h3><a class="toc-backref" href="#id12">Creating new environments</a><a class="headerlink" href="#creating-new-environments" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">How can I create a new and clean environment, for example,``myenv``?</p>
+<li><p class="first">How can I create a new and clean environment, for example, <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
 <div class="highlight-bash"><div class="highlight"><pre>conda create -n myenv python
 </pre></div>
 </div>
@@ -484,7 +492,7 @@ pip &lt;pip_subcommand&gt;
 <p>After performing the above command you can create new environments in the
 standard way, and the default package(s) will be installed in all of them.</p>
 </li>
-<li><p class="first">How can I automatically install a specific package like SciPy during creation of any of new environment?</p>
+<li><p class="first">How can I automatically install a specific package like SciPy during creation of any new environment?</p>
 <div class="highlight-bash"><div class="highlight"><pre>conda config --add create_default_packages scipy
 </pre></div>
 </div>
@@ -493,7 +501,7 @@ standard way, and the default package(s) will be installed in all of them.</p>
 <p>After performing the above command you can create new environments in the
 standard way, and the latest version of SciPy will be installed in all of them.</p>
 <ol class="arabic" start="5">
-<li><p class="first">How can I automatically install a specific version of a package such as SciPy during creation of any of new environment?</p>
+<li><p class="first">How can I automatically install a specific version of a package such as SciPy during creation of any new environment?</p>
 <div class="highlight-bash"><div class="highlight"><pre>conda config --add create_default_packages <span class="nv">scipy</span><span class="o">=</span>0.15.0
 </pre></div>
 </div>
@@ -501,12 +509,19 @@ standard way, and the latest version of SciPy will be installed in all of them.<
 </ol>
 <p>After performing the above command you can create new environments in the standard way, and SciPy Version 0.15.0 will be installed in all of them.</p>
 <ol class="arabic" start="6">
-<li><p class="first">How can I ignore packages from automatic installation during creation of new and clean environment, such as <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
+<li><p class="first">How can I ignore packages from automatic installation during creation of a new and clean environment, such as <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
 <div class="highlight-bash"><div class="highlight"><pre>conda create --no-default-packages -n myenv python
 </pre></div>
 </div>
 </li>
 </ol>
+<p>7. When making a python package for an app I create an environment for the app from
+a file req.txt that sets python=2.7.9. However, when I conda install my package it
+automatically upgrades to 2.7.10. How do I avoid this?</p>
+<p>If you make a conda package for the app using conda-build, you can set dependencies
+with specific version numbers. In <a class="reference external" href="http://conda.pydata.org/docs/building/meta-yaml.html">this example</a>
+the requirements lines that say &#8220;- python&#8221; could be &#8220;- python ==2.7.9&#8221; instead. It
+is important to have one space before the == operator and no space after.</p>
 </div>
 <div class="section" id="removing-packages-and-environments">
 <h3><a class="toc-backref" href="#id15">Removing packages and environments</a><a class="headerlink" href="#removing-packages-and-environments" title="Permalink to this headline">¶</a></h3>
@@ -569,7 +584,7 @@ standard way, and the latest version of SciPy will be installed in all of them.<
 <div class="section" id="conda-build-and-recipes">
 <h2><a class="toc-backref" href="#id17">Conda build and recipes</a><a class="headerlink" href="#conda-build-and-recipes" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">How can I create a skeleton conda recipe for package such as <em>bottle</em> if I
+<li><p class="first">How can I create a skeleton conda recipe for a package such as <em>bottle</em> if I
 know that this package is on PyPI?</p>
 <div class="highlight-bash"><div class="highlight"><pre>conda skeleton pypi bottle
 </pre></div>
