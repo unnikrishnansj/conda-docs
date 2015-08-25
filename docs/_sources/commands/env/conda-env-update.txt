@@ -18,11 +18,18 @@ conda env update
    DESCRIPTION
           usage: conda-env update [-h] [-n NAME] [-f FILE] [-q QUIET] [--json]
    
+                 [remote_definition]
+   
           Update the current environment based on environment file
+   
+   OPTIONS
+      positional arguments:
+          remote_definition
+                 remote environment definition / IPython notebook
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           -n NAME, --name NAME
                  name of environment (in envs dirs)
@@ -39,7 +46,7 @@ conda env update
       examples:
                  conda env update  conda  env  update  -n=foo  conda  env  update
                  -f=/path/to/environment.yml    conda   env   update   --name=foo
-                 --file=environment.yml
+                 --file=environment.yml conda env update vader/deathstar
    
    
    

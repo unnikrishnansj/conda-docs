@@ -23,13 +23,14 @@ conda env create
    
           Create an environment based on an environment file
    
+   OPTIONS
       positional arguments:
           remote_definition
-                 remote environment definition
+                 remote environment definition / IPython notebook
    
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           -f FILE, --file FILE
                  environment definition file (default: environment.yml)

@@ -24,9 +24,10 @@ conda env remove
           Remove an environmentRemoves a provided environment.  You must  deacti‐
           vate the existing environment before you can remove it.
    
+   OPTIONS
       optional arguments:
           -h, --help
-                 show this help message and exit
+                 Show this help message and exit.
    
           -n ENVIRONMENT, --name ENVIRONMENT
                  Name of environment (in envs dirs).

@@ -151,19 +151,20 @@ NAME
 
 DESCRIPTION
        usage:  conda-env  upload  [-h] [-n OLD_NAME] [-f FILE] [--summary SUM‐
-       MARY]
+       MARY] [-q]
 
-       [--force] [-q] [--json]
+       [--json]
               [name]
 
-       Upload an environment to binstar
+       Upload an environment to anaconda.org
 
+OPTIONS
    positional arguments:
        name   environment definition
 
    optional arguments:
        -h, --help
-              show this help message and exit
+              Show this help message and exit.
 
        -n OLD_NAME, --name OLD_NAME
               environment definition [Deprecated]
@@ -174,9 +175,6 @@ DESCRIPTION
        --summary SUMMARY
               Short summary of the environment
 
-       --force
-              Replace existing environment definition
-
        -q, --quiet
 
        --json
@@ -186,7 +184,7 @@ DESCRIPTION
    examples:
               conda  env  upload  conda  env  upload  project conda env upload
               --file=/path/to/environment.yml      conda      env       upload
-              --file=/path/to/environment.yml project conda env upload --force
+              --file=/path/to/environment.yml project
 
 
 

@@ -150,12 +150,12 @@ NAME
        conda - conda build
 
 DESCRIPTION
-       usage: conda-build [-h] [-V] [--check] [--no-binstar-upload] [--output]
-       [-s]
+       usage: conda-build [-h] [-V] [--check] [--no-anaconda-upload]
 
-              [-t] [--no-test]  [-b]  [-p]  [--skip-existing]  [-q]  [--python
-              PYTHON_VER]  [--perl  PERL_VER]  [--numpy NUMPY_VER] [--R R_VER]
-              [-c CHANNEL] [--override-channels] RECIPE_PATH [RECIPE_PATH ...]
+              [--no-include-recipe] [--output] [-s] [-t] [--no-test] [-b] [-p]
+              [--skip-existing] [-q] [--python PYTHON_VER]  [--perl  PERL_VER]
+              [--numpy  NUMPY_VER]  [--R R_VER] [-c CHANNEL] [--override-chan‐
+              nels] RECIPE_PATH [RECIPE_PATH ...]
 
        Tool for building conda packages. A conda package is a  binary  tarball
        containing system-level libraries, Python modules, executable programs,
@@ -178,8 +178,11 @@ OPTIONS
        --check
               Only check (validate) the recipe.
 
-       --no-binstar-upload
-              Do not ask to upload the package to binstar.
+       --no-anaconda-upload
+              Do not ask to upload the package to anaconda.org.
+
+       --no-include-recipe
+              Don't include the recipe inside the built package.
 
        --output
               Output the conda package filename which would have been  created
@@ -196,11 +199,11 @@ OPTIONS
 
        -b, --build-only
               Only  run  the  build,  without  any post processing or testing.
-              Implies --no-test and --no-binstar-upload.
+              Implies --no-test and --no-anaconda-upload.
 
        -p, --post
-              Run  the  post-build  logic.  Implies  --no-test  and   --nobin‐
-              star-upload.
+              Run  the  post-build  logic.  Implies  --no-test  and   --noana‐
+              conda-upload.
 
        --skip-existing
               Skip  recipes  for  which there already exists an existing build

@@ -16,7 +16,7 @@ conda pipbuild
           conda - conda pipbuild
    
    DESCRIPTION
-          usage: conda-pipbuild [-h] [--no-binstar-upload] [--binstar-upload]
+          usage: conda-pipbuild [-h] [--no-anaconda-upload] [--anaconda-upload]
    
           [--release RELEASE] [--pypi-url PYPI_URL]
                  [--noarch-python] &lt;PYPI_NAME&gt;
@@ -34,11 +34,11 @@ conda pipbuild
           -h, --help
                  Show this help message and exit.
    
-          --no-binstar-upload
-                 Do not ask to upload the package to binstar.
+          --no-anaconda-upload
+                 Do not ask to upload the package to anaconda.org.
    
-          --binstar-upload
-                 Upload the package to binstar.
+          --anaconda-upload
+                 Upload the package to anaconda.org.
    
           --release RELEASE
                  Version of the package to build.
