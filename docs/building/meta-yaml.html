@@ -164,6 +164,7 @@ test:
 about:
   home: https://github.com/joerick/pyinstrument
   license: BSD
+  license_file: LICENSE
 </pre></div>
 </div>
 <p>NOTE: All sections are optional except for package/name and package/version.</p>
@@ -219,17 +220,20 @@ once in the file.</p>
 <li><a class="reference internal" href="#run-test-script" id="id38">Run test script</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#about-section" id="id39">About section</a></li>
-<li><a class="reference internal" href="#app-section" id="id40">App section</a><ul>
-<li><a class="reference internal" href="#entry-point" id="id41">Entry point</a></li>
-<li><a class="reference internal" href="#icon-file" id="id42">Icon file</a></li>
-<li><a class="reference internal" href="#summary" id="id43">Summary</a></li>
-<li><a class="reference internal" href="#own-environment" id="id44">Own environment</a></li>
+<li><a class="reference internal" href="#about-section" id="id39">About section</a><ul>
+<li><a class="reference internal" href="#license-file" id="id40">License file</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#preprocessing-selectors" id="id45">Preprocessing selectors</a></li>
-<li><a class="reference internal" href="#id1" id="id46">Features</a></li>
-<li><a class="reference internal" href="#making-packages-relocatable" id="id47">Making packages relocatable</a></li>
+<li><a class="reference internal" href="#app-section" id="id41">App section</a><ul>
+<li><a class="reference internal" href="#entry-point" id="id42">Entry point</a></li>
+<li><a class="reference internal" href="#icon-file" id="id43">Icon file</a></li>
+<li><a class="reference internal" href="#summary" id="id44">Summary</a></li>
+<li><a class="reference internal" href="#own-environment" id="id45">Own environment</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#preprocessing-selectors" id="id46">Preprocessing selectors</a></li>
+<li><a class="reference internal" href="#id1" id="id47">Features</a></li>
+<li><a class="reference internal" href="#making-packages-relocatable" id="id48">Making packages relocatable</a></li>
 </ul>
 </li>
 </ul>
@@ -558,15 +562,24 @@ You may need to use selectors (see below) to use different scripts for different
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">about</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">home</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">https://github.com/ilanschnell/bsdiff4</span>
   <span class="l-Scalar-Plain">license</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">BSD</span>
+  <span class="l-Scalar-Plain">license_file</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">LICENSE</span>
   <span class="l-Scalar-Plain">summary</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">binary diff and patch using the BSDIFF4-format</span>
 </pre></div>
 </div>
+<div class="section" id="license-file">
+<h3><a class="toc-backref" href="#id40">License file</a><a class="headerlink" href="#license-file" title="Permalink to this headline">¶</a></h3>
+<p>A file containing the software license can be added to the package metadata.  Please note that many licenses require the license statement to be distributed with the package.  As a convenience, a value of True will use the first file found by looking in the source root directory for LICENSE, LICENSE.txt, license, or license.txt, in that order.  A value of False (the default) indicates no license file will be included in the package metadata.  The filename is relative to the source directory.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">about</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">license_file</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">LICENSE</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="app-section">
-<h2><a class="toc-backref" href="#id40">App section</a><a class="headerlink" href="#app-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id41">App section</a><a class="headerlink" href="#app-section" title="Permalink to this headline">¶</a></h2>
 <p>If the app section is present, the package will be an app, meaning it will appear in the Anaconda Launcher.</p>
 <div class="section" id="entry-point">
-<h3><a class="toc-backref" href="#id41">Entry point</a><a class="headerlink" href="#entry-point" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id42">Entry point</a><a class="headerlink" href="#entry-point" title="Permalink to this headline">¶</a></h3>
 <p>The command that is called to launch the app:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">app</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">entry</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ipython notebook</span>
@@ -574,7 +587,7 @@ You may need to use selectors (see below) to use different scripts for different
 </div>
 </div>
 <div class="section" id="icon-file">
-<h3><a class="toc-backref" href="#id42">Icon file</a><a class="headerlink" href="#icon-file" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id43">Icon file</a><a class="headerlink" href="#icon-file" title="Permalink to this headline">¶</a></h3>
 <p>The icon file contained in the recipe:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">app</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">icon</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">icon_64x64.png</span>
@@ -582,7 +595,7 @@ You may need to use selectors (see below) to use different scripts for different
 </div>
 </div>
 <div class="section" id="summary">
-<h3><a class="toc-backref" href="#id43">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id44">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
 <p>Summary of the package used in the launcher:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">app</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">summary</span><span class="p-Indicator">:</span>  <span class="s">&quot;The</span><span class="nv"> </span><span class="s">Jupyter</span><span class="nv"> </span><span class="s">Notebook&quot;</span>
@@ -590,7 +603,7 @@ You may need to use selectors (see below) to use different scripts for different
 </div>
 </div>
 <div class="section" id="own-environment">
-<h3><a class="toc-backref" href="#id44">Own environment</a><a class="headerlink" href="#own-environment" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id45">Own environment</a><a class="headerlink" href="#own-environment" title="Permalink to this headline">¶</a></h3>
 <p>If own_environment is true, installing the app through the launcher will install into its own environment. The default is False.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">app</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">own_environment</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">True</span>
@@ -599,7 +612,7 @@ You may need to use selectors (see below) to use different scripts for different
 </div>
 </div>
 <div class="section" id="preprocessing-selectors">
-<h2><a class="toc-backref" href="#id45">Preprocessing selectors</a><a class="headerlink" href="#preprocessing-selectors" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id46">Preprocessing selectors</a><a class="headerlink" href="#preprocessing-selectors" title="Permalink to this headline">¶</a></h2>
 <p>In addition, you can add selectors to any line, which are used as part of a
 preprocessing stage. Before the yaml file is read, each selector is evaluated,
 and if it is False, the line that it is on is removed.  A selector is of the
@@ -692,7 +705,7 @@ need to put the same selector on multiple lines.</p>
 </div>
 </div>
 <div class="section" id="id1">
-<span id="id2"></span><h2><a class="toc-backref" href="#id46">Features</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><a class="toc-backref" href="#id47">Features</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Features are a way to track differences in two packages that have the same
 name and version.  For example, a feature might indicate a specialized
 compiler or runtime, or a fork of a package. The canonical example of a
@@ -741,7 +754,7 @@ several packages with</p>
 </div>
 </div>
 <div class="section" id="making-packages-relocatable">
-<span id="relocatable"></span><h2><a class="toc-backref" href="#id47">Making packages relocatable</a><a class="headerlink" href="#making-packages-relocatable" title="Permalink to this headline">¶</a></h2>
+<span id="relocatable"></span><h2><a class="toc-backref" href="#id48">Making packages relocatable</a><a class="headerlink" href="#making-packages-relocatable" title="Permalink to this headline">¶</a></h2>
 <p>Often, the most difficult thing about building a conda package is making it
 relocatable.  Relocatable means that the package can be installed into any
 prefix.  Otherwise, the package would only be usable in the same environment
