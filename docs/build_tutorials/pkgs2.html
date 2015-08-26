@@ -434,18 +434,18 @@ other platforms. This is why you made the two build files, <tt class="docutils l
 <p>After converting your files for use on other platforms, you may choose to upload your files to Anaconda.org, formerly known as binstar.org.
 It only takes a minute to do if you have a free Anaconda.org account.</p>
 <p>If you haven’t already, open a free Anaconda.org account and record your new username and password.</p>
-<p>Next, in your terminal window, run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">binstar</span></tt> and enter your new Anaconda.org username and password.</p>
+<p>Next, in your terminal window, run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">anaconda-client</span></tt> and enter your new Anaconda.org username and password.</p>
 <p>Again in your terminal window, log into your Anaconda.org account with the command:</p>
-<div class="highlight-bash"><div class="highlight"><pre>binstar login
+<div class="highlight-bash"><div class="highlight"><pre>anaconda login
 </pre></div>
 </div>
 <p>And upload your package to Anaconda.org:</p>
-<div class="highlight-bash"><div class="highlight"><pre>binstar upload ~/miniconda/conda-bld/linux-64/pyinstrument-0.12-py27_0.tar.bz
+<div class="highlight-bash"><div class="highlight"><pre>anaconda upload ~/miniconda/conda-bld/linux-64/pyinstrument-0.12-py27_0.tar.bz
 </pre></div>
 </div>
 <p>NOTE: Change your path and filename to the exact path and filename you saved in Step 7.</p>
 <p>TIP: To save time, you can set conda to always automatically upload a successful build to Anaconda.org
-with the command: <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">binstar_upload</span> <span class="pre">yes</span></tt></p>
+with the command: <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">anaconda_upload</span> <span class="pre">yes</span></tt></p>
 </div>
 <div class="section" id="more-resources">
 <span id="id5"></span><h3>More resources<a class="headerlink" href="#more-resources" title="Permalink to this headline">¶</a></h3>

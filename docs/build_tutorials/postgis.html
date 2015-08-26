@@ -342,7 +342,7 @@ this from source, following the same routine we&#8217;ve done a couple times now
 </div>
 <p>I edit the <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> and <tt class="docutils literal"><span class="pre">build.sh</span></tt> files to reflect the details of this package (no dependencies or special flags set):</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda build geos
-<span class="nv">$ </span>binstar upload /home/irritum/code/miniconda/conda-bld/linux-64/geos-3.4.2-0.tar.bz2
+<span class="nv">$ </span>anaconda upload /home/irritum/code/miniconda/conda-bld/linux-64/geos-3.4.2-0.tar.bz2
 </pre></div>
 </div>
 <p>after the package is successfully built.</p>
@@ -617,10 +617,10 @@ BUILD END: postgis-2.1.3-0
 Nothing to <span class="nb">test </span><span class="k">for</span>: postgis-2.1.3-0
 <span class="c"># If you want to upload this package to Anaconda.org later, type:</span>
 <span class="c">#</span>
-<span class="c"># $ binstar upload /home/mutirri/code/miniconda/conda-bld/linux-32/postgis-2.1.3-0.tar.bz2</span>
+<span class="c"># $ anaconda upload /home/mutirri/code/miniconda/conda-bld/linux-32/postgis-2.1.3-0.tar.bz2</span>
 <span class="c">#</span>
 <span class="c"># To have conda build upload to Anaconda.org automatically, use</span>
-<span class="c"># $ conda config --set binstar_upload yes</span>
+<span class="c"># $ conda config --set anaconda_upload yes</span>
 </pre></div>
 </div>
 <p>If you&#8217;d methodically followed along, you now have a <tt class="docutils literal"><span class="pre">postgis</span></tt> package you
