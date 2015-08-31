@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conda package &mdash; Conda   documentation</title>
+  <title>Explicit specification files &mdash; Conda   documentation</title>
   
 
   
@@ -29,9 +29,9 @@
 
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="up" title="Command reference" href="../commands.html"/>
-        <link rel="next" title="conda remove" href="conda-remove.html"/>
-        <link rel="prev" title="conda list" href="conda-list.html"/> 
+        <link rel="up" title="Using conda" href="index.html"/>
+        <link rel="next" title="Managing Python" href="../py2or3.html"/>
+        <link rel="prev" title="Managing environments" href="envs.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -64,15 +64,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../download.html">Download conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../test-drive.html">Test drive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">Conda cheat sheet</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/explicitspecfiles.html">Explicit specification files</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Using conda</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="envs.html">Managing environments</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Explicit specification files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pkgs.html">Managing packages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
@@ -84,10 +84,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../help/help.html">Help &amp; reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">Conda cheat sheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../commands.html">Command reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html">Command reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../help/support.html">Support options</a></li>
@@ -124,14 +124,12 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="../help/help.html">Help &amp; reference</a> &raquo;</li>
+          <li><a href="index.html">Using conda</a> &raquo;</li>
       
-          <li><a href="../commands.html">Command reference</a> &raquo;</li>
-      
-    <li>conda package</li>
+    <li>Explicit specification files</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/conda-package.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/using/explicitspecfiles.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -139,63 +137,35 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-package">
-<span id="package-ref"></span><h1>conda package<a class="headerlink" href="#conda-package" title="Permalink to this headline">¶</a></h1>
-<PRE>
-<!-- Manpage converted by man2html 3.0.1 -->
-<B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
-
-
-
-NAME
-       conda - conda package
-
-DESCRIPTION
-       usage:  conda  package  [-h]  [-n ENVIRONMENT | -p PATH] [-w PATH [PATH
-       ...]]
-
-       [-L PKG-NAME] [-r] [-u] [--pkg-name PKG_NAME]
-              [--pkg-version PKG_VERSION] [--pkg-build PKG_BUILD]
-
-       Low-level conda package utility. (EXPERIMENTAL)
-
-OPTIONS
-   optional arguments:
-       -h, --help
-              Show this help message and exit.
-
-       -n ENVIRONMENT, --name ENVIRONMENT
-              Name of environment (in envs dirs).
-
-       -p PATH, --prefix PATH
-              Full path to environment prefix (default: envs  dirs/build-envi‐
-              ronment).
-
-       -w PATH [PATH ...], --which PATH [PATH ...]
-              Given some PATH print which conda package the file came from.
-
-       -L PKG-NAME, --ls-files PKG-NAME
-              List all files belonging to specified package.
-
-       -r, --reset
-              Remove all untracked files and exit.
-
-       -u, --untracked
-              Display all untracked files and exit.
-
-       --pkg-name PKG_NAME
-              Package name of the created package.
-
-       --pkg-version PKG_VERSION
-              Package version of the created package.
-
-       --pkg-build PKG_BUILD
-              Package build number of the created package.
-
-
-
-Continuum Analytics               August 2015                         <B>CONDA(1)</B>
-</PRE></div>
+  <div class="section" id="explicit-specification-files">
+<h1>Explicit specification files<a class="headerlink" href="#explicit-specification-files" title="Permalink to this headline">¶</a></h1>
+<p>Conda may be used to create explicit specification files, which can then be used to build an identical conda environment on the same operating system platform, either on the same machine or a different machine.</p>
+<p>The command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">-e</span></tt> produces a spec list such as the following:</p>
+<div class="code highlight-python"><div class="highlight"><pre># This file may be used to create an environment using:
+# $ conda create --name &lt;env&gt; --file &lt;this file&gt;
+# platform: osx-64
+astropy=1.0.4=np19py27_0
+ncurses=5.9=1
+numpy=1.9.2=py27_0
+openssl=1.0.1k=1
+pandas=0.16.2=np19py27_0
+pip=7.1.2=py27_0
+python=2.7.10=0
+python-dateutil=2.4.2=py27_0
+pytz=2015.4=py27_0
+readline=6.2.5=1
+setuptools=18.1=py27_0
+six=1.9.0=py27_0
+sqlite=3.8.4.1=1
+tk=8.5.18=0
+wheel=0.24.0=py27_0
+zlib=1.2.8=1
+</pre></div>
+</div>
+<p>With the command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">-e</span> <span class="pre">&gt;</span> <span class="pre">spec-file.txt</span></tt> you can create a file containing this spec list in the current working directory. You may use the filename <tt class="docutils literal"><span class="pre">spec-file.txt</span></tt> or any other filename.</p>
+<p>As the comment at the top of the file explains, with the command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">MyEnvironment</span> <span class="pre">--file</span> <span class="pre">spec-file.txt</span></tt> you can use the spec file to create an identical environment on the same machine or another machine. Replace <tt class="docutils literal"><span class="pre">spec-file.txt</span></tt> with whatever file name you chose when you created the file. You may use the environment name <tt class="docutils literal"><span class="pre">MyEnvironment</span></tt> or substitute any other environment name to give your newly created environment.</p>
+<p>NOTE: Explicit spec files like this are not cross platform, and have a comment at the top such as <tt class="docutils literal"><span class="pre">#</span> <span class="pre">platform:</span> <span class="pre">osx-64</span></tt> showing the one platform where they were created, which is the one platform where they can be used to create a new environment.</p>
+</div>
 
 
           </div>
@@ -203,10 +173,10 @@ Continuum Analytics               August 2015                         <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-remove.html" class="btn btn-neutral float-right" title="conda remove">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../py2or3.html" class="btn btn-neutral float-right" title="Managing Python">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conda-list.html" class="btn btn-neutral" title="conda list"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="envs.html" class="btn btn-neutral" title="Managing environments"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
