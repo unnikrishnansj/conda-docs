@@ -30,7 +30,7 @@
   
     <link rel="top" title="Conda   documentation" href="../index.html"/>
         <link rel="up" title="Using conda" href="index.html"/>
-        <link rel="next" title="Explicit specification files" href="explicitspecfiles.html"/>
+        <link rel="next" title="Managing Python" href="../py2or3.html"/>
         <link rel="prev" title="Overview" href="using.html"/> 
 
   
@@ -70,7 +70,6 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Using conda</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="using.html">Overview</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Managing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="explicitspecfiles.html">Explicit specification files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pkgs.html">Managing packages</a></li>
 </ul>
@@ -276,8 +275,37 @@ cp environment.yml
 <div class="code highlight-python"><div class="highlight"><pre>conda list
 </pre></div>
 </div>
-<p>Next, we&#8217;ll take a look at managing Python.</p>
 </div>
+</div>
+<div class="section" id="explicit-specification-files">
+<h2>Explicit specification files<a class="headerlink" href="#explicit-specification-files" title="Permalink to this headline">¶</a></h2>
+<p>Explicit specification files can be used to build an identical conda environment on the same operating system platform, either on the same machine or a different machine.</p>
+<p>The command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">-e</span></tt> produces a spec list such as the following:</p>
+<div class="code highlight-python"><div class="highlight"><pre># This file may be used to create an environment using:
+# $ conda create --name &lt;env&gt; --file &lt;this file&gt;
+# platform: osx-64
+astropy=1.0.4=np19py27_0
+ncurses=5.9=1
+numpy=1.9.2=py27_0
+openssl=1.0.1k=1
+pandas=0.16.2=np19py27_0
+pip=7.1.2=py27_0
+python=2.7.10=0
+python-dateutil=2.4.2=py27_0
+pytz=2015.4=py27_0
+readline=6.2.5=1
+setuptools=18.1=py27_0
+six=1.9.0=py27_0
+sqlite=3.8.4.1=1
+tk=8.5.18=0
+wheel=0.24.0=py27_0
+zlib=1.2.8=1
+</pre></div>
+</div>
+<p>With the command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">-e</span> <span class="pre">&gt;</span> <span class="pre">spec-file.txt</span></tt> you can create a file containing this spec list in the current working directory. You may use the filename <tt class="docutils literal"><span class="pre">spec-file.txt</span></tt> or any other filename.</p>
+<p>As the comment at the top of the file explains, with the command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">MyEnvironment</span> <span class="pre">--file</span> <span class="pre">spec-file.txt</span></tt> you can use the spec file to create an identical environment on the same machine or another machine. Replace <tt class="docutils literal"><span class="pre">spec-file.txt</span></tt> with whatever file name you chose when you created the file. You may use the environment name <tt class="docutils literal"><span class="pre">MyEnvironment</span></tt> or substitute any other environment name to give your newly created environment.</p>
+<p>NOTE: Explicit spec files like this are not cross platform, and have a comment at the top such as <tt class="docutils literal"><span class="pre">#</span> <span class="pre">platform:</span> <span class="pre">osx-64</span></tt> showing the one platform where they were created, which is the one platform where they can be used to create a new environment.</p>
+<p>Next, we&#8217;ll take a look at <a class="reference internal" href="../py2or3.html"><em>Managing Python</em></a>.</p>
 </div>
 </div>
 
@@ -287,7 +315,7 @@ cp environment.yml
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="explicitspecfiles.html" class="btn btn-neutral float-right" title="Explicit specification files">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../py2or3.html" class="btn btn-neutral float-right" title="Managing Python">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="using.html" class="btn btn-neutral" title="Overview"><span class="fa fa-arrow-circle-left"></span> Previous</a>
