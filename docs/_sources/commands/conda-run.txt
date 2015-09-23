@@ -16,7 +16,8 @@ conda run
           conda - conda run
    
    DESCRIPTION
-          usage: conda run [-h] [-n ENVIRONMENT | -p PATH] [-q] [--json]
+          usage:  conda run [-h] [-n ENVIRONMENT | -p PATH] [-q] [--json] [--off‐
+          line]
    
                  [COMMAND] [ARGUMENTS [ARGUMENTS ...]]
    
@@ -43,7 +44,7 @@ conda run
                  Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 Full path to environment prefix (default: envs  dirs/build-envi‐
+                 Full  path to environment prefix (default: envs dirs/build-envi‐
                  ronment).
    
           -q, --quiet
@@ -51,6 +52,9 @@ conda run
    
           --json Report all output as json. Suitable for using conda programmati‐
                  cally.
+   
+          --offline
+                 Offline mode, don't connect to the Internet.
    
    EXAMPLES
                  conda run ipython-notebook
