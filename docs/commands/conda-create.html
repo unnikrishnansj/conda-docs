@@ -155,11 +155,12 @@ DESCRIPTION
 
        [--no-deps] [-m] [--use-index-cache] [--use-local]
               [--offline] [--no-pin] [-c  CHANNEL]  [--override-channels]  [-n
-              ENVIRONMENT  |  -p  PATH]  [-q]  [--copy]  [--alt-hint] [--json]
-              [--clone  ENV]  [--no-default-packages]   [package_spec   [pack‐
-              age_spec ...]]
+              ENVIRONMENT    |    -p    PATH]   [-q]   [--copy]   [--alt-hint]
+              [--update-dependencies] [--no-update-dependencies] [--show-chan‐
+              nel-urls]   [--no-show-channel-urls]   [--json]   [--clone  ENV]
+              [--no-default-packages] [package_spec [package_spec ...]]
 
-       Create  a  new  conda environment from a list of specified packages. To
+       Create a new conda environment from a list of  specified  packages.  To
        use the created environment, use 'source activate envname' look in that
        directory first.  This command requires either the -n NAME or -p PREFIX
        option.
@@ -167,7 +168,7 @@ DESCRIPTION
 OPTIONS
    positional arguments:
        package_spec
-              Package versions to install into the conda environment.
+              Packages to install into the conda environment.
 
    optional arguments:
        -h, --help
@@ -180,11 +181,12 @@ OPTIONS
               Only display what would have been done.
 
        -f, --force
-              Force install (even when  package  already  installed),  implies
+              Force  install  (even  when  package already installed), implies
               --no-deps.
 
        --file FILE
-              Read package versions from FILE.
+              Read package versions from the given file. Repeated file  speci‐
+              fications can be passed (e.g. --file=file1 --file=file2).
 
        --unknown
               Use  index metadata from the local package cache, which are from
@@ -238,6 +240,18 @@ OPTIONS
 
        --alt-hint
               Use an alternate algorithm to generate an unsatisfiability hint.
+
+       --update-dependencies, --update-deps
+              Update dependencies (default: True).
+
+       --no-update-dependencies, --no-update-deps
+              Don't update dependencies (default: False).
+
+       --show-channel-urls
+              Show channel urls (default: True).
+
+       --no-show-channel-urls
+              Don't show channel urls (default: False).
 
        --json Report all output as json. Suitable for using conda programmati‐
               cally.

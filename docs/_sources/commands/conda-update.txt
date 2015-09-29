@@ -21,15 +21,17 @@ conda update
    
           [--no-deps] [-m] [--use-index-cache] [--use-local]
                  [--offline] [--no-pin] [-c  CHANNEL]  [--override-channels]  [-n
-                 ENVIRONMENT  |  -p  PATH]  [-q]  [--copy]  [--alt-hint] [--json]
-                 [--all] [package_spec [package_spec ...]]
+                 ENVIRONMENT    |    -p    PATH]   [-q]   [--copy]   [--alt-hint]
+                 [--update-dependencies] [--no-update-dependencies] [--show-chan‐
+                 nel-urls]   [--no-show-channel-urls]   [--json]  [--all]  [pack‐
+                 age_spec [package_spec ...]]
    
           Update conda packages to the current version.
    
    OPTIONS
       positional arguments:
           package_spec
-                 Package versions to install into the conda environment.
+                 Packages to update in the conda environment.
    
       optional arguments:
           -h, --help
@@ -46,11 +48,12 @@ conda update
                  --no-deps.
    
           --file FILE
-                 Read package versions from FILE.
+                 Read  package versions from the given file. Repeated file speci‐
+                 fications can be passed (e.g. --file=file1 --file=file2).
    
           --unknown
-                 Use  index metadata from the local package cache, which are from
-                 unknown channels (installing  local  packages  directly  implies
+                 Use index metadata from the local package cache, which are  from
+                 unknown  channels  (installing  local  packages directly implies
                  this option).
    
           --no-deps
@@ -72,14 +75,14 @@ conda update
                  Ignore pinned file.
    
           -c CHANNEL, --channel CHANNEL
-                 Additional  channel  to  search  for  packages.  These  are URLs
-                 searched in the order they  are  given  (including  file://  for
+                 Additional channel  to  search  for  packages.  These  are  URLs
+                 searched  in  the  order  they  are given (including file:// for
                  local directories). Then, the defaults or channels from .condarc
-                 are searched (unless --override-channels is given). You can  use
-                 'defaults'  to  get the default packages for conda, and 'system'
-                 to get the system  packages,  which  also  takes  .condarc  into
-                 account.  You  can  also  use  any  name  and the .condarc chan‐
-                 nel_alias value will be prepended. The default channel_alias  is
+                 are  searched (unless --override-channels is given). You can use
+                 'defaults' to get the default packages for conda,  and  'system'
+                 to  get  the  system  packages,  which  also takes .condarc into
+                 account. You can also  use  any  name  and  the  .condarc  chan‐
+                 nel_alias  value will be prepended. The default channel_alias is
                  http://conda.anaconda.org/.
    
           --override-channels
@@ -89,7 +92,7 @@ conda update
                  Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 Full path to environment prefix (default: envs  dirs/build-envi‐
                  ronment).
    
           -q, --quiet
@@ -100,6 +103,18 @@ conda update
    
           --alt-hint
                  Use an alternate algorithm to generate an unsatisfiability hint.
+   
+          --update-dependencies, --update-deps
+                 Update dependencies (default: True).
+   
+          --no-update-dependencies, --no-update-deps
+                 Don't update dependencies (default: False).
+   
+          --show-channel-urls
+                 Show channel urls (default: True).
+   
+          --no-show-channel-urls
+                 Don't show channel urls (default: False).
    
           --json Report all output as json. Suitable for using conda programmati‐
                  cally.

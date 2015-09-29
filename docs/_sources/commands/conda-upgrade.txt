@@ -1,7 +1,7 @@
 
-.. _create_ref:
+.. _upgrade_ref:
 
-conda create
+conda upgrade
 =======================
 
 .. raw:: html
@@ -13,23 +13,20 @@ conda create
    
    
    NAME
-          conda - conda create
+          conda - conda upgrade
    
    DESCRIPTION
-          usage:   conda   create   [-h]  [-y]  [--dry-run]  [-f]  [--file  FILE]
+          usage:   conda   upgrade  [-h]  [-y]  [--dry-run]  [-f]  [--file  FILE]
           [--unknown]
    
           [--no-deps] [-m] [--use-index-cache] [--use-local]
                  [--offline] [--no-pin] [-c  CHANNEL]  [--override-channels]  [-n
                  ENVIRONMENT    |    -p    PATH]   [-q]   [--copy]   [--alt-hint]
                  [--update-dependencies] [--no-update-dependencies] [--show-chan‐
-                 nel-urls]   [--no-show-channel-urls]   [--json]   [--clone  ENV]
-                 [--no-default-packages] [package_spec [package_spec ...]]
+                 nel-urls]   [--no-show-channel-urls]   [--json]  [--all]  [pack‐
+                 age_spec [package_spec ...]]
    
-          Create a new conda environment from a list of  specified  packages.  To
-          use the created environment, use 'source activate envname' look in that
-          directory first.  This command requires either the -n NAME or -p PREFIX
-          option.
+          Alias for conda update.  See conda update --help.
    
    OPTIONS
       positional arguments:
@@ -47,16 +44,16 @@ conda create
                  Only display what would have been done.
    
           -f, --force
-                 Force  install  (even  when  package already installed), implies
+                 Force install (even when  package  already  installed),  implies
                  --no-deps.
    
           --file FILE
-                 Read package versions from the given file. Repeated file  speci‐
+                 Read  package versions from the given file. Repeated file speci‐
                  fications can be passed (e.g. --file=file1 --file=file2).
    
           --unknown
-                 Use  index metadata from the local package cache, which are from
-                 unknown channels (installing  local  packages  directly  implies
+                 Use index metadata from the local package cache, which are  from
+                 unknown  channels  (installing  local  packages directly implies
                  this option).
    
           --no-deps
@@ -78,14 +75,14 @@ conda create
                  Ignore pinned file.
    
           -c CHANNEL, --channel CHANNEL
-                 Additional  channel  to  search  for  packages.  These  are URLs
-                 searched in the order they  are  given  (including  file://  for
+                 Additional channel  to  search  for  packages.  These  are  URLs
+                 searched  in  the  order  they  are given (including file:// for
                  local directories). Then, the defaults or channels from .condarc
-                 are searched (unless --override-channels is given). You can  use
-                 'defaults'  to  get the default packages for conda, and 'system'
-                 to get the system  packages,  which  also  takes  .condarc  into
-                 account.  You  can  also  use  any  name  and the .condarc chan‐
-                 nel_alias value will be prepended. The default channel_alias  is
+                 are  searched (unless --override-channels is given). You can use
+                 'defaults' to get the default packages for conda,  and  'system'
+                 to  get  the  system  packages,  which  also takes .condarc into
+                 account. You can also  use  any  name  and  the  .condarc  chan‐
+                 nel_alias  value will be prepended. The default channel_alias is
                  http://conda.anaconda.org/.
    
           --override-channels
@@ -95,7 +92,7 @@ conda create
                  Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 Full  path to environment prefix (default: envs dirs/build-envi‐
+                 Full path to environment prefix (default: envs  dirs/build-envi‐
                  ronment).
    
           -q, --quiet
@@ -122,14 +119,10 @@ conda create
           --json Report all output as json. Suitable for using conda programmati‐
                  cally.
    
-          --clone ENV
-                 Path to (or name of) existing local environment.
-   
-          --no-default-packages
-                 Ignore create_default_packages in the .condarc file.
+          --all  Update all installed packages in the environment.
    
    EXAMPLES
-                 conda create -n myenv sqlite
+                 conda upgrade -n myenv scipy
    
    
    
