@@ -30,7 +30,7 @@
   
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
         <link rel="up" title="Command reference" href="../../commands.html"/>
-        <link rel="next" title="conda inspect linkages" href="conda-inspect-linkages.html"/>
+        <link rel="next" title="conda inspect channels" href="conda-inspect-channels.html"/>
         <link rel="prev" title="conda index" href="conda-index.html"/> 
 
   
@@ -150,27 +150,30 @@ NAME
        conda - conda inspect
 
 DESCRIPTION
-       usage: conda-inspect [-h] {linkages,objects} ...
+       usage: conda-inspect [-h] {linkages,objects,channels} ...
 
        Tools for inspecting conda packages.
 
 OPTIONS
    positional arguments:
-              {linkages,objects}
+              {linkages,objects,channels}
 
        linkages
               Investigates linkages of binary libraries in a package (works in
               Linux and OS X). This is an advanced  command  to  aid  building
-              packages  that  link against C libraries.  Aggregates the output
-              of ldd (on Linux) and otool -L (on OS X) by dependent  packages.
+              packages that link against C libraries. Aggregates the output of
+              ldd (on Linux) and otool -L (on OS  X)  by  dependent  packages.
               Useful  for  finding  broken  links,  or  links  against  system
               libraries that ought to be dependent conda packages.
 
        objects
               Investigate binary object files in a package (only works  on  OS
               X).  This  is  an advanced command to aid building packages that
-              have compiled libraries. Aggregates the output of otool  on  all
+              have compiled libraries.  Aggregates the output of otool on  all
               the binary object files in a package.
+
+       channels
+              Tools for investigating conda channels.
 
    optional arguments:
        -h, --help
@@ -181,7 +184,7 @@ OPTIONS
 
 
 
-Continuum Analytics             September 2015                        <B>CONDA(1)</B>
+Continuum Analytics              October 2015                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -190,7 +193,7 @@ Continuum Analytics             September 2015                        <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-inspect-linkages.html" class="btn btn-neutral float-right" title="conda inspect linkages">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-inspect-channels.html" class="btn btn-neutral float-right" title="conda inspect channels">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="conda-index.html" class="btn btn-neutral" title="conda index"><span class="fa fa-arrow-circle-left"></span> Previous</a>

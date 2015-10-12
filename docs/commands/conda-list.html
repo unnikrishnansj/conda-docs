@@ -152,8 +152,8 @@ NAME
 DESCRIPTION
        usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json]
 
-              [--show-channel-urls]  [--no-show-channel-urls]  [-c]  [-f] [-e]
-              [-r] [--no-pip] [regex]
+              [--show-channel-urls]    [--no-show-channel-urls]    [-c]   [-f]
+              [--explicit] [-e] [-r] [--no-pip] [regex]
 
        List linked packages in a conda environment.
 
@@ -182,10 +182,14 @@ OPTIONS
               Don't show channel urls (default: False).
 
        -c, --canonical
-              Output canonical names of packages only.
+              Output canonical names of packages only. Implies --nopip.
 
        -f, --full-name
               Only search for full names, i.e., ^&lt;regex&gt;$.
+
+       --explicit
+              List explicitly all installed conda packaged  with  URL  (output
+              may be used by conda create --file).
 
        -e, --export
               Output requirement string only (output may be used by conda cre‐
@@ -216,7 +220,7 @@ EXAMPLES
 
 
 
-Continuum Analytics             September 2015                        <B>CONDA(1)</B>
+Continuum Analytics              October 2015                         <B>CONDA(1)</B>
 </PRE></div>
 
 

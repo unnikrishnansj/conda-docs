@@ -150,8 +150,10 @@ NAME
        conda - conda develop
 
 DESCRIPTION
-       usage:  conda-develop [-h] [-npf] [-n ENVIRONMENT | -p PATH] PATH [PATH
-       ...]
+       usage:  conda-develop  [-h]  [-npf] [-b] [-c] [-u] [-n ENVIRONMENT | -p
+       PATH]
+
+              PATH [PATH ...]
 
        Install a Python package in 'development mode'.
 
@@ -169,16 +171,30 @@ OPTIONS
               Relink compiled extension dependencies against  libraries  found
               in current conda env. Do not add source to conda.pth.
 
+       -b, --build_ext
+              Build  extensions  inplace,  invoking: python setup.py build_ext
+              --inplace; add to conda.pth; relink runtime libraries  to  envi‐
+              ronment's lib/.
+
+       -c, --clean
+              Invoke  clean  on  setup.py:  python  setup.py  clean  use  with
+              build_ext to clean before building.
+
+       -u, --uninstall
+              Removes package if installed in 'development mode'  by  deleting
+              path  from conda.pth file. Ignore other options - just uninstall
+              and exit
+
        -n ENVIRONMENT, --name ENVIRONMENT
               Name of environment (in envs dirs).
 
        -p PATH, --prefix PATH
-              Full  path to environment prefix (default: envs dirs/build-envi‐
+              Full path to environment prefix (default: envs  dirs/build-envi‐
               ronment).
 
 
 
-Continuum Analytics             September 2015                        <B>CONDA(1)</B>
+Continuum Analytics              October 2015                         <B>CONDA(1)</B>
 </PRE></div>
 
 

@@ -153,12 +153,13 @@ DESCRIPTION
        usage: conda remove [-h] [-y] [--dry-run] [--json] [--all] [--features]
 
        [--no-pin] [-c CHANNEL] [--override-channels]
-              [-n    ENVIRONMENT   |   -p   PATH]   [-q]   [--use-index-cache]
-              [--use-local] [--offline] [package_name [package_name ...]]
+              [-n   ENVIRONMENT   |   -p   PATH]  [-q]  [--no-use-index-cache]
+              [--use-index-cache]  [--use-local]   [--offline]   [package_name
+              [package_name ...]]
 
-       Remove a list of packages from a  specified  conda  environment.   Nor‐
-       mally,  only  the  specified  package  is removed, and not the packages
-       which may depend on the package.  Hence this  command  should  be  used
+       Remove  a  list  of  packages from a specified conda environment.  Nor‐
+       mally, only the specified package is  removed,  and  not  the  packages
+       which  may  depend  on  the package.  Hence this command should be used
        with caution.  Note:  conda uninstall is an alias for conda remove.
 
 OPTIONS
@@ -188,14 +189,14 @@ OPTIONS
               Ignore pinned file.
 
        -c CHANNEL, --channel CHANNEL
-              Additional channel  to  search  for  packages.  These  are  URLs
-              searched  in  the  order  they  are given (including file:// for
+              Additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
               local directories). Then, the defaults or channels from .condarc
-              are  searched (unless --override-channels is given). You can use
-              'defaults' to get the default packages for conda,  and  'system'
-              to  get  the  system  packages,  which  also takes .condarc into
-              account. You can also  use  any  name  and  the  .condarc  chan‐
-              nel_alias  value will be prepended. The default channel_alias is
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
               http://conda.anaconda.org/.
 
        --override-channels
@@ -205,11 +206,14 @@ OPTIONS
               Name of environment (in envs dirs).
 
        -p PATH, --prefix PATH
-              Full path to environment prefix (default: envs  dirs/build-envi‐
+              Full  path to environment prefix (default: envs dirs/build-envi‐
               ronment).
 
        -q, --quiet
               Do not display progress bar.
+
+       --no-use-index-cache
+              Use cache of channel index files.
 
        --use-index-cache
               Use cache of channel index files.
@@ -225,7 +229,7 @@ EXAMPLES
 
 
 
-Continuum Analytics             September 2015                        <B>CONDA(1)</B>
+Continuum Analytics              October 2015                         <B>CONDA(1)</B>
 </PRE></div>
 
 
