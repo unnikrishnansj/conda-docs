@@ -184,17 +184,17 @@
 </div>
 <p>NOTE: If you do not specify the name of the environment where you want it installed (&#8211;name bunnies) it will install in the current environment.</p>
 <p>Activate the bunnies environment, and do a conda list to see the new program installed:</p>
-<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt>
-<strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></tt></p>
-<p><strong>All:</strong>  <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></tt></p>
-<p>NOTE: Installing a commercial package (such as IOPro) is the same as installing any other package: <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--name</span> <span class="pre">bunnies</span> <span class="pre">iopro</span></tt></p>
+<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code>
+<strong>Windows:</strong>  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></p>
+<p><strong>All:</strong>  <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></code></p>
+<p>NOTE: Installing a commercial package (such as IOPro) is the same as installing any other package: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--name</span> <span class="pre">bunnies</span> <span class="pre">iopro</span></code></p>
 </div>
 <div class="section" id="install-a-package-from-anaconda-org">
 <h2><a class="toc-backref" href="#id5">Install a package from Anaconda.org</a><a class="headerlink" href="#install-a-package-from-anaconda-org" title="Permalink to this headline">¶</a></h2>
 <p>For packages that are not available using conda install, we can look in the repository Anaconda.org. Anaconda.org, formerly Binstar.org, is a package management service for both public and private package repositories. Anaconda.org is a Continuum Analytics product, just like Anaconda and Miniconda.</p>
 <p>In a browser, go to <a class="reference external" href="http://anaconda.org">http://anaconda.org</a>.  To find the package named &#8220;bottleneck&#8221; enter that search term in the top left box named &#8220;Search Packages.&#8221;</p>
 <p>Find the package you want and click to go to the detail page. There you will see the name of the channel &#8211; in this case it is the &#8220;pandas&#8221; channel.</p>
-<p>Now that you know the channel name, you can use the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></tt> command to get it:</p>
+<p>Now that you know the channel name, you can use the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code> command to get it:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda install -c pandas bottleneck
 </pre></div>
 </div>
@@ -212,9 +212,9 @@
 <p>NOTE: Both pip and conda are already included in Anaconda and Miniconda, so you do not need to install them separately.</p>
 <p>NOTE: Conda environments replace virtualenv so there&#8217;s no need to activate a virtualenv before using pip.</p>
 <p>Activate the environment where you want to put the program, then pip install a program named &#8220;See&#8221;:</p>
-<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></tt></p>
-<p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></tt></p>
-<p><strong>All:</strong>  <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">see</span></tt></p>
+<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></p>
+<p><strong>Windows:</strong>  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></p>
+<p><strong>All:</strong>  <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">see</span></code></p>
 <p>Check to see that the See package was installed by pip:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda list
 </pre></div>

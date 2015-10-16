@@ -162,7 +162,7 @@
 </ul>
 </div>
 <p>With conda, you can create, export, list, remove, and update environments that have different versions of Python and/or packages installed in them. Switching or moving between environments is called  activating the environment. You can even share an environment file with a coworker.</p>
-<p>Anytime you wish to see the full documentation for any command, type the command followed by  <tt class="docutils literal"><span class="pre">--help</span></tt>. For example, to learn about the conda environment command:</p>
+<p>Anytime you wish to see the full documentation for any command, type the command followed by  <code class="docutils literal"><span class="pre">--help</span></code>. For example, to learn about the conda environment command:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda env --help
 </pre></div>
 </div>
@@ -179,18 +179,18 @@
 </pre></div>
 </div>
 <p>Type “y” for “yes.”</p>
-<p>This will create a new environment named <tt class="docutils literal"><span class="pre">/envs/snowflakes</span></tt> that contains the program Biopython. This environment will use the same version of Python that you are currently using, because you did not specify a version.</p>
-<p>TIP:  Many frequently used options after two dashes (<tt class="docutils literal"><span class="pre">--</span></tt>) can be abbreviated with just a dash and the first letter. So <tt class="docutils literal"><span class="pre">--name</span></tt> and <tt class="docutils literal"><span class="pre">-n</span></tt> options are the same and <tt class="docutils literal"><span class="pre">--envs</span></tt> and <tt class="docutils literal"><span class="pre">-e</span></tt> are the same. See <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">--help</span></tt> or <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">-h</span></tt> for a list of abbreviations.</p>
+<p>This will create a new environment named <code class="docutils literal"><span class="pre">/envs/snowflakes</span></code> that contains the program Biopython. This environment will use the same version of Python that you are currently using, because you did not specify a version.</p>
+<p>TIP:  Many frequently used options after two dashes (<code class="docutils literal"><span class="pre">--</span></code>) can be abbreviated with just a dash and the first letter. So <code class="docutils literal"><span class="pre">--name</span></code> and <code class="docutils literal"><span class="pre">-n</span></code> options are the same and <code class="docutils literal"><span class="pre">--envs</span></code> and <code class="docutils literal"><span class="pre">-e</span></code> are the same. See <code class="docutils literal"><span class="pre">conda</span> <span class="pre">--help</span></code> or <code class="docutils literal"><span class="pre">conda</span> <span class="pre">-h</span></code> for a list of abbreviations.</p>
 </div>
 <div class="section" id="change-environments-activate-deactivate">
 <h2><a class="toc-backref" href="#id3">Change environments (activate/deactivate)</a><a class="headerlink" href="#change-environments-activate-deactivate" title="Permalink to this headline">¶</a></h2>
-<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></tt></p>
-<p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></tt></p>
+<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></p>
+<p><strong>Windows:</strong>  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></code></p>
 <p>Conda prepends the path name (snowflakes) onto your system command.</p>
-<p>TIP: Environments are installed by default into the envs directory in your conda directory. You can specify a different path, see <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--help</span></tt> for details.</p>
+<p>TIP: Environments are installed by default into the envs directory in your conda directory. You can specify a different path, see <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--help</span></code> for details.</p>
 <p>Deactivate the environment with the following:</p>
-<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span> <span class="pre">snowflakes</span></tt></p>
-<p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">deactivate</span> <span class="pre">snowflakes</span></tt></p>
+<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span> <span class="pre">snowflakes</span></code></p>
+<p><strong>Windows:</strong>  <code class="docutils literal"><span class="pre">deactivate</span> <span class="pre">snowflakes</span></code></p>
 <p>Conda removes the path name (snowflakes) from your system command.</p>
 </div>
 <div class="section" id="create-a-separate-environment">
@@ -201,7 +201,7 @@
 </div>
 <p>This will create a second new environment named /envs/bunnies with Python 3 and Astroid and Babel installed.</p>
 <p>TIP: Install all the programs you will want in this environment at the same time. Installing one program at a time can lead to dependency conflicts.</p>
-<p>TIP: You can add much more to the conda create command, type <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--help</span></tt> for details.</p>
+<p>TIP: You can add much more to the conda create command, type <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--help</span></code> for details.</p>
 </div>
 <div class="section" id="list-all-environments">
 <h2><a class="toc-backref" href="#id5">List all environments</a><a class="headerlink" href="#list-all-environments" title="Permalink to this headline">¶</a></h2>
@@ -261,38 +261,26 @@ highlighted with an &#8216;*&#8217; character.</p>
 <h3><a class="toc-backref" href="#id10">Export the environment file</a><a class="headerlink" href="#export-the-environment-file" title="Permalink to this headline">¶</a></h3>
 <p>To enable another person to create an exact copy of your environment, you will export the active environment file.</p>
 <p>Activate the environment you wish to export:</p>
-<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">peppermint</span></tt></p>
-<p><strong>Windows:</strong> <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">peppermint</span></tt></p>
+<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">peppermint</span></code></p>
+<p><strong>Windows:</strong> <code class="docutils literal"><span class="pre">activate</span> <span class="pre">peppermint</span></code></p>
 <p>NOTE: Replace “peppermint” with the name of the environment.</p>
 <p>NOTE: If you already have an environment.yml file in your current directory, it will be overwritten with the new file.</p>
 <p>Export your active environment to the new file:</p>
-<p><strong>All users:</strong> <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></tt></p>
+<p><strong>All users:</strong> <code class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></code></p>
 <p>NOTE: This file handles the environment&#8217;s pip packages as well as its conda packages.</p>
 <p>Email or copy the exported environment.yml file to the other person.</p>
 <p>The other person will then need to create the environment by the following command:</p>
-<p><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></tt></p>
+<p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code></p>
 </div>
 <div class="section" id="use-environment-from-file">
 <h3><a class="toc-backref" href="#id11">Use environment from file</a><a class="headerlink" href="#use-environment-from-file" title="Permalink to this headline">¶</a></h3>
-<p>To create a copy of another developer’s environment from their environment.yml file:</p>
-<p>Deactivate your current environment:</p>
-<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span> <span class="pre">starfish</span></tt></p>
-<p><strong>Windows:</strong> <tt class="docutils literal"><span class="pre">deactivate</span> <span class="pre">starfish</span></tt></p>
-<p>NOTE: Replace “starfish” with the name of your current environment.</p>
-<p>Make a new directory, change to the directory, and copy the environment.yml file into it.</p>
-<div class="code highlight-python"><div class="highlight"><pre>mkdir peppermint
-cd peppermint
-cp environment.yml
-</pre></div>
-</div>
-<p>NOTE: Replace “peppermint” with the name of your directory.</p>
-<p>In the same directory as the environment.yml file, create the new environment:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda env create
+<p>Create a copy of another developer’s environment from their environment.yml file:</p>
+<div class="code highlight-python"><div class="highlight"><pre>conda env create -f environment.yml
 </pre></div>
 </div>
 <p>Activate the new environment:</p>
-<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">peppermint</span></tt></p>
-<p><strong>Windows:</strong> <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">peppermint</span></tt></p>
+<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">peppermint</span></code></p>
+<p><strong>Windows:</strong> <code class="docutils literal"><span class="pre">activate</span> <span class="pre">peppermint</span></code></p>
 <p>NOTE: Replace “peppermint” with the name of the environment.</p>
 <p>Verify that the new environment was installed correctly:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda list
@@ -302,7 +290,7 @@ cp environment.yml
 <div class="section" id="build-identical-conda-environments">
 <h3><a class="toc-backref" href="#id12">Build identical conda environments</a><a class="headerlink" href="#build-identical-conda-environments" title="Permalink to this headline">¶</a></h3>
 <p>Explicit specification files can be used to build an identical conda environment on the same operating system platform, either on the same machine or a different machine.</p>
-<p>The command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">-e</span></tt> produces a spec list such as the following:</p>
+<p>The command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">-e</span></code> produces a spec list such as the following:</p>
 <div class="code highlight-python"><div class="highlight"><pre># This file may be used to create an environment using:
 # $ conda create --name &lt;env&gt; --file &lt;this file&gt;
 # platform: osx-64
@@ -324,14 +312,14 @@ wheel=0.24.0=py27_0
 zlib=1.2.8=1
 </pre></div>
 </div>
-<p>With the command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">-e</span> <span class="pre">&gt;</span> <span class="pre">spec-file.txt</span></tt> you can create a file containing this spec list in the current working directory. You may use the filename <tt class="docutils literal"><span class="pre">spec-file.txt</span></tt> or any other filename.</p>
-<p>As the comment at the top of the file explains, with the command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">MyEnvironment</span> <span class="pre">--file</span> <span class="pre">spec-file.txt</span></tt> you can use the spec file to create a matching environment on the same machine or another machine. Replace <tt class="docutils literal"><span class="pre">spec-file.txt</span></tt> with whatever file name you chose when you created the file. You may use the environment name <tt class="docutils literal"><span class="pre">MyEnvironment</span></tt> or substitute any other environment name to give your newly created environment.</p>
-<p>NOTE: These explicit spec files are not usually cross platform, and therefore have a comment at the top such as <tt class="docutils literal"><span class="pre">#</span> <span class="pre">platform:</span> <span class="pre">osx-64</span></tt> showing the platform where they were created. This platform is the one where this spec file is known to work. On other platforms, the packages specified might not be available or dependencies might be missing for some of the key packages already in the spec.</p>
+<p>With the command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">-e</span> <span class="pre">&gt;</span> <span class="pre">spec-file.txt</span></code> you can create a file containing this spec list in the current working directory. You may use the filename <code class="docutils literal"><span class="pre">spec-file.txt</span></code> or any other filename.</p>
+<p>As the comment at the top of the file explains, with the command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">MyEnvironment</span> <span class="pre">--file</span> <span class="pre">spec-file.txt</span></code> you can use the spec file to create a matching environment on the same machine or another machine. Replace <code class="docutils literal"><span class="pre">spec-file.txt</span></code> with whatever file name you chose when you created the file. You may use the environment name <code class="docutils literal"><span class="pre">MyEnvironment</span></code> or substitute any other environment name to give your newly created environment.</p>
+<p>NOTE: These explicit spec files are not usually cross platform, and therefore have a comment at the top such as <code class="docutils literal"><span class="pre">#</span> <span class="pre">platform:</span> <span class="pre">osx-64</span></code> showing the platform where they were created. This platform is the one where this spec file is known to work. On other platforms, the packages specified might not be available or dependencies might be missing for some of the key packages already in the spec.</p>
 </div>
 <div class="section" id="build-identical-conda-environments-with-urls">
 <h3><a class="toc-backref" href="#id13">Build identical conda environments with URLs</a><a class="headerlink" href="#build-identical-conda-environments-with-urls" title="Permalink to this headline">¶</a></h3>
 <p>If two users have their conda channels set up differently, then they may inadvertently create different environments from the same spec file because conda fetches the packages from different channels.</p>
-<p>To prevent this, starting in version 3.18.2 conda offers an option <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--explicit</span></tt>, which displays a list of the universal resource locators (URLs) of all conda packages installed in the current environment, as shown by this small example showing only three packages:</p>
+<p>To prevent this, starting in version 3.18.2 conda offers an option <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--explicit</span></code>, which displays a list of the universal resource locators (URLs) of all conda packages installed in the current environment, as shown by this small example showing only three packages:</p>
 <div class="code highlight-python"><div class="highlight"><pre># This file may be used to create an environment using:
 # $ conda create --name &lt;env&gt; --file &lt;this file&gt;
 # platform: linux-64
@@ -341,10 +329,10 @@ https://repo.continuum.io/pkgs/pro/linux-64/iopro-1.7.1-np19py27_p1.tar.bz2
 https://repo.continuum.io/pkgs/free/linux-64/python-2.7.10-1.tar.bz2
 </pre></div>
 </div>
-<p>The command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--explicit</span> <span class="pre">&gt;</span> <span class="pre">explicit-spec-file.txt</span></tt> creates a file containing this spec list in the current working directory.</p>
-<p>As the comment at the top of the file explains, the command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">MyEnvironment</span> <span class="pre">--file</span> <span class="pre">explicit-spec-file.txt</span></tt> uses the spec file to create an identical environment on the same machine or another machine.</p>
-<p>The command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--name</span> <span class="pre">MyEnvironment</span> <span class="pre">--file</span> <span class="pre">explicit-spec-file.txt</span></tt> adds these packages to an existing environment.</p>
-<p>NOTE: Conda does not check architecture or dependencies when installing from an explicit specification file. To ensure the packages work correctly, be sure that the file was created from a working environment and that it is  used on the same architecture, operating system and platform, such as <tt class="docutils literal"><span class="pre">linux-64</span></tt> or <tt class="docutils literal"><span class="pre">osx-64</span></tt>.</p>
+<p>The command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--explicit</span> <span class="pre">&gt;</span> <span class="pre">explicit-spec-file.txt</span></code> creates a file containing this spec list in the current working directory.</p>
+<p>As the comment at the top of the file explains, the command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">MyEnvironment</span> <span class="pre">--file</span> <span class="pre">explicit-spec-file.txt</span></code> uses the spec file to create an identical environment on the same machine or another machine.</p>
+<p>The command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--name</span> <span class="pre">MyEnvironment</span> <span class="pre">--file</span> <span class="pre">explicit-spec-file.txt</span></code> adds these packages to an existing environment.</p>
+<p>NOTE: Conda does not check architecture or dependencies when installing from an explicit specification file. To ensure the packages work correctly, be sure that the file was created from a working environment and that it is  used on the same architecture, operating system and platform, such as <code class="docutils literal"><span class="pre">linux-64</span></code> or <code class="docutils literal"><span class="pre">osx-64</span></code>.</p>
 <p>Next, we&#8217;ll take a look at <a class="reference internal" href="../py2or3.html"><em>Managing Python</em></a>.</p>
 </div>
 </div>

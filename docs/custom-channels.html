@@ -146,7 +146,7 @@ you designate your Anaconda.org repository as private, then only you, and those
 you grant access, can access your private repository.</p>
 <p>If you do not wish to upload your packages to the internet, however, you can
 build a custom repository served either through a web server, or locally
-using a <tt class="docutils literal"><span class="pre">file://</span></tt> url.</p>
+using a <code class="docutils literal"><span class="pre">file://</span></code> url.</p>
 <div class="section" id="custom-channel-private-repository-summary">
 <h2>Custom channel/private repository summary<a class="headerlink" href="#custom-channel-private-repository-summary" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -184,16 +184,16 @@ conda build, begin by installing conda build:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda index channel/linux-64 channel/osx-64
 </pre></div>
 </div>
-<p>The conda index command generates a file <tt class="docutils literal"><span class="pre">repodata.json</span></tt>, saved to each repository directory,
+<p>The conda index command generates a file <code class="docutils literal"><span class="pre">repodata.json</span></code>, saved to each repository directory,
 which conda uses to get the metadata for the packages in the channel.</p>
-<p>Note: Each time you add or modify a package in the channel, you must re-run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></tt> for
+<p>Note: Each time you add or modify a package in the channel, you must re-run <code class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></code> for
 conda to see the update.</p>
 </div>
 <div class="section" id="test-custom-channels">
 <h3>3. Test custom channels<a class="headerlink" href="#test-custom-channels" title="Permalink to this headline">¶</a></h3>
-<p>You can now serve the custom channel using a web server, or using a <tt class="docutils literal"><span class="pre">file://</span> <span class="pre">url</span></tt> to the channel
+<p>You can now serve the custom channel using a web server, or using a <code class="docutils literal"><span class="pre">file://</span> <span class="pre">url</span></code> to the channel
 directory. Test by sending a search command to the custom channel.</p>
-<p>Example: if a file you want from the custom channel location is located at <tt class="docutils literal"><span class="pre">/opt/channel/linux-64/</span></tt></p>
+<p>Example: if a file you want from the custom channel location is located at <code class="docutils literal"><span class="pre">/opt/channel/linux-64/</span></code></p>
 <p>Then search for files in that location as shown:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda search -c file://opt/channel/ --override-channels
 </pre></div>
@@ -201,7 +201,7 @@ directory. Test by sending a search command to the custom channel.</p>
 <p>Note: The channel url does NOT include the platform, as conda will automatically detect and add
 the platform.</p>
 <p>Note: the &#8211;override-channels is to be sure conda only searches your specified channel and no
-other channels, such as default channels or any other channels you may have listed in your <tt class="docutils literal"><span class="pre">.condarc</span></tt>
+other channels, such as default channels or any other channels you may have listed in your <code class="docutils literal"><span class="pre">.condarc</span></code>
 file.</p>
 <p>If you have set up your private repository correctly, you will see:</p>
 <div class="code highlight-python"><div class="highlight"><pre>Fetching package metadata: . . . .

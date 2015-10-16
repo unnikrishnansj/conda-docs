@@ -169,8 +169,8 @@
 <div class="code highlight-python"><div class="highlight"><pre>conda create --name snakes python=3
 </pre></div>
 </div>
-<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></tt></p>
-<p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">snakes</span></tt></p>
+<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></code></p>
+<p><strong>Windows:</strong>  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snakes</span></code></p>
 <p>TIP: It would be wise to name this environment a descriptive name like “python3” but that is not as much fun.</p>
 <p>To verify that the snakes environment has now been added, type the command:</p>
 <div class="code highlight-python"><div class="highlight"><pre>conda info --envs
@@ -186,8 +186,8 @@ highlighted by a &#8216;*&#8217;.</p>
 <div class="section" id="use-a-different-version-of-python">
 <h2><a class="toc-backref" href="#id4">Use a different version of Python</a><a class="headerlink" href="#use-a-different-version-of-python" title="Permalink to this headline">¶</a></h2>
 <p>To switch to the new environment with a different version of Python, you simply need to activate it. Let’s switch back to 2.7:</p>
-<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></tt></p>
-<p><strong>Windows:</strong>  <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></tt></p>
+<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></p>
+<p><strong>Windows:</strong>  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></code></p>
 <p>Verify that the snowflakes environment uses Python version 2:</p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
@@ -202,14 +202,14 @@ or Miniconda, the default is 2.7. If the installer you used is Anaconda3 or Mini
 the default is 3.5.</p>
 <div class="section" id="create-a-python-3-5-environment">
 <h3><a class="toc-backref" href="#id6">Create a Python 3.5 environment</a><a class="headerlink" href="#create-a-python-3-5-environment" title="Permalink to this headline">¶</a></h3>
-<p>To create a new environment with a different version of Python, use the :doc:<tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span></tt> command. In this example, we&#8217;ll make the new environment for Python 3.5:</p>
+<p>To create a new environment with a different version of Python, use the :doc:<code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span></code> command. In this example, we&#8217;ll make the new environment for Python 3.5:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>conda create -n py35 <span class="nv">python</span><span class="o">=</span>3.5 anaconda
 </pre></div>
 </div>
 <p>Here, the &#8216;py35&#8217; is the name of the environment you want to create, and &#8216;anaconda&#8217; is the
 meta-package that includes all of the actual Python packages comprising
 the Anaconda distribution.  When creating a new environment and installing Anaconda,
-you can specify the exact package and Python versions, for example, <tt class="docutils literal"><span class="pre">numpy=1.7</span></tt> or <tt class="docutils literal"><span class="pre">python=3.5</span></tt>.</p>
+you can specify the exact package and Python versions, for example, <code class="docutils literal"><span class="pre">numpy=1.7</span></code> or <code class="docutils literal"><span class="pre">python=3.5</span></code>.</p>
 </div>
 <div class="section" id="create-a-python-2-6-environment">
 <h3><a class="toc-backref" href="#id7">Create a Python 2.6 environment</a><a class="headerlink" href="#create-a-python-2-6-environment" title="Permalink to this headline">¶</a></h3>

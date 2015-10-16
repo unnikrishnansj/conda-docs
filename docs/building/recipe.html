@@ -145,7 +145,7 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Building a conda package with conda build involves creating a conda recipe. The recipe
 is a flat directory holding metadata and the scripts needed to build the package.
-The conda package is then built from the conda recipe using the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt> command.</p>
+The conda package is then built from the conda recipe using the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> command.</p>
 <p>TIP: If you are new to building packages with conda, we recommend taking our series
 of three <a class="reference internal" href="../build_tutorials.html"><em>build tutorials</em></a>.</p>
 </div>
@@ -165,10 +165,10 @@ account and client are required.</p>
 <p>The files in a conda recipe are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="docutils literal"><span class="pre">meta.yaml</span></tt> (metadata file)</li>
-<li><tt class="docutils literal"><span class="pre">build.sh</span></tt> (Unix build script which is executed using bash)</li>
-<li><tt class="docutils literal"><span class="pre">bld.bat</span></tt> (Windows build script which is executed using cmd)</li>
-<li><tt class="docutils literal"><span class="pre">run_test.[py,pl,sh,bat]</span></tt> (optional) test file</li>
+<li><code class="docutils literal"><span class="pre">meta.yaml</span></code> (metadata file)</li>
+<li><code class="docutils literal"><span class="pre">build.sh</span></code> (Unix build script which is executed using bash)</li>
+<li><code class="docutils literal"><span class="pre">bld.bat</span></code> (Windows build script which is executed using cmd)</li>
+<li><code class="docutils literal"><span class="pre">run_test.[py,pl,sh,bat]</span></code> (optional) test file</li>
 <li>patches to the source (optional, see below)</li>
 <li>other resources, which are not included in the source and cannot be generated
 by the build scripts. Examples are icon files, readme, or build notes.</li>
@@ -198,7 +198,7 @@ scripts. This step is not run if there are no tests in the recipe.</li>
 the final package archive which is distributed to users, so be careful not to
 put passwords or other sensitive information into recipes where it could leak to
 the public.</p>
-<p>The <a class="reference internal" href="../commands/build/conda-skeleton.html#skeleton-ref"><em>conda skeleton</em></a> command can help to make skeleton
+<p>The <a class="reference internal" href="../commands/build/conda-skeleton.html#skeleton-ref"><span>conda skeleton</span></a> command can help to make skeleton
 recipes for common repositories, such as <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a>.</p>
 </div>
 <div class="section" id="more-information-about-meta-yaml">
