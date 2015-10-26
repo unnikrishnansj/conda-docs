@@ -288,9 +288,12 @@ create an exact copy named flowers:</p>
 <p>Conda treats Python the same as any other package, so it’s very easy to manage and update multiple installations.</p>
 <p><strong>Check Python versions</strong></p>
 <p>First let’s check to see which versions of Python are available to install:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda search python
+<div class="code highlight-python"><div class="highlight"><pre>conda search --full-name python
 </pre></div>
 </div>
+<p>You can use <code class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">python</span></code> to show all packages whose names contain the
+text &#8220;python&#8221; or add the <code class="docutils literal"><span class="pre">--full-name</span></code> option for only the packages whose full
+name is exactly &#8220;python&#8221;.</p>
 <p><strong>Install a different version of Python</strong></p>
 <p>So now let’s say you need Python 3 to learn programming, but you don’t want to overwrite your Python 2.7
 environment by updating Python. You can create and activate a new environment named snakes, and install
@@ -353,13 +356,13 @@ In your terminal window, simply type:</p>
 from <a class="reference external" href="http://docs.continuum.io/anaconda/pkg-docs.html">http://docs.continuum.io/anaconda/pkg-docs.html</a></p>
 <p><strong>Search for a package</strong></p>
 <p>First let’s check to see if a package we want is available for conda to install:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda search beautiful-soup
+<div class="code highlight-python"><div class="highlight"><pre>conda search beautifulsoup4
 </pre></div>
 </div>
 <p>This displays the package, so we know it is available.</p>
 <p><strong>Install a new package</strong></p>
 <p>We will install Beautiful Soup into the current environment, using conda install as follows:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda install --name bunnies beautiful-soup
+<div class="code highlight-python"><div class="highlight"><pre>conda install --name bunnies beautifulsoup4
 </pre></div>
 </div>
 <p>NOTE: You must tell conda the name of the environment (<code class="docutils literal"><span class="pre">--name</span> <span class="pre">bunnies</span></code>) OR it will install in

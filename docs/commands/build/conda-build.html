@@ -226,21 +226,22 @@ OPTIONS
        --numpy NUMPY_VER
               Set the NumPy version used by conda build. Can be passed  multi‐
               ple  times  to  build against multiple versions. Can be 'all' to
-              build against all known versions (['1.6', '1.7', '1.8', '1.9'])
+              build against all known versions (['1.6', '1.7',  '1.8',  '1.9',
+              '11.0'])
 
        --R R_VER
-              Set the R version used by conda build. Can  be  passed  multiple
+              Set  the  R  version used by conda build. Can be passed multiple
               times to build against multiple versions.
 
        -c CHANNEL, --channel CHANNEL
-              Additional  channel  to  search  for  packages.  These  are URLs
-              searched in the order they  are  given  (including  file://  for
+              Additional channel  to  search  for  packages.  These  are  URLs
+              searched  in  the  order  they  are given (including file:// for
               local directories). Then, the defaults or channels from .condarc
-              are searched (unless --override-channels is given). You can  use
-              'defaults'  to  get the default packages for conda, and 'system'
-              to get the system  packages,  which  also  takes  .condarc  into
-              account.  You  can  also  use  any  name  and the .condarc chan‐
-              nel_alias value will be prepended. The default channel_alias  is
+              are  searched (unless --override-channels is given). You can use
+              'defaults' to get the default packages for conda,  and  'system'
+              to  get  the  system  packages,  which  also takes .condarc into
+              account. You can also  use  any  name  and  the  .condarc  chan‐
+              nel_alias  value will be prepended. The default channel_alias is
               http://conda.anaconda.org/.
 
        --override-channels
