@@ -19,7 +19,7 @@ conda list
           usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json]
    
                  [--show-channel-urls]    [--no-show-channel-urls]    [-c]   [-f]
-                 [--explicit] [-e] [-r] [--no-pip] [regex]
+                 [--explicit] [--md5] [-e] [-r] [--no-pip] [regex]
    
           List linked packages in a conda environment.
    
@@ -56,6 +56,8 @@ conda list
           --explicit
                  List explicitly all installed conda packaged  with  URL  (output
                  may be used by conda create --file).
+   
+          --md5  Add MD5 hashsum when using --explicit
    
           -e, --export
                  Output requirement string only (output may be used by conda cre‐

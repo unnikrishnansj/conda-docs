@@ -78,6 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../build_tutorials.html">Build tutorials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../building/shared-libraries.html">Using shared libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../custom-channels.html">Custom channels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html">Bdist_conda</a></li>
@@ -154,7 +155,7 @@ DESCRIPTION
        usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json]
 
               [--show-channel-urls]    [--no-show-channel-urls]    [-c]   [-f]
-              [--explicit] [-e] [-r] [--no-pip] [regex]
+              [--explicit] [--md5] [-e] [-r] [--no-pip] [regex]
 
        List linked packages in a conda environment.
 
@@ -191,6 +192,8 @@ OPTIONS
        --explicit
               List explicitly all installed conda packaged  with  URL  (output
               may be used by conda create --file).
+
+       --md5  Add MD5 hashsum when using --explicit
 
        -e, --export
               Output requirement string only (output may be used by conda cre‐
