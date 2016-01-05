@@ -227,25 +227,25 @@ contents.</p>
 <col width="84%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Name</td>
+<tr class="row-odd"><td>name</td>
 <td>pyinstrument</td>
 </tr>
-<tr class="row-even"><td>Git tag</td>
+<tr class="row-even"><td>git_rev</td>
 <td>v0.13.1 (or latest from <a class="reference external" href="https://github.com/joerick/pyinstrument/releases">https://github.com/joerick/pyinstrument/releases</a>)</td>
 </tr>
-<tr class="row-odd"><td>Git URL</td>
+<tr class="row-odd"><td>git_url</td>
 <td><a class="reference external" href="https://github.com/joerick/pyinstrument.git">https://github.com/joerick/pyinstrument.git</a></td>
 </tr>
-<tr class="row-even"><td>Imports</td>
+<tr class="row-even"><td>imports</td>
 <td>pyinstrument</td>
 </tr>
-<tr class="row-odd"><td>Home</td>
+<tr class="row-odd"><td>home</td>
 <td><a class="reference external" href="https://github.com/joerick/pyinstrument">https://github.com/joerick/pyinstrument</a></td>
 </tr>
-<tr class="row-even"><td>License</td>
+<tr class="row-even"><td>license</td>
 <td>BSD</td>
 </tr>
-<tr class="row-odd"><td>License file</td>
+<tr class="row-odd"><td>license_file</td>
 <td>LICENSE</td>
 </tr>
 </tbody>
@@ -257,7 +257,7 @@ When you are finished, compare your meta.yaml with the answer below:</p>
   version: &quot;0.13.1&quot;
  
 source:
-  git_rev: 0.13.1
+  git_rev: v0.13.1
   git_url: https://github.com/joerick/pyinstrument.git
  
 requirements:
@@ -283,7 +283,7 @@ about:
 between building from Git versus building from a tarball on a repository like PyPI. Because the same source
 is hosted on PyPI and GitHub, you can easily find a script on  PyPI instead of GitHub. Simply replace this
 “source” section:</p>
-<div class="highlight-bash"><div class="highlight"><pre>git_rev: 0.13.1
+<div class="highlight-bash"><div class="highlight"><pre>git_rev: v0.13.1
 git_url: https://github.com/joerick/pyinstrument.git
 </pre></div>
 </div>
@@ -310,29 +310,29 @@ Later when you are finished, you can rename the file meta.yaml.</p>
 information. A blank sample meta.yaml follows to make it easier to match up the information.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="24%" />
-<col width="76%" />
+<col width="16%" />
+<col width="84%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Name</td>
+<tr class="row-odd"><td>name</td>
 <td>pyinstrument</td>
 </tr>
-<tr class="row-even"><td>Git rev</td>
-<td>0.13</td>
+<tr class="row-even"><td>git_rev</td>
+<td>v0.13.1 (or latest from <a class="reference external" href="https://github.com/joerick/pyinstrument/releases">https://github.com/joerick/pyinstrument/releases</a>)</td>
 </tr>
-<tr class="row-odd"><td>Git URL</td>
+<tr class="row-odd"><td>git_url</td>
 <td><a class="reference external" href="https://github.com/joerick/pyinstrument.git">https://github.com/joerick/pyinstrument.git</a></td>
 </tr>
-<tr class="row-even"><td>Imports</td>
+<tr class="row-even"><td>imports</td>
 <td>pyinstrument</td>
 </tr>
-<tr class="row-odd"><td>Home</td>
+<tr class="row-odd"><td>home</td>
 <td><a class="reference external" href="https://github.com/joerick/pyinstrument">https://github.com/joerick/pyinstrument</a></td>
 </tr>
-<tr class="row-even"><td>License</td>
+<tr class="row-even"><td>license</td>
 <td>BSD</td>
 </tr>
-<tr class="row-odd"><td>License file</td>
+<tr class="row-odd"><td>license_file</td>
 <td>LICENSE</td>
 </tr>
 </tbody>
@@ -390,7 +390,7 @@ new file named bld.bat and enter the text exactly as shown:</p>
 </div>
 <p>bld.bat must be formatted differently, and needs the command that tells it to
 exit if it encounters an error.</p>
-<p>NOTE: In bld.bat, the best practice is to to add the <code class="docutils literal"><span class="pre">if</span> <span class="pre">errorlevel</span> <span class="pre">1</span> <span class="pre">exit</span> <span class="pre">1</span></code> after every command so if the commnand fails,
+<p>NOTE: In bld.bat, the best practice is to to add the <code class="docutils literal"><span class="pre">if</span> <span class="pre">errorlevel</span> <span class="pre">1</span> <span class="pre">exit</span> <span class="pre">1</span></code> after every command so if the command fails,
 the build fails.</p>
 <p>Save this new file <code class="docutils literal"><span class="pre">bld.bat</span></code> to the same directory where you put your new <code class="docutils literal"><span class="pre">meta.yaml</span></code> and <code class="docutils literal"><span class="pre">build.sh</span></code> files.</p>
 <div class="section" id="more-information-on-environment-variables">
