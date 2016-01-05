@@ -49,9 +49,10 @@ conda env create
    
       examples:
                  conda env create conda env  create  -n  name  conda  env  create
-                 vader/deathstar conda env create -f=/path/to/environment.yml
+                 vader/deathstar  conda  env  create  -f=/path/to/environment.yml
+                 conda env create -f=/path/to/requirements.txt -n deathstar
    
    
    
-   Continuum Analytics              November 2015                        <B>CONDA(1)</B>
+   Continuum Analytics              January 2016                         <B>CONDA(1)</B>
    </PRE>

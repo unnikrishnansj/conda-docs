@@ -72,9 +72,7 @@ conda config
    
                  channels:
    
-                 - conda
-   
-                 - defaults
+                 - conda - defaults
    
           are modified with the --add and --remove options. For example
    
@@ -84,11 +82,7 @@ conda config
    
                  channels:
    
-                 - r
-   
-                 - conda
-   
-                 - defaults
+                 - r - conda - defaults
    
           Note  that the key 'channels' implicitly contains the key 'defaults' if
           it has not been configured yet.
@@ -125,11 +119,11 @@ conda config
    
                  conda config --add channels foo
    
-          Enable the 'show_channel_urls' option:
+          Disable the 'show_channel_urls' option:
    
-                 conda config --set show_channel_urls yes
+                 conda config --set show_channel_urls no
    
    
    
-   Continuum Analytics              November 2015                        <B>CONDA(1)</B>
+   Continuum Analytics              January 2016                         <B>CONDA(1)</B>
    </PRE>

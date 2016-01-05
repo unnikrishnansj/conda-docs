@@ -159,10 +159,10 @@ DESCRIPTION
               [--reverse-dependency]   [--offline]   [-c   CHANNEL]   [--over‐
               ride-channels] [--json] [--use-local] [regex]
 
-       Search for packages and display their information. The input is a regu‐
-       lar expression.  To perform a search with a search string  that  starts
-       with  a  -,  separate  the search from the options with --, like 'conda
-       search -- -h'.
+       Search  for  packages  and  display  their  information. The input is a
+       Python regular expression.  To perform a search with  a  search  string
+       that  starts  with  a  -, separate the search from the options with --,
+       like 'conda search -- -h'.
 
        A * in the results means that package is installed in the current envi‐
        ronment.  A  . means that package is not installed but is cached in the
@@ -170,7 +170,7 @@ DESCRIPTION
 
 OPTIONS
    positional arguments:
-       regex  Package  specification  or  regular  expression  to  search  for
+       regex  Package specification or Python regular expression to search for
               (default: display all packages).
 
    optional arguments:
@@ -257,7 +257,7 @@ EXAMPLES
 
 
 
-Continuum Analytics              November 2015                        <B>CONDA(1)</B>
+Continuum Analytics              January 2016                         <B>CONDA(1)</B>
 </PRE></div>
 
 

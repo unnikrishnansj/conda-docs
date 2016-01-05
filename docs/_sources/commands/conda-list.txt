@@ -45,7 +45,7 @@ conda list
                  Show channel urls (default: True).
    
           --no-show-channel-urls
-                 Don't show channel urls (default: False).
+                 Don't show channel urls.
    
           -c, --canonical
                  Output canonical names of packages only. Implies --nopip.
@@ -88,5 +88,5 @@ conda list
    
    
    
-   Continuum Analytics              November 2015                        <B>CONDA(1)</B>
+   Continuum Analytics              January 2016                         <B>CONDA(1)</B>
    </PRE>

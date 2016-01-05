@@ -122,7 +122,7 @@ conda install
                  Show channel urls (default: True).
    
           --no-show-channel-urls
-                 Don't show channel urls (default: False).
+                 Don't show channel urls.
    
           --json Report all output as json. Suitable for using conda programmati‐
                  cally.
@@ -132,5 +132,5 @@ conda install
    
    
    
-   Continuum Analytics              November 2015                        <B>CONDA(1)</B>
+   Continuum Analytics              January 2016                         <B>CONDA(1)</B>
    </PRE>
