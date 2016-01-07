@@ -187,8 +187,11 @@ they all can be changed later:</p>
 <p><strong>Linux Anaconda update</strong></p>
 <p>In your terminal window, type the following:  <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code></p>
 <p><strong>Linux Anaconda uninstall</strong></p>
-<p>Because Anaconda is contained in one directory, uninstalling Anaconda is simple &#8211; in your terminal
-window, remove the entire anaconda install directory: <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/anaconda</span></code></p>
+<p>To uninstall Anaconda open a terminal window and remove the entire anaconda install
+directory: <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/anaconda</span></code>. You may also edit <code class="docutils literal"><span class="pre">~/.bash_profile</span></code> and remove
+the anaconda directory from your <code class="docutils literal"><span class="pre">PATH</span></code> environment variable, and remove the
+hidden .condarc file and .conda and .continuum directories which may have been created
+in the home directory with <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/.condarc</span> <span class="pre">~/.conda</span> <span class="pre">~/.continuum</span></code>.</p>
 </div>
 <div class="section" id="os-x-anaconda-install">
 <h3><a class="toc-backref" href="#id7">OS X Anaconda install</a><a class="headerlink" href="#os-x-anaconda-install" title="Permalink to this headline">¶</a></h3>
@@ -199,8 +202,11 @@ If unsure about any setting, simply accept the defaults as they all can be chang
 <p><strong>OS X Anaconda update</strong></p>
 <p>Open a terminal window, navigate to the anaconda directory, then type <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code></p>
 <p><strong>OS X Anaconda uninstall</strong></p>
-<p>Because Anaconda is contained in one directory, uninstalling Anaconda is simple &#8211; in
-your terminal window, remove the entire miniconda install directory: <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/anaconda</span></code></p>
+<p>To uninstall Anaconda open a terminal window and remove the entire anaconda install
+directory: <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/anaconda</span></code>. You may also edit <code class="docutils literal"><span class="pre">~/.bash_profile</span></code> and remove
+the anaconda directory from your <code class="docutils literal"><span class="pre">PATH</span></code> environment variable, and remove the
+hidden .condarc file and .conda and .continuum directories which may have been created
+in the home directory with <code class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span> <span class="pre">~/.condarc</span> <span class="pre">~/.conda</span> <span class="pre">~/.continuum</span></code>.</p>
 </div>
 <div class="section" id="windows-anaconda-install">
 <h3><a class="toc-backref" href="#id8">Windows Anaconda install</a><a class="headerlink" href="#windows-anaconda-install" title="Permalink to this headline">¶</a></h3>
