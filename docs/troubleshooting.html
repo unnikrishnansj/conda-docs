@@ -157,9 +157,9 @@
 <p>Conda was intended as a user space tool, but often users need to use it in a global environment. One place this can go awry is with restrictive file permissions.  Conda creates links when you install files that have to be read by others on the system.</p>
 <p>To give yourself full permissions for files and directories, but prevent the group and other users from having access, before installing set the umask to 007, install conda, then return the umask to the original setting afterwards:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">umask </span>007
-<span class="nv">$ </span>conda install
-<span class="nv">$ </span><span class="nb">umask </span>077
+<div><div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">umask</span> 007
+$ conda install
+$ <span class="nb">umask</span> 077
 </pre></div>
 </div>
 </div></blockquote>
@@ -261,7 +261,7 @@ uncheck the box &#8220;Set locale environment variables on startup&#8221;.</p>
 terminal use to incorrect settings for your locale. The <code class="docutils literal"><span class="pre">locale</span></code> command in
 the Terminal will tell you what settings are used.  To use the correct
 language, add a line to your bash profile (typically <code class="docutils literal"><span class="pre">~/.profile</span></code>)</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>your-lang
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>your-lang
 </pre></div>
 </div>
 <p>Replace <code class="docutils literal"><span class="pre">your-lang</span></code> with the correct locale specifier for your language. The

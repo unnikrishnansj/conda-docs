@@ -191,7 +191,7 @@ users to install packages from other channels with the boolean flag allow_other_
 True.</p>
 <p>If allow_other_channels is set to false, only those channels explicitly specified in the administrative
 .condarc file are allowed:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">allow_other_channels</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">False</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">allow_other_channels</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 <p>When set to true or not specified, then each user will have access to the default channels and to any
@@ -205,11 +205,11 @@ other channels will be blocked and the user will receive a message explaining th
 <p>Normally the default repository is repo.continuum.io, but if default_channels is
 defined it will set the new list of default channels. This is especially useful
 for air gap and enterprise installations.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">channels</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">&lt;anaconda_dot_org_username&gt;</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">http://some.custom/channel</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">file:///some/local/directory</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">defaults</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">&lt;anaconda_dot_org_username&gt;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">http://some.custom/channel</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file:///some/local/directory</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
 </pre></div>
 </div>
 </div>
@@ -220,33 +220,33 @@ it may be necessary to override the SSL verification settings using <code class=
 <p>By default this variable is <code class="docutils literal"><span class="pre">True</span></code>, ssl verification is used and conda verifies
 certificates for SSL connections. The variable can be set to <code class="docutils literal"><span class="pre">False</span></code>, but this
 disables the connection&#8217;s normal security and is not recommended.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">ssl_verify</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">False</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">ssl_verify</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">ssl_verify</span></code> can also be set to a string path to a certificate to be used to verify SSL connections.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">ssl_verify</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">corp.crt</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">ssl_verify</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">corp.crt</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="offline-mode-only-offline">
 <h3><a class="toc-backref" href="#id7">Offline mode only (offline)</a><a class="headerlink" href="#offline-mode-only-offline" title="Permalink to this headline">¶</a></h3>
 <p>Offline mode filters out all channels URLs which do not start with <code class="docutils literal"><span class="pre">file:</span></code>. The default is False.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">offline</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">True</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">offline</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="channel-alias-channel-alias">
 <h3><a class="toc-backref" href="#id8">Channel alias (channel_alias)</a><a class="headerlink" href="#channel-alias-channel-alias" title="Permalink to this headline">¶</a></h3>
 <p>Alias for non-url channels used with the -c or &#8211;channel flag. The default is <code class="docutils literal"><span class="pre">https://conda.anaconda.org/</span></code></p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">channel_alias</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">https://your.repo/</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">channel_alias</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://your.repo/</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="disallow-installation-of-specific-packages-disallow">
 <h3><a class="toc-backref" href="#id9">Disallow installation of specific packages (disallow)</a><a class="headerlink" href="#disallow-installation-of-specific-packages-disallow" title="Permalink to this headline">¶</a></h3>
 <p>Package specifications to disallow installing. The default is to allow all packages.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">disallow</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">anaconda</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">disallow</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">anaconda</span>
 </pre></div>
 </div>
 </div>
@@ -257,7 +257,7 @@ automatically see private packages. (Anaconda.org was formerly known as binstar.
 This uses the anaconda command line client (which can be installed with <code class="docutils literal"><span class="pre">conda</span>
 <span class="pre">install</span> <span class="pre">anaconda-client</span></code>) to automatically add the token to the channel urls.</p>
 <p>The default is True.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">add_anaconda_token</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">False</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">add_anaconda_token</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 <p>NOTE: Even when set to True, this is enabled only if the anaconda command line client is installed and you
@@ -270,9 +270,9 @@ unless explicitly included. This key also determines where the package caches wi
 <p>For each <code class="docutils literal"><span class="pre">envs</span></code> here, <code class="docutils literal"><span class="pre">envs/pkgs</span></code> will be used as the pkgs cache, except for the standard envs directory
 in the root directory, for which the normal <code class="docutils literal"><span class="pre">root_dir/pkgs</span></code> is used. The <code class="docutils literal"><span class="pre">CONDA_ENVS_PATH</span></code> environment
 variable will overwrite this configuration file setting.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">envs_dirs</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">~/my-envs</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">/opt/anaconda/envs</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">envs_dirs</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">~/my-envs</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/opt/anaconda/envs</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -343,8 +343,8 @@ Allowed channels are:
 <p>This error message tells the user to add the &#8220;admin&#8221; channel to their configuration file.</p>
 <p>Conclusion: The user must edit their local .condarc configuration file to access the package
 through the admin channel:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">channels</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">admin</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">admin</span>
 </pre></div>
 </div>
 <p>Now the user can search for packages in the allowed admin channel.</p>

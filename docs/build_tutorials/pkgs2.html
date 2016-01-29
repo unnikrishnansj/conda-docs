@@ -209,7 +209,7 @@ for our new Pyinstrument package.</p>
 <p>Let’s start by making a new directory for this tutorial named pyinstrument, and change to the new directory.</p>
 <p>All users:</p>
 <div class="highlight-bash"><div class="highlight"><pre>mkdir pyinstrument
-<span class="nb">cd </span>pyinstrument
+<span class="nb">cd</span> pyinstrument
 </pre></div>
 </div>
 <p>Now, let’s go get a copy of the Pyfaker’s meta.yaml for us to edit.</p>
@@ -340,7 +340,7 @@ information. A blank sample meta.yaml follows to make it easier to match up the 
 <div class="highlight-bash"><div class="highlight"><pre>package:
   name:
 
-<span class="nb">source</span>:
+source:
   git_rev:
   git_url:
 
@@ -352,7 +352,7 @@ requirements:
   run:
     - python
 
-<span class="nb">test</span>:
+test:
   imports:
     -
 
@@ -378,14 +378,14 @@ in the same directory as your <code class="docutils literal"><span class="pre">m
 <p>First we&#8217;ll write the build file for Linux and OS X and then the build file for Windows.</p>
 <p>All users, in your favorite text editor, create a new file named <code class="docutils literal"><span class="pre">build.sh</span></code> and enter the text exactly as
 shown:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$PYTHON</span> setup.py install     <span class="c"># Python command to install the script.</span>
+<div class="highlight-bash"><div class="highlight"><pre>$PYTHON setup.py install     <span class="c1"># Python command to install the script.</span>
 </pre></div>
 </div>
 <p>That&#8217;s it! Save your new build.sh file to the same directory where you put the meta.yaml file.</p>
 <p>Now we’ll write the Windows build script file. All users, still in your favorite text editor, create another
 new file named bld.bat and enter the text exactly as shown:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="s2">&quot;%PYTHON%&quot;</span> setup.py install
-<span class="k">if</span> errorlevel <span class="m">1</span> <span class="nb">exit </span>1
+<span class="k">if</span> errorlevel <span class="m">1</span> <span class="nb">exit</span> 1
 </pre></div>
 </div>
 <p>bld.bat must be formatted differently, and needs the command that tells it to

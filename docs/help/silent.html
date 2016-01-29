@@ -164,8 +164,8 @@ are supported:</p>
 <p>All arguments are case-sensitive. The installation path must be the last argument and should <strong>NOT</strong> be wrapped in
 quotation marks.</p>
 <p>The following command installs Miniconda for all users without registering Python as the system&#8217;s default:</p>
-<div class="highlight-bat"><div class="highlight"><pre>Miniconda<span class="m">-3</span>.<span class="m">7</span>.<span class="m">3</span>-Windows-x<span class="m">86</span>_<span class="m">64</span>.exe <span class="n">/InstallationType=AllUsers</span> <span class="n">/RegisterPython=0</span> \
-    <span class="n">/S</span> <span class="n">/D=C:\Program</span> Files\Miniconda<span class="m">3</span>
+<div class="highlight-bat"><div class="highlight"><pre>Miniconda-3.7.3-Windows-x86_64.exe /InstallationType=AllUsers /RegisterPython=0 \
+    /S /D=C:\Program Files\Miniconda3
 </pre></div>
 </div>
 </div>
@@ -182,8 +182,8 @@ bash installer. The following arguments are supported:</p>
 edit the .bashrc or .bash_profile files.</p>
 <p>A complete example:</p>
 <div class="highlight-bash"><div class="highlight"><pre>wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
-bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+bash ~/miniconda.sh -b -p $HOME/miniconda
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span>$<span class="s2">HOME/miniconda/bin:</span>$<span class="s2">PATH&quot;</span>
 </pre></div>
 </div>
 </div>
