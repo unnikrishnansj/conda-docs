@@ -493,13 +493,19 @@ Default is False.</p>
 <p>The build and runtime requirements. Dependencies of these requirements are included automatically.</p>
 <div class="section" id="build">
 <h3><a class="toc-backref" href="#id32">Build</a><a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
-<p>Packages required to build the package. Python and numpy must be listed explicitly if they are required.</p>
+<p>Packages required to build the package. Python and NumPy must be listed explicitly if they are required.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
 </pre></div>
 </div>
-<p>Some users may wish to build a recipe against different versions of NumPy and ensure that each version is part of the package dependencies, which can be done by listing <code class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></code> as a requirement in meta.yaml and using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> with a NumPy version option such as <code class="docutils literal"><span class="pre">--numpy</span> <span class="pre">1.7</span></code>.</p>
+<p>Some users may wish to build a recipe against different versions of NumPy and ensure that each version is part of the package dependencies, which can be done by listing <code class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></code> as a requirement in meta.yaml and using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> with a NumPy version option such as <code class="docutils literal"><span class="pre">--numpy</span> <span class="pre">1.7</span></code>. Note that the line in the meta.yaml file should literally say <code class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></code> and should not have any numbers. If the meta.yaml file uses <code class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></code>, then it is required to use the <code class="docutils literal"><span class="pre">--numpy</span></code> option with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">numpy x.x</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="run">
 <h3><a class="toc-backref" href="#id33">Run</a><a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
