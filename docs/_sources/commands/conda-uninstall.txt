@@ -77,7 +77,7 @@ conda uninstall
                  Do not display progress bar.
    
           --no-use-index-cache
-                 Use cache of channel index files.
+                 Force fetching of channel index files.
    
           --use-index-cache
                  Use cache of channel index files.
@@ -93,5 +93,5 @@ conda uninstall
    
    
    
-   Continuum Analytics              January 2016                         <B>CONDA(1)</B>
+   Continuum Analytics              February 2016                        <B>CONDA(1)</B>
    </PRE>
