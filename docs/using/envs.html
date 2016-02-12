@@ -158,6 +158,7 @@
 <li><a class="reference internal" href="#build-identical-conda-environments-with-urls" id="id13">Build identical conda environments with URLs</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#saved-environment-variables" id="id14">Saved environment variables</a></li>
 </ul>
 </li>
 </ul>
@@ -334,8 +335,34 @@ https://repo.continuum.io/pkgs/free/linux-64/python-2.7.10-1.tar.bz2
 <p>As the comment at the top of the file explains, the command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">MyEnvironment</span> <span class="pre">--file</span> <span class="pre">explicit-spec-file.txt</span></code> uses the spec file to create an identical environment on the same machine or another machine.</p>
 <p>The command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--name</span> <span class="pre">MyEnvironment</span> <span class="pre">--file</span> <span class="pre">explicit-spec-file.txt</span></code> adds these packages to an existing environment.</p>
 <p>NOTE: Conda does not check architecture or dependencies when installing from an explicit specification file. To ensure the packages work correctly, be sure that the file was created from a working environment and that it is  used on the same architecture, operating system and platform, such as <code class="docutils literal"><span class="pre">linux-64</span></code> or <code class="docutils literal"><span class="pre">osx-64</span></code>.</p>
-<p>Next, we&#8217;ll take a look at <a class="reference internal" href="../py2or3.html"><em>Managing Python</em></a>.</p>
 </div>
+</div>
+<div class="section" id="saved-environment-variables">
+<h2><a class="toc-backref" href="#id14">Saved environment variables</a><a class="headerlink" href="#saved-environment-variables" title="Permalink to this headline">¶</a></h2>
+<p>On Linux and OS X, conda environments can include saved environment variables. Suppose you want an environment &#8216;analytics&#8217; to store the secret key needed to log in to a server and the path to a configuration file. First, locate the directory for the conda environment, such as <code class="docutils literal"><span class="pre">/home/jsmith/anaconda3/envs/analytics</span></code> . Now enter that directory and create these subdirectories and files:</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /home/jsmith/anaconda3/envs/analytics
+mkdir -p ./etc/conda/activate.d
+mkdir -p ./etc/conda/deactivate.d
+touch ./etc/conda/activate.d/env_vars.sh
+touch ./etc/conda/deactivate.d/env_vars.sh
+</pre></div>
+</div>
+<p>Now edit the two files. <code class="docutils literal"><span class="pre">./etc/conda/activate.d/env_vars.sh</span></code> should have this:</p>
+<div class="highlight-python"><div class="highlight"><pre>#!/bin/sh
+
+export MY_KEY=&#39;secret-key-value&#39;
+export MY_FILE=/path/to/my/file/
+</pre></div>
+</div>
+<p>And <code class="docutils literal"><span class="pre">./etc/conda/deactivate.d/env_vars.sh</span></code> should have this:</p>
+<div class="highlight-python"><div class="highlight"><pre>#!/bin/sh
+
+unset MY_KEY
+unset MY_FILE
+</pre></div>
+</div>
+<p>Now when you use <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">analytics</span></code> the environment variables MY_KEY and MY_FILE will be set to the values you wrote into the file, and when you use <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code> those variables will be erased.</p>
+<p>Next, we&#8217;ll take a look at <a class="reference internal" href="../py2or3.html"><em>Managing Python</em></a>.</p>
 </div>
 </div>
 
