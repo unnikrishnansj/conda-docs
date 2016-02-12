@@ -339,7 +339,7 @@ https://repo.continuum.io/pkgs/free/linux-64/python-2.7.10-1.tar.bz2
 </div>
 <div class="section" id="saved-environment-variables">
 <h2><a class="toc-backref" href="#id14">Saved environment variables</a><a class="headerlink" href="#saved-environment-variables" title="Permalink to this headline">¶</a></h2>
-<p>On Linux and OS X, conda environments can include saved environment variables. Suppose you want an environment &#8216;analytics&#8217; to store the secret key needed to log in to a server and the path to a configuration file. First, locate the directory for the conda environment, such as <code class="docutils literal"><span class="pre">/home/jsmith/anaconda3/envs/analytics</span></code> . Now enter that directory and create these subdirectories and files:</p>
+<p>On Linux and OS X, conda environments can include saved environment variables. Suppose you want an environment &#8216;analytics&#8217; to store a secret key needed to log in to a server and a path to a configuration file. Locate the directory for the conda environment, such as <code class="docutils literal"><span class="pre">/home/jsmith/anaconda3/envs/analytics</span></code> . Enter that directory and create these subdirectories and files:</p>
 <div class="highlight-python"><div class="highlight"><pre>cd /home/jsmith/anaconda3/envs/analytics
 mkdir -p ./etc/conda/activate.d
 mkdir -p ./etc/conda/deactivate.d
@@ -347,7 +347,7 @@ touch ./etc/conda/activate.d/env_vars.sh
 touch ./etc/conda/deactivate.d/env_vars.sh
 </pre></div>
 </div>
-<p>Now edit the two files. <code class="docutils literal"><span class="pre">./etc/conda/activate.d/env_vars.sh</span></code> should have this:</p>
+<p>Edit the two files. <code class="docutils literal"><span class="pre">./etc/conda/activate.d/env_vars.sh</span></code> should have this:</p>
 <div class="highlight-python"><div class="highlight"><pre>#!/bin/sh
 
 export MY_KEY=&#39;secret-key-value&#39;
