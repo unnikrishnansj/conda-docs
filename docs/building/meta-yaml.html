@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
@@ -213,7 +214,7 @@
 </div>
 <p>All the metadata in the conda build recipe is specified in the <code class="docutils literal"><span class="pre">meta.yaml</span></code> file,
 as in this example of a simple meta.yaml file:</p>
-<div class="highlight-python"><div class="highlight"><pre>package:
+<div class="highlight-python"><div class="highlight"><pre><span></span>package:
   name: pyinstrument
   version: &quot;0.13.1&quot;
  
@@ -247,7 +248,7 @@ once in the file.</p>
 <div class="section" id="package-name">
 <h3><a class="toc-backref" href="#id5">Package name</a><a class="headerlink" href="#package-name" title="Permalink to this headline">¶</a></h3>
 <p>Lower case name of package, may contain &#8216;-&#8216; but no spaces</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bsdiff4</span>
 </pre></div>
 </div>
@@ -258,7 +259,7 @@ once in the file.</p>
 interpret versions like 1.0 as floats, meaning that 0.10 will be the same as 0.1. To
 avoid this, always put the version in quotes, so that it will be interpreted as a
 string.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="s">&quot;1.1.4&quot;</span>
 </pre></div>
 </div>
@@ -278,7 +279,7 @@ The source may come from a tarball file, git, hg, or svn, may be a local path,
 and may contain patches.</p>
 <div class="section" id="source-from-tarball">
 <h3><a class="toc-backref" href="#id8">Source from tarball</a><a class="headerlink" href="#source-from-tarball" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">fn</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bsdiff-1.1.14.tar.gz</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://pypi.python.org/packages/source/b/bsdiff4/bsdiff4-1.1.4.tar.gz</span>
   <span class="l l-Scalar l-Scalar-Plain">md5</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">29f6089290505fc1a852e176bd276c43</span>
@@ -291,7 +292,7 @@ and may contain patches.</p>
 <div class="section" id="source-from-git">
 <h3><a class="toc-backref" href="#id9">Source from git</a><a class="headerlink" href="#source-from-git" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">git_url</span></code> can also be a relative path to the recipe directory:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff4.git</span>
   <span class="l l-Scalar l-Scalar-Plain">git_rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.4</span>
 </pre></div>
@@ -299,7 +300,7 @@ and may contain patches.</p>
 </div>
 <div class="section" id="source-from-hg">
 <h3><a class="toc-backref" href="#id10">Source from hg</a><a class="headerlink" href="#source-from-hg" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">hg_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ssh://hg@bitbucket.org/ilanschnell/bsdiff4</span>
   <span class="l l-Scalar l-Scalar-Plain">hg_tag</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.4</span>
 </pre></div>
@@ -307,7 +308,7 @@ and may contain patches.</p>
 </div>
 <div class="section" id="source-from-svn">
 <h3><a class="toc-backref" href="#id11">Source from svn</a><a class="headerlink" href="#source-from-svn" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">svn_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff</span>
   <span class="l l-Scalar l-Scalar-Plain">svn_rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.4</span>
   <span class="l l-Scalar l-Scalar-Plain">svn_ignore_externals</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span> <span class="c1"># (defaults to False)</span>
@@ -318,7 +319,7 @@ and may contain patches.</p>
 <h3><a class="toc-backref" href="#id12">Source from a local path</a><a class="headerlink" href="#source-from-a-local-path" title="Permalink to this headline">¶</a></h3>
 <p>If the path is relative it is taken relative to the recipe directory. The source
 will be copied to the work directory before building:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">path</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">../src</span>
 </pre></div>
 </div>
@@ -326,7 +327,7 @@ will be copied to the work directory before building:</p>
 <div class="section" id="patches">
 <h3><a class="toc-backref" href="#id13">Patches</a><a class="headerlink" href="#patches" title="Permalink to this headline">¶</a></h3>
 <p>Patches may optionally be applied to the source:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="c1">#[source information here]</span>
   <span class="l l-Scalar l-Scalar-Plain">patches</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">my.patch</span> <span class="c1"># the patch file is expected to be found in the recipe</span>
@@ -341,7 +342,7 @@ will be copied to the work directory before building:</p>
 <p>The build number should be incremented for new builds of the same version. The number
 defaults to zero. The string defaults to the default conda build string plus the
 build number.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
   <span class="l l-Scalar l-Scalar-Plain">string</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">abc</span>
 </pre></div>
@@ -351,7 +352,7 @@ build number.</p>
 <div class="section" id="python-entry-points">
 <h3><a class="toc-backref" href="#id16">Python entry points</a><a class="headerlink" href="#python-entry-points" title="Permalink to this headline">¶</a></h3>
 <p>This creates a Python entry point named bsdiff4 that calls bsdiff4.cli.main_bsdiff4() .</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">entry_points</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bsdiff4 = bsdiff4.cli:main_bsdiff4</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bspatch4 = bsdiff4.cli:main_bspatch4</span>
@@ -362,7 +363,7 @@ build number.</p>
 <h3><a class="toc-backref" href="#id17">Python.app</a><a class="headerlink" href="#python-app" title="Permalink to this headline">¶</a></h3>
 <p>If osx_is_app is set, entry points will use python.app instead of python in OS X.
 The default is False.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">osx_is_app</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
@@ -371,7 +372,7 @@ The default is False.</p>
 <h3><a class="toc-backref" href="#id18">Features</a><a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
 <p>Defines what features a package has.</p>
 <p>SEE ALSO: <a class="reference internal" href="#id1"><span>Features</span></a> section below for additional information.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">feature1</span>
 </pre></div>
@@ -384,7 +385,7 @@ package can have a feature, or track that feature, or both, or neither. Usually
 it is best for the package that tracks a feature to be a metapackage that does
 not have the feature.</p>
 <p>SEE ALSO: <a class="reference internal" href="#id1"><span>Features</span></a> section below for additional information.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">track_features</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">feature2</span>
 </pre></div>
@@ -393,7 +394,7 @@ not have the feature.</p>
 <div class="section" id="preserve-python-egg-directory">
 <h3><a class="toc-backref" href="#id20">Preserve Python egg directory</a><a class="headerlink" href="#preserve-python-egg-directory" title="Permalink to this headline">¶</a></h3>
 <p>This is needed for some packages that use setuptools specific features. Default is False.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">preserve_egg_dir</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
@@ -401,7 +402,7 @@ not have the feature.</p>
 <div class="section" id="no-link">
 <h3><a class="toc-backref" href="#id21">No link</a><a class="headerlink" href="#no-link" title="Permalink to this headline">¶</a></h3>
 <p>A list of globs for files that should always be copied and never soft linked or hard linked.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">no_link</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bin/*.py</span> <span class="c1"># Don&#39;t link any .py files in bin/</span>
 </pre></div>
@@ -411,7 +412,7 @@ not have the feature.</p>
 <h3><a class="toc-backref" href="#id22">Script</a><a class="headerlink" href="#script" title="Permalink to this headline">¶</a></h3>
 <p>Used instead of build.sh or bld.bat. For short build scripts, this can be more convenient.
 You may need to use selectors (see below) to use different scripts for different platforms.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">script</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">python setup.py install</span>
 </pre></div>
 </div>
@@ -419,7 +420,7 @@ You may need to use selectors (see below) to use different scripts for different
 <div class="section" id="rpaths">
 <h3><a class="toc-backref" href="#id23">RPATHs</a><a class="headerlink" href="#rpaths" title="Permalink to this headline">¶</a></h3>
 <p>Set which RPATHs are used when making executables relocatable on Linux. The default is lib/</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">rpaths</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lib/</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lib/R/lib/</span>
@@ -430,7 +431,7 @@ You may need to use selectors (see below) to use different scripts for different
 <div class="section" id="force-files">
 <h3><a class="toc-backref" href="#id24">Force files</a><a class="headerlink" href="#force-files" title="Permalink to this headline">¶</a></h3>
 <p>Force files to always be included, even if they are already in the environment from the build dependencies. This may be needed, for instance, to create a recipe for conda itself.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">always_include_files</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bin/file1</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bin/file2</span>
@@ -444,7 +445,7 @@ You may need to use selectors (see below) to use different scripts for different
 <div class="section" id="binary-relocation">
 <h3><a class="toc-backref" href="#id26">Binary relocation</a><a class="headerlink" href="#binary-relocation" title="Permalink to this headline">¶</a></h3>
 <p>Whether binary files should be made relocatable using install_name_tool on OS X or patchelf on Linux. Default is True.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">binary_relocation</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
@@ -452,7 +453,7 @@ You may need to use selectors (see below) to use different scripts for different
 <div class="section" id="detect-binary-files-with-prefix">
 <h3><a class="toc-backref" href="#id27">Detect binary files with prefix</a><a class="headerlink" href="#detect-binary-files-with-prefix" title="Permalink to this headline">¶</a></h3>
 <p>Binary files may contain the build prefix and need it replaced with the install prefix at installation time.  Conda can automatically identify and register such files. Default is False.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">detect_binary_files_with_prefix</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
@@ -460,7 +461,7 @@ You may need to use selectors (see below) to use different scripts for different
 <div class="section" id="binary-has-prefix-files">
 <h3><a class="toc-backref" href="#id28">Binary has prefix files</a><a class="headerlink" href="#binary-has-prefix-files" title="Permalink to this headline">¶</a></h3>
 <p>You may also elect to specify files with prefixes individually:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">binary_has_prefix_files</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bin/binaryfile1</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lib/binaryfile2</span>
@@ -470,7 +471,7 @@ You may need to use selectors (see below) to use different scripts for different
 <div class="section" id="text-files-with-prefix-files">
 <h3><a class="toc-backref" href="#id29">Text files with prefix files</a><a class="headerlink" href="#text-files-with-prefix-files" title="Permalink to this headline">¶</a></h3>
 <p>Text files (files containing no NULL bytes) may contain the build prefix and need it replaced with the install prefix at installation time.  Conda will automatically register such files.  Binary files that contain the  build prefix are generally handled differently (see binary_has_prefix_files or detect_binary_files_with_prefix), but there may be cases where such a binary file needs to be treated as an ordinary text file, in which case they need to be identified:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">has_prefix_files</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bin/file1</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lib/file2</span>
@@ -481,7 +482,7 @@ You may need to use selectors (see below) to use different scripts for different
 <h3><a class="toc-backref" href="#id30">Skipping builds</a><a class="headerlink" href="#skipping-builds" title="Permalink to this headline">¶</a></h3>
 <p>Whether conda-build should skip the build of this recipe. Particularly useful for defining recipes which are platform specific.
 Default is False.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">skip</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>  <span class="c1"># [not win]</span>
 </pre></div>
 </div>
@@ -494,13 +495,13 @@ Default is False.</p>
 <div class="section" id="build">
 <h3><a class="toc-backref" href="#id32">Build</a><a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
 <p>Packages required to build the package. Python and NumPy must be listed explicitly if they are required.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
 </pre></div>
 </div>
 <p>Some users may wish to build a recipe against different versions of NumPy and ensure that each version is part of the package dependencies, which can be done by listing <code class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></code> as a requirement in meta.yaml and using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> with a NumPy version option such as <code class="docutils literal"><span class="pre">--numpy</span> <span class="pre">1.7</span></code>. Note that the line in the meta.yaml file should literally say <code class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></code> and should not have any numbers. If the meta.yaml file uses <code class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></code>, then it is required to use the <code class="docutils literal"><span class="pre">--numpy</span></code> option with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code>.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">numpy x.x</span>
@@ -510,7 +511,7 @@ Default is False.</p>
 <div class="section" id="run">
 <h3><a class="toc-backref" href="#id33">Run</a><a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
 <p>Packages required to run the package. These are the dependencies that will be installed automatically whenever the package is installed. Package names should follow the <a class="reference internal" href="../spec.html#build-version-spec"><span>Package match specifications</span></a> .</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">argparse</span> <span class="c1"># [py26]</span>
@@ -525,7 +526,7 @@ Default is False.</p>
 <div class="section" id="test-files">
 <h3><a class="toc-backref" href="#id35">Test files</a><a class="headerlink" href="#test-files" title="Permalink to this headline">¶</a></h3>
 <p>Test files which are copied from the recipe into the (temporary) test directory which are needed during testing:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">files</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">test-data.txt</span>
 </pre></div>
@@ -534,7 +535,7 @@ Default is False.</p>
 <div class="section" id="test-requirements">
 <h3><a class="toc-backref" href="#id36">Test requirements</a><a class="headerlink" href="#test-requirements" title="Permalink to this headline">¶</a></h3>
 <p>In addition to the runtime requirements, you can specify requirements needed during testing. The runtime requirements specified above are included automatically.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">requires</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">nose</span>
 </pre></div>
@@ -543,7 +544,7 @@ Default is False.</p>
 <div class="section" id="test-commands">
 <h3><a class="toc-backref" href="#id37">Test commands</a><a class="headerlink" href="#test-commands" title="Permalink to this headline">¶</a></h3>
 <p>Commands that are run as part of the test.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bsdiff4 -h</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bspatch4 -h</span>
@@ -553,20 +554,20 @@ Default is False.</p>
 <div class="section" id="python-imports">
 <h3><a class="toc-backref" href="#id38">Python imports</a><a class="headerlink" href="#python-imports" title="Permalink to this headline">¶</a></h3>
 <p>List of Python modules or packages that will be imported in the test environment.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">imports</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bsdiff4</span>
 </pre></div>
 </div>
 <p>This would be equivalent to having a run_test.py with</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">bsdiff4</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bsdiff4</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="run-test-script">
 <h3><a class="toc-backref" href="#id39">Run test script</a><a class="headerlink" href="#run-test-script" title="Permalink to this headline">¶</a></h3>
 <p>The script run_test.sh (or .bat/.py/.pl) will be run automatically if it is part of the recipe.</p>
-<div class="highlight-bash"><div class="highlight"><pre>test:
+<div class="highlight-bash"><div class="highlight"><pre><span></span>test:
   run_test.sh
   run_test.bat
   run_test.py
@@ -579,7 +580,7 @@ Default is False.</p>
 <div class="section" id="about-section">
 <h2><a class="toc-backref" href="#id40">About section</a><a class="headerlink" href="#about-section" title="Permalink to this headline">¶</a></h2>
 <p>Identifying information about the package. Displays in Anaconda.org channel.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">home</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff4</span>
   <span class="l l-Scalar l-Scalar-Plain">license</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">BSD</span>
   <span class="l l-Scalar l-Scalar-Plain">license_file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">LICENSE</span>
@@ -589,7 +590,7 @@ Default is False.</p>
 <div class="section" id="license-file">
 <h3><a class="toc-backref" href="#id41">License file</a><a class="headerlink" href="#license-file" title="Permalink to this headline">¶</a></h3>
 <p>A file containing the software license can be added to the package metadata.  Please note that many licenses require the license statement to be distributed with the package.  As a convenience, a value of True will use the first file found by looking in the source root directory for LICENSE, LICENSE.txt, license, or license.txt, in that order.  A value of False (the default) indicates no license file will be included in the package metadata.  The filename is relative to the source directory.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">license_file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">LICENSE</span>
 </pre></div>
 </div>
@@ -601,7 +602,7 @@ Default is False.</p>
 <div class="section" id="entry-point">
 <h3><a class="toc-backref" href="#id43">Entry point</a><a class="headerlink" href="#entry-point" title="Permalink to this headline">¶</a></h3>
 <p>The command that is called to launch the app:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">entry</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ipython notebook</span>
 </pre></div>
 </div>
@@ -609,7 +610,7 @@ Default is False.</p>
 <div class="section" id="icon-file">
 <h3><a class="toc-backref" href="#id44">Icon file</a><a class="headerlink" href="#icon-file" title="Permalink to this headline">¶</a></h3>
 <p>The icon file contained in the recipe:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">icon</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">icon_64x64.png</span>
 </pre></div>
 </div>
@@ -617,7 +618,7 @@ Default is False.</p>
 <div class="section" id="summary">
 <h3><a class="toc-backref" href="#id45">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
 <p>Summary of the package used in the launcher:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span>  <span class="s">&quot;The</span><span class="nv"> </span><span class="s">Jupyter</span><span class="nv"> </span><span class="s">Notebook&quot;</span>
 </pre></div>
 </div>
@@ -625,7 +626,7 @@ Default is False.</p>
 <div class="section" id="own-environment">
 <h3><a class="toc-backref" href="#id46">Own environment</a><a class="headerlink" href="#own-environment" title="Permalink to this headline">¶</a></h3>
 <p>If own_environment is true, installing the app through the launcher will install into its own environment. The default is False.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">own_environment</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
@@ -635,7 +636,7 @@ Default is False.</p>
 <h2><a class="toc-backref" href="#id47">Extra section</a><a class="headerlink" href="#extra-section" title="Permalink to this headline">¶</a></h2>
 <p>The extra section is a schema-free area for storing non-conda specific metadata in standard YAML form.
 For example, to store recipe maintainer information, one could do:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">extra</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">extra</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">maintainers</span><span class="p p-Indicator">:</span>
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name of maintainer</span>
 </pre></div>
@@ -648,7 +649,7 @@ preprocessing stage. Before the yaml file is read, each selector is evaluated,
 and if it is False, the line that it is on is removed.  A selector is of the
 form <code class="docutils literal"><span class="pre">#</span> <span class="pre">[&lt;selector&gt;]</span></code> at the end of a line.</p>
 <p>For example</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/unix/source</span>    <span class="c1"># [not win]</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/windows/source</span> <span class="c1"># [win]</span>
 </pre></div>
@@ -718,7 +719,7 @@ variables are defined. Unless otherwise stated, the variables are booleans.</p>
 </table>
 <p>Because the selector is any valid Python expression, complicated logic is
 possible.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/windows/source</span>      <span class="c1"># [win]</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/python2/unix/source</span> <span class="c1"># [unix and py2k]</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/python3/unix/source</span> <span class="c1"># [unix and py3k]</span>
@@ -726,7 +727,7 @@ possible.</p>
 </div>
 <p>Note that the selectors delete only the line that they are on, so you may
 need to put the same selector on multiple lines.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/windows/source</span>     <span class="c1"># [win]</span>
   <span class="l l-Scalar l-Scalar-Plain">md5</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30fbf531409a18a48b1be249052e242a</span>  <span class="c1"># [win]</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/unix/source</span>        <span class="c1"># [unix]</span>
@@ -764,13 +765,13 @@ specification if your package with the feature.</p>
 <p>Instead, it is a good idea to create a separate metapackage. For instance, if
 you want to create some packages with the feature <code class="docutils literal"><span class="pre">debug</span></code>, you would create
 several packages with</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span>
 </pre></div>
 </div>
 <p>and then create a special metapackage</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
   <span class="c1"># This name doesn&#39;t have to be the same as the feature, but can avoid confusion if it is</span>
   <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">debug</span>
   <span class="c1"># This need not relate to the version of any of the packages with the</span>

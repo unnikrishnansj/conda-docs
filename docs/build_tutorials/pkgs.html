@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../building/build.html">Building packages</a><ul class="current">
@@ -163,11 +164,11 @@ dependencies are involved.</p>
 Please follow the Quick Install instructions.</p>
 <p><strong>Windows users only:*</strong> install unxutils.</p>
 <p>At the command prompt, enter the following:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda install unxutils
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install unxutils
 </pre></div>
 </div>
 <p><strong>All users:</strong> next, install conda-build:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda install conda-build
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install conda-build
 </pre></div>
 </div>
 <p>Now you are ready to start building your own simple conda package.</p>
@@ -184,7 +185,7 @@ upload it to Anaconda.org.</p>
 programmers can see which parts of their code are slowest and how to make them faster. More information about
 Pyinstrument: <a class="reference external" href="https://github.com/joerick/pyinstrument">https://github.com/joerick/pyinstrument</a></p>
 <p>First, in your user home directory, run the conda skeleton command:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda skeleton pypi pyinstrument
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda skeleton pypi pyinstrument
 </pre></div>
 </div>
 <p>This creates a directory named pyinstrument and three skeleton files in that directory: meta.yaml, build.sh,
@@ -199,30 +200,30 @@ commands, but for pyinstrument, any changes are optional.</p>
 <p><strong>bld.bat:</strong> The same environment and other variables for Windows.</p>
 </div></blockquote>
 <p>Now that you have the skeleton ready, you can use the conda build tool. Let’s try it:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda build pyinstrument
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda build pyinstrument
 </pre></div>
 </div>
 <p>When conda-build is finished, it displays the exact path and filename and location.</p>
 <p>Linux example file path:</p>
-<div class="highlight-bash"><div class="highlight"><pre>/home/jsmith/miniconda/conda-bld/linux-64/pyinstrument-0.13.1-py27_0.tar.bz2
+<div class="highlight-bash"><div class="highlight"><pre><span></span>/home/jsmith/miniconda/conda-bld/linux-64/pyinstrument-0.13.1-py27_0.tar.bz2
 </pre></div>
 </div>
 <p>OS X example file path:</p>
-<div class="highlight-bash"><div class="highlight"><pre>/Users/jsmith/miniconda/conda-bld/osx-64/pyinstrument-0.13.1-py27_0.tar.bz2
+<div class="highlight-bash"><div class="highlight"><pre><span></span>/Users/jsmith/miniconda/conda-bld/osx-64/pyinstrument-0.13.1-py27_0.tar.bz2
 </pre></div>
 </div>
 <p>Windows example file path:</p>
-<div class="highlight-none"><div class="highlight"><pre>C:\Users\jsmith\Miniconda\conda-bld\win-64\pyinstrument-0.13.1-py27_0.tar.bz2
+<div class="highlight-none"><div class="highlight"><pre><span></span>C:\Users\jsmith\Miniconda\conda-bld\win-64\pyinstrument-0.13.1-py27_0.tar.bz2
 </pre></div>
 </div>
 <p>NOTE: Your path and filename will vary depending on your installation and operating system. Save the
 path and filename information for the next step.</p>
 <p>Now you can install your newly-built program on your local computer by using the use-local flag:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda install --use-local pyinstrument
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install --use-local pyinstrument
 </pre></div>
 </div>
 <p>Now verify that Pyinstrument installed successfully:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda list
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda list
 </pre></div>
 </div>
 </div>
@@ -230,12 +231,12 @@ path and filename information for the next step.</p>
 <h3>3. Convert conda package for other platforms<a class="headerlink" href="#convert-conda-package-for-other-platforms" title="Permalink to this headline">¶</a></h3>
 <p>Now that you have built a package for your current platform with conda build, you can convert it for use on other platforms with the conda convert command and a platform specifier from the list {osx-64,linux-32,linux-64,win-32,win-64,all}. In the output directory, one folder will be created for each of the one or more platforms you chose, and each folder will contain a .tar.bz2 package file for that platform.</p>
 <p>Linux and OS X users:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda convert --platform all /home/jsmith/miniconda/conda-bld/linux-64/pyinstrument-0.13.1-py27_0.tar.bz2 -o outputdir/
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda convert --platform all /home/jsmith/miniconda/conda-bld/linux-64/pyinstrument-0.13.1-py27_0.tar.bz2 -o outputdir/
 </pre></div>
 </div>
 <p>NOTE: Change your path and filename to the exact path and filename you saved in Step 2.</p>
 <p>Windows users:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda convert -f --platform all C:<span class="se">\U</span>sers<span class="se">\j</span>smith<span class="se">\M</span>iniconda<span class="se">\c</span>onda-bld<span class="se">\w</span>in-64<span class="se">\p</span>yinstrument-0.13.1-py27_0.tar.bz2 -o outputdir<span class="se">\</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda convert -f --platform all C:<span class="se">\U</span>sers<span class="se">\j</span>smith<span class="se">\M</span>iniconda<span class="se">\c</span>onda-bld<span class="se">\w</span>in-64<span class="se">\p</span>yinstrument-0.13.1-py27_0.tar.bz2 -o outputdir<span class="se">\</span>
 </pre></div>
 </div>
 <p>NOTE: Change your path and filename to the exact path and filename you saved in Step 2.</p>
@@ -247,7 +248,7 @@ in the root environment. If you&#8217;d like to build packages for other version
 Python, you can simply use the <cite>&#8211;python</cite> flag, followed by a version. For
 example, to explicitly build a version of the Pyinstrument package for Python
 3.3, use</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda build --python 3.3 pyinstrument
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda build --python 3.3 pyinstrument
 </pre></div>
 </div>
 </div>

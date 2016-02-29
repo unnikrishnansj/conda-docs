@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a><ul>
@@ -157,7 +158,7 @@
 <p>Conda was intended as a user space tool, but often users need to use it in a global environment. One place this can go awry is with restrictive file permissions.  Conda creates links when you install files that have to be read by others on the system.</p>
 <p>To give yourself full permissions for files and directories, but prevent the group and other users from having access, before installing set the umask to 007, install conda, then return the umask to the original setting afterwards:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">umask</span> 007
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">umask</span> 007
 $ conda install
 $ <span class="nb">umask</span> 077
 </pre></div>
@@ -176,7 +177,7 @@ not appear to be, e.g., a Python package that gives ImportError.</p>
 <p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span></code> will tell you what environment is currently active (under
 &#8220;default environment&#8221;). You can verify that you are using the Python from the
 correct environment by running</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="k">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">prefix</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -261,7 +262,7 @@ uncheck the box &#8220;Set locale environment variables on startup&#8221;.</p>
 terminal use to incorrect settings for your locale. The <code class="docutils literal"><span class="pre">locale</span></code> command in
 the Terminal will tell you what settings are used.  To use the correct
 language, add a line to your bash profile (typically <code class="docutils literal"><span class="pre">~/.profile</span></code>)</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>your-lang
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>your-lang
 </pre></div>
 </div>
 <p>Replace <code class="docutils literal"><span class="pre">your-lang</span></code> with the correct locale specifier for your language. The

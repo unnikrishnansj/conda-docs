@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="building/build.html">Building packages</a><ul class="current">
@@ -152,7 +153,7 @@ import <code class="docutils literal"><span class="pre">distutils.command.bdist_
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>A minimal setup.py file using setup options name and version:</p>
-<div class="code highlight-python"><div class="highlight"><pre> from distutils.core import setup, Extension
+<div class="code highlight-python"><div class="highlight"><pre><span></span> from distutils.core import setup, Extension
  import distutils.command.bdist_conda
 
 setup(
@@ -173,7 +174,7 @@ setup(
 <h3>Build number<a class="headerlink" href="#build-number" title="Permalink to this headline">¶</a></h3>
 <p>The number of the build. Can be overridden on the command line with the <code class="docutils literal"><span class="pre">--buildnum</span></code> flag.
 Defaults to 0.</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_buildnum</span><span class="o">=</span><span class="mi">1</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="n">conda_buildnum</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -181,7 +182,7 @@ Defaults to 0.</p>
 <h3>Build string<a class="headerlink" href="#build-string" title="Permalink to this headline">¶</a></h3>
 <p>The build string. Default is generated automatically from the Python version, NumPy version
 if relevant, and the build number, like <code class="docutils literal"><span class="pre">py34_0</span></code>.</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_buildstr</span><span class="o">=</span><span class="n">py34_0</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="n">conda_buildstr</span><span class="o">=</span><span class="n">py34_0</span>
 </pre></div>
 </div>
 </div>
@@ -190,7 +191,7 @@ if relevant, and the build number, like <code class="docutils literal"><span cla
 <p>Whether to automatically run import tests. The default is True, which runs import tests for the all
 the modules in “packages”. Also allowed are False, which runs no tests, or a list of module names to
 be tested on import.</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_import_tests</span><span class="o">=</span><span class="bp">False</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="n">conda_import_tests</span><span class="o">=</span><span class="bp">False</span>
 </pre></div>
 </div>
 </div>
@@ -199,7 +200,7 @@ be tested on import.</p>
 <p>Command line tests to run. Default is True, which runs <code class="docutils literal"><span class="pre">command</span> <span class="pre">--help</span></code> for each command in the
 <code class="docutils literal"><span class="pre">console_scripts</span></code> and <code class="docutils literal"><span class="pre">gui_scripts</span> <span class="pre">entry_points</span></code>. Also allowed are False, which doesn’t run any
 command tests, or a list of command tests to run.</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_command_tests</span><span class="o">=</span><span class="bp">False</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="n">conda_command_tests</span><span class="o">=</span><span class="bp">False</span>
 </pre></div>
 </div>
 </div>
@@ -207,7 +208,7 @@ command tests, or a list of command tests to run.</p>
 <h3>Binary files relocatable<a class="headerlink" href="#binary-files-relocatable" title="Permalink to this headline">¶</a></h3>
 <p>Whether binary files should be made relocatable (using <code class="docutils literal"><span class="pre">install_name_tool</span></code> on OS X or <code class="docutils literal"><span class="pre">patchelf</span></code> on Linux).
 The default is True.</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_binary_relocation</span><span class="o">=</span><span class="bp">False</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="n">conda_binary_relocation</span><span class="o">=</span><span class="bp">False</span>
 </pre></div>
 </div>
 <p>SEE ALSO:  <a class="reference internal" href="building/meta-yaml.html#relocatable"><span>Making packages relocatable</span></a>  section in the conda build documentation for more information.</p>
@@ -216,14 +217,14 @@ The default is True.</p>
 <h3>Preserve egg directory<a class="headerlink" href="#preserve-egg-directory" title="Permalink to this headline">¶</a></h3>
 <p>Whether to preserve the egg directory as installed by Setuptools. The default is True if the package depends
 on Setuptools or has Setuptools <code class="docutils literal"><span class="pre">entry_points</span></code> other than <code class="docutils literal"><span class="pre">console_scripts</span></code> and <code class="docutils literal"><span class="pre">gui_scripts</span></code>.</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_preserve_egg_dir</span><span class="o">=</span><span class="bp">False</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="n">conda_preserve_egg_dir</span><span class="o">=</span><span class="bp">False</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="features">
 <h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
 <p>List of features for the package.</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mkl&#39;</span><span class="p">]</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="n">conda_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mkl&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>SEE ALSO:  <a class="reference internal" href="building/meta-yaml.html#id1"><span>Features</span></a> section of the conda build documentation for more information about features in conda.</p>
@@ -231,7 +232,7 @@ on Setuptools or has Setuptools <code class="docutils literal"><span class="pre"
 <div class="section" id="track-features">
 <h3>Track features<a class="headerlink" href="#track-features" title="Permalink to this headline">¶</a></h3>
 <p>List of features that this package should track (enable when installed).</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="n">conda_track_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mkl&#39;</span><span class="p">]</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="n">conda_track_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mkl&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>SEE ALSO:  <a class="reference internal" href="building/meta-yaml.html#id1"><span>Features</span></a> section of the conda build documentation for more information about
@@ -243,7 +244,7 @@ features in conda.</p>
 <div class="section" id="id1">
 <h3>Build number<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Set the build number. Defaults to the <code class="docutils literal"><span class="pre">conda_buildnum</span></code> passed to <code class="docutils literal"><span class="pre">setup()</span></code>, or 0. Overrides any <code class="docutils literal"><span class="pre">conda_buildnum</span></code> passed to <code class="docutils literal"><span class="pre">setup()</span></code>.</p>
-<div class="code highlight-python"><div class="highlight"><pre><span class="o">--</span><span class="n">buildnum</span><span class="o">=</span><span class="mi">1</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">buildnum</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
 </div>

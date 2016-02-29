@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using R and R Essentials with conda &mdash; Conda   documentation</title>
+  <title>Using R with conda &mdash; Conda   documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Conda   documentation" href="index.html"/>
         <link rel="up" title="Using conda" href="using/index.html"/>
-        <link rel="next" title="Managing packages" href="using/pkgs.html"/>
-        <link rel="prev" title="Managing Python" href="py2or3.html"/> 
+        <link rel="next" title="Using Microsoft R Open" href="mro.html"/>
+        <link rel="prev" title="Managing packages" href="using/pkgs.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a><ul>
@@ -127,10 +128,10 @@
       
           <li><a href="using/index.html">Using conda</a> &raquo;</li>
       
-    <li>Using R and R Essentials with conda</li>
+    <li>Using R with conda</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/r-and-r-essentials.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/r-with-conda.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -138,8 +139,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="using-r-and-r-essentials-with-conda">
-<h1>Using R and R Essentials with conda<a class="headerlink" href="#using-r-and-r-essentials-with-conda" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="using-r-with-conda">
+<h1>Using R with conda<a class="headerlink" href="#using-r-with-conda" title="Permalink to this headline">¶</a></h1>
 <p>For Linux, OS X and Windows</p>
 <p>If you have conda installed, you can easily install R and over 80 of the most used R packages for data science with one command. Conda helps you keep your packages and dependencies up to date. You can also easily create and share your own custom R packages.</p>
 <p>R-Essentials works very much like Anaconda:</p>
@@ -159,17 +160,21 @@
 <h2>Create and share your own custom R bundle<a class="headerlink" href="#create-and-share-your-own-custom-r-bundle" title="Permalink to this headline">¶</a></h2>
 <p>Building and sharing your own custom R bundles with others is like building and sharing conda packages.</p>
 <p>For example, create a simple custom R bundle meta-package named &#8220;Custom-R-Bundle&#8221; containing several popular programs and their dependencies with the command:</p>
-<p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">metapackage</span> <span class="pre">custom-r-bundle</span> <span class="pre">0.1.0</span> <span class="pre">--dependencies</span> <span class="pre">r-irkernel</span> <span class="pre">jupyter</span> <span class="pre">r-ggplot2</span> <span class="pre">r-dplyr</span> <span class="pre">--summary</span> <span class="pre">&quot;My</span> <span class="pre">custom</span> <span class="pre">R</span> <span class="pre">bundle&quot;</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda metapackage custom-r-bundle 0.1.0 --dependencies r-irkernel jupyter r-ggplot2 r-dplyr --summary &quot;My custom R bundle&quot;
+</pre></div>
+</div>
 <p>Now you can easily share your new meta-package with friends and colleagues by uploading it to your channel on <a class="reference external" href="https://anaconda.org">Anaconda Cloud</a>:</p>
-<div class="highlight-python"><div class="highlight"><pre>conda install anaconda-client
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda install anaconda-client
 anaconda login
 anaconda upload path/to/custom-r-bundle-0.1.0-0.tar.bz2
 </pre></div>
 </div>
 <p>Your friends and colleagues now have access to your Custom-R-Bundle from any computer with the command:</p>
-<p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">&lt;your</span> <span class="pre">anaconda.org</span> <span class="pre">username&gt;</span> <span class="pre">custom-r-bundle</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda install -c &lt;your anaconda.org username&gt; custom-r-bundle
+</pre></div>
+</div>
 <p>For more information, see Christine Doig&#8217;s blog post <a class="reference external" href="https://www.continuum.io/blog/developer/jupyter-and-conda-r">Jupyter and conda for R</a>.</p>
-<p>Next, let&#8217;s take a look at <a class="reference internal" href="using/pkgs.html"><em>Managing packages</em></a>.</p>
+<p>Next, let&#8217;s look at <a class="reference internal" href="mro.html"><em>Using Microsoft R Open</em></a>.</p>
 </div>
 </div>
 
@@ -179,10 +184,10 @@ anaconda upload path/to/custom-r-bundle-0.1.0-0.tar.bz2
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="using/pkgs.html" class="btn btn-neutral float-right" title="Managing packages">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mro.html" class="btn btn-neutral float-right" title="Using Microsoft R Open">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="py2or3.html" class="btn btn-neutral" title="Managing Python"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="using/pkgs.html" class="btn btn-neutral" title="Managing packages"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

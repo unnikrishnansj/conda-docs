@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../building/build.html">Building packages</a><ul class="current">
@@ -167,7 +168,7 @@ completely from scratch. We also explore the elements of a conda package in more
 <p>You should already have conda and conda-build by downloading and installing Miniconda or Anaconda.
 Conda-build is not automatically installed, so let&#8217;s do that now.</p>
 <p>All users install conda-build:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda install conda-build
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install conda-build
 </pre></div>
 </div>
 <p>Now you are ready to start building your own conda package.</p>
@@ -208,7 +209,7 @@ Python package that generates fake data for testing. We will edit this file into
 for our new Pyinstrument package.</p>
 <p>Let’s start by making a new directory for this tutorial named pyinstrument, and change to the new directory.</p>
 <p>All users:</p>
-<div class="highlight-bash"><div class="highlight"><pre>mkdir pyinstrument
+<div class="highlight-bash"><div class="highlight"><pre><span></span>mkdir pyinstrument
 <span class="nb">cd</span> pyinstrument
 </pre></div>
 </div>
@@ -252,7 +253,7 @@ contents.</p>
 </table>
 <p>When finished, save to the same directory, this time with the correct name, meta.yaml.
 When you are finished, compare your meta.yaml with the answer below:</p>
-<div class="highlight-python"><div class="highlight"><pre>package:
+<div class="highlight-python"><div class="highlight"><pre><span></span>package:
   name: pyinstrument
   version: &quot;0.13.1&quot;
  
@@ -283,12 +284,12 @@ about:
 between building from Git versus building from a tarball on a repository like PyPI. Because the same source
 is hosted on PyPI and GitHub, you can easily find a script on  PyPI instead of GitHub. Simply replace this
 “source” section:</p>
-<div class="highlight-bash"><div class="highlight"><pre>git_rev: v0.13.1
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git_rev: v0.13.1
 git_url: https://github.com/joerick/pyinstrument.git
 </pre></div>
 </div>
 <p>With the following:</p>
-<div class="highlight-bash"><div class="highlight"><pre>fn: pyinstrument-0.13.1.tar.gz
+<div class="highlight-bash"><div class="highlight"><pre><span></span>fn: pyinstrument-0.13.1.tar.gz
 md5: e347036acc50720c0903dc2221b2605d
 url: https://pypi.python.org/packages/source/p/pyinstrument/pyinstrument-0.13.1.tar.gz
 </pre></div>
@@ -337,7 +338,7 @@ information. A blank sample meta.yaml follows to make it easier to match up the 
 </tr>
 </tbody>
 </table>
-<div class="highlight-bash"><div class="highlight"><pre>package:
+<div class="highlight-bash"><div class="highlight"><pre><span></span>package:
   name:
 
 source:
@@ -378,13 +379,13 @@ in the same directory as your <code class="docutils literal"><span class="pre">m
 <p>First we&#8217;ll write the build file for Linux and OS X and then the build file for Windows.</p>
 <p>All users, in your favorite text editor, create a new file named <code class="docutils literal"><span class="pre">build.sh</span></code> and enter the text exactly as
 shown:</p>
-<div class="highlight-bash"><div class="highlight"><pre>$PYTHON setup.py install     <span class="c1"># Python command to install the script.</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$PYTHON setup.py install     <span class="c1"># Python command to install the script.</span>
 </pre></div>
 </div>
 <p>That&#8217;s it! Save your new build.sh file to the same directory where you put the meta.yaml file.</p>
 <p>Now we’ll write the Windows build script file. All users, still in your favorite text editor, create another
 new file named bld.bat and enter the text exactly as shown:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="s2">&quot;%PYTHON%&quot;</span> setup.py install
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="s2">&quot;%PYTHON%&quot;</span> setup.py install
 <span class="k">if</span> errorlevel <span class="m">1</span> <span class="nb">exit</span> 1
 </pre></div>
 </div>
@@ -403,19 +404,19 @@ the build fails.</p>
 <p>Now that you have your three new build files ready, you are ready to create your new package with
 <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code>, and install the package on your local computer.</p>
 <p>Run conda build:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda build pyinstrument
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda build pyinstrument
 </pre></div>
 </div>
 <p>When conda-build is finished, it displays the filename and the file&#8217;s location at the end of the build.
 In our case the file was saved to:</p>
-<div class="highlight-bash"><div class="highlight"><pre>~/anaconda/conda-bld/linux-64/pyinstrument-0.13.1-py27_0.tar.bz2
+<div class="highlight-bash"><div class="highlight"><pre><span></span>~/anaconda/conda-bld/linux-64/pyinstrument-0.13.1-py27_0.tar.bz2
 </pre></div>
 </div>
 <p>NOTE: Save this path and file information for the next step. The exact path and filename will vary depending
 on your operating system, and whether you are using Anaconda or Miniconda. Conda-build tells you the exact
 location and filename.</p>
 <p>Now install your newly built program on your local computer by using the use-local flag:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda install --use-local pyinstrument
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install --use-local pyinstrument
 </pre></div>
 </div>
 <p>We know that Pyinstrument installed successfully if there are no error messages.</p>
@@ -426,7 +427,7 @@ location and filename.</p>
 other platforms. This is why you made the two build files, <code class="docutils literal"><span class="pre">build.sh</span></code> and <code class="docutils literal"><span class="pre">bld.bat</span></code> for all platforms.</p>
 <p>Use the conda convert command with a platform specifier from the list
 {osx-64,linux-32,linux-64,win-32,win-64,all}. We will use the platform specifier all, as shown:</p>
-<div class="highlight-bash"><div class="highlight"><pre>conda convert --platform all ~/anaconda/conda-bld/linux-64/pyinstrument-0.13.1-py27_0.tar.bz2 -o outputdir/
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda convert --platform all ~/anaconda/conda-bld/linux-64/pyinstrument-0.13.1-py27_0.tar.bz2 -o outputdir/
 </pre></div>
 </div>
 <p>NOTE: change your path and filename to the exact path and filename you saved in Step 7.</p>
@@ -438,11 +439,11 @@ It only takes a minute to do if you have a free Anaconda.org account.</p>
 <p>If you haven’t already, open a free Anaconda.org account and record your new username and password.</p>
 <p>Next, in your terminal window, run <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">anaconda-client</span></code> and enter your new Anaconda.org username and password.</p>
 <p>Again in your terminal window, log into your Anaconda.org account with the command:</p>
-<div class="highlight-bash"><div class="highlight"><pre>anaconda login
+<div class="highlight-bash"><div class="highlight"><pre><span></span>anaconda login
 </pre></div>
 </div>
 <p>And upload your package to Anaconda.org:</p>
-<div class="highlight-bash"><div class="highlight"><pre>anaconda upload ~/miniconda/conda-bld/linux-64/pyinstrument-0.12-py27_0.tar.bz
+<div class="highlight-bash"><div class="highlight"><pre><span></span>anaconda upload ~/miniconda/conda-bld/linux-64/pyinstrument-0.12-py27_0.tar.bz
 </pre></div>
 </div>
 <p>NOTE: Change your path and filename to the exact path and filename you saved in Step 7.</p>

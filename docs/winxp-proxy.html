@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a><ul>
@@ -151,7 +152,7 @@
 <li>Follow the <a class="reference external" href="http://conda.pydata.org/docs/config.html#configure-conda-for-use-behind-a-proxy-server-proxy-servers">.condarc proxy server instructions</a> and add the proxy information. If you decide to include any passwords in the file, beware of transformations that can affect special characters.</li>
 </ul>
 <p>Here is an example of proxy information with passwords:</p>
-<div class="highlight-python"><div class="highlight"><pre>proxy_servers:
+<div class="highlight-python"><div class="highlight"><pre><span></span>proxy_servers:
   http: http://user:pass@corp.com:8080
   https: https://user:pass@corp.com:8080
 
@@ -159,7 +160,7 @@ ssl_verify: False
 </pre></div>
 </div>
 <p>You may also save <code class="docutils literal"><span class="pre">.condarc</span></code> without passwords, and answer authentication prompts on the command line instead. Here is an example of proxy information without passwords:</p>
-<div class="highlight-python"><div class="highlight"><pre>proxy_servers:
+<div class="highlight-python"><div class="highlight"><pre><span></span>proxy_servers:
   http: http://corp.com:8080
   https: https://corp.com:8080
 
@@ -168,11 +169,11 @@ ssl_verify: False
 </div>
 <p>Once the proxy is configured correctly, you may run <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code> and then create and manage environments with the Anaconda Launcher GUI.</p>
 <p>Some packages such as <code class="docutils literal"><span class="pre">flask-login</span></code> may not be available through conda, so you may need to use pip to install them. This is the normal way to use pip securely over https:</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install --trusted-host pypi.python.org package-name
+<div class="highlight-python"><div class="highlight"><pre><span></span>pip install --trusted-host pypi.python.org package-name
 </pre></div>
 </div>
 <p>If the secure https proxy fails, it is possible to force pip to use an insecure http proxy instead:</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install --index-url=http://pypi.python.org/simple/ --trusted-host pypi.python.org package-name
+<div class="highlight-python"><div class="highlight"><pre><span></span>pip install --index-url=http://pypi.python.org/simple/ --trusted-host pypi.python.org package-name
 </pre></div>
 </div>
 </div>

@@ -17,14 +17,14 @@ conda update
    
    DESCRIPTION
           usage:   conda   update   [-h]  [-y]  [--dry-run]  [-f]  [--file  FILE]
-          [--unknown]
+          [--no-deps] [-m]
    
-          [--no-deps] [-m] [--use-index-cache] [--use-local]
-                 [--offline] [--no-pin] [-c  CHANNEL]  [--override-channels]  [-n
-                 ENVIRONMENT    |    -p    PATH]   [-q]   [--copy]   [--alt-hint]
-                 [--update-dependencies] [--no-update-dependencies] [--show-chan‐
-                 nel-urls]   [--no-show-channel-urls]   [--json]  [--all]  [pack‐
-                 age_spec [package_spec ...]]
+          [--use-index-cache] [--use-local] [--offline] [--no-pin]
+                 [-c CHANNEL] [--override-channels] [-n ENVIRONMENT  |  -p  PATH]
+                 [-q]      [--copy]      [--alt-hint]     [--update-dependencies]
+                 [--no-update-dependencies]                 [--show-channel-urls]
+                 [--no-show-channel-urls]  [--json]  [--all] [package_spec [pack‐
+                 age_spec ...]]
    
           Update conda packages to the current version.
    
@@ -50,11 +50,6 @@ conda update
           --file FILE
                  Read  package versions from the given file. Repeated file speci‐
                  fications can be passed (e.g. --file=file1 --file=file2).
-   
-          --unknown
-                 Use index metadata from the local package cache, which are  from
-                 unknown  channels  (installing  local  packages directly implies
-                 this option).
    
           --no-deps
                  Do not install dependencies.

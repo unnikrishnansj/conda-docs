@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
@@ -147,7 +148,7 @@ Appveyor. In silent mode, screen prompts are not shown on screen and default set
 <p>NOTE: These instructions are written for Miniconda, but you can substitute &#8220;Anaconda&#8221; if you are using that version.</p>
 <p>We recommend starting with the latest version of Miniconda or Anaconda. Check to be sure your version
 is up to date with a simple:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">conda update conda</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">conda update conda</span>
 </pre></div>
 </div>
 <div class="section" id="windows">
@@ -164,7 +165,7 @@ are supported:</p>
 <p>All arguments are case-sensitive. The installation path must be the last argument and should <strong>NOT</strong> be wrapped in
 quotation marks.</p>
 <p>The following command installs Miniconda for all users without registering Python as the system&#8217;s default:</p>
-<div class="highlight-bat"><div class="highlight"><pre>Miniconda-3.7.3-Windows-x86_64.exe /InstallationType=AllUsers /RegisterPython=0 \
+<div class="highlight-bat"><div class="highlight"><pre><span></span>Miniconda-3.7.3-Windows-x86_64.exe /InstallationType=AllUsers /RegisterPython=0 \
     /S /D=C:\Program Files\Miniconda3
 </pre></div>
 </div>
@@ -181,7 +182,7 @@ bash installer. The following arguments are supported:</p>
 <p>Batch mode assumes that you agree to the license agreement, and it does not
 edit the .bashrc or .bash_profile files.</p>
 <p>A complete example:</p>
-<div class="highlight-bash"><div class="highlight"><pre>wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
+<div class="highlight-bash"><div class="highlight"><pre><span></span>wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p $HOME/miniconda
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span>$<span class="s2">HOME/miniconda/bin:</span>$<span class="s2">PATH&quot;</span>
 </pre></div>

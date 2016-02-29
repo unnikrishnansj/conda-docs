@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
@@ -341,7 +342,7 @@ like the build string based on the state of the git repository.</p>
 <p>For example, here&#8217;s a meta.yaml that would work with these values. In this
 example, the recipe is included at the base directory of the git repository,
 so the <code class="docutils literal"><span class="pre">git_url</span></code> is <code class="docutils literal"><span class="pre">../</span></code>:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mypkg</span>
   <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_TAG&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
 
@@ -368,7 +369,7 @@ need to by using the <code class="docutils literal"><span class="pre">set</span>
 <p>Other than those mentioned above, no variables are inherited from the
 environment in which you invoked <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code>. You can choose to inherit
 additional environment variables by adding them to <code class="docutils literal"><span class="pre">meta.yaml</span></code>:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">script_env</span><span class="p p-Indicator">:</span>
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TMPDIR</span>
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">LD_LIBRARY_PATH</span> <span class="c1"># [linux]</span>

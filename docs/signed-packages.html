@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="building/build.html">Building packages</a><ul class="current">
@@ -168,7 +169,7 @@
 <div class="section" id="step-one-create-the-public-private-key-pair">
 <h2>Step one: Create the public/private key pair<a class="headerlink" href="#step-one-create-the-public-private-key-pair" title="Permalink to this headline">¶</a></h2>
 <p>First, create a public/private key pair.  Each public/private key pair is assigned a name, which is stored in the signature file, such that the client knows which public key to verify the signature against. In this example, the public key is named MyKey:</p>
-<div class="highlight-python"><div class="highlight"><pre>conda sign --keygen MyKey
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda sign --keygen MyKey
 </pre></div>
 </div>
 <p>NOTE: Replace &#8220;MyKey&#8221; with the actual name you wish to give your key pair.</p>
@@ -176,7 +177,7 @@
 <div class="section" id="step-two-sign-the-packages">
 <h2>Step two: Sign the packages<a class="headerlink" href="#step-two-sign-the-packages" title="Permalink to this headline">¶</a></h2>
 <p>Sign the packages by simply passing the conda packages that need to be signed to the &#8220;conda sign&#8221; command. Example, if you wish to sign all packages in the Linux-64 directory:</p>
-<div class="highlight-python"><div class="highlight"><pre>cd &lt;repository&gt;/linux-64
+<div class="highlight-python"><div class="highlight"><pre><span></span>cd &lt;repository&gt;/linux-64
 conda sign *.tar.bz2
 </pre></div>
 </div>
@@ -186,14 +187,14 @@ conda sign *.tar.bz2
 <div class="section" id="step-three-verify-that-the-signatures-are-valid">
 <h2>Step three: Verify that the signatures are valid<a class="headerlink" href="#step-three-verify-that-the-signatures-are-valid" title="Permalink to this headline">¶</a></h2>
 <p>To verify that the signatures are valid, run the conda sign verify command:</p>
-<div class="highlight-python"><div class="highlight"><pre>conda sign --verify *.tar.bz2
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda sign --verify *.tar.bz2
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-four-index-the-repository">
 <h2>Step four: Index the repository<a class="headerlink" href="#step-four-index-the-repository" title="Permalink to this headline">¶</a></h2>
 <p>Finally, run the <cite>conda index</cite> command to update (or create) the <cite>repodata.json</cite> file:</p>
-<div class="highlight-python"><div class="highlight"><pre>conda index
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda index
 </pre></div>
 </div>
 <p>This completes the signing of the conda repository.</p>
@@ -201,7 +202,7 @@ conda sign *.tar.bz2
 <div class="section" id="step-five-use-the-signed-package">
 <h2>Step five: Use the signed package<a class="headerlink" href="#step-five-use-the-signed-package" title="Permalink to this headline">¶</a></h2>
 <p>In order to use the signed package, the client must have access to the repository, and must add the public key file to their <cite>~/.conda/keys</cite> directory before installing the package. For example:</p>
-<div class="highlight-python"><div class="highlight"><pre>mkdir -p ~/.conda/keys
+<div class="highlight-python"><div class="highlight"><pre><span></span>mkdir -p ~/.conda/keys
 cp &lt;some download folder&gt;/foo.pub ~/.conda/keys
 </pre></div>
 </div>

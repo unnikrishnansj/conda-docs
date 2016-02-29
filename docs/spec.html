@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="building/build.html">Building packages</a><ul class="current">
@@ -165,7 +166,7 @@ install process, all files are basically just extracted into the install
 prefix, with the exception of the ones in <code class="docutils literal"><span class="pre">info/</span></code>.  Installing a conda
 package into an environment may be roughly thought of as executing the
 following command:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ cd &lt;environment prefix&gt;
+<div class="highlight-python"><div class="highlight"><pre><span></span>$ cd &lt;environment prefix&gt;
 $ tar xjf some-package-1.0-0.tar.bz2
 </pre></div>
 </div>
@@ -240,13 +241,13 @@ or a space-separated list of <code class="docutils literal"><span class="pre">pl
 <code class="docutils literal"><span class="pre">placeholder</span></code> is the build or placeholder prefix, <code class="docutils literal"><span class="pre">mode</span></code> is either <code class="docutils literal"><span class="pre">text</span></code>
 or <code class="docutils literal"><span class="pre">binary</span></code>, and <code class="docutils literal"><span class="pre">path</span></code> is the relative path of the file to be updated. For
 instance, on Linux or OS X</p>
-<div class="highlight-python"><div class="highlight"><pre>bin/script.sh
+<div class="highlight-python"><div class="highlight"><pre><span></span>bin/script.sh
 /Users/username/anaconda/envs/_build binary bin/binary
 /Users/username/anaconda/envs/_build text share/text
 </pre></div>
 </div>
 <p>or on Windows</p>
-<div class="highlight-python"><div class="highlight"><pre>&quot;Scripts/script1.py&quot;
+<div class="highlight-python"><div class="highlight"><pre><span></span>&quot;Scripts/script1.py&quot;
 &quot;C:\Users\username\anaconda\envs\_build&quot; text &quot;Scripts/script2.bat&quot;
 &quot;C:/Users/username/anaconda/envs/_build&quot; binary &quot;Scripts/binary&quot;
 </pre></div>
@@ -292,7 +293,7 @@ It is simple mapping of the full conda package filename to the dictionary
 object in <code class="docutils literal"><span class="pre">info/index.json</span></code> described in the previous section.</p>
 <p>In the following example, a repository provides the conda package
 <code class="docutils literal"><span class="pre">misc-1.0-np17py27_0.tar.bz2</span></code> on 64-bit Linux and 32-bit Windows:</p>
-<div class="highlight-python"><div class="highlight"><pre>&lt;some path&gt;/linux-64/repodata.json
+<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;some path&gt;/linux-64/repodata.json
                      repodata.json.bz2
                      misc-1.0-np17py27_0.tar.bz2
            /win-32/repodata.json

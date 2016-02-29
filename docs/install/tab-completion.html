@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
@@ -146,20 +147,20 @@
 <h1>Tab Completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal"><span class="pre">conda</span></code> supports tab completion in bash shells via the <code class="docutils literal"><span class="pre">argcomplete</span></code>
 package. First, make sure that <code class="docutils literal"><span class="pre">argcomplete</span></code> is installed</p>
-<div class="highlight-bash"><div class="highlight"><pre>$ conda install argcomplete
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda install argcomplete
 </pre></div>
 </div>
 <p>Then add</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>register-python-argcomplete conda<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>register-python-argcomplete conda<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>to your bash profile. You can test that it works by opening a new terminal
 window and typing</p>
-<div class="highlight-bash"><div class="highlight"><pre>$ conda ins&lt;TAB&gt;
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda ins&lt;TAB&gt;
 </pre></div>
 </div>
 <p>It should complete to</p>
-<div class="highlight-bash"><div class="highlight"><pre>$ conda install
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda install
 </pre></div>
 </div>
 <p>To get tab completion in zsh, see <a class="reference external" href="https://github.com/esc/conda-zsh-completion">conda-zsh-completion</a>.</p>

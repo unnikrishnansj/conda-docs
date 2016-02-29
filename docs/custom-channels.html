@@ -71,8 +71,9 @@
 <li class="toctree-l2"><a class="reference internal" href="using/using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="r-and-r-essentials.html">Using R and R Essentials with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="building/build.html">Building packages</a><ul class="current">
@@ -160,7 +161,7 @@ using a <code class="docutils literal"><span class="pre">file://</span></code> u
 <p>To create a custom channel, first organize all the packages in subdirectories for
 the platforms you wish to serve.</p>
 <p>Example:</p>
-<div class="code highlight-python"><div class="highlight"><pre> channel/
+<div class="code highlight-python"><div class="highlight"><pre><span></span> channel/
 linux-64/
    package-1.0-0.tar.bz2
 linux-32/
@@ -178,11 +179,11 @@ win-32/
 <h3>2. Run conda index on each of the platform subdirectories<a class="headerlink" href="#run-conda-index-on-each-of-the-platform-subdirectories" title="Permalink to this headline">¶</a></h3>
 <p>The ‘conda index’ command is part of the conda-build package. If you have not yet used
 conda build, begin by installing conda build:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda install conda-build
+<div class="code highlight-python"><div class="highlight"><pre><span></span>conda install conda-build
 </pre></div>
 </div>
 <p>Now run conda index on each of the platform subdirectories as shown:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda index channel/linux-64 channel/osx-64
+<div class="code highlight-python"><div class="highlight"><pre><span></span>conda index channel/linux-64 channel/osx-64
 </pre></div>
 </div>
 <p>The conda index command generates a file <code class="docutils literal"><span class="pre">repodata.json</span></code>, saved to each repository directory,
@@ -196,7 +197,7 @@ conda to see the update.</p>
 directory. Test by sending a search command to the custom channel.</p>
 <p>Example: if a file you want from the custom channel location is located at <code class="docutils literal"><span class="pre">/opt/channel/linux-64/</span></code></p>
 <p>Then search for files in that location as shown:</p>
-<div class="code highlight-python"><div class="highlight"><pre>conda search -c file://opt/channel/ --override-channels
+<div class="code highlight-python"><div class="highlight"><pre><span></span>conda search -c file://opt/channel/ --override-channels
 </pre></div>
 </div>
 <p>Note: The channel url does NOT include the platform, as conda will automatically detect and add
@@ -205,7 +206,7 @@ the platform.</p>
 other channels, such as default channels or any other channels you may have listed in your <code class="docutils literal"><span class="pre">.condarc</span></code>
 file.</p>
 <p>If you have set up your private repository correctly, you will see:</p>
-<div class="code highlight-python"><div class="highlight"><pre>Fetching package metadata: . . . .
+<div class="code highlight-python"><div class="highlight"><pre><span></span>Fetching package metadata: . . . .
 </pre></div>
 </div>
 <p>This will be followed by a list of the conda packages found.
