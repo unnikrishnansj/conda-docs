@@ -18,7 +18,7 @@ conda remove
    DESCRIPTION
           usage: conda remove [-h] [-y] [--dry-run] [--json] [--all] [--features]
    
-          [--no-pin] [-c CHANNEL] [--override-channels]
+          [--force] [--no-pin] [-c CHANNEL] [--override-channels]
                  [-n   ENVIRONMENT   |   -p   PATH]  [-q]  [--no-use-index-cache]
                  [--use-index-cache]  [--use-local]   [--offline]   [package_name
                  [package_name ...]]
@@ -50,6 +50,11 @@ conda remove
    
           --features
                  Remove features (instead of packages).
+   
+          --force
+                 Forces  removal  of  a  package  without  removing packages that
+                 depend on it. Using this option will usually leave your environ‐
+                 ment in a broken and inconsistent state.
    
           --no-pin
                  Ignore pinned file.

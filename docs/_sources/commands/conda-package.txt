@@ -17,10 +17,10 @@ conda package
    
    DESCRIPTION
           usage:  conda  package  [-h]  [-n ENVIRONMENT | -p PATH] [-w PATH [PATH
-          ...]]
+          ...]] [-r]
    
-          [-L PKG-NAME] [-r] [-u] [--pkg-name PKG_NAME]
-                 [--pkg-version PKG_VERSION] [--pkg-build PKG_BUILD]
+          [-u] [--pkg-name PKG_NAME] [--pkg-version PKG_VERSION]
+                 [--pkg-build PKG_BUILD]
    
           Low-level conda package utility. (EXPERIMENTAL)
    
@@ -38,9 +38,6 @@ conda package
    
           -w PATH [PATH ...], --which PATH [PATH ...]
                  Given some PATH print which conda package the file came from.
-   
-          -L PKG-NAME, --ls-files PKG-NAME
-                 List all files belonging to specified package.
    
           -r, --reset
                  Remove all untracked files and exit.
