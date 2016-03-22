@@ -16,8 +16,10 @@ conda clean
           conda - conda clean
    
    DESCRIPTION
-          usage:  conda  clean [-h] [-y] [--dry-run] [--json] [-i] [-l] [-t] [-p]
-          [-s]
+          usage:  conda  clean [-h] [-y] [--dry-run] [--json] [-a] [-i] [-l] [-t]
+          [-p]
+   
+                 [-s]
    
           Remove unused packages and caches.
    
@@ -35,6 +37,10 @@ conda clean
           --json Report all output as json. Suitable for using conda programmati‐
                  cally.
    
+          -a, --all
+                 Remove index cache, lock files, tarballs, unused cache packages,
+                 and source cache.
+   
           -i, --index-cache
                  Remove index cache.
    
@@ -45,7 +51,7 @@ conda clean
                  Remove cached package tarballs.
    
           -p, --packages
-                 Remove  unused cached packages. Warning: this does not check for
+                 Remove unused cached packages. Warning: this does not check  for
                  symlinked packages.
    
           -s, --source-cache
