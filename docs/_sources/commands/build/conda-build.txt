@@ -20,8 +20,8 @@ conda build
    
                  [--no-include-recipe] [--output] [-s] [-t] [--no-test] [-b] [-p]
                  [--skip-existing] [-q] [--python PYTHON_VER]  [--perl  PERL_VER]
-                 [--numpy  NUMPY_VER]  [--R R_VER] [-c CHANNEL] [--override-chan‐
-                 nels] RECIPE_PATH [RECIPE_PATH ...]
+                 [--numpy  NUMPY_VER]  [--R  R_VER]  [--lua LUA_VER] [-c CHANNEL]
+                 [--override-channels] RECIPE_PATH [RECIPE_PATH ...]
    
           Tool for building conda packages. A conda package is a  binary  tarball
           containing system-level libraries, Python modules, executable programs,
@@ -97,6 +97,11 @@ conda build
           --R R_VER
                  Set  the  R  version used by conda build. Can be passed multiple
                  times to build against multiple versions.
+   
+          --lua LUA_VER
+                 Set the Lua version used by conda build. Can be passed  multiple
+                 times  to build against multiple versions (['all', '2.0', '5.1',
+                 '5.2', '5.3']).
    
           -c CHANNEL, --channel CHANNEL
                  Additional channel  to  search  for  packages.  These  are  URLs

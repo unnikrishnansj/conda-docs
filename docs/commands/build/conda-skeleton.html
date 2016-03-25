@@ -153,7 +153,7 @@ NAME
        conda - conda skeleton
 
 DESCRIPTION
-       usage: conda-skeleton [-h] {pypi,cpan,cran} ...
+       usage: conda-skeleton [-h] {pypi,cpan,cran,luarocks} ...
 
        Generates  a  boilerplate/skeleton  recipe,  which you can then edit to
        create a full recipe. Some simple skeleton recipes may  not  even  need
@@ -161,7 +161,7 @@ DESCRIPTION
 
 OPTIONS
    positional arguments:
-              {pypi,cpan,cran}
+              {pypi,cpan,cran,luarocks}
 
        pypi   Create recipe skeleton for packages hosted on the Python Packag‐
               ing Index (PyPI) (pypi.python.org).
@@ -171,6 +171,9 @@ OPTIONS
 
        cran   Create  recipe skeleton for packages hosted on the Comprehensive
               R Archive Network (CRAN) (cran.r-project.org).
+
+       luarocks
+              Create recipe skeleton for luarocks, hosted at luarocks.org
 
    optional arguments:
        -h, --help
