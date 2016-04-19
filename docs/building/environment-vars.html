@@ -204,29 +204,32 @@ installed in the build prefix when it is listed as a build requirement)</td>
 <td>Python&#8217;s site-packages location</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">PY_VER</span></code></td>
-<td>Python version building against</td>
+<td>Python version building against (Set via <cite>&#8211;python</cite> arg or via <cite>CONDA_PY</cite> environment variable.)</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">R</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">NPY_VER</span></code></td>
+<td>Numpy version building against (Set via <cite>&#8211;numpy</cite> arg or via <cite>CONDA_NPY</cite> environment variable.)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">R</span></code></td>
 <td>Path to R executable in build prefix (note that R is only
 installed in the build prefix when it is listed as a build requirement).</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">CPU_COUNT</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">CPU_COUNT</span></code></td>
 <td>Number of CPUs on the system, as reported by
 <code class="docutils literal"><span class="pre">multiprocessing.cpu_count()</span></code></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">LANG</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">LANG</span></code></td>
 <td>Inherited from your shell environment.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">HTTP_PROXY</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">HTTP_PROXY</span></code></td>
 <td>Inherited from your shell environment.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">HTTPS_PROXY</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">HTTPS_PROXY</span></code></td>
 <td>Inherited from your shell environment.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PATH</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PATH</span></code></td>
 <td>Inherited from your shell environment, and augmented with <code class="docutils literal"><span class="pre">$PREFIX/bin</span></code></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">CMAKE_GENERATOR</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">CMAKE_GENERATOR</span></code></td>
 <td>The CMake generator string for the current build environment. On Unix
 systems, this is always &#8220;Unix Makefiles&#8221;. On Windows, it is generated
 according to the Visual Studio version activated at build time,
