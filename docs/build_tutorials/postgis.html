@@ -272,7 +272,7 @@ dependent packages.</p>
 <p>During execution of the conda-build command the <code class="docutils literal"><span class="pre">$PREFIX</span></code> environment variable is used to refer to the install path
 of conda packages.  We will use <code class="docutils literal"><span class="pre">$PREFIX</span></code> to inform the configure command of the location of the dependent packages
 listed in the build and run requirements of the conda recipe.</p>
-<p>In a text edit make a new file called build.sh with the following content in the postgis directory.</p>
+<p>In a text editor make a new file called build.sh with the following content in the postgis directory.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sh autogen.sh
 ./configure <span class="se">\</span>
   --prefix<span class="o">=</span><span class="nv">$PREFIX</span> <span class="se">\</span>
