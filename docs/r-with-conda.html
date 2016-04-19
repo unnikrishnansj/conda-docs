@@ -72,7 +72,7 @@
 <li class="toctree-l2"><a class="reference internal" href="using/envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Using R with conda</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using R with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mro.html">Using Microsoft R Open</a></li>
 </ul>
 </li>
@@ -160,21 +160,21 @@
 <h2>Create and share your own custom R bundle<a class="headerlink" href="#create-and-share-your-own-custom-r-bundle" title="Permalink to this headline">¶</a></h2>
 <p>Building and sharing your own custom R bundles with others is like building and sharing conda packages.</p>
 <p>For example, create a simple custom R bundle meta-package named &#8220;Custom-R-Bundle&#8221; containing several popular programs and their dependencies with the command:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>conda metapackage custom-r-bundle 0.1.0 --dependencies r-irkernel jupyter r-ggplot2 r-dplyr --summary &quot;My custom R bundle&quot;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">metapackage</span> <span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span> <span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span> <span class="o">--</span><span class="n">dependencies</span> <span class="n">r</span><span class="o">-</span><span class="n">irkernel</span> <span class="n">jupyter</span> <span class="n">r</span><span class="o">-</span><span class="n">ggplot2</span> <span class="n">r</span><span class="o">-</span><span class="n">dplyr</span> <span class="o">--</span><span class="n">summary</span> <span class="s2">&quot;My custom R bundle&quot;</span>
 </pre></div>
 </div>
 <p>Now you can easily share your new meta-package with friends and colleagues by uploading it to your channel on <a class="reference external" href="https://anaconda.org">Anaconda Cloud</a>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>conda install anaconda-client
-anaconda login
-anaconda upload path/to/custom-r-bundle-0.1.0-0.tar.bz2
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">anaconda</span><span class="o">-</span><span class="n">client</span>
+<span class="n">anaconda</span> <span class="n">login</span>
+<span class="n">anaconda</span> <span class="n">upload</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span><span class="o">-</span><span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
 </pre></div>
 </div>
 <p>Your friends and colleagues now have access to your Custom-R-Bundle from any computer with the command:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>conda install -c &lt;your anaconda.org username&gt; custom-r-bundle
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">anaconda</span><span class="o">.</span><span class="n">org</span> <span class="n">username</span><span class="o">&gt;</span> <span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span>
 </pre></div>
 </div>
 <p>For more information, see Christine Doig&#8217;s blog post <a class="reference external" href="https://www.continuum.io/blog/developer/jupyter-and-conda-r">Jupyter and conda for R</a>.</p>
-<p>Next, let&#8217;s look at <a class="reference internal" href="mro.html"><em>Using Microsoft R Open</em></a>.</p>
+<p>Next, let&#8217;s look at <a class="reference internal" href="mro.html"><span class="doc">Using Microsoft R Open</span></a>.</p>
 </div>
 </div>
 

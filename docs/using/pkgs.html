@@ -71,7 +71,7 @@
 <li class="toctree-l2"><a class="reference internal" href="using.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="envs.html">Managing environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Managing packages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Managing packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
 </ul>
@@ -157,23 +157,23 @@
 </li>
 </ul>
 </div>
-<p>Before you begin, you should have installed Miniconda or Anaconda, and gone through the previous <a class="reference internal" href="envs.html"><em>Managing environments</em></a> section. That means you have already installed a few packages when you created a new environment.</p>
-<p>NOTE: There are many options available for each of these commands. See the <a class="reference internal" href="../commands.html"><em>Command reference</em></a> for more detail.</p>
+<p>Before you begin, you should have installed Miniconda or Anaconda, and gone through the previous <a class="reference internal" href="envs.html"><span class="doc">Managing environments</span></a> section. That means you have already installed a few packages when you created a new environment.</p>
+<p>NOTE: There are many options available for each of these commands. See the <a class="reference internal" href="../commands.html"><span class="doc">Command reference</span></a> for more detail.</p>
 <div class="section" id="list-all-packages">
 <h2><a class="toc-backref" href="#id2">List all packages</a><a class="headerlink" href="#list-all-packages" title="Permalink to this headline">¶</a></h2>
 <p>List all of your packages in the active environment:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda list
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
 <p>To list all of your packages installed into a non-active environment named snowflakes:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda list -n snowflakes
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span> <span class="o">-</span><span class="n">n</span> <span class="n">snowflakes</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="search-for-a-package">
 <h2><a class="toc-backref" href="#id3">Search for a package</a><a class="headerlink" href="#search-for-a-package" title="Permalink to this headline">¶</a></h2>
 <p>To see if a specific package is available for conda to install:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda search beautiful-soup
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="n">beautiful</span><span class="o">-</span><span class="n">soup</span>
 </pre></div>
 </div>
 <p>This displays the package name, so we know it is available.</p>
@@ -181,7 +181,7 @@
 <div class="section" id="install-a-package">
 <h2><a class="toc-backref" href="#id4">Install a package</a><a class="headerlink" href="#install-a-package" title="Permalink to this headline">¶</a></h2>
 <p>Install a package such as &#8220;Beautiful Soup&#8221; into the current environment, using conda install as follows:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda install --name bunnies beautiful-soup
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">name</span> <span class="n">bunnies</span> <span class="n">beautiful</span><span class="o">-</span><span class="n">soup</span>
 </pre></div>
 </div>
 <p>NOTE: If you do not specify the name of the environment where you want it installed (&#8211;name bunnies) it will install in the current environment.</p>
@@ -197,13 +197,13 @@
 <p>In a browser, go to <a class="reference external" href="http://anaconda.org">http://anaconda.org</a>.  To find the package named &#8220;bottleneck&#8221; enter that search term in the top left box named &#8220;Search Packages.&#8221;</p>
 <p>Find the package you want and click to go to the detail page. There you will see the name of the channel &#8211; in this case it is the &#8220;pandas&#8221; channel.</p>
 <p>Now that you know the channel name, you can use the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code> command to get it:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda install -c pandas bottleneck
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">pandas</span> <span class="n">bottleneck</span>
 </pre></div>
 </div>
 <p>That means &#8220;Conda install the Bottleneck package from the Pandas channel on Anaconda.org.&#8221;</p>
 <p>The package will install.</p>
 <p>Check to see that the package is now installed:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda list
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
 <p>You will see a list of packages, including Bottleneck.</p>
@@ -218,14 +218,14 @@
 <p><strong>Windows:</strong>  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></p>
 <p><strong>All:</strong>  <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">see</span></code></p>
 <p>Check to see that the See package was installed by pip:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda list
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="install-a-commercial-package">
 <h2><a class="toc-backref" href="#id7">Install a commercial package</a><a class="headerlink" href="#install-a-commercial-package" title="Permalink to this headline">¶</a></h2>
 <p>Installing commercial packages is the same as installing any other package with conda. So as an example, let’s install and then delete a free trial of one of Continuum’s commercial packages IOPro, which can speed up your Python processing:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda install iopro
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">iopro</span>
 </pre></div>
 </div>
 <p>TIP: Except for academic use, this free trial expires after 30 days.</p>
@@ -235,21 +235,21 @@
 <h2><a class="toc-backref" href="#id8">Package update</a><a class="headerlink" href="#package-update" title="Permalink to this headline">¶</a></h2>
 <p>You can check to see if a new update is available with the conda update command. If conda tells you an update is available, you can then choose whether or not to install it.</p>
 <p>Use the conda update command to update a specific package:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda update biopython
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">biopython</span>
 </pre></div>
 </div>
 <p>You can use the conda update command to update conda itself:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda update conda
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
 </pre></div>
 </div>
 <p>You can also update Python with the update command:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda update python
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">python</span>
 </pre></div>
 </div>
 <p>NOTE: Conda will update to the highest version in its series, so Python 2.7 will update to the highest available in the 2.x series, and 3.5 will update to the highest available in the 3.x series.</p>
 <p>Regardless of what package you are updating, conda will compare versions, then let you know what is available to install. If none are available, conda will reply &#8220;All requested packages are already installed.&#8221;</p>
 <p>If a newer version of your package is available, and you wish to update it, type Y to update:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+<div class="code highlight-default"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
 </pre></div>
 </div>
 <p>Type &#8220;y&#8221; for yes.</p>
@@ -257,14 +257,14 @@
 <div class="section" id="package-remove">
 <h2><a class="toc-backref" href="#id9">Package remove</a><a class="headerlink" href="#package-remove" title="Permalink to this headline">¶</a></h2>
 <p>If you decide not to continue using a package, for example, the commercial package IOPro, you can remove it from the bunnies environment with:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda remove --name bunnies iopro
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="n">bunnies</span> <span class="n">iopro</span>
 </pre></div>
 </div>
 <p>Confirm that the package has been removed:</p>
-<div class="code highlight-python"><div class="highlight"><pre><span></span>conda list
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
-<p>Next, let&#8217;s take a look at <a class="reference internal" href="../r-with-conda.html"><em>Using R with conda</em></a>.</p>
+<p>Next, let&#8217;s take a look at <a class="reference internal" href="../r-with-conda.html"><span class="doc">Using R with conda</span></a>.</p>
 </div>
 </div>
 

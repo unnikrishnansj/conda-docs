@@ -166,7 +166,7 @@ install process, all files are basically just extracted into the install
 prefix, with the exception of the ones in <code class="docutils literal"><span class="pre">info/</span></code>.  Installing a conda
 package into an environment may be roughly thought of as executing the
 following command:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>$ cd &lt;environment prefix&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd &lt;environment prefix&gt;
 $ tar xjf some-package-1.0-0.tar.bz2
 </pre></div>
 </div>
@@ -202,7 +202,7 @@ three values, that is <code class="docutils literal"><span class="pre">&lt;name&
 number of the package.</dd>
 <dt><code class="docutils literal"><span class="pre">depends</span></code>: list of strings</dt>
 <dd>List of dependency specifications, where each element is a string
-as outlined in <a class="reference internal" href="#build-version-spec"><span>Package match specifications</span></a>.</dd>
+as outlined in <a class="reference internal" href="#build-version-spec"><span class="std std-ref">Package match specifications</span></a>.</dd>
 <dt><code class="docutils literal"><span class="pre">arch</span></code>: string (optional)</dt>
 <dd>The architecture the package is built for, e.g. <code class="docutils literal"><span class="pre">x86_64</span></code>.
 Conda currently does not do anything with this key.</dd>
@@ -241,15 +241,15 @@ or a space-separated list of <code class="docutils literal"><span class="pre">pl
 <code class="docutils literal"><span class="pre">placeholder</span></code> is the build or placeholder prefix, <code class="docutils literal"><span class="pre">mode</span></code> is either <code class="docutils literal"><span class="pre">text</span></code>
 or <code class="docutils literal"><span class="pre">binary</span></code>, and <code class="docutils literal"><span class="pre">path</span></code> is the relative path of the file to be updated. For
 instance, on Linux or OS X</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>bin/script.sh
-/Users/username/anaconda/envs/_build binary bin/binary
-/Users/username/anaconda/envs/_build text share/text
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="o">/</span><span class="n">script</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">anaconda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">_build</span> <span class="n">binary</span> <span class="nb">bin</span><span class="o">/</span><span class="n">binary</span>
+<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">anaconda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">_build</span> <span class="n">text</span> <span class="n">share</span><span class="o">/</span><span class="n">text</span>
 </pre></div>
 </div>
 <p>or on Windows</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>&quot;Scripts/script1.py&quot;
-&quot;C:\Users\username\anaconda\envs\_build&quot; text &quot;Scripts/script2.bat&quot;
-&quot;C:/Users/username/anaconda/envs/_build&quot; binary &quot;Scripts/binary&quot;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;Scripts/script1.py&quot;</span>
+<span class="s2">&quot;C:\Users\username</span><span class="se">\a</span><span class="s2">naconda\envs\_build&quot;</span> <span class="n">text</span> <span class="s2">&quot;Scripts/script2.bat&quot;</span>
+<span class="s2">&quot;C:/Users/username/anaconda/envs/_build&quot;</span> <span class="n">binary</span> <span class="s2">&quot;Scripts/binary&quot;</span>
 </pre></div>
 </div>
 <p>Note the directory delimiter for the relative <code class="docutils literal"><span class="pre">path</span></code> must always be <code class="docutils literal"><span class="pre">/</span></code>,
@@ -293,12 +293,12 @@ It is simple mapping of the full conda package filename to the dictionary
 object in <code class="docutils literal"><span class="pre">info/index.json</span></code> described in the previous section.</p>
 <p>In the following example, a repository provides the conda package
 <code class="docutils literal"><span class="pre">misc-1.0-np17py27_0.tar.bz2</span></code> on 64-bit Linux and 32-bit Windows:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;some path&gt;/linux-64/repodata.json
-                     repodata.json.bz2
-                     misc-1.0-np17py27_0.tar.bz2
-           /win-32/repodata.json
-                   repodata.json.bz2
-                   misc-1.0-np17py27_0.tar.bz2
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">some</span> <span class="n">path</span><span class="o">&gt;/</span><span class="n">linux</span><span class="o">-</span><span class="mi">64</span><span class="o">/</span><span class="n">repodata</span><span class="o">.</span><span class="n">json</span>
+                     <span class="n">repodata</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">bz2</span>
+                     <span class="n">misc</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="n">np17py27_0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+           <span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">32</span><span class="o">/</span><span class="n">repodata</span><span class="o">.</span><span class="n">json</span>
+                   <span class="n">repodata</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">bz2</span>
+                   <span class="n">misc</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="n">np17py27_0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
 </pre></div>
 </div>
 <p>Note that both conda packages have identical filenames, and are only
