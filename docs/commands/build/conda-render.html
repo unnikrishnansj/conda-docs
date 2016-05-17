@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>conda build &mdash; Conda   documentation</title>
+  <title>conda render &mdash; Conda   documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
         <link rel="up" title="Command reference" href="../../commands.html"/>
-        <link rel="next" title="conda convert" href="conda-convert.html"/>
-        <link rel="prev" title="conda upgrade" href="../conda-upgrade.html"/> 
+        <link rel="next" title="conda sign" href="conda-sign.html"/>
+        <link rel="prev" title="conda pipbuild" href="conda-pipbuild.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -130,10 +130,10 @@
       
           <li><a href="../../commands.html">Command reference</a> &raquo;</li>
       
-    <li>conda build</li>
+    <li>conda render</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/build/conda-build.rst" class="fa fa-github"> Edit on GitHub</a>
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/commands/build/conda-render.rst" class="fa fa-github"> Edit on GitHub</a>
         
       </li>
   </ul>
@@ -141,8 +141,8 @@
 </div>
           <div role="main">
             
-  <div class="section" id="conda-build">
-<span id="build-ref"></span><h1>conda build<a class="headerlink" href="#conda-build" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="conda-render">
+<span id="render-ref"></span><h1>conda render<a class="headerlink" href="#conda-render" title="Permalink to this headline">¶</a></h1>
 <PRE>
 <!-- Manpage converted by man2html 3.0.1 -->
 <B>CONDA(1)</B>                         User Commands                        <B>CONDA(1)</B>
@@ -150,23 +150,24 @@
 
 
 NAME
-       conda - conda build
+       conda - conda render
 
 DESCRIPTION
-       usage: conda-build [-h] [-V] [-n] [--output] [--python PYTHON_VER]
+       usage: conda-render [-h] [-V] [-n] [--output] [--python PYTHON_VER]
 
-              [--perl   PERL_VER]   [--numpy  NUMPY_VER]  [--R  R_VER]  [--lua
-              LUA_VER] [--check] [--no-anaconda-upload]  [--no-include-recipe]
-              [-s]    [-t]    [--no-test]    [-b]    [-p]    [--skip-existing]
-              [--keep-old-work] [-q] [--token TOKEN] [--user USER]  [-c  CHAN‐
-              NEL] [--override-channels] RECIPE_PATH [RECIPE_PATH ...]
+       [--perl PERL_VER] [--numpy NUMPY_VER] [--R R_VER]
+              [--lua  LUA_VER]  [-c  CHANNEL]  [--override-channels] [-f FILE]
+              RECIPE_PATH
 
-       Tool  for  building conda packages. A conda package is a binary tarball
+       Tool for building conda packages. A conda package is a  binary  tarball
        containing system-level libraries, Python modules, executable programs,
        or other components. conda keeps track of dependencies between packages
        and platform specifics, making it simple to create working environments
-       from different sets of packages.
+       from
 
+              different sets of packages.
+
+OPTIONS
    positional arguments:
        RECIPE_PATH
               Path to recipe directory.
@@ -179,7 +180,7 @@ DESCRIPTION
               Show the conda-build version number and exit.
 
        -n, --no_source
-              When  templating can't be completed, do not obtain the source to
+              When templating can't be completed, do not obtain the source  to
               try fill in related template variables.
 
        --output
@@ -187,8 +188,8 @@ DESCRIPTION
 
        --python PYTHON_VER
               Set the Python version used by conda build. Can be passed multi‐
-              ple  times  to  build against multiple versions. Can be 'all' to
-              build against all known versions (['2.6', '2.7',  '3.3',  '3.4',
+              ple times to build against multiple versions. Can  be  'all'  to
+              build  against  all known versions (['2.6', '2.7', '3.3', '3.4',
               '3.5'])
 
        --perl PERL_VER
@@ -196,76 +197,37 @@ DESCRIPTION
               times to build against multiple versions.
 
        --numpy NUMPY_VER
-              Set the NumPy version used by conda build. Can be passed  multi‐
-              ple  times  to  build against multiple versions. Can be 'all' to
-              build against all known versions (['1.6', '1.7',  '1.8',  '1.9',
+              Set  the NumPy version used by conda build. Can be passed multi‐
+              ple times to build against multiple versions. Can  be  'all'  to
+              build  against  all known versions (['1.6', '1.7', '1.8', '1.9',
               '1.10'])
 
        --R R_VER
-              Set  the  R  version used by conda build. Can be passed multiple
+              Set the R version used by conda build. Can  be  passed  multiple
               times to build against multiple versions.
 
        --lua LUA_VER
-              Set the Lua version used by conda build. Can  be  passedmultiple
-              times  to build against multiple versions (['all', '2.0', '5.1',
+              Set  the  Lua version used by conda build. Can be passedmultiple
+              times to build against multiple versions (['all', '2.0',  '5.1',
               '5.2', '5.3']).
 
-       --check
-              Only check (validate) the recipe.
-
-       --no-anaconda-upload
-              Do not ask to upload the package to anaconda.org.
-
-       --no-include-recipe
-              Don't include the recipe inside the built package.
-
-       -s, --source
-              Only obtain the source (but don't build).
-
-       -t, --test
-              Test package (assumes package is already build).
-
-       --no-test
-              Do not test the package.
-
-       -b, --build-only
-              Only run the build, without  any  post  processing  or  testing.
-              Implies --no-test and --no-anaconda-upload.
-
-       -p, --post
-              Run   the  post-build  logic.  Implies  --no-test  and  --noana‐
-              conda-upload.
-
-       --skip-existing
-              Skip recipes for which there already exists  an  existing  build
-              (locally or in the channels).
-
-       --keep-old-work
-              Keep  any  existing,  old  work  directory.  Useful if debugging
-              across callstacks involving multiple packages/recipes.
-
-       -q, --quiet
-              do not display progress bar
-
-       --token TOKEN
-              Token to pass through to anaconda upload
-
-       --user USER
-              User/organization to upload packages to on anaconda.org
-
        -c CHANNEL, --channel CHANNEL
-              Additional channel  to  search  for  packages.  These  are  URLs
-              searched  in  the  order  they  are given (including file:// for
+              Additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
               local directories). Then, the defaults or channels from .condarc
-              are  searched (unless --override-channels is given). You can use
-              'defaults' to get the default packages for conda,  and  'system'
-              to  get  the  system  packages,  which  also takes .condarc into
-              account. You can also  use  any  name  and  the  .condarc  chan‐
-              nel_alias  value will be prepended. The default channel_alias is
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
               http://conda.anaconda.org/.
 
        --override-channels
               Do not search default or .condarc channels. Requires --channel.
+
+       -f FILE, --file FILE
+              write  YAML to file, given as argument here. Overwrites existing
+              files.
 
 
 
@@ -278,10 +240,10 @@ Continuum Analytics                May 2016                           <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-convert.html" class="btn btn-neutral float-right" title="conda convert">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-sign.html" class="btn btn-neutral float-right" title="conda sign">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../conda-upgrade.html" class="btn btn-neutral" title="conda upgrade"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-pipbuild.html" class="btn btn-neutral" title="conda pipbuild"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
