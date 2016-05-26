@@ -41,7 +41,7 @@ conda build
           -V, --version
                  Show the conda-build version number and exit.
    
-          -n, --no_source
+          -n, --no-source
                  When  templating can't be completed, do not obtain the source to
                  try fill in related template variables.
    
@@ -86,7 +86,11 @@ conda build
                  Only obtain the source (but don't build).
    
           -t, --test
-                 Test package (assumes package is already build).
+                 Test package (assumes package  is  already  built).   RECIPE_DIR
+                 argument  can  be  either recipe directory, in which case source
+                 download may be necessary to resolve packageversion, or path  to
+                 built  package  .tar.bz2 file, in which case no source is neces‐
+                 sary.
    
           --no-test
                  Do not test the package.

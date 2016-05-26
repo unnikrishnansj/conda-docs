@@ -20,7 +20,7 @@ conda render
    
           [--perl PERL_VER] [--numpy NUMPY_VER] [--R R_VER]
                  [--lua  LUA_VER]  [-c  CHANNEL]  [--override-channels] [-f FILE]
-                 RECIPE_PATH
+                 [--verbose] RECIPE_PATH
    
           Tool for building conda packages. A conda package is a  binary  tarball
           containing system-level libraries, Python modules, executable programs,
@@ -42,7 +42,7 @@ conda render
           -V, --version
                  Show the conda-build version number and exit.
    
-          -n, --no_source
+          -n, --no-source
                  When templating can't be completed, do not obtain the source  to
                  try fill in related template variables.
    
@@ -91,6 +91,9 @@ conda render
           -f FILE, --file FILE
                  write  YAML to file, given as argument here. Overwrites existing
                  files.
+   
+          --verbose
+                 Enable verbose output from download tools and progress updates
    
    
    
