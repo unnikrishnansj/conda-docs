@@ -88,5 +88,5 @@ conda list
    
    
    
-   Continuum Analytics                May 2016                           <B>CONDA(1)</B>
+   Continuum Analytics                June 2016                          <B>CONDA(1)</B>
    </PRE>

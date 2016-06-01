@@ -399,8 +399,8 @@ additional environment variables by adding them to <code class="docutils literal
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">DYLD_LIBRARY_PATH</span> <span class="c1"># [osx]</span>
 </pre></div>
 </div>
-<p>If an inherited variable was missing from your shell environment, it will be
-assigned the value <code class="docutils literal"><span class="pre">&lt;UNDEFINED&gt;</span></code>.</p>
+<p>If an inherited variable was missing from your shell environment, it will remain
+unassigned, but a warning will be issued noting that it has no value assigned.</p>
 <p>NOTE: Inheriting environment variables like this can make it difficult for others
 to reproduce binaries from source with your recipe. This feature should be
 used with caution or avoided altogether.</p>
