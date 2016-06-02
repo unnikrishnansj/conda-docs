@@ -182,7 +182,7 @@ http://go.microsoft.com/fwlink/?LinkID=698301 for more details.
 </li>
 <li><p class="first">Copy all the .so files from <code class="docutils literal"><span class="pre">$REVOMATH/mkl/libs/*.so</span></code> to <code class="docutils literal"><span class="pre">$PREFIX/lib/R/lib</span></code> . (This may prompt you to overwrite libRblas.so and libRlapack.so.)</p>
 </li>
-<li><p class="first">Edit <code class="docutils literal"><span class="pre">$PREFIX/R/etc/Rprofile.site</span></code> and add the following two lines to the top:</p>
+<li><p class="first">Edit <code class="docutils literal"><span class="pre">$PREFIX/lib/R/etc/Rprofile.site</span></code> and add the following two lines to the top:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="s2">&quot;MKL_INTERFACE_LAYER&quot;</span><span class="o">=</span><span class="s2">&quot;GNU,LP64&quot;</span><span class="p">)</span>
 <span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="s2">&quot;MKL_THREADING_LAYER&quot;</span><span class="o">=</span><span class="s2">&quot;GNU&quot;</span><span class="p">)</span>
 </pre></div>
