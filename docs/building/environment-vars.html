@@ -336,7 +336,8 @@ build, e.g. <code class="docutils literal"><span class="pre">2008</span></code><
 </table>
 <div class="section" id="git-environment-variables">
 <h3>Git Environment Variables<a class="headerlink" href="#git-environment-variables" title="Permalink to this headline">¶</a></h3>
-<p>When the source is a git repository, the following variables are defined:</p>
+<p>When the source is a git repository, specifying the source either with <code class="docutils literal"><span class="pre">git_url</span></code>
+or <code class="docutils literal"><span class="pre">path</span></code>, the following variables are defined:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="50%" />
@@ -369,14 +370,14 @@ example, the recipe is included at the base directory of the git repository,
 so the <code class="docutils literal"><span class="pre">git_url</span></code> is <code class="docutils literal"><span class="pre">../</span></code>:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mypkg</span>
-  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_TAG&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
+  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">GIT_DESCRIBE_TAG</span> <span class="p p-Indicator">}}</span>
 
 <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_NUMBER&#39;</span><span class="p p-Indicator">,</span> <span class="nv">0)</span> <span class="p p-Indicator">}}</span>
+  <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">GIT_DESCRIBE_NUMBER</span> <span class="p p-Indicator">}}</span>
 
   <span class="c1"># Note that this will override the default build string with the Python</span>
   <span class="c1"># and NumPy versions</span>
-  <span class="l l-Scalar l-Scalar-Plain">string</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_BUILD_STR&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
+  <span class="l l-Scalar l-Scalar-Plain">string</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">GIT_BUILD_STR</span> <span class="p p-Indicator">}}</span>
 
 <span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">../</span>
@@ -388,6 +389,10 @@ except with the test prefix instead of the build prefix everywhere.</p>
 command that is run, and the <code class="docutils literal"><span class="pre">-e</span></code> makes it exit whenever a command in the
 script returns nonzero exit status).  You can revert this in the script if you
 need to by using the <code class="docutils literal"><span class="pre">set</span></code> command.</p>
+<p>The only practical difference between <code class="docutils literal"><span class="pre">git_url</span></code> and <code class="docutils literal"><span class="pre">path</span></code> as source arguments
+is that git_url is a clone of a repository and path is copy of the repository.
+Using path will allow you to build packages with unstaged/uncommited changes in
+working directory. git_url can only build up to the latest commit.</p>
 </div>
 <div class="section" id="inherited-environment-variables">
 <span id="inherited-env-vars"></span><h3>Inherited Environment Variables<a class="headerlink" href="#inherited-environment-variables" title="Permalink to this headline">¶</a></h3>
