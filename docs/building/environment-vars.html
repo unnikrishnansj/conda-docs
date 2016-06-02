@@ -383,6 +383,25 @@ so the <code class="docutils literal"><span class="pre">git_url</span></code> is
   <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">../</span>
 </pre></div>
 </div>
+<p>It is also possible to use the older syntax for these environment variables,
+although it is somewhat more verbose, and the newer syntax checks to make sure
+the variable is defined and produces a clear error if it is not. This is the
+example above using the older syntax:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mypkg</span>
+  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_TAG&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_NUMBER&#39;</span><span class="p p-Indicator">,</span> <span class="nv">0)</span> <span class="p p-Indicator">}}</span>
+
+  <span class="c1"># Note that this will override the default build string with the Python</span>
+  <span class="c1"># and NumPy versions</span>
+  <span class="l l-Scalar l-Scalar-Plain">string</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_BUILD_STR&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">../</span>
+</pre></div>
+</div>
 <p>All of the above environment variables are also set during the test process,
 except with the test prefix instead of the build prefix everywhere.</p>
 <p>Note that build.sh is run with <code class="docutils literal"><span class="pre">bash</span> <span class="pre">-x</span> <span class="pre">-e</span></code> (the <code class="docutils literal"><span class="pre">-x</span></code> makes it echo each
