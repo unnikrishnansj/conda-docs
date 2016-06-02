@@ -317,6 +317,30 @@ and searches the <code class="docutils literal"><span class="pre">PATH</span></c
 (in zsh) will reset the hash, or you can run <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span></code>.</p>
 </div>
 </div>
+<div class="section" id="issue-programs-fail-due-to-invoking-conda-python-and-not-system-python">
+<h2>Issue:  Programs fail due to invoking conda Python and not system Python<a class="headerlink" href="#issue-programs-fail-due-to-invoking-conda-python-and-not-system-python" title="Permalink to this headline">¶</a></h2>
+<p>After installing Anaconda or miniconda, programs that run <code class="docutils literal"><span class="pre">python</span></code> will switch
+from invoking the system Python to invoking the Python in the root conda
+environment. If these programs rely on the system Python to have certain
+configurations or dependencies that are not in the root conda environment
+Python, the programs may crash. For example, some users of the Cinnamon desktop
+environment on Linux Mint have reported these crashes.</p>
+<div class="section" id="resolution-fix-the-path-environment-variable">
+<h3>Resolution: Fix the <code class="docutils literal"><span class="pre">PATH</span></code> environment variable<a class="headerlink" href="#resolution-fix-the-path-environment-variable" title="Permalink to this headline">¶</a></h3>
+<p>Edit your <code class="docutils literal"><span class="pre">.bash_profile</span></code> and <code class="docutils literal"><span class="pre">.bashrc</span></code> files so that the conda binary
+directory (such as <code class="docutils literal"><span class="pre">~/miniconda3/bin</span></code>) is no longer added to the <code class="docutils literal"><span class="pre">PATH</span></code>
+environment variable. <code class="docutils literal"><span class="pre">conda</span></code> <code class="docutils literal"><span class="pre">activate</span></code> and <code class="docutils literal"><span class="pre">deactivate</span></code> may still be run
+by using their full path names such as <code class="docutils literal"><span class="pre">~/miniconda3/bin/conda</span></code>.</p>
+<p>You may also create a folder with symbolic links to <code class="docutils literal"><span class="pre">conda</span></code> <code class="docutils literal"><span class="pre">activate</span></code> and
+<code class="docutils literal"><span class="pre">deactivate</span></code>, and edit your <code class="docutils literal"><span class="pre">.bash_profile</span></code> or <code class="docutils literal"><span class="pre">.bashrc</span></code> file to add this
+folder to your <code class="docutils literal"><span class="pre">PATH</span></code>. Then running <code class="docutils literal"><span class="pre">python</span></code> will invoke the system Python,
+but running <code class="docutils literal"><span class="pre">conda</span></code> commands, <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">MyEnv</span></code>, <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">root</span></code>,
+or <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code> will work normally.</p>
+<p>After running <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span></code> to activate any environment, including after
+running <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">root</span></code>, running <code class="docutils literal"><span class="pre">python</span></code> will invoke the Python in
+the active conda environment.</p>
+</div>
+</div>
 </div>
 
 
