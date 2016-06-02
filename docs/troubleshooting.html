@@ -149,6 +149,7 @@
 <li><a class="reference internal" href="#unknown-locale"><span class="std std-ref">Issue: ValueError unknown locale: UTF-8 on OS X</span></a></li>
 <li><a class="reference internal" href="#attributeerror-getproxies"><span class="std std-ref">Issue: AttributeError or missing getproxies</span></a></li>
 <li><a class="reference internal" href="#shell-command-location"><span class="std std-ref">Issue:  Shell commands open from wrong location</span></a></li>
+<li><a class="reference internal" href="#wrong-python"><span class="std std-ref">Issue:  Programs fail due to invoking conda Python and not system Python</span></a></li>
 </ol>
 <div class="section" id="issue-permission-denied-errors-during-install">
 <span id="permission-denied"></span><h2>Issue:  permission denied errors during install<a class="headerlink" href="#issue-permission-denied-errors-during-install" title="Permalink to this headline">¶</a></h2>
@@ -318,7 +319,7 @@ and searches the <code class="docutils literal"><span class="pre">PATH</span></c
 </div>
 </div>
 <div class="section" id="issue-programs-fail-due-to-invoking-conda-python-and-not-system-python">
-<h2>Issue:  Programs fail due to invoking conda Python and not system Python<a class="headerlink" href="#issue-programs-fail-due-to-invoking-conda-python-and-not-system-python" title="Permalink to this headline">¶</a></h2>
+<span id="wrong-python"></span><h2>Issue:  Programs fail due to invoking conda Python and not system Python<a class="headerlink" href="#issue-programs-fail-due-to-invoking-conda-python-and-not-system-python" title="Permalink to this headline">¶</a></h2>
 <p>After installing Anaconda or miniconda, programs that run <code class="docutils literal"><span class="pre">python</span></code> will switch
 from invoking the system Python to invoking the Python in the root conda
 environment. If these programs rely on the system Python to have certain
