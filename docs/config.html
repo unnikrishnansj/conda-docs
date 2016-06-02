@@ -275,6 +275,12 @@ environment variables or the system. Setting them here overrides that default.</
     <span class="l l-Scalar l-Scalar-Plain">https</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://user:pass@corp.com:8080</span>
 </pre></div>
 </div>
+<p>To give a proxy for a specific scheme and host, use the scheme://hostname form
+for the key. This will match for any request to the given scheme and exact hostname.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">proxy_servers</span><span class="p p-Indicator">:</span>
+  <span class="s">&#39;http://10.20.1.128&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;http://10.10.1.10:5323&#39;</span>
+</pre></div>
+</div>
 <p>Note: If you do not include the username and password, of if authentication
 fails, conda will prompt for a username and password.</p>
 <p>Note: If your password contains special characters they will need to be escaped
