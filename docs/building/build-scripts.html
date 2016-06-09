@@ -147,6 +147,17 @@
 <cite>.bat</cite> for Windows) to the recipe, which will be run before the package is
 installed, after it is installed, and before it is removed, respectively. If
 these scripts exit nonzero the installation/removal will fail.</p>
+<p>We strongly recommend that post-link (and pre-unlink) scripts should:</p>
+<ol class="arabic simple">
+<li>be avoided whenever possible,</li>
+<li>not touch anything other than the files being installed,</li>
+<li>not write anything to stdout (or stderr), unless an error occurs,</li>
+<li>not depend on any installed (or to be installed) conda packages, and</li>
+<li>only depend on simple system tools such as rm, cp, mv, ln, and so on.</li>
+</ol>
+<p>The scripts should not write to stdout or stderr unless an error occurs, but
+they may write to <code class="docutils literal"><span class="pre">$PREFIX/.messages.txt</span></code>, which is shown after conda
+completes all actions.</p>
 <p>Environment variables are set in these scripts:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -166,13 +177,8 @@ these scripts exit nonzero the installation/removal will fail.</p>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_BUILDNUM</span></code></td>
 <td>The build number of the package.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">RECIPE_DIR</span></code></td>
-<td>Path to the recipe files.</td>
-</tr>
 </tbody>
 </table>
-<p>No output is shown from the build script, but it may write to
-<code class="docutils literal"><span class="pre">$PREFIX/.messages.txt</span></code>, which is shown after conda completes all actions.</p>
 </div>
 
 
