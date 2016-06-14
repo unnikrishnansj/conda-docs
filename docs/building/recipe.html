@@ -148,6 +148,9 @@
 <p>Building a conda package with conda build involves creating a conda recipe. The recipe
 is a flat directory holding metadata and the scripts needed to build the package.
 The conda package is then built from the conda recipe using the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> command.</p>
+<p>Conda packages can be built from a variety of source code projects, most notably Python.
+Please refer to the <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/">Setuptools documentation</a>
+for help packing a Python project.</p>
 <p>TIP: If you are new to building packages with conda, we recommend taking our series
 of three <a class="reference internal" href="../build_tutorials.html"><span class="doc">build tutorials</span></a>.</p>
 </div>
@@ -161,6 +164,17 @@ Please follow the <a class="reference internal" href="../install/quick.html"><sp
 </div>
 <p>OPTIONAL: If you wish to upload packages to Anaconda.org , an <a class="reference external" href="http://anaconda.org">Anaconda.org</a>
 account and client are required.</p>
+<div class="section" id="update-conda-build">
+<h3>Update conda build<a class="headerlink" href="#update-conda-build" title="Permalink to this headline">¶</a></h3>
+<p>It is important to keep your version of <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> up to date to take advantage of
+bug fixes and new features.</p>
+<p><strong>All platforms:</strong> Upgrade conda-build:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda update conda
+conda update conda-build
+</pre></div>
+</div>
+<p>Release notes are available on the <a class="reference external" href="https://github.com/conda/conda-build/releases">conda-build Github page.</a></p>
+</div>
 </div>
 <div class="section" id="conda-recipe-files-overview">
 <h2>Conda recipe files overview<a class="headerlink" href="#conda-recipe-files-overview" title="Permalink to this headline">¶</a></h2>
@@ -227,7 +241,7 @@ recipes for common repositories, such as <a class="reference external" href="htt
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015, Continuum Analytics.
+        &copy; Copyright 2016, Continuum Analytics.
     </p>
   </div>
 
