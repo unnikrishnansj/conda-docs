@@ -155,7 +155,7 @@ the following guide shows how to use it to test a Python package on Travis CI.</
 <div class="section" id="the-travis-yml-file">
 <h2>The .travis.yml file<a class="headerlink" href="#the-travis-yml-file" title="Permalink to this headline">¶</a></h2>
 <p>The
-following shows how to modify the <code class="docutils literal"><span class="pre">.travis.yml</span></code> file to use <a class="reference external" href="http://conda.pydata.org/miniconda.html">Miniconda</a> for a project that supports Python
+following shows how to modify the <tt class="docutils literal"><span class="pre">.travis.yml</span></tt> file to use <a class="reference external" href="http://conda.pydata.org/miniconda.html">Miniconda</a> for a project that supports Python
 2.6, 2.7, 3.3, and 3.4.</p>
 <p>NOTE: Please see the Travis CI website for information about the <a class="reference external" href="http://docs.travis-ci.com/user/languages/python/#Examples">basic configuration for
 Travis</a>.</p>
@@ -201,13 +201,13 @@ then add</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda config --add channels your_Anaconda_dot_org_username</span>
 </pre></div>
 </div>
-<p>to the install steps in <code class="docutils literal"><span class="pre">.travis.yml</span></code> so that it finds the packages on that
+<p>to the install steps in <tt class="docutils literal"><span class="pre">.travis.yml</span></tt> so that it finds the packages on that
 channel.</p>
 </div>
 <div class="section" id="building-a-conda-recipe">
 <h2>Building a Conda Recipe<a class="headerlink" href="#building-a-conda-recipe" title="Permalink to this headline">¶</a></h2>
 <p>If you support official conda packages for your project, you may want to use
-<code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> in Travis, so the building of your recipe is tested as
+<tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt> in Travis, so the building of your recipe is tested as
 well.  We recommend that you include the conda recipe in the same directory
 as your source code. Then replace the following:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python setup.py install</span>

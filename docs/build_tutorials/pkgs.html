@@ -160,13 +160,13 @@ package. No prior knowledge of conda-build or conda recipes is required.</p>
 can be performed if you wish to install the package in conda environment with a different version of
 Python or on a different architecture.</p>
 <ol class="arabic simple">
-<li><a class="reference internal" href="#before-you-start1"><span class="std std-ref">Before you start</span></a></li>
-<li><a class="reference internal" href="#conda-build-skeleton"><span class="std std-ref">Build a simple package with conda skeleton pypi</span></a></li>
-<li><a class="reference internal" href="#python-versions"><span class="std std-ref">Optional - Build for a different Python version</span></a></li>
-<li><a class="reference internal" href="#convert-conda-package"><span class="std std-ref">Optional - Convert conda package for other platforms</span></a></li>
-<li><a class="reference internal" href="#upload-to-anaconda-org"><span class="std std-ref">Optional - Upload packages to Anaconda.org</span></a></li>
-<li><a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a></li>
-<li><a class="reference internal" href="#help1"><span class="std std-ref">Additional Information</span></a></li>
+<li><a class="reference internal" href="#before-you-start1"><em>Before you start</em></a></li>
+<li><a class="reference internal" href="#conda-build-skeleton"><em>Build a simple package with conda skeleton pypi</em></a></li>
+<li><a class="reference internal" href="#python-versions"><em>Optional - Build for a different Python version</em></a></li>
+<li><a class="reference internal" href="#convert-conda-package"><em>Optional - Convert conda package for other platforms</em></a></li>
+<li><a class="reference internal" href="#upload-to-anaconda-org"><em>Optional - Upload packages to Anaconda.org</em></a></li>
+<li><a class="reference internal" href="#troubleshooting"><em>Troubleshooting</em></a></li>
+<li><a class="reference internal" href="#help1"><em>Additional Information</em></a></li>
 </ol>
 </div>
 </div>
@@ -193,13 +193,13 @@ where the source files are located and how to build and install the package.</p>
 <p>You&#8217;ll be working with a package named <a class="reference external" href="https://github.com/joerick/pyinstrument">Pyinstrument</a> that is hosted on PyPI. Pyinstrument is a Python
 statistical profiler that records the whole call stack once each millisecond, so programmers can see which
 parts of their code are slowest and how to make them faster.</p>
-<p>First, in your user home directory, run the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code> command:</p>
+<p>First, in your user home directory, run the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></tt> command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda skeleton pypi pyinstrument
 </pre></div>
 </div>
-<p>The two arguments to <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code> are the hosting location, in this case <code class="docutils literal"><span class="pre">pypi</span></code> and the name of the package.</p>
+<p>The two arguments to <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></tt> are the hosting location, in this case <tt class="docutils literal"><span class="pre">pypi</span></tt> and the name of the package.</p>
 <p>This creates a directory named Pyinstrument and creates three skeleton files in that directory: meta.yaml, build.sh,
-and bld.bat. Use the <code class="docutils literal"><span class="pre">ls</span></code> command on OS X or Linux or the <code class="docutils literal"><span class="pre">dir</span></code> command on Windows to verify that these files
+and bld.bat. Use the <tt class="docutils literal"><span class="pre">ls</span></tt> command on OS X or Linux or the <tt class="docutils literal"><span class="pre">dir</span></tt> command on Windows to verify that these files
 have been created. The three files have been populated with information from the PyPI metadata and in most cases
 will not need to be edited.</p>
 <p>These three files are collectively referred to as the <em>conda build recipe</em>:</p>
@@ -213,7 +213,7 @@ will not need to be edited.</p>
 </pre></div>
 </div>
 <p>When conda-build is finished, it displays the exact path and filename of the conda package.
-See the <a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> section if the conda-build command fails.</p>
+See the <a class="reference internal" href="#troubleshooting"><em>Troubleshooting</em></a> section if the conda-build command fails.</p>
 <p>Windows example file path:</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>C:\Users\jsmith\Miniconda\conda-bld\win-64\pyinstrument-0.13.1-py27_0.tar.bz2
 </pre></div>
@@ -245,13 +245,13 @@ them to your Anaconda.org account.</p>
 <span id="python-versions"></span><h2>Optional - Build for a different Python version<a class="headerlink" href="#optional-build-for-a-different-python-version" title="Permalink to this headline">¶</a></h2>
 <p>By default, conda-build will build packages for the version of Python installed
 in the root environment. To build packages for other versions of
-Python, you use the <code class="docutils literal"><span class="pre">--python</span></code> flag, followed by a version. For example, to
+Python, you use the <tt class="docutils literal"><span class="pre">--python</span></tt> flag, followed by a version. For example, to
 explicitly build a version of the Pyinstrument package for Python 3.3, use</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda build --python 3.3 pyinstrument
 </pre></div>
 </div>
 <p>You&#8217;ll notice that the file printed at the end of the conda-build output has changed to reflect
-the requested version of Python. <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code> will look in the package directory for the file
+the requested version of Python. <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></tt> will look in the package directory for the file
 that matches your current Python version.</p>
 <p>Windows example file path:</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>C:\Users\jsmith\Miniconda\conda-bld\win-64\pyinstrument-0.13.1-py33_0.tar.bz2
@@ -281,8 +281,8 @@ path and filename information for the next step.</p>
 </div>
 <p>NOTE: Change your path and filename to the exact path and filename you saved in Step 2.</p>
 <p>In order to use these packages they will have to be transferred to other computers and placed in the correct
-<code class="docutils literal"><span class="pre">conda-bld/$ARCH</span></code> directory as shown above, where <code class="docutils literal"><span class="pre">$ARCH</span></code> can be <code class="docutils literal"><span class="pre">osx-64</span></code>, <code class="docutils literal"><span class="pre">linux-32</span></code>, <code class="docutils literal"><span class="pre">linux-64</span></code>,
-<code class="docutils literal"><span class="pre">win-32</span></code> or <code class="docutils literal"><span class="pre">win-64</span></code>.</p>
+<tt class="docutils literal"><span class="pre">conda-bld/$ARCH</span></tt> directory as shown above, where <tt class="docutils literal"><span class="pre">$ARCH</span></tt> can be <tt class="docutils literal"><span class="pre">osx-64</span></tt>, <tt class="docutils literal"><span class="pre">linux-32</span></tt>, <tt class="docutils literal"><span class="pre">linux-64</span></tt>,
+<tt class="docutils literal"><span class="pre">win-32</span></tt> or <tt class="docutils literal"><span class="pre">win-64</span></tt>.</p>
 <p>A simpler way is to upload all of the bz2 files to Anaconda.org as described in the next section.</p>
 </div>
 <div class="section" id="optional-upload-packages-to-anaconda-org">
@@ -294,8 +294,8 @@ choose to make your files public or private. For more info about Anaconda.org vi
 documentation page.</p>
 <ol class="arabic simple">
 <li>Create a free Anaconda.org account and record your new Anaconda.org username and password.</li>
-<li>Run <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">anaconda-client</span></code> and enter your Anaconda.org username and password.</li>
-<li>Log into your Anaconda.org account from your terminal with the command <code class="docutils literal"><span class="pre">anaconda</span> <span class="pre">login</span></code></li>
+<li>Run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">anaconda-client</span></tt> and enter your Anaconda.org username and password.</li>
+<li>Log into your Anaconda.org account from your terminal with the command <tt class="docutils literal"><span class="pre">anaconda</span> <span class="pre">login</span></tt></li>
 </ol>
 <p>Now you can upload the new local packages to Anaconda.org</p>
 <p>Windows users:</p>
@@ -328,11 +328,11 @@ from PyPi packages. This section explains just a few of the most common errors a
 <div class="section" id="a-build-package-missing">
 <h3>A. Build Package missing<a class="headerlink" href="#a-build-package-missing" title="Permalink to this headline">¶</a></h3>
 <p>Conda build may produce the following error that it couldn&#8217;t find a package. Let&#8217;s try to make a conda
-skeleton package for Skyfield. The <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code> command is</p>
+skeleton package for Skyfield. The <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></tt> command is</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda skeleton pypi skyfield
 </pre></div>
 </div>
-<p>This command will create the Skyfield conda build recipe. Running <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">skyfield</span></code> will
+<p>This command will create the Skyfield conda build recipe. Running <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">skyfield</span></tt> will
 fail with the following output.</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>Removing old build environment
 Removing old work directory

@@ -21,8 +21,8 @@ conda build
                  [--perl   PERL_VER]   [--numpy  NUMPY_VER]  [--R  R_VER]  [--lua
                  LUA_VER] [--check] [--no-anaconda-upload]  [--no-include-recipe]
                  [-s]    [-t]    [--no-test]    [-b]    [-p]    [--skip-existing]
-                 [--keep-old-work] [-q] [--token TOKEN] [--user USER]  [-c  CHAN‐
-                 NEL] [--override-channels] RECIPE_PATH [RECIPE_PATH ...]
+                 [--keep-old-work] [--dirty] [-q] [--token TOKEN]  [--user  USER]
+                 [-c CHANNEL] [--override-channels] RECIPE_PATH [RECIPE_PATH ...]
    
           Tool  for  building conda packages. A conda package is a binary tarball
           containing system-level libraries, Python modules, executable programs,
@@ -111,6 +111,10 @@ conda build
                  Keep  any  existing,  old  work  directory.  Useful if debugging
                  across callstacks involving multiple packages/recipes.
    
+          --dirty
+                 Do not remove work directory or _build environment, to speed  up
+                 debugging. Does not apply patches or download source.
+   
           -q, --quiet
                  do not display progress bar
    
@@ -121,14 +125,14 @@ conda build
                  User/organization to upload packages to on anaconda.org
    
           -c CHANNEL, --channel CHANNEL
-                 Additional channel  to  search  for  packages.  These  are  URLs
-                 searched  in  the  order  they  are given (including file:// for
+                 Additional  channel  to  search  for  packages.  These  are URLs
+                 searched in the order they  are  given  (including  file://  for
                  local directories). Then, the defaults or channels from .condarc
-                 are  searched (unless --override-channels is given). You can use
-                 'defaults' to get the default packages for conda,  and  'system'
-                 to  get  the  system  packages,  which  also takes .condarc into
-                 account. You can also  use  any  name  and  the  .condarc  chan‐
-                 nel_alias  value will be prepended. The default channel_alias is
+                 are searched (unless --override-channels is given). You can  use
+                 'defaults'  to  get the default packages for conda, and 'system'
+                 to get the system  packages,  which  also  takes  .condarc  into
+                 account.  You  can  also  use  any  name  and the .condarc chan‐
+                 nel_alias value will be prepended. The default channel_alias  is
                  http://conda.anaconda.org/.
    
           --override-channels

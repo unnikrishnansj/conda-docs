@@ -73,7 +73,7 @@
 <li class="toctree-l2"><a class="reference internal" href="py2or3.html">Managing Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using/pkgs.html">Managing packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="r-with-conda.html">Using R with conda</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Using Microsoft R Open</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using Microsoft R Open</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="building/build.html">Building packages</a><ul>
@@ -155,8 +155,8 @@
 <h2>Installing MRO and other R language packages<a class="headerlink" href="#installing-mro-and-other-r-language-packages" title="Permalink to this headline">¶</a></h2>
 <p>There are several different ways to install MRO and other R language packages:</p>
 <ul class="simple">
-<li>Add the &#8220;mro&#8221; channel to your <a class="reference internal" href="config.html"><span class="doc">.condarc configuration file</span></a> above the &#8220;r&#8221; channel, and then use <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">r</span></code> and use conda to install other packages.</li>
-<li>Specify the &#8220;mro&#8221; channel on the command line each time you use the conda install command: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">mro</span> <span class="pre">r</span></code></li>
+<li>Add the &#8220;mro&#8221; channel to your <a class="reference internal" href="config.html"><em>.condarc configuration file</em></a> above the &#8220;r&#8221; channel, and then use <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">r</span></tt> and use conda to install other packages.</li>
+<li>Specify the &#8220;mro&#8221; channel on the command line each time you use the conda install command: <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">mro</span> <span class="pre">r</span></tt></li>
 <li>Install R packages from the Comprehensive R Archive Network (CRAN) or the Microsoft R Application Network (MRAN). These R packages will install into the currently active conda environment. MRO includes the <a class="reference external" href="https://github.com/RevolutionAnalytics/checkpoint/">checkpoint package</a>, which installs from MRAN and is designed to offer enhanced <a class="reference external" href="https://mran.revolutionanalytics.com/documents/rro/reproducibility/">reproducibility</a>.</li>
 </ul>
 </div>
@@ -164,20 +164,20 @@
 <h2>Use MRO or R language packages<a class="headerlink" href="#use-mro-or-r-language-packages" title="Permalink to this headline">¶</a></h2>
 <p>To use MRO or R language packages, first activate the conda environment where they are installed to set your environment variables properly.</p>
 <p>NOTE: You must first activate the program&#8217;s environment, then execute the program. Errors may result if you try to execute a program at the pathname in that environment without first activating the environment.</p>
-<p>NOTE: Each conda environment may have packages installed from the channel &#8220;r&#8221; OR the channel &#8220;mro&#8221;, but no conda environment should contain packages from both channels. Doing so may result in errors. If this occurs, you may remove the packages that were installed incorrectly by using the command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span></code>, or simply create a new environment and install the correct packages there.</p>
+<p>NOTE: Each conda environment may have packages installed from the channel &#8220;r&#8221; OR the channel &#8220;mro&#8221;, but no conda environment should contain packages from both channels. Doing so may result in errors. If this occurs, you may remove the packages that were installed incorrectly by using the command <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span></tt>, or simply create a new environment and install the correct packages there.</p>
 </div>
 <div class="section" id="install-the-intel-math-kernel-library-mkl-with-microsoft-r-open-mro">
 <h2>Install the Intel Math Kernel Library (MKL) with Microsoft R Open (MRO)<a class="headerlink" href="#install-the-intel-math-kernel-library-mkl-with-microsoft-r-open-mro" title="Permalink to this headline">¶</a></h2>
 <p>The Intel Math Kernel Library (MKL) extensions are also available for MRO on Windows and Linux, while the Accelerate library is used instead on OS X. Just <a class="reference external" href="https://mran.revolutionanalytics.com/download/">download the MKL package for your platform</a> and install it according to the instructions below.</p>
 <p>NOTE: By using our install process, we assume that you have already agreed to the <a class="reference external" href="https://mran.revolutionanalytics.com/assets/text/mkl-eula.txt">MKL license</a>. Proceeding further is an implicit agreement to said license.</p>
 <p>When MKL is not installed, each time the R interpreter starts it will display a message saying so, such as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>No performance acceleration libraries were detected. To take advantage of the
+<div class="highlight-python"><div class="highlight"><pre><span></span>No performance acceleration libraries were detected. To take advantage of the
 available processing power, also install MKL for MRO 3.2.3. Visit
 http://go.microsoft.com/fwlink/?LinkID=698301 for more details.
 </pre></div>
 </div>
 <p>When the MKL extensions are properly installed, each time the R interpreter starts it will display a message stating that MKL is enabled, such as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Multithreaded</span> <span class="n">BLAS</span><span class="o">/</span><span class="n">LAPACK</span> <span class="n">libraries</span> <span class="n">detected</span><span class="o">.</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Multithreaded BLAS/LAPACK libraries detected.
 </pre></div>
 </div>
 <p>(BLAS/LAPACK libraries such as MKL are implementations of the Basic Linear Algebra Subprograms specification of the LAPACK Linear Algebra PACKage.)</p>
@@ -186,7 +186,7 @@ http://go.microsoft.com/fwlink/?LinkID=698301 for more details.
 <h2>MKL installation on Windows<a class="headerlink" href="#mkl-installation-on-windows" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Download the proper MKL installer file.</li>
-<li>Find the directory where R language is located. Look in the current user&#8217;s home directory, then in the Anaconda or Miniconda directory, then in the environments directory, and then in the directory for the current environment, for a directory called &#8220;R&#8221;. For example, an Anaconda user on Windows 8 with the username jsmith and an environment named my_r_env might find <code class="docutils literal"><span class="pre">C:\Users\jsmith\Anaconda\envs\my_r_env\R</span></code> .</li>
+<li>Find the directory where R language is located. Look in the current user&#8217;s home directory, then in the Anaconda or Miniconda directory, then in the environments directory, and then in the directory for the current environment, for a directory called &#8220;R&#8221;. For example, an Anaconda user on Windows 8 with the username jsmith and an environment named my_r_env might find <tt class="docutils literal"><span class="pre">C:\Users\jsmith\Anaconda\envs\my_r_env\R</span></tt> .</li>
 <li>Run the installer, and enter the path when it says &#8220;Enter a path to MRO&#8221;.</li>
 </ol>
 <p>Starting the R language interpreter should now display the message showing that MKL is enabled.</p>
@@ -197,19 +197,19 @@ http://go.microsoft.com/fwlink/?LinkID=698301 for more details.
 <ol class="arabic">
 <li><p class="first">Download and extract the proper MKL package to a temporary folder, which we will call $REVOMATH .</p>
 </li>
-<li><p class="first">Determine where R is located. The path will have the form of <code class="docutils literal"><span class="pre">/path/to/anaconda/envs/&lt;r</span> <span class="pre">environment&gt;</span></code> , which we will call $PREFIX . Ensure that you have write permissions to $PREFIX.</p>
+<li><p class="first">Determine where R is located. The path will have the form of <tt class="docutils literal"><span class="pre">/path/to/anaconda/envs/&lt;r</span> <span class="pre">environment&gt;</span></tt> , which we will call $PREFIX . Ensure that you have write permissions to $PREFIX.</p>
 </li>
-<li><p class="first">Make backups of <code class="docutils literal"><span class="pre">$PREFIX/lib/R/lib/libRblas.so</span></code> and <code class="docutils literal"><span class="pre">$PREFIX/lib/R/lib/libRlapack.so</span></code> .</p>
+<li><p class="first">Make backups of <tt class="docutils literal"><span class="pre">$PREFIX/lib/R/lib/libRblas.so</span></tt> and <tt class="docutils literal"><span class="pre">$PREFIX/lib/R/lib/libRlapack.so</span></tt> .</p>
 </li>
-<li><p class="first">Copy all the .so files from <code class="docutils literal"><span class="pre">$REVOMATH/mkl/libs/*.so</span></code> to <code class="docutils literal"><span class="pre">$PREFIX/lib/R/lib</span></code> . (This may prompt you to overwrite libRblas.so and libRlapack.so.)</p>
+<li><p class="first">Copy all the .so files from <tt class="docutils literal"><span class="pre">$REVOMATH/mkl/libs/*.so</span></tt> to <tt class="docutils literal"><span class="pre">$PREFIX/lib/R/lib</span></tt> . (This may prompt you to overwrite libRblas.so and libRlapack.so.)</p>
 </li>
-<li><p class="first">Edit <code class="docutils literal"><span class="pre">$PREFIX/lib/R/etc/Rprofile.site</span></code> and add the following two lines to the top:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="s2">&quot;MKL_INTERFACE_LAYER&quot;</span><span class="o">=</span><span class="s2">&quot;GNU,LP64&quot;</span><span class="p">)</span>
+<li><p class="first">Edit <tt class="docutils literal"><span class="pre">$PREFIX/lib/R/etc/Rprofile.site</span></tt> and add the following two lines to the top:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="s2">&quot;MKL_INTERFACE_LAYER&quot;</span><span class="o">=</span><span class="s2">&quot;GNU,LP64&quot;</span><span class="p">)</span>
 <span class="n">Sys</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="s2">&quot;MKL_THREADING_LAYER&quot;</span><span class="o">=</span><span class="s2">&quot;GNU&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Execute this: <code class="docutils literal"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">INSTALL</span> <span class="pre">$REVOMATH/RevoUtilsMath.tar.gz</span></code></p>
+<li><p class="first">Execute this: <tt class="docutils literal"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">INSTALL</span> <span class="pre">$REVOMATH/RevoUtilsMath.tar.gz</span></tt></p>
 </li>
 </ol>
 </div>

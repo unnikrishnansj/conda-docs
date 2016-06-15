@@ -153,7 +153,10 @@ NAME
        conda - conda env export
 
 DESCRIPTION
-       usage: conda-env export [-h] [-n NAME] [-f FILE] [--no-builds]
+       usage:  conda-env  export  [-h]  [-c CHANNEL] [--override-channels] [-n
+       NAME]
+
+              [-f FILE] [--no-builds]
 
        Export a given environment
 
@@ -161,6 +164,12 @@ OPTIONS
    optional arguments:
        -h, --help
               Show this help message and exit.
+
+       -c CHANNEL, --channel CHANNEL
+              Additional channel to include in the export
+
+       --override-channels
+              Do not include .condarc channels
 
        -n NAME, --name NAME
               name of environment (in envs dirs)

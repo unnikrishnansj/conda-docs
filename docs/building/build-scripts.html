@@ -153,11 +153,11 @@ these scripts exit nonzero the installation/removal will fail.</p>
 <li>not touch anything other than the files being installed,</li>
 <li>not write anything to stdout (or stderr), unless an error occurs,</li>
 <li>not depend on any installed (or to be installed) conda packages, and</li>
-<li>only depend on simple system tools such as <code class="docutils literal"><span class="pre">rm</span></code>, <code class="docutils literal"><span class="pre">cp</span></code>, <code class="docutils literal"><span class="pre">mv</span></code>, <code class="docutils literal"><span class="pre">ln</span></code>,
+<li>only depend on simple system tools such as <tt class="docutils literal"><span class="pre">rm</span></tt>, <tt class="docutils literal"><span class="pre">cp</span></tt>, <tt class="docutils literal"><span class="pre">mv</span></tt>, <tt class="docutils literal"><span class="pre">ln</span></tt>,
 and so on.</li>
 </ol>
 <p>The scripts should not write to stdout or stderr unless an error occurs, but
-they may write to <code class="docutils literal"><span class="pre">$PREFIX/.messages.txt</span></code>, which is shown after conda
+they may write to <tt class="docutils literal"><span class="pre">$PREFIX/.messages.txt</span></tt>, which is shown after conda
 completes all actions.</p>
 <p>Environment variables are set in these scripts:</p>
 <table border="1" class="docutils">
@@ -166,16 +166,16 @@ completes all actions.</p>
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PREFIX</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">PREFIX</span></tt></td>
 <td>The install prefix.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_NAME</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">PKG_NAME</span></tt></td>
 <td>The name of the package.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PKG_VERSION</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">PKG_VERSION</span></tt></td>
 <td>The version of the package.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_BUILDNUM</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">PKG_BUILDNUM</span></tt></td>
 <td>The build number of the package.</td>
 </tr>
 </tbody>

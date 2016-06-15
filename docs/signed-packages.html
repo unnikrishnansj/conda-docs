@@ -81,7 +81,7 @@
 <li class="toctree-l2"><a class="reference internal" href="building/bpp.html">Building conda packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building/shared-libraries.html">Using shared libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="custom-channels.html">Custom channels</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Signing conda packages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Signing conda packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building/sample-recipes.html">Sample recipes</a></li>
 </ul>
@@ -169,7 +169,7 @@
 <div class="section" id="step-one-create-the-public-private-key-pair">
 <h2>Step one: Create the public/private key pair<a class="headerlink" href="#step-one-create-the-public-private-key-pair" title="Permalink to this headline">¶</a></h2>
 <p>First, create a public/private key pair.  Each public/private key pair is assigned a name, which is stored in the signature file, such that the client knows which public key to verify the signature against. In this example, the public key is named MyKey:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">sign</span> <span class="o">--</span><span class="n">keygen</span> <span class="n">MyKey</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda sign --keygen MyKey
 </pre></div>
 </div>
 <p>NOTE: Replace &#8220;MyKey&#8221; with the actual name you wish to give your key pair.</p>
@@ -177,8 +177,8 @@
 <div class="section" id="step-two-sign-the-packages">
 <h2>Step two: Sign the packages<a class="headerlink" href="#step-two-sign-the-packages" title="Permalink to this headline">¶</a></h2>
 <p>Sign the packages by simply passing the conda packages that need to be signed to the &#8220;conda sign&#8221; command. Example, if you wish to sign all packages in the Linux-64 directory:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">repository</span><span class="o">&gt;/</span><span class="n">linux</span><span class="o">-</span><span class="mi">64</span>
-<span class="n">conda</span> <span class="n">sign</span> <span class="o">*.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>cd &lt;repository&gt;/linux-64
+conda sign *.tar.bz2
 </pre></div>
 </div>
 <p>You will notice <cite>.sig</cite> files next to all conda packages.</p>
@@ -187,14 +187,14 @@
 <div class="section" id="step-three-verify-that-the-signatures-are-valid">
 <h2>Step three: Verify that the signatures are valid<a class="headerlink" href="#step-three-verify-that-the-signatures-are-valid" title="Permalink to this headline">¶</a></h2>
 <p>To verify that the signatures are valid, run the conda sign verify command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">sign</span> <span class="o">--</span><span class="n">verify</span> <span class="o">*.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda sign --verify *.tar.bz2
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-four-index-the-repository">
 <h2>Step four: Index the repository<a class="headerlink" href="#step-four-index-the-repository" title="Permalink to this headline">¶</a></h2>
 <p>Finally, run the <cite>conda index</cite> command to update (or create) the <cite>repodata.json</cite> file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">index</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda index
 </pre></div>
 </div>
 <p>This completes the signing of the conda repository.</p>
@@ -202,8 +202,8 @@
 <div class="section" id="step-five-use-the-signed-package">
 <h2>Step five: Use the signed package<a class="headerlink" href="#step-five-use-the-signed-package" title="Permalink to this headline">¶</a></h2>
 <p>In order to use the signed package, the client must have access to the repository, and must add the public key file to their <cite>~/.conda/keys</cite> directory before installing the package. For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/.</span><span class="n">conda</span><span class="o">/</span><span class="n">keys</span>
-<span class="n">cp</span> <span class="o">&lt;</span><span class="n">some</span> <span class="n">download</span> <span class="n">folder</span><span class="o">&gt;/</span><span class="n">foo</span><span class="o">.</span><span class="n">pub</span> <span class="o">~/.</span><span class="n">conda</span><span class="o">/</span><span class="n">keys</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>mkdir -p ~/.conda/keys
+cp &lt;some download folder&gt;/foo.pub ~/.conda/keys
 </pre></div>
 </div>
 <p>When the client tries to install the signed package using the <cite>conda</cite> command, conda will attempt to verify the signature.</p>

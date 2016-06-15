@@ -144,7 +144,7 @@
   <div class="section" id="the-meta-yaml-file">
 <span id="meta-yaml"></span><h1><a class="toc-backref" href="#id3">The meta.yaml file</a><a class="headerlink" href="#the-meta-yaml-file" title="Permalink to this headline">¶</a></h1>
 <div class="contents topic" id="sections-of-meta-yaml">
-<p class="topic-title first">Sections of <code class="docutils literal"><span class="pre">meta.yaml</span></code>:</p>
+<p class="topic-title first">Sections of <tt class="docutils literal"><span class="pre">meta.yaml</span></tt>:</p>
 <ul class="simple">
 <li><a class="reference internal" href="#the-meta-yaml-file" id="id3">The meta.yaml file</a><ul>
 <li><a class="reference internal" href="#package-section" id="id4">Package section</a><ul>
@@ -213,31 +213,31 @@
 </li>
 </ul>
 </div>
-<p>All the metadata in the conda build recipe is specified in the <code class="docutils literal"><span class="pre">meta.yaml</span></code> file,
+<p>All the metadata in the conda build recipe is specified in the <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file,
 as in this example of a simple meta.yaml file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span><span class="p">:</span>
-  <span class="n">name</span><span class="p">:</span> <span class="n">pyinstrument</span>
-  <span class="n">version</span><span class="p">:</span> <span class="s2">&quot;0.13.1&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>package:
+  name: pyinstrument
+  version: &quot;0.13.1&quot;
 
-<span class="n">source</span><span class="p">:</span>
-  <span class="n">git_rev</span><span class="p">:</span> <span class="n">v0</span><span class="o">.</span><span class="mf">13.1</span>
-  <span class="n">git_url</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">joerick</span><span class="o">/</span><span class="n">pyinstrument</span><span class="o">.</span><span class="n">git</span>
+source:
+  git_rev: v0.13.1
+  git_url: https://github.com/joerick/pyinstrument.git
 
-<span class="n">requirements</span><span class="p">:</span>
-  <span class="n">build</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">python</span>
-    <span class="o">-</span> <span class="n">setuptools</span>
-  <span class="n">run</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">python</span>
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - python
 
-<span class="n">test</span><span class="p">:</span>
-  <span class="n">imports</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">pyinstrument</span>
+test:
+  imports:
+    - pyinstrument
 
-<span class="n">about</span><span class="p">:</span>
-  <span class="n">home</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">joerick</span><span class="o">/</span><span class="n">pyinstrument</span>
-  <span class="n">license</span><span class="p">:</span> <span class="n">BSD</span>
-  <span class="n">license_file</span><span class="p">:</span> <span class="n">LICENSE</span>
+about:
+  home: https://github.com/joerick/pyinstrument
+  license: BSD
+  license_file: LICENSE
 </pre></div>
 </div>
 <p>NOTE: All sections are optional except for package/name and package/version.</p>
@@ -267,10 +267,10 @@ string.</p>
 <p>NOTE: The version cannot contain a dash &#8216;-&#8216; character.</p>
 <p>NOTE: Post-build versioning: In some cases, you may not know the version, build
 number, or build string of the package until after it is built. In this case, you
-can write files named <code class="docutils literal"><span class="pre">__conda_version__.txt</span></code>, <code class="docutils literal"><span class="pre">__conda_buildnum__.txt</span></code>, or
-<code class="docutils literal"><span class="pre">__conda_buildstr__.txt</span></code> to the source directory, and the contents of the file
+can write files named <tt class="docutils literal"><span class="pre">__conda_version__.txt</span></tt>, <tt class="docutils literal"><span class="pre">__conda_buildnum__.txt</span></tt>, or
+<tt class="docutils literal"><span class="pre">__conda_buildstr__.txt</span></tt> to the source directory, and the contents of the file
 will be used as the version, build number, or build string, respectively (and the
-respective metadata from the <code class="docutils literal"><span class="pre">meta.yaml</span></code> will be ignored).</p>
+respective metadata from the <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> will be ignored).</p>
 </div>
 </div>
 <div class="section" id="source-section">
@@ -290,7 +290,7 @@ and may contain patches.</p>
 </div>
 <div class="section" id="source-from-git">
 <h3><a class="toc-backref" href="#id9">Source from git</a><a class="headerlink" href="#source-from-git" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">git_url</span></code> can also be a relative path to the recipe directory:</p>
+<p>The <tt class="docutils literal"><span class="pre">git_url</span></tt> can also be a relative path to the recipe directory:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff4.git</span>
   <span class="l l-Scalar l-Scalar-Plain">git_rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.4</span>
@@ -370,7 +370,7 @@ The default is False.</p>
 <div class="section" id="features">
 <h3><a class="toc-backref" href="#id18">Features</a><a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
 <p>Defines what features a package has.</p>
-<p>SEE ALSO: <a class="reference internal" href="#id1"><span class="std std-ref">Features</span></a> section below for additional information.</p>
+<p>SEE ALSO: <a class="reference internal" href="#id1"><em>Features</em></a> section below for additional information.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">feature1</span>
@@ -383,7 +383,7 @@ The default is False.</p>
 package can have a feature, or track that feature, or both, or neither. Usually
 it is best for the package that tracks a feature to be a metapackage that does
 not have the feature.</p>
-<p>SEE ALSO: <a class="reference internal" href="#id1"><span class="std std-ref">Features</span></a> section below for additional information.</p>
+<p>SEE ALSO: <a class="reference internal" href="#id1"><em>Features</em></a> section below for additional information.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">track_features</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">feature2</span>
@@ -439,7 +439,7 @@ You may need to use selectors (see below) to use different scripts for different
 </div>
 <div class="section" id="relocation">
 <h3><a class="toc-backref" href="#id25">Relocation</a><a class="headerlink" href="#relocation" title="Permalink to this headline">¶</a></h3>
-<p>Advanced features. The following four keys (binary_relocation, detect_binary_files_with_prefix, has_prefix_files and binary_has_prefix_files) may be required to relocate files from the build environment to the installation environment.  See <a class="reference internal" href="#relocatable"><span class="std std-ref">Making packages relocatable</span></a> section below.</p>
+<p>Advanced features. The following four keys (binary_relocation, detect_binary_files_with_prefix, has_prefix_files and binary_has_prefix_files) may be required to relocate files from the build environment to the installation environment.  See <a class="reference internal" href="#relocatable"><em>Making packages relocatable</em></a> section below.</p>
 </div>
 <div class="section" id="binary-relocation">
 <h3><a class="toc-backref" href="#id26">Binary relocation</a><a class="headerlink" href="#binary-relocation" title="Permalink to this headline">¶</a></h3>
@@ -498,7 +498,7 @@ with all platforms and architectures. Noarch packages can be installed on any pl
 </div>
 <div class="section" id="requirements-section">
 <h2><a class="toc-backref" href="#id32">Requirements section</a><a class="headerlink" href="#requirements-section" title="Permalink to this headline">¶</a></h2>
-<p>Versions for requirements must follow the Conda match specification. See <a class="reference internal" href="../spec.html#build-version-spec"><span class="std std-ref">Package match specifications</span></a> .</p>
+<p>Versions for requirements must follow the Conda match specification. See <a class="reference internal" href="../spec.html#build-version-spec"><em>Package match specifications</em></a> .</p>
 <p>The build and runtime requirements. Dependencies of these requirements are included automatically.</p>
 <div class="section" id="build">
 <h3><a class="toc-backref" href="#id33">Build</a><a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
@@ -508,7 +508,7 @@ with all platforms and architectures. Noarch packages can be installed on any pl
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
 </pre></div>
 </div>
-<p>Some users may wish to build a recipe against different versions of NumPy and ensure that each version is part of the package dependencies, which can be done by listing <code class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></code> as a requirement in meta.yaml and using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> with a NumPy version option such as <code class="docutils literal"><span class="pre">--numpy</span> <span class="pre">1.7</span></code>. Note that the line in the meta.yaml file should literally say <code class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></code> and should not have any numbers. If the meta.yaml file uses <code class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></code>, then it is required to use the <code class="docutils literal"><span class="pre">--numpy</span></code> option with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code>.</p>
+<p>Some users may wish to build a recipe against different versions of NumPy and ensure that each version is part of the package dependencies, which can be done by listing <tt class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></tt> as a requirement in meta.yaml and using <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt> with a NumPy version option such as <tt class="docutils literal"><span class="pre">--numpy</span> <span class="pre">1.7</span></tt>. Note that the line in the meta.yaml file should literally say <tt class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></tt> and should not have any numbers. If the meta.yaml file uses <tt class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></tt>, then it is required to use the <tt class="docutils literal"><span class="pre">--numpy</span></tt> option with <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt>.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
@@ -518,7 +518,7 @@ with all platforms and architectures. Noarch packages can be installed on any pl
 </div>
 <div class="section" id="run">
 <h3><a class="toc-backref" href="#id34">Run</a><a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
-<p>Packages required to run the package. These are the dependencies that will be installed automatically whenever the package is installed. Package names should follow the <a class="reference internal" href="../spec.html#build-version-spec"><span class="std std-ref">Package match specifications</span></a> .</p>
+<p>Packages required to run the package. These are the dependencies that will be installed automatically whenever the package is installed. Package names should follow the <a class="reference internal" href="../spec.html#build-version-spec"><em>Package match specifications</em></a> .</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
@@ -655,7 +655,7 @@ For example, to store recipe maintainer information, one could do:</p>
 <p>In addition, you can add selectors to any line, which are used as part of a
 preprocessing stage. Before the yaml file is read, each selector is evaluated,
 and if it is False, the line that it is on is removed.  A selector is of the
-form <code class="docutils literal"><span class="pre">#</span> <span class="pre">[&lt;selector&gt;]</span></code> at the end of a line.</p>
+form <tt class="docutils literal"><span class="pre">#</span> <span class="pre">[&lt;selector&gt;]</span></tt> at the end of a line.</p>
 <p>For example</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/unix/source</span>    <span class="c1"># [not win]</span>
@@ -670,61 +670,61 @@ variables are defined. Unless otherwise stated, the variables are booleans.</p>
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">linux</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">linux</span></tt></td>
 <td>True if the platform is Linux</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">linux32</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">linux32</span></tt></td>
 <td>True if the platform is Linux and the Python architecture is 32-bit</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">linux64</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">linux64</span></tt></td>
 <td>True if the platform is Linux and the Python architecture is 64-bit</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">armv6l</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">armv6l</span></tt></td>
 <td>True if the platform is Linux and the Python architecture is armv6l</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">armv7l</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">armv7l</span></tt></td>
 <td>True if the platform is Linux and the Python architecture is armv7l</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">ppc64le</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">ppc64le</span></tt></td>
 <td>True if the platform is Linux and the Python architecture is ppc64le</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">osx</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">osx</span></tt></td>
 <td>True if the platform is OS X</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">unix</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">unix</span></tt></td>
 <td>True if the platform is Unix (OS X or Linux)</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">win</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">win</span></tt></td>
 <td>True if the platform is Windows</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">win32</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">win32</span></tt></td>
 <td>True if the platform is Windows and the Python architecture is 32-bit</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">win64</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">win64</span></tt></td>
 <td>True if the platform is Windows and the Python architecture is 64-bit</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">py</span></code></td>
-<td>The Python version as a two digit string (like <code class="docutils literal"><span class="pre">'27'</span></code>). See also the
-<code class="docutils literal"><span class="pre">CONDA_PY</span></code> environment variable <a class="reference internal" href="environment-vars.html#build-envs"><span class="std std-ref">below</span></a>.</td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">py</span></tt></td>
+<td>The Python version as a two digit string (like <tt class="docutils literal"><span class="pre">'27'</span></tt>). See also the
+<tt class="docutils literal"><span class="pre">CONDA_PY</span></tt> environment variable <a class="reference internal" href="environment-vars.html#build-envs"><em>below</em></a>.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">py3k</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">py3k</span></tt></td>
 <td>True if the Python major version is 3</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">py2k</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">py2k</span></tt></td>
 <td>True if the Python major version is 2</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">py27</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">py27</span></tt></td>
 <td>True if the Python version is 2.7</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">py34</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">py34</span></tt></td>
 <td>True if the Python version is 3.4</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">py35</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">py35</span></tt></td>
 <td>True if the Python version is 3.5</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">np</span></code></td>
-<td>The NumPy version as an integer (like <code class="docutils literal"><span class="pre">111</span></code>).  See also the
-<code class="docutils literal"><span class="pre">CONDA_NPY</span></code> environment variable <a class="reference internal" href="environment-vars.html#build-envs"><span class="std std-ref">below</span></a>.</td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">np</span></tt></td>
+<td>The NumPy version as an integer (like <tt class="docutils literal"><span class="pre">111</span></tt>).  See also the
+<tt class="docutils literal"><span class="pre">CONDA_NPY</span></tt> environment variable <a class="reference internal" href="environment-vars.html#build-envs"><em>below</em></a>.</td>
 </tr>
 </tbody>
 </table>
@@ -751,30 +751,30 @@ need to put the same selector on multiple lines.</p>
 <p>Features are a way to track differences in two packages that have the same
 name and version.  For example, a feature might indicate a specialized
 compiler or runtime, or a fork of a package. The canonical example of a
-feature is the <code class="docutils literal"><span class="pre">mkl</span></code> feature in Anaconda Accelerate. Packages that are
-compiled against MKL, such as NumPy, have the <code class="docutils literal"><span class="pre">mkl</span></code> feature set.  The
-<code class="docutils literal"><span class="pre">mkl</span></code> metapackage has the <code class="docutils literal"><span class="pre">mkl</span></code> feature set in <code class="docutils literal"><span class="pre">track_features</span></code>, so that
-installing it installs the <code class="docutils literal"><span class="pre">mkl</span></code> feature (the fact that the name of this
+feature is the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature in Anaconda Accelerate. Packages that are
+compiled against MKL, such as NumPy, have the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature set.  The
+<tt class="docutils literal"><span class="pre">mkl</span></tt> metapackage has the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature set in <tt class="docutils literal"><span class="pre">track_features</span></tt>, so that
+installing it installs the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature (the fact that the name of this
 metapackage matches the name of the feature is a coincidence).</p>
 <p>Features should be thought of as features of the environment the package is
 installed into, not the package itself. The reason is that when a feature is
 installed, conda will automatically change to a package with that feature if
-it exists, for instance, when the <code class="docutils literal"><span class="pre">mkl</span></code> feature is installed, regular
-<code class="docutils literal"><span class="pre">numpy</span></code> is removed and the <code class="docutils literal"><span class="pre">numpy</span></code> package with the <code class="docutils literal"><span class="pre">mkl</span></code> feature is
+it exists, for instance, when the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature is installed, regular
+<tt class="docutils literal"><span class="pre">numpy</span></tt> is removed and the <tt class="docutils literal"><span class="pre">numpy</span></tt> package with the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature is
 installed.  Enabling a feature does not install any packages that are not
 already installed, but it all future packages with that feature that are
 installed into that environment will be preferred.</p>
 <p>Feature names are independent of package names&#8212;it is a coincidence that
-<code class="docutils literal"><span class="pre">mkl</span></code> is both the name of a package and the feature that it tracks.</p>
+<tt class="docutils literal"><span class="pre">mkl</span></tt> is both the name of a package and the feature that it tracks.</p>
 <p>To install a feature, install a package that tracks it. To remove a feature,
-use <code class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--features</span></code>.</p>
-<p>It&#8217;s a good idea to create a metapackage for <code class="docutils literal"><span class="pre">track_features</span></code>.  If you add
-<code class="docutils literal"><span class="pre">track_features</span></code> to a package that also has versions without that feature,
+use <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--features</span></tt>.</p>
+<p>It&#8217;s a good idea to create a metapackage for <tt class="docutils literal"><span class="pre">track_features</span></tt>.  If you add
+<tt class="docutils literal"><span class="pre">track_features</span></tt> to a package that also has versions without that feature,
 then the versions without that feature will never be selected, because conda
-will always add the feature when it is installed from the <code class="docutils literal"><span class="pre">track_features</span></code>
+will always add the feature when it is installed from the <tt class="docutils literal"><span class="pre">track_features</span></tt>
 specification if your package with the feature.</p>
 <p>Instead, it is a good idea to create a separate metapackage. For instance, if
-you want to create some packages with the feature <code class="docutils literal"><span class="pre">debug</span></code>, you would create
+you want to create some packages with the feature <tt class="docutils literal"><span class="pre">debug</span></tt>, you would create
 several packages with</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
@@ -805,29 +805,29 @@ in which it was built.</p>
 relocatable:</p>
 <ul class="simple">
 <li>Binary object files are converted to use relative paths using
-<code class="docutils literal"><span class="pre">install_name_tool</span></code> on OS X and <code class="docutils literal"><span class="pre">patchelf</span></code> on Linux.</li>
+<tt class="docutils literal"><span class="pre">install_name_tool</span></tt> on OS X and <tt class="docutils literal"><span class="pre">patchelf</span></tt> on Linux.</li>
 <li>Any text file (containing no NULL bytes) containing the build prefix or the
-placeholder prefix <code class="docutils literal"><span class="pre">/opt/anaconda1anaconda2anaconda3</span></code> is registered in the
-<code class="docutils literal"><span class="pre">info/has_prefix</span></code> file in the package metadata.  When conda installs the
-package, any files in <code class="docutils literal"><span class="pre">info/has_prefix</span></code> will have the registered prefix
-replaced with the install prefix.  See <a class="reference internal" href="../spec.html#package-metadata"><span class="std std-ref">Package metadata</span></a> for more
+placeholder prefix <tt class="docutils literal"><span class="pre">/opt/anaconda1anaconda2anaconda3</span></tt> is registered in the
+<tt class="docutils literal"><span class="pre">info/has_prefix</span></tt> file in the package metadata.  When conda installs the
+package, any files in <tt class="docutils literal"><span class="pre">info/has_prefix</span></tt> will have the registered prefix
+replaced with the install prefix.  See <a class="reference internal" href="../spec.html#package-metadata"><em>Package metadata</em></a> for more
 information.</li>
 <li>Any binary file containing the build prefix can automatically be registered
-in <code class="docutils literal"><span class="pre">info/has_prefix</span></code> using <code class="docutils literal"><span class="pre">build/detect_binary_files_with_prefix</span></code> in
-<code class="docutils literal"><span class="pre">meta.yaml</span></code>.  Alternatively, individual binary files can be registered by
-listing them in <code class="docutils literal"><span class="pre">build/binary_has_prefix_files</span></code> in meta.yaml.  The
+in <tt class="docutils literal"><span class="pre">info/has_prefix</span></tt> using <tt class="docutils literal"><span class="pre">build/detect_binary_files_with_prefix</span></tt> in
+<tt class="docutils literal"><span class="pre">meta.yaml</span></tt>.  Alternatively, individual binary files can be registered by
+listing them in <tt class="docutils literal"><span class="pre">build/binary_has_prefix_files</span></tt> in meta.yaml.  The
 registered files will have their build prefix replaced with the install
 prefix at install time.  This works by padding the install prefix with null
 terminators, such that the length of the binary file remains the same.  The
 build prefix must therefore be long enough to accommodate any reasonable
-installation prefix. Whenever the <code class="docutils literal"><span class="pre">build/binary_has_prefix_files</span></code> list is
-not empty or <code class="docutils literal"><span class="pre">build/detect_binary_files_with_prefix</span></code> is set, conda will pad
-the build prefix (appending <code class="docutils literal"><span class="pre">_placehold</span></code>&#8216;s to the end of the build
+installation prefix. Whenever the <tt class="docutils literal"><span class="pre">build/binary_has_prefix_files</span></tt> list is
+not empty or <tt class="docutils literal"><span class="pre">build/detect_binary_files_with_prefix</span></tt> is set, conda will pad
+the build prefix (appending <tt class="docutils literal"><span class="pre">_placehold</span></tt>&#8216;s to the end of the build
 directory name) to 80 characters.</li>
 <li>There may be cases where conda identified a file as binary, but it needs to
 have the build prefix replaced as if it were text (no padding with null
-terminators). Such files can be listed in <code class="docutils literal"><span class="pre">build/has_prefix_files</span></code> in
-<code class="docutils literal"><span class="pre">meta.yaml</span></code>.</li>
+terminators). Such files can be listed in <tt class="docutils literal"><span class="pre">build/has_prefix_files</span></tt> in
+<tt class="docutils literal"><span class="pre">meta.yaml</span></tt>.</li>
 </ul>
 </div>
 </div>

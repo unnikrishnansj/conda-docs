@@ -90,7 +90,7 @@
 <li class="toctree-l2"><a class="reference internal" href="using/cheatsheet.html">Conda cheat sheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html">Command reference</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">FAQ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">FAQ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="help/support.html">Support options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="license.html">Conda license</a></li>
@@ -206,6 +206,22 @@ can make installing Python quick and easy even for new users.</p>
 you want and use conda to download and install them. Miniconda can be used when disk
 space is limited or if you do not wish to take the time to download and install all
 the Anaconda packages at once.</p>
+<ol class="arabic simple" start="6">
+<li>Do I need to uninstall other Python installations or packages to use conda?</li>
+</ol>
+<p>No. Even if you already have a system Python, another Python installation from a
+source such as the OS X Homebrew package manager, and globally installed
+packages from pip such as pandas and numpy, you do not need to uninstall,
+remove, or change any of them before using conda.</p>
+<p>Just install Anaconda or Miniconda normally, and let the installer add the conda
+installation of Python to your PATH environment variable. There is no need to
+set the PYTHONPATH environment variable.</p>
+<p>To examine your PATH variable and see if the conda installation of Python is in
+it, you can use <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">$PATH</span></tt> on OS X or Linux or <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">%PATH%</span></tt> on Windows.
+To see which Python installation is currently set as the default,
+use <tt class="docutils literal"><span class="pre">which</span> <span class="pre">python</span></tt> on OS X or Linux and <tt class="docutils literal"><span class="pre">where</span> <span class="pre">python</span></tt> on Windows. To see
+which packages are installed in your current conda environment and their version
+numbers, use <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></tt>.</p>
 </div>
 <div class="section" id="getting-help">
 <h2><a class="toc-backref" href="#id5">Getting help</a><a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
@@ -215,7 +231,7 @@ the Anaconda packages at once.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda -h
 </pre></div>
 </div>
-<p>Or on the web in our command reference guide,  <a class="reference internal" href="commands.html"><span class="doc">Command reference</span></a>.</p>
+<p>Or on the web in our command reference guide,  <a class="reference internal" href="commands.html"><em>Command reference</em></a>.</p>
 <ol class="arabic simple" start="2">
 <li>How can I get help for a specific command, such as <strong>conda create</strong>?</li>
 </ol>
@@ -225,7 +241,7 @@ the Anaconda packages at once.</p>
 <ol class="arabic simple" start="3">
 <li>How can I get help with using conda?</li>
 </ol>
-<p>Download our <a class="reference internal" href="using/cheatsheet.html"><span class="doc">Conda cheat sheet</span></a> and <a class="reference internal" href="install/quick.html"><span class="doc">Quick install</span></a> guide, take the 30-minute <a class="reference internal" href="test-drive.html"><span class="doc">Test drive</span></a>, and see the complete <a class="reference internal" href="using/index.html"><span class="doc">Using conda</span></a> section of our documentation site.</p>
+<p>Download our <a class="reference internal" href="using/cheatsheet.html"><em>Conda cheat sheet</em></a> and <a class="reference internal" href="install/quick.html"><em>Quick install</em></a> guide, take the 30-minute <a class="reference internal" href="test-drive.html"><em>Test drive</em></a>, and see the complete <a class="reference internal" href="using/index.html"><em>Using conda</em></a> section of our documentation site.</p>
 <p>Get free community support with our <a class="reference external" href="https://groups.google.com/a/continuum.io/forum/?fromgroups#!forum/anaconda/">Google group</a>.</p>
 <p>There are also paid support, training and consulting options. See our <a class="reference external" href="http://continuum.io/support/">Support Services</a> page for more information.</p>
 </div>
@@ -242,7 +258,7 @@ the Anaconda packages at once.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda -V
 </pre></div>
 </div>
-<p>SEE ALSO: the complete <a class="reference internal" href="using/index.html"><span class="doc">Using conda</span></a> section of our documentation site.</p>
+<p>SEE ALSO: the complete <a class="reference internal" href="using/index.html"><em>Using conda</em></a> section of our documentation site.</p>
 <ol class="arabic simple" start="2">
 <li>How can I check if a specific package, such as <em>SciPy</em>, is available for installation?</li>
 </ol>
@@ -255,7 +271,7 @@ the Anaconda packages at once.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda search --override-channels --channel defaults scipy
 </pre></div>
 </div>
-<p>SEE ALSO: the <a class="reference internal" href="using/pkgs.html"><span class="doc">Managing packages</span></a> section of our documentation site.</p>
+<p>SEE ALSO: the <a class="reference internal" href="using/pkgs.html"><em>Managing packages</em></a> section of our documentation site.</p>
 <ol class="arabic simple" start="4">
 <li>How do I check if a specific package such as <em>iminuit</em> exists in a specific channel (for example,  <a class="reference external" href="http://conda.anaconda.org/mutirri">http://conda.anaconda.org/mutirri</a>) and is available for installation?</li>
 </ol>
@@ -314,7 +330,7 @@ conda update anaconda
 </div>
 </li>
 <li><p class="first">How can I prevent a specific package from being updated?</p>
-<p>See <a class="reference internal" href="#pinning-packages"><span class="std std-ref">Pinning packages</span></a>.</p>
+<p>See <a class="reference internal" href="#pinning-packages"><em>Pinning packages</em></a>.</p>
 </li>
 </ol>
 </div>
@@ -345,28 +361,28 @@ conda update anaconda
 </div>
 </li>
 </ol>
-<p>SEE ALSO: the <a class="reference internal" href="using/envs.html"><span class="doc">Managing environments</span></a> section of our documentation site.</p>
+<p>SEE ALSO: the <a class="reference internal" href="using/envs.html"><em>Managing environments</em></a> section of our documentation site.</p>
 <ol class="arabic" start="2">
 <li><p class="first">How can I set whether my command prompt shows the name of the active environment?</p>
-<p>This option can be disabled with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">changeps1</span> <span class="pre">false</span></code> and enabled
-with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">changeps1</span> <span class="pre">true</span></code>. It is enabled by default and can be
+<p>This option can be disabled with <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">changeps1</span> <span class="pre">false</span></tt> and enabled
+with <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">changeps1</span> <span class="pre">true</span></tt>. It is enabled by default and can be
 tested by activating and then deactivating any environment.</p>
 </li>
-<li><p class="first">How can I list all installed packages in a specific environment, for example, <code class="docutils literal"><span class="pre">myenv</span></code>?</p>
-<p>If <code class="docutils literal"><span class="pre">myenv</span></code> is not activated:</p>
+<li><p class="first">How can I list all installed packages in a specific environment, for example, <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
+<p>If <tt class="docutils literal"><span class="pre">myenv</span></tt> is not activated:</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>conda list -n myenv
 </pre></div>
 </div>
 </div></blockquote>
-<p>If <code class="docutils literal"><span class="pre">myenv</span></code> is activated:</p>
+<p>If <tt class="docutils literal"><span class="pre">myenv</span></tt> is activated:</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>conda list
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">How can I check if a package (for example, SciPy) is already installed in an existing environment such as <code class="docutils literal"><span class="pre">myenv</span></code>?</p>
+<li><p class="first">How can I check if a package (for example, SciPy) is already installed in an existing environment such as <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>conda list -n myenv scipy
 </pre></div>
@@ -378,21 +394,21 @@ tested by activating and then deactivating any environment.</p>
 <div class="section" id="creating-new-environments">
 <h3><a class="toc-backref" href="#id13">Creating new environments</a><a class="headerlink" href="#creating-new-environments" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">How can I create a new and clean environment, for example, <code class="docutils literal"><span class="pre">myenv</span></code>?</p>
+<li><p class="first">How can I create a new and clean environment, for example, <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda create -n myenv python
 </pre></div>
 </div>
 </li>
 </ol>
-<p>SEE ALSO: the <a class="reference internal" href="using/envs.html"><span class="doc">Managing environments</span></a> section of our documentation site.</p>
+<p>SEE ALSO: the <a class="reference internal" href="using/envs.html"><em>Managing environments</em></a> section of our documentation site.</p>
 <ol class="arabic" start="2">
-<li><p class="first">How can I create a new environment such as <code class="docutils literal"><span class="pre">myenv</span></code> with a specific version of <em>python</em>
+<li><p class="first">How can I create a new environment such as <tt class="docutils literal"><span class="pre">myenv</span></tt> with a specific version of <em>python</em>
 as the default interpreter inside it?</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda create -n myenv <span class="nv">python</span><span class="o">=</span>3.4
 </pre></div>
 </div>
 </li>
-<li><p class="first">How can I create a new environment, for example, <code class="docutils literal"><span class="pre">myenv</span></code> with a specific package in it, for example, SciPy?</p>
+<li><p class="first">How can I create a new environment, for example, <tt class="docutils literal"><span class="pre">myenv</span></tt> with a specific package in it, for example, SciPy?</p>
 <ul>
 <li><p class="first">In one line:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda create -n myenv scipy
@@ -422,7 +438,7 @@ conda install -n myenv <span class="nv">scipy</span><span class="o">=</span>0.15
 </li>
 </ul>
 </li>
-<li><p class="first">How can I use pip in my environment <code class="docutils literal"><span class="pre">myenv</span></code>?</p>
+<li><p class="first">How can I use pip in my environment <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda install -n myenv pip
 <span class="nb">source</span> activate myenv
 pip &lt;pip_subcommand&gt;
@@ -434,30 +450,30 @@ pip &lt;pip_subcommand&gt;
 <div class="section" id="activate-and-deactivate">
 <h3><a class="toc-backref" href="#id14">Activate and deactivate</a><a class="headerlink" href="#activate-and-deactivate" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>How can I activate the existing environment <code class="docutils literal"><span class="pre">myenv</span></code>?</li>
+<li>How can I activate the existing environment <tt class="docutils literal"><span class="pre">myenv</span></tt>?</li>
 </ol>
-<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">myenv</span></code></p>
-<p><strong>Windows:</strong> <code class="docutils literal"><span class="pre">activate</span> <span class="pre">myenv</span></code></p>
-<p>SEE ALSO: the <a class="reference internal" href="using/envs.html"><span class="doc">Managing environments</span></a> section of our documentation site.</p>
+<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">myenv</span></tt></p>
+<p><strong>Windows:</strong> <tt class="docutils literal"><span class="pre">activate</span> <span class="pre">myenv</span></tt></p>
+<p>SEE ALSO: the <a class="reference internal" href="using/envs.html"><em>Managing environments</em></a> section of our documentation site.</p>
 <ol class="arabic simple" start="2">
-<li>How can I deactivate the active environment <code class="docutils literal"><span class="pre">myenv</span></code>?</li>
+<li>How can I deactivate the active environment <tt class="docutils literal"><span class="pre">myenv</span></tt>?</li>
 </ol>
-<p><strong>Linux, OS X:</strong> <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span> <span class="pre">myenv</span></code></p>
-<p><strong>Windows:</strong> <code class="docutils literal"><span class="pre">deactivate</span> <span class="pre">myenv</span></code></p>
+<p><strong>Linux, OS X:</strong> <tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span> <span class="pre">myenv</span></tt></p>
+<p><strong>Windows:</strong> <tt class="docutils literal"><span class="pre">deactivate</span> <span class="pre">myenv</span></tt></p>
 <p>NOTE: In Windows it is good practice to deactivate one environment before activating another.</p>
 </div>
 <div class="section" id="id1">
 <h3><a class="toc-backref" href="#id15">Installing packages</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">How can I install a specific package for example, SciPy, in an existing environment <code class="docutils literal"><span class="pre">myenv</span></code>?</p>
+<li><p class="first">How can I install a specific package for example, SciPy, in an existing environment <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>conda install -n myenv scipy
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">How can I install a specific version of a package like SciPy in the existing environment <code class="docutils literal"><span class="pre">myenv</span></code>?</p>
-<p>If <code class="docutils literal"><span class="pre">myenv</span></code> not activated:</p>
+<li><p class="first">How can I install a specific version of a package like SciPy in the existing environment <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
+<p>If <tt class="docutils literal"><span class="pre">myenv</span></tt> not activated:</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>conda install -n myenv <span class="nv">scipy</span><span class="o">=</span>0.15.0
 </pre></div>
@@ -467,7 +483,7 @@ pip &lt;pip_subcommand&gt;
 </ol>
 <p>The -n or name tells conda to install the environment into the environment named myenv.</p>
 <blockquote>
-<div><p>If <code class="docutils literal"><span class="pre">myenv</span></code> is activated:</p>
+<div><p>If <tt class="docutils literal"><span class="pre">myenv</span></tt> is activated:</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span>0.15.0
 </pre></div>
@@ -499,7 +515,7 @@ standard way, and the latest version of SciPy will be installed in all of them.<
 </ol>
 <p>After performing the above command you can create new environments in the standard way, and SciPy Version 0.15.0 will be installed in all of them.</p>
 <ol class="arabic" start="6">
-<li><p class="first">How can I ignore packages from automatic installation during creation of a new and clean environment, such as <code class="docutils literal"><span class="pre">myenv</span></code>?</p>
+<li><p class="first">How can I ignore packages from automatic installation during creation of a new and clean environment, such as <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda create --no-default-packages -n myenv python
 </pre></div>
 </div>
@@ -516,21 +532,21 @@ is important to have one space before the == operator and no space after.</p>
 <div class="section" id="removing-packages-and-environments">
 <h3><a class="toc-backref" href="#id16">Removing packages and environments</a><a class="headerlink" href="#removing-packages-and-environments" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">How can I remove the package SciPy in an existing environment such as <code class="docutils literal"><span class="pre">myenv</span></code>?</p>
-<p>If <code class="docutils literal"><span class="pre">myenv</span></code> is not activated:</p>
+<li><p class="first">How can I remove the package SciPy in an existing environment such as <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
+<p>If <tt class="docutils literal"><span class="pre">myenv</span></tt> is not activated:</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>conda remove -n myenv scipy
 </pre></div>
 </div>
 </div></blockquote>
-<p>If <code class="docutils literal"><span class="pre">myenv</span></code> is activated:</p>
+<p>If <tt class="docutils literal"><span class="pre">myenv</span></tt> is activated:</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>conda remove scipy
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">How can I remove an existing environment such as <code class="docutils literal"><span class="pre">myenv</span></code>?</p>
+<li><p class="first">How can I remove an existing environment such as <tt class="docutils literal"><span class="pre">myenv</span></tt>?</p>
 <blockquote>
 <div><div class="highlight-bash"><div class="highlight"><pre><span></span>conda remove -n myenv --all
 </pre></div>
@@ -542,7 +558,7 @@ is important to have one space before the == operator and no space after.</p>
 </div>
 <div class="section" id="customization-condarc-file">
 <h2><a class="toc-backref" href="#id17">Customization (.condarc file)</a><a class="headerlink" href="#customization-condarc-file" title="Permalink to this headline">¶</a></h2>
-<p>NOTE: It may be necessary to add the &#8220;force&#8221; option <code class="docutils literal"><span class="pre">-f</span></code> to the following commands.</p>
+<p>NOTE: It may be necessary to add the &#8220;force&#8221; option <tt class="docutils literal"><span class="pre">-f</span></tt> to the following commands.</p>
 <ol class="arabic">
 <li><p class="first">How can I get all keys and their values from my .condarc file?</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda config --get
@@ -585,48 +601,48 @@ know that this package is on PyPI?</p>
 </div>
 </li>
 </ol>
-<p>SEE ALSO: <a class="reference internal" href="build_tutorials/pkgs.html"><span class="doc">Building conda packages with conda skeleton</span></a> tutorial.</p>
+<p>SEE ALSO: <a class="reference internal" href="build_tutorials/pkgs.html"><em>Building conda packages with conda skeleton</em></a> tutorial.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
 <div class="section" id="pinning-packages">
 <span id="id2"></span><h2><a class="toc-backref" href="#id19">Pinning packages</a><a class="headerlink" href="#pinning-packages" title="Permalink to this headline">¶</a></h2>
 <p>You can <em>pin</em> a package specification in an environment, which will prevent
-it from being updated, unless the <code class="docutils literal"><span class="pre">--no-pin</span></code> flag is passed to conda. To
-do so, add a file named <code class="docutils literal"><span class="pre">pinned</span></code> to the environment&#8217;s <code class="docutils literal"><span class="pre">conda-meta</span></code>
+it from being updated, unless the <tt class="docutils literal"><span class="pre">--no-pin</span></tt> flag is passed to conda. To
+do so, add a file named <tt class="docutils literal"><span class="pre">pinned</span></tt> to the environment&#8217;s <tt class="docutils literal"><span class="pre">conda-meta</span></tt>
 directory with a list of specs. For example, a file with this command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">numpy</span> <span class="mf">1.7</span><span class="o">.*</span>
-<span class="n">scipy</span> <span class="o">==</span><span class="mf">0.14</span><span class="o">.</span><span class="mi">2</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>numpy 1.7.*
+scipy ==0.14.2
 </pre></div>
 </div>
 <p>will force numpy to stay on the 1.7 series (any version that starts with
 &#8220;1.7.&#8221;), and will force scipy to stay at exactly version 0.14.2.</p>
-<p>NOTE: With this pinned file, <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span></code> will keep numpy at 1.7.1, and
-<code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">scipy=0.15.0</span></code> will lead to an error. To force either of
-these, use the <code class="docutils literal"><span class="pre">--no-pin</span></code> flag, like <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span> <span class="pre">--no-pin</span></code>. The
+<p>NOTE: With this pinned file, <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span></tt> will keep numpy at 1.7.1, and
+<tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">scipy=0.15.0</span></tt> will lead to an error. To force either of
+these, use the <tt class="docutils literal"><span class="pre">--no-pin</span></tt> flag, like <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span> <span class="pre">--no-pin</span></tt>. The
 way pinning works is that the pinned specs are included with each conda
-install, so subsequent <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span></code> commands without <code class="docutils literal"><span class="pre">--no-pin</span></code> will revert numpy back
+install, so subsequent <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span></tt> commands without <tt class="docutils literal"><span class="pre">--no-pin</span></tt> will revert numpy back
 to the 1.7 series.</p>
 </div>
 <div class="section" id="conda-pip-and-virtualenv">
 <h2><a class="toc-backref" href="#id20">Conda, pip, and virtualenv</a><a class="headerlink" href="#conda-pip-and-virtualenv" title="Permalink to this headline">¶</a></h2>
 <p>If you are already familiar with pip or virtualenv, please see our chart comparing
-<a class="reference internal" href="help/conda-pip-virtualenv-translator.html"><span class="doc">Conda, pip, and virtualenv</span></a>.</p>
+<a class="reference internal" href="help/conda-pip-virtualenv-translator.html"><em>Conda, pip, and virtualenv</em></a>.</p>
 </div>
 <div class="section" id="silent-installation">
 <h2><a class="toc-backref" href="#id21">Silent installation</a><a class="headerlink" href="#silent-installation" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="help/silent.html"><span class="doc">Silent installation</span></a>  of Miniconda or Anaconda can be used for deployment or testing or building services such as Travis CI and Appveyor.</p>
+<p><a class="reference internal" href="help/silent.html"><em>Silent installation</em></a>  of Miniconda or Anaconda can be used for deployment or testing or building services such as Travis CI and Appveyor.</p>
 </div>
 <div class="section" id="using-conda-with-travis-ci">
 <h2><a class="toc-backref" href="#id22">Using conda with Travis CI</a><a class="headerlink" href="#using-conda-with-travis-ci" title="Permalink to this headline">¶</a></h2>
-<p>Conda can be combined with <a class="reference internal" href="travis.html"><span class="doc">continuous integration systems</span></a> such as Travis CI and AppVeyor to provide frequent, automated testing of your code.</p>
+<p>Conda can be combined with <a class="reference internal" href="travis.html"><em>continuous integration systems</em></a> such as Travis CI and AppVeyor to provide frequent, automated testing of your code.</p>
 </div>
 <div class="section" id="windows-xp-with-proxy-configuration">
 <h2><a class="toc-backref" href="#id23">Windows XP with proxy configuration</a><a class="headerlink" href="#windows-xp-with-proxy-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Although Windows XP mainstream support and Extended Support from Microsoft have
 ended and Windows XP is no longer one of the target systems supported by Anaconda,
-some users have successfully installed <a class="reference internal" href="winxp-proxy.html"><span class="doc">Anaconda on Windows XP with proxy
-configuration</span></a>.</p>
+some users have successfully installed <a class="reference internal" href="winxp-proxy.html"><em>Anaconda on Windows XP with proxy
+configuration</em></a>.</p>
 </div>
 </div>
 

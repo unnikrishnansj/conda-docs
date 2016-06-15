@@ -16,8 +16,9 @@ conda env update
           conda - conda env update
    
    DESCRIPTION
-          usage: conda-env update [-h] [-n NAME] [-f FILE] [-q] [--json]
+          usage: conda-env update [-h] [-n NAME] [-f FILE] [--prune] [-q]
    
+          [--select SELECTORS] [--json]
                  [remote_definition]
    
           Update the current environment based on environment file
@@ -37,15 +38,21 @@ conda env update
           -f FILE, --file FILE
                  environment definition (default: environment.yml)
    
+          --prune
+                 remove installed packages not defined in environment.yml
+   
           -q, --quiet
    
-          --json
-                 Report all output as json. Suitable for using conda programmati‐
+          --select SELECTORS
+                 toggle  preprocessing  selectors.  pass multiple times to toggle
+                 multiple selectors. pass 'all' to toggle all selectors
+   
+          --json Report all output as json. Suitable for using conda programmati‐
                  cally.
    
       examples:
-                 conda env update  conda  env  update  -n=foo  conda  env  update
-                 -f=/path/to/environment.yml    conda   env   update   --name=foo
+                 conda  env  update  conda  env  update  -n=foo  conda env update
+                 -f=/path/to/environment.yml   conda   env   update    --name=foo
                  --file=environment.yml conda env update vader/deathstar
    
    

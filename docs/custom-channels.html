@@ -80,7 +80,7 @@
 <li class="toctree-l2"><a class="reference internal" href="build_tutorials.html">Build tutorials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building/bpp.html">Building conda packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building/shared-libraries.html">Using shared libraries</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Custom channels</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Custom channels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="signed-packages.html">Signing conda packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bdist_conda.html">Bdist_conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building/sample-recipes.html">Sample recipes</a></li>
@@ -148,7 +148,7 @@ you designate your Anaconda.org repository as private, then only you, and those
 you grant access, can access your private repository.</p>
 <p>If you do not wish to upload your packages to the internet, however, you can
 build a custom repository served either through a web server, or locally
-using a <code class="docutils literal"><span class="pre">file://</span></code> url.</p>
+using a <tt class="docutils literal"><span class="pre">file://</span></tt> url.</p>
 <div class="section" id="custom-channel-private-repository-summary">
 <h2>Custom channel/private repository summary<a class="headerlink" href="#custom-channel-private-repository-summary" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -161,17 +161,17 @@ using a <code class="docutils literal"><span class="pre">file://</span></code> u
 <p>To create a custom channel, first organize all the packages in subdirectories for
 the platforms you wish to serve.</p>
 <p>Example:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span> <span class="n">channel</span><span class="o">/</span>
-<span class="n">linux</span><span class="o">-</span><span class="mi">64</span><span class="o">/</span>
-   <span class="n">package</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
-<span class="n">linux</span><span class="o">-</span><span class="mi">32</span><span class="o">/</span>
-   <span class="n">package</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
-<span class="n">osx</span><span class="o">-</span><span class="mi">64</span><span class="o">/</span>
-   <span class="n">package</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
-<span class="n">win</span><span class="o">-</span><span class="mi">64</span><span class="o">/</span>
-   <span class="n">package</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
-<span class="n">win</span><span class="o">-</span><span class="mi">32</span><span class="o">/</span>
-   <span class="n">package</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span> channel/
+linux-64/
+   package-1.0-0.tar.bz2
+linux-32/
+   package-1.0-0.tar.bz2
+osx-64/
+   package-1.0-0.tar.bz2
+win-64/
+   package-1.0-0.tar.bz2
+win-32/
+   package-1.0-0.tar.bz2
 </pre></div>
 </div>
 </div>
@@ -179,34 +179,34 @@ the platforms you wish to serve.</p>
 <h3>2. Run conda index on each of the platform subdirectories<a class="headerlink" href="#run-conda-index-on-each-of-the-platform-subdirectories" title="Permalink to this headline">¶</a></h3>
 <p>The ‘conda index’ command is part of the conda-build package. If you have not yet used
 conda build, begin by installing conda build:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">build</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>conda install conda-build
 </pre></div>
 </div>
 <p>Now run conda index on each of the platform subdirectories as shown:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">index</span> <span class="n">channel</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="mi">64</span> <span class="n">channel</span><span class="o">/</span><span class="n">osx</span><span class="o">-</span><span class="mi">64</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>conda index channel/linux-64 channel/osx-64
 </pre></div>
 </div>
-<p>The conda index command generates a file <code class="docutils literal"><span class="pre">repodata.json</span></code>, saved to each repository directory,
+<p>The conda index command generates a file <tt class="docutils literal"><span class="pre">repodata.json</span></tt>, saved to each repository directory,
 which conda uses to get the metadata for the packages in the channel.</p>
-<p>Note: Each time you add or modify a package in the channel, you must re-run <code class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></code> for
+<p>Note: Each time you add or modify a package in the channel, you must re-run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></tt> for
 conda to see the update.</p>
 </div>
 <div class="section" id="test-custom-channels">
 <h3>3. Test custom channels<a class="headerlink" href="#test-custom-channels" title="Permalink to this headline">¶</a></h3>
-<p>You can now serve the custom channel using a web server, or using a <code class="docutils literal"><span class="pre">file://</span> <span class="pre">url</span></code> to the channel
+<p>You can now serve the custom channel using a web server, or using a <tt class="docutils literal"><span class="pre">file://</span> <span class="pre">url</span></tt> to the channel
 directory. Test by sending a search command to the custom channel.</p>
-<p>Example: if a file you want from the custom channel location is located at <code class="docutils literal"><span class="pre">/opt/channel/linux-64/</span></code></p>
+<p>Example: if a file you want from the custom channel location is located at <tt class="docutils literal"><span class="pre">/opt/channel/linux-64/</span></tt></p>
 <p>Then search for files in that location as shown:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="o">-</span><span class="n">c</span> <span class="n">file</span><span class="p">:</span><span class="o">//</span><span class="n">opt</span><span class="o">/</span><span class="n">channel</span><span class="o">/</span> <span class="o">--</span><span class="n">override</span><span class="o">-</span><span class="n">channels</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>conda search -c file://opt/channel/ --override-channels
 </pre></div>
 </div>
 <p>Note: The channel url does NOT include the platform, as conda will automatically detect and add
 the platform.</p>
 <p>Note: the &#8211;override-channels is to be sure conda only searches your specified channel and no
-other channels, such as default channels or any other channels you may have listed in your <code class="docutils literal"><span class="pre">.condarc</span></code>
+other channels, such as default channels or any other channels you may have listed in your <tt class="docutils literal"><span class="pre">.condarc</span></tt>
 file.</p>
 <p>If you have set up your private repository correctly, you will see:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">Fetching</span> <span class="n">package</span> <span class="n">metadata</span><span class="p">:</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
+<div class="code highlight-python"><div class="highlight"><pre><span></span>Fetching package metadata: . . . .
 </pre></div>
 </div>
 <p>This will be followed by a list of the conda packages found.

@@ -149,7 +149,7 @@
 Windows (bld.bat) during the build process.
 (By default, these are the only variables available to your build script &#8211;
 unless otherwise noted, no variables are inherited from the shell environment
-in which you invoked <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code>. See <a class="reference internal" href="#inherited-env-vars"><span class="std std-ref">Inherited Environment Variables</span></a> to
+in which you invoked <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt>. See <a class="reference internal" href="#inherited-env-vars"><em>Inherited Environment Variables</em></a> to
 override this behavior.)</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -157,86 +157,86 @@ override this behavior.)</p>
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">ARCH</span></code></td>
-<td>Either <code class="docutils literal"><span class="pre">32</span></code> or <code class="docutils literal"><span class="pre">64</span></code>, to specify whether the build is 32-bit or
-64-bit.  The value depends on the <code class="docutils literal"><span class="pre">ARCH</span></code> environment variable, and
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">ARCH</span></tt></td>
+<td>Either <tt class="docutils literal"><span class="pre">32</span></tt> or <tt class="docutils literal"><span class="pre">64</span></tt>, to specify whether the build is 32-bit or
+64-bit.  The value depends on the <tt class="docutils literal"><span class="pre">ARCH</span></tt> environment variable, and
 defaults to the architecture the interpreter running conda was
 compiled with</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">CMAKE_GENERATOR</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">CMAKE_GENERATOR</span></tt></td>
 <td>The CMake generator string for the current build environment. On Unix
 systems, this is always &#8220;Unix Makefiles&#8221;. On Windows, it is generated
 according to the Visual Studio version activated at build time,
 e.g. &#8220;Visual Studio 9 2008 Win64&#8221;</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">CONDA_BUILD=1</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">CONDA_BUILD=1</span></tt></td>
 <td>Always set</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">CPU_COUNT</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">CPU_COUNT</span></tt></td>
 <td>Number of CPUs on the system, as reported by
-<code class="docutils literal"><span class="pre">multiprocessing.cpu_count()</span></code></td>
+<tt class="docutils literal"><span class="pre">multiprocessing.cpu_count()</span></tt></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">DIRTY</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">DIRTY</span></tt></td>
 <td>Set to 1 if <cite>&#8211;dirty</cite> flag passed to <cite>conda build</cite> command.  May be used to skip parts of
 build script conditionally (downloads, extraction, other things that need not be repeated
 for faster iteration time when developing recipes)</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">HTTP_PROXY</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">HTTP_PROXY</span></tt></td>
 <td>Inherited from your shell environment.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">HTTPS_PROXY</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">HTTPS_PROXY</span></tt></td>
 <td>Inherited from your shell environment.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">LANG</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">LANG</span></tt></td>
 <td>Inherited from your shell environment.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">MAKEFLAGS</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">MAKEFLAGS</span></tt></td>
 <td>Inherited from your shell environment. May be used to set additional
 arguments to make, such as <cite>-j2</cite>, which will use 2 CPU cores to build
 your recipe.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">NPY_VER</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">NPY_VER</span></tt></td>
 <td>Numpy version building against (Set via <cite>&#8211;numpy</cite> arg or via <cite>CONDA_NPY</cite> environment variable.)</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PATH</span></code></td>
-<td>Inherited from your shell environment, and augmented with <code class="docutils literal"><span class="pre">$PREFIX/bin</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">PATH</span></tt></td>
+<td>Inherited from your shell environment, and augmented with <tt class="docutils literal"><span class="pre">$PREFIX/bin</span></tt></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PREFIX</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">PREFIX</span></tt></td>
 <td>Build prefix where build script should install to</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PKG_BUILDNUM</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">PKG_BUILDNUM</span></tt></td>
 <td>Build number of the package being built</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_NAME</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">PKG_NAME</span></tt></td>
 <td>Name of the package being built</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PKG_VERSION</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">PKG_VERSION</span></tt></td>
 <td>Version of the package being built</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PYTHON</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">PYTHON</span></tt></td>
 <td>Path to Python executable in build prefix (note that Python is only
 installed in the build prefix when it is listed as a build requirement)</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PY3K</span></code></td>
-<td><code class="docutils literal"><span class="pre">1</span></code> when Python 3 is installed in build prefix, else <code class="docutils literal"><span class="pre">0</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">PY3K</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">1</span></tt> when Python 3 is installed in build prefix, else <tt class="docutils literal"><span class="pre">0</span></tt></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">R</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">R</span></tt></td>
 <td>Path to R executable in build prefix (note that R is only
 installed in the build prefix when it is listed as a build requirement).</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">RECIPE_DIR</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">RECIPE_DIR</span></tt></td>
 <td>Directory of recipe</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">SP_DIR</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">SP_DIR</span></tt></td>
 <td>Python&#8217;s site-packages location</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">SRC_DIR</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">SRC_DIR</span></tt></td>
 <td>Path to where source is unpacked (or cloned). If the source file is not
-a recognized file type (right now, <code class="docutils literal"><span class="pre">.zip</span></code>, <code class="docutils literal"><span class="pre">.tar</span></code>, <code class="docutils literal"><span class="pre">.tar.bz2</span></code>,
-<code class="docutils literal"><span class="pre">.tar.xz</span></code>, and <code class="docutils literal"><span class="pre">.tar</span></code>), this is a directory containing a copy of the
+a recognized file type (right now, <tt class="docutils literal"><span class="pre">.zip</span></tt>, <tt class="docutils literal"><span class="pre">.tar</span></tt>, <tt class="docutils literal"><span class="pre">.tar.bz2</span></tt>,
+<tt class="docutils literal"><span class="pre">.tar.xz</span></tt>, and <tt class="docutils literal"><span class="pre">.tar</span></tt>), this is a directory containing a copy of the
 source file</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">STDLIB_DIR</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">STDLIB_DIR</span></tt></td>
 <td>Python standard library location</td>
 </tr>
 </tbody>
@@ -251,35 +251,35 @@ defined in Windows:</p>
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">CYGWIN_PREFIX</span></code></td>
-<td>Same as <code class="docutils literal"><span class="pre">PREFIX</span></code>, but as a Unix-style path, e.g. <code class="docutils literal"><span class="pre">/cygdrive/c/path/to/prefix</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">CYGWIN_PREFIX</span></tt></td>
+<td>Same as <tt class="docutils literal"><span class="pre">PREFIX</span></tt>, but as a Unix-style path, e.g. <tt class="docutils literal"><span class="pre">/cygdrive/c/path/to/prefix</span></tt></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">LIBRARY_BIN</span></code></td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\bin</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">LIBRARY_BIN</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\bin</span></tt></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">LIBRARY_INC</span></code></td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\include</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">LIBRARY_INC</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\include</span></tt></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">LIBRARY_LIB</span></code></td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\lib</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">LIBRARY_LIB</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\lib</span></tt></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">LIBRARY_PREFIX</span></code></td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">LIBRARY_PREFIX</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library</span></tt></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">SCRIPTS</span></code></td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Scripts</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">SCRIPTS</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Scripts</span></tt></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">VS_MAJOR</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">VS_MAJOR</span></tt></td>
 <td>The major version number of the Visual Studio version activated within the
-build, e.g. <code class="docutils literal"><span class="pre">9</span></code></td>
+build, e.g. <tt class="docutils literal"><span class="pre">9</span></tt></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">VS_VERSION</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">VS_VERSION</span></tt></td>
 <td>The version number of the Visual Studio version activated within the
-build, e.g. <code class="docutils literal"><span class="pre">9.0</span></code></td>
+build, e.g. <tt class="docutils literal"><span class="pre">9.0</span></tt></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">VS_YEAR</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">VS_YEAR</span></tt></td>
 <td>The release year of the Visual Studio version activated within the
-build, e.g. <code class="docutils literal"><span class="pre">2008</span></code></td>
+build, e.g. <tt class="docutils literal"><span class="pre">2008</span></tt></td>
 </tr>
 </tbody>
 </table>
@@ -290,11 +290,11 @@ build, e.g. <code class="docutils literal"><span class="pre">2008</span></code><
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">HOME</span></code></td>
-<td>Standard <code class="docutils literal"><span class="pre">$HOME</span></code> environment variable</td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">HOME</span></tt></td>
+<td>Standard <tt class="docutils literal"><span class="pre">$HOME</span></tt> environment variable</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_CONFIG_PATH</span></code></td>
-<td>Path to <code class="docutils literal"><span class="pre">pkgconfig</span></code> directory</td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">PKG_CONFIG_PATH</span></tt></td>
+<td>Path to <tt class="docutils literal"><span class="pre">pkgconfig</span></tt> directory</td>
 </tr>
 </tbody>
 </table>
@@ -305,20 +305,20 @@ build, e.g. <code class="docutils literal"><span class="pre">2008</span></code><
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">CFLAGS</span></code></td>
-<td><code class="docutils literal"><span class="pre">-arch</span></code> flag</td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">CFLAGS</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">-arch</span></tt> flag</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">CXXFLAGS</span></code></td>
-<td>Same as <code class="docutils literal"><span class="pre">CFLAGS</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">CXXFLAGS</span></tt></td>
+<td>Same as <tt class="docutils literal"><span class="pre">CFLAGS</span></tt></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">LDFLAGS</span></code></td>
-<td>Same as <code class="docutils literal"><span class="pre">CFLAGS</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">LDFLAGS</span></tt></td>
+<td>Same as <tt class="docutils literal"><span class="pre">CFLAGS</span></tt></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">MACOSX_DEPLOYMENT_TARGET</span></code></td>
-<td>Same as the Anaconda Python. Currently <code class="docutils literal"><span class="pre">10.6</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">MACOSX_DEPLOYMENT_TARGET</span></tt></td>
+<td>Same as the Anaconda Python. Currently <tt class="docutils literal"><span class="pre">10.6</span></tt></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">OSX_ARCH</span></code></td>
-<td><code class="docutils literal"><span class="pre">i386</span></code> or <code class="docutils literal"><span class="pre">x86_64</span></code>, depending on Python build</td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">OSX_ARCH</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">i386</span></tt> or <tt class="docutils literal"><span class="pre">x86_64</span></tt>, depending on Python build</td>
 </tr>
 </tbody>
 </table>
@@ -329,36 +329,36 @@ build, e.g. <code class="docutils literal"><span class="pre">2008</span></code><
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">LD_RUN_PATH</span></code></td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;/lib</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">LD_RUN_PATH</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;/lib</span></tt></td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="git-environment-variables">
 <h3>Git Environment Variables<a class="headerlink" href="#git-environment-variables" title="Permalink to this headline">¶</a></h3>
-<p>When the source is a git repository, specifying the source either with <code class="docutils literal"><span class="pre">git_url</span></code>
-or <code class="docutils literal"><span class="pre">path</span></code>, the following variables are defined:</p>
+<p>When the source is a git repository, specifying the source either with <tt class="docutils literal"><span class="pre">git_url</span></tt>
+or <tt class="docutils literal"><span class="pre">path</span></tt>, the following variables are defined:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">GIT_BUILD_STR</span></code></td>
-<td>a string that joins <code class="docutils literal"><span class="pre">GIT_DESCRIBE_NUMBER</span></code> and <code class="docutils literal"><span class="pre">GIT_DESCRIBE_HASH</span></code>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GIT_BUILD_STR</span></tt></td>
+<td>a string that joins <tt class="docutils literal"><span class="pre">GIT_DESCRIBE_NUMBER</span></tt> and <tt class="docutils literal"><span class="pre">GIT_DESCRIBE_HASH</span></tt>
 by an underscore</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">GIT_DESCRIBE_HASH</span></code></td>
-<td>the current commit short-hash as displayed from <code class="docutils literal"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GIT_DESCRIBE_HASH</span></tt></td>
+<td>the current commit short-hash as displayed from <tt class="docutils literal"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span></tt></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">GIT_DESCRIBE_NUMBER</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GIT_DESCRIBE_NUMBER</span></tt></td>
 <td>string denoting the number of commits since the most recent tag</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">GIT_DESCRIBE_TAG</span></code></td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GIT_DESCRIBE_TAG</span></tt></td>
 <td>string denoting the most recent tag from the current commit (based on
-the output of <code class="docutils literal"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span></code>)</td>
+the output of <tt class="docutils literal"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span></tt>)</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">GIT_FULL_HASH</span></code></td>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GIT_FULL_HASH</span></tt></td>
 <td>a string with the full SHA1 of the current HEAD</td>
 </tr>
 </tbody>
@@ -367,7 +367,7 @@ the output of <code class="docutils literal"><span class="pre">git</span> <span 
 like the build string based on the state of the git repository.</p>
 <p>For example, here&#8217;s a meta.yaml that would work with these values. In this
 example, the recipe is included at the base directory of the git repository,
-so the <code class="docutils literal"><span class="pre">git_url</span></code> is <code class="docutils literal"><span class="pre">../</span></code>:</p>
+so the <tt class="docutils literal"><span class="pre">git_url</span></tt> is <tt class="docutils literal"><span class="pre">../</span></tt>:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mypkg</span>
   <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">GIT_DESCRIBE_TAG</span> <span class="p p-Indicator">}}</span>
@@ -404,11 +404,11 @@ example above using the older syntax:</p>
 </div>
 <p>All of the above environment variables are also set during the test process,
 except with the test prefix instead of the build prefix everywhere.</p>
-<p>Note that build.sh is run with <code class="docutils literal"><span class="pre">bash</span> <span class="pre">-x</span> <span class="pre">-e</span></code> (the <code class="docutils literal"><span class="pre">-x</span></code> makes it echo each
-command that is run, and the <code class="docutils literal"><span class="pre">-e</span></code> makes it exit whenever a command in the
+<p>Note that build.sh is run with <tt class="docutils literal"><span class="pre">bash</span> <span class="pre">-x</span> <span class="pre">-e</span></tt> (the <tt class="docutils literal"><span class="pre">-x</span></tt> makes it echo each
+command that is run, and the <tt class="docutils literal"><span class="pre">-e</span></tt> makes it exit whenever a command in the
 script returns nonzero exit status).  You can revert this in the script if you
-need to by using the <code class="docutils literal"><span class="pre">set</span></code> command.</p>
-<p>The only practical difference between <code class="docutils literal"><span class="pre">git_url</span></code> and <code class="docutils literal"><span class="pre">path</span></code> as source arguments
+need to by using the <tt class="docutils literal"><span class="pre">set</span></tt> command.</p>
+<p>The only practical difference between <tt class="docutils literal"><span class="pre">git_url</span></tt> and <tt class="docutils literal"><span class="pre">path</span></tt> as source arguments
 is that git_url is a clone of a repository and path is copy of the repository.
 Using path will allow you to build packages with unstaged/uncommited changes in
 working directory. git_url can only build up to the latest commit.</p>
@@ -416,8 +416,8 @@ working directory. git_url can only build up to the latest commit.</p>
 <div class="section" id="inherited-environment-variables">
 <span id="inherited-env-vars"></span><h3>Inherited Environment Variables<a class="headerlink" href="#inherited-environment-variables" title="Permalink to this headline">¶</a></h3>
 <p>Other than those mentioned above, no variables are inherited from the
-environment in which you invoked <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code>. You can choose to inherit
-additional environment variables by adding them to <code class="docutils literal"><span class="pre">meta.yaml</span></code>:</p>
+environment in which you invoked <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt>. You can choose to inherit
+additional environment variables by adding them to <tt class="docutils literal"><span class="pre">meta.yaml</span></tt>:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">script_env</span><span class="p p-Indicator">:</span>
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TMPDIR</span>
@@ -440,13 +440,13 @@ used with caution or avoided altogether.</p>
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">CONDA_PY</span></code></td>
-<td>Should be <code class="docutils literal"><span class="pre">27</span></code>, <code class="docutils literal"><span class="pre">34</span></code>, or <code class="docutils literal"><span class="pre">35</span></code>.  This is the Python version
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">CONDA_PY</span></tt></td>
+<td>Should be <tt class="docutils literal"><span class="pre">27</span></tt>, <tt class="docutils literal"><span class="pre">34</span></tt>, or <tt class="docutils literal"><span class="pre">35</span></tt>.  This is the Python version
 used to build the package.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">CONDA_NPY</span></code></td>
-<td>This is the NumPy version used to build the package, such as <code class="docutils literal"><span class="pre">19</span></code>,
-<code class="docutils literal"><span class="pre">110</span></code>, or <code class="docutils literal"><span class="pre">111</span></code>.</td>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">CONDA_NPY</span></tt></td>
+<td>This is the NumPy version used to build the package, such as <tt class="docutils literal"><span class="pre">19</span></tt>,
+<tt class="docutils literal"><span class="pre">110</span></tt>, or <tt class="docutils literal"><span class="pre">111</span></tt>.</td>
 </tr>
 </tbody>
 </table>

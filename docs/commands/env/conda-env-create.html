@@ -153,9 +153,9 @@ NAME
        conda - conda env create
 
 DESCRIPTION
-       usage:  conda-env  create  [-h]  [-f  FILE]  [-n  NAME]  [-q] [--force]
-       [--json]
+       usage: conda-env create [-h] [-f FILE] [-n ENVIRONMENT | -p PATH] [-q]
 
+       [--force] [--select SELECTORS] [--json]
               [remote_definition]
 
        Create an environment based on an environment file
@@ -172,8 +172,12 @@ OPTIONS
        -f FILE, --file FILE
               environment definition file (default: environment.yml)
 
-       -n NAME, --name NAME
-              environment definition
+       -n ENVIRONMENT, --name ENVIRONMENT
+              Name of environment (in envs dirs).
+
+       -p PATH, --prefix PATH
+              Full  path to environment prefix (default: envs dirs/build-envi‐
+              ronment).
 
        -q, --quiet
 
@@ -181,13 +185,19 @@ OPTIONS
               force creation of environment (removing  a  previously  existing
               environment of the same name).
 
+       --select SELECTORS
+              toggle  preprocessing  selectors.  pass multiple times to toggle
+              multiple selectors. pass 'all' to toggle all selectors
+
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
    examples:
-              conda env create conda env  create  -n  name  conda  env  create
+              conda  env  create  conda  env  create  -n name conda env create
               vader/deathstar  conda  env  create  -f=/path/to/environment.yml
-              conda env create -f=/path/to/requirements.txt -n deathstar
+              conda env create -f=/path/to/requirements.txt -n deathstar conda
+              env  create  -f=/path/to/requirements.txt  -p   /home/user/soft‐
+              ware/deathstar
 
 
 

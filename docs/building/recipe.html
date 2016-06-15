@@ -147,17 +147,17 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Building a conda package with conda build involves creating a conda recipe. The recipe
 is a flat directory holding metadata and the scripts needed to build the package.
-The conda package is then built from the conda recipe using the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> command.</p>
+The conda package is then built from the conda recipe using the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt> command.</p>
 <p>Conda packages can be built from a variety of source code projects, most notably Python.
 Please refer to the <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/">Setuptools documentation</a>
 for help packing a Python project.</p>
 <p>TIP: If you are new to building packages with conda, we recommend taking our series
-of three <a class="reference internal" href="../build_tutorials.html"><span class="doc">build tutorials</span></a>.</p>
+of three <a class="reference internal" href="../build_tutorials.html"><em>build tutorials</em></a>.</p>
 </div>
 <div class="section" id="conda-build-requirements">
 <h2>Conda build requirements<a class="headerlink" href="#conda-build-requirements" title="Permalink to this headline">¶</a></h2>
 <p>Conda and conda-build are required, and available from either Miniconda or Anaconda.
-Please follow the <a class="reference internal" href="../install/quick.html"><span class="doc">Quick install</span></a> instructions.</p>
+Please follow the <a class="reference internal" href="../install/quick.html"><em>Quick install</em></a> instructions.</p>
 <p><strong>All platforms:</strong> Install conda-build:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda install conda-build
 </pre></div>
@@ -166,7 +166,7 @@ Please follow the <a class="reference internal" href="../install/quick.html"><sp
 account and client are required.</p>
 <div class="section" id="update-conda-build">
 <h3>Update conda build<a class="headerlink" href="#update-conda-build" title="Permalink to this headline">¶</a></h3>
-<p>It is important to keep your version of <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> up to date to take advantage of
+<p>It is important to keep your version of <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt> up to date to take advantage of
 bug fixes and new features.</p>
 <p><strong>All platforms:</strong> Upgrade conda-build:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda update conda
@@ -181,10 +181,10 @@ conda update conda-build
 <p>The files in a conda recipe are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">meta.yaml</span></code> (metadata file)</li>
-<li><code class="docutils literal"><span class="pre">build.sh</span></code> (Unix build script which is executed using bash)</li>
-<li><code class="docutils literal"><span class="pre">bld.bat</span></code> (Windows build script which is executed using cmd)</li>
-<li><code class="docutils literal"><span class="pre">run_test.[py,pl,sh,bat]</span></code> (optional) test file</li>
+<li><tt class="docutils literal"><span class="pre">meta.yaml</span></tt> (metadata file)</li>
+<li><tt class="docutils literal"><span class="pre">build.sh</span></tt> (Unix build script which is executed using bash)</li>
+<li><tt class="docutils literal"><span class="pre">bld.bat</span></tt> (Windows build script which is executed using cmd)</li>
+<li><tt class="docutils literal"><span class="pre">run_test.[py,pl,sh,bat]</span></tt> (optional) test file</li>
 <li>patches to the source (optional, see below)</li>
 <li>other resources, which are not included in the source and cannot be generated
 by the build scripts. Examples are icon files, readme, or build notes.</li>
@@ -214,12 +214,12 @@ scripts. This step is not run if there are no tests in the recipe.</li>
 the final package archive which is distributed to users, so be careful not to
 put passwords or other sensitive information into recipes where it could leak to
 the public.</p>
-<p>The <a class="reference internal" href="../commands/build/conda-skeleton.html#skeleton-ref"><span class="std std-ref">conda skeleton</span></a> command can help to make skeleton
+<p>The <a class="reference internal" href="../commands/build/conda-skeleton.html#skeleton-ref"><em>conda skeleton</em></a> command can help to make skeleton
 recipes for common repositories, such as <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a>.</p>
 </div>
 <div class="section" id="more-information-about-meta-yaml">
 <h2>More information about meta.yaml<a class="headerlink" href="#more-information-about-meta-yaml" title="Permalink to this headline">¶</a></h2>
-<p>Next, please continue on to learn more about <a class="reference internal" href="meta-yaml.html"><span class="doc">the meta.yaml file</span></a>.</p>
+<p>Next, please continue on to learn more about <a class="reference internal" href="meta-yaml.html"><em>the meta.yaml file</em></a>.</p>
 </div>
 </div>
 

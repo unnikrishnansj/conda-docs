@@ -103,12 +103,7 @@ conda config
           all  valid  ways  to  spell  "true",  and  "no",  "NO", "off", "false",
           "False", and "FALSE", are all valid ways to spell "false".
    
-          The .condarc file is YAML, and any valid YAML syntax is allowed.   How‐
-          ever,  this  command uses a specialized YAML parser that tries to main‐
-          tain structure and comments, which may not recognize all kinds of  syn‐
-          tax.  The  --force  flag  can be used to write using the pyyaml parser,
-          which will remove any structure and comments from the file.  Currently,
-          the --force flag is required to use --remove or --remove-key.
+          The .condarc file is YAML, and any valid YAML syntax is allowed.
    
    EXAMPLES
           Get the channels defined in the system .condarc:

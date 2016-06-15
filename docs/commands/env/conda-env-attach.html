@@ -153,13 +153,12 @@ NAME
        conda - conda env attach
 
 DESCRIPTION
-       usage:   conda-env   attach  [-h]  (-n  NAME  |  -r  REMOTE)  [--force]
-       [--no-builds]
+       usage: conda-env attach [-h] (-n NAME | -r REMOTE) [-p PATH] [--force]
 
-       [--json]
+       [--no-builds] [--json]
               notebook
 
-       Embeds information describing your conda environment into the  notebook
+       Embeds  information describing your conda environment into the notebook
        metadata
 
 OPTIONS
@@ -177,6 +176,9 @@ OPTIONS
        -r REMOTE, --remote REMOTE
               remote environment definition
 
+       -p PATH, --prefix PATH
+              Full path to environment prefix
+
        --force
               Replace existing environment definition
 
@@ -187,7 +189,7 @@ OPTIONS
               cally.
 
    examples:
-              conda env attach -n root  notebook.ipynb  conda  env  attach  -r
+              conda  env  attach  -n  root  notebook.ipynb conda env attach -r
               user/environment notebook.ipynb
 
 
