@@ -153,8 +153,8 @@ is up to date with a simple:</p>
 </div>
 <div class="section" id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
-<p>The Windows installer of Miniconda can be run in silent mode using the <tt class="docutils literal"><span class="pre">/S</span></tt> argument. The following optional arguments
-are supported:</p>
+<p>The Windows installer of Miniconda can be run in silent mode using
+the <tt class="docutils literal"><span class="pre">/S</span></tt> argument. The following optional arguments are supported:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">/InstallationType=[JustMe|AllUsers]</span></tt>, default: <tt class="docutils literal"><span class="pre">JustMe</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">/AddToPath=[0|1]</span></tt>, default: <tt class="docutils literal"><span class="pre">1</span></tt></li>
@@ -162,11 +162,11 @@ are supported:</p>
 <li><tt class="docutils literal"><span class="pre">/S</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">/D=&lt;installation</span> <span class="pre">path&gt;</span></tt></li>
 </ul>
-<p>All arguments are case-sensitive. The installation path must be the last argument and should <strong>NOT</strong> be wrapped in
-quotation marks.</p>
-<p>The following command installs Miniconda for all users without registering Python as the system&#8217;s default:</p>
-<div class="highlight-bat"><div class="highlight"><pre><span></span>Miniconda2-latest-Windows-x86_64.exe /InstallationType=AllUsers /RegisterPython=0 \
-    /S /D=C:\Program Files\Miniconda3
+<p>All arguments are case-sensitive. The installation path must be the last
+argument and should <strong>NOT</strong> be wrapped in quotation marks.</p>
+<p>The following command installs Miniconda for the current user without
+registering Python as the system&#8217;s default:</p>
+<div class="highlight-bat"><div class="highlight"><pre><span></span><span class="k">start</span> /wait <span class="s2">&quot;&quot;</span> Miniconda4-latest-Windows-x86_64.exe /InstallationType=JustMe /RegisterPython=0 /S /D=<span class="nv">%UserProfile%</span>\Miniconda3
 </pre></div>
 </div>
 </div>

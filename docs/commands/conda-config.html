@@ -155,8 +155,8 @@ NAME
 DESCRIPTION
        usage: conda config [-h] [--json] [--system | --file FILE]
 
-       (--get  [KEY  [KEY ...]] | --add KEY VALUE | --set KEY VALUE | --remove
-       KEY VALUE | --remove-key KEY)
+       (--get  [KEY  [KEY ...]] | --add KEY VALUE | --append KEY VALUE | --set
+       KEY VALUE | --remove KEY VALUE | --remove-key KEY)
               [-f]
 
        Modify configuration values in .condarc.  This is modeled after the git
@@ -185,14 +185,18 @@ OPTIONS
               Get a configuration value.
 
        --add KEY VALUE
-              Add  one configuration value to a list key. The default behavior
+              Add  one  configuration value to the beginning of a list key. To
+              add to the end of the list, use --append.
+
+       --append KEY VALUE
+              Add one configuration value to a list key. The default  behavior
               is to prepend.
 
        --set KEY VALUE
               Set a boolean or string key
 
        --remove KEY VALUE
-              Remove a configuration value from a list key. This  removes  all
+              Remove  a  configuration value from a list key. This removes all
               instances of the value.
 
        --remove-key KEY
@@ -202,7 +206,7 @@ OPTIONS
               Write to the config file using the yaml parser. This will remove
               any comments or structure from the file.
 
-       See http://conda.pydata.org/docs/config.html for  details  on  all  the
+       See  http://conda.pydata.org/docs/config.html  for  details  on all the
        options that can go in .condarc.
 
        List keys, like
@@ -221,7 +225,7 @@ OPTIONS
 
               - r - conda - defaults
 
-       Note  that the key 'channels' implicitly contains the key 'defaults' if
+       Note that the key 'channels' implicitly contains the key 'defaults'  if
        it has not been configured yet.
 
        Boolean keys, like
@@ -236,8 +240,8 @@ OPTIONS
 
               always_yes: false
 
-       Note that in YAML, "yes", "YES", "on", "true", "True", and  "TRUE"  are
-       all  valid  ways  to  spell  "true",  and  "no",  "NO", "off", "false",
+       Note  that  in YAML, "yes", "YES", "on", "true", "True", and "TRUE" are
+       all valid ways  to  spell  "true",  and  "no",  "NO",  "off",  "false",
        "False", and "FALSE", are all valid ways to spell "false".
 
        The .condarc file is YAML, and any valid YAML syntax is allowed.

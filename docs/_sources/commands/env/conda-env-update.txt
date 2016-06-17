@@ -16,9 +16,9 @@ conda env update
           conda - conda env update
    
    DESCRIPTION
-          usage: conda-env update [-h] [-n NAME] [-f FILE] [--prune] [-q]
+          usage:  conda-env  update  [-h]  [-n  NAME]  [-f  FILE]  [--prune] [-q]
+          [--json]
    
-          [--select SELECTORS] [--json]
                  [remote_definition]
    
           Update the current environment based on environment file
@@ -43,11 +43,8 @@ conda env update
    
           -q, --quiet
    
-          --select SELECTORS
-                 toggle  preprocessing  selectors.  pass multiple times to toggle
-                 multiple selectors. pass 'all' to toggle all selectors
-   
-          --json Report all output as json. Suitable for using conda programmati‐
+          --json
+                 Report all output as json. Suitable for using conda programmati‐
                  cally.
    
       examples:
