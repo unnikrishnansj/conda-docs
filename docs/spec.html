@@ -262,6 +262,24 @@ with spaces.</p>
 <p><tt class="docutils literal"><span class="pre">info/license.txt</span></tt>: This optional file is the software license for the package.</p>
 <p><tt class="docutils literal"><span class="pre">info/no_link</span></tt>: This optional file lists all files which cannot be linked
 (either soft or hard) into environments, and are copied instead.</p>
+<p><tt class="docutils literal"><span class="pre">info/about.json</span></tt>: This optional file contains the entries in the <a class="reference internal" href="building/meta-yaml.html#about"><em>About section</em></a> section
+of <a class="reference internal" href="building/meta-yaml.html"><em>The meta.yaml file</em></a> file. The following keys will be added to <tt class="docutils literal"><span class="pre">info/about.json</span></tt>
+if present in the build recipe</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">home</span>
+<span class="n">dev_url</span>
+<span class="n">doc_url</span>
+<span class="n">license_url</span>
+<span class="n">license</span>
+<span class="n">summary</span>
+<span class="n">description</span>
+<span class="n">license_family</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">info/recipe</span></tt>: This directory will contain the full contents of the build recipe.</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">meta.yaml.rendered</span></tt>: This is the fully rendered build recipe. See <a class="reference internal" href="commands/build/conda-render.html"><em>conda render</em></a>.</p>
+<p>This directory is only present when the the <tt class="docutils literal"><span class="pre">include_recipe</span></tt> flag is true in the <a class="reference internal" href="building/meta-yaml.html#meta-build"><em>Build section</em></a>.</p>
+</div></blockquote>
 </div>
 <div class="section" id="link-and-unlink-scripts">
 <h2><a class="toc-backref" href="#id4">Link and unlink scripts</a><a class="headerlink" href="#link-and-unlink-scripts" title="Permalink to this headline">¶</a></h2>

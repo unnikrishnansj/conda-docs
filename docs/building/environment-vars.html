@@ -335,7 +335,7 @@ build, e.g. <tt class="docutils literal"><span class="pre">2008</span></tt></td>
 </tbody>
 </table>
 <div class="section" id="git-environment-variables">
-<h3>Git Environment Variables<a class="headerlink" href="#git-environment-variables" title="Permalink to this headline">¶</a></h3>
+<span id="git-env"></span><h3>Git Environment Variables<a class="headerlink" href="#git-environment-variables" title="Permalink to this headline">¶</a></h3>
 <p>When the source is a git repository, specifying the source either with <tt class="docutils literal"><span class="pre">git_url</span></tt>
 or <tt class="docutils literal"><span class="pre">path</span></tt>, the following variables are defined:</p>
 <table border="1" class="docutils">
@@ -447,6 +447,32 @@ used to build the package.</td>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">CONDA_NPY</span></tt></td>
 <td>This is the NumPy version used to build the package, such as <tt class="docutils literal"><span class="pre">19</span></tt>,
 <tt class="docutils literal"><span class="pre">110</span></tt>, or <tt class="docutils literal"><span class="pre">111</span></tt>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="environment-variables-to-set-build-features">
+<span id="build-features"></span><h2>Environment variables to set build features<a class="headerlink" href="#environment-variables-to-set-build-features" title="Permalink to this headline">¶</a></h2>
+<p>Three environment variables are inherited from the process running <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt>.
+These three variables control <a class="reference internal" href="meta-yaml.html#id1"><em>Features</em></a> as defined in <a class="reference internal" href="meta-yaml.html"><em>The meta.yaml file</em></a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">FEATURE_NOMKL</span></tt></td>
+<td>Adds the <tt class="docutils literal"><span class="pre">nomkl</span></tt> feature to the built package.</td>
+<td>Accepts <tt class="docutils literal"><span class="pre">0</span></tt> for off and <tt class="docutils literal"><span class="pre">1</span></tt> for on.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">FEATURE_DEBUG</span></tt></td>
+<td>Adds the <tt class="docutils literal"><span class="pre">debug</span></tt> feature to the built package</td>
+<td>Accepts <tt class="docutils literal"><span class="pre">0</span></tt> for off and <tt class="docutils literal"><span class="pre">1</span></tt> for on.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">FEATURE_OPT</span></tt></td>
+<td>Adds the <tt class="docutils literal"><span class="pre">opt</span></tt> feature to the built package</td>
+<td>Accepts <tt class="docutils literal"><span class="pre">0</span></tt> for off and <tt class="docutils literal"><span class="pre">1</span></tt> for on.</td>
 </tr>
 </tbody>
 </table>
