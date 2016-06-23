@@ -203,7 +203,7 @@ This is because conda-build will create a private environment from which the sou
 <p>We begin by searching for each of these packages using conda-search. The only package that cannot
 be found in the default channel is <tt class="docutils literal"><span class="pre">json-c</span></tt>. To install this package you will have to add the
 <tt class="docutils literal"><span class="pre">jlaura</span></tt> channel using the conda-config command.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda config --add channel jlaura
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda config --add channels jlaura
 </pre></div>
 </div>
 <p>Now that you have identified that all of the dependent packages can be installed the next step
