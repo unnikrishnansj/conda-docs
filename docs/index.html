@@ -146,12 +146,12 @@ Linux, OS X and Windows, and was created for Python programs but can package and
 of Anaconda, which provide on-site enterprise package and environment management for Python, R, Node.js, Java, and other application
 stacks. Conda is also available on pypi, although that approach may not be as up-to-date.</p>
 <ul class="simple">
-<li>Miniconda is a small “bootstrap” version that includes only conda and conda-build, and installs Python. Over 720
+<li>Miniconda is a small &#8220;bootstrap&#8221; version that includes only conda and conda-build, and installs Python. Over 720
 scientific packages and their dependencies can be installed individually from the Continuum repository with
-the “conda install” command.</li>
+the &#8220;conda install&#8221; command.</li>
 <li>Anaconda includes conda, conda-build, Python, and over 150 automatically installed scientific packages and
 their dependencies. As with Miniconda, over 250 additional scientific packages can be installed individually with
-the “conda install” command.</li>
+the &#8220;conda install&#8221; command.</li>
 <li>pip install conda uses the released version on pypi.  This version allows you to create new conda environments using
 any python installation, and a new version of Python will then be installed into those environments.  These environments
 are still considered &#8220;Anaconda installations.&#8221;</li>
@@ -179,6 +179,68 @@ conda environments.</p>
 <li>pyyaml</li>
 <li>requests</li>
 </ul>
+</div>
+<div class="section" id="what-s-new-in-conda-4-1">
+<h2>What&#8217;s new in conda 4.1?<a class="headerlink" href="#what-s-new-in-conda-4-1" title="Permalink to this headline">¶</a></h2>
+<p>This release contains many small bug fixes for all operating systems, and a few
+special fixes for Windows behavior. The
+<a class="reference external" href="https://github.com/conda/conda/releases/tag/4.1.0">changelog</a> contains a
+complete list of changes.</p>
+<p><strong>Notable changes for all systems Windows, OS X and Linux:</strong></p>
+<ul class="simple">
+<li><strong>Channel order now matters.</strong> The most significant conda change is that
+when you add channels, channel order matters. If you have a list of channels
+in a .condarc file, conda installs the package from the first channel where
+it&#8217;s available, even if it&#8217;s available in a later channel with a higher
+version number.</li>
+<li><strong>No version downgrades.</strong> Conda remove no longer performs version
+downgrades on any remaining packages that might be suggested to resolve
+dependency losses; the package will just be removed instead.</li>
+<li><strong>New YAML parser/emitter.</strong> PyYAML is replaced with ruamel.yaml,
+which gives more robust control over yaml document use.
+<a class="reference external" href="http://yaml.readthedocs.io/en/latest/">More on ruamel.yaml</a></li>
+<li><strong>Shebang lines over 127 characters are now truncated (Linux, OS X
+only).</strong> <a class="reference external" href="https://en.wikipedia.org/wiki/Shebang_(Unix)">Shebangs</a> are
+the first line of the many executable scripts that tell the operating
+system how to execute the program.  They start with <tt class="docutils literal"><span class="pre">#!</span></tt>. Most OSes
+don&#8217;t support these lines over 127 characters, so conda now checks
+the length and replaces the full interpreter path in long lines with
+<tt class="docutils literal"><span class="pre">/usr/bin/env</span></tt>. When you&#8217;re working in a conda environment that
+is deeply under many directories, or you otherwise have long paths
+to your conda environment, make sure you activate that environment
+now.</li>
+<li><strong>Changes to conda list command.</strong> When looking for packages that
+aren’t installed with conda, conda list now examines the Python
+site-packages directory rather than relying on pip.</li>
+<li><strong>Changes to conda remove command.</strong> The command  <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--all</span></tt>
+now removes a conda environment without fetching information from a remote
+server on the packages in the environment.</li>
+<li><strong>Conda update can be turned off and on.</strong> When turned off, conda will
+not update itself unless the user manually issues a conda update command.
+Previously conda updated any time a user updated or installed a package
+in the root environment. Use the option <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">set</span> <span class="pre">auto_update_conda</span> <span class="pre">false</span></tt>.</li>
+<li><strong>Improved support for BeeGFS.</strong> BeeGFS is a parallel cluster file
+system for performance and designed for easy installation and
+management. <a class="reference external" href="http://www.beegfs.com/content/documentation/">More on BeeGFS</a></li>
+</ul>
+<p><strong>Windows-only changes include:</strong></p>
+<ul class="simple">
+<li><strong>Shortcuts are no longer installed by default on Windows.</strong> Shortcuts can
+now be installed with the <tt class="docutils literal"><span class="pre">--shortcuts</span></tt> option. Example 1: Install a shortcut
+to Spyder with <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">spyder</span> <span class="pre">--shortcut</span></tt>. Note if you have Anaconda
+(not Miniconda), you already have this shortcut and Spyder. Example 2:
+Install the open source package named <tt class="docutils literal"><span class="pre">console_shortcut</span></tt>. When you click
+the shortcut icon, a terminal window will open with the environment
+containing the <tt class="docutils literal"><span class="pre">console_shortcut</span></tt> package already activated. <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span>
+<span class="pre">console_shortcut</span> <span class="pre">--shortcuts</span></tt></li>
+<li><strong>Skip binary replacement on Windows.</strong> Linux &amp; OS X have binaries that
+are coded with library locations, and this information must sometimes be
+replaced for relocatability, but Windows does not generally embed prefixes
+in binaries, and was already relocatable. We skip binary replacement on
+Windows.</li>
+</ul>
+<p>See the <a class="reference external" href="https://github.com/conda/conda/releases/tag/4.1.0">changelog</a> for
+a complete list of changes.</p>
 </div>
 </div>
 
