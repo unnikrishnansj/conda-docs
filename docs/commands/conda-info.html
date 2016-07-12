@@ -153,7 +153,8 @@ NAME
        conda - conda info
 
 DESCRIPTION
-       usage: conda info [-h] [--json] [-a] [-e] [-l] [-s] [--root]
+       usage:  conda  info  [-h]  [--json]  [--offline]  [-a]  [-e]  [-l] [-s]
+       [--root]
 
               [--unsafe-channels] [packages [packages ...]]
 
@@ -171,8 +172,11 @@ OPTIONS
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
+       --offline
+              Offline mode, don't connect to the Internet.
+
        -a, --all
-              Show all information, (environments, license, and system  infor‐
+              Show  all information, (environments, license, and system infor‐
               mation.
 
        -e, --envs
@@ -194,7 +198,7 @@ EXAMPLES
 
 
 
-Continuum Analytics                June 2016                          <B>CONDA(1)</B>
+Continuum Analytics                July 2016                          <B>CONDA(1)</B>
 </PRE></div>
 
 
