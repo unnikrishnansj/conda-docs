@@ -151,6 +151,7 @@
 <li><a class="reference internal" href="#attributeerror-getproxies"><em>Issue: AttributeError or missing getproxies</em></a></li>
 <li><a class="reference internal" href="#shell-command-location"><em>Issue:  Shell commands open from wrong location</em></a></li>
 <li><a class="reference internal" href="#wrong-python"><em>Issue:  Programs fail due to invoking conda Python and not system Python</em></a></li>
+<li><a class="reference internal" href="#unsatisfiable"><em>Issue: UnsatisfiableSpecifications error</em></a></li>
 </ol>
 <div class="section" id="issue-permission-denied-errors-during-install">
 <span id="permission-denied"></span><h2>Issue:  permission denied errors during install<a class="headerlink" href="#issue-permission-denied-errors-during-install" title="Permalink to this headline">¶</a></h2>
@@ -341,6 +342,58 @@ or <tt class="docutils literal"><span class="pre">source</span> <span class="pre
 <p>After running <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span></tt> to activate any environment, including after
 running <tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">root</span></tt>, running <tt class="docutils literal"><span class="pre">python</span></tt> will invoke the Python in
 the active conda environment.</p>
+</div>
+</div>
+<div class="section" id="issue-unsatisfiablespecifications-error">
+<span id="unsatisfiable"></span><h2>Issue: <tt class="docutils literal"><span class="pre">UnsatisfiableSpecifications</span></tt> error<a class="headerlink" href="#issue-unsatisfiablespecifications-error" title="Permalink to this headline">¶</a></h2>
+<p>Not all conda package installation specifications are possible to satisfy.</p>
+<p>For example, <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">tmp</span> <span class="pre">python=3</span> <span class="pre">wxpython=3</span></tt> produces an
+Unsatisfiable Specifications error because wxPython 3 depends on Python 2.7, so
+the specification to install Python 3 conflicts with the specification to
+install wxPython 3.</p>
+<div class="section" id="resolution-fix-the-conflicts-in-the-installation-request">
+<h3>Resolution: Fix the conflicts in the installation request<a class="headerlink" href="#resolution-fix-the-conflicts-in-the-installation-request" title="Permalink to this headline">¶</a></h3>
+<p>When an unsatisfiable request is made to conda, conda shows a message such as
+this one:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>The following specifications were found to be in conflict:
+- python 3*
+- wxpython 3* -&gt; python 2.7*
+Use &quot;conda info &lt;package&gt;&quot; to see the dependencies for each package.
+</pre></div>
+</div>
+<p>This indicates that the specification to install wxpython 3 depends on
+installing Python 2.7, which conflicts with the specification to install python
+3.</p>
+<p>You can use &#8220;conda info wxpython&#8221; or &#8220;conda info wxpython=3&#8221; to show information
+about this package and its dependencies:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>wxpython 3.0 py27_0
+-------------------
+file name   : wxpython-3.0-py27_0.tar.bz2
+name        : wxpython
+version     : 3.0
+build number: 0
+build string: py27_0
+channel     : defaults
+size        : 34.1 MB
+date        : 2014-01-10
+fn          : wxpython-3.0-py27_0.tar.bz2
+license_family: Other
+md5         : adc6285edfd29a28224c410a39d4bdad
+priority    : 2
+schannel    : defaults
+url         : https://repo.continuum.io/pkgs/free/osx-64/wxpython-3.0-py27_0.tar.bz2
+dependencies:
+    python 2.7*
+    python.app
+</pre></div>
+</div>
+<p>By examining the dependencies of each package, you should be able to determine
+why the installation request produced a conflict, and modify the request so it
+can be satisfied without conflicts. In our example, we could install wxPython
+with Python 2.7:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda create -n tmp python=2.7 wxpython=3
+</pre></div>
+</div>
 </div>
 </div>
 </div>
