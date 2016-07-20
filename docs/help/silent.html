@@ -164,7 +164,9 @@ the <tt class="docutils literal"><span class="pre">/S</span></tt> argument. The 
 <li><tt class="docutils literal"><span class="pre">/D=&lt;installation</span> <span class="pre">path&gt;</span></tt></li>
 </ul>
 <p>All arguments are case-sensitive. The installation path must be the last
-argument and should <strong>NOT</strong> be wrapped in quotation marks.</p>
+argument and should <strong>NOT</strong> be wrapped in quotation marks. When using silent
+installation with <tt class="docutils literal"><span class="pre">/S</span></tt> you must also specify a destination installation path
+with <tt class="docutils literal"><span class="pre">/D</span></tt>.</p>
 <p>The following command installs Miniconda for the current user without
 registering Python as the system&#8217;s default:</p>
 <div class="highlight-bat"><div class="highlight"><pre><span></span><span class="k">start</span> /wait <span class="s2">&quot;&quot;</span> Miniconda4-latest-Windows-x86_64.exe /InstallationType=JustMe /RegisterPython=0 /S /D=<span class="nv">%UserProfile%</span>\Miniconda3
