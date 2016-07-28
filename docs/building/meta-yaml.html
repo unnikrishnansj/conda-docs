@@ -1,0 +1,955 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The meta.yaml file &mdash; Conda   documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Conda   documentation" href="../index.html"/>
+        <link rel="up" title="Building conda packages" href="bpp.html"/>
+        <link rel="next" title="Environment variables" href="environment-vars.html"/>
+        <link rel="prev" title="Directory structure" href="dirs.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Conda</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">Intro to conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../download.html">Download conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test-drive.html">Test drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bpp.html">Building conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shared-libraries.html">Using shared libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-channels.html">Custom channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html">Bdist_conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample-recipes.html">Sample recipes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands.html">Command reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help/support.html">Support options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html">Conda changelog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">Conda license</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#join-conda-email-group">Join conda email group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#contribute-recipes-to-github">Contribute recipes to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#report-a-bug">Report a bug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#give-us-feedback">Give us feedback</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Conda</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="build.html">Building packages</a> &raquo;</li>
+      
+          <li><a href="bpp.html">Building conda packages</a> &raquo;</li>
+      
+    <li>The meta.yaml file</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/building/meta-yaml.rst" class="fa fa-github"> Edit on GitHub</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="the-meta-yaml-file">
+<span id="meta-yaml"></span><h1><a class="toc-backref" href="#id3">The meta.yaml file</a><a class="headerlink" href="#the-meta-yaml-file" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="sections-of-meta-yaml">
+<p class="topic-title first">Sections of <tt class="docutils literal"><span class="pre">meta.yaml</span></tt>:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#the-meta-yaml-file" id="id3">The meta.yaml file</a><ul>
+<li><a class="reference internal" href="#package-section" id="id4">Package section</a><ul>
+<li><a class="reference internal" href="#package-name" id="id5">Package name</a></li>
+<li><a class="reference internal" href="#package-version" id="id6">Package version</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#source-section" id="id7">Source section</a><ul>
+<li><a class="reference internal" href="#source-from-tarball" id="id8">Source from tarball</a></li>
+<li><a class="reference internal" href="#source-from-git" id="id9">Source from git</a></li>
+<li><a class="reference internal" href="#source-from-hg" id="id10">Source from hg</a></li>
+<li><a class="reference internal" href="#source-from-svn" id="id11">Source from svn</a></li>
+<li><a class="reference internal" href="#source-from-a-local-path" id="id12">Source from a local path</a></li>
+<li><a class="reference internal" href="#patches" id="id13">Patches</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#build-section" id="id14">Build section</a><ul>
+<li><a class="reference internal" href="#build-number-and-string" id="id15">Build number and string</a></li>
+<li><a class="reference internal" href="#python-entry-points" id="id16">Python entry points</a></li>
+<li><a class="reference internal" href="#python-app" id="id17">Python.app</a></li>
+<li><a class="reference internal" href="#features" id="id18">Features</a></li>
+<li><a class="reference internal" href="#track-features" id="id19">Track features</a></li>
+<li><a class="reference internal" href="#preserve-python-egg-directory" id="id20">Preserve Python egg directory</a></li>
+<li><a class="reference internal" href="#no-link" id="id21">No link</a></li>
+<li><a class="reference internal" href="#script" id="id22">Script</a></li>
+<li><a class="reference internal" href="#rpaths" id="id23">RPATHs</a></li>
+<li><a class="reference internal" href="#force-files" id="id24">Force files</a></li>
+<li><a class="reference internal" href="#relocation" id="id25">Relocation</a></li>
+<li><a class="reference internal" href="#binary-relocation" id="id26">Binary relocation</a></li>
+<li><a class="reference internal" href="#detect-binary-files-with-prefix" id="id27">Detect binary files with prefix</a></li>
+<li><a class="reference internal" href="#binary-has-prefix-files" id="id28">Binary has prefix files</a></li>
+<li><a class="reference internal" href="#text-files-with-prefix-files" id="id29">Text files with prefix files</a></li>
+<li><a class="reference internal" href="#ignore-prefix-files" id="id30">Ignore prefix files</a></li>
+<li><a class="reference internal" href="#skipping-builds" id="id31">Skipping builds</a></li>
+<li><a class="reference internal" href="#architecture-independent-packages" id="id32">Architecture independent packages</a></li>
+<li><a class="reference internal" href="#include-build-recipe" id="id33">Include build recipe</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#requirements-section" id="id34">Requirements section</a><ul>
+<li><a class="reference internal" href="#build" id="id35">Build</a></li>
+<li><a class="reference internal" href="#run" id="id36">Run</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#test-section" id="id37">Test section</a><ul>
+<li><a class="reference internal" href="#test-files" id="id38">Test files</a></li>
+<li><a class="reference internal" href="#test-requirements" id="id39">Test requirements</a></li>
+<li><a class="reference internal" href="#test-commands" id="id40">Test commands</a></li>
+<li><a class="reference internal" href="#python-imports" id="id41">Python imports</a></li>
+<li><a class="reference internal" href="#run-test-script" id="id42">Run test script</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#about-section" id="id43">About section</a><ul>
+<li><a class="reference internal" href="#license-file" id="id44">License file</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#app-section" id="id45">App section</a><ul>
+<li><a class="reference internal" href="#entry-point" id="id46">Entry point</a></li>
+<li><a class="reference internal" href="#icon-file" id="id47">Icon file</a></li>
+<li><a class="reference internal" href="#summary" id="id48">Summary</a></li>
+<li><a class="reference internal" href="#own-environment" id="id49">Own environment</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#extra-section" id="id50">Extra section</a></li>
+<li><a class="reference internal" href="#templating-with-jinja" id="id51">Templating with Jinja</a></li>
+<li><a class="reference internal" href="#preprocessing-selectors" id="id52">Preprocessing selectors</a></li>
+<li><a class="reference internal" href="#id1" id="id53">Features</a></li>
+<li><a class="reference internal" href="#making-packages-relocatable" id="id54">Making packages relocatable</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>All the metadata in the conda build recipe is specified in the <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file,
+as in this example of a simple meta.yaml file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>package:
+  name: pyinstrument
+  version: &quot;0.13.1&quot;
+
+source:
+  git_rev: v0.13.1
+  git_url: https://github.com/joerick/pyinstrument.git
+
+requirements:
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+
+test:
+  imports:
+    - pyinstrument
+
+about:
+  home: https://github.com/joerick/pyinstrument
+  license: BSD
+  license_file: LICENSE
+</pre></div>
+</div>
+<p>NOTE: All sections are optional except for package/name and package/version.</p>
+<p>NOTE: All headers should appear exactly once. If they appear multiple times, only
+the last will be remembered. For example, the &#8220;package:&#8221; header should only appear
+once in the file.</p>
+<div class="section" id="package-section">
+<h2><a class="toc-backref" href="#id4">Package section</a><a class="headerlink" href="#package-section" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="package-name">
+<h3><a class="toc-backref" href="#id5">Package name</a><a class="headerlink" href="#package-name" title="Permalink to this headline">¶</a></h3>
+<p>Lower case name of package, may contain &#8216;-&#8216; but no spaces</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bsdiff4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="package-version">
+<h3><a class="toc-backref" href="#id6">Package version</a><a class="headerlink" href="#package-version" title="Permalink to this headline">¶</a></h3>
+<p>Version of package. Should use the PEP-386 verlib conventions. Note that YAML will
+interpret versions like 1.0 as floats, meaning that 0.10 will be the same as 0.1. To
+avoid this, always put the version in quotes, so that it will be interpreted as a
+string.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="s">&quot;1.1.4&quot;</span>
+</pre></div>
+</div>
+<p>NOTE: The version cannot contain a dash &#8216;-&#8216; character.</p>
+<p>NOTE: Post-build versioning: In some cases, you may not know the version, build
+number, or build string of the package until after it is built. In this case, you
+can perform <a class="reference internal" href="#jinja-templates"><em>Templating with Jinja</em></a> or utilize <a class="reference internal" href="environment-vars.html#git-env"><em>Git Environment Variables</em></a> and <a class="reference internal" href="environment-vars.html#inherited-env-vars"><em>Inherited Environment Variables</em></a>.</p>
+</div>
+</div>
+<div class="section" id="source-section">
+<h2><a class="toc-backref" href="#id7">Source section</a><a class="headerlink" href="#source-section" title="Permalink to this headline">¶</a></h2>
+<p>The source section specifies where the source code of the package is coming from.
+The source may come from a tarball file, git, hg, or svn, may be a local path,
+and may contain patches.</p>
+<div class="section" id="source-from-tarball">
+<h3><a class="toc-backref" href="#id8">Source from tarball</a><a class="headerlink" href="#source-from-tarball" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://pypi.python.org/packages/source/b/bsdiff4/bsdiff4-1.1.4.tar.gz</span>
+  <span class="l l-Scalar l-Scalar-Plain">md5</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">29f6089290505fc1a852e176bd276c43</span>
+  <span class="l l-Scalar l-Scalar-Plain">sha1</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">f0a2c9a30073449cfb7d171c57552f3109d93894</span>
+  <span class="l l-Scalar l-Scalar-Plain">sha256</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5a022ff4c1d1de87232b1c70bde50afbb98212fd246be4a867d8737173cf1f8f</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="source-from-git">
+<h3><a class="toc-backref" href="#id9">Source from git</a><a class="headerlink" href="#source-from-git" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">git_url</span></tt> can also be a relative path to the recipe directory:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff4.git</span>
+  <span class="l l-Scalar l-Scalar-Plain">git_rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="source-from-hg">
+<h3><a class="toc-backref" href="#id10">Source from hg</a><a class="headerlink" href="#source-from-hg" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">hg_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ssh://hg@bitbucket.org/ilanschnell/bsdiff4</span>
+  <span class="l l-Scalar l-Scalar-Plain">hg_tag</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="source-from-svn">
+<h3><a class="toc-backref" href="#id11">Source from svn</a><a class="headerlink" href="#source-from-svn" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">svn_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff</span>
+  <span class="l l-Scalar l-Scalar-Plain">svn_rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.4</span>
+  <span class="l l-Scalar l-Scalar-Plain">svn_ignore_externals</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span> <span class="c1"># (defaults to False)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="source-from-a-local-path">
+<h3><a class="toc-backref" href="#id12">Source from a local path</a><a class="headerlink" href="#source-from-a-local-path" title="Permalink to this headline">¶</a></h3>
+<p>If the path is relative it is taken relative to the recipe directory. The source
+will be copied to the work directory before building:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">path</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">../src</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="patches">
+<h3><a class="toc-backref" href="#id13">Patches</a><a class="headerlink" href="#patches" title="Permalink to this headline">¶</a></h3>
+<p>Patches may optionally be applied to the source:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="c1">#[source information here]</span>
+  <span class="l l-Scalar l-Scalar-Plain">patches</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">my.patch</span> <span class="c1"># the patch file is expected to be found in the recipe</span>
+</pre></div>
+</div>
+<p>NOTE: Conda-build will automatically determine the patch strip level.</p>
+</div>
+</div>
+<div class="section" id="build-section">
+<span id="meta-build"></span><h2><a class="toc-backref" href="#id14">Build section</a><a class="headerlink" href="#build-section" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-number-and-string">
+<h3><a class="toc-backref" href="#id15">Build number and string</a><a class="headerlink" href="#build-number-and-string" title="Permalink to this headline">¶</a></h3>
+<p>The build number should be incremented for new builds of the same version. The number
+defaults to zero. The string defaults to the default conda build string plus the
+build number.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="l l-Scalar l-Scalar-Plain">string</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">abc</span>
+</pre></div>
+</div>
+<p>NOTE: The build string cannot contain a dash &#8216;-&#8216; character.</p>
+</div>
+<div class="section" id="python-entry-points">
+<h3><a class="toc-backref" href="#id16">Python entry points</a><a class="headerlink" href="#python-entry-points" title="Permalink to this headline">¶</a></h3>
+<p>This creates a Python entry point named bsdiff4 that calls bsdiff4.cli.main_bsdiff4() .</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">entry_points</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bsdiff4 = bsdiff4.cli:main_bsdiff4</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bspatch4 = bsdiff4.cli:main_bspatch4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-app">
+<h3><a class="toc-backref" href="#id17">Python.app</a><a class="headerlink" href="#python-app" title="Permalink to this headline">¶</a></h3>
+<p>If osx_is_app is set, entry points will use python.app instead of python in OS X.
+The default is False.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">osx_is_app</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="features">
+<h3><a class="toc-backref" href="#id18">Features</a><a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<p>Defines what features a package has.</p>
+<p>SEE ALSO: <a class="reference internal" href="#id1"><em>Features</em></a> section below for additional information.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">feature1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="track-features">
+<h3><a class="toc-backref" href="#id19">Track features</a><a class="headerlink" href="#track-features" title="Permalink to this headline">¶</a></h3>
+<p>To enable a feature, a user should install a package that tracks that feature. A
+package can have a feature, or track that feature, or both, or neither. Usually
+it is best for the package that tracks a feature to be a metapackage that does
+not have the feature.</p>
+<p>SEE ALSO: <a class="reference internal" href="#id1"><em>Features</em></a> section below for additional information.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">track_features</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">feature2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="preserve-python-egg-directory">
+<h3><a class="toc-backref" href="#id20">Preserve Python egg directory</a><a class="headerlink" href="#preserve-python-egg-directory" title="Permalink to this headline">¶</a></h3>
+<p>This is needed for some packages that use setuptools specific features. Default is False.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">preserve_egg_dir</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="no-link">
+<h3><a class="toc-backref" href="#id21">No link</a><a class="headerlink" href="#no-link" title="Permalink to this headline">¶</a></h3>
+<p>A list of globs for files that should always be copied and never soft linked or hard linked.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">no_link</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bin/\*.py</span> <span class="c1"># Don&#39;t link any .py files in bin/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="script">
+<h3><a class="toc-backref" href="#id22">Script</a><a class="headerlink" href="#script" title="Permalink to this headline">¶</a></h3>
+<p>Used instead of build.sh or bld.bat. For short build scripts, this can be more convenient.
+You may need to use selectors (see below) to use different scripts for different platforms.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">script</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">python setup.py install</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rpaths">
+<h3><a class="toc-backref" href="#id23">RPATHs</a><a class="headerlink" href="#rpaths" title="Permalink to this headline">¶</a></h3>
+<p>Set which RPATHs are used when making executables relocatable on Linux. The default is lib/</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">rpaths</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lib/</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lib/R/lib/</span>
+</pre></div>
+</div>
+<p>NOTE: This is a Linux feature that is ignored on other systems.</p>
+</div>
+<div class="section" id="force-files">
+<h3><a class="toc-backref" href="#id24">Force files</a><a class="headerlink" href="#force-files" title="Permalink to this headline">¶</a></h3>
+<p>Force files to always be included, even if they are already in the environment from the build dependencies. This may be needed, for instance, to create a recipe for conda itself.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">always_include_files</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bin/file1</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bin/file2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="relocation">
+<h3><a class="toc-backref" href="#id25">Relocation</a><a class="headerlink" href="#relocation" title="Permalink to this headline">¶</a></h3>
+<p>Advanced features. The following four keys (binary_relocation, detect_binary_files_with_prefix, has_prefix_files and binary_has_prefix_files) may be required to relocate files from the build environment to the installation environment.  See <a class="reference internal" href="#relocatable"><em>Making packages relocatable</em></a> section below.</p>
+</div>
+<div class="section" id="binary-relocation">
+<h3><a class="toc-backref" href="#id26">Binary relocation</a><a class="headerlink" href="#binary-relocation" title="Permalink to this headline">¶</a></h3>
+<p>Whether binary files should be made relocatable using install_name_tool on OS X or patchelf on Linux. Default is True.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">binary_relocation</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="detect-binary-files-with-prefix">
+<h3><a class="toc-backref" href="#id27">Detect binary files with prefix</a><a class="headerlink" href="#detect-binary-files-with-prefix" title="Permalink to this headline">¶</a></h3>
+<p>Binary files may contain the build prefix and need it replaced with the install prefix at installation time.  Conda can automatically identify and register such files. Default is False.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">detect_binary_files_with_prefix</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="binary-has-prefix-files">
+<h3><a class="toc-backref" href="#id28">Binary has prefix files</a><a class="headerlink" href="#binary-has-prefix-files" title="Permalink to this headline">¶</a></h3>
+<p>You may also elect to specify files with prefixes individually:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">binary_has_prefix_files</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bin/binaryfile1</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lib/binaryfile2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="text-files-with-prefix-files">
+<h3><a class="toc-backref" href="#id29">Text files with prefix files</a><a class="headerlink" href="#text-files-with-prefix-files" title="Permalink to this headline">¶</a></h3>
+<p>Text files (files containing no NULL bytes) may contain the build prefix and need it replaced with the install prefix at installation time.  Conda will automatically register such files.  Binary files that contain the  build prefix are generally handled differently (see binary_has_prefix_files or detect_binary_files_with_prefix), but there may be cases where such a binary file needs to be treated as an ordinary text file, in which case they need to be identified:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">has_prefix_files</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bin/file1</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lib/file2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ignore-prefix-files">
+<h3><a class="toc-backref" href="#id30">Ignore prefix files</a><a class="headerlink" href="#ignore-prefix-files" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">ignore_prefix_files</span></tt> can be used to exclude some or all of the files in the build recipe
+from the list of files that have the build prefix replaced with the install prefix.</p>
+<p>To ignore all files in the build recipe use</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ignore_prefix_files</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+<p>To specify individual file names use</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ignore_prefix_files</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="skipping-builds">
+<h3><a class="toc-backref" href="#id31">Skipping builds</a><a class="headerlink" href="#skipping-builds" title="Permalink to this headline">¶</a></h3>
+<p>Whether conda-build should skip the build of this recipe. Particularly useful for defining recipes which are platform specific.
+Default is False.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">skip</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>  <span class="c1"># [not win]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="architecture-independent-packages">
+<h3><a class="toc-backref" href="#id32">Architecture independent packages</a><a class="headerlink" href="#architecture-independent-packages" title="Permalink to this headline">¶</a></h3>
+<p>The conda build system allows you to specify &#8220;no architecture&#8221; when building a package, thus making it compatible
+with all platforms and architectures. Noarch packages can be installed on any platform.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">noarch_python</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="include-build-recipe">
+<h3><a class="toc-backref" href="#id33">Include build recipe</a><a class="headerlink" href="#include-build-recipe" title="Permalink to this headline">¶</a></h3>
+<p>The full conda build recipe and rendered <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file is included in the <a class="reference internal" href="../spec.html#package-metadata"><em>Package metadata</em></a>
+by default. This can be disabled with</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">include_recipe</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="requirements-section">
+<h2><a class="toc-backref" href="#id34">Requirements section</a><a class="headerlink" href="#requirements-section" title="Permalink to this headline">¶</a></h2>
+<p>Versions for requirements must follow the Conda match specification. See <a class="reference internal" href="../spec.html#build-version-spec"><em>Package match specifications</em></a> .</p>
+<p>The build and runtime requirements. Dependencies of these requirements are included automatically.</p>
+<div class="section" id="build">
+<h3><a class="toc-backref" href="#id35">Build</a><a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
+<p>Packages required to build the package. Python and NumPy must be listed explicitly if they are required.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run">
+<h3><a class="toc-backref" href="#id36">Run</a><a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
+<p>Packages required to run the package. These are the dependencies that will be installed automatically whenever the package is installed. Package names should follow the <a class="reference internal" href="../spec.html#build-version-spec"><em>Package match specifications</em></a> .</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">argparse</span> <span class="c1"># [py26]</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">six &gt;=1.8.0</span>
+</pre></div>
+</div>
+<p>Some users may wish to build a recipe against different versions of NumPy and ensure that each version is part of the package dependencies, which can be done by listing <tt class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></tt> as a requirement in meta.yaml and using <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt> with a NumPy version option such as <tt class="docutils literal"><span class="pre">--numpy</span> <span class="pre">1.7</span></tt>. Note that the line in the meta.yaml file should literally say <tt class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></tt> and should not have any numbers. If the meta.yaml file uses <tt class="docutils literal"><span class="pre">numpy</span> <span class="pre">x.x</span></tt>, then it is required to use the <tt class="docutils literal"><span class="pre">--numpy</span></tt> option with <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></tt>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">numpy x.x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="test-section">
+<h2><a class="toc-backref" href="#id37">Test section</a><a class="headerlink" href="#test-section" title="Permalink to this headline">¶</a></h2>
+<p>If this section exists or if there is a run_test.[py,pl,sh,bat] file in the recipe, the package will be installed into a test environment after the build is finished and the tests will be run there.</p>
+<div class="section" id="test-files">
+<h3><a class="toc-backref" href="#id38">Test files</a><a class="headerlink" href="#test-files" title="Permalink to this headline">¶</a></h3>
+<p>Test files which are copied from the recipe into the (temporary) test directory which are needed during testing:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">files</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">test-data.txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-requirements">
+<h3><a class="toc-backref" href="#id39">Test requirements</a><a class="headerlink" href="#test-requirements" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the runtime requirements, you can specify requirements needed during testing. The runtime requirements specified above are included automatically.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">requires</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">nose</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-commands">
+<h3><a class="toc-backref" href="#id40">Test commands</a><a class="headerlink" href="#test-commands" title="Permalink to this headline">¶</a></h3>
+<p>Commands that are run as part of the test.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bsdiff4 -h</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bspatch4 -h</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-imports">
+<h3><a class="toc-backref" href="#id41">Python imports</a><a class="headerlink" href="#python-imports" title="Permalink to this headline">¶</a></h3>
+<p>List of Python modules or packages that will be imported in the test environment.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">imports</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bsdiff4</span>
+</pre></div>
+</div>
+<p>This would be equivalent to having a run_test.py with</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bsdiff4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-test-script">
+<h3><a class="toc-backref" href="#id42">Run test script</a><a class="headerlink" href="#run-test-script" title="Permalink to this headline">¶</a></h3>
+<p>The script run_test.sh (or .bat/.py/.pl) will be run automatically if it is part of the recipe.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>test:
+  run_test.sh
+  run_test.bat
+  run_test.py
+  run_test.pl
+</pre></div>
+</div>
+<p>NOTE: Python or Perl .py/.pl scripts are only valid as part of Python/Perl packages, respectively.</p>
+</div>
+</div>
+<div class="section" id="about-section">
+<span id="about"></span><h2><a class="toc-backref" href="#id43">About section</a><a class="headerlink" href="#about-section" title="Permalink to this headline">¶</a></h2>
+<p>Identifying information about the package. Displays in Anaconda.org channel.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">home</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff4</span>
+  <span class="l l-Scalar l-Scalar-Plain">license</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">BSD</span>
+  <span class="l l-Scalar l-Scalar-Plain">license_file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">LICENSE</span>
+  <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">binary diff and patch using the BSDIFF4-format</span>
+</pre></div>
+</div>
+<div class="section" id="license-file">
+<h3><a class="toc-backref" href="#id44">License file</a><a class="headerlink" href="#license-file" title="Permalink to this headline">¶</a></h3>
+<p>A file containing the software license can be added to the package metadata.  Please note that many licenses require the license statement to be distributed with the package.  The filename is relative to the source directory.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">license_file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">LICENSE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="app-section">
+<h2><a class="toc-backref" href="#id45">App section</a><a class="headerlink" href="#app-section" title="Permalink to this headline">¶</a></h2>
+<p>If the app section is present, the package will be an app, meaning it will appear in the Anaconda Launcher.</p>
+<div class="section" id="entry-point">
+<h3><a class="toc-backref" href="#id46">Entry point</a><a class="headerlink" href="#entry-point" title="Permalink to this headline">¶</a></h3>
+<p>The command that is called to launch the app:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">entry</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ipython notebook</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="icon-file">
+<h3><a class="toc-backref" href="#id47">Icon file</a><a class="headerlink" href="#icon-file" title="Permalink to this headline">¶</a></h3>
+<p>The icon file contained in the recipe:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">icon</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">icon_64x64.png</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="summary">
+<h3><a class="toc-backref" href="#id48">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>Summary of the package used in the launcher:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span>  <span class="s">&quot;The</span><span class="nv"> </span><span class="s">Jupyter</span><span class="nv"> </span><span class="s">Notebook&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="own-environment">
+<h3><a class="toc-backref" href="#id49">Own environment</a><a class="headerlink" href="#own-environment" title="Permalink to this headline">¶</a></h3>
+<p>If own_environment is true, installing the app through the launcher will install into its own environment. The default is False.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">own_environment</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="extra-section">
+<h2><a class="toc-backref" href="#id50">Extra section</a><a class="headerlink" href="#extra-section" title="Permalink to this headline">¶</a></h2>
+<p>The extra section is a schema-free area for storing non-conda specific metadata in standard YAML form.
+For example, to store recipe maintainer information, one could do:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">extra</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">maintainers</span><span class="p p-Indicator">:</span>
+   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name of maintainer</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="templating-with-jinja">
+<span id="jinja-templates"></span><h2><a class="toc-backref" href="#id51">Templating with Jinja</a><a class="headerlink" href="#templating-with-jinja" title="Permalink to this headline">¶</a></h2>
+<p>Conda build supports Jinja templating in the <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file.</p>
+<p>See the <a class="reference external" href="http://jinja.pocoo.org/docs/dev/templates/">Jinja2 template documentation</a>
+for more information.</p>
+<p>Jinja templates are evaluated during the build process. To retrieve a fully rendered <tt class="docutils literal"><span class="pre">meta.yaml</span></tt>
+use the <a class="reference internal" href="../commands/build/conda-render.html"><em>conda render</em></a>.</p>
+</div>
+<div class="section" id="preprocessing-selectors">
+<h2><a class="toc-backref" href="#id52">Preprocessing selectors</a><a class="headerlink" href="#preprocessing-selectors" title="Permalink to this headline">¶</a></h2>
+<p>In addition, you can add selectors to any line, which are used as part of a
+preprocessing stage. Before the yaml file is read, each selector is evaluated,
+and if it is False, the line that it is on is removed.  A selector is of the
+form <tt class="docutils literal"><span class="pre">#</span> <span class="pre">[&lt;selector&gt;]</span></tt> at the end of a line.</p>
+<p>NOTE: Preprocessing selectors are evaluated after Jinja templates.</p>
+<p>For example</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/unix/source</span>    <span class="c1"># [not win]</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/windows/source</span> <span class="c1"># [win]</span>
+</pre></div>
+</div>
+<p>A selector is just a valid Python statement, that is executed.  The following
+variables are defined. Unless otherwise stated, the variables are booleans.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">x86</span></tt></td>
+<td>True if the system architecture is x86 (32-bit and 64-bit) for Intel or AMD chips</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">x86_64</span></tt></td>
+<td>True if the system architecture is x86_64 (64-bit) for Intel or AMD chips</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">linux</span></tt></td>
+<td>True if the platform is Linux</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">linux32</span></tt></td>
+<td>True if the platform is Linux and the Python architecture is 32-bit</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">linux64</span></tt></td>
+<td>True if the platform is Linux and the Python architecture is 64-bit</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">armv6l</span></tt></td>
+<td>True if the platform is Linux and the Python architecture is armv6l</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">armv7l</span></tt></td>
+<td>True if the platform is Linux and the Python architecture is armv7l</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">ppc64le</span></tt></td>
+<td>True if the platform is Linux and the Python architecture is ppc64le</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">osx</span></tt></td>
+<td>True if the platform is OS X</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">unix</span></tt></td>
+<td>True if the platform is Unix (OS X or Linux)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">win</span></tt></td>
+<td>True if the platform is Windows</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">win32</span></tt></td>
+<td>True if the platform is Windows and the Python architecture is 32-bit</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">win64</span></tt></td>
+<td>True if the platform is Windows and the Python architecture is 64-bit</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">py</span></tt></td>
+<td>The Python version as a two digit string (like <tt class="docutils literal"><span class="pre">'27'</span></tt>). See also the
+<tt class="docutils literal"><span class="pre">CONDA_PY</span></tt> environment variable <a class="reference internal" href="environment-vars.html#build-envs"><em>below</em></a>.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">py3k</span></tt></td>
+<td>True if the Python major version is 3</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">py2k</span></tt></td>
+<td>True if the Python major version is 2</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">py27</span></tt></td>
+<td>True if the Python version is 2.7</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">py34</span></tt></td>
+<td>True if the Python version is 3.4</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">py35</span></tt></td>
+<td>True if the Python version is 3.5</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">np</span></tt></td>
+<td>The NumPy version as an integer (like <tt class="docutils literal"><span class="pre">111</span></tt>).  See also the
+<tt class="docutils literal"><span class="pre">CONDA_NPY</span></tt> environment variable <a class="reference internal" href="environment-vars.html#build-envs"><em>below</em></a>.</td>
+</tr>
+</tbody>
+</table>
+<p>Because the selector is any valid Python expression, complicated logic is
+possible.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/windows/source</span>      <span class="c1"># [win]</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/python2/unix/source</span> <span class="c1"># [unix and py2k]</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/python3/unix/source</span> <span class="c1"># [unix and py3k]</span>
+</pre></div>
+</div>
+<p>Note that the selectors delete only the line that they are on, so you may
+need to put the same selector on multiple lines.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/windows/source</span>     <span class="c1"># [win]</span>
+  <span class="l l-Scalar l-Scalar-Plain">md5</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30fbf531409a18a48b1be249052e242a</span>  <span class="c1"># [win]</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://path/to/unix/source</span>        <span class="c1"># [unix]</span>
+  <span class="l l-Scalar l-Scalar-Plain">md5</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">88510902197cba0d1ab4791e0f41a66e</span>  <span class="c1"># [unix]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<span id="id2"></span><h2><a class="toc-backref" href="#id53">Features</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>See also <a class="reference internal" href="environment-vars.html#build-features"><em>Environment variables to set build features</em></a>.</p>
+<p>Features are a way to track differences in two packages that have the same
+name and version.  For example, a feature might indicate a specialized
+compiler or runtime, or a fork of a package. The canonical example of a
+feature is the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature in Anaconda Accelerate. Packages that are
+compiled against MKL, such as NumPy, have the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature set.  The
+<tt class="docutils literal"><span class="pre">mkl</span></tt> metapackage has the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature set in <tt class="docutils literal"><span class="pre">track_features</span></tt>, so that
+installing it installs the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature (the fact that the name of this
+metapackage matches the name of the feature is a coincidence).</p>
+<p>Features should be thought of as features of the environment the package is
+installed into, not the package itself. The reason is that when a feature is
+installed, conda will automatically change to a package with that feature if
+it exists, for instance, when the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature is installed, regular
+<tt class="docutils literal"><span class="pre">numpy</span></tt> is removed and the <tt class="docutils literal"><span class="pre">numpy</span></tt> package with the <tt class="docutils literal"><span class="pre">mkl</span></tt> feature is
+installed.  Enabling a feature does not install any packages that are not
+already installed, but it all future packages with that feature that are
+installed into that environment will be preferred.</p>
+<p>Feature names are independent of package names&#8212;it is a coincidence that
+<tt class="docutils literal"><span class="pre">mkl</span></tt> is both the name of a package and the feature that it tracks.</p>
+<p>To install a feature, install a package that tracks it. To remove a feature,
+use <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--features</span></tt>.</p>
+<p>It&#8217;s a good idea to create a metapackage for <tt class="docutils literal"><span class="pre">track_features</span></tt>.  If you add
+<tt class="docutils literal"><span class="pre">track_features</span></tt> to a package that also has versions without that feature,
+then the versions without that feature will never be selected, because conda
+will always add the feature when it is installed from the <tt class="docutils literal"><span class="pre">track_features</span></tt>
+specification if your package with the feature.</p>
+<p>Instead, it is a good idea to create a separate metapackage. For instance, if
+you want to create some packages with the feature <tt class="docutils literal"><span class="pre">debug</span></tt>, you would create
+several packages with</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span>
+</pre></div>
+</div>
+<p>and then create a special metapackage</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+  <span class="c1"># This name doesn&#39;t have to be the same as the feature, but can avoid confusion if it is</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">debug</span>
+  <span class="c1"># This need not relate to the version of any of the packages with the</span>
+  <span class="c1"># feature. It is just a version for this metapackage.</span>
+  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
+
+<span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">track_features</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">debug</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="making-packages-relocatable">
+<span id="relocatable"></span><h2><a class="toc-backref" href="#id54">Making packages relocatable</a><a class="headerlink" href="#making-packages-relocatable" title="Permalink to this headline">¶</a></h2>
+<p>Often, the most difficult thing about building a conda package is making it
+relocatable.  Relocatable means that the package can be installed into any
+prefix.  Otherwise, the package would only be usable in the same environment
+in which it was built.</p>
+<p>Conda build does the following things automatically to make packages
+relocatable:</p>
+<ul class="simple">
+<li>Binary object files are converted to use relative paths using
+<tt class="docutils literal"><span class="pre">install_name_tool</span></tt> on OS X and <tt class="docutils literal"><span class="pre">patchelf</span></tt> on Linux.</li>
+<li>Any text file (containing no NULL bytes) containing the build prefix or the
+placeholder prefix <tt class="docutils literal"><span class="pre">/opt/anaconda1anaconda2anaconda3</span></tt> is registered in the
+<tt class="docutils literal"><span class="pre">info/has_prefix</span></tt> file in the package metadata.  When conda installs the
+package, any files in <tt class="docutils literal"><span class="pre">info/has_prefix</span></tt> will have the registered prefix
+replaced with the install prefix.  See <a class="reference internal" href="../spec.html#package-metadata"><em>Package metadata</em></a> for more
+information.</li>
+<li>Any binary file containing the build prefix can automatically be registered
+in <tt class="docutils literal"><span class="pre">info/has_prefix</span></tt> using <tt class="docutils literal"><span class="pre">build/detect_binary_files_with_prefix</span></tt> in
+<tt class="docutils literal"><span class="pre">meta.yaml</span></tt>.  Alternatively, individual binary files can be registered by
+listing them in <tt class="docutils literal"><span class="pre">build/binary_has_prefix_files</span></tt> in meta.yaml.  The
+registered files will have their build prefix replaced with the install
+prefix at install time.  This works by padding the install prefix with null
+terminators, such that the length of the binary file remains the same.  The
+build prefix must therefore be long enough to accommodate any reasonable
+installation prefix. Whenever the <tt class="docutils literal"><span class="pre">build/binary_has_prefix_files</span></tt> list is
+not empty or <tt class="docutils literal"><span class="pre">build/detect_binary_files_with_prefix</span></tt> is set, conda will pad
+the build prefix (appending <tt class="docutils literal"><span class="pre">_placehold</span></tt>&#8216;s to the end of the build
+directory name) to 80 characters.</li>
+<li>There may be cases where conda identified a file as binary, but it needs to
+have the build prefix replaced as if it were text (no padding with null
+terminators). Such files can be listed in <tt class="docutils literal"><span class="pre">build/has_prefix_files</span></tt> in
+<tt class="docutils literal"><span class="pre">meta.yaml</span></tt>.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="environment-vars.html" class="btn btn-neutral float-right" title="Environment variables">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dirs.html" class="btn btn-neutral" title="Directory structure"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Continuum Analytics.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:' ',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27761864-11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+</html>
