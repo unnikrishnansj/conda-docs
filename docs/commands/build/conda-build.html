@@ -160,8 +160,8 @@ DESCRIPTION
               LUA_VER] [--check] [--no-anaconda-upload]  [--no-include-recipe]
               [-s]    [-t]    [--no-test]    [-b]    [-p]    [--skip-existing]
               [--keep-old-work] [--dirty] [-q] [--token TOKEN]  [--user  USER]
-              [--no-activate]  [-c  CHANNEL] [--override-channels] RECIPE_PATH
-              [RECIPE_PATH ...]
+              [--no-activate]  [--debug]  [-c  CHANNEL]  [--override-channels]
+              RECIPE_PATH [RECIPE_PATH ...]
 
        Tool for building conda packages. A conda package is a  binary  tarball
        containing system-level libraries, Python modules, executable programs,
@@ -266,6 +266,9 @@ DESCRIPTION
        --no-activate
               do not display progress bar
 
+       --debug
+              show debugging output from conda and conda-build
+
        -c CHANNEL, --channel CHANNEL
               Additional channel  to  search  for  packages.  These  are  URLs
               searched  in  the  order  they  are given (including file:// for
@@ -282,7 +285,7 @@ DESCRIPTION
 
 
 
-Continuum Analytics                July 2016                          <B>CONDA(1)</B>
+Continuum Analytics               August 2016                         <B>CONDA(1)</B>
 </PRE></div>
 
 

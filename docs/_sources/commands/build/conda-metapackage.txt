@@ -16,9 +16,9 @@ conda metapackage
           conda - conda metapackage
    
    DESCRIPTION
-          usage: conda-metapackage [-h] [--no-anaconda-upload]
+          usage: conda-metapackage [-h] [--no-anaconda-upload] [--token TOKEN]
    
-          [--build-number BUILD_NUMBER]
+          [--user USER] [--build-number BUILD_NUMBER]
                  [--build-string   BUILD_STRING]   [--dependencies  [DEPENDENCIES
                  [DEPENDENCIES ...]]]  [--home HOME] [--license LICENSE]  [--sum‐
                  mary SUMMARY] [--entry-points [ENTRY_POINTS [ENTRY_POINTS ...]]]
@@ -45,6 +45,12 @@ conda metapackage
    
           --no-anaconda-upload
                  Do not ask to upload the package to anaconda.org.
+   
+          --token TOKEN
+                 Token to pass through to anaconda upload
+   
+          --user USER
+                 User/organization to upload packages to on anaconda.org
    
           --build-number BUILD_NUMBER
                  Build number for the package (default is 0).
@@ -80,5 +86,5 @@ conda metapackage
    
    
    
-   Continuum Analytics                July 2016                          <B>CONDA(1)</B>
+   Continuum Analytics               August 2016                         <B>CONDA(1)</B>
    </PRE>

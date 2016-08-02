@@ -36,5 +36,5 @@ conda init
    
    
    
-   Continuum Analytics                July 2016                          <B>CONDA(1)</B>
+   Continuum Analytics               August 2016                         <B>CONDA(1)</B>
    </PRE>
