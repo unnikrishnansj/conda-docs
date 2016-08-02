@@ -218,6 +218,22 @@ the public.</p>
 <p>The <a class="reference internal" href="../commands/build/conda-skeleton.html#skeleton-ref"><em>conda skeleton</em></a> command can help to make skeleton
 recipes for common repositories, such as <a class="reference external" href="https://pypi.python.org/pypi">PyPI</a>.</p>
 </div>
+<div class="section" id="adding-windows-start-menu-items">
+<h2>Adding Windows start menu items<a class="headerlink" href="#adding-windows-start-menu-items" title="Permalink to this headline">¶</a></h2>
+<p>When a package is installed it can add a shortcut to the Windows start menu.
+Conda and conda build handle this with the
+package <a class="reference external" href="https://github.com/ContinuumIO/menuinst">menuinst</a>, which only
+supports Windows at this time. Instructions for using menuinst are available
+on <a class="reference external" href="https://github.com/ContinuumIO/menuinst/wiki">the menuinst wiki</a>.</p>
+<p>The easiest way to ensure a package made
+with <a class="reference external" href="https://github.com/conda/constructor">conda constructor</a> does not
+install any menu shortcuts is by removing <tt class="docutils literal"><span class="pre">menuinst</span></tt> from the list of conda
+packages included. To do this, add the following to the constuct.yaml file:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">exclude</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">menuinst</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="more-information-about-meta-yaml">
 <h2>More information about meta.yaml<a class="headerlink" href="#more-information-about-meta-yaml" title="Permalink to this headline">¶</a></h2>
 <p>Next, please continue on to learn more about <a class="reference internal" href="meta-yaml.html"><em>the meta.yaml file</em></a>.</p>
