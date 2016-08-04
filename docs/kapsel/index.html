@@ -295,9 +295,9 @@ Added packages to project file: bokeh=0.12, pandas.
 </pre></div>
 </div>
 <p>If you look at <tt class="docutils literal"><span class="pre">kapsel.yml</span></tt> now, you&#8217;ll see bokeh and pandas
-listed under the <tt class="docutils literal"><span class="pre">packages:</span></tt> section. You will also see files
-such as <tt class="docutils literal"><span class="pre">envs/default/bin/bokeh</span></tt> since the packages have now
-been installed in your project&#8217;s environment.</p>
+listed under the <tt class="docutils literal"><span class="pre">packages:</span></tt> section. Since the packages have
+now been installed in your project&#8217;s environment, you will also
+see files such as <tt class="docutils literal"><span class="pre">envs/YOUR-PATH-TO/bokeh</span></tt>.</p>
 </div>
 <div class="section" id="configure-your-project-with-environment-variables">
 <h2>Configure your project with environment variables<a class="headerlink" href="#configure-your-project-with-environment-variables" title="Permalink to this headline">¶</a></h2>
@@ -330,7 +330,7 @@ Pandas might not be installed yet and the environment variables
 wouldn&#8217;t be set.</p>
 <p>Tell <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></tt> how to run your new script by adding a new
 command called showdata:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>conda kapsel add-command showdata &#39;python showdata.py&#39;
+<div class="highlight-python"><div class="highlight"><pre><span></span>conda kapsel add-command showdata &quot;python showdata.py&quot;
 </pre></div>
 </div>
 <p>(When prompted, choose &#8220;C&#8221; for &#8220;command line&#8221;.)</p>
