@@ -184,7 +184,7 @@
 file which allows advanced users to configure various aspects of conda, such as which
 channels it searches for packages, proxy settings, environment directories, etc.</p>
 <p>A .condarc file is not included by default, but it is automatically created in
-the user’s home directory when you use the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></tt> command.</p>
+the user’s home directory the first time you run the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></tt> command.</p>
 <p>A .condarc file may also be located in the root environment, in which case it
 overrides any in the home directory.</p>
 <p>Note: A .condarc file can also be used in an administrator-controlled
@@ -202,10 +202,18 @@ installation to override the users’ configuration. Please see <a class="refere
 <p>To create or modify a .condarc configuration file, from the command line, use
 the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></tt> command, or use a text editor to create a new file named
 .condarc and save to your user home directory or root directory.</p>
+<p>Example:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda config --add channels r</span>
+</pre></div>
+</div>
+<p>SEE ALSO: For a complete list of conda config commands available, see the
+<a class="reference internal" href="commands/conda-config.html"><em>command reference</em></a>. The same list is available
+at the command prompt by typing <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--help</span></tt>.</p>
 <p>The .condarc configuration file follows
 simple <a class="reference external" href="http://docs.ansible.com/YAMLSyntax.html">YAML syntax</a>.</p>
-<p><a class="reference internal" href="install/sample-condarc.html"><em>Download a sample .condarc file</em></a>.</p>
-<p>Conda supports <a class="reference internal" href="install/tab-completion.html"><em>tab completion</em></a> with external packages
+<p><a class="reference internal" href="install/sample-condarc.html"><em>Download a sample .condarc file</em></a> to edit in your editor
+and save to your user home directory or root directory.</p>
+<p>TIP: Conda supports <a class="reference internal" href="install/tab-completion.html"><em>tab completion</em></a> with external packages
 instead of internal configuration.</p>
 <p>For more configuration information see: <a class="reference external" href="http://continuum.io/blog/advanced-conda-part-1#configuration">http://continuum.io/blog/advanced-conda-part-1#configuration</a></p>
 </div>
