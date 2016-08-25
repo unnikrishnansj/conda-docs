@@ -308,7 +308,15 @@ numbers, use <tt class="docutils literal"><span class="pre">conda</span> <span c
 </pre></div>
 </div>
 </li>
+<li><p class="first">How can I install a package for a specific Python version?</p>
+</li>
 </ol>
+<p>Generally if you want to use a specific Python version it is best to use an environment with that version.  Find a detailed example in <a class="reference internal" href="troubleshooting.html"><em>Troubleshooting</em></a>.</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span>0.15.0 <span class="nv">curl</span><span class="o">=</span>7.26.0 -n py34_env
+</pre></div>
+</div>
+</div></blockquote>
 <p>NOTE: We recommend that you install all packages at once, so all the dependencies are installed at the same time.</p>
 </div>
 <div class="section" id="updating-packages">

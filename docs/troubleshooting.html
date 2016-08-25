@@ -152,6 +152,7 @@
 <li><a class="reference internal" href="#shell-command-location"><em>Issue:  Shell commands open from wrong location</em></a></li>
 <li><a class="reference internal" href="#wrong-python"><em>Issue:  Programs fail due to invoking conda Python and not system Python</em></a></li>
 <li><a class="reference internal" href="#unsatisfiable"><em>Issue: UnsatisfiableSpecifications error</em></a></li>
+<li><a class="reference internal" href="#version-from-channel"><em>Issue: install a specific version from channels</em></a></li>
 </ol>
 <div class="section" id="issue-permission-denied-errors-during-install">
 <span id="permission-denied"></span><h2>Issue:  permission denied errors during install<a class="headerlink" href="#issue-permission-denied-errors-during-install" title="Permalink to this headline">¶</a></h2>
@@ -394,6 +395,93 @@ with Python 2.7:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span>conda create -n tmp python=2.7 wxpython=3
 </pre></div>
 </div>
+</div>
+<div class="section" id="issue-install-a-specific-version-from-channels">
+<span id="version-from-channel"></span><h3>Issue: install a specific version from channels<a class="headerlink" href="#issue-install-a-specific-version-from-channels" title="Permalink to this headline">¶</a></h3>
+<p>Suppose you have a specific need to install the Python <tt class="docutils literal"><span class="pre">cx_freeze</span></tt> module
+with Python 3.4.  A first step is to create a Python 3.4 environment:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>.. code-block:: bash
+</pre></div>
+</div>
+<blockquote>
+<div>conda create -n py34 python=3.4</div></blockquote>
+<p>Using this environment you should first attempt:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>.. code-block:: bash
+</pre></div>
+</div>
+<blockquote>
+<div>conda install -n py34 cx_freeze</div></blockquote>
+<p>However, when you do this you&#8217;ll get the following error (at the time this was written, on the platform used):</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>Using Anaconda Cloud api site https://api.anaconda.org
+Fetching package metadata .........
+Solving package specifications: .
+Error: Package missing in current osx-64 channels:
+- cx_freeze
+
+You can search for packages on anaconda.org with
+
+  anaconda search -t conda cx_freeze
+</pre></div>
+</div>
+<p>This is telling us that <tt class="docutils literal"><span class="pre">cx_freeze</span></tt> cannot be found, at least not in the <em>default</em> package channels. However there may be a community-created version available and if so we can search for it using exactly the command that is listed above.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ anaconda search -t conda cx_freeze
+Using Anaconda Cloud api site https://api.anaconda.org
+Run <span class="s1">&#39;anaconda show &lt;USER/PACKAGE&gt;&#39;</span> to get more details:
+Packages:
+     Name                      <span class="p">|</span>  Version <span class="p">|</span> Package Types   <span class="p">|</span> Platforms
+     ------------------------- <span class="p">|</span>   ------ <span class="p">|</span> --------------- <span class="p">|</span> ---------------
+     inso/cx_freeze            <span class="p">|</span>    4.3.3 <span class="p">|</span> conda           <span class="p">|</span> linux-64
+     pyzo/cx_freeze            <span class="p">|</span>    4.3.3 <span class="p">|</span> conda           <span class="p">|</span> linux-64, win-32, win-64, linux-32, osx-64
+                                          : http://cx-freeze.sourceforge.net/
+     silg2/cx_freeze           <span class="p">|</span>    4.3.4 <span class="p">|</span> conda           <span class="p">|</span> linux-64
+                                          : create standalone executables from Python scripts
+     takluyver/cx_freeze       <span class="p">|</span>    4.3.3 <span class="p">|</span> conda           <span class="p">|</span> linux-64
+Found <span class="m">4</span> packages
+</pre></div>
+</div>
+<p>In this example, there are four different places we <strong>could</strong> try using to get
+it. None of them are officially supported or endorsed by Continuum, but
+members of the conda community have provided many valuable packages. If we
+want to go with public opinion then <a class="reference external" href="https://anaconda.org/search?q=cx_freeze">the web interface</a> provides more information:</p>
+<div class="figure">
+<img alt="cx_freeze packages on anaconda.org" src="_images/package-popularity.png" />
+</div>
+<p>Notice that the <tt class="docutils literal"><span class="pre">pyzo</span></tt> organization has by far the most downloads, so you might
+choose to use their package. If so, you can add their organization&#8217;s channel
+by specifying it on the command line (as shown below):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda create -c pyzo -n cxfreeze_py34 cx_freeze <span class="nv">python</span><span class="o">=</span>3.4
+Using Anaconda Cloud api site https://api.anaconda.org
+Fetching package metadata: ..........
+Solving package specifications: .........
+
+Package plan <span class="k">for</span> installation in environment /Users/ijstokes/anaconda/envs/cxfreeze_py34:
+
+The following packages will be downloaded:
+
+    package                    <span class="p">|</span>            build
+    ---------------------------<span class="p">|</span>-----------------
+    cx_freeze-4.3.3            <span class="p">|</span>           py34_4         1.8 MB
+    setuptools-20.7.0          <span class="p">|</span>           py34_0         <span class="m">459</span> KB
+    ------------------------------------------------------------
+                                           Total:         2.3 MB
+
+The following NEW packages will be INSTALLED:
+
+    cx_freeze:  4.3.3-py34_4
+    openssl:    1.0.2h-0
+    pip:        8.1.1-py34_1
+    python:     3.4.4-0
+    readline:   6.2-2
+    setuptools: 20.7.0-py34_0
+    sqlite:     3.9.2-0
+    tk:         8.5.18-0
+    wheel:      0.29.0-py34_0
+    xz:         5.0.5-1
+    zlib:       1.2.8-0
+</pre></div>
+</div>
+<p>Now you have a software environment sandbox created with Python 3.4 and
+<tt class="docutils literal"><span class="pre">cx_freeze</span></tt>.</p>
 </div>
 </div>
 </div>
