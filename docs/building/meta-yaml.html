@@ -191,28 +191,29 @@
 </li>
 <li><a class="reference internal" href="#test-section" id="id37">Test section</a><ul>
 <li><a class="reference internal" href="#test-files" id="id38">Test files</a></li>
-<li><a class="reference internal" href="#test-requirements" id="id39">Test requirements</a></li>
-<li><a class="reference internal" href="#test-commands" id="id40">Test commands</a></li>
-<li><a class="reference internal" href="#python-imports" id="id41">Python imports</a></li>
-<li><a class="reference internal" href="#run-test-script" id="id42">Run test script</a></li>
+<li><a class="reference internal" href="#source-files" id="id39">Source files</a></li>
+<li><a class="reference internal" href="#test-requirements" id="id40">Test requirements</a></li>
+<li><a class="reference internal" href="#test-commands" id="id41">Test commands</a></li>
+<li><a class="reference internal" href="#python-imports" id="id42">Python imports</a></li>
+<li><a class="reference internal" href="#run-test-script" id="id43">Run test script</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#about-section" id="id43">About section</a><ul>
-<li><a class="reference internal" href="#license-file" id="id44">License file</a></li>
+<li><a class="reference internal" href="#about-section" id="id44">About section</a><ul>
+<li><a class="reference internal" href="#license-file" id="id45">License file</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#app-section" id="id45">App section</a><ul>
-<li><a class="reference internal" href="#entry-point" id="id46">Entry point</a></li>
-<li><a class="reference internal" href="#icon-file" id="id47">Icon file</a></li>
-<li><a class="reference internal" href="#summary" id="id48">Summary</a></li>
-<li><a class="reference internal" href="#own-environment" id="id49">Own environment</a></li>
+<li><a class="reference internal" href="#app-section" id="id46">App section</a><ul>
+<li><a class="reference internal" href="#entry-point" id="id47">Entry point</a></li>
+<li><a class="reference internal" href="#icon-file" id="id48">Icon file</a></li>
+<li><a class="reference internal" href="#summary" id="id49">Summary</a></li>
+<li><a class="reference internal" href="#own-environment" id="id50">Own environment</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#extra-section" id="id50">Extra section</a></li>
-<li><a class="reference internal" href="#templating-with-jinja" id="id51">Templating with Jinja</a></li>
-<li><a class="reference internal" href="#preprocessing-selectors" id="id52">Preprocessing selectors</a></li>
-<li><a class="reference internal" href="#id1" id="id53">Features</a></li>
-<li><a class="reference internal" href="#making-packages-relocatable" id="id54">Making packages relocatable</a></li>
+<li><a class="reference internal" href="#extra-section" id="id51">Extra section</a></li>
+<li><a class="reference internal" href="#templating-with-jinja" id="id52">Templating with Jinja</a></li>
+<li><a class="reference internal" href="#preprocessing-selectors" id="id53">Preprocessing selectors</a></li>
+<li><a class="reference internal" href="#id1" id="id54">Features</a></li>
+<li><a class="reference internal" href="#making-packages-relocatable" id="id55">Making packages relocatable</a></li>
 </ul>
 </li>
 </ul>
@@ -323,6 +324,12 @@ will be copied to the work directory before building:</p>
   <span class="l l-Scalar l-Scalar-Plain">path</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">../src</span>
 </pre></div>
 </div>
+<p>If the local path is a git or svn repository, you will get the corresponding environment
+variables defined in your build environment.  The only practical difference between
+<tt class="docutils literal"><span class="pre">git_url</span></tt> or <tt class="docutils literal"><span class="pre">hg_url</span></tt> and <tt class="docutils literal"><span class="pre">path</span></tt> as source arguments is that <tt class="docutils literal"><span class="pre">git_url</span></tt> and <tt class="docutils literal"><span class="pre">hg_url</span></tt>
+would be clones of a repository and <tt class="docutils literal"><span class="pre">path</span></tt> would be a copy of the repository.  Using
+<tt class="docutils literal"><span class="pre">path</span></tt> will allow you to build packages with unstaged/uncommitted changes in
+the working directory. <tt class="docutils literal"><span class="pre">git_url</span></tt> can only build up to the latest commit.</p>
 </div>
 <div class="section" id="patches">
 <h3><a class="toc-backref" href="#id13">Patches</a><a class="headerlink" href="#patches" title="Permalink to this headline">¶</a></h3>
@@ -567,8 +574,20 @@ by default. This can be disabled with</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="source-files">
+<h3><a class="toc-backref" href="#id39">Source files</a><a class="headerlink" href="#source-files" title="Permalink to this headline">¶</a></h3>
+<p>Test files which are copied from the source work directory into the (temporary) test directory which are needed during testing:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">source_files</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">test-data.txt</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">some/directory</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">some/directory/pattern*.sh</span>
+</pre></div>
+</div>
+<p>This capability was added in conda-build 2.0.</p>
+</div>
 <div class="section" id="test-requirements">
-<h3><a class="toc-backref" href="#id39">Test requirements</a><a class="headerlink" href="#test-requirements" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id40">Test requirements</a><a class="headerlink" href="#test-requirements" title="Permalink to this headline">¶</a></h3>
 <p>In addition to the runtime requirements, you can specify requirements needed during testing. The runtime requirements specified above are included automatically.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">requires</span><span class="p p-Indicator">:</span>
@@ -577,7 +596,7 @@ by default. This can be disabled with</p>
 </div>
 </div>
 <div class="section" id="test-commands">
-<h3><a class="toc-backref" href="#id40">Test commands</a><a class="headerlink" href="#test-commands" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id41">Test commands</a><a class="headerlink" href="#test-commands" title="Permalink to this headline">¶</a></h3>
 <p>Commands that are run as part of the test.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span>
@@ -587,7 +606,7 @@ by default. This can be disabled with</p>
 </div>
 </div>
 <div class="section" id="python-imports">
-<h3><a class="toc-backref" href="#id41">Python imports</a><a class="headerlink" href="#python-imports" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id42">Python imports</a><a class="headerlink" href="#python-imports" title="Permalink to this headline">¶</a></h3>
 <p>List of Python modules or packages that will be imported in the test environment.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">imports</span><span class="p p-Indicator">:</span>
@@ -600,7 +619,7 @@ by default. This can be disabled with</p>
 </div>
 </div>
 <div class="section" id="run-test-script">
-<h3><a class="toc-backref" href="#id42">Run test script</a><a class="headerlink" href="#run-test-script" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id43">Run test script</a><a class="headerlink" href="#run-test-script" title="Permalink to this headline">¶</a></h3>
 <p>The script run_test.sh (or .bat/.py/.pl) will be run automatically if it is part of the recipe.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>test:
   run_test.sh
@@ -613,7 +632,7 @@ by default. This can be disabled with</p>
 </div>
 </div>
 <div class="section" id="about-section">
-<span id="about"></span><h2><a class="toc-backref" href="#id43">About section</a><a class="headerlink" href="#about-section" title="Permalink to this headline">¶</a></h2>
+<span id="about"></span><h2><a class="toc-backref" href="#id44">About section</a><a class="headerlink" href="#about-section" title="Permalink to this headline">¶</a></h2>
 <p>Identifying information about the package. Displays in Anaconda.org channel.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">home</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff4</span>
@@ -623,7 +642,7 @@ by default. This can be disabled with</p>
 </pre></div>
 </div>
 <div class="section" id="license-file">
-<h3><a class="toc-backref" href="#id44">License file</a><a class="headerlink" href="#license-file" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id45">License file</a><a class="headerlink" href="#license-file" title="Permalink to this headline">¶</a></h3>
 <p>A file containing the software license can be added to the package metadata.  Please note that many licenses require the license statement to be distributed with the package.  The filename is relative to the source directory.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">license_file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">LICENSE</span>
@@ -632,10 +651,10 @@ by default. This can be disabled with</p>
 </div>
 </div>
 <div class="section" id="app-section">
-<h2><a class="toc-backref" href="#id45">App section</a><a class="headerlink" href="#app-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id46">App section</a><a class="headerlink" href="#app-section" title="Permalink to this headline">¶</a></h2>
 <p>If the app section is present, the package will be an app, meaning it will appear in the Anaconda Launcher.</p>
 <div class="section" id="entry-point">
-<h3><a class="toc-backref" href="#id46">Entry point</a><a class="headerlink" href="#entry-point" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id47">Entry point</a><a class="headerlink" href="#entry-point" title="Permalink to this headline">¶</a></h3>
 <p>The command that is called to launch the app:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">entry</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ipython notebook</span>
@@ -643,7 +662,7 @@ by default. This can be disabled with</p>
 </div>
 </div>
 <div class="section" id="icon-file">
-<h3><a class="toc-backref" href="#id47">Icon file</a><a class="headerlink" href="#icon-file" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id48">Icon file</a><a class="headerlink" href="#icon-file" title="Permalink to this headline">¶</a></h3>
 <p>The icon file contained in the recipe:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">icon</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">icon_64x64.png</span>
@@ -651,7 +670,7 @@ by default. This can be disabled with</p>
 </div>
 </div>
 <div class="section" id="summary">
-<h3><a class="toc-backref" href="#id48">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id49">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
 <p>Summary of the package used in the launcher:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span>  <span class="s">&quot;The</span><span class="nv"> </span><span class="s">Jupyter</span><span class="nv"> </span><span class="s">Notebook&quot;</span>
@@ -659,7 +678,7 @@ by default. This can be disabled with</p>
 </div>
 </div>
 <div class="section" id="own-environment">
-<h3><a class="toc-backref" href="#id49">Own environment</a><a class="headerlink" href="#own-environment" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id50">Own environment</a><a class="headerlink" href="#own-environment" title="Permalink to this headline">¶</a></h3>
 <p>If own_environment is true, installing the app through the launcher will install into its own environment. The default is False.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">own_environment</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -668,7 +687,7 @@ by default. This can be disabled with</p>
 </div>
 </div>
 <div class="section" id="extra-section">
-<h2><a class="toc-backref" href="#id50">Extra section</a><a class="headerlink" href="#extra-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id51">Extra section</a><a class="headerlink" href="#extra-section" title="Permalink to this headline">¶</a></h2>
 <p>The extra section is a schema-free area for storing non-conda specific metadata in standard YAML form.
 For example, to store recipe maintainer information, one could do:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">extra</span><span class="p p-Indicator">:</span>
@@ -678,15 +697,72 @@ For example, to store recipe maintainer information, one could do:</p>
 </div>
 </div>
 <div class="section" id="templating-with-jinja">
-<span id="jinja-templates"></span><h2><a class="toc-backref" href="#id51">Templating with Jinja</a><a class="headerlink" href="#templating-with-jinja" title="Permalink to this headline">¶</a></h2>
-<p>Conda build supports Jinja templating in the <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file.</p>
+<span id="jinja-templates"></span><h2><a class="toc-backref" href="#id52">Templating with Jinja</a><a class="headerlink" href="#templating-with-jinja" title="Permalink to this headline">¶</a></h2>
+<p>Conda build supports Jinja templating in the <tt class="docutils literal"><span class="pre">meta.yaml</span></tt> file. For example, here&#8217;s a meta.yaml that
+would work with the GIT values defined for git repositores. In this example, the recipe is included
+at the base directory of the git repository, so the <tt class="docutils literal"><span class="pre">git_url</span></tt> is <tt class="docutils literal"><span class="pre">../</span></tt>:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mypkg</span>
+  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">GIT_DESCRIBE_TAG</span> <span class="p p-Indicator">}}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">GIT_DESCRIBE_NUMBER</span> <span class="p p-Indicator">}}</span>
+
+  <span class="c1"># Note that this will override the default build string with the Python</span>
+  <span class="c1"># and NumPy versions</span>
+  <span class="l l-Scalar l-Scalar-Plain">string</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">GIT_BUILD_STR</span> <span class="p p-Indicator">}}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">../</span>
+</pre></div>
+</div>
+<p>Conda-build will make sure the jinja2 variables you use are defined and produces
+a clear error if it is not.</p>
+<p>It is also possible to use a different syntax for these environment variables
+that allows default values to be set, although it is somewhat more verbose.  This is the
+example above using the syntax that allows defaults:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mypkg</span>
+  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_TAG&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_NUMBER&#39;</span><span class="p p-Indicator">,</span> <span class="nv">0)</span> <span class="p p-Indicator">}}</span>
+
+  <span class="c1"># Note that this will override the default build string with the Python</span>
+  <span class="c1"># and NumPy versions</span>
+  <span class="l l-Scalar l-Scalar-Plain">string</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_BUILD_STR&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">../</span>
+</pre></div>
+</div>
+<p>One further possibility using templating is obtaining data from your downloaded
+source code.  For example, we can process a project&#8217;s setup.py and obtain the
+version and other metadata:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span>{% set data = load_setup_py_data() %}
+
+package:
+  name: conda-build-test-source-setup-py-data
+  version: {{ data.get(&#39;version&#39;) }}
+
+# source will be downloaded prior to filling in jinja templates
+# Example assumes that this folder has setup.py in it
+source:
+  path_url: ../
+</pre></div>
+</div>
+<p>These functions are completely compatible with any other variables (git, mercurial, or whatever.)</p>
+<p>Extending this to arbitrary other functions requires that functions be predefined before jinja
+processing, which in practice means changing the conda-build source code.  Please inquire at the
+<a class="reference external" href="https://github.com/conda/conda-build/issues">conda-build issue tracker</a>.</p>
 <p>See the <a class="reference external" href="http://jinja.pocoo.org/docs/dev/templates/">Jinja2 template documentation</a>
-for more information.</p>
+for more information, or <a class="reference external" href="http://conda.pydata.org/docs/building/environment-vars.html">the list of available environment
+variables</a>.</p>
 <p>Jinja templates are evaluated during the build process. To retrieve a fully rendered <tt class="docutils literal"><span class="pre">meta.yaml</span></tt>
 use the <a class="reference internal" href="../commands/build/conda-render.html"><em>conda render</em></a>.</p>
 </div>
 <div class="section" id="preprocessing-selectors">
-<h2><a class="toc-backref" href="#id52">Preprocessing selectors</a><a class="headerlink" href="#preprocessing-selectors" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id53">Preprocessing selectors</a><a class="headerlink" href="#preprocessing-selectors" title="Permalink to this headline">¶</a></h2>
 <p>In addition, you can add selectors to any line, which are used as part of a
 preprocessing stage. Before the yaml file is read, each selector is evaluated,
 and if it is False, the line that it is on is removed.  A selector is of the
@@ -789,7 +865,7 @@ need to put the same selector on multiple lines.</p>
 </div>
 </div>
 <div class="section" id="id1">
-<span id="id2"></span><h2><a class="toc-backref" href="#id53">Features</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><a class="toc-backref" href="#id54">Features</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>See also <a class="reference internal" href="environment-vars.html#build-features"><em>Environment variables to set build features</em></a>.</p>
 <p>Features are a way to track differences in two packages that have the same
 name and version.  For example, a feature might indicate a specialized
@@ -839,7 +915,7 @@ several packages with</p>
 </div>
 </div>
 <div class="section" id="making-packages-relocatable">
-<span id="relocatable"></span><h2><a class="toc-backref" href="#id54">Making packages relocatable</a><a class="headerlink" href="#making-packages-relocatable" title="Permalink to this headline">¶</a></h2>
+<span id="relocatable"></span><h2><a class="toc-backref" href="#id55">Making packages relocatable</a><a class="headerlink" href="#making-packages-relocatable" title="Permalink to this headline">¶</a></h2>
 <p>Often, the most difficult thing about building a conda package is making it
 relocatable.  Relocatable means that the package can be installed into any
 prefix.  Otherwise, the package would only be usable in the same environment
@@ -863,10 +939,12 @@ registered files will have their build prefix replaced with the install
 prefix at install time.  This works by padding the install prefix with null
 terminators, such that the length of the binary file remains the same.  The
 build prefix must therefore be long enough to accommodate any reasonable
-installation prefix. Whenever the <tt class="docutils literal"><span class="pre">build/binary_has_prefix_files</span></tt> list is
-not empty or <tt class="docutils literal"><span class="pre">build/detect_binary_files_with_prefix</span></tt> is set, conda will pad
+installation prefix.  On Linux and Mac, conda-build will pad
 the build prefix (appending <tt class="docutils literal"><span class="pre">_placehold</span></tt>&#8216;s to the end of the build
-directory name) to 80 characters.</li>
+directory name) to 255 characters.  Note that the prefix length was changed
+in conda-build 2.0 from 80 characters to 255 characters.  Legacy packages with
+80 character prefixes will need to be rebuilt to take advantage of the
+longer prefix.</li>
 <li>There may be cases where conda identified a file as binary, but it needs to
 have the build prefix replaced as if it were text (no padding with null
 terminators). Such files can be listed in <tt class="docutils literal"><span class="pre">build/has_prefix_files</span></tt> in

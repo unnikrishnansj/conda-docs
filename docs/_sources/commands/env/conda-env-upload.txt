@@ -54,5 +54,5 @@ conda env upload
    
    
    
-   Continuum Analytics               August 2016                         <B>CONDA(1)</B>
+   Continuum Analytics             September 2016                        <B>CONDA(1)</B>
    </PRE>

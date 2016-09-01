@@ -366,53 +366,36 @@ the output of <tt class="docutils literal"><span class="pre">git</span> <span cl
 </table>
 <p>These can be used in conjunction with templated meta.yaml files to set things
 like the build string based on the state of the git repository.</p>
-<p>For example, here&#8217;s a meta.yaml that would work with these values. In this
-example, the recipe is included at the base directory of the git repository,
-so the <tt class="docutils literal"><span class="pre">git_url</span></tt> is <tt class="docutils literal"><span class="pre">../</span></tt>:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mypkg</span>
-  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">GIT_DESCRIBE_TAG</span> <span class="p p-Indicator">}}</span>
-
-<span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">GIT_DESCRIBE_NUMBER</span> <span class="p p-Indicator">}}</span>
-
-  <span class="c1"># Note that this will override the default build string with the Python</span>
-  <span class="c1"># and NumPy versions</span>
-  <span class="l l-Scalar l-Scalar-Plain">string</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">GIT_BUILD_STR</span> <span class="p p-Indicator">}}</span>
-
-<span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">../</span>
-</pre></div>
 </div>
-<p>It is also possible to use the older syntax for these environment variables,
-although it is somewhat more verbose, and the newer syntax checks to make sure
-the variable is defined and produces a clear error if it is not. This is the
-example above using the older syntax:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">mypkg</span>
-  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_TAG&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
-
-<span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">number</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_DESCRIBE_NUMBER&#39;</span><span class="p p-Indicator">,</span> <span class="nv">0)</span> <span class="p p-Indicator">}}</span>
-
-  <span class="c1"># Note that this will override the default build string with the Python</span>
-  <span class="c1"># and NumPy versions</span>
-  <span class="l l-Scalar l-Scalar-Plain">string</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">environ.get(&#39;GIT_BUILD_STR&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;&#39;</span><span class="nv">)</span> <span class="p p-Indicator">}}</span>
-
-<span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">../</span>
-</pre></div>
-</div>
-<p>All of the above environment variables are also set during the test process,
-except with the test prefix instead of the build prefix everywhere.</p>
-<p>Note that build.sh is run with <tt class="docutils literal"><span class="pre">bash</span> <span class="pre">-x</span> <span class="pre">-e</span></tt> (the <tt class="docutils literal"><span class="pre">-x</span></tt> makes it echo each
-command that is run, and the <tt class="docutils literal"><span class="pre">-e</span></tt> makes it exit whenever a command in the
-script returns nonzero exit status).  You can revert this in the script if you
-need to by using the <tt class="docutils literal"><span class="pre">set</span></tt> command.</p>
-<p>The only practical difference between <tt class="docutils literal"><span class="pre">git_url</span></tt> and <tt class="docutils literal"><span class="pre">path</span></tt> as source arguments
-is that git_url is a clone of a repository and path is copy of the repository.
-Using path will allow you to build packages with unstaged/uncommited changes in
-working directory. git_url can only build up to the latest commit.</p>
+<div class="section" id="mercurial-environment-variables">
+<span id="mercurial-env-vars"></span><h3>Mercurial Environment Variables<a class="headerlink" href="#mercurial-environment-variables" title="Permalink to this headline">¶</a></h3>
+<p>When the source is a mercurial repository, the following variables are defined:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">HG_BRANCH</span></tt></td>
+<td>string denoting the presently active branch</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">HG_BUILD_STR</span></tt></td>
+<td>a string that joins <tt class="docutils literal"><span class="pre">HG_NUM_ID</span></tt> and <tt class="docutils literal"><span class="pre">HG_SHORT_ID</span></tt> by an underscore</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">HG_LATEST_TAG</span></tt></td>
+<td>string denoting the most recent tag from the current commit</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">HG_LATEST_TAG_DISTANCE</span></tt></td>
+<td>string denoting number of commits since most recent tag</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">HG_NUM_ID</span></tt></td>
+<td>string denoting the revision number</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">HG_SHORT_ID</span></tt></td>
+<td>string denoting the hash of the commit</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="inherited-environment-variables">
 <span id="inherited-env-vars"></span><h3>Inherited Environment Variables<a class="headerlink" href="#inherited-environment-variables" title="Permalink to this headline">¶</a></h3>
@@ -477,6 +460,11 @@ These three variables control <a class="reference internal" href="meta-yaml.html
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="environment-variables-that-affect-the-test-process">
+<span id="test-envs"></span><h2>Environment variables that affect the test process<a class="headerlink" href="#environment-variables-that-affect-the-test-process" title="Permalink to this headline">¶</a></h2>
+<p>All of the above environment variables are also set during the test process,
+except with the test prefix instead of the build prefix everywhere.</p>
 </div>
 </div>
 

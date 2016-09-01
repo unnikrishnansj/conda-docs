@@ -310,6 +310,9 @@ and enter the text exactly as shown:</p>
 </pre></div>
 </div>
 <p>Save your new build.sh file to the same directory where you put the meta.yaml file.</p>
+<p><tt class="docutils literal"><span class="pre">build.sh</span></tt> is run with <tt class="docutils literal"><span class="pre">bash</span> <span class="pre">-x</span> <span class="pre">-e</span></tt> (the <tt class="docutils literal"><span class="pre">-x</span></tt> makes it echo each command that is run, and the <tt class="docutils literal"><span class="pre">-e</span></tt>
+makes it exit whenever a command in the script returns nonzero exit status). You can revert this in the
+script if you need to by using the <tt class="docutils literal"><span class="pre">set</span></tt> command in build.sh.</p>
 </div>
 <div class="section" id="build-and-install">
 <span id="id3"></span><h2>Build and install<a class="headerlink" href="#build-and-install" title="Permalink to this headline">¶</a></h2>
