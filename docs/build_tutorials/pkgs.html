@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Building conda packages with conda skeleton &mdash; Conda   documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -28,13 +28,15 @@
   
 
   
+
+  
     <link rel="top" title="Conda   documentation" href="../index.html"/>
         <link rel="up" title="Build tutorials" href="../build_tutorials.html"/>
         <link rel="next" title="Building conda packages from scratch" href="pkgs2.html"/>
         <link rel="prev" title="Build tutorials" href="../build_tutorials.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,40 +46,64 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="../index.html" class="fa fa-home"> Conda</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../intro.html">Intro to conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../download.html">Download conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../test-drive.html">Test drive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
-</ul>
-</li>
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../building/build.html">Building packages</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../build_tutorials.html">Build tutorials</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../build_tutorials.html">Build tutorials</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Building conda packages with conda skeleton</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#who-is-this-for">Who is this for?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#before-you-start">Before you start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-a-simple-package-with-conda-skeleton-pypi">Build a simple package with conda skeleton pypi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optional-build-for-a-different-python-version">Optional - Build for a different Python version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optional-convert-conda-package-for-other-platforms">Optional - Convert conda package for other platforms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optional-upload-packages-to-anaconda-org">Optional - Upload packages to Anaconda.org</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#additional-information">Additional Information</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pkgs2.html">Building conda packages from scratch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="postgis.html">Building conda packages for general code projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html">Building Anaconda Navigator Applications</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building conda packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../building/shared-libraries.html">Using shared libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../custom-channels.html">Custom channels</a></li>
@@ -86,29 +112,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands.html">Command reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../faq.html">FAQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../help/support.html">Support options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelog.html">Conda changelog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../license.html">Conda license</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#join-conda-email-group">Join conda email group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#contribute-recipes-to-github">Contribute recipes to GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#report-a-bug">Report a bug</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#give-us-feedback">Give us feedback</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
 </ul>
 
-        
+            
+          
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -123,7 +134,13 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
@@ -134,13 +151,16 @@
     <li>Building conda packages with conda skeleton</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/build_tutorials/pkgs.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/build_tutorials/pkgs.rst" class="fa fa-github"> Edit on GitHub</a>
+          
         
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="building-conda-packages-with-conda-skeleton">
 <h1>Building conda packages with conda skeleton<a class="headerlink" href="#building-conda-packages-with-conda-skeleton" title="Permalink to this headline">¶</a></h1>
@@ -161,13 +181,13 @@ package. No prior knowledge of conda-build or conda recipes is required.</p>
 can be performed if you wish to install the package in conda environment with a different version of
 Python or on a different architecture.</p>
 <ol class="arabic simple">
-<li><a class="reference internal" href="#before-you-start1"><em>Before you start</em></a></li>
-<li><a class="reference internal" href="#conda-build-skeleton"><em>Build a simple package with conda skeleton pypi</em></a></li>
-<li><a class="reference internal" href="#python-versions"><em>Optional - Build for a different Python version</em></a></li>
-<li><a class="reference internal" href="#convert-conda-package"><em>Optional - Convert conda package for other platforms</em></a></li>
-<li><a class="reference internal" href="#upload-to-anaconda-org"><em>Optional - Upload packages to Anaconda.org</em></a></li>
-<li><a class="reference internal" href="#troubleshooting"><em>Troubleshooting</em></a></li>
-<li><a class="reference internal" href="#help1"><em>Additional Information</em></a></li>
+<li><a class="reference internal" href="#before-you-start1"><span class="std std-ref">Before you start</span></a></li>
+<li><a class="reference internal" href="#conda-build-skeleton"><span class="std std-ref">Build a simple package with conda skeleton pypi</span></a></li>
+<li><a class="reference internal" href="#python-versions"><span class="std std-ref">Optional - Build for a different Python version</span></a></li>
+<li><a class="reference internal" href="#convert-conda-package"><span class="std std-ref">Optional - Convert conda package for other platforms</span></a></li>
+<li><a class="reference internal" href="#upload-to-anaconda-org"><span class="std std-ref">Optional - Upload packages to Anaconda.org</span></a></li>
+<li><a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a></li>
+<li><a class="reference internal" href="#help1"><span class="std std-ref">Additional Information</span></a></li>
 </ol>
 </div>
 </div>
@@ -194,13 +214,13 @@ where the source files are located and how to build and install the package.</p>
 <p>You&#8217;ll be working with a package named <a class="reference external" href="https://github.com/joerick/pyinstrument">Pyinstrument</a> that is hosted on PyPI. Pyinstrument is a Python
 statistical profiler that records the whole call stack once each millisecond, so programmers can see which
 parts of their code are slowest and how to make them faster.</p>
-<p>First, in your user home directory, run the <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></tt> command:</p>
+<p>First, in your user home directory, run the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code> command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda skeleton pypi pyinstrument
 </pre></div>
 </div>
-<p>The two arguments to <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></tt> are the hosting location, in this case <tt class="docutils literal"><span class="pre">pypi</span></tt> and the name of the package.</p>
+<p>The two arguments to <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code> are the hosting location, in this case <code class="docutils literal"><span class="pre">pypi</span></code> and the name of the package.</p>
 <p>This creates a directory named Pyinstrument and creates three skeleton files in that directory: meta.yaml, build.sh,
-and bld.bat. Use the <tt class="docutils literal"><span class="pre">ls</span></tt> command on OS X or Linux or the <tt class="docutils literal"><span class="pre">dir</span></tt> command on Windows to verify that these files
+and bld.bat. Use the <code class="docutils literal"><span class="pre">ls</span></code> command on OS X or Linux or the <code class="docutils literal"><span class="pre">dir</span></code> command on Windows to verify that these files
 have been created. The three files have been populated with information from the PyPI metadata and in most cases
 will not need to be edited.</p>
 <p>These three files are collectively referred to as the <em>conda build recipe</em>:</p>
@@ -214,7 +234,7 @@ will not need to be edited.</p>
 </pre></div>
 </div>
 <p>When conda-build is finished, it displays the exact path and filename of the conda package.
-See the <a class="reference internal" href="#troubleshooting"><em>Troubleshooting</em></a> section if the conda-build command fails.</p>
+See the <a class="reference internal" href="#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> section if the conda-build command fails.</p>
 <p>Windows example file path:</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>C:\Users\jsmith\Miniconda\conda-bld\win-64\pyinstrument-0.13.1-py27_0.tar.bz2
 </pre></div>
@@ -246,13 +266,13 @@ them to your Anaconda.org account.</p>
 <span id="python-versions"></span><h2>Optional - Build for a different Python version<a class="headerlink" href="#optional-build-for-a-different-python-version" title="Permalink to this headline">¶</a></h2>
 <p>By default, conda-build will build packages for the version of Python installed
 in the root environment. To build packages for other versions of
-Python, you use the <tt class="docutils literal"><span class="pre">--python</span></tt> flag, followed by a version. For example, to
+Python, you use the <code class="docutils literal"><span class="pre">--python</span></code> flag, followed by a version. For example, to
 explicitly build a version of the Pyinstrument package for Python 3.3, use</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda build --python 3.3 pyinstrument
 </pre></div>
 </div>
 <p>You&#8217;ll notice that the file printed at the end of the conda-build output has changed to reflect
-the requested version of Python. <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></tt> will look in the package directory for the file
+the requested version of Python. <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code> will look in the package directory for the file
 that matches your current Python version.</p>
 <p>Windows example file path:</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>C:\Users\jsmith\Miniconda\conda-bld\win-64\pyinstrument-0.13.1-py33_0.tar.bz2
@@ -282,8 +302,8 @@ path and filename information for the next step.</p>
 </div>
 <p>NOTE: Change your path and filename to the exact path and filename you saved in Step 2.</p>
 <p>In order to use these packages they will have to be transferred to other computers and placed in the correct
-<tt class="docutils literal"><span class="pre">conda-bld/$ARCH</span></tt> directory as shown above, where <tt class="docutils literal"><span class="pre">$ARCH</span></tt> can be <tt class="docutils literal"><span class="pre">osx-64</span></tt>, <tt class="docutils literal"><span class="pre">linux-32</span></tt>, <tt class="docutils literal"><span class="pre">linux-64</span></tt>,
-<tt class="docutils literal"><span class="pre">win-32</span></tt> or <tt class="docutils literal"><span class="pre">win-64</span></tt>.</p>
+<code class="docutils literal"><span class="pre">conda-bld/$ARCH</span></code> directory as shown above, where <code class="docutils literal"><span class="pre">$ARCH</span></code> can be <code class="docutils literal"><span class="pre">osx-64</span></code>, <code class="docutils literal"><span class="pre">linux-32</span></code>, <code class="docutils literal"><span class="pre">linux-64</span></code>,
+<code class="docutils literal"><span class="pre">win-32</span></code> or <code class="docutils literal"><span class="pre">win-64</span></code>.</p>
 <p>A simpler way is to upload all of the bz2 files to Anaconda.org as described in the next section.</p>
 </div>
 <div class="section" id="optional-upload-packages-to-anaconda-org">
@@ -295,8 +315,8 @@ choose to make your files public or private. For more info about Anaconda.org vi
 documentation page.</p>
 <ol class="arabic simple">
 <li>Create a free Anaconda.org account and record your new Anaconda.org username and password.</li>
-<li>Run <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">anaconda-client</span></tt> and enter your Anaconda.org username and password.</li>
-<li>Log into your Anaconda.org account from your terminal with the command <tt class="docutils literal"><span class="pre">anaconda</span> <span class="pre">login</span></tt></li>
+<li>Run <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">anaconda-client</span></code> and enter your Anaconda.org username and password.</li>
+<li>Log into your Anaconda.org account from your terminal with the command <code class="docutils literal"><span class="pre">anaconda</span> <span class="pre">login</span></code></li>
 </ol>
 <p>Now you can upload the new local packages to Anaconda.org</p>
 <p>Windows users:</p>
@@ -329,11 +349,11 @@ from PyPi packages. This section explains just a few of the most common errors a
 <div class="section" id="a-build-package-missing">
 <h3>A. Build Package missing<a class="headerlink" href="#a-build-package-missing" title="Permalink to this headline">¶</a></h3>
 <p>Conda build may produce the following error that it couldn&#8217;t find a package. Let&#8217;s try to make a conda
-skeleton package for Skyfield. The <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></tt> command is</p>
+skeleton package for Skyfield. The <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code> command is</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda skeleton pypi skyfield
 </pre></div>
 </div>
-<p>This command will create the Skyfield conda build recipe. Running <tt class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">skyfield</span></tt> will
+<p>This command will create the Skyfield conda build recipe. Running <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">skyfield</span></code> will
 fail with the following output.</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>Removing old build environment
 Removing old work directory
@@ -364,15 +384,16 @@ recipes for all required packages even those that are already available to conda
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pkgs2.html" class="btn btn-neutral float-right" title="Building conda packages from scratch">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pkgs2.html" class="btn btn-neutral float-right" title="Building conda packages from scratch" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../build_tutorials.html" class="btn btn-neutral" title="Build tutorials"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../build_tutorials.html" class="btn btn-neutral" title="Build tutorials" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -382,11 +403,13 @@ recipes for all required packages even those that are already available to conda
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, Continuum Analytics.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
+
         </div>
       </div>
 

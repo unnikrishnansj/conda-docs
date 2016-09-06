@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>conda vs. pip vs. virtualenv &mdash; Conda   documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   
   
@@ -28,13 +28,15 @@
   
 
   
+
+  
     <link rel="top" title="Conda   documentation" href="../index.html"/>
         <link rel="up" title="FAQ" href="../faq.html"/>
         <link rel="next" title="Windows XP with proxy configuration" href="../winxp-proxy.html"/>
         <link rel="prev" title="Using conda with Travis CI" href="../travis.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -44,71 +46,85 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="../index.html" class="fa fa-home"> Conda</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Conda
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                 
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-      </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../intro.html">Intro to conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../download.html">Download conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../test-drive.html">Test drive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../using/using.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/envs.html">Managing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using/pkgs.html">Managing packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials.html">Build tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/shared-libraries.html">Using shared libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../custom-channels.html">Custom channels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html">Bdist_conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
-</ul>
-</li>
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="help.html">Help &amp; reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../using/cheatsheet.html">Conda cheat sheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../commands.html">Command reference</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../faq.html">FAQ</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#general-questions">General questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#getting-help">Getting help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#searching-info">Searching &amp; info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#managing-packages">Managing Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#managing-environments">Managing Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#customization-condarc-file">Customization (.condarc file)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../faq.html#conda-build-and-recipes">Conda build and recipes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../redirects.html">Redirects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="silent.html">Silent installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../travis.html">Using conda with Travis CI</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">conda vs. pip vs. virtualenv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../winxp-proxy.html">Windows XP with proxy configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#pinning-packages">Pinning packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#conda-pip-and-virtualenv">Conda, pip, and virtualenv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#silent-installation">Silent installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#using-conda-with-travis-ci">Using conda with Travis CI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq.html#windows-xp-with-proxy-configuration">Windows XP with proxy configuration</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="support.html">Support options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelog.html">Conda changelog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../license.html">Conda license</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#join-conda-email-group">Join conda email group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#contribute-recipes-to-github">Contribute recipes to GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#report-a-bug">Report a bug</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get-involved.html#give-us-feedback">Give us feedback</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
 </ul>
 
-        
+            
+          
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -123,7 +139,13 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
@@ -134,18 +156,21 @@
     <li>conda vs. pip vs. virtualenv</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/conda/conda-docs/edit/master/docs/source/help/conda-pip-virtualenv-translator.rst" class="fa fa-github"> Edit on GitHub</a>
+          
+            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/help/conda-pip-virtualenv-translator.rst" class="fa fa-github"> Edit on GitHub</a>
+          
         
       </li>
   </ul>
   <hr/>
 </div>
-          <div role="main">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="conda-vs-pip-vs-virtualenv">
 <h1>conda vs. pip vs. virtualenv<a class="headerlink" href="#conda-vs-pip-vs-virtualenv" title="Permalink to this headline">¶</a></h1>
 <p>If you are already familiar with pip or virtualenv, please see our chart comparing
-<a class="reference download internal" href="../_downloads/conda-pip-virtualenv-translator.html"><tt class="xref download docutils literal"><span class="pre">Conda,</span> <span class="pre">pip,</span> <span class="pre">and</span> <span class="pre">virtualenv</span></tt></a>.</p>
+<a class="reference download internal" href="../_downloads/conda-pip-virtualenv-translator.html" download=""><code class="xref download docutils literal"><span class="pre">Conda,</span> <span class="pre">pip,</span> <span class="pre">and</span> <span class="pre">virtualenv</span></code></a>.</p>
 <html><head><meta http-equiv="refresh" content="0; URL='../_downloads/conda-pip-virtualenv-translator.html'" /></head><body></body></html><p>If you’ve used pip and virtualenv in the past, you can use conda to perform all
 of the same operations. Pip is a package manager, and Virtualenv is an
 environment manager. Conda is both.</p>
@@ -165,97 +190,98 @@ environment manager. Conda is both.</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Install a package</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></code></td>
+<td><code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">$PACKAGE_NAME</span></code></td>
 <td>X</td>
 </tr>
 <tr class="row-odd"><td>Update a package</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">$PACKAGE_NAME</span></code></td>
+<td><code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">$PACKAGE_NAME</span></code></td>
 <td>X</td>
 </tr>
 <tr class="row-even"><td>Update package manager</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></tt></td>
-<td>Linux/OSX: <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt> Win: <tt class="docutils literal"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code></td>
+<td>Linux/OSX: <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></code> Win: <code class="docutils literal"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></code></td>
 <td>X</td>
 </tr>
 <tr class="row-odd"><td>Uninstall a package</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">$PACKAGE_NAME</span></code></td>
+<td><code class="docutils literal"><span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">$PACKAGE_NAME</span></code></td>
 <td>X</td>
 </tr>
 <tr class="row-even"><td>Create an environment</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">python</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span> <span class="pre">python</span></code></td>
 <td>X</td>
-<td><tt class="docutils literal"><span class="pre">cd</span> <span class="pre">$ENV_BASE_DIR;</span> <span class="pre">virtualenv</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
+<td><code class="docutils literal"><span class="pre">cd</span> <span class="pre">$ENV_BASE_DIR;</span> <span class="pre">virtualenv</span> <span class="pre">$ENVIRONMENT_NAME</span></code></td>
 </tr>
 <tr class="row-odd"><td>Activate an environment</td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
+<td><code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">$ENVIRONMENT_NAME</span></code></td>
 <td>X</td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">$ENV_BASE_DIR/$ENVIRONMENT_NAME/bin/activate</span></tt></td>
+<td><code class="docutils literal"><span class="pre">source</span> <span class="pre">$ENV_BASE_DIR/$ENVIRONMENT_NAME/bin/activate</span></code></td>
 </tr>
 <tr class="row-even"><td>Deactivate an environment</td>
-<td><tt class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></tt></td>
+<td><code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code></td>
 <td>X</td>
-<td><tt class="docutils literal"><span class="pre">deactivate</span></tt></td>
+<td><code class="docutils literal"><span class="pre">deactivate</span></code></td>
 </tr>
 <tr class="row-odd"><td>Search available packages</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></code></td>
+<td><code class="docutils literal"><span class="pre">pip</span> <span class="pre">search</span> <span class="pre">$SEARCH_TERM</span></code></td>
 <td>X</td>
 </tr>
 <tr class="row-even"><td>Install package from specific source</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--index-url</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></code></td>
+<td><code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--index-url</span> <span class="pre">$URL</span> <span class="pre">$PACKAGE_NAME</span></code></td>
 <td>X</td>
 </tr>
 <tr class="row-odd"><td>List installed packages</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">list</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--name</span> <span class="pre">$ENVIRONMENT_NAME</span></code></td>
+<td><code class="docutils literal"><span class="pre">pip</span> <span class="pre">list</span></code></td>
 <td>X</td>
 </tr>
 <tr class="row-even"><td>Create requirements file</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--export</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">freeze</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--export</span></code></td>
+<td><code class="docutils literal"><span class="pre">pip</span> <span class="pre">freeze</span></code></td>
 <td>X</td>
 </tr>
 <tr class="row-odd"><td>List all environments</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">--envs</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">--envs</span></code></td>
 <td>X</td>
-<td>Install virtualenv wrapper, then <tt class="docutils literal"><span class="pre">lsvirtualenv</span></tt></td>
+<td>Install virtualenv wrapper, then <code class="docutils literal"><span class="pre">lsvirtualenv</span></code></td>
 </tr>
 <tr class="row-even"><td>Install other package manager</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pip</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">conda</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pip</span></code></td>
+<td><code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">conda</span></code></td>
 <td>X</td>
 </tr>
 <tr class="row-odd"><td>Install Python</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">python=x.x</span></tt></td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">python=x.x</span></code></td>
 <td>X</td>
 <td>X</td>
 </tr>
 <tr class="row-even"><td>Update Python</td>
-<td><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">python</span></tt> *</td>
+<td><code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">python</span></code> *</td>
 <td>X</td>
 <td>X</td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">python</span></tt> updates to the most recent in the series, so any Python 2.x would update to the latest 2.x, and any Python 3.x to the latest 3.x.</li>
+<li><code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">python</span></code> updates to the most recent in the series, so any Python 2.x would update to the latest 2.x, and any Python 3.x to the latest 3.x.</li>
 </ul>
 </div>
 
 
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../winxp-proxy.html" class="btn btn-neutral float-right" title="Windows XP with proxy configuration">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../winxp-proxy.html" class="btn btn-neutral float-right" title="Windows XP with proxy configuration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../travis.html" class="btn btn-neutral" title="Using conda with Travis CI"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../travis.html" class="btn btn-neutral" title="Using conda with Travis CI" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -265,11 +291,13 @@ environment manager. Conda is both.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, Continuum Analytics.
+
     </p>
   </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
 </footer>
+
         </div>
       </div>
 
