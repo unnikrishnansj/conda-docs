@@ -12,6 +12,7 @@ docs/_images/navigator-home.png
 docs/_images/navigator-rodeo.png
 docs/_images/package-popularity.png
 docs/_sources/admin.txt
+docs/_sources/announcements.txt
 docs/_sources/bdist_conda.txt
 docs/_sources/build-commands.txt
 docs/_sources/build.txt
@@ -151,6 +152,7 @@ docs/_static/up-pressed.png
 docs/_static/up.png
 docs/_static/websupport.js
 docs/admin.html
+docs/announcements.html
 docs/bdist_conda.html
 docs/build-commands.html
 docs/build.html
