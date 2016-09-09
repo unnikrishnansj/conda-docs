@@ -209,9 +209,11 @@ True.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">allow_other_channels</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
-<p>When set to true or not specified, then each user will have access to the default channels and to any
-channels that the user specifies in their local .condarc file. If the user specifies other channels, the
-other channels will be blocked and the user will receive a message explaining this. See example below.</p>
+<p>When <code class="docutils literal"><span class="pre">allow_other_channels</span></code> is set to true or not specified, then each user
+will have access to the default channels and to any channels that the user
+specifies in their local .condarc file. When <code class="docutils literal"><span class="pre">allow_other_channels</span></code> is set to
+false, if the user specifies other channels, the other channels will be blocked
+and the user will receive a message explaining this. See example below.</p>
 <p>If the system .condarc  file specifies a channel_alias, it will override any channel aliases set in users&#8217;
 .condarc  files. See channel alias below.</p>
 </div>
