@@ -441,9 +441,10 @@ not have the feature.</p>
 </div>
 <div class="section" id="skip-compiling-some-py-files-into-pyc-files">
 <h3><a class="toc-backref" href="#id21">Skip compiling some .py files into .pyc files</a><a class="headerlink" href="#skip-compiling-some-py-files-into-pyc-files" title="Permalink to this headline">¶</a></h3>
-<p>Some packages ship .py files that should not be compiled because either they cannot be
-compiled because for example they contain templates or should not be compiled yet because
-the Python interpreter that will be used cannot be known at build-time.</p>
+<p>Some packages ship .py files that cannot be compiled, such as those that contain
+templates. Some packages also ship .py files that should not be compiled yet,
+because the Python interpreter that will be used is not known at build-time. In
+these cases conda-build can skip attempting to compile these files.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">skip_compile_pyc</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">templates/*.py</span>          <span class="c1"># These should not (and cannot) be compiled</span>
