@@ -98,6 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="dirs.html">Directory structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="meta-yaml.html">The meta.yaml file</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Environment variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dynamic-behavior-based-on-state-of-build-process">Dynamic behavior based on state of build process</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#environment-variables-set-during-the-build-process">Environment variables set during the build process</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#environment-variables-that-affect-the-build-process">Environment variables that affect the build process</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#environment-variables-to-set-build-features">Environment variables to set build features</a></li>
@@ -167,6 +168,19 @@
             
   <div class="section" id="environment-variables">
 <span id="env-vars"></span><h1>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dynamic-behavior-based-on-state-of-build-process">
+<span id="build-state"></span><h2>Dynamic behavior based on state of build process<a class="headerlink" href="#dynamic-behavior-based-on-state-of-build-process" title="Permalink to this headline">¶</a></h2>
+<p>There are times when you may want to process a single file in different ways at
+more than one step in the render -&gt; build -&gt; test flow of conda-build. Conda
+build sets the <code class="docutils literal"><span class="pre">CONDA_BUILD_STATE</span></code> environment variable during each of these
+phases. The possible values currently are <code class="docutils literal"><span class="pre">RENDER</span></code>, <code class="docutils literal"><span class="pre">BUILD</span></code>, and <code class="docutils literal"><span class="pre">TEST</span></code>.
+The <code class="docutils literal"><span class="pre">RENDER</span></code> state is set during evaluation of the meta.yaml file. The
+<code class="docutils literal"><span class="pre">BUILD</span></code> state is set during processing of the bld.bat or build.sh script
+files. Finally, the <code class="docutils literal"><span class="pre">TEST</span></code> state is set during the running of any <code class="docutils literal"><span class="pre">run_test</span></code>
+scripts, which also includes any commands defined in <code class="docutils literal"><span class="pre">meta.yaml</span></code>&#8216;s
+<code class="docutils literal"><span class="pre">test/commands</span></code> section. The CONDA_BUILD_STATE variable is undefined outside
+of these locations.</p>
+</div>
 <div class="section" id="environment-variables-set-during-the-build-process">
 <h2>Environment variables set during the build process<a class="headerlink" href="#environment-variables-set-during-the-build-process" title="Permalink to this headline">¶</a></h2>
 <p>The following environment variables are set, both on Unix (build.sh) and on
