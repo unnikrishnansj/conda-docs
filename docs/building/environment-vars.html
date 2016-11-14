@@ -214,67 +214,70 @@ e.g. &#8220;Visual Studio 9 2008 Win64&#8221;</td>
 <td>Number of CPUs on the system, as reported by
 <code class="docutils literal"><span class="pre">multiprocessing.cpu_count()</span></code></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">DIRTY</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">SHLIB_EXT</span></code></td>
+<td>The shared library extension</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">DIRTY</span></code></td>
 <td>Set to 1 if <cite>&#8211;dirty</cite> flag passed to <cite>conda build</cite> command.  May be used to skip parts of
 build script conditionally (downloads, extraction, other things that need not be repeated
 for faster iteration time when developing recipes)</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">HTTP_PROXY</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">HTTP_PROXY</span></code></td>
 <td>Inherited from your shell environment.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">HTTPS_PROXY</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">HTTPS_PROXY</span></code></td>
 <td>Inherited from your shell environment.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">LANG</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">LANG</span></code></td>
 <td>Inherited from your shell environment.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">MAKEFLAGS</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">MAKEFLAGS</span></code></td>
 <td>Inherited from your shell environment. May be used to set additional
 arguments to make, such as <cite>-j2</cite>, which will use 2 CPU cores to build
 your recipe.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">NPY_VER</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">NPY_VER</span></code></td>
 <td>Numpy version building against (Set via <cite>&#8211;numpy</cite> arg or via <cite>CONDA_NPY</cite> environment variable.)</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PATH</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PATH</span></code></td>
 <td>Inherited from your shell environment, and augmented with <code class="docutils literal"><span class="pre">$PREFIX/bin</span></code></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PREFIX</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PREFIX</span></code></td>
 <td>Build prefix where build script should install to</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PKG_BUILDNUM</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_BUILDNUM</span></code></td>
 <td>Build number of the package being built</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_NAME</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PKG_NAME</span></code></td>
 <td>Name of the package being built</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PKG_VERSION</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_VERSION</span></code></td>
 <td>Version of the package being built</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PYTHON</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PYTHON</span></code></td>
 <td>Path to Python executable in build prefix (note that Python is only
 installed in the build prefix when it is listed as a build requirement)</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PY3K</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PY3K</span></code></td>
 <td><code class="docutils literal"><span class="pre">1</span></code> when Python 3 is installed in build prefix, else <code class="docutils literal"><span class="pre">0</span></code></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">R</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">R</span></code></td>
 <td>Path to R executable in build prefix (note that R is only
 installed in the build prefix when it is listed as a build requirement).</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">RECIPE_DIR</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">RECIPE_DIR</span></code></td>
 <td>Directory of recipe</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">SP_DIR</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">SP_DIR</span></code></td>
 <td>Python&#8217;s site-packages location</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">SRC_DIR</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">SRC_DIR</span></code></td>
 <td>Path to where source is unpacked (or cloned). If the source file is not
 a recognized file type (right now, <code class="docutils literal"><span class="pre">.zip</span></code>, <code class="docutils literal"><span class="pre">.tar</span></code>, <code class="docutils literal"><span class="pre">.tar.bz2</span></code>,
 <code class="docutils literal"><span class="pre">.tar.xz</span></code>, and <code class="docutils literal"><span class="pre">.tar</span></code>), this is a directory containing a copy of the
 source file</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">STDLIB_DIR</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">STDLIB_DIR</span></code></td>
 <td>Python standard library location</td>
 </tr>
 </tbody>
