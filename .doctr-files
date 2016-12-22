@@ -1,7 +1,7 @@
 ./404.html
-./_sources/404.txt
-./_sources/index.txt
-./_sources/miniconda.txt
+./_sources/404.rst.txt
+./_sources/index.rst.txt
+./_sources/miniconda.rst.txt
 ./_static/ajax-loader.gif
 ./_static/basic.css
 ./_static/basicstrap.css
@@ -44,7 +44,7 @@
 ./_static/img/progress.gif
 ./_static/img/rainbow.gif
 ./_static/img/stars.gif
-./_static/jquery-1.11.1.js
+./_static/jquery-3.1.0.js
 ./_static/jquery.js
 ./_static/js/bootstrap.min.js
 ./_static/js/jquery.min.js
