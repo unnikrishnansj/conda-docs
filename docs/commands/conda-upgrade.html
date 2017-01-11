@@ -95,13 +95,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../commands.html">Command reference</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="conda-bundle.html">conda bundle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-clean.html">conda clean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-config.html">conda config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-create.html">conda create</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-help.html">conda help</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-info.html">conda info</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-init.html">conda init</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-install.html">conda install</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-list.html">conda list</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-package.html">conda package</a></li>
@@ -192,7 +190,8 @@ DESCRIPTION
               [-q]      [--copy]      [--alt-hint]     [--update-dependencies]
               [--no-update-dependencies]   [--channel-priority]    [--no-chan‐
               nel-priority]   [--show-channel-urls]   [--no-show-channel-urls]
-              [--json] [--all] [package_spec [package_spec ...]]
+              [--json]  [--debug]  [--verbose]  [--all]  [package_spec  [pack‐
+              age_spec ...]]
 
        Alias for conda update.  See conda update --help.
 
@@ -212,11 +211,11 @@ OPTIONS
               Only display what would have been done.
 
        -f, --force
-              Force install (even when  package  already  installed),  implies
+              Force  install  (even  when  package already installed), implies
               --no-deps.
 
        --file FILE
-              Read  package versions from the given file. Repeated file speci‐
+              Read package versions from the given file. Repeated file  speci‐
               fications can be passed (e.g. --file=file1 --file=file2).
 
        --no-deps
@@ -238,14 +237,14 @@ OPTIONS
               Ignore pinned file.
 
        -c CHANNEL, --channel CHANNEL
-              Additional channel  to  search  for  packages.  These  are  URLs
-              searched  in  the  order  they  are given (including file:// for
+              Additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
               local directories). Then, the defaults or channels from .condarc
-              are  searched (unless --override-channels is given). You can use
-              'defaults' to get the default packages for conda,  and  'system'
-              to  get  the  system  packages,  which  also takes .condarc into
-              account. You can also  use  any  name  and  the  .condarc  chan‐
-              nel_alias  value will be prepended. The default channel_alias is
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
               http://conda.anaconda.org/.
 
        --override-channels
@@ -255,7 +254,7 @@ OPTIONS
               Name of environment (in envs dirs).
 
        -p PATH, --prefix PATH
-              Full path to environment prefix (default: envs  dirs/build-envi‐
+              Full  path to environment prefix (default: envs dirs/build-envi‐
               ronment).
 
        -q, --quiet
@@ -268,14 +267,14 @@ OPTIONS
               Use an alternate algorithm to generate an unsatisfiability hint.
 
        --update-dependencies, --update-deps
-              Update dependencies (default: True).
+              Don't update dependencies (default: True).
 
        --no-update-dependencies, --no-update-deps
               Don't update dependencies (default: False).
 
        --channel-priority, --channel-pri, --chan-pri
               Channel priority takes precedence over package version (default:
-              True).  Note: This feature is in beta and may change in a future
+              True). Note: This feature is in beta and may change in a  future
               release.
 
        --no-channel-priority, --no-channel-pri, --no-chan-pri
@@ -292,6 +291,12 @@ OPTIONS
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
+       --debug
+              Show debug output.
+
+       --verbose, -v
+              Use once for info, twice for debug.
+
        --all  Update all installed packages in the environment.
 
 EXAMPLES
@@ -299,7 +304,7 @@ EXAMPLES
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -321,7 +326,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

@@ -36,7 +36,7 @@
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
         <link rel="up" title="Command reference" href="../../commands.html"/>
         <link rel="next" title="conda skeleton cpan" href="conda-skeleton-cpan.html"/>
-        <link rel="prev" title="conda sign" href="conda-sign.html"/> 
+        <link rel="prev" title="conda render" href="conda-render.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -105,9 +105,7 @@
 <li class="toctree-l4"><a class="reference internal" href="conda-inspect-linkages.html">conda inspect linkages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-inspect-objects.html">conda inspect objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-render.html">conda render</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-sign.html">conda sign</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">conda skeleton</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton-cpan.html">conda skeleton cpan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton-cran.html">conda skeleton cran</a></li>
@@ -186,7 +184,7 @@ NAME
        conda - conda skeleton
 
 DESCRIPTION
-       usage: conda-skeleton [-h] {pypi,cpan,cran,luarocks} ...
+       usage: conda-skeleton [-h] {cpan,cran,luarocks,pypi} ...
 
        Generates  a  boilerplate/skeleton  recipe,  which you can then edit to
        create a full recipe. Some simple skeleton recipes may  not  even  need
@@ -194,19 +192,19 @@ DESCRIPTION
 
 OPTIONS
    positional arguments:
-              {pypi,cpan,cran,luarocks}
+              {cpan,cran,luarocks,pypi}
 
-       pypi   Create recipe skeleton for packages hosted on the Python Packag‐
-              ing Index (PyPI) (pypi.python.org).
-
-       cpan   Create recipe skeleton for packages hosted on the  Comprehensive
+       cpan   Create  recipe skeleton for packages hosted on the Comprehensive
               Perl Archive Network (CPAN) (cpan.org).
 
-       cran   Create  recipe skeleton for packages hosted on the Comprehensive
+       cran   Create recipe skeleton for packages hosted on the  Comprehensive
               R Archive Network (CRAN) (cran.r-project.org).
 
        luarocks
               Create recipe skeleton for luarocks, hosted at luarocks.org
+
+       pypi   Create recipe skeleton for packages hosted on the Python Packag‐
+              ing Index (PyPI) (pypi.python.org).
 
    optional arguments:
        -h, --help
@@ -217,7 +215,7 @@ OPTIONS
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -230,7 +228,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
         <a href="conda-skeleton-cpan.html" class="btn btn-neutral float-right" title="conda skeleton cpan" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conda-sign.html" class="btn btn-neutral" title="conda sign" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-render.html" class="btn btn-neutral" title="conda render" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -239,7 +237,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

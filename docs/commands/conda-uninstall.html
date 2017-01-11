@@ -95,13 +95,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../commands.html">Command reference</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="conda-bundle.html">conda bundle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-clean.html">conda clean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-config.html">conda config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-create.html">conda create</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-help.html">conda help</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-info.html">conda info</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-init.html">conda init</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-install.html">conda install</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-list.html">conda list</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-package.html">conda package</a></li>
@@ -184,13 +182,13 @@ NAME
        conda - conda uninstall
 
 DESCRIPTION
-       usage:  conda  uninstall [-h] [-y] [--dry-run] [--json] [--all] [--fea‐
-       tures]
+       usage: conda uninstall [-h] [-y] [--dry-run] [--json] [--debug] [--ver‐
+       bose]
 
-       [--force] [--no-pin] [-c CHANNEL] [--override-channels]
-              [-n  ENVIRONMENT  |   -p   PATH]   [-q]   [--no-use-index-cache]
-              [--use-index-cache]   [--use-local]   [--offline]  [package_name
-              [package_name ...]]
+       [--all] [--features] [--force] [--no-pin] [-c CHANNEL]
+              [--override-channels]  [-n   ENVIRONMENT   |   -p   PATH]   [-q]
+              [--no-use-index-cache] [--use-index-cache] [--use-local] [--off‐
+              line] [package_name [package_name ...]]
 
        Alias for conda remove.  See conda remove --help.
 
@@ -211,6 +209,12 @@ OPTIONS
 
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
+
+       --debug
+              Show debug output.
+
+       --verbose, -v
+              Use once for info, twice for debug.
 
        --all  Uninstall all packages, i.e., the entire environment.
 
@@ -266,7 +270,7 @@ EXAMPLES
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -288,7 +292,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

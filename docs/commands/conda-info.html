@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Conda   documentation" href="../index.html"/>
         <link rel="up" title="Command reference" href="../commands.html"/>
-        <link rel="next" title="conda init" href="conda-init.html"/>
+        <link rel="next" title="conda install" href="conda-install.html"/>
         <link rel="prev" title="conda help" href="conda-help.html"/> 
 
   
@@ -95,13 +95,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../commands.html">Command reference</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="conda-bundle.html">conda bundle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-clean.html">conda clean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-config.html">conda config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-create.html">conda create</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-help.html">conda help</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">conda info</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-init.html">conda init</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-install.html">conda install</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-list.html">conda list</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-package.html">conda package</a></li>
@@ -184,10 +182,10 @@ NAME
        conda - conda info
 
 DESCRIPTION
-       usage:  conda  info  [-h]  [--json]  [--offline]  [-a]  [-e]  [-l] [-s]
-       [--root]
+       usage:  conda info [-h] [--json] [--debug] [--verbose] [--offline] [-a]
+       [-e]
 
-              [--unsafe-channels] [packages [packages ...]]
+              [-l] [-s] [--root] [--unsafe-channels] [packages [packages ...]]
 
        Display information about current conda install.
 
@@ -202,6 +200,12 @@ OPTIONS
 
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
+
+       --debug
+              Show debug output.
+
+       --verbose, -v
+              Use once for info, twice for debug.
 
        --offline
               Offline mode, don't connect to the Internet.
@@ -229,7 +233,7 @@ EXAMPLES
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -239,7 +243,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-init.html" class="btn btn-neutral float-right" title="conda init" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-install.html" class="btn btn-neutral float-right" title="conda install" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="conda-help.html" class="btn btn-neutral" title="conda help" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -251,7 +255,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

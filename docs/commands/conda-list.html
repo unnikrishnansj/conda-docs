@@ -95,13 +95,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../commands.html">Command reference</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="conda-bundle.html">conda bundle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-clean.html">conda clean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-config.html">conda config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-create.html">conda create</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-help.html">conda help</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-info.html">conda info</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-init.html">conda init</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-install.html">conda install</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">conda list</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-package.html">conda package</a></li>
@@ -184,10 +182,10 @@ NAME
        conda - conda list
 
 DESCRIPTION
-       usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json]
+       usage: conda list [-h] [-n ENVIRONMENT | -p PATH] [--json] [--debug]
 
-              [--show-channel-urls]    [--no-show-channel-urls]    [-c]   [-f]
-              [--explicit] [--md5] [-e] [-r] [--no-pip] [regex]
+              [--verbose]  [--show-channel-urls] [--no-show-channel-urls] [-c]
+              [-f] [--explicit] [--md5] [-e] [-r] [--no-pip] [regex]
 
        List linked packages in a conda environment.
 
@@ -208,6 +206,12 @@ OPTIONS
 
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
+
+       --debug
+              Show debug output.
+
+       --verbose, -v
+              Use once for info, twice for debug.
 
        --show-channel-urls
               Show channel urls (default: True).
@@ -256,7 +260,7 @@ EXAMPLES
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -278,7 +282,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

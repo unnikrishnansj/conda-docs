@@ -179,7 +179,7 @@ NAME
 DESCRIPTION
        usage: conda-env attach [-h] (-n NAME | -r REMOTE) [-p PATH] [--force]
 
-       [--no-builds] [--json]
+       [--no-builds] [--json] [--debug] [--verbose]
               notebook
 
        Embeds  information describing your conda environment into the notebook
@@ -212,13 +212,19 @@ OPTIONS
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
+       --debug
+              Show debug output.
+
+       --verbose, -v
+              Use once for info, twice for debug.
+
    examples:
               conda  env  attach  -n  root  notebook.ipynb conda env attach -r
               user/environment notebook.ipynb
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -240,7 +246,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

@@ -105,9 +105,7 @@
 <li class="toctree-l4"><a class="reference internal" href="conda-inspect-linkages.html">conda inspect linkages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-inspect-objects.html">conda inspect objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-render.html">conda render</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-sign.html">conda sign</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton-cpan.html">conda skeleton cpan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton-cran.html">conda skeleton cran</a></li>
@@ -186,30 +184,35 @@ NAME
        conda - conda inspect
 
 DESCRIPTION
-       usage: conda-inspect [-h] {linkages,objects,channels} ...
+       usage:  conda-inspect  [-h]  {linkages,objects,channels,prefix-lengths}
+       ...
 
        Tools for inspecting conda packages.
 
 OPTIONS
    positional arguments:
-              {linkages,objects,channels}
+              {linkages,objects,channels,prefix-lengths}
 
        linkages
               Investigates linkages of binary libraries in a package (works in
-              Linux and OS X). This is an advanced  command  to  aid  building
+              Linux  and  OS  X).  This is an advanced command to aid building
               packages that link against C libraries. Aggregates the output of
-              ldd (on Linux) and otool -L (on OS  X)  by  dependent  packages.
+              ldd  (on  Linux)  and  otool -L (on OS X) by dependent packages.
               Useful  for  finding  broken  links,  or  links  against  system
               libraries that ought to be dependent conda packages.
 
        objects
-              Investigate binary object files in a package (only works  on  OS
-              X).  This  is  an advanced command to aid building packages that
-              have compiled libraries.  Aggregates the output of otool on  all
+              Investigate  binary  object files in a package (only works on OS
+              X). This is an advanced command to aid  building  packages  that
+              have  compiled libraries.  Aggregates the output of otool on all
               the binary object files in a package.
 
        channels
               Tools for investigating conda channels.
+
+       prefix-lengths
+              Inspect packages in given path, finding those with  binary  pre‐
+              fixes shorter than specified
 
    optional arguments:
        -h, --help
@@ -220,7 +223,7 @@ OPTIONS
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -242,7 +245,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

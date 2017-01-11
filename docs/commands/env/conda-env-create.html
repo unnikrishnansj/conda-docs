@@ -179,7 +179,7 @@ NAME
 DESCRIPTION
        usage: conda-env create [-h] [-f FILE] [-n ENVIRONMENT | -p PATH] [-q]
 
-       [--force] [--json]
+       [--force] [--json] [--debug] [--verbose]
               [remote_definition]
 
        Create an environment based on an environment file
@@ -212,6 +212,12 @@ OPTIONS
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
+       --debug
+              Show debug output.
+
+       --verbose, -v
+              Use once for info, twice for debug.
+
    examples:
               conda env create conda env  create  -n  name  conda  env  create
               vader/deathstar  conda  env  create  -f=/path/to/environment.yml
@@ -221,7 +227,7 @@ OPTIONS
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -243,7 +249,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

@@ -95,13 +95,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../commands.html">Command reference</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="conda-bundle.html">conda bundle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-clean.html">conda clean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-config.html">conda config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-create.html">conda create</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-help.html">conda help</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-info.html">conda info</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-init.html">conda init</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-install.html">conda install</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-list.html">conda list</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-package.html">conda package</a></li>
@@ -184,20 +182,21 @@ NAME
        conda - conda remove
 
 DESCRIPTION
-       usage: conda remove [-h] [-y] [--dry-run] [--json] [--all] [--features]
+       usage:  conda  remove  [-h] [-y] [--dry-run] [--json] [--debug] [--ver‐
+       bose]
 
-       [--force] [--no-pin] [-c CHANNEL] [--override-channels]
-              [-n   ENVIRONMENT   |   -p   PATH]  [-q]  [--no-use-index-cache]
-              [--use-index-cache]  [--use-local]   [--offline]   [package_name
-              [package_name ...]]
+       [--all] [--features] [--force] [--no-pin] [-c CHANNEL]
+              [--override-channels]  [-n   ENVIRONMENT   |   -p   PATH]   [-q]
+              [--no-use-index-cache] [--use-index-cache] [--use-local] [--off‐
+              line] [package_name [package_name ...]]
 
        Remove a list of packages from a specified conda environment.
 
-       This  command  will  also remove any package that depends on any of the
-       specified packages as well---unless a replacement can be found  without
-       that  dependency.  If  you  wish  to  skip this dependency checking and
+       This command will also remove any package that depends on  any  of  the
+       specified  packages as well---unless a replacement can be found without
+       that dependency. If you wish  to  skip  this  dependency  checking  and
        remove just the requested packages, add the '--force' option. Note how‐
-       ever  that  this  may  result in a broken environment, so use this with
+       ever that this may result in a broken environment,  so  use  this  with
        caution.
 
 OPTIONS
@@ -218,13 +217,19 @@ OPTIONS
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
+       --debug
+              Show debug output.
+
+       --verbose, -v
+              Use once for info, twice for debug.
+
        --all  Remove all packages, i.e., the entire environment.
 
        --features
               Remove features (instead of packages).
 
        --force
-              Forces  removal  of  a  package  without  removing packages that
+              Forces removal of  a  package  without  removing  packages  that
               depend on it. Using this option will usually leave your environ‐
               ment in a broken and inconsistent state.
 
@@ -232,14 +237,14 @@ OPTIONS
               Ignore pinned file.
 
        -c CHANNEL, --channel CHANNEL
-              Additional  channel  to  search  for  packages.  These  are URLs
-              searched in the order they  are  given  (including  file://  for
+              Additional channel  to  search  for  packages.  These  are  URLs
+              searched  in  the  order  they  are given (including file:// for
               local directories). Then, the defaults or channels from .condarc
-              are searched (unless --override-channels is given). You can  use
-              'defaults'  to  get the default packages for conda, and 'system'
-              to get the system  packages,  which  also  takes  .condarc  into
-              account.  You  can  also  use  any  name  and the .condarc chan‐
-              nel_alias value will be prepended. The default channel_alias  is
+              are  searched (unless --override-channels is given). You can use
+              'defaults' to get the default packages for conda,  and  'system'
+              to  get  the  system  packages,  which  also takes .condarc into
+              account. You can also  use  any  name  and  the  .condarc  chan‐
+              nel_alias  value will be prepended. The default channel_alias is
               http://conda.anaconda.org/.
 
        --override-channels
@@ -249,7 +254,7 @@ OPTIONS
               Name of environment (in envs dirs).
 
        -p PATH, --prefix PATH
-              Full  path to environment prefix (default: envs dirs/build-envi‐
+              Full path to environment prefix (default: envs  dirs/build-envi‐
               ronment).
 
        -q, --quiet
@@ -272,7 +277,7 @@ EXAMPLES
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -294,7 +299,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

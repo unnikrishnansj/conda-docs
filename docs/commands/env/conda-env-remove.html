@@ -177,10 +177,10 @@ NAME
        conda - conda env remove
 
 DESCRIPTION
-       usage:  conda-env  remove [-h] [-n ENVIRONMENT | -p PATH] [--json] [-q]
-       [-y]
+       usage:  conda-env  remove  [-h]  [-n  ENVIRONMENT  |  -p PATH] [--json]
+       [--debug]
 
-              [--dry-run]
+              [--verbose] [-q] [-y] [--dry-run]
 
        Remove an environmentRemoves a provided environment.  You must  deacti‐
        vate the existing environment before you can remove it.
@@ -200,6 +200,12 @@ OPTIONS
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
+       --debug
+              Show debug output.
+
+       --verbose, -v
+              Use once for info, twice for debug.
+
        -q, --quiet
               Do not display progress bar.
 
@@ -214,7 +220,7 @@ EXAMPLES
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -236,7 +242,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

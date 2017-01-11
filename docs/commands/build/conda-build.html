@@ -105,9 +105,7 @@
 <li class="toctree-l4"><a class="reference internal" href="conda-inspect-linkages.html">conda inspect linkages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-inspect-objects.html">conda inspect objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-render.html">conda render</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-sign.html">conda sign</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton-cpan.html">conda skeleton cpan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton-cran.html">conda skeleton cran</a></li>
@@ -191,11 +189,16 @@ DESCRIPTION
               [--perl   PERL_VER]   [--numpy  NUMPY_VER]  [--R  R_VER]  [--lua
               LUA_VER] [--check] [--no-anaconda-upload]  [--no-include-recipe]
               [-s]    [-t]    [--no-test]    [-b]    [-p]    [--skip-existing]
-              [--keep-old-work] [--dirty] [-q] [--token TOKEN]  [--user  USER]
-              [--no-activate]  [--debug]  [-c  CHANNEL]  [--override-channels]
-              RECIPE_PATH [RECIPE_PATH ...]
+              [--keep-old-work]  [--dirty]  [-q]  [--debug]  [--token   TOKEN]
+              [--user  USER]  [--password PASSWORD] [--sign SIGN] [--sign-with
+              SIGN_WITH]  [--identity  IDENTITY]  [--config-file  CONFIG_FILE]
+              [--repository    REPOSITORY]   [--no-activate]   [--no-build-id]
+              [--croot CROOT]  [--no-verify]  [--output-folder  OUTPUT_FOLDER]
+              [--no-prefix-length-fallback] [--prefix-length-fallback] [--pre‐
+              fix-length _PREFIX_LENGTH] [--no-locking] [--no-remove-work-dir]
+              [-c CHANNEL] [--override-channels] RECIPE_PATH [RECIPE_PATH ...]
 
-       Tool for building conda packages. A conda package is a  binary  tarball
+       Tool  for  building conda packages. A conda package is a binary tarball
        containing system-level libraries, Python modules, executable programs,
        or other components. conda keeps track of dependencies between packages
        and platform specifics, making it simple to create working environments
@@ -203,7 +206,8 @@ DESCRIPTION
 
    positional arguments:
        RECIPE_PATH
-              Path to recipe directory.
+              Path  to  recipe  directory. Pass 'purge' here to clean the work
+              and test intermediates.
 
    optional arguments:
        -h, --help
@@ -220,29 +224,19 @@ DESCRIPTION
               Output the conda package filename which would have been created
 
        --python PYTHON_VER
-              Set the Python version used by conda build. Can be passed multi‐
-              ple times to build against multiple versions. Can  be  'all'  to
-              build  against  all known versions (['2.6', '2.7', '3.3', '3.4',
-              '3.5'])
+              Set the Python version used by conda build.
 
        --perl PERL_VER
-              Set the Perl version used by conda build. Can be passed multiple
-              times to build against multiple versions.
+              Set the Perl version used by conda build.
 
        --numpy NUMPY_VER
-              Set  the NumPy version used by conda build. Can be passed multi‐
-              ple times to build against multiple versions. Can  be  'all'  to
-              build  against  all known versions (['1.6', '1.7', '1.8', '1.9',
-              '1.10', '1.11'])
+              Set the NumPy version used by conda build.
 
        --R R_VER
-              Set the R version used by conda build. Can  be  passed  multiple
-              times to build against multiple versions.
+              Set the R version used by conda build.
 
        --lua LUA_VER
-              Set  the  Lua version used by conda build. Can be passedmultiple
-              times to build against multiple versions (['all', '2.0',  '5.1',
-              '5.2', '5.3']).
+              Set the Lua version used by conda build.
 
        --check
               Only check (validate) the recipe.
@@ -279,45 +273,108 @@ DESCRIPTION
               (locally or in the channels).
 
        --keep-old-work
-              Keep any existing,  old  work  directory.  Useful  if  debugging
-              across callstacks involving multiple packages/recipes.
+              Deprecated. Same as --dirty.
 
        --dirty
-              Do  not remove work directory or _build environment, to speed up
+              Do not remove work directory or _build environment, to speed  up
               debugging. Does not apply patches or download source.
 
        -q, --quiet
               do not display progress bar
 
+       --debug
+              Show debug output from source checkouts and conda
+
        --token TOKEN
               Token to pass through to anaconda upload
 
        --user USER
-              User/organization to upload packages to on anaconda.org
+              User/organization to upload packages to on anaconda.org or pypi
 
        --no-activate
-              do not display progress bar
+              do not activate the build and test envs; just prepend to PATH
 
-       --debug
-              show debugging output from conda and conda-build
+       --no-build-id
+              do  not generate unique build folder names. Use if having issues
+              with paths being too long.
+
+       --croot CROOT
+              Build root folder. Equivalent  to  CONDA_BLD_PATH,  but  applies
+              only to this call of conda-build.
+
+       --no-verify
+              do not run verification on recipes or packages when building
+
+       --output-folder OUTPUT_FOLDER
+              folder  to  dump  output  package  to. Package are moved here if
+              build or test succeeds. Destination folder must exist  prior  to
+              using this.
+
+       --no-prefix-length-fallback
+              Disable fallback to older 80 character prefix length if environ‐
+              ment creation fails due to insufficient prefix length in  depen‐
+              dency packages
+
+       --prefix-length-fallback
+              Disable fallback to older 80 character prefix length if environ‐
+              ment creation fails due to insufficient prefix length in  depen‐
+              dency packages
+
+       --prefix-length _PREFIX_LENGTH
+              length  of  build  prefix. For packages with binaries that embed
+              the path, this is critical to ensuring that your package can run
+              as  many places as possible.  Notethat this value can be altered
+              by the OS  below  conda-build  (e.g.  encrypted  filesystems  on
+              Linux),  and you should prefer to set --croot to a non-encrypted
+              location instead, so that you maintain a known prefix length.
+
+       --no-locking
+              Disable locking, to  avoid  unresolved  race  condition  issues.
+              Unsafe  to  run  multiplebuilds  at once on one system with this
+              set.
+
+       --no-remove-work-dir
+              Disable removal of the work dir before testing. Be careful using
+              this  option,  as  you  package may depend on files that are not
+              included in the package, and may passtests, but ultimately  fail
+              on installed systems.
 
        -c CHANNEL, --channel CHANNEL
-              Additional channel  to  search  for  packages.  These  are  URLs
-              searched  in  the  order  they  are given (including file:// for
+              Additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
               local directories). Then, the defaults or channels from .condarc
-              are  searched (unless --override-channels is given). You can use
-              'defaults' to get the default packages for conda,  and  'system'
-              to  get  the  system  packages,  which  also takes .condarc into
-              account. You can also  use  any  name  and  the  .condarc  chan‐
-              nel_alias  value will be prepended. The default channel_alias is
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
               http://conda.anaconda.org/.
 
        --override-channels
               Do not search default or .condarc channels. Requires --channel.
 
+   PyPI upload parameters (twine):
+       --password PASSWORD
+              password to use when uploading packages to pypi
+
+       --sign SIGN
+              sign files when uploading to pypi
+
+       --sign-with SIGN_WITH
+              program to use to sign files when uploading to pypi
+
+       --identity IDENTITY
+              GPG identity to use to sign files when uploading to pypi
+
+       --config-file CONFIG_FILE
+              path to .pypirc file to use when uploading to pypi
+
+       --repository REPOSITORY
+              PyPI repository to upload to
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -339,7 +396,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

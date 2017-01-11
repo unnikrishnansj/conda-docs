@@ -35,8 +35,8 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Conda   documentation" href="../../index.html"/>
         <link rel="up" title="Command reference" href="../../commands.html"/>
-        <link rel="next" title="conda sign" href="conda-sign.html"/>
-        <link rel="prev" title="conda pipbuild" href="conda-pipbuild.html"/> 
+        <link rel="next" title="conda skeleton" href="conda-skeleton.html"/>
+        <link rel="prev" title="conda metapackage" href="conda-metapackage.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -105,9 +105,7 @@
 <li class="toctree-l4"><a class="reference internal" href="conda-inspect-linkages.html">conda inspect linkages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-inspect-objects.html">conda inspect objects</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-metapackage.html">conda metapackage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-pipbuild.html">conda pipbuild</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">conda render</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-sign.html">conda sign</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton.html">conda skeleton</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton-cpan.html">conda skeleton cpan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-skeleton-cran.html">conda skeleton cran</a></li>
@@ -220,29 +218,19 @@ OPTIONS
               Output the conda package filename which would have been created
 
        --python PYTHON_VER
-              Set the Python version used by conda build. Can be passed multi‐
-              ple times to build against multiple versions. Can  be  'all'  to
-              build  against  all known versions (['2.6', '2.7', '3.3', '3.4',
-              '3.5'])
+              Set the Python version used by conda build.
 
        --perl PERL_VER
-              Set the Perl version used by conda build. Can be passed multiple
-              times to build against multiple versions.
+              Set the Perl version used by conda build.
 
        --numpy NUMPY_VER
-              Set  the NumPy version used by conda build. Can be passed multi‐
-              ple times to build against multiple versions. Can  be  'all'  to
-              build  against  all known versions (['1.6', '1.7', '1.8', '1.9',
-              '1.10', '1.11'])
+              Set the NumPy version used by conda build.
 
        --R R_VER
-              Set the R version used by conda build. Can  be  passed  multiple
-              times to build against multiple versions.
+              Set the R version used by conda build.
 
        --lua LUA_VER
-              Set  the  Lua version used by conda build. Can be passedmultiple
-              times to build against multiple versions (['all', '2.0',  '5.1',
-              '5.2', '5.3']).
+              Set the Lua version used by conda build.
 
        -c CHANNEL, --channel CHANNEL
               Additional  channel  to  search  for  packages.  These  are URLs
@@ -267,7 +255,7 @@ OPTIONS
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -277,10 +265,10 @@ Continuum Analytics              November 2016                        <B>CONDA(1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="conda-sign.html" class="btn btn-neutral float-right" title="conda sign" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conda-skeleton.html" class="btn btn-neutral float-right" title="conda skeleton" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conda-pipbuild.html" class="btn btn-neutral" title="conda pipbuild" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-metapackage.html" class="btn btn-neutral" title="conda metapackage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -289,7 +277,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>

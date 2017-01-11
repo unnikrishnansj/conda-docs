@@ -36,7 +36,7 @@
     <link rel="top" title="Conda   documentation" href="../index.html"/>
         <link rel="up" title="Command reference" href="../commands.html"/>
         <link rel="next" title="conda list" href="conda-list.html"/>
-        <link rel="prev" title="conda init" href="conda-init.html"/> 
+        <link rel="prev" title="conda info" href="conda-info.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -95,13 +95,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../commands.html">Command reference</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../commands.html#conda-general-commands">Conda general commands</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="conda-bundle.html">conda bundle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-clean.html">conda clean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-config.html">conda config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-create.html">conda create</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-help.html">conda help</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-info.html">conda info</a></li>
-<li class="toctree-l4"><a class="reference internal" href="conda-init.html">conda init</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">conda install</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-list.html">conda list</a></li>
 <li class="toctree-l4"><a class="reference internal" href="conda-package.html">conda package</a></li>
@@ -191,8 +189,8 @@ DESCRIPTION
               ride-channels]  [-n  ENVIRONMENT  |  -p  PATH]   [-q]   [--copy]
               [--alt-hint]  [--update-dependencies] [--no-update-dependencies]
               [--channel-priority]    [--no-channel-priority]    [--show-chan‐
-              nel-urls] [--no-show-channel-urls] [--json] [package_spec [pack‐
-              age_spec ...]]
+              nel-urls]  [--no-show-channel-urls]  [--json]  [--debug] [--ver‐
+              bose] [package_spec [package_spec ...]]
 
        Installs a list of packages into a specified conda environment.
 
@@ -294,7 +292,7 @@ OPTIONS
               Use an alternate algorithm to generate an unsatisfiability hint.
 
        --update-dependencies, --update-deps
-              Update dependencies (default: True).
+              Don't update dependencies (default: True).
 
        --no-update-dependencies, --no-update-deps
               Don't update dependencies (default: False).
@@ -318,12 +316,18 @@ OPTIONS
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
 
+       --debug
+              Show debug output.
+
+       --verbose, -v
+              Use once for info, twice for debug.
+
 EXAMPLES
               conda install -n myenv scipy
 
 
 
-Continuum Analytics              November 2016                        <B>CONDA(1)</B>
+Continuum Analytics              January 2017                         <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -336,7 +340,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
         <a href="conda-list.html" class="btn btn-neutral float-right" title="conda list" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="conda-init.html" class="btn btn-neutral" title="conda init" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conda-info.html" class="btn btn-neutral" title="conda info" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -345,7 +349,7 @@ Continuum Analytics              November 2016                        <B>CONDA(1
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Continuum Analytics.
+        &copy; Copyright 2017, Continuum Analytics.
 
     </p>
   </div>
