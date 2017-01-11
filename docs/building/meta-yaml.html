@@ -518,10 +518,10 @@ binaries will not be replaced. Prefixes in text files will still be replaced.</p
   <span class="l l-Scalar l-Scalar-Plain">detect_binary_files_with_prefix</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
-<p>Windows is a different beast when it comes to binary prefix replacement. At this
-time, we are unaware of any executable or library that uses hardcoded embedded
-paths for locating other libraries or program data on Windows. Instead, Windows
-follows <a class="reference external" href="https://msdn.microsoft.com/en-us/library/7d83bc18.aspx">DLL search path rules</a>, or more natively
+<p>Windows handles binary prefix replacement very differently than Unix systems
+such as Linux and macOS. At this time, we are unaware of any executable or
+library that uses hardcoded embedded paths for locating other libraries or
+program data on Windows. Instead, Windows follows <a class="reference external" href="https://msdn.microsoft.com/en-us/library/7d83bc18.aspx">DLL search path rules</a>, or more natively
 supports relocatability using relative paths. Because of this, conda ignores
 most prefixes. However, pip creates executables for Python entry points that
 <em>do</em> use embedded paths on Windows. Conda-build thus detects prefixes in all
