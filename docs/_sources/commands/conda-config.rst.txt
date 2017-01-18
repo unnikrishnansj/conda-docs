@@ -39,7 +39,7 @@ conda config
                  Show debug output.
    
           --verbose, -v
-                 Use once for info, twice for debug.
+                 Use once for info, twice for debug, three times for trace.
    
           --system
                  Write to the system .condarc file (system .condarc path). Other‐
@@ -82,8 +82,8 @@ conda config
                  Write to the config file using the yaml parser. This will remove
                  any comments or structure from the file.
    
-          See http://conda.pydata.org/docs/config.html for  details  on  all  the
-          options that can go in .condarc.
+          See https://conda.io/docs/config.html for details on  all  the  options
+          that can go in .condarc.
    
           List keys, like
    

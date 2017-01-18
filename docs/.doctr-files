@@ -1,5 +1,4 @@
 docs/_downloads/build.sh
-docs/_downloads/conda-cheat-sheet.ai
 docs/_downloads/conda-cheatsheet.pdf
 docs/_downloads/conda-pip-virtualenv-translator.html
 docs/_downloads/meta.yaml
@@ -105,7 +104,6 @@ docs/_sources/test-drive.rst.txt
 docs/_sources/travis.rst.txt
 docs/_sources/troubleshooting.rst.txt
 docs/_sources/using/cheatsheet.rst.txt
-docs/_sources/using/cheatsheetsource.rst.txt
 docs/_sources/using/envs.rst.txt
 docs/_sources/using/index.rst.txt
 docs/_sources/using/pkgs.rst.txt
@@ -245,7 +243,6 @@ docs/test-drive.html
 docs/travis.html
 docs/troubleshooting.html
 docs/using/cheatsheet.html
-docs/using/cheatsheetsource.html
 docs/using/envs.html
 docs/using/index.html
 docs/using/pkgs.html

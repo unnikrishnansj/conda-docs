@@ -32,7 +32,7 @@ conda env list
                  Show debug output.
    
           --verbose, -v
-                 Use once for info, twice for debug.
+                 Use once for info, twice for debug, three times for trace.
    
       examples:
                  conda env list conda env list --json

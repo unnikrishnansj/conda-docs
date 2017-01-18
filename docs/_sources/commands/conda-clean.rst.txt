@@ -41,7 +41,7 @@ conda clean
                  Show debug output.
    
           --verbose, -v
-                 Use once for info, twice for debug.
+                 Use once for info, twice for debug, three times for trace.
    
           -a, --all
                  Remove index cache, lock files, tarballs, unused cache packages,

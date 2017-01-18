@@ -51,7 +51,7 @@ conda env upload
                  Show debug output.
    
           --verbose, -v
-                 Use once for info, twice for debug.
+                 Use once for info, twice for debug, three times for trace.
    
       examples:
                  conda  env  upload  conda  env  upload  project conda env upload
