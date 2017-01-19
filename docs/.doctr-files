@@ -20,6 +20,7 @@ docs/_sources/build_tutorials/app.rst.txt
 docs/_sources/build_tutorials/pkgs.rst.txt
 docs/_sources/build_tutorials/pkgs2.rst.txt
 docs/_sources/build_tutorials/postgis.rst.txt
+docs/_sources/build_tutorials/windows.rst.txt
 docs/_sources/building/bpp.rst.txt
 docs/_sources/building/build-scripts.rst.txt
 docs/_sources/building/build.rst.txt
@@ -155,6 +156,7 @@ docs/build_tutorials/app.html
 docs/build_tutorials/pkgs.html
 docs/build_tutorials/pkgs2.html
 docs/build_tutorials/postgis.html
+docs/build_tutorials/windows.html
 docs/building/bpp.html
 docs/building/build-scripts.html
 docs/building/build.html
