@@ -207,7 +207,7 @@ registering Python as the system&#8217;s default:</p>
 <p>Silent installation of Miniconda for Linux and OS X is a simple as specifying the <code class="docutils literal"><span class="pre">-b</span></code> and <code class="docutils literal"><span class="pre">-p</span></code> arguments of the
 bash installer. The following arguments are supported:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">-b</span></code>, batch mode</li>
+<li><code class="docutils literal"><span class="pre">-b</span></code>, batch mode, no PATH modifications to <code class="docutils literal"><span class="pre">~/.bashrc</span></code></li>
 <li><code class="docutils literal"><span class="pre">-p</span></code>, installation prefix/path</li>
 <li><code class="docutils literal"><span class="pre">-f</span></code>, force installation even if prefix <code class="docutils literal"><span class="pre">-p</span></code> already exists</li>
 </ul>
@@ -219,6 +219,17 @@ bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
+<p>NOTE: This only sets the PATH for the current session, not permanently. Trying
+to use conda when conda is not in your PATH will cause errors such as &#8220;command
+not found&#8221;.</p>
+<p>We recommend running <code class="docutils literal"><span class="pre">source</span> <span class="pre">$HOME/miniconda3/bin/activate</span></code> in each new
+bash session before using conda, which will set the PATH and run the activation
+scripts of your conda packages. Replace <code class="docutils literal"><span class="pre">$HOME/miniconda3/bin/activate</span></code>
+with the path to the activate script in your conda installation.</p>
+<p>It is also possible to set the PATH permanently by adding a line to your
+<code class="docutils literal"><span class="pre">.bashrc</span></code> file such as <code class="docutils literal"><span class="pre">export</span> <span class="pre">PATH=&quot;$HOME/miniconda3/bin:$PATH&quot;</span></code>.
+However, this makes it possible to use conda without running the activation
+scripts of your conda packages, which may produce errors.</p>
 </div>
 </div>
 
