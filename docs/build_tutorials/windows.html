@@ -173,11 +173,23 @@
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#building-conda-packages-on-windows" id="id10">Building conda packages on Windows</a></li>
+<li><a class="reference internal" href="#building-conda-packages-on-windows" id="id10">Building conda packages on Windows</a><ul>
+<li><a class="reference internal" href="#overview" id="id11">Overview</a></li>
+<li><a class="reference internal" href="#before-you-start" id="id12">Before you start</a></li>
+<li><a class="reference internal" href="#the-toolkit" id="id13">The toolkit</a></li>
+<li><a class="reference internal" href="#build-strategy" id="id14">Build strategy</a></li>
+<li><a class="reference internal" href="#building-with-a-python-version-different-from-your-miniconda-installation" id="id15">Building with a Python version different from your Miniconda installation</a></li>
+<li><a class="reference internal" href="#automated-testing" id="id16">Automated testing</a></li>
+<li><a class="reference internal" href="#building-the-sep-package-with-conda-and-python-3-on-windows" id="id17">Building the SEP package with conda and Python 3 on Windows</a></li>
+<li><a class="reference internal" href="#building-the-sep-package-with-conda-and-python-2-on-windows" id="id18">Building the SEP package with conda and Python 2 on Windows</a></li>
+<li><a class="reference internal" href="#building-the-pyslalib-package-with-conda-and-python-3-on-windows" id="id19">Building the pySLALIB package with conda and Python 3 on Windows</a></li>
+<li><a class="reference internal" href="#building-the-pyslalib-package-with-conda-and-python-2-on-windows" id="id20">Building the pySLALIB package with conda and Python 2 on Windows</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>This tutorial explains how to use conda build to create conda packages on the
 Windows operating system, using the examples of SEP and pySLALIB.</p>
 <p>On <a class="reference external" href="https://anaconda.org">Anaconda Cloud</a> you can find the final built
@@ -190,7 +202,7 @@ also find the <a class="reference external" href="https://github.com/conda/conda
 and the <a class="reference external" href="https://github.com/conda/conda-docs/tree/master/docs/source/build_tutorials/pyslalib">pySLALIB recipe</a>.</p>
 </div>
 <div class="section" id="before-you-start">
-<h2>Before you start<a class="headerlink" href="#before-you-start" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Before you start</a><a class="headerlink" href="#before-you-start" title="Permalink to this headline">¶</a></h2>
 <p>You should already have installed <a class="reference internal" href="../install/quick.html"><span class="doc">Miniconda</span></a> or
 <a class="reference external" href="https://docs.continuum.io/anaconda/install">Anaconda</a>.</p>
 <p>Install conda-build:</p>
@@ -206,7 +218,7 @@ conda upgrade conda-build
 <p>Now you are ready to start building your own conda packages on Windows.</p>
 </div>
 <div class="section" id="the-toolkit">
-<h2>The toolkit<a class="headerlink" href="#the-toolkit" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">The toolkit</a><a class="headerlink" href="#the-toolkit" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="microsoft-visual-studio">
 <h3>Microsoft Visual Studio<a class="headerlink" href="#microsoft-visual-studio" title="Permalink to this headline">¶</a></h3>
 <p>In the standard practices of the conda developers, conda packages for different
@@ -264,7 +276,7 @@ Library/bin folder.</p>
 </div>
 </div>
 <div class="section" id="build-strategy">
-<h2>Build strategy<a class="headerlink" href="#build-strategy" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">Build strategy</a><a class="headerlink" href="#build-strategy" title="Permalink to this headline">¶</a></h2>
 <p>Conda recipes are typically built with a trial-and-error method.
 Often the first attempt to build a package will fail with compiler
 or linker errors, often caused by missing dependencies. The person
@@ -275,7 +287,7 @@ and after a few of these cycles of trial and error, the package will
 be built successfully.</p>
 </div>
 <div class="section" id="building-with-a-python-version-different-from-your-miniconda-installation">
-<h2>Building with a Python version different from your Miniconda installation<a class="headerlink" href="#building-with-a-python-version-different-from-your-miniconda-installation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Building with a Python version different from your Miniconda installation</a><a class="headerlink" href="#building-with-a-python-version-different-from-your-miniconda-installation" title="Permalink to this headline">¶</a></h2>
 <p>Miniconda2 and Miniconda3 can each build packages for either
 Python 2 or Python 3 simply by specifying the version you want.</p>
 <p>Miniconda2 includes only Python 2, and Miniconda3 includes only Python 3.
@@ -295,7 +307,7 @@ conda build command.</p>
 directory.</p>
 </div>
 <div class="section" id="automated-testing">
-<h2>Automated testing<a class="headerlink" href="#automated-testing" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Automated testing</a><a class="headerlink" href="#automated-testing" title="Permalink to this headline">¶</a></h2>
 <p>After the build, if the recipe directory contains a test file named
 run_test.bat (Windows) or run_test.py (any platform), the file
 runs to test the package, and any errors are reported.
@@ -306,7 +318,7 @@ into the test directory when the test is run using the &#8220;files&#8221;
 section of <a class="reference internal" href="../building/meta-yaml.html#meta-test"><span class="std std-ref">the &#8220;test&#8221; section of the meta.yaml file</span></a>.</p>
 </div>
 <div class="section" id="building-the-sep-package-with-conda-and-python-3-on-windows">
-<h2>Building the SEP package with conda and Python 3 on Windows<a class="headerlink" href="#building-the-sep-package-with-conda-and-python-3-on-windows" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">Building the SEP package with conda and Python 3 on Windows</a><a class="headerlink" href="#building-the-sep-package-with-conda-and-python-3-on-windows" title="Permalink to this headline">¶</a></h2>
 <p>If you have not already, <strong>Install Visual Studio 2015</strong>. Choose &#8220;Custom&#8221; install
 and choose to install &#8220;Visual C++&#8221; under &#8220;Programming Languages&#8221;.</p>
 <p>The <a class="reference external" href="https://sep.readthedocs.io">SEP documentation</a> states that SEP works on
@@ -417,7 +429,7 @@ modified and run again.</p>
 </div>
 </div>
 <div class="section" id="building-the-sep-package-with-conda-and-python-2-on-windows">
-<h2>Building the SEP package with conda and Python 2 on Windows<a class="headerlink" href="#building-the-sep-package-with-conda-and-python-2-on-windows" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">Building the SEP package with conda and Python 2 on Windows</a><a class="headerlink" href="#building-the-sep-package-with-conda-and-python-2-on-windows" title="Permalink to this headline">¶</a></h2>
 <p>If you have not already, <strong>Install Visual Studio 2008</strong>. Choose &#8220;Custom&#8221; install
 and choose to install &#8220;X64 Compilers and Tools&#8221;.</p>
 <p><strong>Install Visual Studio 2008 Service Pack 1</strong>.</p>
@@ -526,7 +538,7 @@ modified and run again.</p>
 </div>
 </div>
 <div class="section" id="building-the-pyslalib-package-with-conda-and-python-3-on-windows">
-<h2>Building the pySLALIB package with conda and Python 3 on Windows<a class="headerlink" href="#building-the-pyslalib-package-with-conda-and-python-3-on-windows" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">Building the pySLALIB package with conda and Python 3 on Windows</a><a class="headerlink" href="#building-the-pyslalib-package-with-conda-and-python-3-on-windows" title="Permalink to this headline">¶</a></h2>
 <p>Because pySLALIB includes Fortran, building it requires a Fortran compiler.
 Because there is no PyPI package for pySLALIB, we cannot use a
 skeleton recipe generated by using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code>,
@@ -581,7 +593,7 @@ section above, in case of any linker or compiler errors, the
 recipe can be modified and run again.</p>
 </div>
 <div class="section" id="building-the-pyslalib-package-with-conda-and-python-2-on-windows">
-<h2>Building the pySLALIB package with conda and Python 2 on Windows<a class="headerlink" href="#building-the-pyslalib-package-with-conda-and-python-2-on-windows" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id20">Building the pySLALIB package with conda and Python 2 on Windows</a><a class="headerlink" href="#building-the-pyslalib-package-with-conda-and-python-2-on-windows" title="Permalink to this headline">¶</a></h2>
 <p>Because pySLALIB includes Fortran, building it requires a Fortran compiler.
 Because there is no PyPI package for pySLALIB, we cannot use a
 skeleton recipe generated by using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code>,
