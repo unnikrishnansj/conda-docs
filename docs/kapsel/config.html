@@ -135,7 +135,7 @@
             
   <div class="section" id="conda-kapsel-configuration">
 <h1>Conda kapsel configuration<a class="headerlink" href="#conda-kapsel-configuration" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> command works with <em>project directories</em>,
+<p>The <code class="docutils literal"><span class="pre">conda-kapsel</span></code> command works with <em>project directories</em>,
 which can contain scripts, notebooks, data files... anything
 that is related to your project.</p>
 <p>Any directory can become a kapsel; tell conda about your project
@@ -179,8 +179,8 @@ in your project directory along with a file <code class="docutils literal"><span
 Mac) and for Windows. If you only care about one platform, you
 are not required to provide command lines for other platforms.</p>
 <p>When you send your project to someone else, they can type
-<code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span></code> to run your script. The cool part
-is that <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span></code> makes sure that all
+<code class="docutils literal"><span class="pre">conda-kapsel</span> <span class="pre">run</span></code> to run your script. The cool part
+is that <code class="docutils literal"><span class="pre">conda-kapsel</span> <span class="pre">run</span></code> makes sure that all
 prerequisites are set up <em>before</em> it runs the script.</p>
 <p>Let&#8217;s say your script requires a certain conda package to be
 installed. Add the <code class="docutils literal"><span class="pre">redis-py</span></code> package to <code class="docutils literal"><span class="pre">kapsel.yml</span></code> as a
@@ -189,7 +189,7 @@ dependency:</p>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">redis-py</span>
 </pre></div>
 </div>
-<p>Now when someone runs <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span></code> the script is
+<p>Now when someone runs <code class="docutils literal"><span class="pre">conda-kapsel</span> <span class="pre">run</span></code> the script is
 automatically run in a conda environment that has <code class="docutils literal"><span class="pre">redis-py</span></code>
 installed.</p>
 <p>Here&#8217;s another example. Let&#8217;s say your script requires a huge
@@ -202,7 +202,7 @@ downloaded locally:</p>
     <span class="l l-Scalar l-Scalar-Plain">sha1</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">da39a3ee5e6b4b0d3255bfef95601890afd80709</span>
 </pre></div>
 </div>
-<p>Now when someone runs <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span></code>, the file is
+<p>Now when someone runs <code class="docutils literal"><span class="pre">conda-kapsel</span> <span class="pre">run</span></code>, the file is
 downloaded if it hasn&#8217;t been downloaded already, and the
 environment variable <code class="docutils literal"><span class="pre">MYDATAFILE</span></code> is set to the local
 filename of the data. In your <code class="docutils literal"><span class="pre">analyze.py</span></code> file you can write
@@ -210,24 +210,24 @@ something like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;MYDATAFILE&#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-  <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Please use &#39;conda kapsel run&#39; to start this script&quot;</span><span class="p">)</span>
+  <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Please use &#39;conda-kapsel run&#39; to start this script&quot;</span><span class="p">)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">input</span><span class="p">:</span>
   <span class="n">data</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
   <span class="c1"># and so on</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> supports many other requirements,
+<p><code class="docutils literal"><span class="pre">conda-kapsel</span></code> supports many other requirements,
 too. Instead of writing long documentation about how to set up
 your script before others can run it, simply put the requirements in
-a <code class="docutils literal"><span class="pre">kapsel.yml</span></code> file and let <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> check the setup
+a <code class="docutils literal"><span class="pre">kapsel.yml</span></code> file and let <code class="docutils literal"><span class="pre">conda-kapsel</span></code> check the setup
 automatically.</p>
 </div>
 <div class="section" id="multiple-commands">
 <h2>Multiple Commands<a class="headerlink" href="#multiple-commands" title="Permalink to this headline">¶</a></h2>
 <p>A <code class="docutils literal"><span class="pre">kapsel.yml</span></code> can list multiple commands. Each command has a
-name; <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">run</span> <span class="pre">COMMAND_NAME</span></code> runs the command named
+name; <code class="docutils literal"><span class="pre">conda-kapsel</span> <span class="pre">run</span> <span class="pre">COMMAND_NAME</span></code> runs the command named
 <code class="docutils literal"><span class="pre">COMMAND_NAME</span></code>.</p>
-<p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span> <span class="pre">list-commands</span></code> lists commands, along with a
+<p><code class="docutils literal"><span class="pre">conda-kapsel</span> <span class="pre">list-commands</span></code> lists commands, along with a
 description of each command. To customize a command&#8217;s description,
 add a <code class="docutils literal"><span class="pre">description:</span></code> field in <code class="docutils literal"><span class="pre">kapsel.yml</span></code>, like this:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span>
@@ -252,7 +252,7 @@ packages:</p>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> creates an environment in <code class="docutils literal"><span class="pre">envs/default</span></code> by
+<p><code class="docutils literal"><span class="pre">conda-kapsel</span></code> creates an environment in <code class="docutils literal"><span class="pre">envs/default</span></code> by
 default. But if you prefer, you can have multiple named
 environments available in the <code class="docutils literal"><span class="pre">envs</span></code> directory. To do that,
 specify an <code class="docutils literal"><span class="pre">env_specs:</span></code> section of your <code class="docutils literal"><span class="pre">kapsel.yml</span></code> file:</p>
@@ -279,10 +279,9 @@ environments in the <code class="docutils literal"><span class="pre">envs</span>
 be instantiated as two environments, <code class="docutils literal"><span class="pre">envs/default</span></code> and
 <code class="docutils literal"><span class="pre">envs/python27</span></code>.</p>
 <p>To run a project using a specific env spec, use the <code class="docutils literal"><span class="pre">--env-spec</span></code> option:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda kapsel run --env-spec myenvname
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda-kapsel run --env-spec myenvname
 </pre></div>
 </div>
-<p><a class="reference external" href="https://github.com/Anaconda-Server/conda">https://github.com/Anaconda-Server/conda</a> kapsel/issues/97</p>
 <p>If you have top level <code class="docutils literal"><span class="pre">channels</span></code> or <code class="docutils literal"><span class="pre">packages</span></code> sections in
 your <code class="docutils literal"><span class="pre">kapsel.yml</span></code> file (not in the <code class="docutils literal"><span class="pre">env_specs:</span></code> section),
 those channels and packages are added to all environment
@@ -313,7 +312,7 @@ section with a list of pip requirement specifiers.</p>
 <h2>Requiring environment variables to be set<a class="headerlink" href="#requiring-environment-variables-to-be-set" title="Permalink to this headline">¶</a></h2>
 <p>Anything in the <code class="docutils literal"><span class="pre">variables:</span></code> section of a <code class="docutils literal"><span class="pre">kapsel.yml</span></code> file
 is considered an environment variable needed by your project.
-When someone runs your project, <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> asks
+When someone runs your project, <code class="docutils literal"><span class="pre">conda-kapsel</span></code> asks
 them to set these variables.</p>
 <p>For example:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">variables</span><span class="p p-Indicator">:</span>
@@ -329,7 +328,7 @@ script, which can be a security risk.</p>
 <h2>Variables that contain credentials<a class="headerlink" href="#variables-that-contain-credentials" title="Permalink to this headline">¶</a></h2>
 <p>Variables that end in <code class="docutils literal"><span class="pre">_PASSWORD</span></code>, <code class="docutils literal"><span class="pre">_ENCRYPTED</span></code>,
 <code class="docutils literal"><span class="pre">_SECRET_KEY</span></code>, or <code class="docutils literal"><span class="pre">_SECRET</span></code> are treated sensitively by
-default. This means that if <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> stores a value
+default. This means that if <code class="docutils literal"><span class="pre">conda-kapsel</span></code> stores a value
 for them in <code class="docutils literal"><span class="pre">kapsel.yml</span></code> or <code class="docutils literal"><span class="pre">kapsel-local.yml</span></code> or elsewhere,
 that value is encrypted. NOTE: <code class="docutils literal"><span class="pre">kapsel-local.yml</span></code> stores and
 encrypts the value that you enter when prompted.</p>
@@ -383,7 +382,7 @@ which display the variable.</p>
 </div>
 <div class="section" id="variables-that-are-always-set">
 <h2>Variables that are always set<a class="headerlink" href="#variables-that-are-always-set" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> ensures that the following variables
+<p><code class="docutils literal"><span class="pre">conda-kapsel</span></code> ensures that the following variables
 are always set:</p>
 <blockquote>
 <div><ul class="simple">
@@ -413,7 +412,7 @@ can be provided to your code by using an environment variable.</p>
   <span class="l l-Scalar l-Scalar-Plain">REDIS_URL</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">redis</span>
 </pre></div>
 </div>
-<p>Now when someone else runs your project, <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code>
+<p>Now when someone else runs your project, <code class="docutils literal"><span class="pre">conda-kapsel</span></code>
 offers to start a local instance of <code class="docutils literal"><span class="pre">redis-server</span></code> automatically.</p>
 <p>There is also a long form of the above service configuration:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
@@ -455,12 +454,12 @@ project directory. For example:</p>
 <p>This downloads to <code class="docutils literal"><span class="pre">myfile.csv</span></code>, so if your project is in
 <code class="docutils literal"><span class="pre">/home/mystuff/foo</span></code> and the download succeeds, <code class="docutils literal"><span class="pre">MYDATAFILE</span></code>
 is set to <code class="docutils literal"><span class="pre">/home/mystuff/foo/myfile.csv</span></code>.</p>
-<p>If you do not specify a filename, <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> picks a
+<p>If you do not specify a filename, <code class="docutils literal"><span class="pre">conda-kapsel</span></code> picks a
 reasonable default based on the URL.</p>
 <p>To avoid the automated download, it&#8217;s also possible for someone to
 run your project with an existing file path in the environment;
 on Linux or Mac, that looks like:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">MYDATAFILE</span><span class="o">=</span>/my/already/downloaded/file.csv conda kapsel run
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">MYDATAFILE</span><span class="o">=</span>/my/already/downloaded/file.csv conda-kapsel run
 </pre></div>
 </div>
 <p>Conda can auto-unzip a zip file as it is downloaded.  This is the
@@ -497,17 +496,17 @@ though in <code class="docutils literal"><span class="pre">kapsel.yml</span></co
 </div>
 <div class="section" id="no-need-to-edit-kapsel-yml-directly">
 <h2>No need to edit <code class="docutils literal"><span class="pre">kapsel.yml</span></code> directly<a class="headerlink" href="#no-need-to-edit-kapsel-yml-directly" title="Permalink to this headline">¶</a></h2>
-<p>You can edit <code class="docutils literal"><span class="pre">kapsel.yml</span></code> with the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> command.</p>
+<p>You can edit <code class="docutils literal"><span class="pre">kapsel.yml</span></code> with the <code class="docutils literal"><span class="pre">conda-kapsel</span></code> command.</p>
 <p>To add a download to <code class="docutils literal"><span class="pre">kapsel.yml</span></code>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda kapsel add-download MYFILE http://example.com/myfile
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda-kapsel add-download MYFILE http://example.com/myfile
 </pre></div>
 </div>
 <p>To add a package:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda kapsel add-packages redis-py
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda-kapsel add-packages redis-py
 </pre></div>
 </div>
 <p>To ask for a running Redis instance:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda kapsel add-service redis
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda-kapsel add-service redis
 </pre></div>
 </div>
 </div>
@@ -515,9 +514,9 @@ though in <code class="docutils literal"><span class="pre">kapsel.yml</span></co
 <h2>Fallback to meta.yaml<a class="headerlink" href="#fallback-to-meta-yaml" title="Permalink to this headline">¶</a></h2>
 <p>If you package your project with conda, you may have some
 information already in <code class="docutils literal"><span class="pre">conda.recipe/meta.yaml</span></code>;
-<code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> uses some of this information too, so you
+<code class="docutils literal"><span class="pre">conda-kapsel</span></code> uses some of this information too, so you
 do not need to duplicate this information in <code class="docutils literal"><span class="pre">kapsel.yml</span></code>.</p>
-<p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">kapsel</span></code> currently reads these fields in <code class="docutils literal"><span class="pre">meta.yaml</span></code>:</p>
+<p><code class="docutils literal"><span class="pre">conda-kapsel</span></code> currently reads these fields in <code class="docutils literal"><span class="pre">meta.yaml</span></code>:</p>
 <blockquote>
 <div><ul class="simple">
 <li><cite>package: name:</cite></li>
