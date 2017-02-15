@@ -46,8 +46,8 @@ conda search
                  Name of environment (in envs dirs).
    
           -p PATH, --prefix PATH
-                 Full path to environment prefix (default: envs  dirs/build-envi‐
-                 ronment).
+                 Full  path   to   environment   prefix   (default:   root   pre‐
+                 fix/envs/build-environment).
    
           --canonical
                  Output canonical names of packages only.
@@ -123,5 +123,5 @@ conda search
    
    
    
-   Continuum Analytics              January 2017                         <B>CONDA(1)</B>
+   Continuum Analytics              February 2017                        <B>CONDA(1)</B>
    </PRE>

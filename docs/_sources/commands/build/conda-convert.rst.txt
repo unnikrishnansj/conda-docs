@@ -67,10 +67,9 @@ conda convert
    
           Tool to convert packages
    
-          conda  convert  converts  pure  Python packages to other platforms, and
-          converts Gohlke's .exe packages into conda packages.
+          conda convert converts pure Python packages to other platforms.
    
-          Packages are automatically organized  in  subdirectories  according  to
+          Packages  are  automatically  organized  in subdirectories according to
           platform, e.g.,
    
           osx-64/
@@ -82,18 +81,13 @@ conda convert
                  package-1.0-py33.tar.bz2
    
    EXAMPLES
-          Convert  a  package built with conda build to Windows 64-bit, and place
-          the resulting package in the current  directory  (supposing  a  default
+          Convert a package built with conda build to Windows 64-bit,  and  place
+          the  resulting  package  in  the current directory (supposing a default
           Anaconda install on Mac OS X):
    
                  conda convert package-1.0-py33.tar.bz2 -p win-64
    
-          Convert  a  Gohlke  .exe  to a conda package, and add make it depend on
-          numpy 1.8 or higher:
-   
-                 conda convert cvxopt-1.1.7.win-amd64-py2.7.exe -d 'numpy &gt;=1.8'
    
    
-   
-   Continuum Analytics              January 2017                         <B>CONDA(1)</B>
+   Continuum Analytics              February 2017                        <B>CONDA(1)</B>
    </PRE>

@@ -188,7 +188,7 @@ DESCRIPTION
        VERSION]
 
        [--meta-cpan-url META_CPAN_URL] [--recursive]
-              packages [packages ...]
+              [--force] packages [packages ...]
 
    positional arguments:
        packages
@@ -205,14 +205,18 @@ DESCRIPTION
               Version to use. Applies to all packages.
 
        --meta-cpan-url META_CPAN_URL
-              URL to use for MetaCPAN API.
+              URL to use for MetaCPAN API. It must include a version, such  as
+              v1
 
        --recursive
               Create recipes for dependencies if they do not already exist.
 
+       --force
+              Force overwrite of existing recipes
 
 
-Continuum Analytics              January 2017                         <B>CONDA(1)</B>
+
+Continuum Analytics              February 2017                        <B>CONDA(1)</B>
 </PRE></div>
 
 

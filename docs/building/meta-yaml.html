@@ -102,12 +102,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#build-section">Build section</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#requirements-section">Requirements section</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#test-section">Test section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#outputs-section">Outputs section</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#about-section">About section</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#app-section">App section</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#extra-section">Extra section</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#templating-with-jinja">Templating with Jinja</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#preprocessing-selectors">Preprocessing selectors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#making-packages-relocatable">Making packages relocatable</a></li>
 </ul>
 </li>
@@ -174,79 +175,87 @@
            <div itemprop="articleBody">
             
   <div class="section" id="the-meta-yaml-file">
-<span id="meta-yaml"></span><h1><a class="toc-backref" href="#id3">The meta.yaml file</a><a class="headerlink" href="#the-meta-yaml-file" title="Permalink to this headline">¶</a></h1>
+<span id="meta-yaml"></span><h1><a class="toc-backref" href="#id4">The meta.yaml file</a><a class="headerlink" href="#the-meta-yaml-file" title="Permalink to this headline">¶</a></h1>
 <div class="contents topic" id="sections-of-meta-yaml">
 <p class="topic-title first">Sections of <code class="docutils literal"><span class="pre">meta.yaml</span></code>:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#the-meta-yaml-file" id="id3">The meta.yaml file</a><ul>
-<li><a class="reference internal" href="#package-section" id="id4">Package section</a><ul>
-<li><a class="reference internal" href="#package-name" id="id5">Package name</a></li>
-<li><a class="reference internal" href="#package-version" id="id6">Package version</a></li>
+<li><a class="reference internal" href="#the-meta-yaml-file" id="id4">The meta.yaml file</a><ul>
+<li><a class="reference internal" href="#package-section" id="id5">Package section</a><ul>
+<li><a class="reference internal" href="#package-name" id="id6">Package name</a></li>
+<li><a class="reference internal" href="#package-version" id="id7">Package version</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#source-section" id="id7">Source section</a><ul>
-<li><a class="reference internal" href="#source-from-tarball" id="id8">Source from tarball</a></li>
-<li><a class="reference internal" href="#source-from-git" id="id9">Source from git</a></li>
-<li><a class="reference internal" href="#source-from-hg" id="id10">Source from hg</a></li>
-<li><a class="reference internal" href="#source-from-svn" id="id11">Source from svn</a></li>
-<li><a class="reference internal" href="#source-from-a-local-path" id="id12">Source from a local path</a></li>
-<li><a class="reference internal" href="#patches" id="id13">Patches</a></li>
+<li><a class="reference internal" href="#source-section" id="id8">Source section</a><ul>
+<li><a class="reference internal" href="#source-from-tarball" id="id9">Source from tarball</a></li>
+<li><a class="reference internal" href="#source-from-git" id="id10">Source from git</a></li>
+<li><a class="reference internal" href="#source-from-hg" id="id11">Source from hg</a></li>
+<li><a class="reference internal" href="#source-from-svn" id="id12">Source from svn</a></li>
+<li><a class="reference internal" href="#source-from-a-local-path" id="id13">Source from a local path</a></li>
+<li><a class="reference internal" href="#patches" id="id14">Patches</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#build-section" id="id14">Build section</a><ul>
-<li><a class="reference internal" href="#build-number-and-string" id="id15">Build number and string</a></li>
-<li><a class="reference internal" href="#python-entry-points" id="id16">Python entry points</a></li>
-<li><a class="reference internal" href="#python-app" id="id17">Python.app</a></li>
-<li><a class="reference internal" href="#features" id="id18">Features</a></li>
-<li><a class="reference internal" href="#track-features" id="id19">Track features</a></li>
-<li><a class="reference internal" href="#preserve-python-egg-directory" id="id20">Preserve Python egg directory</a></li>
-<li><a class="reference internal" href="#skip-compiling-some-py-files-into-pyc-files" id="id21">Skip compiling some .py files into .pyc files</a></li>
-<li><a class="reference internal" href="#no-link" id="id22">No link</a></li>
-<li><a class="reference internal" href="#script" id="id23">Script</a></li>
-<li><a class="reference internal" href="#rpaths" id="id24">RPATHs</a></li>
-<li><a class="reference internal" href="#force-files" id="id25">Force files</a></li>
-<li><a class="reference internal" href="#relocation" id="id26">Relocation</a></li>
-<li><a class="reference internal" href="#binary-relocation" id="id27">Binary relocation</a></li>
-<li><a class="reference internal" href="#detect-binary-files-with-prefix" id="id28">Detect binary files with prefix</a></li>
-<li><a class="reference internal" href="#binary-has-prefix-files" id="id29">Binary has prefix files</a></li>
-<li><a class="reference internal" href="#text-files-with-prefix-files" id="id30">Text files with prefix files</a></li>
-<li><a class="reference internal" href="#ignore-prefix-files" id="id31">Ignore prefix files</a></li>
-<li><a class="reference internal" href="#skipping-builds" id="id32">Skipping builds</a></li>
-<li><a class="reference internal" href="#architecture-independent-packages" id="id33">Architecture independent packages</a></li>
-<li><a class="reference internal" href="#include-build-recipe" id="id34">Include build recipe</a></li>
-<li><a class="reference internal" href="#use-environment-variables" id="id35">Use Environment Variables</a></li>
+<li><a class="reference internal" href="#build-section" id="id15">Build section</a><ul>
+<li><a class="reference internal" href="#build-number-and-string" id="id16">Build number and string</a></li>
+<li><a class="reference internal" href="#python-entry-points" id="id17">Python entry points</a></li>
+<li><a class="reference internal" href="#python-app" id="id18">Python.app</a></li>
+<li><a class="reference internal" href="#features" id="id19">Features</a></li>
+<li><a class="reference internal" href="#track-features" id="id20">Track features</a></li>
+<li><a class="reference internal" href="#preserve-python-egg-directory" id="id21">Preserve Python egg directory</a></li>
+<li><a class="reference internal" href="#skip-compiling-some-py-files-into-pyc-files" id="id22">Skip compiling some .py files into .pyc files</a></li>
+<li><a class="reference internal" href="#no-link" id="id23">No link</a></li>
+<li><a class="reference internal" href="#script" id="id24">Script</a></li>
+<li><a class="reference internal" href="#rpaths" id="id25">RPATHs</a></li>
+<li><a class="reference internal" href="#force-files" id="id26">Force files</a></li>
+<li><a class="reference internal" href="#relocation" id="id27">Relocation</a></li>
+<li><a class="reference internal" href="#binary-relocation" id="id28">Binary relocation</a></li>
+<li><a class="reference internal" href="#detect-binary-files-with-prefix" id="id29">Detect binary files with prefix</a></li>
+<li><a class="reference internal" href="#binary-has-prefix-files" id="id30">Binary has prefix files</a></li>
+<li><a class="reference internal" href="#text-files-with-prefix-files" id="id31">Text files with prefix files</a></li>
+<li><a class="reference internal" href="#ignore-prefix-files" id="id32">Ignore prefix files</a></li>
+<li><a class="reference internal" href="#skipping-builds" id="id33">Skipping builds</a></li>
+<li><a class="reference internal" href="#architecture-independent-packages" id="id34">Architecture independent packages</a></li>
+<li><a class="reference internal" href="#include-build-recipe" id="id35">Include build recipe</a></li>
+<li><a class="reference internal" href="#use-environment-variables" id="id36">Use Environment Variables</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#requirements-section" id="id36">Requirements section</a><ul>
-<li><a class="reference internal" href="#build" id="id37">Build</a></li>
-<li><a class="reference internal" href="#run" id="id38">Run</a></li>
+<li><a class="reference internal" href="#requirements-section" id="id37">Requirements section</a><ul>
+<li><a class="reference internal" href="#build" id="id38">Build</a></li>
+<li><a class="reference internal" href="#run" id="id39">Run</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#test-section" id="id39">Test section</a><ul>
-<li><a class="reference internal" href="#test-files" id="id40">Test files</a></li>
-<li><a class="reference internal" href="#source-files" id="id41">Source files</a></li>
-<li><a class="reference internal" href="#test-requirements" id="id42">Test requirements</a></li>
-<li><a class="reference internal" href="#test-commands" id="id43">Test commands</a></li>
-<li><a class="reference internal" href="#python-imports" id="id44">Python imports</a></li>
-<li><a class="reference internal" href="#run-test-script" id="id45">Run test script</a></li>
+<li><a class="reference internal" href="#test-section" id="id40">Test section</a><ul>
+<li><a class="reference internal" href="#test-files" id="id41">Test files</a></li>
+<li><a class="reference internal" href="#source-files" id="id42">Source files</a></li>
+<li><a class="reference internal" href="#test-requirements" id="id43">Test requirements</a></li>
+<li><a class="reference internal" href="#test-commands" id="id44">Test commands</a></li>
+<li><a class="reference internal" href="#python-imports" id="id45">Python imports</a></li>
+<li><a class="reference internal" href="#run-test-script" id="id46">Run test script</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#about-section" id="id46">About section</a><ul>
-<li><a class="reference internal" href="#license-file" id="id47">License file</a></li>
+<li><a class="reference internal" href="#outputs-section" id="id47">Outputs section</a><ul>
+<li><a class="reference internal" href="#specifying-files-to-include-in-output" id="id48">Specifying files to include in output</a></li>
+<li><a class="reference internal" href="#subpackage-requirements" id="id49">Subpackage requirements</a></li>
+<li><a class="reference internal" href="#implicit-metapackages" id="id50">Implicit metapackages</a></li>
+<li><a class="reference internal" href="#subpackage-tests" id="id51">Subpackage tests</a></li>
+<li><a class="reference internal" href="#output-type" id="id52">Output type</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#app-section" id="id48">App section</a><ul>
-<li><a class="reference internal" href="#entry-point" id="id49">Entry point</a></li>
-<li><a class="reference internal" href="#icon-file" id="id50">Icon file</a></li>
-<li><a class="reference internal" href="#summary" id="id51">Summary</a></li>
-<li><a class="reference internal" href="#own-environment" id="id52">Own environment</a></li>
+<li><a class="reference internal" href="#about-section" id="id53">About section</a><ul>
+<li><a class="reference internal" href="#license-file" id="id54">License file</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#extra-section" id="id53">Extra section</a></li>
-<li><a class="reference internal" href="#templating-with-jinja" id="id54">Templating with Jinja</a></li>
-<li><a class="reference internal" href="#preprocessing-selectors" id="id55">Preprocessing selectors</a></li>
-<li><a class="reference internal" href="#id1" id="id56">Features</a></li>
-<li><a class="reference internal" href="#making-packages-relocatable" id="id57">Making packages relocatable</a></li>
+<li><a class="reference internal" href="#app-section" id="id55">App section</a><ul>
+<li><a class="reference internal" href="#entry-point" id="id56">Entry point</a></li>
+<li><a class="reference internal" href="#icon-file" id="id57">Icon file</a></li>
+<li><a class="reference internal" href="#summary" id="id58">Summary</a></li>
+<li><a class="reference internal" href="#own-environment" id="id59">Own environment</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#extra-section" id="id60">Extra section</a></li>
+<li><a class="reference internal" href="#templating-with-jinja" id="id61">Templating with Jinja</a></li>
+<li><a class="reference internal" href="#preprocessing-selectors" id="id62">Preprocessing selectors</a></li>
+<li><a class="reference internal" href="#id2" id="id63">Features</a></li>
+<li><a class="reference internal" href="#making-packages-relocatable" id="id64">Making packages relocatable</a></li>
 </ul>
 </li>
 </ul>
@@ -283,9 +292,9 @@ as in this example of a simple meta.yaml file:</p>
 the last will be remembered. For example, the &#8220;package:&#8221; header should only appear
 once in the file.</p>
 <div class="section" id="package-section">
-<h2><a class="toc-backref" href="#id4">Package section</a><a class="headerlink" href="#package-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Package section</a><a class="headerlink" href="#package-section" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="package-name">
-<h3><a class="toc-backref" href="#id5">Package name</a><a class="headerlink" href="#package-name" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Package name</a><a class="headerlink" href="#package-name" title="Permalink to this headline">¶</a></h3>
 <p>Lower case name of package, may contain &#8216;-&#8216; but no spaces</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bsdiff4</span>
@@ -293,7 +302,7 @@ once in the file.</p>
 </div>
 </div>
 <div class="section" id="package-version">
-<h3><a class="toc-backref" href="#id6">Package version</a><a class="headerlink" href="#package-version" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">Package version</a><a class="headerlink" href="#package-version" title="Permalink to this headline">¶</a></h3>
 <p>Version of package. Should use the PEP-386 verlib conventions. Note that YAML will
 interpret versions like 1.0 as floats, meaning that 0.10 will be the same as 0.1. To
 avoid this, always put the version in quotes, so that it will be interpreted as a
@@ -309,12 +318,12 @@ can perform <a class="reference internal" href="#jinja-templates"><span class="s
 </div>
 </div>
 <div class="section" id="source-section">
-<h2><a class="toc-backref" href="#id7">Source section</a><a class="headerlink" href="#source-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Source section</a><a class="headerlink" href="#source-section" title="Permalink to this headline">¶</a></h2>
 <p>The source section specifies where the source code of the package is coming from.
 The source may come from a tarball file, git, hg, or svn, may be a local path,
 and may contain patches.</p>
 <div class="section" id="source-from-tarball">
-<h3><a class="toc-backref" href="#id8">Source from tarball</a><a class="headerlink" href="#source-from-tarball" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">Source from tarball</a><a class="headerlink" href="#source-from-tarball" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://pypi.python.org/packages/source/b/bsdiff4/bsdiff4-1.1.4.tar.gz</span>
   <span class="l l-Scalar l-Scalar-Plain">md5</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">29f6089290505fc1a852e176bd276c43</span>
@@ -324,7 +333,7 @@ and may contain patches.</p>
 </div>
 </div>
 <div class="section" id="source-from-git">
-<h3><a class="toc-backref" href="#id9">Source from git</a><a class="headerlink" href="#source-from-git" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Source from git</a><a class="headerlink" href="#source-from-git" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">git_url</span></code> can also be a relative path to the recipe directory:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">git_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff4.git</span>
@@ -333,7 +342,7 @@ and may contain patches.</p>
 </div>
 </div>
 <div class="section" id="source-from-hg">
-<h3><a class="toc-backref" href="#id10">Source from hg</a><a class="headerlink" href="#source-from-hg" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">Source from hg</a><a class="headerlink" href="#source-from-hg" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">hg_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ssh://hg@bitbucket.org/ilanschnell/bsdiff4</span>
   <span class="l l-Scalar l-Scalar-Plain">hg_tag</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.4</span>
@@ -341,7 +350,7 @@ and may contain patches.</p>
 </div>
 </div>
 <div class="section" id="source-from-svn">
-<h3><a class="toc-backref" href="#id11">Source from svn</a><a class="headerlink" href="#source-from-svn" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Source from svn</a><a class="headerlink" href="#source-from-svn" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">svn_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff</span>
   <span class="l l-Scalar l-Scalar-Plain">svn_rev</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.4</span>
@@ -350,7 +359,7 @@ and may contain patches.</p>
 </div>
 </div>
 <div class="section" id="source-from-a-local-path">
-<h3><a class="toc-backref" href="#id12">Source from a local path</a><a class="headerlink" href="#source-from-a-local-path" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Source from a local path</a><a class="headerlink" href="#source-from-a-local-path" title="Permalink to this headline">¶</a></h3>
 <p>If the path is relative it is taken relative to the recipe directory. The source
 will be copied to the work directory before building:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
@@ -365,7 +374,7 @@ would be clones of a repository and <code class="docutils literal"><span class="
 the working directory. <code class="docutils literal"><span class="pre">git_url</span></code> can only build up to the latest commit.</p>
 </div>
 <div class="section" id="patches">
-<h3><a class="toc-backref" href="#id13">Patches</a><a class="headerlink" href="#patches" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">Patches</a><a class="headerlink" href="#patches" title="Permalink to this headline">¶</a></h3>
 <p>Patches may optionally be applied to the source:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
   <span class="c1">#[source information here]</span>
@@ -377,9 +386,9 @@ the working directory. <code class="docutils literal"><span class="pre">git_url<
 </div>
 </div>
 <div class="section" id="build-section">
-<span id="meta-build"></span><h2><a class="toc-backref" href="#id14">Build section</a><a class="headerlink" href="#build-section" title="Permalink to this headline">¶</a></h2>
+<span id="meta-build"></span><h2><a class="toc-backref" href="#id15">Build section</a><a class="headerlink" href="#build-section" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="build-number-and-string">
-<h3><a class="toc-backref" href="#id15">Build number and string</a><a class="headerlink" href="#build-number-and-string" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">Build number and string</a><a class="headerlink" href="#build-number-and-string" title="Permalink to this headline">¶</a></h3>
 <p>The build number should be incremented for new builds of the same version. The number
 defaults to zero. The string defaults to the default conda build string plus the
 build number.</p>
@@ -391,7 +400,7 @@ build number.</p>
 <p>NOTE: The build string cannot contain a dash &#8216;-&#8216; character.</p>
 </div>
 <div class="section" id="python-entry-points">
-<h3><a class="toc-backref" href="#id16">Python entry points</a><a class="headerlink" href="#python-entry-points" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">Python entry points</a><a class="headerlink" href="#python-entry-points" title="Permalink to this headline">¶</a></h3>
 <p>This creates a Python entry point named bsdiff4 that calls bsdiff4.cli.main_bsdiff4() .</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">entry_points</span><span class="p p-Indicator">:</span>
@@ -401,7 +410,7 @@ build number.</p>
 </div>
 </div>
 <div class="section" id="python-app">
-<h3><a class="toc-backref" href="#id17">Python.app</a><a class="headerlink" href="#python-app" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">Python.app</a><a class="headerlink" href="#python-app" title="Permalink to this headline">¶</a></h3>
 <p>If osx_is_app is set, entry points will use python.app instead of python in OS X.
 The default is False.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
@@ -410,9 +419,9 @@ The default is False.</p>
 </div>
 </div>
 <div class="section" id="features">
-<h3><a class="toc-backref" href="#id18">Features</a><a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">Features</a><a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
 <p>Defines what features a package has.</p>
-<p>SEE ALSO: <a class="reference internal" href="#id1"><span class="std std-ref">Features</span></a> section below for additional information.</p>
+<p>SEE ALSO: <a class="reference internal" href="#id2"><span class="std std-ref">Features</span></a> section below for additional information.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">features</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">feature1</span>
@@ -420,12 +429,12 @@ The default is False.</p>
 </div>
 </div>
 <div class="section" id="track-features">
-<h3><a class="toc-backref" href="#id19">Track features</a><a class="headerlink" href="#track-features" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">Track features</a><a class="headerlink" href="#track-features" title="Permalink to this headline">¶</a></h3>
 <p>To enable a feature, a user should install a package that tracks that feature. A
 package can have a feature, or track that feature, or both, or neither. Usually
 it is best for the package that tracks a feature to be a metapackage that does
 not have the feature.</p>
-<p>SEE ALSO: <a class="reference internal" href="#id1"><span class="std std-ref">Features</span></a> section below for additional information.</p>
+<p>SEE ALSO: <a class="reference internal" href="#id2"><span class="std std-ref">Features</span></a> section below for additional information.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">track_features</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">feature2</span>
@@ -433,7 +442,7 @@ not have the feature.</p>
 </div>
 </div>
 <div class="section" id="preserve-python-egg-directory">
-<h3><a class="toc-backref" href="#id20">Preserve Python egg directory</a><a class="headerlink" href="#preserve-python-egg-directory" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id21">Preserve Python egg directory</a><a class="headerlink" href="#preserve-python-egg-directory" title="Permalink to this headline">¶</a></h3>
 <p>This is needed for some packages that use setuptools specific features. Default is False.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">preserve_egg_dir</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -441,7 +450,7 @@ not have the feature.</p>
 </div>
 </div>
 <div class="section" id="skip-compiling-some-py-files-into-pyc-files">
-<h3><a class="toc-backref" href="#id21">Skip compiling some .py files into .pyc files</a><a class="headerlink" href="#skip-compiling-some-py-files-into-pyc-files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Skip compiling some .py files into .pyc files</a><a class="headerlink" href="#skip-compiling-some-py-files-into-pyc-files" title="Permalink to this headline">¶</a></h3>
 <p>Some packages ship .py files that cannot be compiled, such as those that contain
 templates. Some packages also ship .py files that should not be compiled yet,
 because the Python interpreter that will be used is not known at build-time. In
@@ -454,7 +463,7 @@ these cases conda-build can skip attempting to compile these files.</p>
 </div>
 </div>
 <div class="section" id="no-link">
-<h3><a class="toc-backref" href="#id22">No link</a><a class="headerlink" href="#no-link" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id23">No link</a><a class="headerlink" href="#no-link" title="Permalink to this headline">¶</a></h3>
 <p>A list of globs for files that should always be copied and never soft linked or hard linked.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">no_link</span><span class="p p-Indicator">:</span>
@@ -463,7 +472,7 @@ these cases conda-build can skip attempting to compile these files.</p>
 </div>
 </div>
 <div class="section" id="script">
-<h3><a class="toc-backref" href="#id23">Script</a><a class="headerlink" href="#script" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id24">Script</a><a class="headerlink" href="#script" title="Permalink to this headline">¶</a></h3>
 <p>Used instead of build.sh or bld.bat. For short build scripts, this can be more convenient.
 You may need to use selectors (see below) to use different scripts for different platforms.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
@@ -472,7 +481,7 @@ You may need to use selectors (see below) to use different scripts for different
 </div>
 </div>
 <div class="section" id="rpaths">
-<h3><a class="toc-backref" href="#id24">RPATHs</a><a class="headerlink" href="#rpaths" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">RPATHs</a><a class="headerlink" href="#rpaths" title="Permalink to this headline">¶</a></h3>
 <p>Set which RPATHs are used when making executables relocatable on Linux. The default is lib/</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">rpaths</span><span class="p p-Indicator">:</span>
@@ -483,7 +492,7 @@ You may need to use selectors (see below) to use different scripts for different
 <p>NOTE: This is a Linux feature that is ignored on other systems.</p>
 </div>
 <div class="section" id="force-files">
-<h3><a class="toc-backref" href="#id25">Force files</a><a class="headerlink" href="#force-files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id26">Force files</a><a class="headerlink" href="#force-files" title="Permalink to this headline">¶</a></h3>
 <p>Force files to always be included, even if they are already in the environment from the build dependencies. This may be needed, for instance, to create a recipe for conda itself.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">always_include_files</span><span class="p p-Indicator">:</span>
@@ -493,11 +502,11 @@ You may need to use selectors (see below) to use different scripts for different
 </div>
 </div>
 <div class="section" id="relocation">
-<h3><a class="toc-backref" href="#id26">Relocation</a><a class="headerlink" href="#relocation" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id27">Relocation</a><a class="headerlink" href="#relocation" title="Permalink to this headline">¶</a></h3>
 <p>Advanced features. The following four keys (binary_relocation, has_prefix_files and binary_has_prefix_files, ignore_prefix_files) may be used to control relocatability files from the build environment to the installation environment.  See <a class="reference internal" href="#relocatable"><span class="std std-ref">Making packages relocatable</span></a> section below.</p>
 </div>
 <div class="section" id="binary-relocation">
-<h3><a class="toc-backref" href="#id27">Binary relocation</a><a class="headerlink" href="#binary-relocation" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id28">Binary relocation</a><a class="headerlink" href="#binary-relocation" title="Permalink to this headline">¶</a></h3>
 <p>Whether binary files should be made relocatable using install_name_tool on OS X
 or patchelf on Linux. Default is True. Accepts False (no relocation for any
 files) or a list of files (relocation only for listed files.)</p>
@@ -507,7 +516,7 @@ files) or a list of files (relocation only for listed files.)</p>
 </div>
 </div>
 <div class="section" id="detect-binary-files-with-prefix">
-<h3><a class="toc-backref" href="#id28">Detect binary files with prefix</a><a class="headerlink" href="#detect-binary-files-with-prefix" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id29">Detect binary files with prefix</a><a class="headerlink" href="#detect-binary-files-with-prefix" title="Permalink to this headline">¶</a></h3>
 <p>Binary files may contain the build prefix and need it replaced with the install
 prefix at installation time. Conda can automatically identify and register such
 files. Default is <code class="docutils literal"><span class="pre">True</span></code>. Note that this default changed from <code class="docutils literal"><span class="pre">False</span></code> to
@@ -532,7 +541,7 @@ here, but earlier versions of conda do erroneously try to apply any binary
 prefix replacement.</p>
 </div>
 <div class="section" id="binary-has-prefix-files">
-<h3><a class="toc-backref" href="#id29">Binary has prefix files</a><a class="headerlink" href="#binary-has-prefix-files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id30">Binary has prefix files</a><a class="headerlink" href="#binary-has-prefix-files" title="Permalink to this headline">¶</a></h3>
 <p>By default, conda-build tries to detect prefixes in all files. You may also
 elect to specify files with binary prefixes individually. This allows you to
 specify the type of file as binary, when it may be incorrectly detected as text
@@ -545,7 +554,7 @@ for some reason. Binary files are those containing NULL bytes.</p>
 </div>
 </div>
 <div class="section" id="text-files-with-prefix-files">
-<h3><a class="toc-backref" href="#id30">Text files with prefix files</a><a class="headerlink" href="#text-files-with-prefix-files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id31">Text files with prefix files</a><a class="headerlink" href="#text-files-with-prefix-files" title="Permalink to this headline">¶</a></h3>
 <p>Text files (files containing no NULL bytes) may contain the build prefix and
 need it replaced with the install prefix at installation time. Conda will
 automatically register such files. Binary files that contain the build prefix
@@ -560,7 +569,7 @@ in which case they need to be identified:</p>
 </div>
 </div>
 <div class="section" id="ignore-prefix-files">
-<h3><a class="toc-backref" href="#id31">Ignore prefix files</a><a class="headerlink" href="#ignore-prefix-files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id32">Ignore prefix files</a><a class="headerlink" href="#ignore-prefix-files" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">ignore_prefix_files</span></code> can be used to exclude some or all of the files in the build recipe
 from the list of files that have the build prefix replaced with the install prefix.</p>
 <p>To ignore all files in the build recipe use</p>
@@ -578,7 +587,7 @@ from the list of files that have the build prefix replaced with the install pref
 <code class="docutils literal"><span class="pre">detect_binary_files_with_prefix</span></code> setting to control that behavior.</p>
 </div>
 <div class="section" id="skipping-builds">
-<h3><a class="toc-backref" href="#id32">Skipping builds</a><a class="headerlink" href="#skipping-builds" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id33">Skipping builds</a><a class="headerlink" href="#skipping-builds" title="Permalink to this headline">¶</a></h3>
 <p>Whether conda-build should skip the build of this recipe. Particularly useful for defining recipes which are platform specific.
 Default is False.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
@@ -587,7 +596,7 @@ Default is False.</p>
 </div>
 </div>
 <div class="section" id="architecture-independent-packages">
-<h3><a class="toc-backref" href="#id33">Architecture independent packages</a><a class="headerlink" href="#architecture-independent-packages" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id34">Architecture independent packages</a><a class="headerlink" href="#architecture-independent-packages" title="Permalink to this headline">¶</a></h3>
 <p>The conda build system allows you to specify &#8220;no architecture&#8221; when building a package, thus making it compatible
 with all platforms and architectures. Noarch packages can be installed on any platform.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
@@ -596,7 +605,7 @@ with all platforms and architectures. Noarch packages can be installed on any pl
 </div>
 </div>
 <div class="section" id="include-build-recipe">
-<h3><a class="toc-backref" href="#id34">Include build recipe</a><a class="headerlink" href="#include-build-recipe" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id35">Include build recipe</a><a class="headerlink" href="#include-build-recipe" title="Permalink to this headline">¶</a></h3>
 <p>The full conda build recipe and rendered <code class="docutils literal"><span class="pre">meta.yaml</span></code> file is included in the <a class="reference internal" href="../spec.html#package-metadata"><span class="std std-ref">Package metadata</span></a>
 by default. This can be disabled with</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
@@ -605,7 +614,7 @@ by default. This can be disabled with</p>
 </div>
 </div>
 <div class="section" id="use-environment-variables">
-<h3><a class="toc-backref" href="#id35">Use Environment Variables</a><a class="headerlink" href="#use-environment-variables" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id36">Use Environment Variables</a><a class="headerlink" href="#use-environment-variables" title="Permalink to this headline">¶</a></h3>
 <p>Normally the build script in <code class="docutils literal"><span class="pre">build.sh</span></code> or <code class="docutils literal"><span class="pre">bld.bat</span></code> does not
 pass through environment variables from the command line. Only
 environment variables documented in <a class="reference internal" href="environment-vars.html#env-vars"><span class="std std-ref">Environment variables</span></a> are seen by
@@ -624,11 +633,11 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="requirements-section">
-<h2><a class="toc-backref" href="#id36">Requirements section</a><a class="headerlink" href="#requirements-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id37">Requirements section</a><a class="headerlink" href="#requirements-section" title="Permalink to this headline">¶</a></h2>
 <p>Versions for requirements must follow the Conda match specification. See <a class="reference internal" href="../spec.html#build-version-spec"><span class="std std-ref">Package match specifications</span></a> .</p>
 <p>The build and runtime requirements. Dependencies of these requirements are included automatically.</p>
 <div class="section" id="build">
-<h3><a class="toc-backref" href="#id37">Build</a><a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id38">Build</a><a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
 <p>Packages required to build the package. Python and NumPy must be listed explicitly if they are required.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
@@ -637,7 +646,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="run">
-<h3><a class="toc-backref" href="#id38">Run</a><a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id39">Run</a><a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
 <p>Packages required to run the package. These are the dependencies that will be installed automatically whenever the package is installed. Package names should follow the <a class="reference internal" href="../spec.html#build-version-spec"><span class="std std-ref">Package match specifications</span></a> .</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
@@ -656,10 +665,10 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="test-section">
-<span id="meta-test"></span><h2><a class="toc-backref" href="#id39">Test section</a><a class="headerlink" href="#test-section" title="Permalink to this headline">¶</a></h2>
+<span id="meta-test"></span><h2><a class="toc-backref" href="#id40">Test section</a><a class="headerlink" href="#test-section" title="Permalink to this headline">¶</a></h2>
 <p>If this section exists or if there is a run_test.[py,pl,sh,bat] file in the recipe, the package will be installed into a test environment after the build is finished and the tests will be run there.</p>
 <div class="section" id="test-files">
-<h3><a class="toc-backref" href="#id40">Test files</a><a class="headerlink" href="#test-files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id41">Test files</a><a class="headerlink" href="#test-files" title="Permalink to this headline">¶</a></h3>
 <p>Test files which are copied from the recipe into the (temporary) test directory which are needed during testing:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">files</span><span class="p p-Indicator">:</span>
@@ -668,7 +677,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="source-files">
-<h3><a class="toc-backref" href="#id41">Source files</a><a class="headerlink" href="#source-files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id42">Source files</a><a class="headerlink" href="#source-files" title="Permalink to this headline">¶</a></h3>
 <p>Test files which are copied from the source work directory into the (temporary) test directory which are needed during testing:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">source_files</span><span class="p p-Indicator">:</span>
@@ -680,7 +689,7 @@ undefined.</p>
 <p>This capability was added in conda-build 2.0.</p>
 </div>
 <div class="section" id="test-requirements">
-<h3><a class="toc-backref" href="#id42">Test requirements</a><a class="headerlink" href="#test-requirements" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id43">Test requirements</a><a class="headerlink" href="#test-requirements" title="Permalink to this headline">¶</a></h3>
 <p>In addition to the runtime requirements, you can specify requirements needed during testing. The runtime requirements specified above are included automatically.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">requires</span><span class="p p-Indicator">:</span>
@@ -689,7 +698,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="test-commands">
-<h3><a class="toc-backref" href="#id43">Test commands</a><a class="headerlink" href="#test-commands" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id44">Test commands</a><a class="headerlink" href="#test-commands" title="Permalink to this headline">¶</a></h3>
 <p>Commands that are run as part of the test.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span>
@@ -699,7 +708,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="python-imports">
-<h3><a class="toc-backref" href="#id44">Python imports</a><a class="headerlink" href="#python-imports" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id45">Python imports</a><a class="headerlink" href="#python-imports" title="Permalink to this headline">¶</a></h3>
 <p>List of Python modules or packages that will be imported in the test environment.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">imports</span><span class="p p-Indicator">:</span>
@@ -712,7 +721,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="run-test-script">
-<h3><a class="toc-backref" href="#id45">Run test script</a><a class="headerlink" href="#run-test-script" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id46">Run test script</a><a class="headerlink" href="#run-test-script" title="Permalink to this headline">¶</a></h3>
 <p>The script run_test.sh (or .bat/.py/.pl) will be run automatically if it is part of the recipe.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>test:
   run_test.sh
@@ -724,8 +733,200 @@ undefined.</p>
 <p>NOTE: Python or Perl .py/.pl scripts are only valid as part of Python/Perl packages, respectively.</p>
 </div>
 </div>
+<div class="section" id="outputs-section">
+<h2><a class="toc-backref" href="#id47">Outputs section</a><a class="headerlink" href="#outputs-section" title="Permalink to this headline">¶</a></h2>
+<p>The outputs section is used to explicitly specify packaging steps. It supports
+multiple outputs, as well as different package output types. The format is a
+list of mappings. Build strings for subpackages are determined by their runtime
+dependencies. This support was added in conda-build 2.1.0.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
+  - name: some-subpackage
+  - name: some-other-subpackage
+</pre></div>
+</div>
+<p>NOTE: If any output is specified in the outputs section, the default packaging
+behavior of conda-build is bypassed. In other words, if any subpackage is
+specified, then you will not get the normal top-level build for this recipe
+without explicitly defining a subpackage for it. This is an alternative to the
+existing behavior, not an addition to it. See the <a class="reference internal" href="#implicit-metapackages"><span class="std std-ref">Implicit metapackages</span></a>
+section below for more information.</p>
+<div class="section" id="specifying-files-to-include-in-output">
+<h3><a class="toc-backref" href="#id48">Specifying files to include in output</a><a class="headerlink" href="#specifying-files-to-include-in-output" title="Permalink to this headline">¶</a></h3>
+<p>Files to be included in the package can be specified in either of two ways:
+explicit file lists, or scripts that move files into the build prefix.</p>
+<p>Explicit file lists are relative paths from the root of the build prefix.
+Explicit file lists support glob expressions. Directory names are also
+supported, and will recursively include contents.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
+  - name: subpackage-name
+    files:
+      - a-file
+      - a-folder
+      - *.some-extension
+      - somefolder/*.some-extension
+</pre></div>
+</div>
+<p>Scripts that create or move files into the build prefix can be any kind of
+script. Known script types need only specify the script name. Currently the list
+of recognized extensions is <code class="docutils literal"><span class="pre">py</span></code>, <code class="docutils literal"><span class="pre">bat</span></code>, <code class="docutils literal"><span class="pre">ps1</span></code>, and <code class="docutils literal"><span class="pre">sh</span></code>.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
+  - name: subpackage-name
+    script: move-files.py
+</pre></div>
+</div>
+<p>The interpreter command must be specified if the file extension is not
+&#8220;recognized.&#8221;</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
+  - name: subpackage-name
+    script: some-script.extension
+    script_interpreter: program plus arguments to run script
+</pre></div>
+</div>
+<p>For scripts that move or create files, a fresh copy of the working directory is
+provided at the start of each script execution. This ensures results between
+scripts are independent of one another.</p>
+<p>Note that for either the file list or the script approach, having more than one
+package contain a given file is not explicitly forbidden, but may prevent
+installation of both packages simultaneously.  Conda disallows this condition,
+because it creates ambiguous runtime conditions.</p>
+</div>
+<div class="section" id="subpackage-requirements">
+<h3><a class="toc-backref" href="#id49">Subpackage requirements</a><a class="headerlink" href="#subpackage-requirements" title="Permalink to this headline">¶</a></h3>
+<p>Subpackages support runtime and test requirements. Build requirements are not
+supported, because subpackages are created after the build phase is complete. If
+you need a tool to accomplish subpackaging, put it in the top-level package
+requirements/build section.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
+  - name: subpackage-name
+    requirements:
+      - some-dep
+</pre></div>
+</div>
+<p>Subpackage dependencies propagate to the top-level package if and only if the
+subpackage is listed as a requirement.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>requirements:
+  run:
+    - some-dep-that-will-propagate
+
+outputs:
+  - name: some-dep-that-will-propagate
+    requirements:
+      - some-dep
+</pre></div>
+</div>
+<p>In this instance, the top-level package will depend on both
+<code class="docutils literal"><span class="pre">some-dep-that-will-propagate</span></code> and <code class="docutils literal"><span class="pre">some-dep</span></code> as runtime requirements.</p>
+</div>
+<div class="section" id="implicit-metapackages">
+<span id="id1"></span><h3><a class="toc-backref" href="#id50">Implicit metapackages</a><a class="headerlink" href="#implicit-metapackages" title="Permalink to this headline">¶</a></h3>
+<p>When viewing the top-level package as a collection of smaller subpackages, it
+may be convenient to define the top-level package as a composition of several
+subpackages. If you do this, and you do not define a subpackage name that
+matches the top-level package/name, then conda-build will create a metapackage
+for you. This metapackage will have runtime requirements drawn from its
+dependency subpackages, for the sake of accurate build strings.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>package:
+  name: subpackage-example
+  version: 1.0
+
+requirements:
+  run:
+    - subpackage1
+    - subpackage2
+
+outputs:
+  - name: subpackage1
+    requirements:
+      - some-dep
+  - name: subpackage2
+    requirements:
+      - some-other-dep
+  - name: subpackage3
+    requirements:
+      - some-totally-exotic-dep
+</pre></div>
+</div>
+<p>In that example, a metapackage for subpackage-example will be created. It will
+have runtime dependencies on <code class="docutils literal"><span class="pre">subpackage1</span></code>, <code class="docutils literal"><span class="pre">subpackage2</span></code>, <code class="docutils literal"><span class="pre">some-dep</span></code>, and
+<code class="docutils literal"><span class="pre">some-other-dep</span></code>.</p>
+</div>
+<div class="section" id="subpackage-tests">
+<h3><a class="toc-backref" href="#id51">Subpackage tests</a><a class="headerlink" href="#subpackage-tests" title="Permalink to this headline">¶</a></h3>
+<p>Subpackages may be tested independently of the top-level package. Independent
+test script files for each separate package are specified under the subpackage&#8217;s
+test section. These files support the same formats as the top-level run_test.*
+scripts: <code class="docutils literal"><span class="pre">.py</span></code>, <code class="docutils literal"><span class="pre">.pl</span></code>, <code class="docutils literal"><span class="pre">.bat</span></code>, <code class="docutils literal"><span class="pre">.sh</span></code>. These may be extended to support
+other script types in the future.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
+  - name: subpackage-name
+    test:
+      script: some-other-script.py
+</pre></div>
+</div>
+<p>The run_test.* scripts apply only to the top-level package, by default. To apply
+them also to subpackages, they can be explicitly listed in the script section:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
+  - name: subpackage-name
+    test:
+      script: run_test.py
+</pre></div>
+</div>
+<p>Test requirements for subpackages are not supported. Instead, subpackage tests
+install their runtime requirements (but not the run requirements for the
+top-level package) and the test-time requirements of the top-level package.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>requirements:
+  run:
+    - some-top-level-run-req
+
+test:
+  requires:
+    - some-test-dep
+
+outputs:
+  - name: subpackage-name
+    requirements:
+      - subpackage-run-req
+    test:
+      script: run_test.py
+</pre></div>
+</div>
+<p>In this example, the test for subpackage-name will install <code class="docutils literal"><span class="pre">some-test-dep</span></code> and
+<code class="docutils literal"><span class="pre">subpackage-run-req</span></code>, but not <code class="docutils literal"><span class="pre">some-top-level-run-req</span></code>.</p>
+</div>
+<div class="section" id="output-type">
+<h3><a class="toc-backref" href="#id52">Output type</a><a class="headerlink" href="#output-type" title="Permalink to this headline">¶</a></h3>
+<p>Conda-build supports creating packages other than conda packages. Right now,
+that support includes only wheels. RPMs, .deb files, and others may come as
+demand appears.  If type is not specified, the default value is <code class="docutils literal"><span class="pre">conda</span></code>.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>requirements:
+  build:
+    - wheel
+
+outputs:
+  - name: name-of-wheel-package
+    type: wheel
+</pre></div>
+</div>
+<p>You currently must include the <code class="docutils literal"><span class="pre">wheel</span></code> package in your top-level
+requirements/build section in order to build wheels.</p>
+<p>When specifying type, the name field is optional, and defaults to the
+package/name field for the top-level recipe.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>requirements:
+  build:
+    - wheel
+
+outputs:
+  - type: wheel
+</pre></div>
+</div>
+<p>Conda-build currently only knows how to test conda packages. Conda-build does
+support using Twine to upload packages to PyPI. See the conda-build help output
+for the list of arguments accepted that will be passed through to Twine. Note
+that you must use pip to install Twine in order for this to work.</p>
+</div>
+</div>
 <div class="section" id="about-section">
-<span id="about"></span><h2><a class="toc-backref" href="#id46">About section</a><a class="headerlink" href="#about-section" title="Permalink to this headline">¶</a></h2>
+<span id="about"></span><h2><a class="toc-backref" href="#id53">About section</a><a class="headerlink" href="#about-section" title="Permalink to this headline">¶</a></h2>
 <p>Identifying information about the package. Displays in Anaconda.org channel.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">home</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff4</span>
@@ -735,7 +936,7 @@ undefined.</p>
 </pre></div>
 </div>
 <div class="section" id="license-file">
-<h3><a class="toc-backref" href="#id47">License file</a><a class="headerlink" href="#license-file" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id54">License file</a><a class="headerlink" href="#license-file" title="Permalink to this headline">¶</a></h3>
 <p>A file containing the software license can be added to the package metadata.  Please note that many licenses require the license statement to be distributed with the package.  The filename is relative to the source directory.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">license_file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">LICENSE</span>
@@ -744,10 +945,10 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="app-section">
-<h2><a class="toc-backref" href="#id48">App section</a><a class="headerlink" href="#app-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id55">App section</a><a class="headerlink" href="#app-section" title="Permalink to this headline">¶</a></h2>
 <p>If the app section is present, the package will be an app, meaning it will appear in the Anaconda Launcher.</p>
 <div class="section" id="entry-point">
-<h3><a class="toc-backref" href="#id49">Entry point</a><a class="headerlink" href="#entry-point" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id56">Entry point</a><a class="headerlink" href="#entry-point" title="Permalink to this headline">¶</a></h3>
 <p>The command that is called to launch the app:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">entry</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ipython notebook</span>
@@ -755,7 +956,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="icon-file">
-<h3><a class="toc-backref" href="#id50">Icon file</a><a class="headerlink" href="#icon-file" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id57">Icon file</a><a class="headerlink" href="#icon-file" title="Permalink to this headline">¶</a></h3>
 <p>The icon file contained in the recipe:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">icon</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">icon_64x64.png</span>
@@ -763,7 +964,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="summary">
-<h3><a class="toc-backref" href="#id51">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id58">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
 <p>Summary of the package used in the launcher:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span>  <span class="s">&quot;The</span><span class="nv"> </span><span class="s">Jupyter</span><span class="nv"> </span><span class="s">Notebook&quot;</span>
@@ -771,7 +972,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="own-environment">
-<h3><a class="toc-backref" href="#id52">Own environment</a><a class="headerlink" href="#own-environment" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id59">Own environment</a><a class="headerlink" href="#own-environment" title="Permalink to this headline">¶</a></h3>
 <p>If own_environment is true, installing the app through the launcher will install into its own environment. The default is False.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">own_environment</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -780,7 +981,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="extra-section">
-<h2><a class="toc-backref" href="#id53">Extra section</a><a class="headerlink" href="#extra-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id60">Extra section</a><a class="headerlink" href="#extra-section" title="Permalink to this headline">¶</a></h2>
 <p>The extra section is a schema-free area for storing non-conda specific metadata in standard YAML form.
 For example, to store recipe maintainer information, one could do:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">extra</span><span class="p p-Indicator">:</span>
@@ -790,7 +991,7 @@ For example, to store recipe maintainer information, one could do:</p>
 </div>
 </div>
 <div class="section" id="templating-with-jinja">
-<span id="jinja-templates"></span><h2><a class="toc-backref" href="#id54">Templating with Jinja</a><a class="headerlink" href="#templating-with-jinja" title="Permalink to this headline">¶</a></h2>
+<span id="jinja-templates"></span><h2><a class="toc-backref" href="#id61">Templating with Jinja</a><a class="headerlink" href="#templating-with-jinja" title="Permalink to this headline">¶</a></h2>
 <p>Conda build supports Jinja templating in the <code class="docutils literal"><span class="pre">meta.yaml</span></code> file. For example, here&#8217;s a meta.yaml that
 would work with the GIT values defined for git repositores. In this example, the recipe is included
 at the base directory of the git repository, so the <code class="docutils literal"><span class="pre">git_url</span></code> is <code class="docutils literal"><span class="pre">../</span></code>:</p>
@@ -855,7 +1056,7 @@ variables</a>.</p>
 use the <a class="reference internal" href="../commands/build/conda-render.html"><span class="doc">conda render</span></a>.</p>
 </div>
 <div class="section" id="preprocessing-selectors">
-<h2><a class="toc-backref" href="#id55">Preprocessing selectors</a><a class="headerlink" href="#preprocessing-selectors" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id62">Preprocessing selectors</a><a class="headerlink" href="#preprocessing-selectors" title="Permalink to this headline">¶</a></h2>
 <p>In addition, you can add selectors to any line, which are used as part of a
 preprocessing stage. Before the yaml file is read, each selector is evaluated,
 and if it is False, the line that it is on is removed.  A selector is of the
@@ -957,8 +1158,8 @@ need to put the same selector on multiple lines.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id1">
-<span id="id2"></span><h2><a class="toc-backref" href="#id56">Features</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<span id="id3"></span><h2><a class="toc-backref" href="#id63">Features</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>See also <a class="reference internal" href="environment-vars.html#build-features"><span class="std std-ref">Environment variables to set build features</span></a>.</p>
 <p>Features are a way to track differences in two packages that have the same
 name and version.  For example, a feature might indicate a specialized
@@ -1008,7 +1209,7 @@ several packages with</p>
 </div>
 </div>
 <div class="section" id="making-packages-relocatable">
-<span id="relocatable"></span><h2><a class="toc-backref" href="#id57">Making packages relocatable</a><a class="headerlink" href="#making-packages-relocatable" title="Permalink to this headline">¶</a></h2>
+<span id="relocatable"></span><h2><a class="toc-backref" href="#id64">Making packages relocatable</a><a class="headerlink" href="#making-packages-relocatable" title="Permalink to this headline">¶</a></h2>
 <p>Often, the most difficult thing about building a conda package is making it
 relocatable.  Relocatable means that the package can be installed into any
 prefix.  Otherwise, the package would only be usable in the same environment
