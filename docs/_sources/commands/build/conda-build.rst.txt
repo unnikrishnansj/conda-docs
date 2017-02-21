@@ -201,7 +201,7 @@ conda build
           --config-file CONFIG_FILE
                  path to .pypirc file to use when uploading to pypi
    
-          --repository REPOSITORY
+          --repository REPOSITORY, -r REPOSITORY
                  PyPI repository to upload to
    
    
