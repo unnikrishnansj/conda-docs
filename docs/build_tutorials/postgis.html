@@ -215,12 +215,12 @@ conda upgrade conda-build
 dependencies.</p>
 <p>The <a class="reference external" href="https://github.com/postgis/postgis/blob/2.2.2/README.postgis">README.postgis</a> file states that the following packages are required along with the
 minimum required version.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>postgresql version 9.1
-proj4 version 4.0.6
-geos version 3.4
-libxml2 version 2.5
-json-c version 0.9
-gdal version 1.9
+<div class="highlight-bash"><div class="highlight"><pre><span></span>postgresql version <span class="m">9</span>.1
+proj4 version <span class="m">4</span>.0.6
+geos version <span class="m">3</span>.4
+libxml2 version <span class="m">2</span>.5
+json-c version <span class="m">0</span>.9
+gdal version <span class="m">1</span>.9
 </pre></div>
 </div>
 <p>There must exist a conda package for each of these dependencies that is available for install using conda-install.
@@ -431,7 +431,8 @@ with the following command.</p>
             VERSION:' ',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

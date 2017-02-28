@@ -214,9 +214,9 @@
 <p>Conda was intended as a user space tool, but often users need to use it in a global environment. One place this can go awry is with restrictive file permissions.  Conda creates links when you install files that have to be read by others on the system.</p>
 <p>To give yourself full permissions for files and directories, but prevent the group and other users from having access, before installing set the umask to 007, install conda, then return the umask to the original setting afterwards:</p>
 <blockquote>
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">umask</span> 007
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">umask</span> <span class="m">007</span>
 $ conda install
-$ <span class="nb">umask</span> 077
+$ <span class="nb">umask</span> <span class="m">077</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -465,7 +465,7 @@ with Python 2.7:</p>
 <span id="version-from-channel"></span><h2>Issue: install a specific version from channels<a class="headerlink" href="#issue-install-a-specific-version-from-channels" title="Permalink to this headline">¶</a></h2>
 <p>Suppose you have a specific need to install the Python <code class="docutils literal"><span class="pre">cx_freeze</span></code> module
 with Python 3.4.  A first step is to create a Python 3.4 environment:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda create -n py34 <span class="nv">python</span><span class="o">=</span>3.4
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda create -n py34 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.4
 </pre></div>
 </div>
 <p>Using this environment you should first attempt:</p>
@@ -491,12 +491,12 @@ Run <span class="s1">&#39;anaconda show &lt;USER/PACKAGE&gt;&#39;</span> to get 
 Packages:
      Name                      <span class="p">|</span>  Version <span class="p">|</span> Package Types   <span class="p">|</span> Platforms
      ------------------------- <span class="p">|</span>   ------ <span class="p">|</span> --------------- <span class="p">|</span> ---------------
-     inso/cx_freeze            <span class="p">|</span>    4.3.3 <span class="p">|</span> conda           <span class="p">|</span> linux-64
-     pyzo/cx_freeze            <span class="p">|</span>    4.3.3 <span class="p">|</span> conda           <span class="p">|</span> linux-64, win-32, win-64, linux-32, osx-64
+     inso/cx_freeze            <span class="p">|</span>    <span class="m">4</span>.3.3 <span class="p">|</span> conda           <span class="p">|</span> linux-64
+     pyzo/cx_freeze            <span class="p">|</span>    <span class="m">4</span>.3.3 <span class="p">|</span> conda           <span class="p">|</span> linux-64, win-32, win-64, linux-32, osx-64
                                           : http://cx-freeze.sourceforge.net/
-     silg2/cx_freeze           <span class="p">|</span>    4.3.4 <span class="p">|</span> conda           <span class="p">|</span> linux-64
+     silg2/cx_freeze           <span class="p">|</span>    <span class="m">4</span>.3.4 <span class="p">|</span> conda           <span class="p">|</span> linux-64
                                           : create standalone executables from Python scripts
-     takluyver/cx_freeze       <span class="p">|</span>    4.3.3 <span class="p">|</span> conda           <span class="p">|</span> linux-64
+     takluyver/cx_freeze       <span class="p">|</span>    <span class="m">4</span>.3.3 <span class="p">|</span> conda           <span class="p">|</span> linux-64
 Found <span class="m">4</span> packages
 </pre></div>
 </div>
@@ -510,7 +510,7 @@ want to go with public opinion then <a class="reference external" href="https://
 <p>Notice that the <code class="docutils literal"><span class="pre">pyzo</span></code> organization has by far the most downloads, so you might
 choose to use their package. If so, you can add their organization&#8217;s channel
 by specifying it on the command line (as shown below):</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda create -c pyzo -n cxfreeze_py34 cx_freeze <span class="nv">python</span><span class="o">=</span>3.4
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda create -c pyzo -n cxfreeze_py34 cx_freeze <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.4
 Using Anaconda Cloud api site https://api.anaconda.org
 Fetching package metadata: ..........
 Solving package specifications: .........
@@ -521,24 +521,24 @@ The following packages will be downloaded:
 
     package                    <span class="p">|</span>            build
     ---------------------------<span class="p">|</span>-----------------
-    cx_freeze-4.3.3            <span class="p">|</span>           py34_4         1.8 MB
+    cx_freeze-4.3.3            <span class="p">|</span>           py34_4         <span class="m">1</span>.8 MB
     setuptools-20.7.0          <span class="p">|</span>           py34_0         <span class="m">459</span> KB
     ------------------------------------------------------------
-                                           Total:         2.3 MB
+                                           Total:         <span class="m">2</span>.3 MB
 
 The following NEW packages will be INSTALLED:
 
-    cx_freeze:  4.3.3-py34_4
-    openssl:    1.0.2h-0
-    pip:        8.1.1-py34_1
-    python:     3.4.4-0
-    readline:   6.2-2
-    setuptools: 20.7.0-py34_0
-    sqlite:     3.9.2-0
-    tk:         8.5.18-0
-    wheel:      0.29.0-py34_0
-    xz:         5.0.5-1
-    zlib:       1.2.8-0
+    cx_freeze:  <span class="m">4</span>.3.3-py34_4
+    openssl:    <span class="m">1</span>.0.2h-0
+    pip:        <span class="m">8</span>.1.1-py34_1
+    python:     <span class="m">3</span>.4.4-0
+    readline:   <span class="m">6</span>.2-2
+    setuptools: <span class="m">20</span>.7.0-py34_0
+    sqlite:     <span class="m">3</span>.9.2-0
+    tk:         <span class="m">8</span>.5.18-0
+    wheel:      <span class="m">0</span>.29.0-py34_0
+    xz:         <span class="m">5</span>.0.5-1
+    zlib:       <span class="m">1</span>.2.8-0
 </pre></div>
 </div>
 <p>Now you have a software environment sandbox created with Python 3.4 and
@@ -590,7 +590,8 @@ The following NEW packages will be INSTALLED:
             VERSION:' ',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

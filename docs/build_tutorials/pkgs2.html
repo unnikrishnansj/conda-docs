@@ -326,7 +326,7 @@ in the same directory as your <code class="docutils literal"><span class="pre">m
 <p>First we&#8217;ll write the build file for Windows and then the build file for Linux and OS X.</p>
 <p>All users, in your favorite text editor, create a new file named <code class="docutils literal"><span class="pre">bld.bat</span></code> and enter the text exactly as shown:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="s2">&quot;%PYTHON%&quot;</span> setup.py install
-<span class="k">if</span> errorlevel <span class="m">1</span> <span class="nb">exit</span> 1
+<span class="k">if</span> errorlevel <span class="m">1</span> <span class="nb">exit</span> <span class="m">1</span>
 </pre></div>
 </div>
 <p>NOTE: In <code class="docutils literal"><span class="pre">bld.bat</span></code>, the best practice is to to add the <code class="docutils literal"><span class="pre">if</span> <span class="pre">errorlevel</span> <span class="pre">1</span> <span class="pre">exit</span> <span class="pre">1</span></code> after every command
@@ -463,7 +463,8 @@ with the command: <code class="docutils literal"><span class="pre">conda</span> 
             VERSION:' ',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

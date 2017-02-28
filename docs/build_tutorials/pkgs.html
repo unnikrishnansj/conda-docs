@@ -273,7 +273,7 @@ them to your Anaconda.org account.</p>
 in the root environment. To build packages for other versions of
 Python, you use the <code class="docutils literal"><span class="pre">--python</span></code> flag, followed by a version. For example, to
 explicitly build a version of the Pyinstrument package for Python 3.3, use</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda build --python 3.3 pyinstrument
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda build --python <span class="m">3</span>.3 pyinstrument
 </pre></div>
 </div>
 <p>You&#8217;ll notice that the file printed at the end of the conda-build output has changed to reflect
@@ -432,7 +432,8 @@ recipes for all required packages even those that are already available to conda
             VERSION:' ',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

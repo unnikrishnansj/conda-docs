@@ -250,6 +250,11 @@ the <code class="docutils literal"><span class="pre">channel_alias</span></code>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
 </pre></div>
 </div>
+<p>To select channels for a single environment, put a <code class="docutils literal"><span class="pre">.condarc</span></code> file in the root
+directory of that environment. If you have installed Miniconda with Python 3 in
+your home directory and the environment is named &#8220;flowers&#8221;, the path may be
+<code class="docutils literal"><span class="pre">~/miniconda3/envs/flowers/.condarc</span></code>, and for other conda installations the
+path will be similar.</p>
 </div>
 <div class="section" id="update-conda-automatically-auto-update-conda">
 <h3><a class="toc-backref" href="#id5">Update conda automatically (auto_update_conda)</a><a class="headerlink" href="#update-conda-automatically-auto-update-conda" title="Permalink to this headline">¶</a></h3>
@@ -479,7 +484,8 @@ not have write permissions to <code class="docutils literal"><span class="pre">&
             VERSION:' ',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
