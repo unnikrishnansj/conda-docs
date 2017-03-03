@@ -92,8 +92,6 @@ docs/_sources/install/sample-condarc.rst.txt
 docs/_sources/install/tab-completion.rst.txt
 docs/_sources/installation.rst.txt
 docs/_sources/intro.rst.txt
-docs/_sources/kapsel/config.rst.txt
-docs/_sources/kapsel/index.rst.txt
 docs/_sources/license.rst.txt
 docs/_sources/mro.rst.txt
 docs/_sources/py2or3.rst.txt
@@ -229,8 +227,6 @@ docs/install/sample-condarc.html
 docs/install/tab-completion.html
 docs/installation.html
 docs/intro.html
-docs/kapsel/config.html
-docs/kapsel/index.html
 docs/license.html
 docs/mro.html
 docs/objects.inv

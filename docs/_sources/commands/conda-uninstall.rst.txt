@@ -104,5 +104,5 @@ conda uninstall
    
    
    
-   Continuum Analytics              February 2017                        <B>CONDA(1)</B>
+   Continuum Analytics               March 2017                          <B>CONDA(1)</B>
    </PRE>
