@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -45,6 +47,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -85,7 +88,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="announcements.html">Conda Announcements List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-started.html">Get started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using/index.html">Using conda</a></li>
@@ -132,8 +138,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Conda</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Conda</a>
+        
       </nav>
 
 
@@ -142,25 +150,44 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
           <li><a href="building/build.html">Building packages</a> &raquo;</li>
-      
-    <li>Bdist_conda</li>
+        
+      <li>Bdist_conda</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="https://github.com/conda/conda-docs/blob/master/docs/source/bdist_conda.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+            
+              <a href="https://github.com/conda/conda-docs/blob/master/docs/source/bdist_conda.rst" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -279,7 +306,7 @@ features in conda.</p>
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">bdist_conda</span></code> must be installed into a root conda environment, as it imports <code class="docutils literal"><span class="pre">conda</span></code> and <code class="docutils literal"><span class="pre">conda_build</span></code>. It is included as part of the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> package.</li>
+<li><code class="docutils literal"><span class="pre">bdist_conda</span></code> must be installed into a root conda environment, as it imports <code class="docutils literal"><span class="pre">conda</span></code> and <code class="docutils literal"><span class="pre">conda_build</span></code>. It is included as part of the <code class="docutils literal"><span class="pre">conda-build</span></code> package.</li>
 <li>All metadata is gathered from the standard metadata from the <code class="docutils literal"><span class="pre">setup()</span></code> function. Metadata that are not directly supported by <code class="docutils literal"><span class="pre">setup()</span></code> can be added using one of the options specified below.</li>
 <li>By default, import tests are run for each subpackage specified by packages, and command line tests <code class="docutils literal"><span class="pre">command</span> <span class="pre">--help</span></code> are run for each <code class="docutils literal"><span class="pre">setuptools</span> <span class="pre">entry_points</span></code> command. This is done to ensure that the package is built correctly. These can be disabled or changed using the <code class="docutils literal"><span class="pre">conda_import_tests</span></code> and <code class="docutils literal"><span class="pre">conda_command_tests</span></code> options specified below.</li>
 <li>The Python version used in the build must be the same as where conda is installed, as <code class="docutils literal"><span class="pre">bdist_conda</span></code> uses <code class="docutils literal"><span class="pre">conda-build</span></code>.</li>
@@ -291,15 +318,18 @@ features in conda.</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="building/sample-recipes.html" class="btn btn-neutral float-right" title="Sample recipes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="building/sample-recipes.html" class="btn btn-neutral float-right" title="Sample recipes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="signed-packages.html" class="btn btn-neutral" title="Signing conda packages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="signed-packages.html" class="btn btn-neutral" title="Signing conda packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

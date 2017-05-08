@@ -101,5 +101,5 @@ conda skeleton pypi
    
    
    
-   Continuum Analytics               March 2017                          <B>CONDA(1)</B>
+   Continuum Analytics                May 2017                           <B>CONDA(1)</B>
    </PRE>
