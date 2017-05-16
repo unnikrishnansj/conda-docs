@@ -214,11 +214,11 @@ DESCRIPTION
 
        [--use-index-cache] [--use-local] [--offline] [--no-pin]
               [-c CHANNEL] [--override-channels] [-n ENVIRONMENT  |  -p  PATH]
-              [-q]      [--copy]      [--alt-hint]     [--update-dependencies]
-              [--no-update-dependencies]   [--channel-priority]    [--no-chan‐
-              nel-priority]   [--show-channel-urls]   [--no-show-channel-urls]
-              [--json]  [--debug]  [--verbose]  [--all]  [package_spec  [pack‐
-              age_spec ...]]
+              [-q]  [--copy] [--clobber] [-k] [--alt-hint] [--update-dependen‐
+              cies]      [--no-update-dependencies]       [--channel-priority]
+              [--no-channel-priority]  [--show-channel-urls]  [--no-show-chan‐
+              nel-urls] [--json] [--debug] [--verbose]  [--all]  [package_spec
+              [package_spec ...]]
 
        Alias for conda update.  See conda update --help.
 
@@ -289,6 +289,14 @@ OPTIONS
 
        --copy Install all packages using copies instead of hard- or soft-link‐
               ing.
+
+       --clobber
+              Allow  clobbering of overlapping file paths within packages, and
+              suppress related warnings.
+
+       -k, --insecure
+              Allow conda to perform "insecure"  SSL  connections  and  trans‐
+              fers.Equivalent to setting 'ssl_verify' to 'false'.
 
        --alt-hint
               Use an alternate algorithm to generate an unsatisfiability hint.

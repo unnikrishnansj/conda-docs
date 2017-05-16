@@ -22,7 +22,7 @@ conda remove
           [--all] [--features] [--force] [--no-pin] [-c CHANNEL]
                  [--override-channels]  [-n   ENVIRONMENT   |   -p   PATH]   [-q]
                  [--no-use-index-cache] [--use-index-cache] [--use-local] [--off‐
-                 line] [package_name [package_name ...]]
+                 line] [-k] [package_name [package_name ...]]
    
           Remove a list of packages from a specified conda environment.
    
@@ -105,6 +105,10 @@ conda remove
    
           --offline
                  Offline mode, don't connect to the Internet.
+   
+          -k, --insecure
+                 Allow  conda  to  perform  "insecure" SSL connections and trans‐
+                 fers.Equivalent to setting 'ssl_verify' to 'false'.
    
    EXAMPLES
                  conda remove -n myenv scipy

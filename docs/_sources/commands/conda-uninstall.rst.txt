@@ -22,7 +22,7 @@ conda uninstall
           [--all] [--features] [--force] [--no-pin] [-c CHANNEL]
                  [--override-channels]  [-n   ENVIRONMENT   |   -p   PATH]   [-q]
                  [--no-use-index-cache] [--use-index-cache] [--use-local] [--off‐
-                 line] [package_name [package_name ...]]
+                 line] [-k] [package_name [package_name ...]]
    
           Alias for conda remove.  See conda remove --help.
    
@@ -98,6 +98,10 @@ conda uninstall
    
           --offline
                  Offline mode, don't connect to the Internet.
+   
+          -k, --insecure
+                 Allow conda to perform "insecure"  SSL  connections  and  trans‐
+                 fers.Equivalent to setting 'ssl_verify' to 'false'.
    
    EXAMPLES
                  conda uninstall -n myenv scipy

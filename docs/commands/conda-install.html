@@ -213,11 +213,11 @@ DESCRIPTION
 
        [--file FILE] [--no-deps] [-m] [--use-index-cache]
               [--use-local]   [--offline]  [--no-pin]  [-c  CHANNEL]  [--over‐
-              ride-channels]  [-n  ENVIRONMENT  |  -p  PATH]   [-q]   [--copy]
-              [--alt-hint]  [--update-dependencies] [--no-update-dependencies]
-              [--channel-priority]    [--no-channel-priority]    [--show-chan‐
-              nel-urls]  [--no-show-channel-urls]  [--json]  [--debug] [--ver‐
-              bose] [package_spec [package_spec ...]]
+              ride-channels] [-n ENVIRONMENT | -p PATH] [-q] [--copy] [--clob‐
+              ber]       [-k]       [--alt-hint]       [--update-dependencies]
+              [--no-update-dependencies]   [--channel-priority]    [--no-chan‐
+              nel-priority]   [--show-channel-urls]   [--no-show-channel-urls]
+              [--json] [--debug] [--verbose] [package_spec [package_spec ...]]
 
        Installs a list of packages into a specified conda environment.
 
@@ -314,6 +314,14 @@ OPTIONS
 
        --copy Install all packages using copies instead of hard- or soft-link‐
               ing.
+
+       --clobber
+              Allow  clobbering of overlapping file paths within packages, and
+              suppress related warnings.
+
+       -k, --insecure
+              Allow conda to perform "insecure"  SSL  connections  and  trans‐
+              fers.Equivalent to setting 'ssl_verify' to 'false'.
 
        --alt-hint
               Use an alternate algorithm to generate an unsatisfiability hint.
