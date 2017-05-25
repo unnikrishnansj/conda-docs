@@ -17,6 +17,7 @@ docs/_sources/build-commands.rst.txt
 docs/_sources/build.rst.txt
 docs/_sources/build_tutorials.rst.txt
 docs/_sources/build_tutorials/app.rst.txt
+docs/_sources/build_tutorials/build_nltk.rst.txt
 docs/_sources/build_tutorials/pkgs.rst.txt
 docs/_sources/build_tutorials/pkgs2.rst.txt
 docs/_sources/build_tutorials/postgis.rst.txt
@@ -151,6 +152,7 @@ docs/build-commands.html
 docs/build.html
 docs/build_tutorials.html
 docs/build_tutorials/app.html
+docs/build_tutorials/build_nltk.html
 docs/build_tutorials/pkgs.html
 docs/build_tutorials/pkgs2.html
 docs/build_tutorials/postgis.html
