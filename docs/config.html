@@ -214,8 +214,18 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#conda-build-configuration" id="id19">Conda build configuration</a><ul>
-<li><a class="reference internal" href="#automatically-upload-conda-build-packages-to-anaconda-org-anaconda-upload" id="id20">Automatically upload conda build packages to Anaconda.org (anaconda_upload)</a></li>
-<li><a class="reference internal" href="#specify-conda-build-output-root-directory-conda-build" id="id21">Specify conda build output root directory (conda-build)</a></li>
+<li><a class="reference internal" href="#specify-conda-build-output-root-directory" id="id20">Specify conda build output root directory</a></li>
+<li><a class="reference internal" href="#automatically-upload-conda-build-packages-to-anaconda-org-anaconda-upload" id="id21">Automatically upload conda build packages to Anaconda.org (anaconda_upload)</a></li>
+<li><a class="reference internal" href="#token-to-be-used-for-anaconda-org-uploads-conda-build-3-0" id="id22">Token to be used for Anaconda.org uploads (conda-build 3.0+)</a></li>
+<li><a class="reference internal" href="#limit-build-ouptut-verbosity-conda-build-3-0" id="id23">Limit build ouptut verbosity (conda-build 3.0+)</a></li>
+<li><a class="reference internal" href="#disable-filename-hashing-conda-build-3-0" id="id24">Disable filename hashing (conda-build 3.0+)</a></li>
+<li><a class="reference internal" href="#disable-recipe-and-package-verification-conda-build-3-0" id="id25">Disable recipe and package verification (conda-build 3.0+)</a></li>
+<li><a class="reference internal" href="#disable-per-build-folder-creation-conda-build-3-0" id="id26">Disable per-build folder creation (conda-build 3.0+)</a></li>
+<li><a class="reference internal" href="#skip-building-packages-that-already-exist-conda-build-3-0" id="id27">Skip building packages that already exist (conda-build 3.0+)</a></li>
+<li><a class="reference internal" href="#omit-recipe-from-package-conda-build-3-0" id="id28">Omit recipe from package (conda-build 3.0+)</a></li>
+<li><a class="reference internal" href="#disable-activation-of-environments-during-build-test-conda-build-3-0" id="id29">Disable activation of environments during build/test (conda-build 3.0+)</a></li>
+<li><a class="reference internal" href="#pypi-upload-settings-conda-build-3-0" id="id30">PyPI upload settings (conda-build 3.0+)</a></li>
+<li><a class="reference internal" href="#pypi-repository-to-upload-to-conda-build-3-0" id="id31">PyPI repository to upload to (conda-build 3.0+)</a></li>
 </ul>
 </li>
 </ul>
@@ -226,7 +236,7 @@
 <h2><a class="toc-backref" href="#id2">The conda configuration file (.condarc)</a><a class="headerlink" href="#the-conda-configuration-file-condarc" title="Permalink to this headline">¶</a></h2>
 <p>The conda configuration file  (.condarc) is an OPTIONAL runtime configuration
 file which allows advanced users to configure various aspects of conda, such as which
-channels it searches for packages, proxy settings, environment directories, etc.</p>
+channels it searches for packages, proxy settings, environment directories, and so on.</p>
 <p>A .condarc file is not included by default, but it is automatically created in
 the user’s home directory the first time you run the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></code> command.</p>
 <p>A .condarc file may also be located in the root environment, in which case it
@@ -444,21 +454,129 @@ may be to <em>pin</em> them. See <a class="reference internal" href="faq.html#pi
 </div>
 <div class="section" id="conda-build-configuration">
 <h2><a class="toc-backref" href="#id19">Conda build configuration</a><a class="headerlink" href="#conda-build-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="specify-conda-build-output-root-directory">
+<h3><a class="toc-backref" href="#id20">Specify conda build output root directory</a><a class="headerlink" href="#specify-conda-build-output-root-directory" title="Permalink to this headline">¶</a></h3>
+<p>Build output root directory. This can also be set with the <code class="docutils literal"><span class="pre">CONDA_BLD_PATH</span></code>
+environment variable. The default is <code class="docutils literal"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></code>, or if you do
+not have write permissions to <code class="docutils literal"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></code> , <code class="docutils literal"><span class="pre">~/conda-bld/</span></code> .</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">root-dir</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">~/conda-builds</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="automatically-upload-conda-build-packages-to-anaconda-org-anaconda-upload">
-<h3><a class="toc-backref" href="#id20">Automatically upload conda build packages to Anaconda.org (anaconda_upload)</a><a class="headerlink" href="#automatically-upload-conda-build-packages-to-anaconda-org-anaconda-upload" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id21">Automatically upload conda build packages to Anaconda.org (anaconda_upload)</a><a class="headerlink" href="#automatically-upload-conda-build-packages-to-anaconda-org-anaconda-upload" title="Permalink to this headline">¶</a></h3>
 <p>Automatically upload packages built with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code> to Anaconda.org. The
 default is <code class="docutils literal"><span class="pre">False</span></code>.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">anaconda_upload</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="specify-conda-build-output-root-directory-conda-build">
-<h3><a class="toc-backref" href="#id21">Specify conda build output root directory (conda-build)</a><a class="headerlink" href="#specify-conda-build-output-root-directory-conda-build" title="Permalink to this headline">¶</a></h3>
-<p>Build output root directory. This can also be set with the <code class="docutils literal"><span class="pre">CONDA_BLD_PATH</span></code>
-environment variable. The default is <code class="docutils literal"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></code>, or if you do
-not have write permissions to <code class="docutils literal"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></code> , <code class="docutils literal"><span class="pre">~/conda-bld/</span></code> .</p>
+<div class="section" id="token-to-be-used-for-anaconda-org-uploads-conda-build-3-0">
+<h3><a class="toc-backref" href="#id22">Token to be used for Anaconda.org uploads (conda-build 3.0+)</a><a class="headerlink" href="#token-to-be-used-for-anaconda-org-uploads-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
+<p>Tokens are a means of authenticating with anaconda.org without needing to login.
+You can pass your token to conda-build with this condarc setting, or with a CLI
+argument.  This is unset by default.  Setting it implicitly enables anaconda_upload.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">root-dir</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">~/conda-builds</span>
+    <span class="l l-Scalar l-Scalar-Plain">anaconda_token</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gobbledygook</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="limit-build-ouptut-verbosity-conda-build-3-0">
+<h3><a class="toc-backref" href="#id23">Limit build ouptut verbosity (conda-build 3.0+)</a><a class="headerlink" href="#limit-build-ouptut-verbosity-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
+<p>Conda-build&#8217;s output verbosity can be reduced with the <code class="docutils literal"><span class="pre">quiet</span></code> setting. For
+more verbosity use the CLI flag <code class="docutils literal"><span class="pre">--debug</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">quiet</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="disable-filename-hashing-conda-build-3-0">
+<h3><a class="toc-backref" href="#id24">Disable filename hashing (conda-build 3.0+)</a><a class="headerlink" href="#disable-filename-hashing-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
+<p>Conda-build 3 adds hashes to filenames to allow greater customization of
+dependency versions. If you find this disruptive, you can disable the hashing
+with the following config entry:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">filename_hashing</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+<p>Note that conda-build does no checking when clobbering packages, and if you
+utilize conda-build 3&#8217;s build matrices with a build configuration that is not
+reflected somehow in the build string, you will be missing packages due to
+clobbering.</p>
+</div>
+<div class="section" id="disable-recipe-and-package-verification-conda-build-3-0">
+<h3><a class="toc-backref" href="#id25">Disable recipe and package verification (conda-build 3.0+)</a><a class="headerlink" href="#disable-recipe-and-package-verification-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
+<p>By default, conda-build uses conda-verify to ensure that your recipe and package
+meet some minimum sanity checks.  You can disable these:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">no_verify</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="disable-per-build-folder-creation-conda-build-3-0">
+<h3><a class="toc-backref" href="#id26">Disable per-build folder creation (conda-build 3.0+)</a><a class="headerlink" href="#disable-per-build-folder-creation-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
+<p>By default, conda-build creates a new folder for each build, named for the
+package name plus a timestamp. This allows you to do multiple builds at once. If
+you have issues with long paths, you may need to disable this behavior. You
+should first try to change the build output root directory with the <code class="docutils literal"><span class="pre">root-dir</span></code>
+setting described above, but fall back to this as necessary:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">set_build_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="skip-building-packages-that-already-exist-conda-build-3-0">
+<h3><a class="toc-backref" href="#id27">Skip building packages that already exist (conda-build 3.0+)</a><a class="headerlink" href="#skip-building-packages-that-already-exist-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
+<p>By default, conda-build builds all recipes that you specify. You can instead
+skip recipes that are already built. A recipe is skipped if and only if <em>all</em> of
+its outputs are available on your currently configured channels.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">skip_existing</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="omit-recipe-from-package-conda-build-3-0">
+<h3><a class="toc-backref" href="#id28">Omit recipe from package (conda-build 3.0+)</a><a class="headerlink" href="#omit-recipe-from-package-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
+<p>By default, conda-build includes the recipe that was used to build the package.
+If this contains sensitive or proprietary information, you can omit the recipe.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">include_recipe</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+<p>Note that if you do not include the recipe, you cannot use conda-build to test
+the package after the build completes. This means that you cannot split your
+build and test steps across two distinct CLI commands (<code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">--notest</span>
+<span class="pre">recipe</span></code> and <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">recipe</span></code>). If you need to omit the recipe and
+split your steps, your only option is to remove the recipe files from the
+tarball artifacts after your test step. Conda-build does not provide tools for
+doing that.</p>
+</div>
+<div class="section" id="disable-activation-of-environments-during-build-test-conda-build-3-0">
+<h3><a class="toc-backref" href="#id29">Disable activation of environments during build/test (conda-build 3.0+)</a><a class="headerlink" href="#disable-activation-of-environments-during-build-test-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
+<p>By default, conda-build activates the build and test environments prior to
+executing the build or test scripts. This adds necessary PATH entries, and also
+runs any activate.d scripts you may have. If you disable activation, the PATH
+will still be modified, but the activate.d scripts will not run. This is not
+recommended, but some people prefer this.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">activate</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pypi-upload-settings-conda-build-3-0">
+<h3><a class="toc-backref" href="#id30">PyPI upload settings (conda-build 3.0+)</a><a class="headerlink" href="#pypi-upload-settings-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
+<p>Unset by default.  If you have wheel outputs in your recipe, conda-build will try to upload them to the PyPI repository specified by the <code class="docutils literal"><span class="pre">pypi_repository</span></code> setting using credentials from this file path.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">pypirc</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">~/.pypirc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pypi-repository-to-upload-to-conda-build-3-0">
+<h3><a class="toc-backref" href="#id31">PyPI repository to upload to (conda-build 3.0+)</a><a class="headerlink" href="#pypi-repository-to-upload-to-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
+<p>Unset by default.  If you have wheel outputs in your recipe, conda-build will try to upload them to this PyPI repository using credentials from the file specified by the <code class="docutils literal"><span class="pre">pypirc</span></code> setting.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">pypi_repository</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pypi</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">

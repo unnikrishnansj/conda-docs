@@ -60,5 +60,5 @@ conda develop
    
    
    
-   Continuum Analytics                May 2017                           <B>CONDA(1)</B>
+   Continuum Analytics                June 2017                          <B>CONDA(1)</B>
    </PRE>

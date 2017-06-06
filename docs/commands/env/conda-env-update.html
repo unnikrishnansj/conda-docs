@@ -204,10 +204,10 @@ NAME
        conda - conda env update
 
 DESCRIPTION
-       usage:  conda-env  update  [-h]  [-n  NAME]  [-f  FILE]  [--prune] [-q]
-       [--json]
+       usage:  conda-env  update  [-h]  [-n  ENVIRONMENT  | -p PATH] [-f FILE]
+       [--prune]
 
-       [--debug] [--verbose]
+       [-q] [--json] [--debug] [--verbose]
               [remote_definition]
 
        Update the current environment based on environment file
@@ -221,8 +221,12 @@ OPTIONS
        -h, --help
               Show this help message and exit.
 
-       -n NAME, --name NAME
-              name of environment (in envs dirs)
+       -n ENVIRONMENT, --name ENVIRONMENT
+              Name of environment (in envs dirs).
+
+       -p PATH, --prefix PATH
+              Full  path   to   environment   prefix   (default:   root   pre‐
+              fix/envs/build-environment).
 
        -f FILE, --file FILE
               environment definition (default: environment.yml)
@@ -243,13 +247,13 @@ OPTIONS
               Use once for info, twice for debug, three times for trace.
 
    examples:
-              conda  env  update  conda  env  update  -n=foo  conda env update
-              -f=/path/to/environment.yml   conda   env   update    --name=foo
+              conda env update  conda  env  update  -n=foo  conda  env  update
+              -f=/path/to/environment.yml    conda   env   update   --name=foo
               --file=environment.yml conda env update vader/deathstar
 
 
 
-Continuum Analytics                May 2017                           <B>CONDA(1)</B>
+Continuum Analytics                June 2017                          <B>CONDA(1)</B>
 </PRE></div>
 
 
