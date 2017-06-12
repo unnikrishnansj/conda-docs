@@ -603,7 +603,7 @@ a file req.txt that sets python=2.7.9. However, when I conda install my package 
 automatically upgrades to 2.7.10. How do I avoid this?</p>
 <p>If you make a conda package for the app using conda-build, you can set dependencies
 with specific version numbers. In <a class="reference external" href="https://conda.io/docs/building/meta-yaml.html">this example</a>
-the requirements lines that say &#8220;- python&#8221; could be &#8220;- python ==2.7.9&#8221; instead. It
+the requirements lines that say “- python” could be “- python ==2.7.9” instead. It
 is important to have one space before the == operator and no space after.</p>
 </div>
 <div class="section" id="removing-packages-and-environments">
@@ -635,7 +635,7 @@ is important to have one space before the == operator and no space after.</p>
 </div>
 <div class="section" id="customization-condarc-file">
 <h2><a class="toc-backref" href="#id17">Customization (.condarc file)</a><a class="headerlink" href="#customization-condarc-file" title="Permalink to this headline">¶</a></h2>
-<p>NOTE: It may be necessary to add the &#8220;force&#8221; option <code class="docutils literal"><span class="pre">-f</span></code> to the following commands.</p>
+<p>NOTE: It may be necessary to add the “force” option <code class="docutils literal"><span class="pre">-f</span></code> to the following commands.</p>
 <ol class="arabic">
 <li><p class="first">How can I get all keys and their values from my .condarc file?</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda config --get
@@ -689,14 +689,14 @@ know that this package is on PyPI?</p>
 <span id="id2"></span><h2><a class="toc-backref" href="#id19">Pinning packages</a><a class="headerlink" href="#pinning-packages" title="Permalink to this headline">¶</a></h2>
 <p>You can <em>pin</em> a package specification in an environment, which will prevent
 it from being updated, unless the <code class="docutils literal"><span class="pre">--no-pin</span></code> flag is passed to conda. To
-do so, add a file named <code class="docutils literal"><span class="pre">pinned</span></code> to the environment&#8217;s <code class="docutils literal"><span class="pre">conda-meta</span></code>
+do so, add a file named <code class="docutils literal"><span class="pre">pinned</span></code> to the environment’s <code class="docutils literal"><span class="pre">conda-meta</span></code>
 directory with a list of specs. For example, a file with this command:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">numpy</span> <span class="mf">1.7</span><span class="o">.*</span>
 <span class="n">scipy</span> <span class="o">==</span><span class="mf">0.14</span><span class="o">.</span><span class="mi">2</span>
 </pre></div>
 </div>
 <p>will force numpy to stay on the 1.7 series (any version that starts with
-&#8220;1.7.&#8221;), and will force scipy to stay at exactly version 0.14.2.</p>
+“1.7.”), and will force scipy to stay at exactly version 0.14.2.</p>
 <p>NOTE: With this pinned file, <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span></code> will keep numpy at 1.7.1, and
 <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">scipy=0.15.0</span></code> will lead to an error. To force either of
 these, use the <code class="docutils literal"><span class="pre">--no-pin</span></code> flag, like <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span> <span class="pre">--no-pin</span></code>. The

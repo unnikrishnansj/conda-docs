@@ -170,12 +170,12 @@ Linux, OS X and Windows, and was created for Python programs but can package and
 <p>Conda is included in Anaconda and Miniconda. Conda is also included in the Continuum <a class="reference external" href="https://www.continuum.io/anaconda-subscriptions">subscriptions</a>
 of Anaconda, which provide on-site enterprise package and environment management for Python, R, Node.js, Java, and other application
 stacks. Conda is also available on pypi, although that approach may not be as up-to-date.</p>
-<p><strong>Miniconda</strong> is a small &#8220;bootstrap&#8221; version that includes only conda, Python, and the packages they depend on. Over 720
+<p><strong>Miniconda</strong> is a small “bootstrap” version that includes only conda, Python, and the packages they depend on. Over 720
 scientific packages and their dependencies can be installed individually from the Continuum repository with
-the &#8220;conda install&#8221; command.</p>
+the “conda install” command.</p>
 <p><strong>Anaconda</strong> includes conda, conda-build, Python, and over 150 automatically installed scientific packages and
 their dependencies. As with Miniconda, over 250 additional scientific packages can be installed individually with
-the &#8220;conda install&#8221; command.</p>
+the “conda install” command.</p>
 <p>The <cite>conda</cite> command is the primary interface for managing <a class="reference external" href="http://docs.continuum.io/anaconda/index.html">Anaconda</a> installations. It can query
 and search the Anaconda package index and current Anaconda installation,
 create new conda environments, and install and update packages into existing
@@ -201,11 +201,11 @@ conda environments.</p>
 </ul>
 </div>
 <div class="section" id="what-s-new-in-conda-4-3">
-<h1>What&#8217;s new in conda 4.3?<a class="headerlink" href="#what-s-new-in-conda-4-3" title="Permalink to this headline">¶</a></h1>
+<h1>What’s new in conda 4.3?<a class="headerlink" href="#what-s-new-in-conda-4-3" title="Permalink to this headline">¶</a></h1>
 <p>This release contains many improvements to performance, warning and error
-messages, and conda&#8217;s disk access, download, and package caching behavior.
+messages, and conda’s disk access, download, and package caching behavior.
 Also a noarch/universal type for python packages is now officially supported,
-a Python API module has been added, and the &#8216;r&#8217; channel is now a default
+a Python API module has been added, and the ‘r’ channel is now a default
 channel. The <a class="reference external" href="https://github.com/conda/conda/releases/tag/4.3.4">changelog</a>
 contains a complete list of changes.</p>
 <ul>
@@ -229,8 +229,8 @@ on platform,</li>
 <li>conda creates the python entry points specified in the conda-build recipe, and</li>
 <li>conda compiles pyc files at install time when prefix write permissions are guaranteed.</li>
 </ol>
-<p>Python noarch packages must be &#8220;fully universal.&#8221;  They cannot have OS- or
-python version-specific dependencies.  They cannot have OS- or python version-specific &#8220;scripts&#8221;
+<p>Python noarch packages must be “fully universal.”  They cannot have OS- or
+python version-specific dependencies.  They cannot have OS- or python version-specific “scripts”
 files. If these features are needed, traditional conda packages must be used.</p>
 </li>
 <li><p class="first"><strong>Multi-User Package Caches</strong>: Package cache handling has been improved while
@@ -238,9 +238,9 @@ preserving the on-disk package cache structure. Both writable and read-only
 package caches are fully supported.</p>
 </li>
 <li><p class="first"><strong>Python API Module</strong>: The new <code class="docutils literal"><span class="pre">conda.cli.python_api</span></code> module allows using
-conda as a Python library without needing to &#8220;shell out&#8221; to another Python
+conda as a Python library without needing to “shell out” to another Python
 process. There is also a <code class="docutils literal"><span class="pre">conda.exports</span></code> module for longer-term use of
-conda as a library across conda releases, although conda&#8217;s Python code is
+conda as a library across conda releases, although conda’s Python code is
 considered internal and private and is subject to change across releases. For
 now conda will not install itself into environments other than its original
 install environment.</p>
@@ -248,7 +248,7 @@ install environment.</p>
 <li><p class="first"><strong>Remove All Locks</strong>: Locking in conda had bugs and often created a false
 sense of security, and has been removed. The multi-user package caches in
 this release have improved safety by hard-linking packages in read-only
-caches to the user&#8217;s primary user package cache. However, undefined behavior
+caches to the user’s primary user package cache. However, undefined behavior
 can still result when conda is running in multiple processes and operating on
 the same package caches or the same environments.</p>
 </li>
@@ -269,13 +269,13 @@ into conda as a replacement.</p>
 <code class="docutils literal"><span class="pre">noarch/repodata.json</span></code> or <code class="docutils literal"><span class="pre">noarch/repodata.json.bz2</span></code> exist. The check
 does pass if one or both of these files exist but are empty.</p>
 </li>
-<li><p class="first">A new &#8220;trace&#8221; log level with extremely verbose output, enabled with the
+<li><p class="first">A new “trace” log level with extremely verbose output, enabled with the
 <code class="docutils literal"><span class="pre">-v</span> <span class="pre">-v</span> <span class="pre">-v</span></code> or <code class="docutils literal"><span class="pre">-vvv</span></code> command-line flags, the <code class="docutils literal"><span class="pre">verbose:</span> <span class="pre">3</span></code> configuration
 parameter, or the <code class="docutils literal"><span class="pre">CONDA_VERBOSE=3</span></code> environment variable.</p>
 </li>
 <li><p class="first">Conda can now be installed with pip, but only when used as a library or dependency.</p>
 </li>
-<li><p class="first">The &#8216;r&#8217; channel is now part of the default channels.</p>
+<li><p class="first">The ‘r’ channel is now part of the default channels.</p>
 </li>
 <li><p class="first"><code class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span></code> now shows user-agent, UID, and GID.</p>
 </li>

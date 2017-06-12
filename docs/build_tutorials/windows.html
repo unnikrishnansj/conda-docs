@@ -281,7 +281,7 @@ SDK for Windows 7 and .NET Framework 4 are both reasonably well
 tested. Conda build is carefully tested to support these configurations,
 but there are known issues with the CMake build tool and these free VS
 2008 and 2010 alternatives. In these case, you should prefer the
-&#8220;NMake Makefile&#8221; generator, rather than a Visual Studio solution
+“NMake Makefile” generator, rather than a Visual Studio solution
 generator.</p>
 </div>
 <div class="section" id="windows-versions">
@@ -323,7 +323,7 @@ Installing only one makes it easier to keep track of the builds, but it is
 possible to have both installed on the same system at the same time. If you do
 have both installed, check to see which version comes first on PATH since
 this is the one you will be using.</p>
-<p>The &#8220;where&#8221; command is useful to check this: <code class="docutils literal"><span class="pre">where</span> <span class="pre">python</span></code></p>
+<p>The “where” command is useful to check this: <code class="docutils literal"><span class="pre">where</span> <span class="pre">python</span></code></p>
 <p>To build a package for a Python version other than the one in
 your Miniconda installation, use the <code class="docutils literal"><span class="pre">--python</span></code> option in the
 conda build command.</p>
@@ -331,7 +331,7 @@ conda build command.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">build</span> <span class="n">recipeDirectory</span> <span class="o">--</span><span class="n">python</span><span class="o">=</span><span class="mf">3.5</span>
 </pre></div>
 </div>
-<p>NOTE: Replace &#8220;recipeDirectory&#8221; with the name and path of your recipe
+<p>NOTE: Replace “recipeDirectory” with the name and path of your recipe
 directory.</p>
 </div>
 <div class="section" id="automated-testing">
@@ -342,13 +342,13 @@ runs to test the package, and any errors are reported.
 (On OS X and Linux a file named run_test.sh may be placed in the
 recipe directory.)</p>
 <p>NOTE: Data files can be stored in the recipe directory and moved
-into the test directory when the test is run using the &#8220;files&#8221;
-section of <a class="reference internal" href="../building/meta-yaml.html#meta-test"><span class="std std-ref">the &#8220;test&#8221; section of the meta.yaml file</span></a>.</p>
+into the test directory when the test is run using the “files”
+section of <a class="reference internal" href="../building/meta-yaml.html#meta-test"><span class="std std-ref">the “test” section of the meta.yaml file</span></a>.</p>
 </div>
 <div class="section" id="building-the-sep-package-with-conda-and-python-3-on-windows">
 <h2><a class="toc-backref" href="#id17">Building the SEP package with conda and Python 3 on Windows</a><a class="headerlink" href="#building-the-sep-package-with-conda-and-python-3-on-windows" title="Permalink to this headline">¶</a></h2>
-<p>If you have not already, <strong>Install Visual Studio 2015</strong>. Choose &#8220;Custom&#8221; install
-and choose to install &#8220;Visual C++&#8221; under &#8220;Programming Languages&#8221;.</p>
+<p>If you have not already, <strong>Install Visual Studio 2015</strong>. Choose “Custom” install
+and choose to install “Visual C++” under “Programming Languages”.</p>
 <p>The <a class="reference external" href="https://sep.readthedocs.io">SEP documentation</a> states that SEP works on
 Python 2 and 3 and depends only on NumPy. Searching for SEP and PyPI shows that
 there is already <a class="reference external" href="https://pypi.python.org/pypi/sep">a PyPI package for SEP</a>.</p>
@@ -363,7 +363,7 @@ from the completed recipe.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">skeleton</span> <span class="n">pypi</span> <span class="n">sep</span>
 </pre></div>
 </div>
-<p>The skeleton installs in a newly created directory &#8220;sep&#8221;. Go to that directory
+<p>The skeleton installs in a newly created directory “sep”. Go to that directory
 to view the files:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">sep</span>
 </pre></div>
@@ -384,8 +384,8 @@ importing it.</p>
 <p>In the meta.yaml file, requirements section, add a line to add
 NumPy as a requirement to build the package, and a second line
 to list NumPy as a requirement to run the package. Set the NumPy
-version to the letters &#8220;x.x&#8221;. Check to be sure this new line is
-aligned with &#8220;- python&#8221; on the line above it.</p>
+version to the letters “x.x”. Check to be sure this new line is
+aligned with “- python” on the line above it.</p>
 <p>EXAMPLE:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
@@ -397,17 +397,17 @@ aligned with &#8220;- python&#8221; on the line above it.</p>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">numpy     x.x</span>
 </pre></div>
 </div>
-<p>NOTE: Using the letters &#8220;x.x&#8221; instead of a specific version
-such as &#8220;1.11&#8221; pins NumPy dynamically, so that the actual version
+<p>NOTE: Using the letters “x.x” instead of a specific version
+such as “1.11” pins NumPy dynamically, so that the actual version
 of NumPy will be taken from the build command. Currently NumPy
 is the only package that can be pinned dynamically. Pinning is
-important for SEP because this package uses NumPy&#8217;s C API through
+important for SEP because this package uses NumPy’s C API through
 Cython. That API changes between NumPy versions, so it is important
 to use the same NumPy version at runtime that was used at build time.</p>
 <p>Optional test for the built package: This will test the package at the end of
-the build by making sure that the Python statement &#8220;import sep&#8221; runs
-successfully. In the test section, remove the &#8220;#&#8221; used to comment out the lines
-&#8220;test:&#8221; and &#8220;imports:&#8221; and add &#8220;- sep&#8221;, checking to be sure that
+the build by making sure that the Python statement “import sep” runs
+successfully. In the test section, remove the “#” used to comment out the lines
+“test:” and “imports:” and add “- sep”, checking to be sure that
 the indentation is consistent with the rest of the yaml file.</p>
 <p>EXAMPLE:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
@@ -419,8 +419,8 @@ the indentation is consistent with the rest of the yaml file.</p>
 </div>
 <div class="section" id="create-a-test-file">
 <h3>Create a test file.<a class="headerlink" href="#create-a-test-file" title="Permalink to this headline">¶</a></h3>
-<p>Make a new test file &#8220;run_test.py&#8221; containing this code adapted from
-<a class="reference external" href="https://sep.readthedocs.org/en/v0.5.x/detection.html">https://sep.readthedocs.org/en/v0.5.x/detection.html</a> and save it to the &#8220;sep&#8221;
+<p>Make a new test file “run_test.py” containing this code adapted from
+<a class="reference external" href="https://sep.readthedocs.org/en/v0.5.x/detection.html">https://sep.readthedocs.org/en/v0.5.x/detection.html</a> and save it to the “sep”
 directory:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">sep</span>
@@ -451,15 +451,15 @@ directory:</p>
 successfully. The output will also contain the location of the final
 package file, and a command that can be run to upload the package to
 Anaconda Cloud.</p>
-<p>Problems, questions? As discussed in the &#8220;Build strategy&#8221; section
+<p>Problems, questions? As discussed in the “Build strategy” section
 above, in case of any linker or compiler errors, the recipe can be
 modified and run again.</p>
 </div>
 </div>
 <div class="section" id="building-the-sep-package-with-conda-and-python-2-on-windows">
 <h2><a class="toc-backref" href="#id18">Building the SEP package with conda and Python 2 on Windows</a><a class="headerlink" href="#building-the-sep-package-with-conda-and-python-2-on-windows" title="Permalink to this headline">¶</a></h2>
-<p>If you have not already, <strong>Install Visual Studio 2008</strong>. Choose &#8220;Custom&#8221; install
-and choose to install &#8220;X64 Compilers and Tools&#8221;.</p>
+<p>If you have not already, <strong>Install Visual Studio 2008</strong>. Choose “Custom” install
+and choose to install “X64 Compilers and Tools”.</p>
 <p><strong>Install Visual Studio 2008 Service Pack 1</strong>.</p>
 <p>The <a class="reference external" href="https://sep.readthedocs.io">SEP documentation</a> states
 that SEP runs on Python 2 and 3, and depends only on NumPy.
@@ -476,7 +476,7 @@ completed recipe.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">skeleton</span> <span class="n">pypi</span> <span class="n">sep</span>
 </pre></div>
 </div>
-<p>The skeleton installs in a newly created directory &#8220;sep&#8221;.
+<p>The skeleton installs in a newly created directory “sep”.
 Go to that directory to view the files:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">sep</span>
 </pre></div>
@@ -497,8 +497,8 @@ importing it.</p>
 <p>In the meta.yaml file, requirements section, add a line to add
 NumPy as a requirement to build the package, and a second line
 to list NumPy as a requirement to run the package. Set the NumPy
-version to the letters &#8220;x.x&#8221;. Check to be sure this new line is
-aligned with &#8220;- python&#8221; on the line above it.</p>
+version to the letters “x.x”. Check to be sure this new line is
+aligned with “- python” on the line above it.</p>
 <p>EXAMPLE:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
@@ -510,14 +510,14 @@ aligned with &#8220;- python&#8221; on the line above it.</p>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">numpy     x.x</span>
 </pre></div>
 </div>
-<p>NOTE: Using the letters &#8220;x.x&#8221; instead of a specific version such as &#8220;1.11&#8221;
+<p>NOTE: Using the letters “x.x” instead of a specific version such as “1.11”
 pins NumPy dynamically, so that the actual version of NumPy will be taken
 from the build command. Currently NumPy is the only package that can be
 pinned dynamically.</p>
 <p>Optional test for the built package: This will test the package at the end of
-the build by making sure that the Python statement &#8220;import sep&#8221; runs
-successfully. In the test section, remove the &#8220;#&#8221; used to comment out the lines
-&#8220;test:&#8221; and &#8220;imports:&#8221; and add &#8220;- sep&#8221;, checking to be sure that
+the build by making sure that the Python statement “import sep” runs
+successfully. In the test section, remove the “#” used to comment out the lines
+“test:” and “imports:” and add “- sep”, checking to be sure that
 the indentation is consistent with the rest of the yaml file.</p>
 <p>EXAMPLE:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
@@ -529,8 +529,8 @@ the indentation is consistent with the rest of the yaml file.</p>
 </div>
 <div class="section" id="id5">
 <h3>Create a test file.<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>Make a new test file &#8220;run_test.py&#8221; containing this code adapted from
-<a class="reference external" href="https://sep.readthedocs.org/en/v0.5.x/detection.html">https://sep.readthedocs.org/en/v0.5.x/detection.html</a> and save it to the &#8220;sep&#8221;
+<p>Make a new test file “run_test.py” containing this code adapted from
+<a class="reference external" href="https://sep.readthedocs.org/en/v0.5.x/detection.html">https://sep.readthedocs.org/en/v0.5.x/detection.html</a> and save it to the “sep”
 directory:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">sep</span>
@@ -560,7 +560,7 @@ Now the recipe is complete.</p>
 <p>Check the output to make sure the build completed successfully. The output will
 also contain the location of the final package file, and a command that can be
 run to upload the package to Anaconda Cloud.</p>
-<p>Problems, questions? As discussed in the &#8220;Build strategy&#8221; section
+<p>Problems, questions? As discussed in the “Build strategy” section
 above, in case of any linker or compiler errors, the recipe can be
 modified and run again.</p>
 </div>
@@ -575,16 +575,16 @@ pySLALIB are similar to the above steps to build SEP but also include
 installing the Fortran compiler, writing meta.yaml to fetch the
 package from GitHub instead of PyPI, and applying the correct patches
 to the Fortran code.</p>
-<p><strong>Install Visual Studio 2015</strong>. Choose &#8220;Custom&#8221; install and choose
-to install &#8220;Visual C++&#8221; under &#8220;Programming Languages&#8221;.</p>
+<p><strong>Install Visual Studio 2015</strong>. Choose “Custom” install and choose
+to install “Visual C++” under “Programming Languages”.</p>
 <p><strong>Install Intel Parallel Studio Composer Edition</strong>. Go to <a class="reference external" href="https://software.intel.com/en-us/fortran-compilers">the Intel
 Fortran Compilers page</a>.
-Choose &#8220;Try &amp; Buy&#8221; and choose Parallel Studio Composer Edition for Windows.
+Choose “Try &amp; Buy” and choose Parallel Studio Composer Edition for Windows.
 You may choose the version with Fortran only instead of the version
 with Fortran and C++. There is a free 30 day trial available. Fill out
 the form, including your email address, and Intel will email you a
-download link. Download and install &#8220;Intel Parallel Studio XE Composer
-Edition for Fortran Windows&#8221;.</p>
+download link. Download and install “Intel Parallel Studio XE Composer
+Edition for Fortran Windows”.</p>
 <p><strong>Install Git</strong>. Because the pySLALIB package sources are
 retrieved from GitHub for the build, we must install Git:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">git</span>
@@ -603,20 +603,20 @@ repository to check that the build completed successfully.</li>
 <li><strong>intel_fortran_use.patch</strong> is a patch to the pySLALIB Fortran
 code so that it will work with the Intel Fortran compiler.</li>
 </ul>
-<p>In your home directory, create a recipe directory named &#8220;pyslalib&#8221;
+<p>In your home directory, create a recipe directory named “pyslalib”
 and copy in these four files.</p>
-<p><strong>Build the package</strong>. In the Apps menu under &#8220;Intel Parallel
-Studio XE 2016&#8221;, open the &#8220;Compiler 16.0 Update 3 for Intel 64
-Visual Studio 2015 environment&#8221; command prompt.</p>
+<p><strong>Build the package</strong>. In the Apps menu under “Intel Parallel
+Studio XE 2016”, open the “Compiler 16.0 Update 3 for Intel 64
+Visual Studio 2015 environment” command prompt.</p>
 <p>Run conda build, using the correct path name of the recipe
 directory, including your correct user name. Here our example
-username is &#8220;builder&#8221;:</p>
+username is “builder”:</p>
 <p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">C:\Users\builder\pyslalib</span></code></p>
 <p><strong>Check the output</strong>. Check the output to make sure the build
 completed successfully. The output will also contain the location
 of the final package file, and a command that can be run to
 upload the package to Anaconda Cloud.</p>
-<p><strong>Problems, questions</strong>? As discussed in the &#8220;Build strategy&#8221;
+<p><strong>Problems, questions</strong>? As discussed in the “Build strategy”
 section above, in case of any linker or compiler errors, the
 recipe can be modified and run again.</p>
 </div>
@@ -630,20 +630,20 @@ pySLALIB are similar to the above steps to build SEP but also include
 installing the Fortran compiler, writing meta.yaml to fetch the
 package from GitHub instead of PyPI, and applying the correct patches
 to the Fortran code.</p>
-<p><strong>Install Visual Studio 2008</strong>. Choose &#8220;Custom&#8221; install and choose to install
-&#8220;X64 Compilers and Tools&#8221;. Install Visual Studio 2008 Service Pack 1.</p>
+<p><strong>Install Visual Studio 2008</strong>. Choose “Custom” install and choose to install
+“X64 Compilers and Tools”. Install Visual Studio 2008 Service Pack 1.</p>
 <p><strong>Install Intel Parallel Studio Composer Edition</strong>. Go to <a class="reference external" href="https://software.intel.com/en-us/fortran-compilers">the Intel Fortran
 Compilers page</a>. Choose
-&#8220;Try &amp; Buy&#8221; and choose Parallel Studio Composer Edition for Windows. You may
+“Try &amp; Buy” and choose Parallel Studio Composer Edition for Windows. You may
 choose the version with Fortran only instead of the version with Fortran and
 C++. There is a free 30 day trial available. Fill out the form, including your
 email address, and Intel will email you a download link.</p>
-<p>When you click that link and open the download page for &#8220;Intel
-Parallel Studio XE Composer Edition for Fortran Windows&#8221;, select
-&#8220;Additional downloads, latest updates and prior versions.&#8221; Select
-version 2013 Update 6. This is &#8220;Intel Visual Fortran Composer XE
-2013 SP1 (compiler version 14.0)&#8221;, the most recent Intel Fortran
-compiler that works with Visual Studio 2008. Choose &#8220;Download Now&#8221;
+<p>When you click that link and open the download page for “Intel
+Parallel Studio XE Composer Edition for Fortran Windows”, select
+“Additional downloads, latest updates and prior versions.” Select
+version 2013 Update 6. This is “Intel Visual Fortran Composer XE
+2013 SP1 (compiler version 14.0)”, the most recent Intel Fortran
+compiler that works with Visual Studio 2008. Choose “Download Now”
 and install this version.</p>
 <p><strong>Install Git</strong>. Install git, since the pySLALIB package sources
 are retrieved from GitHub for the build:</p>
@@ -663,12 +663,12 @@ repository to check that the build completed successfully.</li>
 <li><strong>intel_fortran_use.patch</strong> is a patch to the pySLALIB Fortran code
 so that it will work with the Intel Fortran compiler.</li>
 </ul>
-<p>In your home directory, create a recipe directory named &#8220;pyslalib&#8221;
+<p>In your home directory, create a recipe directory named “pyslalib”
 and copy in these four files.</p>
-<p><strong>Build the package</strong>. In the Apps menu under &#8220;Intel Parallel Studio
-XE 2013&#8221;, open the &#8220;Intel 64 Visual Studio 2008 mode&#8221; command prompt.</p>
+<p><strong>Build the package</strong>. In the Apps menu under “Intel Parallel Studio
+XE 2013”, open the “Intel 64 Visual Studio 2008 mode” command prompt.</p>
 <p>Run conda build, using the correct path name of the recipe directory,
-including your correct user name. Here our example username is &#8220;builder&#8221;:</p>
+including your correct user name. Here our example username is “builder”:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">build</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">builder</span>\<span class="n">pyslalib</span>
 </pre></div>
 </div>
@@ -676,7 +676,7 @@ including your correct user name. Here our example username is &#8220;builder&#8
 successfully. The output will also contain the location of the final
 package file, and a command that can be run to upload the package to
 Anaconda Cloud.</p>
-<p>Problems, questions? As discussed in the &#8220;Build strategy&#8221; section above,
+<p>Problems, questions? As discussed in the “Build strategy” section above,
 in case of any linker or compiler errors, the recipe can be modified and
 run again.</p>
 </div>

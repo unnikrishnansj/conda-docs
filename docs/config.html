@@ -257,7 +257,7 @@ installation to override the users’ configuration. Please see <a class="refere
 the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></code> command, or use a text editor to create a new file named
 .condarc and save to your user home directory or root directory.</p>
 <p>Example:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda config --add channels r</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda config --add channels conda-forge</span>
 </pre></div>
 </div>
 <p>SEE ALSO: For a complete list of conda config commands available, see the
@@ -289,7 +289,7 @@ the <code class="docutils literal"><span class="pre">channel_alias</span></code>
 </div>
 <p>To select channels for a single environment, put a <code class="docutils literal"><span class="pre">.condarc</span></code> file in the root
 directory of that environment. If you have installed Miniconda with Python 3 in
-your home directory and the environment is named &#8220;flowers&#8221;, the path may be
+your home directory and the environment is named “flowers”, the path may be
 <code class="docutils literal"><span class="pre">~/miniconda3/envs/flowers/.condarc</span></code>, and for other conda installations the
 path will be similar.</p>
 </div>
@@ -484,7 +484,7 @@ argument.  This is unset by default.  Setting it implicitly enables anaconda_upl
 </div>
 <div class="section" id="limit-build-ouptut-verbosity-conda-build-3-0">
 <h3><a class="toc-backref" href="#id23">Limit build ouptut verbosity (conda-build 3.0+)</a><a class="headerlink" href="#limit-build-ouptut-verbosity-conda-build-3-0" title="Permalink to this headline">¶</a></h3>
-<p>Conda-build&#8217;s output verbosity can be reduced with the <code class="docutils literal"><span class="pre">quiet</span></code> setting. For
+<p>Conda-build’s output verbosity can be reduced with the <code class="docutils literal"><span class="pre">quiet</span></code> setting. For
 more verbosity use the CLI flag <code class="docutils literal"><span class="pre">--debug</span></code>.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">quiet</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -501,7 +501,7 @@ with the following config entry:</p>
 </pre></div>
 </div>
 <p>Note that conda-build does no checking when clobbering packages, and if you
-utilize conda-build 3&#8217;s build matrices with a build configuration that is not
+utilize conda-build 3’s build matrices with a build configuration that is not
 reflected somehow in the build string, you will be missing packages due to
 clobbering.</p>
 </div>

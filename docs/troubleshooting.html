@@ -123,7 +123,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#issue-valueerror-unknown-locale-utf-8-on-os-x">Issue: <code class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></code> on OS X</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#resolution-uncheck-set-locale-environment-variables-on-startup-setting-in-terminal-settings">Resolution: Uncheck &#8220;set locale environment variables on startup&#8221; setting in Terminal settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolution-uncheck-set-locale-environment-variables-on-startup-setting-in-terminal-settings">Resolution: Uncheck “set locale environment variables on startup” setting in Terminal settings</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#issue-attributeerror-or-missing-getproxies">Issue: <code class="docutils literal"><span class="pre">AttributeError</span></code> or missing <code class="docutils literal"><span class="pre">getproxies</span></code></a><ul>
@@ -235,7 +235,7 @@
 </ol>
 <div class="section" id="issue-permission-denied-errors-during-install">
 <span id="permission-denied"></span><h2>Issue:  permission denied errors during install<a class="headerlink" href="#issue-permission-denied-errors-during-install" title="Permalink to this headline">¶</a></h2>
-<p>umask is a command that determines the mask settings that control how file permissions are set for newly created files. If you have a very restrictive umask (such as 077), you will see &#8220;permission denied&#8221; errors.</p>
+<p>umask is a command that determines the mask settings that control how file permissions are set for newly created files. If you have a very restrictive umask (such as 077), you will see “permission denied” errors.</p>
 <div class="section" id="resolution-set-less-restrictive-umask-before-calling-conda-commands">
 <h3>Resolution:  set less restrictive umask before calling conda commands<a class="headerlink" href="#resolution-set-less-restrictive-umask-before-calling-conda-commands" title="Permalink to this headline">¶</a></h3>
 <p>Conda was intended as a user space tool, but often users need to use it in a global environment. One place this can go awry is with restrictive file permissions.  Conda creates links when you install files that have to be read by others on the system.</p>
@@ -271,7 +271,7 @@ not appear to be, e.g., a Python package that gives ImportError.</p>
 <div class="section" id="resolution-make-sure-you-are-in-the-same-conda-environment-as-your-package">
 <h3>Resolution: Make sure you are in the same conda environment as your package<a class="headerlink" href="#resolution-make-sure-you-are-in-the-same-conda-environment-as-your-package" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span></code> will tell you what environment is currently active (under
-&#8220;default environment&#8221;). You can verify that you are using the Python from the
+“default environment”). You can verify that you are using the Python from the
 correct environment by running</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">prefix</span><span class="p">)</span>
@@ -316,10 +316,10 @@ linking them to the environment. Sometimes these get corrupted somehow,
 breaking all environments that use them, and also any additional environments,
 since the same files are hard linked each time.</p>
 <p><strong>conda install -f will unarchive the package again and re-link it.</strong> It also
-does a md5 verification on the package (usually if this is different, it&#8217;s
+does a md5 verification on the package (usually if this is different, it’s
 because your channels have changed and there is a different package with the
 same name, version, and build number). Note that this breaks the links to any
-other environments that already had this package installed, so you&#8217;ll have to
+other environments that already had this package installed, so you’ll have to
 reinstall it there too. It also means that running <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-f</span></code> a lot
 can use up a lot of disk space if you have a lot of environments.  Note that
 the <code class="docutils literal"><span class="pre">-f</span></code> flag to <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code> (<code class="docutils literal"><span class="pre">--force</span></code>) implies <code class="docutils literal"><span class="pre">--no-deps</span></code>, so
@@ -348,10 +348,10 @@ not a git checkout (the version should not include any hashes).</p>
 <div class="section" id="issue-valueerror-unknown-locale-utf-8-on-os-x">
 <span id="unknown-locale"></span><h2>Issue: <code class="docutils literal"><span class="pre">ValueError</span> <span class="pre">unknown</span> <span class="pre">locale:</span> <span class="pre">UTF-8</span></code> on OS X<a class="headerlink" href="#issue-valueerror-unknown-locale-utf-8-on-os-x" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="resolution-uncheck-set-locale-environment-variables-on-startup-setting-in-terminal-settings">
-<h3>Resolution: Uncheck &#8220;set locale environment variables on startup&#8221; setting in Terminal settings<a class="headerlink" href="#resolution-uncheck-set-locale-environment-variables-on-startup-setting-in-terminal-settings" title="Permalink to this headline">¶</a></h3>
+<h3>Resolution: Uncheck “set locale environment variables on startup” setting in Terminal settings<a class="headerlink" href="#resolution-uncheck-set-locale-environment-variables-on-startup-setting-in-terminal-settings" title="Permalink to this headline">¶</a></h3>
 <p>This is a bug in the OS X Terminal app that only shows up in certain locales
 (country/language combinations). Open Terminal in /Applications/Utilities and
-uncheck the box &#8220;Set locale environment variables on startup&#8221;.</p>
+uncheck the box “Set locale environment variables on startup”.</p>
 <img alt="_images/locale.jpg" src="_images/locale.jpg" />
 <p>This will set your <code class="docutils literal"><span class="pre">LANG</span></code> environment variable to be empty. This may cause
 terminal use to incorrect settings for your locale. The <code class="docutils literal"><span class="pre">locale</span></code> command in
@@ -390,8 +390,8 @@ profile and restarting the shell.</p>
 <h3>Resolution:  Reactivate the environment or run <code class="docutils literal"><span class="pre">hash</span> <span class="pre">-r</span></code> (in bash) or <code class="docutils literal"><span class="pre">rehash</span></code> (in zsh)<a class="headerlink" href="#resolution-reactivate-the-environment-or-run-hash-r-in-bash-or-rehash-in-zsh" title="Permalink to this headline">¶</a></h3>
 <p>The way both bash and zsh work is that when you enter a command, the shell
 searches the paths in <code class="docutils literal"><span class="pre">PATH</span></code> one by one until it finds the command. The shell
-then caches the location (this is called &#8220;hashing&#8221; in shell terminology), so that
-when you type the command again, the shell doesn&#8217;t have to search the <code class="docutils literal"><span class="pre">PATH</span></code>
+then caches the location (this is called “hashing” in shell terminology), so that
+when you type the command again, the shell doesn’t have to search the <code class="docutils literal"><span class="pre">PATH</span></code>
 again.</p>
 <p>The problem is that before you conda installed the program, you ran the command
 which loaded and hashed the one in some other location on the <code class="docutils literal"><span class="pre">PATH</span></code> (such as
@@ -456,7 +456,7 @@ this one:</p>
 <p>This indicates that the specification to install wxpython 3 depends on
 installing Python 2.7, which conflicts with the specification to install python
 3.</p>
-<p>You can use &#8220;conda info wxpython&#8221; or &#8220;conda info wxpython=3&#8221; to show information
+<p>You can use “conda info wxpython” or “conda info wxpython=3” to show information
 about this package and its dependencies:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">wxpython</span> <span class="mf">3.0</span> <span class="n">py27_0</span>
 <span class="o">-------------------</span>
@@ -499,7 +499,7 @@ with Python 3.4.  A first step is to create a Python 3.4 environment:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda install -n py34 cx_freeze
 </pre></div>
 </div>
-<p>However, when you do this you&#8217;ll get the following error (at the time this was written, on the platform used):</p>
+<p>However, when you do this you’ll get the following error (at the time this was written, on the platform used):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Using</span> <span class="n">Anaconda</span> <span class="n">Cloud</span> <span class="n">api</span> <span class="n">site</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span>
 <span class="n">Fetching</span> <span class="n">package</span> <span class="n">metadata</span> <span class="o">.........</span>
 <span class="n">Solving</span> <span class="n">package</span> <span class="n">specifications</span><span class="p">:</span> <span class="o">.</span>
@@ -535,7 +535,7 @@ want to go with public opinion then <a class="reference external" href="https://
 <img alt="cx_freeze packages on anaconda.org" src="_images/package-popularity.png" />
 </div>
 <p>Notice that the <code class="docutils literal"><span class="pre">pyzo</span></code> organization has by far the most downloads, so you might
-choose to use their package. If so, you can add their organization&#8217;s channel
+choose to use their package. If so, you can add their organization’s channel
 by specifying it on the command line (as shown below):</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda create -c pyzo -n cxfreeze_py34 cx_freeze <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.4
 Using Anaconda Cloud api site https://api.anaconda.org

@@ -194,7 +194,7 @@
 <li>Conda build installed</li>
 <li>PyCrypto installed into the root environment</li>
 <li>Experience with building conda packages</li>
-<li>Experience in setting up your own conda repository using the &#8220;conda index&#8221; command</li>
+<li>Experience in setting up your own conda repository using the “conda index” command</li>
 <li>Familiarity with the basics of public/private key cryptography, and</li>
 <li>Understanding of the concept of digital signatures.</li>
 </ul>
@@ -204,7 +204,7 @@
 <p>Building a signed conda package is done with the following steps:</p>
 <ol class="arabic simple">
 <li>Create the public/private key pair.</li>
-<li>Sign the packages using the &#8220;conda sign&#8221; command.</li>
+<li>Sign the packages using the “conda sign” command.</li>
 <li>Verify that the signatures are valid.</li>
 <li>Index the repository.</li>
 <li>Use the signed package.</li>
@@ -216,11 +216,11 @@
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">sign</span> <span class="o">--</span><span class="n">keygen</span> <span class="n">MyKey</span>
 </pre></div>
 </div>
-<p>NOTE: Replace &#8220;MyKey&#8221; with the actual name you wish to give your key pair.</p>
+<p>NOTE: Replace “MyKey” with the actual name you wish to give your key pair.</p>
 </div>
 <div class="section" id="step-two-sign-the-packages">
 <h2>Step two: Sign the packages<a class="headerlink" href="#step-two-sign-the-packages" title="Permalink to this headline">¶</a></h2>
-<p>Sign the packages by simply passing the conda packages that need to be signed to the &#8220;conda sign&#8221; command. Example, if you wish to sign all packages in the Linux-64 directory:</p>
+<p>Sign the packages by simply passing the conda packages that need to be signed to the “conda sign” command. Example, if you wish to sign all packages in the Linux-64 directory:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">repository</span><span class="o">&gt;/</span><span class="n">linux</span><span class="o">-</span><span class="mi">64</span>
 <span class="n">conda</span> <span class="n">sign</span> <span class="o">*.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
 </pre></div>

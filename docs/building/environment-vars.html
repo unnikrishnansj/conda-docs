@@ -212,7 +212,7 @@ of these locations.</p>
 <h2>Environment variables set during the build process<a class="headerlink" href="#environment-variables-set-during-the-build-process" title="Permalink to this headline">¶</a></h2>
 <p>The following environment variables are set, both on Unix (build.sh) and on
 Windows (bld.bat) during the build process.
-(By default, these are the only variables available to your build script &#8211;
+(By default, these are the only variables available to your build script –
 unless otherwise noted, no variables are inherited from the shell environment
 in which you invoked <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code>. See <a class="reference internal" href="#inherited-env-vars"><span class="std std-ref">Inherited Environment Variables</span></a> to
 override this behavior.)</p>
@@ -230,9 +230,9 @@ compiled with</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">CMAKE_GENERATOR</span></code></td>
 <td>The CMake generator string for the current build environment. On Unix
-systems, this is always &#8220;Unix Makefiles&#8221;. On Windows, it is generated
+systems, this is always “Unix Makefiles”. On Windows, it is generated
 according to the Visual Studio version activated at build time,
-e.g. &#8220;Visual Studio 9 2008 Win64&#8221;</td>
+e.g. “Visual Studio 9 2008 Win64”</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">CONDA_BUILD=1</span></code></td>
 <td>Always set</td>
@@ -245,7 +245,7 @@ e.g. &#8220;Visual Studio 9 2008 Win64&#8221;</td>
 <td>The shared library extension</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">DIRTY</span></code></td>
-<td>Set to 1 if <cite>&#8211;dirty</cite> flag passed to <cite>conda build</cite> command.  May be used to skip parts of
+<td>Set to 1 if <cite>–dirty</cite> flag passed to <cite>conda build</cite> command.  May be used to skip parts of
 build script conditionally (downloads, extraction, other things that need not be repeated
 for faster iteration time when developing recipes)</td>
 </tr>
@@ -264,7 +264,7 @@ arguments to make, such as <cite>-j2</cite>, which will use 2 CPU cores to build
 your recipe.</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">NPY_VER</span></code></td>
-<td>Numpy version building against (Set via <cite>&#8211;numpy</cite> arg or via <cite>CONDA_NPY</cite> environment variable.)</td>
+<td>Numpy version building against (Set via <cite>–numpy</cite> arg or via <cite>CONDA_NPY</cite> environment variable.)</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">PATH</span></code></td>
 <td>Inherited from your shell environment, and augmented with <code class="docutils literal"><span class="pre">$PREFIX/bin</span></code></td>
@@ -296,7 +296,7 @@ installed in the build prefix when it is listed as a build requirement).</td>
 <td>Directory of recipe</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">SP_DIR</span></code></td>
-<td>Python&#8217;s site-packages location</td>
+<td>Python’s site-packages location</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">SRC_DIR</span></code></td>
 <td>Path to where source is unpacked (or cloned). If the source file is not
@@ -309,7 +309,7 @@ source file</td>
 </tr>
 </tbody>
 </table>
-<p>When building &#8220;Unix-style&#8221; packages on Windows, which are then usually
+<p>When building “Unix-style” packages on Windows, which are then usually
 statically linked to executables, we do this in a special <em>Library</em> directory
 under the build prefix.  The following environment variables are only
 defined in Windows:</p>

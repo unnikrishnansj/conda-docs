@@ -287,12 +287,12 @@
 </div>
 <div class="section" id="verify-current-environment">
 <h2><a class="toc-backref" href="#id6">Verify current environment</a><a class="headerlink" href="#verify-current-environment" title="Permalink to this headline">¶</a></h2>
-<p>Which environment are you using right now &#8211; snowflakes or bunnies? To find out, type the command:</p>
+<p>Which environment are you using right now – snowflakes or bunnies? To find out, type the command:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
 </pre></div>
 </div>
 <p>Conda displays the list of all environments, with the current environment
-highlighted with an &#8216;*&#8217; character.</p>
+highlighted with an ‘*’ character.</p>
 </div>
 <div class="section" id="clone-an-environment">
 <h2><a class="toc-backref" href="#id7">Clone an environment</a><a class="headerlink" href="#clone-an-environment" title="Permalink to this headline">¶</a></h2>
@@ -331,7 +331,7 @@ highlighted with an &#8216;*&#8217; character.</p>
 <p>NOTE: If you already have an environment.yml file in your current directory, it will be overwritten with the new file.</p>
 <p>Export your active environment to the new file:</p>
 <p><strong>All users:</strong> <code class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></code></p>
-<p>NOTE: This file handles the environment&#8217;s pip packages as well as its conda packages.</p>
+<p>NOTE: This file handles the environment’s pip packages as well as its conda packages.</p>
 <p>Email or copy the exported environment.yml file to the other person.</p>
 <p>The other person will then need to create the environment by the following command:</p>
 <p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code></p>
@@ -409,7 +409,7 @@ highlighted with an &#8216;*&#8217; character.</p>
 <div class="section" id="saved-environment-variables">
 <h2><a class="toc-backref" href="#id14">Saved environment variables</a><a class="headerlink" href="#saved-environment-variables" title="Permalink to this headline">¶</a></h2>
 <p>Conda environments can include saved environment variables on Linux, macOS, and Windows.</p>
-<p>Suppose you want an environment &#8216;analytics&#8217; to store a secret key needed to log in to a server and a path to a configuration file. We will write a script named <code class="docutils literal"><span class="pre">env_vars</span></code> to do this.</p>
+<p>Suppose you want an environment ‘analytics’ to store a secret key needed to log in to a server and a path to a configuration file. We will write a script named <code class="docutils literal"><span class="pre">env_vars</span></code> to do this.</p>
 <div class="section" id="linux-and-macos">
 <h3><a class="toc-backref" href="#id15">Linux and macOS</a><a class="headerlink" href="#linux-and-macos" title="Permalink to this headline">¶</a></h3>
 <p>Locate the directory for the conda environment, such as <code class="docutils literal"><span class="pre">/home/jsmith/anaconda3/envs/analytics</span></code> . Enter that directory and create these subdirectories and files:</p>
@@ -462,7 +462,7 @@ highlighted with an &#8216;*&#8217; character.</p>
 <h3><a class="toc-backref" href="#id17">More notes on environment variable scripts</a><a class="headerlink" href="#more-notes-on-environment-variable-scripts" title="Permalink to this headline">¶</a></h3>
 <p>These script files can be part of a conda package, in which case these environment variables become active when an environment containing that package is activated.</p>
 <p>Scripts can be given any name, but multiple packages may create script files, so be sure that you choose descriptive names for your scripts that are not used by other packages. One popular option is to give the script a name of the form packagename-scriptname.sh (or on Windows packagename-scriptname.bat).</p>
-<p>Next, we&#8217;ll take a look at <a class="reference internal" href="../py2or3.html"><span class="doc">Managing Python</span></a>.</p>
+<p>Next, we’ll take a look at <a class="reference internal" href="../py2or3.html"><span class="doc">Managing Python</span></a>.</p>
 </div>
 </div>
 </div>

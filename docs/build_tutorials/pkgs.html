@@ -244,7 +244,7 @@ conda upgrade conda-build
 software repository for the Python programming language.</p>
 <p>In this section you are going to use conda skeleton to generate a conda recipe, which informs conda-build about
 where the source files are located and how to build and install the package.</p>
-<p>You&#8217;ll be working with a package named <a class="reference external" href="https://github.com/joerick/pyinstrument">Pyinstrument</a> that is hosted on PyPI. Pyinstrument is a Python
+<p>You’ll be working with a package named <a class="reference external" href="https://github.com/joerick/pyinstrument">Pyinstrument</a> that is hosted on PyPI. Pyinstrument is a Python
 statistical profiler that records the whole call stack once each millisecond, so programmers can see which
 parts of their code are slowest and how to make them faster.</p>
 <p>First, in your user home directory, run the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code> command:</p>
@@ -304,7 +304,7 @@ explicitly build a version of the Pyinstrument package for Python 3.3, use</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda build --python <span class="m">3</span>.3 pyinstrument
 </pre></div>
 </div>
-<p>You&#8217;ll notice that the file printed at the end of the conda-build output has changed to reflect
+<p>You’ll notice that the file printed at the end of the conda-build output has changed to reflect
 the requested version of Python. <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code> will look in the package directory for the file
 that matches your current Python version.</p>
 <p>Windows example file path:</p>
@@ -381,7 +381,7 @@ to create packages for Python versions 2.7, 3.4 and 3.5 along with all of the ar
 from PyPi packages. This section explains just a few of the most common errors and how you can correct them.</p>
 <div class="section" id="a-build-package-missing">
 <h3>A. Build Package missing<a class="headerlink" href="#a-build-package-missing" title="Permalink to this headline">¶</a></h3>
-<p>Conda build may produce the following error that it couldn&#8217;t find a package. Let&#8217;s try to make a conda
+<p>Conda build may produce the following error that it couldn’t find a package. Let’s try to make a conda
 skeleton package for Skyfield. The <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code> command is</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda skeleton pypi skyfield
 </pre></div>
@@ -406,7 +406,7 @@ first creating a conda recipe for some-package using conda skeleton and then bui
 conda build sgp4
 </pre></div>
 </div>
-<p>You may also try using the &#8211;recursive flag with conda skeleton, but this will attempt to make conda
+<p>You may also try using the –recursive flag with conda skeleton, but this will attempt to make conda
 recipes for all required packages even those that are already available to conda install.</p>
 </div>
 </div>

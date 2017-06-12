@@ -202,7 +202,7 @@
 <h1>Silent installation<a class="headerlink" href="#silent-installation" title="Permalink to this headline">¶</a></h1>
 <p>Silent installation of Miniconda or Anaconda can be used for deployment or testing or building services such as Travis CI and
 Appveyor. In silent mode, screen prompts are not shown on screen and default settings are automatically accepted.</p>
-<p>NOTE: These instructions are written for Miniconda, but you can substitute &#8220;Anaconda&#8221; if you are using that version.</p>
+<p>NOTE: These instructions are written for Miniconda, but you can substitute “Anaconda” if you are using that version.</p>
 <p>We recommend starting with the latest version of Miniconda or Anaconda. Check to be sure your version
 is up to date with a simple:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">conda update conda</span>
@@ -215,7 +215,7 @@ the <code class="docutils literal"><span class="pre">/S</span></code> argument. 
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">/InstallationType=[JustMe|AllUsers]</span></code>, default: <code class="docutils literal"><span class="pre">JustMe</span></code></li>
 <li><code class="docutils literal"><span class="pre">/AddToPath=[0|1]</span></code>, default: <code class="docutils literal"><span class="pre">1</span></code></li>
-<li><code class="docutils literal"><span class="pre">/RegisterPython=[0|1]</span></code>, make this the system&#8217;s default Python, default: <code class="docutils literal"><span class="pre">0</span></code> (Just me), <code class="docutils literal"><span class="pre">1</span></code> (All users)</li>
+<li><code class="docutils literal"><span class="pre">/RegisterPython=[0|1]</span></code>, make this the system’s default Python, default: <code class="docutils literal"><span class="pre">0</span></code> (Just me), <code class="docutils literal"><span class="pre">1</span></code> (All users)</li>
 <li><code class="docutils literal"><span class="pre">/S</span></code></li>
 <li><code class="docutils literal"><span class="pre">/D=&lt;installation</span> <span class="pre">path&gt;</span></code></li>
 </ul>
@@ -224,7 +224,7 @@ argument and should <strong>NOT</strong> be wrapped in quotation marks. When usi
 installation with <code class="docutils literal"><span class="pre">/S</span></code> you must also specify a destination installation path
 with <code class="docutils literal"><span class="pre">/D</span></code>.</p>
 <p>The following command installs Miniconda for the current user without
-registering Python as the system&#8217;s default:</p>
+registering Python as the system’s default:</p>
 <div class="highlight-bat"><div class="highlight"><pre><span></span><span class="k">start</span> /wait <span class="s2">&quot;&quot;</span> Miniconda4-latest-Windows-x86_64.exe /InstallationType=JustMe /RegisterPython=0 /S /D=<span class="nv">%UserProfile%</span>\Miniconda3
 </pre></div>
 </div>
@@ -247,8 +247,8 @@ bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
 </pre></div>
 </div>
 <p>NOTE: This only sets the PATH for the current session, not permanently. Trying
-to use conda when conda is not in your PATH will cause errors such as &#8220;command
-not found&#8221;.</p>
+to use conda when conda is not in your PATH will cause errors such as “command
+not found”.</p>
 <p>We recommend running <code class="docutils literal"><span class="pre">source</span> <span class="pre">$HOME/miniconda3/bin/activate</span></code> in each new
 bash session before using conda, which will set the PATH and run the activation
 scripts of your conda packages. Replace <code class="docutils literal"><span class="pre">$HOME/miniconda3/bin/activate</span></code>

@@ -250,7 +250,7 @@ conda upgrade conda-build
 <p>The format is identical across platforms and operating systems.  During the install process,
 files are extracted into the install prefix, except for files in the <code class="docutils literal"><span class="pre">info/</span></code>
 directory. Installing the files of a conda package into an environment can be thought of as changing the
-directory to an environment, then downloading and extracting the zip file and its dependencies &#8211; all with
+directory to an environment, then downloading and extracting the zip file and its dependencies – all with
 the single <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">[packagename]</span></code> command.</p>
 </div>
 <div class="section" id="about-conda-build-recipe">
@@ -288,7 +288,7 @@ information. A blank sample meta.yaml follows to make it easier to match up the 
 <td>pyinstrument</td>
 </tr>
 <tr class="row-even"><td>version</td>
-<td>&#8220;0.13.1&#8221; (or latest from <a class="reference external" href="https://github.com/joerick/pyinstrument/releases">https://github.com/joerick/pyinstrument/releases</a>)</td>
+<td>“0.13.1” (or latest from <a class="reference external" href="https://github.com/joerick/pyinstrument/releases">https://github.com/joerick/pyinstrument/releases</a>)</td>
 </tr>
 <tr class="row-odd"><td>git_rev</td>
 <td>v0.13.1 (or latest from <a class="reference external" href="https://github.com/joerick/pyinstrument/releases">https://github.com/joerick/pyinstrument/releases</a>)</td>
@@ -349,9 +349,9 @@ match <a class="reference download internal" href="../_downloads/meta1.yaml" dow
 </ul>
 <p>These two build files contain all the variables such as for 32-bit or 64-bit architecture (the ARCH
 variable) and the build environment prefix (PREFIX). The two files <code class="docutils literal"><span class="pre">build.sh</span></code> and <code class="docutils literal"><span class="pre">bld.bat</span></code> files must be
-in the same directory as your <code class="docutils literal"><span class="pre">meta.yaml</span></code> file. In this tutorial you&#8217;re going to make both <code class="docutils literal"><span class="pre">build.sh</span></code> and
+in the same directory as your <code class="docutils literal"><span class="pre">meta.yaml</span></code> file. In this tutorial you’re going to make both <code class="docutils literal"><span class="pre">build.sh</span></code> and
 <code class="docutils literal"><span class="pre">bld.bat</span></code> so that other users can build the appropriate package for their architecture.</p>
-<p>First we&#8217;ll write the build file for Windows and then the build file for Linux and OS X.</p>
+<p>First we’ll write the build file for Windows and then the build file for Linux and OS X.</p>
 <p>All users, in your favorite text editor, create a new file named <code class="docutils literal"><span class="pre">bld.bat</span></code> and enter the text exactly as shown:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="s2">&quot;%PYTHON%&quot;</span> setup.py install
 <span class="k">if</span> errorlevel <span class="m">1</span> <span class="nb">exit</span> <span class="m">1</span>
@@ -378,7 +378,7 @@ script if you need to by using the <code class="docutils literal"><span class="p
 <div class="highlight-bash"><div class="highlight"><pre><span></span>conda build pyinstrument
 </pre></div>
 </div>
-<p>When conda-build is finished, it displays the filename and the file&#8217;s location at the end of the build.
+<p>When conda-build is finished, it displays the filename and the file’s location at the end of the build.
 In our case the file was saved to:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>~/anaconda/conda-bld/linux-64/pyinstrument-0.13.1-py27_0.tar.bz2
 </pre></div>
