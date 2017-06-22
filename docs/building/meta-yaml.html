@@ -626,8 +626,27 @@ Default is False.</p>
 </div>
 <div class="section" id="architecture-independent-packages">
 <h3><a class="toc-backref" href="#id34">Architecture independent packages</a><a class="headerlink" href="#architecture-independent-packages" title="Permalink to this headline">¶</a></h3>
-<p>The conda build system allows you to specify “no architecture” when building a package, thus making it compatible
-with all platforms and architectures. Noarch packages can be installed on any platform.</p>
+<p>The conda build system allows you to specify “no architecture” when building a
+package, thus making it compatible with all platforms and architectures. Noarch
+packages can be installed on any platform.</p>
+<p>Starting with conda-build 2.1, and conda 4.3, there is a new syntax that
+supports different languages. Assigning the noarch key as <code class="docutils literal"><span class="pre">generic</span></code> tells
+conda to not try any manipulation of the contents.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">noarch</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">generic</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">noarch:</span> <span class="pre">generic</span></code> is most useful for packages such as static javascript assets
+and source archives. For pure Python packages that can run on any Python
+version, you can use the <code class="docutils literal"><span class="pre">noarch:</span> <span class="pre">python</span></code> value instead:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">noarch</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+</pre></div>
+</div>
+<p>The legacy syntax for <code class="docutils literal"><span class="pre">noarch_python</span></code> is still valid, and is what you should
+use if you need to be certain that your package will be installable where conda
+4.3 is not yet available. All other forms of noarch packages require conda &gt;=4.3
+to install.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">noarch_python</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
