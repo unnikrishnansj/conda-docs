@@ -33,6 +33,7 @@ docs/_sources/building/pkg-name-conv.rst.txt
 docs/_sources/building/recipe.rst.txt
 docs/_sources/building/sample-recipes.rst.txt
 docs/_sources/building/shared-libraries.rst.txt
+docs/_sources/building/variants.rst.txt
 docs/_sources/changelog.rst.txt
 docs/_sources/channels.rst.txt
 docs/_sources/commands.rst.txt
@@ -168,6 +169,7 @@ docs/building/pkg-name-conv.html
 docs/building/recipe.html
 docs/building/sample-recipes.html
 docs/building/shared-libraries.html
+docs/building/variants.html
 docs/changelog.html
 docs/channels.html
 docs/commands.html

@@ -120,6 +120,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="environment-vars.html">Environment variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="build-scripts.html">Pre/Post link/unlink scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variants.html">Build Variants</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../spec.html">Conda package specification</a></li>
 </ul>
 </li>
@@ -243,46 +244,47 @@
 <li><a class="reference internal" href="#architecture-independent-packages" id="id34">Architecture independent packages</a></li>
 <li><a class="reference internal" href="#include-build-recipe" id="id35">Include build recipe</a></li>
 <li><a class="reference internal" href="#use-environment-variables" id="id36">Use Environment Variables</a></li>
+<li><a class="reference internal" href="#pin-downstream" id="id37">Pin downstream</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#requirements-section" id="id37">Requirements section</a><ul>
-<li><a class="reference internal" href="#build" id="id38">Build</a></li>
-<li><a class="reference internal" href="#run" id="id39">Run</a></li>
+<li><a class="reference internal" href="#requirements-section" id="id38">Requirements section</a><ul>
+<li><a class="reference internal" href="#build" id="id39">Build</a></li>
+<li><a class="reference internal" href="#run" id="id40">Run</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#test-section" id="id40">Test section</a><ul>
-<li><a class="reference internal" href="#test-files" id="id41">Test files</a></li>
-<li><a class="reference internal" href="#source-files" id="id42">Source files</a></li>
-<li><a class="reference internal" href="#test-requirements" id="id43">Test requirements</a></li>
-<li><a class="reference internal" href="#test-commands" id="id44">Test commands</a></li>
-<li><a class="reference internal" href="#python-imports" id="id45">Python imports</a></li>
-<li><a class="reference internal" href="#run-test-script" id="id46">Run test script</a></li>
+<li><a class="reference internal" href="#test-section" id="id41">Test section</a><ul>
+<li><a class="reference internal" href="#test-files" id="id42">Test files</a></li>
+<li><a class="reference internal" href="#source-files" id="id43">Source files</a></li>
+<li><a class="reference internal" href="#test-requirements" id="id44">Test requirements</a></li>
+<li><a class="reference internal" href="#test-commands" id="id45">Test commands</a></li>
+<li><a class="reference internal" href="#python-imports" id="id46">Python imports</a></li>
+<li><a class="reference internal" href="#run-test-script" id="id47">Run test script</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#outputs-section" id="id47">Outputs section</a><ul>
-<li><a class="reference internal" href="#specifying-files-to-include-in-output" id="id48">Specifying files to include in output</a></li>
-<li><a class="reference internal" href="#subpackage-requirements" id="id49">Subpackage requirements</a></li>
-<li><a class="reference internal" href="#implicit-metapackages" id="id50">Implicit metapackages</a></li>
-<li><a class="reference internal" href="#subpackage-tests" id="id51">Subpackage tests</a></li>
-<li><a class="reference internal" href="#output-type" id="id52">Output type</a></li>
+<li><a class="reference internal" href="#outputs-section" id="id48">Outputs section</a><ul>
+<li><a class="reference internal" href="#specifying-files-to-include-in-output" id="id49">Specifying files to include in output</a></li>
+<li><a class="reference internal" href="#subpackage-requirements" id="id50">Subpackage requirements</a></li>
+<li><a class="reference internal" href="#implicit-metapackages" id="id51">Implicit metapackages</a></li>
+<li><a class="reference internal" href="#subpackage-tests" id="id52">Subpackage tests</a></li>
+<li><a class="reference internal" href="#output-type" id="id53">Output type</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#about-section" id="id53">About section</a><ul>
-<li><a class="reference internal" href="#license-file" id="id54">License file</a></li>
+<li><a class="reference internal" href="#about-section" id="id54">About section</a><ul>
+<li><a class="reference internal" href="#license-file" id="id55">License file</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#app-section" id="id55">App section</a><ul>
-<li><a class="reference internal" href="#entry-point" id="id56">Entry point</a></li>
-<li><a class="reference internal" href="#icon-file" id="id57">Icon file</a></li>
-<li><a class="reference internal" href="#summary" id="id58">Summary</a></li>
-<li><a class="reference internal" href="#own-environment" id="id59">Own environment</a></li>
+<li><a class="reference internal" href="#app-section" id="id56">App section</a><ul>
+<li><a class="reference internal" href="#entry-point" id="id57">Entry point</a></li>
+<li><a class="reference internal" href="#icon-file" id="id58">Icon file</a></li>
+<li><a class="reference internal" href="#summary" id="id59">Summary</a></li>
+<li><a class="reference internal" href="#own-environment" id="id60">Own environment</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#extra-section" id="id60">Extra section</a></li>
-<li><a class="reference internal" href="#templating-with-jinja" id="id61">Templating with Jinja</a></li>
-<li><a class="reference internal" href="#preprocessing-selectors" id="id62">Preprocessing selectors</a></li>
-<li><a class="reference internal" href="#id2" id="id63">Features</a></li>
-<li><a class="reference internal" href="#making-packages-relocatable" id="id64">Making packages relocatable</a></li>
+<li><a class="reference internal" href="#extra-section" id="id61">Extra section</a></li>
+<li><a class="reference internal" href="#templating-with-jinja" id="id62">Templating with Jinja</a></li>
+<li><a class="reference internal" href="#preprocessing-selectors" id="id63">Preprocessing selectors</a></li>
+<li><a class="reference internal" href="#id2" id="id64">Features</a></li>
+<li><a class="reference internal" href="#making-packages-relocatable" id="id65">Making packages relocatable</a></li>
 </ul>
 </li>
 </ul>
@@ -658,13 +660,47 @@ by the <code class="docutils literal"><span class="pre">conda</span> <span class
 emitted during the build process and the variable will remain
 undefined.</p>
 </div>
+<div class="section" id="pin-downstream">
+<span id="run-exports"></span><h3><a class="toc-backref" href="#id37">Pin downstream</a><a class="headerlink" href="#pin-downstream" title="Permalink to this headline">¶</a></h3>
+<p>It is often useful to require a particular runtime library to be present at
+runtime when a particular library or package is used at build time. For example,
+if you use a C++ compiler to build a package with dynamic linkage, then it is
+likely that you also need to include the C++ runtime package corresponding to
+that compiler as a runtime requirement. Generally, these imposed pinnings should
+be added to the tool (compiler) or library (jpeg, bzip2, and so on) used at build
+time, rather than to the package using those tools or libraries.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">run_exports</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libstdc++</span>
+</pre></div>
+</div>
+<p>You can express version constraints directly, or use any of the jinja2 helper
+functions listed at <a class="reference internal" href="variants.html#extra-jinja2"><span class="std std-ref">Extra Jinja2 functions</span></a>.</p>
+<p>For example, you may use <a class="reference internal" href="variants.html#pinning-expressions"><span class="std std-ref">Pinning expressions</span></a> to obtain flexible version
+pinning relative to versions present at build time:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">run_exports</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libstdc++  {{ pin_compatible(&#39;g++&#39;, &#39;x&#39;) }}</span>
+</pre></div>
+</div>
+<p>With this example, if g++ were version 5.3.0, this pinning expression would
+evaluate to <code class="docutils literal"><span class="pre">&gt;=5.3.0,&lt;6</span></code>.</p>
+<p>Note that <code class="docutils literal"><span class="pre">run_exports</span></code> can be specified both in the build section, and on
+a per-output basis for split packages.</p>
+<p>The potential downside of this feature is that it takes some control over constraints away from downstream users.  If an upstream package has a problematic run_exports constraint, you can ignore it in your recipe by listing the upstream package name in the <code class="docutils literal"><span class="pre">build/ignore_run_exports</span></code> section:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">ignore_run_exports</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libstdc++</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="requirements-section">
-<h2><a class="toc-backref" href="#id37">Requirements section</a><a class="headerlink" href="#requirements-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id38">Requirements section</a><a class="headerlink" href="#requirements-section" title="Permalink to this headline">¶</a></h2>
 <p>Versions for requirements must follow the Conda match specification. See <a class="reference internal" href="../spec.html#build-version-spec"><span class="std std-ref">Package match specifications</span></a> .</p>
 <p>The build and runtime requirements. Dependencies of these requirements are included automatically.</p>
 <div class="section" id="build">
-<h3><a class="toc-backref" href="#id38">Build</a><a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id39">Build</a><a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
 <p>Packages required to build the package. Python and NumPy must be listed explicitly if they are required.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
@@ -673,7 +709,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="run">
-<h3><a class="toc-backref" href="#id39">Run</a><a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id40">Run</a><a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
 <p>Packages required to run the package. These are the dependencies that will be installed automatically whenever the package is installed. Package names should follow the <a class="reference internal" href="../spec.html#build-version-spec"><span class="std std-ref">Package match specifications</span></a> .</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
@@ -692,10 +728,10 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="test-section">
-<span id="meta-test"></span><h2><a class="toc-backref" href="#id40">Test section</a><a class="headerlink" href="#test-section" title="Permalink to this headline">¶</a></h2>
+<span id="meta-test"></span><h2><a class="toc-backref" href="#id41">Test section</a><a class="headerlink" href="#test-section" title="Permalink to this headline">¶</a></h2>
 <p>If this section exists or if there is a run_test.[py,pl,sh,bat] file in the recipe, the package will be installed into a test environment after the build is finished and the tests will be run there.</p>
 <div class="section" id="test-files">
-<h3><a class="toc-backref" href="#id41">Test files</a><a class="headerlink" href="#test-files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id42">Test files</a><a class="headerlink" href="#test-files" title="Permalink to this headline">¶</a></h3>
 <p>Test files which are copied from the recipe into the (temporary) test directory which are needed during testing:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">files</span><span class="p p-Indicator">:</span>
@@ -704,7 +740,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="source-files">
-<h3><a class="toc-backref" href="#id42">Source files</a><a class="headerlink" href="#source-files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id43">Source files</a><a class="headerlink" href="#source-files" title="Permalink to this headline">¶</a></h3>
 <p>Test files which are copied from the source work directory into the (temporary) test directory which are needed during testing:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">source_files</span><span class="p p-Indicator">:</span>
@@ -716,7 +752,7 @@ undefined.</p>
 <p>This capability was added in conda-build 2.0.</p>
 </div>
 <div class="section" id="test-requirements">
-<h3><a class="toc-backref" href="#id43">Test requirements</a><a class="headerlink" href="#test-requirements" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id44">Test requirements</a><a class="headerlink" href="#test-requirements" title="Permalink to this headline">¶</a></h3>
 <p>In addition to the runtime requirements, you can specify requirements needed during testing. The runtime requirements specified above are included automatically.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">requires</span><span class="p p-Indicator">:</span>
@@ -725,7 +761,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="test-commands">
-<h3><a class="toc-backref" href="#id44">Test commands</a><a class="headerlink" href="#test-commands" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id45">Test commands</a><a class="headerlink" href="#test-commands" title="Permalink to this headline">¶</a></h3>
 <p>Commands that are run as part of the test.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">commands</span><span class="p p-Indicator">:</span>
@@ -735,7 +771,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="python-imports">
-<h3><a class="toc-backref" href="#id45">Python imports</a><a class="headerlink" href="#python-imports" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id46">Python imports</a><a class="headerlink" href="#python-imports" title="Permalink to this headline">¶</a></h3>
 <p>List of Python modules or packages that will be imported in the test environment.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">imports</span><span class="p p-Indicator">:</span>
@@ -748,7 +784,7 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="run-test-script">
-<h3><a class="toc-backref" href="#id46">Run test script</a><a class="headerlink" href="#run-test-script" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id47">Run test script</a><a class="headerlink" href="#run-test-script" title="Permalink to this headline">¶</a></h3>
 <p>The script run_test.sh (or .bat/.py/.pl) will be run automatically if it is part of the recipe.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>test:
   run_test.sh
@@ -761,14 +797,16 @@ undefined.</p>
 </div>
 </div>
 <div class="section" id="outputs-section">
-<h2><a class="toc-backref" href="#id47">Outputs section</a><a class="headerlink" href="#outputs-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id48">Outputs section</a><a class="headerlink" href="#outputs-section" title="Permalink to this headline">¶</a></h2>
 <p>The outputs section is used to explicitly specify packaging steps. It supports
 multiple outputs, as well as different package output types. The format is a
 list of mappings. Build strings for subpackages are determined by their runtime
 dependencies. This support was added in conda-build 2.1.0.</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
   - name: some-subpackage
+    version: 1.0
   - name: some-other-subpackage
+    version: 2.0
 </pre></div>
 </div>
 <p>NOTE: If any output is specified in the outputs section, the default packaging
@@ -776,9 +814,11 @@ behavior of conda-build is bypassed. In other words, if any subpackage is
 specified, then you will not get the normal top-level build for this recipe
 without explicitly defining a subpackage for it. This is an alternative to the
 existing behavior, not an addition to it. See the <a class="reference internal" href="#implicit-metapackages"><span class="std std-ref">Implicit metapackages</span></a>
-section below for more information.</p>
+section below for more information. Each output may have its own version and
+requirements. Additionally, subpackages may impose downstream pinning similarly
+to <a class="reference internal" href="#pin-downstream">Pin downstream</a> to help keep your packages aligned.</p>
 <div class="section" id="specifying-files-to-include-in-output">
-<h3><a class="toc-backref" href="#id48">Specifying files to include in output</a><a class="headerlink" href="#specifying-files-to-include-in-output" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id49">Specifying files to include in output</a><a class="headerlink" href="#specifying-files-to-include-in-output" title="Permalink to this headline">¶</a></h3>
 <p>Files to be included in the package can be specified in either of two ways:
 explicit file lists, or scripts that move files into the build prefix.</p>
 <p>Explicit file lists are relative paths from the root of the build prefix.
@@ -818,7 +858,7 @@ installation of both packages simultaneously.  Conda disallows this condition,
 because it creates ambiguous runtime conditions.</p>
 </div>
 <div class="section" id="subpackage-requirements">
-<h3><a class="toc-backref" href="#id49">Subpackage requirements</a><a class="headerlink" href="#subpackage-requirements" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id50">Subpackage requirements</a><a class="headerlink" href="#subpackage-requirements" title="Permalink to this headline">¶</a></h3>
 <p>Subpackages support runtime and test requirements. Build requirements are not
 supported, because subpackages are created after the build phase is complete. If
 you need a tool to accomplish subpackaging, put it in the top-level package
@@ -829,23 +869,25 @@ requirements/build section.</p>
       - some-dep
 </pre></div>
 </div>
-<p>Subpackage dependencies propagate to the top-level package if and only if the
-subpackage is listed as a requirement.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>requirements:
-  run:
-    - some-dep-that-will-propagate
-
-outputs:
-  - name: some-dep-that-will-propagate
-    requirements:
-      - some-dep
+<p>You can also impose runtime dependencies whenever a given (sub)package is
+installed as a build dependency. For example, if we had an overarching
+“compilers” package, and within that, had <code class="docutils literal"><span class="pre">gcc</span></code> and <code class="docutils literal"><span class="pre">libgcc</span></code> outputs, we
+could force recipes that use gcc to include a matching libgcc runtime
+requirement:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
+  - name: gcc
+    run_exports:
+      - libgcc 2.*
+  - name: libgcc
 </pre></div>
 </div>
-<p>In this instance, the top-level package will depend on both
-<code class="docutils literal"><span class="pre">some-dep-that-will-propagate</span></code> and <code class="docutils literal"><span class="pre">some-dep</span></code> as runtime requirements.</p>
+<p>Note: Variant expressions are very powerful here. You can express the version
+requirement in the run_exports entry as a jinja function to insert values
+based on the actual version of libgcc produced by the recipe. Read more about
+them at <a class="reference internal" href="variants.html#referencing-subpackages"><span class="std std-ref">Referencing subpackages</span></a>.</p>
 </div>
 <div class="section" id="implicit-metapackages">
-<span id="id1"></span><h3><a class="toc-backref" href="#id50">Implicit metapackages</a><a class="headerlink" href="#implicit-metapackages" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3><a class="toc-backref" href="#id51">Implicit metapackages</a><a class="headerlink" href="#implicit-metapackages" title="Permalink to this headline">¶</a></h3>
 <p>When viewing the top-level package as a collection of smaller subpackages, it
 may be convenient to define the top-level package as a composition of several
 subpackages. If you do this, and you do not define a subpackage name that
@@ -878,7 +920,7 @@ have runtime dependencies on <code class="docutils literal"><span class="pre">su
 <code class="docutils literal"><span class="pre">some-other-dep</span></code>.</p>
 </div>
 <div class="section" id="subpackage-tests">
-<h3><a class="toc-backref" href="#id51">Subpackage tests</a><a class="headerlink" href="#subpackage-tests" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id52">Subpackage tests</a><a class="headerlink" href="#subpackage-tests" title="Permalink to this headline">¶</a></h3>
 <p>Subpackages may be tested independently of the top-level package. Independent
 test script files for each separate package are specified under the subpackage’s
 test section. These files support the same formats as the top-level run_test.*
@@ -921,7 +963,7 @@ outputs:
 <code class="docutils literal"><span class="pre">subpackage-run-req</span></code>, but not <code class="docutils literal"><span class="pre">some-top-level-run-req</span></code>.</p>
 </div>
 <div class="section" id="output-type">
-<h3><a class="toc-backref" href="#id52">Output type</a><a class="headerlink" href="#output-type" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id53">Output type</a><a class="headerlink" href="#output-type" title="Permalink to this headline">¶</a></h3>
 <p>Conda-build supports creating packages other than conda packages. Right now,
 that support includes only wheels. RPMs, .deb files, and others may come as
 demand appears.  If type is not specified, the default value is <code class="docutils literal"><span class="pre">conda</span></code>.</p>
@@ -953,7 +995,7 @@ that you must use pip to install Twine in order for this to work.</p>
 </div>
 </div>
 <div class="section" id="about-section">
-<span id="about"></span><h2><a class="toc-backref" href="#id53">About section</a><a class="headerlink" href="#about-section" title="Permalink to this headline">¶</a></h2>
+<span id="about"></span><h2><a class="toc-backref" href="#id54">About section</a><a class="headerlink" href="#about-section" title="Permalink to this headline">¶</a></h2>
 <p>Identifying information about the package. Displays in Anaconda.org channel.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">home</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/ilanschnell/bsdiff4</span>
@@ -963,7 +1005,7 @@ that you must use pip to install Twine in order for this to work.</p>
 </pre></div>
 </div>
 <div class="section" id="license-file">
-<h3><a class="toc-backref" href="#id54">License file</a><a class="headerlink" href="#license-file" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id55">License file</a><a class="headerlink" href="#license-file" title="Permalink to this headline">¶</a></h3>
 <p>A file containing the software license can be added to the package metadata.  Please note that many licenses require the license statement to be distributed with the package.  The filename is relative to the source directory.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">about</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">license_file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">LICENSE</span>
@@ -972,10 +1014,10 @@ that you must use pip to install Twine in order for this to work.</p>
 </div>
 </div>
 <div class="section" id="app-section">
-<h2><a class="toc-backref" href="#id55">App section</a><a class="headerlink" href="#app-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id56">App section</a><a class="headerlink" href="#app-section" title="Permalink to this headline">¶</a></h2>
 <p>If the app section is present, the package will be an app, meaning it will appear in the Anaconda Launcher.</p>
 <div class="section" id="entry-point">
-<h3><a class="toc-backref" href="#id56">Entry point</a><a class="headerlink" href="#entry-point" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id57">Entry point</a><a class="headerlink" href="#entry-point" title="Permalink to this headline">¶</a></h3>
 <p>The command that is called to launch the app:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">entry</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ipython notebook</span>
@@ -983,7 +1025,7 @@ that you must use pip to install Twine in order for this to work.</p>
 </div>
 </div>
 <div class="section" id="icon-file">
-<h3><a class="toc-backref" href="#id57">Icon file</a><a class="headerlink" href="#icon-file" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id58">Icon file</a><a class="headerlink" href="#icon-file" title="Permalink to this headline">¶</a></h3>
 <p>The icon file contained in the recipe:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">icon</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">icon_64x64.png</span>
@@ -991,7 +1033,7 @@ that you must use pip to install Twine in order for this to work.</p>
 </div>
 </div>
 <div class="section" id="summary">
-<h3><a class="toc-backref" href="#id58">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id59">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
 <p>Summary of the package used in the launcher:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span>  <span class="s">&quot;The</span><span class="nv"> </span><span class="s">Jupyter</span><span class="nv"> </span><span class="s">Notebook&quot;</span>
@@ -999,7 +1041,7 @@ that you must use pip to install Twine in order for this to work.</p>
 </div>
 </div>
 <div class="section" id="own-environment">
-<h3><a class="toc-backref" href="#id59">Own environment</a><a class="headerlink" href="#own-environment" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id60">Own environment</a><a class="headerlink" href="#own-environment" title="Permalink to this headline">¶</a></h3>
 <p>If own_environment is true, installing the app through the launcher will install into its own environment. The default is False.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">app</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">own_environment</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
@@ -1008,7 +1050,7 @@ that you must use pip to install Twine in order for this to work.</p>
 </div>
 </div>
 <div class="section" id="extra-section">
-<h2><a class="toc-backref" href="#id60">Extra section</a><a class="headerlink" href="#extra-section" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id61">Extra section</a><a class="headerlink" href="#extra-section" title="Permalink to this headline">¶</a></h2>
 <p>The extra section is a schema-free area for storing non-conda specific metadata in standard YAML form.
 For example, to store recipe maintainer information, one could do:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">extra</span><span class="p p-Indicator">:</span>
@@ -1018,7 +1060,7 @@ For example, to store recipe maintainer information, one could do:</p>
 </div>
 </div>
 <div class="section" id="templating-with-jinja">
-<span id="jinja-templates"></span><h2><a class="toc-backref" href="#id61">Templating with Jinja</a><a class="headerlink" href="#templating-with-jinja" title="Permalink to this headline">¶</a></h2>
+<span id="jinja-templates"></span><h2><a class="toc-backref" href="#id62">Templating with Jinja</a><a class="headerlink" href="#templating-with-jinja" title="Permalink to this headline">¶</a></h2>
 <p>Conda build supports Jinja templating in the <code class="docutils literal"><span class="pre">meta.yaml</span></code> file. For example, here’s a meta.yaml that
 would work with the GIT values defined for git repositores. In this example, the recipe is included
 at the base directory of the git repository, so the <code class="docutils literal"><span class="pre">git_url</span></code> is <code class="docutils literal"><span class="pre">../</span></code>:</p>
@@ -1083,7 +1125,7 @@ variables</a>.</p>
 use the <a class="reference internal" href="../commands/build/conda-render.html"><span class="doc">conda render</span></a>.</p>
 </div>
 <div class="section" id="preprocessing-selectors">
-<h2><a class="toc-backref" href="#id62">Preprocessing selectors</a><a class="headerlink" href="#preprocessing-selectors" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id63">Preprocessing selectors</a><a class="headerlink" href="#preprocessing-selectors" title="Permalink to this headline">¶</a></h2>
 <p>In addition, you can add selectors to any line, which are used as part of a
 preprocessing stage. Before the yaml file is read, each selector is evaluated,
 and if it is False, the line that it is on is removed.  A selector is of the
@@ -1186,7 +1228,7 @@ need to put the same selector on multiple lines.</p>
 </div>
 </div>
 <div class="section" id="id2">
-<span id="id3"></span><h2><a class="toc-backref" href="#id63">Features</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2><a class="toc-backref" href="#id64">Features</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>See also <a class="reference internal" href="environment-vars.html#build-features"><span class="std std-ref">Environment variables to set build features</span></a>.</p>
 <p>Features are a way to track differences in two packages that have the same
 name and version.  For example, a feature might indicate a specialized
@@ -1236,7 +1278,7 @@ several packages with</p>
 </div>
 </div>
 <div class="section" id="making-packages-relocatable">
-<span id="relocatable"></span><h2><a class="toc-backref" href="#id64">Making packages relocatable</a><a class="headerlink" href="#making-packages-relocatable" title="Permalink to this headline">¶</a></h2>
+<span id="relocatable"></span><h2><a class="toc-backref" href="#id65">Making packages relocatable</a><a class="headerlink" href="#making-packages-relocatable" title="Permalink to this headline">¶</a></h2>
 <p>Often, the most difficult thing about building a conda package is making it
 relocatable.  Relocatable means that the package can be installed into any
 prefix.  Otherwise, the package would only be usable in the same environment
