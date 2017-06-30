@@ -522,8 +522,17 @@ against different MPI implementations:</p>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mpich</span>  <span class="c1"># version spec here is totally valid, and will apply in the recipe</span>
 </pre></div>
 </div>
-<p>Selectors are not currently valid in conda_build_config.yaml, but we plan to
-add them soon.</p>
+<p>Selectors are valid in conda_build_config.yaml, so you can have one
+conda_build_config.yaml for multiple platforms:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">mpi</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">openmpi</span>  <span class="c1"># [osx]</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mpich</span>    <span class="c1"># [linux]</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">msmpi</span>    <span class="c1"># [win]</span>
+</pre></div>
+</div>
+<p>Jinja is not allowed in conda_build_config.yaml, though. It is the source of
+information to feed into other jinja templates, and the buck has to stop
+somewhere.</p>
 </div>
 <div class="section" id="about-reproducibility">
 <h2>About reproducibility<a class="headerlink" href="#about-reproducibility" title="Permalink to this headline">¶</a></h2>
