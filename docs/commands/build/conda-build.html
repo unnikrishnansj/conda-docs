@@ -211,23 +211,26 @@ NAME
        conda - conda build
 
 DESCRIPTION
-       usage: conda-build [-h] [-V] [-n] [--output] [--python PYTHON_VER]
+       usage:  conda-build [-h] [-V] [-n] [--output] [--python PYTHON] [--perl
+       PERL]
 
-              [--perl   PERL_VER]   [--numpy  NUMPY_VER]  [--R  R_VER]  [--lua
-              LUA_VER] [--check] [--no-anaconda-upload]  [--no-include-recipe]
-              [-s]    [-t]    [--no-test]    [-b]    [-p]    [--skip-existing]
-              [--keep-old-work]  [--dirty]  [-q]  [--debug]  [--token   TOKEN]
-              [--user  USER] [--no-force-upload] [--password PASSWORD] [--sign
-              SIGN]  [--sign-with  SIGN_WITH]  [--identity  IDENTITY]  [--con‐
-              fig-file  CONFIG_FILE] [--repository REPOSITORY] [--no-activate]
-              [--no-build-id] [--croot CROOT]  [--no-verify]  [--output-folder
-              OUTPUT_FOLDER]       [--no-prefix-length-fallback]       [--pre‐
-              fix-length-fallback]      [--prefix-length       _PREFIX_LENGTH]
+              [--numpy NUMPY] [--R R_BASE] [--lua LUA] [--bootstrap BOOTSTRAP]
+              [--append-file   APPEND_SECTIONS_FILE]   [--clobber-file   CLOB‐
+              BER_SECTIONS_FILE]           [-m           VARIANT_CONFIG_FILES]
+              [--old-build-string]       [--check]      [--no-anaconda-upload]
+              [--no-include-recipe]   [-s]   [-t]   [--no-test]   [-b]    [-p]
+              [--skip-existing]  [--keep-old-work]  [--dirty]  [-q]  [--debug]
+              [--token TOKEN] [--user  USER]  [--no-force-upload]  [--password
+              PASSWORD]  [--sign  SIGN]  [--sign-with  SIGN_WITH]  [--identity
+              IDENTITY] [--config-file CONFIG_FILE] [--repository  REPOSITORY]
+              [--no-activate]  [--no-build-id]  [--croot  CROOT] [--no-verify]
+              [--output-folder  OUTPUT_FOLDER]   [--no-prefix-length-fallback]
+              [--prefix-length-fallback]    [--prefix-length   _PREFIX_LENGTH]
               [--no-locking]    [--no-remove-work-dir]    [--long-test-prefix]
               [--no-long-test-prefix]   [-c   CHANNEL]   [--override-channels]
               RECIPE_PATH [RECIPE_PATH ...]
 
-       Tool  for  building conda packages. A conda package is a binary tarball
+       Tool for building conda packages. A conda package is a  binary  tarball
        containing system-level libraries, Python modules, executable programs,
        or other components. conda keeps track of dependencies between packages
        and platform specifics, making it simple to create working environments
@@ -235,7 +238,7 @@ DESCRIPTION
 
    positional arguments:
        RECIPE_PATH
-              Path  to  recipe  directory. Pass 'purge' here to clean the work
+              Path to recipe directory. Pass 'purge' here to  clean  the  work
               and test intermediates.
 
    optional arguments:
@@ -246,26 +249,50 @@ DESCRIPTION
               Show the conda-build version number and exit.
 
        -n, --no-source
-              When templating can't be completed, do not obtain the source  to
+              When  templating can't be completed, do not obtain the source to
               try fill in related template variables.
 
        --output
               Output the conda package filename which would have been created
 
-       --python PYTHON_VER
+       --python PYTHON
               Set the Python version used by conda build.
 
-       --perl PERL_VER
+       --perl PERL
               Set the Perl version used by conda build.
 
-       --numpy NUMPY_VER
+       --numpy NUMPY
               Set the NumPy version used by conda build.
 
-       --R R_VER
+       --R R_BASE
               Set the R version used by conda build.
 
-       --lua LUA_VER
+       --lua LUA
               Set the Lua version used by conda build.
+
+       --bootstrap BOOTSTRAP
+              Provide initial configuration in addition to recipe.  Can  be  a
+              path to or name of an environment, which will be emulated in the
+              package.
+
+       --append-file APPEND_SECTIONS_FILE
+              Append data in meta.yaml with fields from this file.  Jinja2  is
+              not done on appended fields
+
+       --clobber-file CLOBBER_SECTIONS_FILE
+              Clobber data in meta.yaml with fields from this file.  Jinja2 is
+              not done on clobbered fields.
+
+       -m VARIANT_CONFIG_FILES, --variant-config-files VARIANT_CONFIG_FILES
+              Additional variant config files to add.  These  yaml  files  can
+              contain  keys such as `c_compiler` and `target_platform` to form
+              a build matrix.
+
+       --old-build-string
+              Disable hash additions to filenames to distinguish package vari‐
+              ants  from  one another. NOTE: any filename collisions are yours
+              to handle. Any variants with overlapping names  within  a  build
+              will clobber each other.
 
        --check
               Only check (validate) the recipe.
@@ -298,8 +325,8 @@ DESCRIPTION
               conda-upload.
 
        --skip-existing
-              Skip  recipes  for  which there already exists an existing build
-              (locally or in the channels).
+              Skip   recipes  for  which  there  already  exists  an  existing
+              build(locally or in the channels).
 
        --keep-old-work
               Do not remove anything from environment, even after  successful‐
@@ -376,25 +403,22 @@ DESCRIPTION
        --long-test-prefix
               Use a long prefix for the test prefix, as well as the build pre‐
               fix. Affects only Linux  and  Mac.  Prefix  length  matches  the
-              --prefix-length flag. This is off by default in conda-build 2.x,
-              but will be enabled by default in conda-build 3.0.
+              --prefix-length flag. This is on by default in conda-build 3.0+
 
        --no-long-test-prefix
-              Do not use a long prefix for the test prefix,  as  well  as  the
+              Do  not  use  a  long prefix for the test prefix, as well as the
               build prefix. Affects only Linux and Mac.  Prefix length matches
-              the --prefix-length flag. This is currently the  default  behav‐
-              ior,  and  does  not  need  to  be  set.  This  will  change  in
-              conda-build 3.0 (longtest-prefix enabled by default)
+              the --prefix-length flag.
 
        -c CHANNEL, --channel CHANNEL
-              Additional channel  to  search  for  packages.  These  are  URLs
-              searched  in  the  order  they  are given (including file:// for
+              Additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
               local directories). Then, the defaults or channels from .condarc
-              are  searched (unless --override-channels is given). You can use
-              'defaults' to get the default packages for conda,  and  'system'
-              to  get  the  system  packages,  which  also takes .condarc into
-              account. You can also  use  any  name  and  the  .condarc  chan‐
-              nel_alias  value will be prepended. The default channel_alias is
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
               http://conda.anaconda.org/.
 
        --override-channels
@@ -421,7 +445,7 @@ DESCRIPTION
 
 
 
-Continuum Analytics                June 2017                          <B>CONDA(1)</B>
+Continuum Analytics                July 2017                          <B>CONDA(1)</B>
 </PRE></div>
 
 

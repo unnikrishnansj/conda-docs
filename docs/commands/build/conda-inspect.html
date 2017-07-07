@@ -211,46 +211,51 @@ NAME
        conda - conda inspect
 
 DESCRIPTION
-       usage:  conda-inspect  [-h]  {linkages,objects,channels,prefix-lengths}
-       ...
+       usage: conda-inspect [-h]
+
+       {linkages,objects,channels,prefix-lengths,hash-inputs}
+              ...
 
        Tools for inspecting conda packages.
 
 OPTIONS
    positional arguments:
-              {linkages,objects,channels,prefix-lengths}
+              {linkages,objects,channels,prefix-lengths,hash-inputs}
 
        linkages
               Investigates linkages of binary libraries in a package (works in
-              Linux  and  OS  X).  This is an advanced command to aid building
+              Linux and OS X). This is an advanced  command  to  aid  building
               packages that link against C libraries. Aggregates the output of
-              ldd  (on  Linux)  and  otool -L (on OS X) by dependent packages.
+              ldd (on Linux) and otool -L (on OS  X)  by  dependent  packages.
               Useful  for  finding  broken  links,  or  links  against  system
               libraries that ought to be dependent conda packages.
 
        objects
-              Investigate  binary  object files in a package (only works on OS
-              X). This is an advanced command to aid  building  packages  that
-              have  compiled libraries.  Aggregates the output of otool on all
+              Investigate binary object files in a package (only works  on  OS
+              X).  This  is  an advanced command to aid building packages that
+              have compiled libraries.  Aggregates the output of otool on  all
               the binary object files in a package.
 
        channels
               Tools for investigating conda channels.
 
        prefix-lengths
-              Inspect packages in given path, finding those with  binary  pre‐
+              Inspect  packages  in given path, finding those with binary pre‐
               fixes shorter than specified
+
+       hash-inputs
+              Show data used to compute hash identifier (h????) for package
 
    optional arguments:
        -h, --help
               Show this help message and exit.
 
-       Run  --help  on the subcommands like 'conda inspect linkages --help' to
+       Run --help on the subcommands like 'conda inspect linkages  --help'  to
        see the options available.
 
 
 
-Continuum Analytics                June 2017                          <B>CONDA(1)</B>
+Continuum Analytics                July 2017                          <B>CONDA(1)</B>
 </PRE></div>
 
 
