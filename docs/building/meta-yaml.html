@@ -462,6 +462,12 @@ because git will not clone into a non-empty folder. Let’s specify some folders
 </div>
 <div class="section" id="build-section">
 <span id="meta-build"></span><h2><a class="toc-backref" href="#id17">Build section</a><a class="headerlink" href="#build-section" title="Permalink to this headline">¶</a></h2>
+<p>Each field that expect a path can also handle a glob pattern. The matching is
+performed from the top of the build environment, so to match files inside
+your project you can use a pattern similar to the following one:
+“**/myproject/**/*.txt”. This pattern will match any .txt file found in
+your project. The quotes are mandatory for patterns starting with a *.
+Recursive globbing using ** is only supported in conda-build &gt;= 3.0.</p>
 <div class="section" id="build-number-and-string">
 <h3><a class="toc-backref" href="#id18">Build number and string</a><a class="headerlink" href="#build-number-and-string" title="Permalink to this headline">¶</a></h3>
 <p>The build number should be incremented for new builds of the same version. The number
@@ -529,11 +535,12 @@ not have the feature.</p>
 <p>Some packages ship .py files that cannot be compiled, such as those that contain
 templates. Some packages also ship .py files that should not be compiled yet,
 because the Python interpreter that will be used is not known at build-time. In
-these cases conda-build can skip attempting to compile these files.</p>
+these cases conda-build can skip attempting to compile these files. The patterns
+used in this section do not need the ** to handle recursive pathes.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">skip_compile_pyc</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">templates/*.py</span>          <span class="c1"># These should not (and cannot) be compiled</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">share/plugins/gdb/*.py</span>  <span class="c1"># The python embedded into gdb is unknown</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;*/templates/*.py&quot;</span>          <span class="c1"># These should not (and cannot) be compiled</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;*/share/plugins/gdb/*.py&quot;</span>  <span class="c1"># The python embedded into gdb is unknown</span>
 </pre></div>
 </div>
 </div>
