@@ -239,6 +239,10 @@ the version with GUI installer.</p>
 <p><strong>OS X:</strong> <code class="docutils literal"><span class="pre">md5</span> <span class="pre">filename</span></code> or <code class="docutils literal"><span class="pre">shasum</span> <span class="pre">-a</span> <span class="pre">256</span> <span class="pre">filename</span></code></p>
 <p>NOTE: Replace “filename” with the actual path and name of the downloaded package file.</p>
 <p><strong>Windows:</strong></p>
+<p>Open a PowerShell console (requires PowerShell V4 or later); verify the file as follows:</p>
+<p><code class="docutils literal"><span class="pre">Get-FileHash</span> <span class="pre">filename</span> <span class="pre">-Algorithm</span> <span class="pre">MD5</span></code> or <code class="docutils literal"><span class="pre">Get-FileHash</span> <span class="pre">filename</span> <span class="pre">-Algorithm</span> <span class="pre">SHA256</span></code></p>
+<p>NOTE: Replace “filename” with the actual path and name of the downloaded package file.</p>
+<p>If you don’t have PowerShell V4 or later:</p>
 <p>Use the free online verifier tool on the Microsoft website: <a class="reference external" href="https://gallery.technet.microsoft.com/PowerShell-File-Checksum-e57dcd67">https://gallery.technet.microsoft.com/PowerShell-File-Checksum-e57dcd67</a></p>
 <p>Download and extract the file, then open a Command Prompt window.</p>
 <p>Navigate to the file, then enter the command <code class="docutils literal"><span class="pre">Start-PsFCIV</span> <span class="pre">-Path</span> <span class="pre">C:\path\to\file.ext</span> <span class="pre">-HashAlgorithm</span> <span class="pre">MD5</span> <span class="pre">-Online</span></code> or <code class="docutils literal"><span class="pre">Start-PsFCIV</span> <span class="pre">-Path</span> <span class="pre">C:\path\to\file.ext</span> <span class="pre">-HashAlgorithm</span> <span class="pre">SHA256</span> <span class="pre">-Online</span></code></p>
