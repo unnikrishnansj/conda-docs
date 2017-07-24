@@ -36,7 +36,7 @@ conda skeleton
                  Create recipe skeleton for luarocks, hosted at luarocks.org
    
           pypi   Create recipe skeleton for packages hosted on the Python Packag‐
-                 ing Index (PyPI) (pypi.python.org).
+                 ing Index (PyPI) (pypi.io).
    
           rpm    Create recipe skeleton for RPM files
    
