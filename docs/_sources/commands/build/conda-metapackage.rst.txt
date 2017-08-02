@@ -86,5 +86,5 @@ conda metapackage
    
    
    
-   Continuum Analytics                July 2017                          <B>CONDA(1)</B>
+   Continuum Analytics               August 2017                         <B>CONDA(1)</B>
    </PRE>

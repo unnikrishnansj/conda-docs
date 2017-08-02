@@ -931,10 +931,25 @@ because it creates ambiguous runtime conditions.</p>
 </div>
 <div class="section" id="subpackage-requirements">
 <h3><a class="toc-backref" href="#id52">Subpackage requirements</a><a class="headerlink" href="#subpackage-requirements" title="Permalink to this headline">¶</a></h3>
-<p>Subpackages support runtime and test requirements. Build requirements are not
-supported, because subpackages are created after the build phase is complete. If
-you need a tool to accomplish subpackaging, put it in the top-level package
-requirements/build section.</p>
+<p>Like a top level recipe, a subpackage may have zero or more dependencies listed
+as build requirements and zero or more dependencies listed as run requirements.</p>
+<p>The dependencies listed as subpackage build requirements are available only
+during the packaging phase of that subpackage.</p>
+<p>A subpackage does not automatically inherit any dependencies from its top level
+recipe, so any build or run requirements needed by the subpackage must be
+explicitly specified.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
+  - name: subpackage-name
+    requirements:
+      build:
+        - some-dep
+      run:
+        - some-dep
+</pre></div>
+</div>
+<p>It is also possible for a subpackage requirements section to have a list of dependencies but no build
+section or run section. This is the same as having a build section with this
+dependency list and a run section with the same dependency list.</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>outputs:
   - name: subpackage-name
     requirements:
@@ -953,6 +968,7 @@ requirement:</p>
   - name: libgcc
 </pre></div>
 </div>
+<p>See the <a class="reference internal" href="#run-exports"><span class="std std-ref">Pin downstream</span></a> section for additional information.</p>
 <p>Note: Variant expressions are very powerful here. You can express the version
 requirement in the run_exports entry as a jinja function to insert values
 based on the actual version of libgcc produced by the recipe. Read more about
