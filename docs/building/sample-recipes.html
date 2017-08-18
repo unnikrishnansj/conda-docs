@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sample recipes &mdash; Conda   documentation</title>
+  <title>building/sample-recipes &mdash; Conda   documentation</title>
   
 
   
@@ -35,10 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="up" title="Building packages" href="build.html"/>
-        <link rel="next" title="Help &amp; reference" href="../help/help.html"/>
-        <link rel="prev" title="Bdist_conda" href="../bdist_conda.html"/> 
+    <link rel="top" title="Conda   documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -91,22 +88,13 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../announcements.html">Conda Announcements List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="build.html">Building packages</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../build_tutorials.html">Build tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bpp.html">Building conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shared-libraries.html">Using shared libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../custom-channels.html">Custom channels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html">Bdist_conda</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Sample recipes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help-support.html">Help and support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Conda license</a></li>
 </ul>
 
             
@@ -151,9 +139,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="build.html">Building packages</a> &raquo;</li>
-        
-      <li>Sample recipes</li>
+      <li>building/sample-recipes</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,24 +160,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sample-recipes">
-<h1>Sample recipes<a class="headerlink" href="#sample-recipes" title="Permalink to this headline">¶</a></h1>
-<p>The first two sample recipes, Boost and libtiff, are examples of non-python libraries, meaning, they don’t require python to run or build. This illustrates the flexibility of conda in being able to build things that aren’t python related.</p>
-<p><a class="reference external" href="https://github.com/conda/conda-recipes/tree/master/boost">boost</a> is an example
-of a popular programming library and illustrates the use of selectors in a recipe.</p>
-<p><a class="reference external" href="https://github.com/conda/conda-recipes/tree/master/libtiff">libtiff</a> is another
-example of a compiled library. This shows how conda is able to apply patches to source directories before building the package.</p>
-<p><a class="reference external" href="https://github.com/conda/conda-recipes/tree/master/python/msgpack">msgpack</a>,
-<a class="reference external" href="https://github.com/conda/conda-recipes/tree/master/python/blosc">blosc</a>, and
-<a class="reference external" href="https://github.com/conda/conda-recipes/tree/master/python/cytoolz">cytoolz</a> are examples
-of Python libraries with extensions.</p>
-<p><a class="reference external" href="https://github.com/conda/conda-recipes/tree/master/python/toolz">toolz</a>,
-<a class="reference external" href="https://github.com/conda/conda-recipes/tree/master/python/sympy">sympy</a>,
-<a class="reference external" href="https://github.com/conda/conda-recipes/tree/master/python/six">six</a>, and
-<a class="reference external" href="https://github.com/conda/conda-recipes/tree/master/python/gensim">gensim</a> are
-examples of Python-only libraries.</p>
-<p>Gensim works on Python 2, and all the others work on both Python 2 and Python 3.</p>
-</div>
+  <div class="section" id="building-sample-recipes">
+<h1>building/sample-recipes<a class="headerlink" href="#building-sample-recipes" title="Permalink to this headline">¶</a></h1>
+<html><head><meta http-equiv="refresh" content="0; URL='user-guide/tasks/build-packages/sample-recipes.html'" /></head><body></body></html></div>
 
 
            </div>
@@ -200,15 +171,6 @@ examples of Python-only libraries.</p>
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../help/help.html" class="btn btn-neutral float-right" title="Help &amp; reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../bdist_conda.html" class="btn btn-neutral" title="Bdist_conda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

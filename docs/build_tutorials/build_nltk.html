@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Building a conda package for NLTK &mdash; Conda   documentation</title>
+  <title>build_tutorials/build_nltk &mdash; Conda   documentation</title>
   
 
   
@@ -35,10 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="up" title="Build tutorials" href="../build_tutorials.html"/>
-        <link rel="next" title="Building conda packages" href="../building/bpp.html"/>
-        <link rel="prev" title="Building Anaconda Navigator Applications" href="app.html"/> 
+    <link rel="top" title="Conda   documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -91,33 +88,13 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../announcements.html">Conda Announcements List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../using/index.html">Using conda</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../building/build.html">Building packages</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../build_tutorials.html">Build tutorials</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="pkgs.html">Building conda packages with conda skeleton</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pkgs2.html">Building conda packages from scratch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="postgis.html">Building conda packages for general code projects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="windows.html">Building conda packages on Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="app.html">Building Anaconda Navigator Applications</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Building a conda package for NLTK</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#install-from-conda">Install from conda</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../building/bpp.html">Building conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/shared-libraries.html">Using shared libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../custom-channels.html">Custom channels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../signed-packages.html">Signing conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bdist_conda.html">Bdist_conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../building/sample-recipes.html">Sample recipes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help-support.html">Help and support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Conda license</a></li>
 </ul>
 
             
@@ -162,11 +139,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../building/build.html">Building packages</a> &raquo;</li>
-        
-          <li><a href="../build_tutorials.html">Build tutorials</a> &raquo;</li>
-        
-      <li>Building a conda package for NLTK</li>
+      <li>build_tutorials/build_nltk</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -187,56 +160,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="building-a-conda-package-for-nltk">
-<h1>Building a conda package for NLTK<a class="headerlink" href="#building-a-conda-package-for-nltk" title="Permalink to this headline">¶</a></h1>
-<p>The Natural Language Toolkit (NLTK) is a platform used for building Python
-programs that apply statistical natural language processing (NLP) to human
-language data. It can be difficult to install, but is easy when you build this
-NLTK conda package.</p>
-<p>This package also includes all of the NLTK data sets, approximately 8 GB of data.</p>
-<p>Download the following files: <a class="reference external" href="https://gist.github.com/danielfrg/d17ffffe0dc8ed56712a0470169ff546">https://gist.github.com/danielfrg/d17ffffe0dc8ed56712a0470169ff546</a> (click the Download
-ZIP button on the top right).</p>
-<p>Unzip the downloaded file and rename the downloaded directory to <code class="docutils literal"><span class="pre">/nltk-with-data/</span></code>.</p>
-<p>If not already installed, install conda build:</p>
-<p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">conda-build</span></code></p>
-<p>Change directory to one directory above the nltk-with-data directory with <code class="docutils literal"><span class="pre">cd</span></code>.</p>
-<p>Run conda build for different Python versions that you need, selecting the packages for the platform and OS
-you are running the command on:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda build nltk-with-data --python <span class="m">2</span>.7
-conda build nltk-with-data --python <span class="m">3</span>.4
-conda build nltk-with-data --python <span class="m">3</span>.5
-conda build nltk-with-data --python <span class="m">3</span>.6
-</pre></div>
-</div>
-<p>The resulting conda packages will be located in $CONDA_ROOT/conda-bld/$ARCH/nltk-with-data.tar.bz2, where
-$CONDA_ROOT is the root of your Anaconda installation and $ARCH is the architecture that you built the
-packages on.</p>
-<p>Upload the resulting conda packages to your local repository or to <a class="reference external" href="https://anaconda.org">Anaconda Cloud</a>
-using the  <a class="reference external" href="https://docs.continuum.io/anaconda/jupyter-notebook-extensions">Anaconda Notebook Extension</a> anaconda-client CLI:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>anaconda upload <span class="nv">$CONDA_ROOT</span>/conda-bld/<span class="nv">$ARCH</span>/nltk-with-data.tar.bz2
-anaconda upload <span class="nv">$CONDA_ROOT</span>/conda-bld/<span class="nv">$ARCH</span>/nltk-with-data.tar.bz2
-anaconda upload <span class="nv">$CONDA_ROOT</span>/conda-bld/<span class="nv">$ARCH</span>/nltk-with-data.tar.bz2
-anaconda upload <span class="nv">$CONDA_ROOT</span>/conda-bld/<span class="nv">$ARCH</span>/nltk-with-data.tar.bz2
-</pre></div>
-</div>
-<p>OPTIONAL: Build the conda package for other platforms (Win, Mac, Linux) by repeating the above steps on those
-platforms. You may instead use conda convert for pure Python packages. When newer versions of NLTK are released,
-you can also update the recipe and repeat this process.</p>
-<div class="section" id="install-from-conda">
-<h2>Install from conda<a class="headerlink" href="#install-from-conda" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda install nltk-with-data
-$ ipython
-</pre></div>
-</div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk.corpus</span>
-<span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">treebank</span>
-</pre></div>
-</div>
-<p>This will show that the data is loaded using this conda package.</p>
-<p>After you conda install the packages, use the library as usual with all of the data sets.</p>
-<p>SEE ALSO: <a class="reference external" href="http://www.nltk.org/">NLTK documentation</a></p>
-</div>
-</div>
+  <div class="section" id="build-tutorials-build-nltk">
+<h1>build_tutorials/build_nltk<a class="headerlink" href="#build-tutorials-build-nltk" title="Permalink to this headline">¶</a></h1>
+<html><head><meta http-equiv="refresh" content="0; URL='user-guide/tutorials/build-nltk.html'" /></head><body></body></html></div>
 
 
            </div>
@@ -245,15 +171,6 @@ $ ipython
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../building/bpp.html" class="btn btn-neutral float-right" title="Building conda packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="app.html" class="btn btn-neutral" title="Building Anaconda Navigator Applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

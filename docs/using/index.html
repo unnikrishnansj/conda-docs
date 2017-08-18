@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using conda &mdash; Conda   documentation</title>
+  <title>using/index &mdash; Conda   documentation</title>
   
 
   
@@ -35,9 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Conda   documentation" href="../index.html"/>
-        <link rel="next" title="Overview" href="using.html"/>
-        <link rel="prev" title="Conda cheat sheet" href="cheatsheet.html"/> 
+    <link rel="top" title="Conda   documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -90,21 +88,13 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../announcements.html">Conda Announcements List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get-started.html">Get started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Using conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="using.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="envs.html">Managing environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../py2or3.html">Managing Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html">Managing packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../building/build.html">Building packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Help &amp; reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get-involved.html">Get involved</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help-support.html">Help and support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Command reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Conda license</a></li>
 </ul>
 
             
@@ -149,7 +139,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Using conda</li>
+      <li>using/index</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,81 +160,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="using-conda">
-<h1>Using conda<a class="headerlink" href="#using-conda" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="using.html">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="using.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using.html#managing-conda">Managing conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using.html#verify-that-conda-is-installed-check-current-conda-version">Verify that conda is installed, check current conda version</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using.html#update-conda-to-the-current-version">Update conda to the current version</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="envs.html">Managing environments</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="envs.html#create-an-environment">Create an environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="envs.html#change-environments-activate-deactivate">Change environments (activate/deactivate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="envs.html#create-a-separate-environment">Create a separate environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="envs.html#list-all-environments">List all environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="envs.html#verify-current-environment">Verify current environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="envs.html#clone-an-environment">Clone an environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="envs.html#remove-an-environment">Remove an environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="envs.html#share-an-environment">Share an environment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="envs.html#export-the-environment-file">Export the environment file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="envs.html#use-environment-from-file">Use environment from file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="envs.html#create-environment-file-by-hand">Create environment file by hand</a></li>
-<li class="toctree-l3"><a class="reference internal" href="envs.html#build-identical-conda-environments">Build identical conda environments</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="envs.html#saved-environment-variables">Saved environment variables</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="envs.html#linux-and-macos">Linux and macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="envs.html#windows">Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="envs.html#more-notes-on-environment-variable-scripts">More notes on environment variable scripts</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../py2or3.html">Managing Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../py2or3.html#check-python-versions">Check Python versions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../py2or3.html#install-a-different-version-of-python">Install a different version of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../py2or3.html#use-a-different-version-of-python">Use a different version of Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../py2or3.html#create-python-2-or-3-environments">Create Python 2 or 3 environments</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../py2or3.html#create-a-python-3-6-environment">Create a Python 3.6 environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../py2or3.html#create-a-python-2-7-environment">Create a Python 2.7 environment</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../py2or3.html#update-or-upgrade-python">Update or Upgrade Python</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pkgs.html">Managing packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html#list-all-packages">List all packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html#search-for-a-package">Search for a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html#install-a-package">Install a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html#install-a-package-from-anaconda-org">Install a package from Anaconda.org</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html#install-non-conda-packages">Install non-conda packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html#install-a-commercial-package">Install a commercial package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html#package-update">Package update</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pkgs.html#package-remove">Package remove</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../r-with-conda.html">Using R with conda</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html#how-to-install-r-essentials">How to install “R Essentials”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r-with-conda.html#create-and-share-your-own-custom-r-bundle">Create and share your own custom R bundle</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../mro.html">Using Microsoft R Open</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../mro.html#operating-systems-supported">Operating systems supported</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mro.html#installing-mro-and-other-r-language-packages">Installing MRO and other R language packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mro.html#use-mro-or-r-language-packages">Use MRO or R language packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mro.html#install-the-intel-math-kernel-library-mkl-with-microsoft-r-open-mro">Install the Intel Math Kernel Library (MKL) with Microsoft R Open (MRO)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mro.html#mkl-installation-on-windows">MKL installation on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mro.html#mkl-installation-on-linux">MKL installation on Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mro.html#more-help-with-conda-and-mro">More help with conda and MRO</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+  <div class="section" id="using-index">
+<h1>using/index<a class="headerlink" href="#using-index" title="Permalink to this headline">¶</a></h1>
+<html><head><meta http-equiv="refresh" content="0; URL='user-guide/tasks/index.html'" /></head><body></body></html></div>
 
 
            </div>
@@ -253,15 +171,6 @@
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="using.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="cheatsheet.html" class="btn btn-neutral" title="Conda cheat sheet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
