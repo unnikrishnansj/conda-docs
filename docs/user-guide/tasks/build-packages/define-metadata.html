@@ -732,10 +732,21 @@ pinning relative to versions present at build time:</p>
 evaluate to <code class="docutils literal"><span class="pre">&gt;=5.3.0,&lt;6</span></code>.</p>
 <p>Note that <code class="docutils literal"><span class="pre">run_exports</span></code> can be specified both in the build section, and on
 a per-output basis for split packages.</p>
+<p><code class="docutils literal"><span class="pre">run_exports</span></code> only affects directly named dependencies. For example, if you
+have a metapackage that includes a compiler that lists <code class="docutils literal"><span class="pre">run_exports</span></code>, you also
+need to define <code class="docutils literal"><span class="pre">run_exports</span></code> in the metapackage so that it takes effect
+when people install your metapackage.  This is important, because if
+<code class="docutils literal"><span class="pre">run_exports</span></code> affected transitive dependencies, you would see many added
+dependencies to shared libraries where they are not actually direct
+dependencies. For example, Python uses bzip2, which can use <code class="docutils literal"><span class="pre">run_exports</span></code> to
+make sure that people use a compatible build of bzip2. If people list python as
+a build time dependency, bzip2 should only be imposed for python itself, and
+should not be automatically imposed as a runtime dependency for the thing using
+python.</p>
 <p>The potential downside of this feature is that it takes some control over
-constraints away from downstream users. If an upstream package has a
-problematic run_exports constraint, you can ignore it in your recipe by
-listing the upstream package name in the <code class="docutils literal"><span class="pre">build/ignore_run_exports</span></code> section:</p>
+constraints away from downstream users. If an upstream package has a problematic
+run_exports constraint, you can ignore it in your recipe by listing the upstream
+package name in the <code class="docutils literal"><span class="pre">build/ignore_run_exports</span></code> section:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">ignore_run_exports</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libstdc++</span>
