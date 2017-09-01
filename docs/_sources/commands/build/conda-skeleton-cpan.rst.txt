@@ -48,5 +48,5 @@ conda skeleton cpan
    
    
    
-   Continuum Analytics               August 2017                         <B>CONDA(1)</B>
+   Continuum Analytics             September 2017                        <B>CONDA(1)</B>
    </PRE>
