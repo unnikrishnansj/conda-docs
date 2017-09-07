@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="../../../search.html"/>
     <link rel="top" title="Conda   documentation" href="../../../index.html"/>
         <link rel="up" title="Building packages" href="index.html"/>
-        <link rel="next" title="Features" href="features.html"/>
+        <link rel="next" title="Build scripts (build.sh, bld.bat)" href="build-scripts.html"/>
         <link rel="prev" title="Conda build recipes" href="recipe.html"/> 
 
   
@@ -111,10 +111,11 @@
 <li class="toctree-l4"><a class="reference internal" href="package-naming-conv.html">Package naming conventions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="recipe.html">Conda build recipes</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Defining metadata (meta.yaml)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build-scripts.html">Build scripts (build.sh, bld.bat)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="features.html">Features</a></li>
 <li class="toctree-l4"><a class="reference internal" href="environment-variables.html">Environment variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="make-relocatable.html">Making packages relocatable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="add-scripts.html">Adding pre-link, post-link and pre-unlink scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="link-scripts.html">Adding pre-link, post-link and pre-unlink scripts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="variants.html">Build Variants</a></li>
 <li class="toctree-l4"><a class="reference internal" href="use-shared-libraries.html">Using shared libraries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sign-packages.html">Signing a package</a></li>
@@ -881,7 +882,7 @@ as part of Python and Perl packages, respectively.</p>
 </div>
 </div>
 <div class="section" id="outputs-section">
-<h2><a class="toc-backref" href="#id9">Outputs section</a><a class="headerlink" href="#outputs-section" title="Permalink to this headline">¶</a></h2>
+<span id="package-outputs"></span><h2><a class="toc-backref" href="#id9">Outputs section</a><a class="headerlink" href="#outputs-section" title="Permalink to this headline">¶</a></h2>
 <p>Explicitly specifies packaging steps. This section supports
 multiple outputs, as well as different package output types. The
 format is a list of mappings. Build strings for subpackages are
@@ -1387,7 +1388,7 @@ may need to put the same selector on multiple lines:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="features.html" class="btn btn-neutral float-right" title="Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="build-scripts.html" class="btn btn-neutral float-right" title="Build scripts (build.sh, bld.bat)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="recipe.html" class="btn btn-neutral" title="Conda build recipes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
