@@ -677,6 +677,13 @@ conda &gt;=4.3 to install.</p>
   <span class="l l-Scalar l-Scalar-Plain">noarch_python</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">At the time of this writing, <code class="docutils literal"><span class="pre">noarch</span></code> packages should not make use of <a class="reference internal" href="#preprocess-selectors">preprocess-selectors</a>:
+<code class="docutils literal"><span class="pre">noarch</span></code> packages are built with the directives which evaluate to <code class="docutils literal"><span class="pre">True</span></code> in the platform
+it was built, which probably will result in incorrect/incomplete installation in other
+platforms.</p>
+</div>
 </div>
 <div class="section" id="include-build-recipe">
 <h3>Include build recipe<a class="headerlink" href="#include-build-recipe" title="Permalink to this headline">¶</a></h3>
