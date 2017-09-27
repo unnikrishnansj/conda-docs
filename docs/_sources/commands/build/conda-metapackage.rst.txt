@@ -86,5 +86,5 @@ conda metapackage
    
    
    
-   Continuum Analytics             September 2017                        <B>CONDA(1)</B>
+   Anaconda, Inc.                  September 2017                        <B>CONDA(1)</B>
    </PRE>
