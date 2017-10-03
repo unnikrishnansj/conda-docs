@@ -251,9 +251,12 @@ command:</p>
 </div>
 <p>The two arguments to <code class="docutils literal"><span class="pre">conda</span> <span class="pre">skeleton</span></code> are the hosting location,
 in this case <code class="docutils literal"><span class="pre">pypi</span></code>, and the name of the package.</p>
-<p>This creates a directory named <code class="docutils literal"><span class="pre">Pyinstrument</span></code> and creates three
-skeleton files in that directory: <code class="docutils literal"><span class="pre">meta.yaml</span></code>, <code class="docutils literal"><span class="pre">build.sh</span></code>,
-and <code class="docutils literal"><span class="pre">bld.bat</span></code>. Use the <code class="docutils literal"><span class="pre">ls</span></code> command on OS X or Linux or the
+<p>This creates a directory named <code class="docutils literal"><span class="pre">Pyinstrument</span></code> and creates the
+skeleton file, <code class="docutils literal"><span class="pre">meta.yaml</span></code> in that directory. Download the other two
+skeleton files: <a class="reference download internal" href="../../_downloads/build1.sh" download=""><code class="xref download docutils literal"><span class="pre">build.sh</span></code></a> ,
+<a class="reference download internal" href="../../_downloads/bld.bat" download=""><code class="xref download docutils literal"><span class="pre">bld.bat</span></code></a>. Save these files
+in the same <code class="docutils literal"><span class="pre">pyinstrument</span></code> directory where the <code class="docutils literal"><span class="pre">meta.yaml</span></code> file is present.
+Use the <code class="docutils literal"><span class="pre">ls</span></code> command on macOS or Linux or the
 <code class="docutils literal"><span class="pre">dir</span></code> command on Windows to verify that these files have been
 created. The three files have been populated with information
 from the PyPI metadata and in most cases will not need to be
