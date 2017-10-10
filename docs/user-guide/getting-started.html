@@ -231,6 +231,7 @@ the command-line help</span></a>.</p>
 <div class="section" id="managing-conda">
 <span id="id1"></span><h2>Managing conda<a class="headerlink" href="#managing-conda" title="Permalink to this headline">¶</a></h2>
 <p>To manage conda versions:</p>
+<p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <ol class="arabic">
 <li><p class="first">Verify that conda is installed:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
@@ -242,7 +243,7 @@ installed.</p>
 <p>NOTE: If you see an error message, verify that you are logged
 into the same user account that you used to install Anaconda
 or Miniconda and that you have closed and re-opened the
-terminal window or command prompt after installing it.</p>
+Terminal window  after installing it.</p>
 </li>
 <li><p class="first">Update conda to the current version:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
@@ -263,6 +264,7 @@ update:</p>
 <div class="section" id="managing-environments">
 <span id="managing-envs"></span><h2>Managing environments<a class="headerlink" href="#managing-environments" title="Permalink to this headline">¶</a></h2>
 <p>To create a few environments and then move between them:</p>
+<p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <ol class="arabic">
 <li><p class="first">Create an environment with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span></code>:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snowflakes</span> <span class="n">biopython</span>
@@ -329,13 +331,13 @@ your prompt:</p>
 </li>
 <li><p class="first">Switch to another environment:</p>
 <ul class="simple">
-<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
+<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
 <li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
 </ul>
 </li>
 <li><p class="first">Change your path from the current environment back to the root:</p>
 <ul class="simple">
-<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
+<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
 <li>Windows:  <code class="docutils literal"><span class="pre">deactivate</span></code></li>
 </ul>
 <p>TIP: When the environment is deactivated, its name is no
@@ -372,7 +374,8 @@ know it was deleted.</p>
 <span id="id2"></span><h2>Managing Python<a class="headerlink" href="#managing-python" title="Permalink to this headline">¶</a></h2>
 <p>Conda treats Python the same as any other package, so it is
 easy to manage and update multiple installations.</p>
-<p>To check which Python versions are available to install, run:</p>
+<p>To check which Python versions are available to install, in your Terminal window or an
+Anaconda Prompt, run:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="o">--</span><span class="n">full</span><span class="o">-</span><span class="n">name</span> <span class="n">python</span>
 </pre></div>
 </div>
@@ -381,6 +384,7 @@ name is exactly “python”. To list all packages whose names
 contain the text “python”, use <code class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">python</span></code>.</p>
 <p>To install Python 3 without overwriting your Python 2.7
 environment:</p>
+<p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <ol class="arabic">
 <li><p class="first">Create a new environment named “snakes” and install the latest
 version of Python 3:</p>
@@ -390,7 +394,7 @@ version of Python 3:</p>
 </li>
 <li><p class="first">Activate the new environment:</p>
 <ul class="simple">
-<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></code></li>
+<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></code></li>
 <li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snakes</span></code></li>
 </ul>
 </li>
@@ -412,7 +416,7 @@ your prompt:</p>
 </li>
 <li><p class="first">Switch back to the default, version 2.7:</p>
 <ul class="simple">
-<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
 <li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
 </ul>
 </li>
@@ -425,7 +429,7 @@ version that was used when you installed conda:</p>
 <li><p class="first">Deactivate the snowflakes environment and then revert your
 PATH to its previous state:</p>
 <ul class="simple">
-<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
+<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
 <li>Windows: <code class="docutils literal"><span class="pre">deactivate</span></code></li>
 </ul>
 </li>
@@ -442,6 +446,7 @@ repository, install packages from Anaconda.org, install more
 packages using <code class="docutils literal"><span class="pre">pip</span></code> install instead of <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code> and
 then install a commercial package.</p>
 <p>To find a package:</p>
+<p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <ol class="arabic">
 <li><p class="first">To confirm that a package has been added or removed, view a
 list of packages and versions installed in an environment:</p>
@@ -462,6 +467,7 @@ available for conda to install:</p>
 </li>
 </ol>
 <p>To install the package:</p>
+<p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <ol class="arabic">
 <li><p class="first">Install beautifulsoup4 into the current environment:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">name</span> <span class="n">bunnies</span> <span class="n">beautifulsoup4</span>
@@ -473,7 +479,7 @@ environment.</p>
 </li>
 <li><p class="first">Activate the bunnies environment:</p>
 <ul class="simple">
-<li>Linux, OS X: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
+<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
 <li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
 </ul>
 </li>
@@ -520,7 +526,7 @@ use to download the package:</p>
 </li>
 <li><p class="first">Run the displayed command.</p>
 </li>
-<li><p class="first">Check to see that the package downloaded:</p>
+<li><p class="first">To check that the package downloaded, in the Terminal or an Anaconda Prompt, run:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
@@ -537,6 +543,7 @@ environments for you. Pip cannot even update Python, because
 unlike conda, it does not consider Python a package. But it does
 install some things that conda does not, and vice versa. Both pip
 and conda are included in Anaconda and Miniconda.</p>
+<p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <ol class="arabic">
 <li><p class="first">Activate the environment where you want to put the
 program, such as bunnies:</p>
@@ -562,7 +569,8 @@ program, such as bunnies:</p>
 <p>Installing commercial packages is the same as installing any
 other package with conda.</p>
 <p>EXAMPLE: To install a free trial of one of Anaconda’s commercial
-packages, IOPro, which can speed up your Python processing:</p>
+packages, IOPro, which can speed up your Python processing, in your Terminal
+window or an Anaconda Prompt, run:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">iopro</span>
 </pre></div>
 </div>
@@ -575,23 +583,26 @@ days.</p>
 <p>To remove 1 or more of your test packages, environments, and/or
 conda:</p>
 <ol class="arabic">
-<li><p class="first">Remove the commercial package IOPro from the bunnies
-environment:</p>
+<li><p class="first">To remove the commercial package IOPro from the bunnies
+environment, in your Terminal window or an Anaconda Prompt, run:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="n">bunnies</span> <span class="n">iopro</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Confirm that IOPro has been removed:</p>
+<li><p class="first">To confirm that IOPro has been removed, in your Terminal
+window or an Anaconda Prompt, run:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Remove the snakes environment:</p>
+<li><p class="first">To remove the snakes environment, in your Terminal
+window or an Anaconda Prompt, run:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="n">snakes</span> <span class="o">--</span><span class="nb">all</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Verify that the snakes environment has been removed:</p>
+<li><p class="first">To verify that the snakes environment has been removed,
+in your Terminal window or an Anaconda Prompt, run:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
 </pre></div>
 </div>

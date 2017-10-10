@@ -203,6 +203,7 @@ data science. Conda helps you keep your packages and dependencies
 up to date. You can also easily create and share your own custom
 R packages.</p>
 <p>R Essentials works very much like Anaconda:</p>
+<p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <ul>
 <li><p class="first">You can install all of the most popular packages with all of
 their dependencies with a single command:</p>
@@ -232,7 +233,8 @@ command:</p>
 <a class="reference external" href="https://docs.continuum.io/anaconda/install/">install</a>
 Anaconda.</p>
 </li>
-<li><p class="first">Install the R Essentials package into the current environment:</p>
+<li><p class="first">To install the R Essentials package into the current environment,
+in your Terminal window or an Anaconda Prompt, run:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">r</span><span class="o">-</span><span class="n">essentials</span>
 </pre></div>
 </div>
@@ -245,7 +247,7 @@ Anaconda.</p>
 similar to creating and sharing conda packages.</p>
 <p>EXAMPLE: To create a simple custom R bundle metapackage named
 “Custom-R-Bundle” that contains several popular programs and
-their dependencies, run:</p>
+their dependencies, in the Terminal window or an Anaconda Prompt, run:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">metapackage</span> <span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span> <span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span> <span class="o">--</span><span class="n">dependencies</span> <span class="n">r</span><span class="o">-</span><span class="n">irkernel</span> <span class="n">jupyter</span> <span class="n">r</span><span class="o">-</span><span class="n">ggplot2</span> <span class="n">r</span><span class="o">-</span><span class="n">dplyr</span> <span class="o">--</span><span class="n">summary</span> <span class="s2">&quot;My custom R bundle&quot;</span>
 </pre></div>
 </div>
@@ -257,7 +259,7 @@ colleagues by uploading it to your channel on <a class="reference external" href
 </pre></div>
 </div>
 <p>Your friends and colleagues can now access your custom R bundle
-from any computer by running:</p>
+from any computer by running in the Terminal window or an Anaconda Prompt:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">anaconda</span><span class="o">.</span><span class="n">org</span> <span class="n">username</span><span class="o">&gt;</span> <span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span>
 </pre></div>
 </div>

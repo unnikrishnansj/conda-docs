@@ -327,7 +327,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id145">2016-06-17   4.1.2:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id146">2016-06-16   4.1.1:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id147">2016-06-14   4.1.0:</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#notable-changes-for-all-systems-windows-os-x-and-linux">Notable changes for all systems (Windows, OS X and Linux)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notable-changes-for-all-systems-windows-macos-and-linux">Notable changes for all systems (Windows, macOS and Linux)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#windows-only-changes">Windows-only changes</a></li>
 </ul>
 </li>
@@ -1810,8 +1810,8 @@ into conda in a future feature release. (#4064)</li>
 <h2>2016-06-14   4.1.0:<a class="headerlink" href="#id147" title="Permalink to this headline">¶</a></h2>
 <p>This release contains many small bug fixes for all operating systems, and a few
 special fixes for Windows behavior.</p>
-<div class="section" id="notable-changes-for-all-systems-windows-os-x-and-linux">
-<h3>Notable changes for all systems (Windows, OS X and Linux)<a class="headerlink" href="#notable-changes-for-all-systems-windows-os-x-and-linux" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="notable-changes-for-all-systems-windows-macos-and-linux">
+<h3>Notable changes for all systems (Windows, macOS and Linux)<a class="headerlink" href="#notable-changes-for-all-systems-windows-macos-and-linux" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>Channel order now matters.</strong> The most significant conda change is that
 when you add channels, channel order matters. If you have a list of channels
@@ -1824,7 +1824,7 @@ dependency losses; the package will just be removed instead.</li>
 <li><strong>New YAML parser/emitter.</strong> PyYAML is replaced with ruamel.yaml,
 which gives more robust control over yaml document use.
 <a class="reference external" href="http://yaml.readthedocs.io/en/latest/">More on ruamel.yaml</a></li>
-<li><strong>Shebang lines over 127 characters are now truncated (Linux, OS X
+<li><strong>Shebang lines over 127 characters are now truncated (Linux, macOS
 only).</strong> <a class="reference external" href="https://en.wikipedia.org/wiki/Shebang_(Unix)">Shebangs</a> are
 the first line of the many executable scripts that tell the operating
 system how to execute the program.  They start with <code class="docutils literal"><span class="pre">#!</span></code>. Most OSes
@@ -1860,7 +1860,7 @@ Install the open source package named <code class="docutils literal"><span class
 the shortcut icon, a terminal window will open with the environment
 containing the <code class="docutils literal"><span class="pre">console_shortcut</span></code> package already activated. <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span>
 <span class="pre">console_shortcut</span> <span class="pre">--shortcuts</span></code></li>
-<li><strong>Skip binary replacement on Windows.</strong> Linux &amp; OS X have binaries that
+<li><strong>Skip binary replacement on Windows.</strong> Linux &amp; macOS have binaries that
 are coded with library locations, and this information must sometimes be
 replaced for relocatability, but Windows does not generally embed prefixes
 in binaries, and was already relocatable. We skip binary replacement on
