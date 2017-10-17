@@ -327,6 +327,14 @@ argument or with the CONDA_NPY environment variable.</td>
 <tr class="row-odd"><td>PKG_VERSION</td>
 <td>Version of the package being built.</td>
 </tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_BUILD_STRING</span></code></td>
+<td>Complete build string of the package being built, including hash.
+EXAMPLE: py27h21422ab_0 . Conda-build 3.0+.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PKG_HASH</span></code></td>
+<td>Hash of the package being built, without leading h. EXAMPLE: 21422ab .
+Conda-build 3.0+.</td>
+</tr>
 <tr class="row-even"><td>PYTHON</td>
 <td>Path to the Python executable in the build prefix. Python
 is installed only in the build prefix when it is listed as

@@ -206,7 +206,7 @@ DESCRIPTION
               [--build-string   BUILD_STRING]   [--dependencies  [DEPENDENCIES
               [DEPENDENCIES ...]]]   [--home  HOME]  [--license  LICENSE_NAME]
               [--summary  SUMMARY] [--entry-points [ENTRY_POINTS [ENTRY_POINTS
-              ...]]]  name version
+              ...]]]  [-c CHANNEL] [--override-channels] name version
 
        Tool for building conda metapackages.  A metapackage is a package  with
        no  files,  only  metadata.  They are typically used to collect several
@@ -267,6 +267,20 @@ OPTIONS
               --entry-points  bsdiff4=bsdiff4.cli:main_bsdiff4  will create an
               entry point  called  bsdiff4  that  calls  bsdiff4.cli.main_bsd‐
               iff4().
+
+       -c CHANNEL, --channel CHANNEL
+              Additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
+              local directories). Then, the defaults or channels from .condarc
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
+              http://conda.anaconda.org/.
+
+       --override-channels
+              Do not search default or .condarc channels. Requires --channel.
 
 
 

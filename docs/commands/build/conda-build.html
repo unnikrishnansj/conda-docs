@@ -212,7 +212,7 @@ DESCRIPTION
               [--token TOKEN] [--user  USER]  [--no-force-upload]  [--password
               PASSWORD]  [--sign  SIGN]  [--sign-with  SIGN_WITH]  [--identity
               IDENTITY] [--config-file CONFIG_FILE] [--repository  REPOSITORY]
-              [--no-activate]  [--no-build-id]  [--croot  CROOT] [--no-verify]
+              [--no-activate]   [--no-build-id]   [--croot  CROOT]  [--verify]
               [--output-folder  OUTPUT_FOLDER]   [--no-prefix-length-fallback]
               [--prefix-length-fallback]    [--prefix-length   _PREFIX_LENGTH]
               [--no-locking]    [--no-remove-work-dir]    [--long-test-prefix]
@@ -353,7 +353,7 @@ DESCRIPTION
               Build  root  folder.  Equivalent  to CONDA_BLD_PATH, but applies
               only to this call of conda-build.
 
-       --no-verify
+       --verify
               do not run verification on recipes or packages when building
 
        --output-folder OUTPUT_FOLDER

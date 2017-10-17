@@ -200,7 +200,9 @@ NAME
        conda - conda index
 
 DESCRIPTION
-       usage: conda-index [-h] [-c] [-f] [-q] [--no-remove] [dir [dir ...]]
+       usage: conda-index [-h] [-c] [-f] [-q] [--no-remove]
+
+              [--channel-name CHANNEL_NAME] [dir [dir ...]]
 
        Update package index metadata files in given directories.
 
@@ -224,6 +226,10 @@ OPTIONS
 
        --no-remove
               Don't remove entries for files that don't exist.
+
+       --channel-name CHANNEL_NAME
+              Adding a channel name will create an index.html file within  the
+              subdir.
 
 
 
