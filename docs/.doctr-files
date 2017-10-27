@@ -128,6 +128,7 @@ docs/_sources/user-guide/tasks/build-packages/add-scripts.rst.txt
 docs/_sources/user-guide/tasks/build-packages/add-win-start-menu-items.rst.txt
 docs/_sources/user-guide/tasks/build-packages/build-scripts.rst.txt
 docs/_sources/user-guide/tasks/build-packages/build-without-recipe.rst.txt
+docs/_sources/user-guide/tasks/build-packages/compiler-tools.rst.txt
 docs/_sources/user-guide/tasks/build-packages/define-metadata.rst.txt
 docs/_sources/user-guide/tasks/build-packages/environment-variables.rst.txt
 docs/_sources/user-guide/tasks/build-packages/features.rst.txt
@@ -324,6 +325,7 @@ docs/user-guide/tasks/build-packages/add-scripts.html
 docs/user-guide/tasks/build-packages/add-win-start-menu-items.html
 docs/user-guide/tasks/build-packages/build-scripts.html
 docs/user-guide/tasks/build-packages/build-without-recipe.html
+docs/user-guide/tasks/build-packages/compiler-tools.html
 docs/user-guide/tasks/build-packages/define-metadata.html
 docs/user-guide/tasks/build-packages/environment-variables.html
 docs/user-guide/tasks/build-packages/features.html
