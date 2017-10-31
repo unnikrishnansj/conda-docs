@@ -378,6 +378,17 @@ to recipes with single sources as well.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="filename">
+<h3>Filename<a class="headerlink" href="#filename" title="Permalink to this headline">¶</a></h3>
+<p>The filename key is <code class="docutils literal"><span class="pre">fn</span></code>. It was formerly required with URL source types. It is not required now.</p>
+<p>If the <code class="docutils literal"><span class="pre">fn</span></code> key is provided, the file is saved on disk with that name. If the <code class="docutils literal"><span class="pre">fn</span></code> key is not provided, the file is saved on disk with a name matching the last part of the URL.</p>
+<p>For example, <code class="docutils literal"><span class="pre">http://www.something.com/myfile.zip</span></code> has an implicit filename of <code class="docutils literal"><span class="pre">myfile.zip</span></code>. Users may change this by manually specifying <code class="docutils literal"><span class="pre">fn</span></code>.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">source</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://www.something.com/myfile.zip</span>
+  <span class="l l-Scalar l-Scalar-Plain">fn</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">otherfilename.zip</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="source-from-multiple-sources">
 <h3>Source from multiple sources<a class="headerlink" href="#source-from-multiple-sources" title="Permalink to this headline">¶</a></h3>
 <p>Some software is most easily built by aggregating several pieces. For this,
