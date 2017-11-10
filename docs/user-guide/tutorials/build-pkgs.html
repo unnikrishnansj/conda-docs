@@ -329,7 +329,7 @@ for their architecture.</p>
 <ol class="arabic">
 <li><p class="first">Open a text editor and create a new file named <code class="docutils literal"><span class="pre">bld.bat</span></code>.
 Type the text exactly as shown:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="s2">&quot;%PYTHON%&quot;</span> setup.py install
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="s2">&quot;%PYTHON%&quot;</span> setup.py install --single-version-externally-managed --record<span class="o">=</span>record.txt
 <span class="k">if</span> errorlevel <span class="m">1</span> <span class="nb">exit</span> <span class="m">1</span>
 </pre></div>
 </div>
@@ -342,7 +342,7 @@ you put your <code class="docutils literal"><span class="pre">meta.yaml</span></
 </li>
 <li><p class="first">Open a text editor and create a new file named <code class="docutils literal"><span class="pre">build.sh</span></code>.
 Enter the text exactly as shown:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">$PYTHON</span> setup.py install     <span class="c1"># Python command to install the script.</span>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">$PYTHON</span> setup.py install --single-version-externally-managed --record<span class="o">=</span>record.txt  <span class="c1"># Python command to install the script.</span>
 </pre></div>
 </div>
 </li>

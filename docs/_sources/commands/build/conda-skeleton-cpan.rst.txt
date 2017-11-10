@@ -20,7 +20,7 @@ conda skeleton cpan
           VERSION]
    
           [--meta-cpan-url META_CPAN_URL] [--recursive]
-                 [--force] packages [packages ...]
+                 [--force] [--write_core] packages [packages ...]
    
       positional arguments:
           packages
@@ -41,12 +41,16 @@ conda skeleton cpan
                  v1
    
           --recursive
-                 Create recipes for dependencies if they do not already exist.
+                 Create  recipes  for  dependencies  if they do not already exist
+                 (default: False).
    
           --force
-                 Force overwrite of existing recipes
+                 Force overwrite of existing recipes (default: False).
+   
+          --write_core
+                 Write recipes for perl core modules (default: False).
    
    
    
-   Anaconda, Inc.                   October 2017                         <B>CONDA(1)</B>
+   Anaconda, Inc.                   November 2017                        <B>CONDA(1)</B>
    </PRE>
