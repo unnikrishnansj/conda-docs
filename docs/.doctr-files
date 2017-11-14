@@ -143,6 +143,7 @@ docs/_sources/user-guide/tasks/build-packages/sample-recipes.rst.txt
 docs/_sources/user-guide/tasks/build-packages/sign-packages.rst.txt
 docs/_sources/user-guide/tasks/build-packages/use-shared-libraries.rst.txt
 docs/_sources/user-guide/tasks/build-packages/variants.rst.txt
+docs/_sources/user-guide/tasks/build-packages/wheel-files.rst.txt
 docs/_sources/user-guide/tasks/create-custom-channels.rst.txt
 docs/_sources/user-guide/tasks/index.rst.txt
 docs/_sources/user-guide/tasks/manage-channels.rst.txt
@@ -340,6 +341,7 @@ docs/user-guide/tasks/build-packages/sample-recipes.html
 docs/user-guide/tasks/build-packages/sign-packages.html
 docs/user-guide/tasks/build-packages/use-shared-libraries.html
 docs/user-guide/tasks/build-packages/variants.html
+docs/user-guide/tasks/build-packages/wheel-files.html
 docs/user-guide/tasks/create-custom-channels.html
 docs/user-guide/tasks/index.html
 docs/user-guide/tasks/manage-channels.html

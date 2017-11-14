@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installing and updating conda build &mdash; Conda   documentation</title>
+  <title>Using wheel files with conda &mdash; Conda   documentation</title>
   
 
   
@@ -37,8 +37,8 @@
         <link rel="search" title="Search" href="../../../search.html"/>
     <link rel="top" title="Conda   documentation" href="../../../index.html"/>
         <link rel="up" title="Building packages" href="index.html"/>
-        <link rel="next" title="Conda package specification" href="package-spec.html"/>
-        <link rel="prev" title="Building packages" href="index.html"/> 
+        <link rel="next" title="Managing Python" href="../manage-python.html"/>
+        <link rel="prev" title="Building a package without a recipe (bdist_conda)" href="build-without-recipe.html"/> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -106,7 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../create-custom-channels.html">Creating custom channels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../manage-pkgs.html">Managing packages</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Building packages</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Installing and updating conda build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="install-conda-build.html">Installing and updating conda build</a></li>
 <li class="toctree-l4"><a class="reference internal" href="package-spec.html">Conda package specification</a></li>
 <li class="toctree-l4"><a class="reference internal" href="package-naming-conv.html">Package naming conventions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="recipe.html">Conda build recipes</a></li>
@@ -122,7 +122,7 @@
 <li class="toctree-l4"><a class="reference internal" href="add-win-start-menu-items.html">Adding Windows Start menu items</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sample-recipes.html">Sample recipes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="build-without-recipe.html">Building a package without a recipe (bdist_conda)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="wheel-files.html">Using wheel files with conda</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Using wheel files with conda</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../manage-python.html">Managing Python</a></li>
@@ -191,14 +191,14 @@
         
           <li><a href="index.html">Building packages</a> &raquo;</li>
         
-      <li>Installing and updating conda build</li>
+      <li>Using wheel files with conda</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/conda/conda-docs/blob/master/docs/source/user-guide/tasks/build-packages/install-conda-build.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/conda/conda-docs/blob/master/docs/source/user-guide/tasks/build-packages/wheel-files.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -212,32 +212,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="installing-and-updating-conda-build">
-<h1>Installing and updating conda build<a class="headerlink" href="#installing-and-updating-conda-build" title="Permalink to this headline">¶</a></h1>
-<p>To enable building conda packages:</p>
-<ul class="simple">
-<li><a class="reference internal" href="../../install/index.html"><span class="doc">install conda</span></a></li>
-<li>install conda build</li>
-<li>update conda and conda build</li>
-</ul>
-<div class="section" id="installing-conda-build">
-<span id="install-conda-build"></span><h2>Installing conda build<a class="headerlink" href="#installing-conda-build" title="Permalink to this headline">¶</a></h2>
-<p>To install conda build, in your Terminal window or an Anaconda Prompt, run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install conda-build
-</pre></div>
-</div>
-</div>
-<div class="section" id="updating-conda-and-conda-build">
-<h2>Updating conda and conda build<a class="headerlink" href="#updating-conda-and-conda-build" title="Permalink to this headline">¶</a></h2>
-<p>Keep your versions of conda and conda build up to date to
-take advantage of bug fixes and new features.</p>
-<p>To update conda and conda build, in your Terminal window or an Anaconda Prompt, run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda update conda
-conda update conda-build
-</pre></div>
-</div>
-<p>For release notes, see the <a class="reference external" href="https://github.com/conda/conda-build/releases">conda build Github
-page</a>.</p>
+  <div class="section" id="using-wheel-files-with-conda">
+<h1>Using wheel files with conda<a class="headerlink" href="#using-wheel-files-with-conda" title="Permalink to this headline">¶</a></h1>
+<p>If you have software in a <a class="reference external" href="https://pythonwheels.com/">Python wheel file</a> and
+want to use it with conda or install it in a conda environment, there are three
+ways.</p>
+<p>The best way is to obtain the source code for the software and build a conda
+package from the source and not from a wheel. This helps ensure that the new
+package uses other conda packages to satisfy its dependencies.</p>
+<p>The second best way is to build a conda package from the wheel file. This tells
+conda more about the files present than a pip install. It is also less likely
+than a pip install to cause errors by overwriting (or “clobbering”) files.
+Building a conda package from the wheel file also has the advantage that any
+clobbering is more likely to happen at build time and not runtime.</p>
+<p>The third way is to use pip to install a wheel file into a conda environment.
+Some conda users have used this option safely. The first two ways are still the
+safest and most reliable.</p>
+<div class="section" id="building-a-conda-package-from-a-wheel-file">
+<h2>Building a conda package from a wheel file<a class="headerlink" href="#building-a-conda-package-from-a-wheel-file" title="Permalink to this headline">¶</a></h2>
+<p>To build a conda package from a wheel file, install the .whl file in the conda
+recipe’s <code class="docutils literal"><span class="pre">bld.bat</span></code> or <code class="docutils literal"><span class="pre">build.sh</span></code> file.</p>
+<p>You may download the .whl file in the source section of the conda recipe’s
+<code class="docutils literal"><span class="pre">meta.yaml</span></code> file.</p>
+<p>You may instead put the URL directly in the <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code> command.</p>
+<p>EXAMPLE: The conda recipe for TensorFlow has a <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code> command in
+<a class="reference external" href="https://github.com/conda/conda-recipes/blob/a796713805ac8eceed191c0cb475b51f4d00718c/python/tensorflow/build.sh#L7">build.sh</a>
+with the URL of a .whl file. The
+<a class="reference external" href="https://github.com/conda/conda-recipes/blob/a796713805ac8eceed191c0cb475b51f4d00718c/python/tensorflow/meta.yaml">meta.yaml</a>
+file does not download or list the .whl file.</p>
+<p>NOTE: It is important to <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code> only the one desired package. Whenever
+possible, install dependencies with conda and not pip.</p>
+<p>We strongly recommend using the <code class="docutils literal"><span class="pre">--no-deps</span></code> option in the <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code>
+command.</p>
+<p>If you run <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code> without the <code class="docutils literal"><span class="pre">--no-deps</span></code> option, pip will often
+install dependencies in your conda recipe and those dependencies will become
+part of your package. This wastes space in the package and increases the
+risk of file overlap, file clobbering, and broken packages.</p>
 </div>
 </div>
 
@@ -251,10 +261,10 @@ page</a>.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="package-spec.html" class="btn btn-neutral float-right" title="Conda package specification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../manage-python.html" class="btn btn-neutral float-right" title="Managing Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Building packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="build-without-recipe.html" class="btn btn-neutral" title="Building a package without a recipe (bdist_conda)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
