@@ -789,6 +789,34 @@ listed explicitly if they are required.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="host">
+<h3>Host<a class="headerlink" href="#host" title="Permalink to this headline">¶</a></h3>
+<p>This section was added in conda-build 3.0. It represents packages that need to
+be specific to the target platform when the target platform is not necessarily
+the same as the native build platform. For example, in order for a recipe to
+“cross-capable”, shared libraries requirements must be listed in the host
+section, rather than the build section, so that the shared libraries that get
+linked are ones for the target platform, rather than the native build platform.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="p p-Indicator">{{</span> <span class="nv">compiler(&#39;c&#39;)</span> <span class="p p-Indicator">}}</span>
+  <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+</pre></div>
+</div>
+<p>Note: when both build and host sections are defined, the build section can be
+thought of as “build tools” - things that run on the native platform, but output
+results for the target platform. For example, a cross-compiler that runs on
+linux-64, but targets linux-armv7.</p>
+<p>When building on the native platform for the native platform, build and host
+sections are merged. When building for a non-native platform, the host
+requirements are installed into a separate prefix from the build requirements.
+The PREFIX environment variable points to the host prefix.  With respect to
+activation during builds, both the host and build environments are activated.
+The build prefix is activated before the host prefix, so that the host prefix
+has priority over the build prefix. Executables that don’t exist in the host
+prefix should be found in the build prefix.</p>
+</div>
 <div class="section" id="run">
 <h3>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
 <p>Packages required to run the package. These are the dependencies
