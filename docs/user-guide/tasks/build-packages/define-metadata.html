@@ -724,6 +724,13 @@ should be passed through to the build script:</p>
 seen by the conda build process itself, a UserWarning is
 emitted during the build process and the variable remains
 undefined.</p>
+<p>NOTE: Inheriting environment variables can make it difficult for
+others to reproduce binaries from source with your recipe. Use
+this feature with caution or avoid it.</p>
+<p>NOTE: If you split your build and test phases with <code class="docutils literal"><span class="pre">--no-test</span></code> and <code class="docutils literal"><span class="pre">--test</span></code>,
+you need to ensure that the environment variables present at build time and test
+time match. If you do not, the package hashes may use different values, and your
+package may not be testable, because the hashes will differ.</p>
 </div>
 <div class="section" id="pin-downstream">
 <span id="run-exports"></span><h3>Pin downstream<a class="headerlink" href="#pin-downstream" title="Permalink to this headline">¶</a></h3>
