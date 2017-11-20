@@ -222,14 +222,13 @@ just Python.</p>
 <h2><a class="toc-backref" href="#id2">The .travis.yml file</a><a class="headerlink" href="#the-travis-yml-file" title="Permalink to this headline">¶</a></h2>
 <p>The following code sample shows how to modify the <code class="docutils literal"><span class="pre">.travis.yml</span></code>
 file to use <a class="reference external" href="https://conda.io/miniconda.html">Miniconda</a> for a
-project that supports Python 2.6, 2.7, 3.3 and 3.4:</p>
+project that supports Python 2.7, 3.5 and 3.6:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">language</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
 <span class="l l-Scalar l-Scalar-Plain">python</span><span class="p p-Indicator">:</span>
   <span class="c1"># We don&#39;t actually use the Travis Python, but this keeps it organized.</span>
-  <span class="p p-Indicator">-</span> <span class="s">&quot;2.6&quot;</span>
   <span class="p p-Indicator">-</span> <span class="s">&quot;2.7&quot;</span>
-  <span class="p p-Indicator">-</span> <span class="s">&quot;3.3&quot;</span>
-  <span class="p p-Indicator">-</span> <span class="s">&quot;3.4&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="s">&quot;3.5&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="s">&quot;3.6&quot;</span>
 <span class="l l-Scalar l-Scalar-Plain">install</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sudo apt-get update</span>
   <span class="c1"># We do this conditionally because it saves us some downloading if the</span>
