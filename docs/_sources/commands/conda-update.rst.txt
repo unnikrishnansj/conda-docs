@@ -161,5 +161,5 @@ conda update
    
    
    
-   Anaconda, Inc.                   November 2017                        <B>CONDA(1)</B>
+   Anaconda, Inc.                   December 2017                        <B>CONDA(1)</B>
    </PRE>
