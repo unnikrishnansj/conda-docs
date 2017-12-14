@@ -459,7 +459,7 @@ built by this recipe.</p>
 <ol class="arabic simple">
 <li>a file named <code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code> in the user’s HOME folder</li>
 <li>an arbitrarily named file specified as the value for the
-<code class="docutils literal"><span class="pre">conda_build_config</span></code> key in your .condarc file</li>
+<code class="docutils literal"><span class="pre">conda_build/config_file</span></code> key in your .condarc file</li>
 <li>a file named <code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code> in the same folder as <code class="docutils literal"><span class="pre">meta.yaml</span></code>
 with your recipe</li>
 <li>Any additional files specified on the command line with the
@@ -469,6 +469,11 @@ commands accept these arguments.</li>
 </ol>
 <p>Values in files found later in this search order will overwrite and replace the
 values from earlier files.</p>
+<p>NOTE: The key <code class="docutils literal"><span class="pre">conda_build/config_file</span></code> is a nested value:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda_build</span><span class="p">:</span>
+  <span class="n">config_file</span><span class="p">:</span> <span class="n">some</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">file</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="using-variants-with-the-conda-build-api">
 <h2>Using variants with the conda-build API<a class="headerlink" href="#using-variants-with-the-conda-build-api" title="Permalink to this headline">¶</a></h2>
