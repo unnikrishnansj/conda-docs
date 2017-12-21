@@ -198,7 +198,10 @@ DESCRIPTION
        [--no-builds] [--json] [--debug] [--verbose]
               notebook
 
-       Embeds  information describing your conda environment into the notebook
+       WARNING:  This  command  is  deprecated  in conda 4.4 and scheduled for
+       removal in conda 4.5.
+
+       Embeds information describing your conda environment into the  notebook
        metadata
 
 OPTIONS
@@ -235,7 +238,7 @@ OPTIONS
               Use once for info, twice for debug, three times for trace.
 
    examples:
-              conda  env  attach  -n  root  notebook.ipynb conda env attach -r
+              conda env attach -n root  notebook.ipynb  conda  env  attach  -r
               user/environment notebook.ipynb
 
 

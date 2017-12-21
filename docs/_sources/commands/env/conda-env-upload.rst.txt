@@ -22,6 +22,9 @@ conda env upload
           [--json] [--debug] [--verbose]
                  [name]
    
+          WARNING: This command is deprecated in  conda  4.4  and  scheduled  for
+          removal in conda 4.5.
+   
           Upload an environment to anaconda.org
    
    OPTIONS
@@ -54,8 +57,8 @@ conda env upload
                  Use once for info, twice for debug, three times for trace.
    
       examples:
-                 conda  env  upload  conda  env  upload  project conda env upload
-                 --file=/path/to/environment.yml      conda      env       upload
+                 conda env upload conda  env  upload  project  conda  env  upload
+                 --file=/path/to/environment.yml       conda      env      upload
                  --file=/path/to/environment.yml project
    
    

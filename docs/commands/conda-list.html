@@ -214,11 +214,10 @@ OPTIONS
               Show this help message and exit.
 
        -n ENVIRONMENT, --name ENVIRONMENT
-              Name of environment (in envs dirs).
+              Name of environment.
 
        -p PATH, --prefix PATH
-              Full  path   to   environment   prefix   (default:   root   pre‐
-              fix/envs/build-environment).
+              Full path to environment prefix.
 
        --json Report all output as json. Suitable for using conda programmati‐
               cally.
@@ -230,10 +229,12 @@ OPTIONS
               Use once for info, twice for debug, three times for trace.
 
        --show-channel-urls
-              Show channel urls (default: True).
+              Show  channel  urls.  Overrides the value given by `conda config
+              --show show_channel_urls`.
 
        --no-show-channel-urls
-              Don't show channel urls.
+              Don't show channel urls. Overrides the  value  given  by  `conda
+              config --show show_channel_urls`.
 
        -c, --canonical
               Output canonical names of packages only. Implies --nopip.
@@ -242,7 +243,7 @@ OPTIONS
               Only search for full names, i.e., ^&lt;regex&gt;$.
 
        --explicit
-              List explicitly all installed conda packaged  with  URL  (output
+              List  explicitly  all  installed conda packaged with URL (output
               may be used by conda create --file).
 
        --md5  Add MD5 hashsum when using --explicit

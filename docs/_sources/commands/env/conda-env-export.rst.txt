@@ -35,11 +35,10 @@ conda env export
                  Do not include .condarc channels
    
           -n ENVIRONMENT, --name ENVIRONMENT
-                 Name of environment (in envs dirs).
+                 Name of environment.
    
           -p PATH, --prefix PATH
-                 Full   path   to   environment   prefix   (default:   root  pre‐
-                 fix/envs/build-environment).
+                 Full path to environment prefix.
    
           -f FILE, --file FILE
    

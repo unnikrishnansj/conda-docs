@@ -36,16 +36,15 @@ conda env create
                  environment definition file (default: environment.yml)
    
           -n ENVIRONMENT, --name ENVIRONMENT
-                 Name of environment (in envs dirs).
+                 Name of environment.
    
           -p PATH, --prefix PATH
-                 Full   path   to   environment   prefix   (default:   root  pre‐
-                 fix/envs/build-environment).
+                 Full path to environment prefix.
    
           -q, --quiet
    
           --force
-                 force creation of environment (removing  a  previously  existing
+                 force  creation  of  environment (removing a previously existing
                  environment of the same name).
    
           --json Report all output as json. Suitable for using conda programmati‐
@@ -58,10 +57,10 @@ conda env create
                  Use once for info, twice for debug, three times for trace.
    
       examples:
-                 conda env create conda env  create  -n  name  conda  env  create
+                 conda  env  create  conda  env  create  -n name conda env create
                  vader/deathstar  conda  env  create  -f=/path/to/environment.yml
                  conda env create -f=/path/to/requirements.txt -n deathstar conda
-                 env   create  -f=/path/to/requirements.txt  -p  /home/user/soft‐
+                 env  create  -f=/path/to/requirements.txt  -p   /home/user/soft‐
                  ware/deathstar
    
    

@@ -98,6 +98,10 @@ conda metapackage
           --override-channels
                  Do not search default or .condarc channels. Requires --channel.
    
+      conda commands available from other packages:
+                 build  convert  develop  env  index  inspect  metapackage render
+                 skeleton verify
+   
    
    
    Anaconda, Inc.                   December 2017                        <B>CONDA(1)</B>

@@ -19,10 +19,10 @@ conda uninstall
           usage: conda uninstall [-h] [-y] [--dry-run] [--json] [--debug] [--ver‐
           bose]
    
-          [--all] [--features] [--force] [--no-pin] [-c CHANNEL]
-                 [--override-channels]  [-n   ENVIRONMENT   |   -p   PATH]   [-q]
-                 [--no-use-index-cache] [--use-index-cache] [--use-local] [--off‐
-                 line] [-k] [package_name [package_name ...]]
+          [--all] [--force] [--no-pin] [-c CHANNEL]
+                 [--override-channels] [-n  ENVIRONMENT  |  -p  PATH]  [-q]  [-C]
+                 [--use-local] [--offline] [-k] [--features] [package_name [pack‐
+                 age_name ...]]
    
           Alias for conda remove.  See conda remove --help.
    
@@ -52,9 +52,6 @@ conda uninstall
    
           --all  Uninstall all packages, i.e., the entire environment.
    
-          --features
-                 Uninstall features (instead of packages).
-   
           --force
                  Forces  removal  of  a  package  without  removing packages that
                  depend on it. Using this option will usually leave your environ‐
@@ -78,20 +75,16 @@ conda uninstall
                  Do not search default or .condarc channels. Requires --channel.
    
           -n ENVIRONMENT, --name ENVIRONMENT
-                 Name of environment (in envs dirs).
+                 Name of environment.
    
           -p PATH, --prefix PATH
-                 Full   path   to   environment   prefix   (default:   root  pre‐
-                 fix/envs/build-environment).
+                 Full path to environment prefix.
    
           -q, --quiet
                  Do not display progress bar.
    
-          --no-use-index-cache
-                 Force fetching of channel index files.
-   
-          --use-index-cache
-                 Use cache of channel index files.
+          -C, --use-index-cache
+                 Use cache of channel index files, even if it has expired.
    
           --use-local
                  Use locally built packages.
@@ -100,8 +93,11 @@ conda uninstall
                  Offline mode, don't connect to the Internet.
    
           -k, --insecure
-                 Allow conda to perform "insecure"  SSL  connections  and  trans‐
-                 fers.Equivalent to setting 'ssl_verify' to 'false'.
+                 Allow conda to perform "insecure" SSL connections and transfers.
+                 Equivalent to setting 'ssl_verify' to 'false'.
+   
+          --features
+                 Uninstall features (instead of packages).
    
    EXAMPLES
                  conda uninstall -n myenv scipy

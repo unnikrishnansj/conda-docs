@@ -17,9 +17,9 @@ conda clean
    
    DESCRIPTION
           usage: conda clean [-h] [-y] [--dry-run] [--json] [--debug] [--verbose]
-          [-a]
+          [-q]
    
-                 [-i] [-l] [-t] [-p] [-s]
+                 [-a] [-i] [-l] [-t] [-p] [-s]
    
           Remove unused packages and caches.
    
@@ -42,6 +42,9 @@ conda clean
    
           --verbose, -v
                  Use once for info, twice for debug, three times for trace.
+   
+          -q, --quiet
+                 Do not display progress bar.
    
           -a, --all
                  Remove index cache, lock files, tarballs, unused cache packages,

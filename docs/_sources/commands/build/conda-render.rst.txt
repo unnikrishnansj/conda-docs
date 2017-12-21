@@ -112,6 +112,10 @@ conda render
           --verbose
                  Enable verbose output from download tools and progress updates
    
+      conda commands available from other packages:
+                 build convert  develop  env  index  inspect  metapackage  render
+                 skeleton verify
+   
    
    
    Anaconda, Inc.                   December 2017                        <B>CONDA(1)</B>

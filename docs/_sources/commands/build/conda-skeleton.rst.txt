@@ -47,6 +47,10 @@ conda skeleton
           Run --help on the subcommands like 'conda skeleton pypi --help' to  see
           the options available.
    
+      conda commands available from other packages:
+                 build  convert  develop  env  index  inspect  metapackage render
+                 skeleton verify
+   
    
    
    Anaconda, Inc.                   December 2017                        <B>CONDA(1)</B>

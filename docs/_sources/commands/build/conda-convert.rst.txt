@@ -90,6 +90,10 @@ conda convert
    
                  conda convert package-1.0-py33.tar.bz2 -p win-64
    
+      conda commands available from other packages:
+                 build  convert  develop  env  index  inspect  metapackage render
+                 skeleton verify
+   
    
    
    Anaconda, Inc.                   December 2017                        <B>CONDA(1)</B>

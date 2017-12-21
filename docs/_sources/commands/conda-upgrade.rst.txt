@@ -17,22 +17,22 @@ conda upgrade
    
    DESCRIPTION
           usage:   conda   upgrade  [-h]  [-y]  [--dry-run]  [-f]  [--file  FILE]
-          [--no-deps] [-m]
+          [--no-deps]
    
-          [--use-index-cache] [--use-local] [--offline] [--no-pin]
-                 [-c CHANNEL] [--override-channels] [-n ENVIRONMENT  |  -p  PATH]
-                 [-q]  [--copy] [--clobber] [-k] [--alt-hint] [--update-dependen‐
-                 cies]      [--no-update-dependencies]       [--channel-priority]
-                 [--no-channel-priority]  [--show-channel-urls]  [--no-show-chan‐
-                 nel-urls] [--json] [--debug] [--verbose]  [--all]  [package_spec
-                 [package_spec ...]]
+          [--only-deps] [-m] [-C] [--use-local] [--offline]
+                 [--no-pin] [-c CHANNEL] [--override-channels] [-n ENVIRONMENT  |
+                 -p    PATH]    [-q]    [--copy]   [-k]   [--update-dependencies]
+                 [--no-update-dependencies]   [--channel-priority]    [--no-chan‐
+                 nel-priority] [--clobber] [--show-channel-urls] [--no-show-chan‐
+                 nel-urls]  [--download-only]  [--json]   [--debug]   [--verbose]
+                 [--all] [package_spec [package_spec ...]]
    
           Alias for conda update.  See conda update --help.
    
    OPTIONS
       positional arguments:
           package_spec
-                 Packages to install into the conda environment.
+                 Packages to install or update in the conda environment.
    
       optional arguments:
           -h, --help
@@ -53,13 +53,18 @@ conda upgrade
                  fications can be passed (e.g. --file=file1 --file=file2).
    
           --no-deps
-                 Do not install dependencies.
+                 Do  not  install,  update,  remove, or change dependencies. This
+                 WILL lead to broken environments and inconsistent behavior.  Use
+                 at your own risk.
+   
+          --only-deps
+                 Only install dependencies.
    
           -m, --mkdir
                  Create the environment directory if necessary.
    
-          --use-index-cache
-                 Use cache of channel index files.
+          -C, --use-index-cache
+                 Use cache of channel index files, even if it has expired.
    
           --use-local
                  Use locally built packages.
@@ -85,11 +90,10 @@ conda upgrade
                  Do not search default or .condarc channels. Requires --channel.
    
           -n ENVIRONMENT, --name ENVIRONMENT
-                 Name of environment (in envs dirs).
+                 Name of environment.
    
           -p PATH, --prefix PATH
-                 Full   path   to   environment   prefix   (default:   root  pre‐
-                 fix/envs/build-environment).
+                 Full path to environment prefix.
    
           -q, --quiet
                  Do not display progress bar.
@@ -97,38 +101,42 @@ conda upgrade
           --copy Install all packages using copies instead of hard- or soft-link‐
                  ing.
    
+          -k, --insecure
+                 Allow conda to perform "insecure" SSL connections and transfers.
+                 Equivalent to setting 'ssl_verify' to 'false'.
+   
+          --update-dependencies, --update-deps
+                 Update  dependencies. Overrides the value given by `conda config
+                 --show update_deps`.
+   
+          --no-update-dependencies, --no-update-deps
+                 Don't update dependencies. Overrides the value given  by  `conda
+                 config --show update_deps`.
+   
+          --channel-priority, --channel-pri, --chan-pri
+                 Channel  priority  takes  precedence over package version. Over‐
+                 rides the value given by `conda config --show channel_priority`.
+   
+          --no-channel-priority, --no-channel-pri, --no-chan-pri
+                 Package version takes precedence over  channel  priority.  Over‐
+                 rides the value given by `conda config --show channel_priority`.
+   
           --clobber
                  Allow  clobbering of overlapping file paths within packages, and
                  suppress related warnings.
    
-          -k, --insecure
-                 Allow conda to perform "insecure"  SSL  connections  and  trans‐
-                 fers.Equivalent to setting 'ssl_verify' to 'false'.
-   
-          --alt-hint
-                 Use an alternate algorithm to generate an unsatisfiability hint.
-   
-          --update-dependencies, --update-deps
-                 Update dependencies (default: True).
-   
-          --no-update-dependencies, --no-update-deps
-                 Don't update dependencies (default: False).
-   
-          --channel-priority, --channel-pri, --chan-pri
-                 Channel priority takes precedence over package version (default:
-                 True). Note: This feature is in beta and may change in a  future
-                 release.
-   
-          --no-channel-priority, --no-channel-pri, --no-chan-pri
-                 Package version takes precedence over channel priority (default:
-                 False). Note: This feature is in beta and may change in a future
-                 release.
-   
           --show-channel-urls
-                 Show channel urls (default: True).
+                 Show channel urls. Overrides the value given  by  `conda  config
+                 --show show_channel_urls`.
    
           --no-show-channel-urls
-                 Don't show channel urls.
+                 Don't  show  channel  urls.  Overrides the value given by `conda
+                 config --show show_channel_urls`.
+   
+          --download-only
+                 Solve an environment and ensure package  caches  are  populated,
+                 but  exit  prior to unlinking and linking packages into the pre‐
+                 fix.
    
           --json Report all output as json. Suitable for using conda programmati‐
                  cally.

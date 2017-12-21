@@ -55,11 +55,10 @@ conda inspect linkages
           --all  Generate a report for all packages in the environment.
    
           -n ENVIRONMENT, --name ENVIRONMENT
-                 Name of environment (in envs dirs).
+                 Name of environment.
    
           -p PATH, --prefix PATH
-                 Full   path   to   environment   prefix   (default:   root  pre‐
-                 fix/envs/build-environment).
+                 Full path to environment prefix.
    
    
    
