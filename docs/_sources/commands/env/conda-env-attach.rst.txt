@@ -61,10 +61,10 @@ conda env attach
                  Use once for info, twice for debug, three times for trace.
    
       examples:
-                 conda env attach -n root  notebook.ipynb  conda  env  attach  -r
+                 conda env attach -n base  notebook.ipynb  conda  env  attach  -r
                  user/environment notebook.ipynb
    
    
    
-   Anaconda, Inc.                   December 2017                        <B>CONDA(1)</B>
+   Anaconda, Inc.                   January 2018                         <B>CONDA(1)</B>
    </PRE>

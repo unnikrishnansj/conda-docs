@@ -174,6 +174,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#id31">Solution</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#unicode-error-after-installing-python-2">Unicode error after installing Python 2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id32">Cause</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id33">Solution</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -254,23 +259,24 @@
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#permission-denied-errors-during-installation" id="id32">Permission denied errors during installation</a></li>
-<li><a class="reference internal" href="#permission-denied-errors-after-using-sudo-conda-command" id="id33">Permission denied errors after using sudo conda command</a></li>
-<li><a class="reference internal" href="#already-installed-error-message" id="id34">Already installed error message</a></li>
-<li><a class="reference internal" href="#conda-reports-that-a-package-is-installed-but-it-appears-not-to-be" id="id35">Conda reports that a package is installed, but it appears not to be</a></li>
-<li><a class="reference internal" href="#pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty" id="id36">pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</a></li>
-<li><a class="reference internal" href="#macos-error-valueerror-unknown-locale-utf-8" id="id37">macOS error “ValueError unknown locale: UTF-8”</a></li>
-<li><a class="reference internal" href="#attributeerror-or-missing-getproxies" id="id38">AttributeError or missing getproxies</a></li>
-<li><a class="reference internal" href="#shell-commands-open-from-the-wrong-location" id="id39">Shell commands open from the wrong location</a></li>
-<li><a class="reference internal" href="#programs-fail-due-to-invoking-conda-python-instead-of-system-python" id="id40">Programs fail due to invoking conda Python instead of system Python</a></li>
-<li><a class="reference internal" href="#unsatisfiablespecifications-error" id="id41">UnsatisfiableSpecifications error</a></li>
-<li><a class="reference internal" href="#package-installation-fails-from-a-specific-channel" id="id42">Package installation fails from a specific channel</a></li>
-<li><a class="reference internal" href="#conda-automatically-upgrades-to-unwanted-version" id="id43">Conda automatically upgrades to unwanted version</a></li>
-<li><a class="reference internal" href="#validationerror-invalid-value-for-timestamp" id="id44">ValidationError: Invalid value for timestamp</a></li>
+<li><a class="reference internal" href="#permission-denied-errors-during-installation" id="id34">Permission denied errors during installation</a></li>
+<li><a class="reference internal" href="#permission-denied-errors-after-using-sudo-conda-command" id="id35">Permission denied errors after using sudo conda command</a></li>
+<li><a class="reference internal" href="#already-installed-error-message" id="id36">Already installed error message</a></li>
+<li><a class="reference internal" href="#conda-reports-that-a-package-is-installed-but-it-appears-not-to-be" id="id37">Conda reports that a package is installed, but it appears not to be</a></li>
+<li><a class="reference internal" href="#pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty" id="id38">pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</a></li>
+<li><a class="reference internal" href="#macos-error-valueerror-unknown-locale-utf-8" id="id39">macOS error “ValueError unknown locale: UTF-8”</a></li>
+<li><a class="reference internal" href="#attributeerror-or-missing-getproxies" id="id40">AttributeError or missing getproxies</a></li>
+<li><a class="reference internal" href="#shell-commands-open-from-the-wrong-location" id="id41">Shell commands open from the wrong location</a></li>
+<li><a class="reference internal" href="#programs-fail-due-to-invoking-conda-python-instead-of-system-python" id="id42">Programs fail due to invoking conda Python instead of system Python</a></li>
+<li><a class="reference internal" href="#unsatisfiablespecifications-error" id="id43">UnsatisfiableSpecifications error</a></li>
+<li><a class="reference internal" href="#package-installation-fails-from-a-specific-channel" id="id44">Package installation fails from a specific channel</a></li>
+<li><a class="reference internal" href="#conda-automatically-upgrades-to-unwanted-version" id="id45">Conda automatically upgrades to unwanted version</a></li>
+<li><a class="reference internal" href="#validationerror-invalid-value-for-timestamp" id="id46">ValidationError: Invalid value for timestamp</a></li>
+<li><a class="reference internal" href="#unicode-error-after-installing-python-2" id="id47">Unicode error after installing Python 2</a></li>
 </ul>
 </div>
 <div class="section" id="permission-denied-errors-during-installation">
-<span id="permission-denied"></span><h2><a class="toc-backref" href="#id32">Permission denied errors during installation</a><a class="headerlink" href="#permission-denied-errors-during-installation" title="Permalink to this headline">¶</a></h2>
+<span id="permission-denied"></span><h2><a class="toc-backref" href="#id34">Permission denied errors during installation</a><a class="headerlink" href="#permission-denied-errors-during-installation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cause">
 <h3>Cause<a class="headerlink" href="#cause" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">umask</span></code> command  determines the mask settings that control
@@ -305,14 +311,14 @@ conda install
 </div>
 </div>
 <div class="section" id="permission-denied-errors-after-using-sudo-conda-command">
-<span id="permission-denied-sudo"></span><h2><a class="toc-backref" href="#id33">Permission denied errors after using sudo conda command</a><a class="headerlink" href="#permission-denied-errors-after-using-sudo-conda-command" title="Permalink to this headline">¶</a></h2>
+<span id="permission-denied-sudo"></span><h2><a class="toc-backref" href="#id35">Permission denied errors after using sudo conda command</a><a class="headerlink" href="#permission-denied-errors-after-using-sudo-conda-command" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>Solution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Once you run conda with sudo, you must use sudo forever. We recommend that you NEVER run conda with sudo.</p>
 </div>
 </div>
 <div class="section" id="already-installed-error-message">
-<span id="fix-broken-conda"></span><h2><a class="toc-backref" href="#id34">Already installed error message</a><a class="headerlink" href="#already-installed-error-message" title="Permalink to this headline">¶</a></h2>
+<span id="fix-broken-conda"></span><h2><a class="toc-backref" href="#id36">Already installed error message</a><a class="headerlink" href="#already-installed-error-message" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>Cause<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>If you are trying to fix conda problems without removing the
@@ -337,7 +343,7 @@ does not install a duplicate in a new folder.</p>
 </div>
 </div>
 <div class="section" id="conda-reports-that-a-package-is-installed-but-it-appears-not-to-be">
-<span id="conda-claims-installed"></span><h2><a class="toc-backref" href="#id35">Conda reports that a package is installed, but it appears not to be</a><a class="headerlink" href="#conda-reports-that-a-package-is-installed-but-it-appears-not-to-be" title="Permalink to this headline">¶</a></h2>
+<span id="conda-claims-installed"></span><h2><a class="toc-backref" href="#id37">Conda reports that a package is installed, but it appears not to be</a><a class="headerlink" href="#conda-reports-that-a-package-is-installed-but-it-appears-not-to-be" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes conda claims that a package is already installed, but
 it does not appear to be, for example, a Python package that
 gives ImportError.</p>
@@ -449,7 +455,7 @@ any of the dependencies of <code class="docutils literal"><span class="pre">pack
 </div>
 </div>
 <div class="section" id="pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty">
-<span id="distributionnotfound"></span><h2><a class="toc-backref" href="#id36">pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</a><a class="headerlink" href="#pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty" title="Permalink to this headline">¶</a></h2>
+<span id="distributionnotfound"></span><h2><a class="toc-backref" href="#id38">pkg_resources.DistributionNotFound: conda==3.6.1-6-gb31b0d4-dirty</a><a class="headerlink" href="#pkg-resources-distributionnotfound-conda-3-6-1-6-gb31b0d4-dirty" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id14">
 <h3>Cause<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>The local version of conda needs updating.</p>
@@ -474,7 +480,7 @@ a git checkout—the version should not include any hashes.</p>
 </div>
 </div>
 <div class="section" id="macos-error-valueerror-unknown-locale-utf-8">
-<span id="unknown-locale"></span><h2><a class="toc-backref" href="#id37">macOS error “ValueError unknown locale: UTF-8”</a><a class="headerlink" href="#macos-error-valueerror-unknown-locale-utf-8" title="Permalink to this headline">¶</a></h2>
+<span id="unknown-locale"></span><h2><a class="toc-backref" href="#id39">macOS error “ValueError unknown locale: UTF-8”</a><a class="headerlink" href="#macos-error-valueerror-unknown-locale-utf-8" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id16">
 <h3>Cause<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>This is a bug in the macOS Terminal app that shows up only in
@@ -511,7 +517,7 @@ and also how dates, currencies and decimals are formatted.</p>
 </div>
 </div>
 <div class="section" id="attributeerror-or-missing-getproxies">
-<span id="attributeerror-getproxies"></span><h2><a class="toc-backref" href="#id38">AttributeError or missing getproxies</a><a class="headerlink" href="#attributeerror-or-missing-getproxies" title="Permalink to this headline">¶</a></h2>
+<span id="attributeerror-getproxies"></span><h2><a class="toc-backref" href="#id40">AttributeError or missing getproxies</a><a class="headerlink" href="#attributeerror-or-missing-getproxies" title="Permalink to this headline">¶</a></h2>
 <p>When running a command such as <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">ipython</span></code>, you may
 get an <code class="docutils literal"><span class="pre">AttributeError:</span> <span class="pre">'module'</span> <span class="pre">object</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span>
 <span class="pre">'getproxies'</span></code>.</p>
@@ -538,7 +544,7 @@ profile and restarting the shell.</li>
 </div>
 </div>
 <div class="section" id="shell-commands-open-from-the-wrong-location">
-<span id="shell-command-location"></span><h2><a class="toc-backref" href="#id39">Shell commands open from the wrong location</a><a class="headerlink" href="#shell-commands-open-from-the-wrong-location" title="Permalink to this headline">¶</a></h2>
+<span id="shell-command-location"></span><h2><a class="toc-backref" href="#id41">Shell commands open from the wrong location</a><a class="headerlink" href="#shell-commands-open-from-the-wrong-location" title="Permalink to this headline">¶</a></h2>
 <p>When you run a command within a conda environment, conda does not
 access the correct package executable.</p>
 <div class="section" id="id20">
@@ -582,7 +588,7 @@ The hash is reset by <code class="docutils literal"><span class="pre">source</sp
 </div>
 </div>
 <div class="section" id="programs-fail-due-to-invoking-conda-python-instead-of-system-python">
-<span id="wrong-python"></span><h2><a class="toc-backref" href="#id40">Programs fail due to invoking conda Python instead of system Python</a><a class="headerlink" href="#programs-fail-due-to-invoking-conda-python-instead-of-system-python" title="Permalink to this headline">¶</a></h2>
+<span id="wrong-python"></span><h2><a class="toc-backref" href="#id42">Programs fail due to invoking conda Python instead of system Python</a><a class="headerlink" href="#programs-fail-due-to-invoking-conda-python-instead-of-system-python" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id22">
 <h3>Cause<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <p>After installing Anaconda or Miniconda, programs that run
@@ -613,7 +619,7 @@ including after running <code class="docutils literal"><span class="pre">source<
 </div>
 </div>
 <div class="section" id="unsatisfiablespecifications-error">
-<span id="unsatisfiable"></span><h2><a class="toc-backref" href="#id41">UnsatisfiableSpecifications error</a><a class="headerlink" href="#unsatisfiablespecifications-error" title="Permalink to this headline">¶</a></h2>
+<span id="unsatisfiable"></span><h2><a class="toc-backref" href="#id43">UnsatisfiableSpecifications error</a><a class="headerlink" href="#unsatisfiablespecifications-error" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id24">
 <h3>Cause<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <p>Some conda package installation specifications are impossible to
@@ -668,7 +674,7 @@ this example, you could install wxPython with Python 2.7:</p>
 </div>
 </div>
 <div class="section" id="package-installation-fails-from-a-specific-channel">
-<span id="version-from-channel"></span><h2><a class="toc-backref" href="#id42">Package installation fails from a specific channel</a><a class="headerlink" href="#package-installation-fails-from-a-specific-channel" title="Permalink to this headline">¶</a></h2>
+<span id="version-from-channel"></span><h2><a class="toc-backref" href="#id44">Package installation fails from a specific channel</a><a class="headerlink" href="#package-installation-fails-from-a-specific-channel" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id26">
 <h3>Cause<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes it is necessary to install a specific version from a
@@ -772,7 +778,7 @@ The following NEW packages will be INSTALLED:
 </div>
 </div>
 <div class="section" id="conda-automatically-upgrades-to-unwanted-version">
-<span id="auto-upgrade"></span><h2><a class="toc-backref" href="#id43">Conda automatically upgrades to unwanted version</a><a class="headerlink" href="#conda-automatically-upgrades-to-unwanted-version" title="Permalink to this headline">¶</a></h2>
+<span id="auto-upgrade"></span><h2><a class="toc-backref" href="#id45">Conda automatically upgrades to unwanted version</a><a class="headerlink" href="#conda-automatically-upgrades-to-unwanted-version" title="Permalink to this headline">¶</a></h2>
 <p>When making a python package for an app, you create an
 environment for the app from a file <code class="docutils literal"><span class="pre">req.txt</span></code> that sets a
 certain version, such as <code class="docutils literal"><span class="pre">python=2.7.9</span></code>. However, when you
@@ -793,7 +799,7 @@ before the == operator and no space after.</p>
 </div>
 </div>
 <div class="section" id="validationerror-invalid-value-for-timestamp">
-<h2><a class="toc-backref" href="#id44">ValidationError: Invalid value for timestamp</a><a class="headerlink" href="#validationerror-invalid-value-for-timestamp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id46">ValidationError: Invalid value for timestamp</a><a class="headerlink" href="#validationerror-invalid-value-for-timestamp" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id30">
 <h3>Cause<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
 <p>This happens when certain packages are installed with conda 4.3.28, and then
@@ -802,6 +808,18 @@ conda is downgraded to 4.3.27 or earlier.</p>
 <div class="section" id="id31">
 <h3>Solution<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
 <p>See <a class="reference external" href="https://github.com/conda/conda/issues/6096">https://github.com/conda/conda/issues/6096</a>.</p>
+</div>
+</div>
+<div class="section" id="unicode-error-after-installing-python-2">
+<h2><a class="toc-backref" href="#id47">Unicode error after installing Python 2</a><a class="headerlink" href="#unicode-error-after-installing-python-2" title="Permalink to this headline">¶</a></h2>
+<p>Example: UnicodeDecodeError: ‘ascii’ codec can’t decode byte 0xd3 in position 1: ordinal not in range(128)</p>
+<div class="section" id="id32">
+<h3>Cause<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<p>Python 2 is incapable of handling unicode properly, especially on Windows. In this case, if any character in your PATH env. var contains anything that is not ASCII then you see this exception.</p>
+</div>
+<div class="section" id="id33">
+<h3>Solution<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<p>Remove all non-ASCII from PATH or switch to Python 3.</p>
 </div>
 </div>
 </div>
