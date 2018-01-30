@@ -317,9 +317,13 @@ channels, see <a class="reference internal" href="manage-channels.html"><span cl
 </div>
 <div class="section" id="installing-non-conda-packages">
 <h2><a class="toc-backref" href="#id4">Installing non-conda packages</a><a class="headerlink" href="#installing-non-conda-packages" title="Permalink to this headline">¶</a></h2>
-<p>If a package is not available from conda or Anaconda.org,
-you may be able to find and install the package with another
-package manager like pip.</p>
+<p>If a package is not available from conda or Anaconda.org, you may be able to
+find and install the package with another package manager like pip.</p>
+<p>Pip packages do not have all the features of conda packages, and we recommend
+first trying to install any package with conda. If the package is unavailable
+through conda, try installing it with pip. The differences between pip and
+conda packages cause certain unavoidable limits in compatibility, but conda
+works hard to be as compatible with pip as possible.</p>
 <p>NOTE: Both pip and conda are included in Anaconda and Miniconda,
 so you do not need to install them separately.</p>
 <p>NOTE: Conda environments replace virtualenv, so there is no need

@@ -72,16 +72,15 @@ conda install
                  Only display what would have been done.
    
           -f, --force
-                 Force  install  (even  when  package already installed), implies
-                 --no-deps.
+                 Force install (even when package already installed).
    
           --file FILE
-                 Read package versions from the given file. Repeated file  speci‐
+                 Read  package versions from the given file. Repeated file speci‐
                  fications can be passed (e.g. --file=file1 --file=file2).
    
           --no-deps
-                 Do  not  install,  update,  remove, or change dependencies. This
-                 WILL lead to broken environments and inconsistent behavior.  Use
+                 Do not install, update, remove,  or  change  dependencies.  This
+                 WILL  lead to broken environments and inconsistent behavior. Use
                  at your own risk.
    
           --only-deps
@@ -103,14 +102,14 @@ conda install
                  Ignore pinned file.
    
           -c CHANNEL, --channel CHANNEL
-                 Additional  channel  to  search  for  packages.  These  are URLs
-                 searched in the order they  are  given  (including  file://  for
+                 Additional channel  to  search  for  packages.  These  are  URLs
+                 searched  in  the  order  they  are given (including file:// for
                  local directories). Then, the defaults or channels from .condarc
-                 are searched (unless --override-channels is given). You can  use
-                 'defaults'  to  get the default packages for conda, and 'system'
-                 to get the system  packages,  which  also  takes  .condarc  into
-                 account.  You  can  also  use  any  name  and the .condarc chan‐
-                 nel_alias value will be prepended. The default channel_alias  is
+                 are  searched (unless --override-channels is given). You can use
+                 'defaults' to get the default packages for conda,  and  'system'
+                 to  get  the  system  packages,  which  also takes .condarc into
+                 account. You can also  use  any  name  and  the  .condarc  chan‐
+                 nel_alias  value will be prepended. The default channel_alias is
                  http://conda.anaconda.org/.
    
           --override-channels
@@ -133,36 +132,36 @@ conda install
                  Equivalent to setting 'ssl_verify' to 'false'.
    
           --update-dependencies, --update-deps
-                 Update  dependencies. Overrides the value given by `conda config
+                 Update dependencies. Overrides the value given by `conda  config
                  --show update_deps`.
    
           --no-update-dependencies, --no-update-deps
-                 Don't update dependencies. Overrides the value given  by  `conda
+                 Don't  update  dependencies. Overrides the value given by `conda
                  config --show update_deps`.
    
           --channel-priority, --channel-pri, --chan-pri
-                 Channel  priority  takes  precedence over package version. Over‐
+                 Channel priority takes precedence over  package  version.  Over‐
                  rides the value given by `conda config --show channel_priority`.
    
           --no-channel-priority, --no-channel-pri, --no-chan-pri
-                 Package version takes precedence over  channel  priority.  Over‐
+                 Package  version  takes  precedence over channel priority. Over‐
                  rides the value given by `conda config --show channel_priority`.
    
           --clobber
-                 Allow  clobbering of overlapping file paths within packages, and
+                 Allow clobbering of overlapping file paths within packages,  and
                  suppress related warnings.
    
           --show-channel-urls
-                 Show channel urls. Overrides the value given  by  `conda  config
+                 Show  channel  urls.  Overrides the value given by `conda config
                  --show show_channel_urls`.
    
           --no-show-channel-urls
-                 Don't  show  channel  urls.  Overrides the value given by `conda
+                 Don't show channel urls. Overrides the  value  given  by  `conda
                  config --show show_channel_urls`.
    
           --download-only
-                 Solve an environment and ensure package  caches  are  populated,
-                 but  exit  prior to unlinking and linking packages into the pre‐
+                 Solve  an  environment  and ensure package caches are populated,
+                 but exit prior to unlinking and linking packages into  the  pre‐
                  fix.
    
           --json Report all output as json. Suitable for using conda programmati‐
