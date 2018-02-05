@@ -178,5 +178,5 @@ conda install
    
    
    
-   Anaconda, Inc.                   January 2018                         <B>CONDA(1)</B>
+   Anaconda, Inc.                   February 2018                        <B>CONDA(1)</B>
    </PRE>

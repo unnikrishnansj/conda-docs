@@ -205,8 +205,8 @@ DESCRIPTION
 
               [--numpy NUMPY] [--R R_BASE] [--lua LUA] [--bootstrap BOOTSTRAP]
               [--append-file   APPEND_SECTIONS_FILE]   [--clobber-file   CLOB‐
-              BER_SECTIONS_FILE]           [-m           VARIANT_CONFIG_FILES]
-              [--old-build-string]       [--check]      [--no-anaconda-upload]
+              BER_SECTIONS_FILE] [-m VARIANT_CONFIG_FILES] [-e  EXCLUSIVE_CON‐
+              FIG_FILE]  [--old-build-string] [--check] [--no-anaconda-upload]
               [--no-include-recipe]   [-s]   [-t]   [--no-test]   [-b]    [-p]
               [--skip-existing]  [--keep-old-work]  [--dirty]  [-q]  [--debug]
               [--token TOKEN] [--user  USER]  [--no-force-upload]  [--password
@@ -278,6 +278,15 @@ DESCRIPTION
               Additional variant config files to add.  These  yaml  files  can
               contain  keys such as `c_compiler` and `target_platform` to form
               a build matrix.
+
+       -e EXCLUSIVE_CONFIG_FILE, --exclusive-config-file EXCLUSIVE_CONFIG_FILE
+              Exclusive variant config file  to  add.  Compared  with  --vari‐
+              ant-config-files, you're allowed only one file here. Providing a
+              file here disables searching in your home directory and in  cwd.
+              The  file  specified  here  comes  at the start of the order, as
+              opposed to the end with --variant-config-files. Any config files
+              in  recipes  and  any  config files specified with --variantcon‐
+              fig-files will override values from this file.
 
        --old-build-string
               Disable hash additions to filenames to distinguish package vari‐
@@ -471,7 +480,7 @@ DESCRIPTION
 
 
 
-Anaconda, Inc.                   January 2018                         <B>CONDA(1)</B>
+Anaconda, Inc.                   February 2018                        <B>CONDA(1)</B>
 </PRE></div>
 
 

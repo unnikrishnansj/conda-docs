@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting started &mdash; Conda   documentation</title>
+  <title>Getting started with conda &mdash; Conda   documentation</title>
   
 
   
@@ -95,14 +95,13 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts.html">Concepts</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting started</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting started with conda</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#managing-conda">Managing conda</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#managing-environments">Managing environments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#managing-python">Managing Python</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#managing-packages">Managing packages</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#installing-packages-from-anaconda-org">Installing packages from Anaconda.org</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#installing-a-package-with-pip">Installing a package with pip</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#installing-commercial-packages">Installing commercial packages</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#removing-packages-environments-or-conda">Removing packages, environments, or conda</a></li>
@@ -168,7 +167,7 @@
         
           <li><a href="index.html">User guide</a> &raquo;</li>
         
-      <li>Getting started</li>
+      <li>Getting started with conda</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,8 +188,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="getting-started">
-<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="getting-started-with-conda">
+<h1>Getting started with conda<a class="headerlink" href="#getting-started-with-conda" title="Permalink to this headline">¶</a></h1>
 <p>This 30-minute getting started procedure consists of the following
 exercises:</p>
 <ul>
@@ -211,13 +210,12 @@ Python and then switch between versions. 4 minutes</p>
 <a class="reference internal" href="concepts.html#concept-conda-package"><span class="std std-ref">packages</span></a>:</p>
 <ul class="simple">
 <li>List packages installed on your computer.</li>
-<li>List available packages.</li>
-<li>Install and remove some packages using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code>.</li>
+<li>List packages available for you to install.</li>
+<li>Install and remove some packages.</li>
 <li>For packages not available using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code>, search
 on <a class="reference external" href="http://Anaconda.org">Anaconda.org</a>.</li>
 <li>For packages that are in neither location, install a package
-with the pip package manager. Install a free 30-day trial
-of Anaconda’s commercial package, IOPro.</li>
+with the pip package manager.</li>
 </ul>
 <p>10 minutes</p>
 </li>
@@ -239,7 +237,7 @@ the command-line help</span></a>.</p>
 </div>
 <p>Conda displays the number of the version that you have
 installed.</p>
-<p>EXAMPLE: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">3.11.0</span></code></p>
+<p>EXAMPLE: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">4.4.8</span></code></p>
 <p>NOTE: If you see an error message, verify that you are logged
 into the same user account that you used to install Anaconda
 or Miniconda and that you have closed and re-opened the
@@ -266,12 +264,17 @@ update:</p>
 <p>To create a few environments and then move between them:</p>
 <p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <ol class="arabic">
-<li><p class="first">Create an environment with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span></code>:</p>
+<li><p class="first">Create a new environment named <code class="docutils literal"><span class="pre">snowflakes</span></code> and install the
+package <code class="docutils literal"><span class="pre">biopython</span></code> in it:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snowflakes</span> <span class="n">biopython</span>
 </pre></div>
 </div>
-<p>This creates a new environment named “snowflakes” with the
-program Biopython.</p>
+</li>
+<li><p class="first">Conda checks to see what packages Biopython will need, and asks
+if you want to proceed:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+</pre></div>
+</div>
 <p>TIP: You can abbreviate many frequently used options that are
 preceded by 2 dashes (<code class="docutils literal"><span class="pre">--</span></code>) to just 1 dash and the first
 letter of the option. So <code class="docutils literal"><span class="pre">--name</span></code> and <code class="docutils literal"><span class="pre">-n</span></code> are the same,
@@ -288,19 +291,17 @@ for your operating system:</p>
 <code class="docutils literal"><span class="pre">envs</span></code> directory in your <code class="docutils literal"><span class="pre">conda</span></code> directory. To specify a
 different path, see <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--help</span></code>.</p>
 <p>TIP: Since you did not specify a version of Python, conda
-installs the same version used when conda was downloaded and
-installed.</p>
+installs the same version you used when you downloaded and
+installed Anaconda.</p>
 </li>
 <li><p class="first">Create a new environment and then install a different version
 of Python along with 2 packages named Astroid and Babel:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">bunnies</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.5</span> <span class="n">astroid</span> <span class="n">babel</span>
 </pre></div>
 </div>
+<p>When conda asks you if you want to proceed, answer <code class="docutils literal"><span class="pre">y</span></code> for yes.</p>
 <p>This creates a second new environment in <code class="docutils literal"><span class="pre">/envs</span></code> named
 “bunnies”, with Python 3, Astroid and Babel installed.</p>
-<p>TIP: Install all the programs you will want in this
-environment at the same time. Installing 1 program at a time
-can lead to dependency conflicts.</p>
 <p>TIP: You can add much more to the conda create command. See
 <code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--help</span></code> for details.</p>
 </li>
@@ -318,7 +319,7 @@ can lead to dependency conflicts.</p>
 </div>
 <p>Conda puts an asterisk (*) in front of the active environment.</p>
 </li>
-<li><p class="first">Verify the current environment:</p>
+<li><p class="first">Verify which of your environments is the current environment:</p>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
 </pre></div>
 </div>
@@ -329,7 +330,7 @@ your prompt:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Switch to another environment:</p>
+<li><p class="first">Switch to the other environment:</p>
 <ul class="simple">
 <li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
 <li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
@@ -341,7 +342,7 @@ your prompt:</p>
 <li>Windows:  <code class="docutils literal"><span class="pre">deactivate</span></code></li>
 </ul>
 <p>TIP: When the environment is deactivated, its name is no
-longer shown in the prompt.</p>
+longer shown in your prompt.</p>
 </li>
 <li><p class="first">Make a copy of the snowflakes environment by creating a
 clone of it called “flowers”:</p>
@@ -394,7 +395,7 @@ version of Python 3:</p>
 </li>
 <li><p class="first">Activate the new environment:</p>
 <ul class="simple">
-<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></code></li>
+<li>Linux, macOS: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">snakes</span></code></li>
 <li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snakes</span></code></li>
 </ul>
 </li>
@@ -416,7 +417,7 @@ your prompt:</p>
 </li>
 <li><p class="first">Switch back to the default, version 2.7:</p>
 <ul class="simple">
-<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+<li>Linux, macOS: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
 <li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
 </ul>
 </li>
@@ -429,7 +430,7 @@ version that was used when you installed conda:</p>
 <li><p class="first">Deactivate the snowflakes environment and then revert your
 PATH to its previous state:</p>
 <ul class="simple">
-<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
+<li>Linux, macOS: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">deactivate</span></code></li>
 <li>Windows: <code class="docutils literal"><span class="pre">deactivate</span></code></li>
 </ul>
 </li>
@@ -443,8 +444,7 @@ In this section, you check which packages you have, check which
 are available and look for a specific package and install it.</p>
 <p>Then you look for specific packages on the Anaconda.org
 repository, install packages from Anaconda.org, install more
-packages using <code class="docutils literal"><span class="pre">pip</span></code> install instead of <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code> and
-then install a commercial package.</p>
+packages using <code class="docutils literal"><span class="pre">pip</span></code> install instead of <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code>.</p>
 <p>To find a package:</p>
 <p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <ol class="arabic">
@@ -479,7 +479,7 @@ environment.</p>
 </li>
 <li><p class="first">Activate the bunnies environment:</p>
 <ul class="simple">
-<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
+<li>Linux, macOS: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
 <li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
 </ul>
 </li>
@@ -537,8 +537,10 @@ use to download the package:</p>
 <h3>Installing a package with pip<a class="headerlink" href="#installing-a-package-with-pip" title="Permalink to this headline">¶</a></h3>
 <p>For packages that are not available from conda or Anaconda.org,
 you can often install the package with pip, which stands for
-“pip installs packages.”</p>
-<p>TIP: Pip is only a package manager, so it cannot manage
+“pip installs packages.” Note that you may have conflicts when
+you switch between the two, because they do not know what the
+other is doing.</p>
+<p>Pip is only a package manager, so it cannot manage
 environments for you. Pip cannot even update Python, because
 unlike conda, it does not consider Python a package. But it does
 install some things that conda does not, and vice versa. Both pip
@@ -548,7 +550,7 @@ and conda are included in Anaconda and Miniconda.</p>
 <li><p class="first">Activate the environment where you want to put the
 program, such as bunnies:</p>
 <ul class="simple">
-<li>macOS and Linux—<code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
+<li>macOS and Linux—<code class="docutils literal"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
 <li>Windows—<code class="docutils literal"><span class="pre">activate</span> <span class="pre">bunnies</span></code></li>
 </ul>
 </li>
@@ -564,23 +566,10 @@ program, such as bunnies:</p>
 </li>
 </ol>
 </div>
-<div class="section" id="installing-commercial-packages">
-<h3>Installing commercial packages<a class="headerlink" href="#installing-commercial-packages" title="Permalink to this headline">¶</a></h3>
-<p>Installing commercial packages is the same as installing any
-other package with conda.</p>
-<p>EXAMPLE: To install a free trial of one of Anaconda’s commercial
-packages, IOPro, which can speed up your Python processing, in your Terminal
-window or an Anaconda Prompt, run:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">iopro</span>
-</pre></div>
-</div>
-<p>TIP: Except for academic use, this free trial expires after 30
-days.</p>
-</div>
 </div>
 <div class="section" id="removing-packages-environments-or-conda">
 <span id="remove-pkgs-envs-conda"></span><h2>Removing packages, environments, or conda<a class="headerlink" href="#removing-packages-environments-or-conda" title="Permalink to this headline">¶</a></h2>
-<p>To remove 1 or more of your test packages, environments, and/or
+<p>To remove one or more of your test packages, environments, and/or
 conda:</p>
 <ol class="arabic">
 <li><p class="first">To remove the commercial package IOPro from the bunnies
@@ -635,7 +624,7 @@ Programs, select Python X.X (Anaconda) or Python X.X
 <h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Full documentation—<a class="reference external" href="https://conda.io/docs/">https://conda.io/docs/</a>.</li>
-<li>Cheat sheet—<a class="reference internal" href="cheatsheet.html"><span class="doc">Cheat sheet</span></a>.</li>
+<li>Cheat sheet: <a class="reference internal" href="cheatsheet.html"><span class="doc">Cheat sheet</span></a>.</li>
 <li>FAQs—<a class="reference external" href="http://docs.continuum.io/anaconda/faq.html">http://docs.continuum.io/anaconda/faq.html</a>.</li>
 <li>Free community support—<a class="reference external" href="https://groups.google.com/a/anaconda.com/forum/#!forum/anaconda">https://groups.google.com/a/anaconda.com/forum/#!forum/anaconda</a>.</li>
 <li>Paid support options—<a class="reference external" href="https://www.anaconda.com/support/">https://www.anaconda.com/support/</a>.</li>

@@ -22,8 +22,8 @@ conda render
           [--numpy NUMPY] [--R R_BASE] [--lua LUA]
                  [--bootstrap  BOOTSTRAP]  [--append-file   APPEND_SECTIONS_FILE]
                  [--clobber-file CLOBBER_SECTIONS_FILE] [-m VARIANT_CONFIG_FILES]
-                 [--old-build-string]  [-c  CHANNEL]  [--override-channels]   [-f
-                 FILE] [--verbose] RECIPE_PATH
+                 [-e  EXCLUSIVE_CONFIG_FILE]  [--old-build-string]  [-c  CHANNEL]
+                 [--override-channels] [-f FILE] [--verbose] RECIPE_PATH
    
           Tool  for  building conda packages. A conda package is a binary tarball
           containing system-level libraries, Python modules, executable programs,
@@ -85,6 +85,15 @@ conda render
                  contain  keys such as `c_compiler` and `target_platform` to form
                  a build matrix.
    
+          -e EXCLUSIVE_CONFIG_FILE, --exclusive-config-file EXCLUSIVE_CONFIG_FILE
+                 Exclusive variant config file  to  add.  Compared  with  --vari‐
+                 ant-config-files, you're allowed only one file here. Providing a
+                 file here disables searching in your home directory and in  cwd.
+                 The  file  specified  here  comes  at the start of the order, as
+                 opposed to the end with --variant-config-files. Any config files
+                 in  recipes  and  any  config files specified with --variantcon‐
+                 fig-files will override values from this file.
+   
           --old-build-string
                  Disable hash additions to filenames to distinguish package vari‐
                  ants  from  one another. NOTE: any filename collisions are yours
@@ -118,5 +127,5 @@ conda render
    
    
    
-   Anaconda, Inc.                   January 2018                         <B>CONDA(1)</B>
+   Anaconda, Inc.                   February 2018                        <B>CONDA(1)</B>
    </PRE>
