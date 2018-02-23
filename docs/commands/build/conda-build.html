@@ -218,10 +218,11 @@ DESCRIPTION
               [--no-locking]   [--no-remove-work-dir]    [--error-overlinking]
               [--no-error-overlinking]                    [--long-test-prefix]
               [--no-long-test-prefix] [--keep-going]  [--cache-dir  CACHE_DIR]
-              [--no-copy-test-source-files]  [--merge-build-host] [-c CHANNEL]
-              [--override-channels] RECIPE_PATH [RECIPE_PATH ...]
+              [--no-copy-test-source-files] [--merge-build-host] [--stats-file
+              STATS_FILE]  [-c  CHANNEL]   [--override-channels]   RECIPE_PATH
+              [RECIPE_PATH ...]
 
-       Tool for building conda packages. A conda package is a  binary  tarball
+       Tool  for  building conda packages. A conda package is a binary tarball
        containing system-level libraries, Python modules, executable programs,
        or other components. conda keeps track of dependencies between packages
        and platform specifics, making it simple to create working environments
@@ -229,7 +230,7 @@ DESCRIPTION
 
    positional arguments:
        RECIPE_PATH
-              Path to recipe directory. Pass 'purge' here to  clean  the  work
+              Path  to  recipe  directory. Pass 'purge' here to clean the work
               and test intermediates.
 
    optional arguments:
@@ -240,7 +241,7 @@ DESCRIPTION
               Show the conda-build version number and exit.
 
        -n, --no-source
-              When  templating can't be completed, do not obtain the source to
+              When templating can't be completed, do not obtain the source  to
               try fill in related template variables.
 
        --output
@@ -262,12 +263,12 @@ DESCRIPTION
               Set the Lua version used by conda build.
 
        --bootstrap BOOTSTRAP
-              Provide initial configuration in addition to recipe.  Can  be  a
+              Provide  initial  configuration in addition to recipe.  Can be a
               path to or name of an environment, which will be emulated in the
               package.
 
        --append-file APPEND_SECTIONS_FILE
-              Append data in meta.yaml with fields from this file.  Jinja2  is
+              Append  data in meta.yaml with fields from this file.  Jinja2 is
               not done on appended fields
 
        --clobber-file CLOBBER_SECTIONS_FILE
@@ -275,23 +276,23 @@ DESCRIPTION
               not done on clobbered fields.
 
        -m VARIANT_CONFIG_FILES, --variant-config-files VARIANT_CONFIG_FILES
-              Additional variant config files to add.  These  yaml  files  can
-              contain  keys such as `c_compiler` and `target_platform` to form
+              Additional  variant  config  files  to add. These yaml files can
+              contain keys such as `c_compiler` and `target_platform` to  form
               a build matrix.
 
        -e EXCLUSIVE_CONFIG_FILE, --exclusive-config-file EXCLUSIVE_CONFIG_FILE
-              Exclusive variant config file  to  add.  Compared  with  --vari‐
+              Exclusive  variant  config  file  to  add. Compared with --vari‐
               ant-config-files, you're allowed only one file here. Providing a
-              file here disables searching in your home directory and in  cwd.
-              The  file  specified  here  comes  at the start of the order, as
+              file  here disables searching in your home directory and in cwd.
+              The file specified here comes at the  start  of  the  order,  as
               opposed to the end with --variant-config-files. Any config files
-              in  recipes  and  any  config files specified with --variantcon‐
+              in recipes and any config  files  specified  with  --variantcon‐
               fig-files will override values from this file.
 
        --old-build-string
               Disable hash additions to filenames to distinguish package vari‐
-              ants  from  one another. NOTE: any filename collisions are yours
-              to handle. Any variants with overlapping names  within  a  build
+              ants from one another. NOTE: any filename collisions  are  yours
+              to  handle.  Any  variants with overlapping names within a build
               will clobber each other.
 
        --check
@@ -307,33 +308,33 @@ DESCRIPTION
               Only obtain the source (but don't build).
 
        -t, --test
-              Test  package  (assumes  package  is already built).  RECIPE_DIR
-              argument can be either recipe directory, in  which  case  source
-              download  may be necessary to resolve packageversion, or path to
-              built package .tar.bz2 file, in which case no source  is  neces‐
+              Test package (assumes package  is  already  built).   RECIPE_DIR
+              argument  can  be  either recipe directory, in which case source
+              download may be necessary to resolve packageversion, or path  to
+              built  package  .tar.bz2 file, in which case no source is neces‐
               sary.
 
        --no-test
               Do not test the package.
 
        -b, --build-only
-              Only  run  the  build,  without  any post processing or testing.
+              Only run the build, without  any  post  processing  or  testing.
               Implies --no-test and --no-anaconda-upload.
 
        -p, --post
-              Run  the  post-build  logic.  Implies  --no-test  and   --noana‐
+              Run   the  post-build  logic.  Implies  --no-test  and  --noana‐
               conda-upload.
 
        --skip-existing
-              Skip   recipes  for  which  there  already  exists  an  existing
+              Skip  recipes  for  which  there  already  exists  an   existing
               build(locally or in the channels).
 
        --keep-old-work
-              Do not remove anything from environment, even after  successful‐
+              Do  not remove anything from environment, even after successful‐
               build and test.
 
        --dirty
-              Do  not remove work directory or _build environment, to speed up
+              Do not remove work directory or _build environment, to speed  up
               debugging. Does not apply patches or download source.
 
        -q, --quiet
@@ -356,74 +357,74 @@ DESCRIPTION
               do not activate the build and test envs; just prepend to PATH
 
        --no-build-id
-              do  not generate unique build folder names. Use if having issues
+              do not generate unique build folder names. Use if having  issues
               with paths being too long.
 
        --croot CROOT
-              Build root folder. Equivalent  to  CONDA_BLD_PATH,  but  applies
+              Build  root  folder.  Equivalent  to CONDA_BLD_PATH, but applies
               only to this call of conda-build.
 
        --verify
               do not run verification on recipes or packages when building
 
        --output-folder OUTPUT_FOLDER
-              folder  to  dump  output  package  to. Package are moved here if
-              build or test succeeds. Destination folder must exist  prior  to
+              folder to dump output package to.  Package  are  moved  here  if
+              build  or  test succeeds. Destination folder must exist prior to
               using this.
 
        --no-prefix-length-fallback
               Disable fallback to older 80 character prefix length if environ‐
-              ment creation fails due to insufficient prefix length in  depen‐
+              ment  creation fails due to insufficient prefix length in depen‐
               dency packages
 
        --prefix-length-fallback
               Disable fallback to older 80 character prefix length if environ‐
-              ment creation fails due to insufficient prefix length in  depen‐
+              ment  creation fails due to insufficient prefix length in depen‐
               dency packages
 
        --prefix-length _PREFIX_LENGTH
-              length  of  build  prefix. For packages with binaries that embed
+              length of build prefix. For packages with  binaries  that  embed
               the path, this is critical to ensuring that your package can run
-              as  many places as possible.  Notethat this value can be altered
-              by the OS  below  conda-build  (e.g.  encrypted  filesystems  on
-              Linux),  and you should prefer to set --croot to a non-encrypted
+              as many places as possible.  Notethat this value can be  altered
+              by  the  OS  below  conda-build  (e.g.  encrypted filesystems on
+              Linux), and you should prefer to set --croot to a  non-encrypted
               location instead, so that you maintain a known prefix length.
 
        --no-locking
-              Disable locking, to  avoid  unresolved  race  condition  issues.
-              Unsafe  to  run  multiplebuilds  at once on one system with this
+              Disable  locking,  to  avoid  unresolved  race condition issues.
+              Unsafe to run multiplebuilds at once on  one  system  with  this
               set.
 
        --no-remove-work-dir
               Disable removal of the work dir before testing. Be careful using
-              this  option,  as  you  package may depend on files that are not
-              included in the package, and may passtests, but ultimately  fail
+              this option, as you package may depend on  files  that  are  not
+              included  in the package, and may passtests, but ultimately fail
               on installed systems.
 
        --error-overlinking
-              Enable  error when shared libraries from transitive dependencies
-              are directlylinked to any executables  or  shared  libraries  in
-              built  packages. This is disabledby default, but will be enabled
+              Enable error when shared libraries from transitive  dependencies
+              are  directlylinked  to  any  executables or shared libraries in
+              built packages. This is disabledby default, but will be  enabled
               by default in conda-build 4.0.
 
        --no-error-overlinking
               Disable error when shared libraries from transitive dependencies
-              are  directlylinked  to  any  executables or shared libraries in
-              built packages. This is currentlythe default behavior, but  will
+              are directlylinked to any executables  or  shared  libraries  in
+              built  packages. This is currentlythe default behavior, but will
               change in conda-build 4.0.
 
        --long-test-prefix
               Use a long prefix for the test prefix, as well as the build pre‐
-              fix. Affects only Linux  and  Mac.  Prefix  length  matches  the
+              fix.  Affects  only  Linux  and  Mac.  Prefix length matches the
               --prefix-length flag. This is on by default in conda-build 3.0+
 
        --no-long-test-prefix
-              Do  not  use  a  long prefix for the test prefix, as well as the
+              Do not use a long prefix for the test prefix,  as  well  as  the
               build prefix. Affects only Linux and Mac.  Prefix length matches
               the --prefix-length flag.
 
        --keep-going, -k
-              When  running  tests, keep going after each failure.  Default is
+              When running tests, keep going after each failure.   Default  is
               to stop on the first failure.
 
        --cache-dir CACHE_DIR
@@ -431,25 +432,28 @@ DESCRIPTION
               ing the build.
 
        --no-copy-test-source-files
-              Disables  copying  the  files  necessary for testing the package
-              into the info/test folder. Passing this argument  means  it  may
-              not  be  possible  to  test the package without internet access.
+              Disables copying the files necessary  for  testing  the  package
+              into  the  info/test  folder. Passing this argument means it may
+              not be possible to test the  package  without  internet  access.
               There is also a danger that the source archive(s) containing the
               files could become unavailable sometime in the future.
 
        --merge-build-host
-              Merge  the build and host directories, even when host section or
+              Merge the build and host directories, even when host section  or
               compiler jinja2 is present
 
+       --stats-file STATS_FILE
+              File path to save build statistics to. Stats are in JSON format
+
        -c CHANNEL, --channel CHANNEL
-              Additional channel  to  search  for  packages.  These  are  URLs
-              searched  in  the  order  they  are given (including file:// for
+              Additional  channel  to  search  for  packages.  These  are URLs
+              searched in the order they  are  given  (including  file://  for
               local directories). Then, the defaults or channels from .condarc
-              are  searched (unless --override-channels is given). You can use
-              'defaults' to get the default packages for conda,  and  'system'
-              to  get  the  system  packages,  which  also takes .condarc into
-              account. You can also  use  any  name  and  the  .condarc  chan‐
-              nel_alias  value will be prepended. The default channel_alias is
+              are searched (unless --override-channels is given). You can  use
+              'defaults'  to  get the default packages for conda, and 'system'
+              to get the system  packages,  which  also  takes  .condarc  into
+              account.  You  can  also  use  any  name  and the .condarc chan‐
+              nel_alias value will be prepended. The default channel_alias  is
               http://conda.anaconda.org/.
 
        --override-channels
@@ -475,7 +479,7 @@ DESCRIPTION
               PyPI repository to upload to
 
    conda commands available from other packages:
-              build convert  develop  env  index  inspect  metapackage  render
+              build  convert  develop  env  index  inspect  metapackage render
               skeleton verify
 
 

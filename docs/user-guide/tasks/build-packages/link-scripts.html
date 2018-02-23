@@ -215,29 +215,29 @@
   <div class="section" id="adding-pre-link-post-link-and-pre-unlink-scripts">
 <h1>Adding pre-link, post-link and pre-unlink scripts<a class="headerlink" href="#adding-pre-link-post-link-and-pre-unlink-scripts" title="Permalink to this headline">¶</a></h1>
 <p>You can add scripts to a recipe. These scripts are executed in a subprocess by
-conda, using <code class="docutils literal"><span class="pre">/bin/bash</span> <span class="pre">&lt;script&gt;</span></code> on Linux and macOS, and
-<code class="docutils literal"><span class="pre">%COMSPEC%</span> <span class="pre">/c</span> <span class="pre">&lt;script&gt;</span></code> on Windows.</p>
+conda, using <code class="docutils literal notranslate"><span class="pre">/bin/bash</span> <span class="pre">&lt;script&gt;</span></code> on Linux and macOS, and
+<code class="docutils literal notranslate"><span class="pre">%COMSPEC%</span> <span class="pre">/c</span> <span class="pre">&lt;script&gt;</span></code> on Windows.</p>
 <p>The convention for the path and filenames of these scripts on Windows is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Scripts</span><span class="o">/.&lt;</span><span class="n">name</span><span class="o">&gt;-&lt;</span><span class="n">action</span><span class="o">&gt;.</span><span class="n">bat</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Scripts</span><span class="o">/.&lt;</span><span class="n">name</span><span class="o">&gt;-&lt;</span><span class="n">action</span><span class="o">&gt;.</span><span class="n">bat</span>
 </pre></div>
 </div>
 <p>On Linux and macOS, the convention is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="o">/.&lt;</span><span class="n">name</span><span class="o">&gt;-&lt;</span><span class="n">action</span><span class="o">&gt;.</span><span class="n">sh</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="o">/.&lt;</span><span class="n">name</span><span class="o">&gt;-&lt;</span><span class="n">action</span><span class="o">&gt;.</span><span class="n">sh</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">&lt;name&gt;</span></code> is the package name and <code class="docutils literal"><span class="pre">&lt;action&gt;</span></code> is one of the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> is the package name and <code class="docutils literal notranslate"><span class="pre">&lt;action&gt;</span></code> is one of the following:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">pre-link</span></code>—Executed before the package is installed. An error is
+<li><code class="docutils literal notranslate"><span class="pre">pre-link</span></code>—Executed before the package is installed. An error is
 indicated by a nonzero exit and causes conda to stop and causes the
 installation to fail.</li>
-<li><code class="docutils literal"><span class="pre">post-link</span></code>—Executed after the package is installed. An error is
+<li><code class="docutils literal notranslate"><span class="pre">post-link</span></code>—Executed after the package is installed. An error is
 indicated by a nonzero exist and causes installation to fail. If there is an
 error conda does not write any package metadata.</li>
-<li><code class="docutils literal"><span class="pre">pre-unlink</span></code>—Executed before the package is removed. An error is
+<li><code class="docutils literal notranslate"><span class="pre">pre-unlink</span></code>—Executed before the package is removed. An error is
 indicated by a nonzero exist and causes the removal to fail.</li>
 </ul>
-<p>EXAMPLE: When there is a script named <code class="docutils literal"><span class="pre">/bin/.foo-post-link.sh</span></code> in the package
-<code class="docutils literal"><span class="pre">foo-1.0-0.tar.bz2</span></code>, it is executed after the package is installed.</p>
+<p>EXAMPLE: When there is a script named <code class="docutils literal notranslate"><span class="pre">/bin/.foo-post-link.sh</span></code> in the package
+<code class="docutils literal notranslate"><span class="pre">foo-1.0-0.tar.bz2</span></code>, it is executed after the package is installed.</p>
 <p>The scripts set the following environment variables:</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -262,15 +262,15 @@ indicated by a nonzero exist and causes the removal to fail.</li>
 <p>The scripts are:</p>
 <ul class="simple">
 <li>Windows:<ul>
-<li><code class="docutils literal"><span class="pre">pre-link.bat</span></code></li>
-<li><code class="docutils literal"><span class="pre">post-link.bat</span></code></li>
-<li><code class="docutils literal"><span class="pre">pre-unlink.bat</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">pre-link.bat</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">post-link.bat</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">pre-unlink.bat</span></code></li>
 </ul>
 </li>
 <li>macOS and Linux:<ul>
-<li><code class="docutils literal"><span class="pre">pre-link.sh</span></code></li>
-<li><code class="docutils literal"><span class="pre">post-link.sh</span></code></li>
-<li><code class="docutils literal"><span class="pre">pre-unlink.sh</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">pre-link.sh</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">post-link.sh</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">pre-unlink.sh</span></code></li>
 </ul>
 </li>
 </ul>
@@ -280,10 +280,10 @@ indicated by a nonzero exist and causes the removal to fail.</li>
 <li>Not touch anything other than the files being installed.</li>
 <li>Not write anything to stdout or stderr, unless an error occurs.</li>
 <li>Not depend on any installed or to be installed conda packages.</li>
-<li>Depend only on simple system tools such as <code class="docutils literal"><span class="pre">rm</span></code>, <code class="docutils literal"><span class="pre">cp</span></code>, <code class="docutils literal"><span class="pre">mv</span></code> and <code class="docutils literal"><span class="pre">ln</span></code>.</li>
+<li>Depend only on simple system tools such as <code class="docutils literal notranslate"><span class="pre">rm</span></code>, <code class="docutils literal notranslate"><span class="pre">cp</span></code>, <code class="docutils literal notranslate"><span class="pre">mv</span></code> and <code class="docutils literal notranslate"><span class="pre">ln</span></code>.</li>
 </ul>
 <p>The scripts should not write to stdout or stderr unless an error occurs, but
-they may write to <code class="docutils literal"><span class="pre">$PREFIX/.messages.txt</span></code>, which is shown after conda
+they may write to <code class="docutils literal notranslate"><span class="pre">$PREFIX/.messages.txt</span></code>, which is shown after conda
 completes all actions.</p>
 </div>
 

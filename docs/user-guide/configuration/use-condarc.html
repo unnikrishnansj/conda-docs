@@ -244,22 +244,22 @@
 </div>
 <div class="section" id="overview">
 <span id="config-overview"></span><h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>The conda configuration file, <code class="docutils literal"><span class="pre">.condarc</span></code>, is an optional
+<p>The conda configuration file, <code class="docutils literal notranslate"><span class="pre">.condarc</span></code>, is an optional
 runtime configuration file that allows advanced users to
 configure various aspects of conda, such as which channels it
 searches for packages, proxy settings and environment
 directories.</p>
-<p>The <code class="docutils literal"><span class="pre">.condarc</span></code> file is not included by default, but it is
+<p>The <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file is not included by default, but it is
 automatically created in your home directory the first time you
-run the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></code> command.</p>
-<p>A <code class="docutils literal"><span class="pre">.condarc</span></code> file may also be located in the root environment,
+run the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span></code> command.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file may also be located in the root environment,
 in which case it overrides any in the home directory.</p>
-<p>NOTE: A <code class="docutils literal"><span class="pre">.condarc</span></code> file can also be used in an
+<p>NOTE: A <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file can also be used in an
 administrator-controlled installation to override the users’
 configuration. See <a class="reference internal" href="admin-multi-user-install.html"><span class="doc">Administering a multi-user conda installation</span></a>.</p>
-<p>The <code class="docutils literal"><span class="pre">.condarc</span></code> configuration file follows simple
+<p>The <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> configuration file follows simple
 <a class="reference external" href="http://docs.ansible.com/YAMLSyntax.html">YAML syntax</a>.</p>
-<p>The <code class="docutils literal"><span class="pre">.condarc</span></code> file can change many parameters, including:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file can change many parameters, including:</p>
 <ul class="simple">
 <li>Where conda looks for packages.</li>
 <li>If and how conda uses a proxy server.</li>
@@ -270,26 +270,26 @@ environment name.</li>
 <a class="reference external" href="http://anaconda.org">Anaconda.org</a>.</li>
 <li>Default packages or features to include in new environments.</li>
 </ul>
-<p>To create or modify a <code class="docutils literal"><span class="pre">.condarc</span></code> file, use
-the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></code> command or use a text editor to create a
-new file named <code class="docutils literal"><span class="pre">.condarc</span></code> and save it to your user home
+<p>To create or modify a <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file, use
+the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span></code> command or use a text editor to create a
+new file named <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> and save it to your user home
 directory or root directory.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda config --add channels conda-forge</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda config --add channels conda-forge</span>
 </pre></div>
 </div>
 <p>You can also download a <a class="reference internal" href="sample-condarc.html"><span class="doc">sample .condarc file</span></a> to edit in your editor and save to your user
 home directory or root directory.</p>
-<p>To set configuration options, edit the <code class="docutils literal"><span class="pre">.condarc</span></code> file directly
-or use the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span></code> command.</p>
-<p>EXAMPLE: To set the auto_update_conda option to <code class="docutils literal"><span class="pre">False</span></code>, run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">auto_update_conda</span> <span class="kc">False</span>
+<p>To set configuration options, edit the <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file directly
+or use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span></code> command.</p>
+<p>EXAMPLE: To set the auto_update_conda option to <code class="docutils literal notranslate"><span class="pre">False</span></code>, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">auto_update_conda</span> <span class="kc">False</span>
 </pre></div>
 </div>
 <p>For a complete list of conda config commands, see the
 <cite>command reference &lt;../../commands/conda-config&gt;</cite>. The same list
 is available at the Terminal or Anaconda Prompt by running
-<code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--help</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--help</span></code>.</p>
 <p>TIP: Conda supports <a class="reference internal" href="enable-tab-completion.html"><span class="doc">tab completion</span></a>
 with external packages instead of internal configuration.</p>
 <p>For more information, see the <a class="reference external" href="http://continuum.io/blog/advanced-conda-part-1#configuration">Configuration section of Advanced
@@ -299,50 +299,50 @@ Features of conda Part 1</a>.</p>
 <h2><a class="toc-backref" href="#id3">General configuration</a><a class="headerlink" href="#general-configuration" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="channel-locations-channels">
 <span id="config-channels"></span><h3><a class="toc-backref" href="#id4">Channel locations (channels)</a><a class="headerlink" href="#channel-locations-channels" title="Permalink to this headline">¶</a></h3>
-<p>Listing channel locations in the <code class="docutils literal"><span class="pre">.condarc</span></code> file overrides
+<p>Listing channel locations in the <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file overrides
 conda defaults, causing conda to search only the channels listed
 here, in the order given.</p>
-<p>Use <code class="docutils literal"><span class="pre">defaults</span></code> to automatically include all default channels.
+<p>Use <code class="docutils literal notranslate"><span class="pre">defaults</span></code> to automatically include all default channels.
 Non-URL channels are interpreted as Anaconda.org user names. You
 can change this by modifying the channel_alias as described
-in <a class="reference internal" href="#set-ch-alias"><span class="std std-ref">Set a channel alias (channel_alias)</span></a>. The default is just <code class="docutils literal"><span class="pre">defaults</span></code>.</p>
+in <a class="reference internal" href="#set-ch-alias"><span class="std std-ref">Set a channel alias (channel_alias)</span></a>. The default is just <code class="docutils literal notranslate"><span class="pre">defaults</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">&lt;anaconda_dot_org_username&gt;</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">http://some.custom/channel</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file:///some/local/directory</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
 </pre></div>
 </div>
-<p>To select channels for a single environment, put a <code class="docutils literal"><span class="pre">.condarc</span></code>
+<p>To select channels for a single environment, put a <code class="docutils literal notranslate"><span class="pre">.condarc</span></code>
 file in the root directory of that environment.</p>
 <p>EXAMPLE: If you have installed Miniconda with Python 3 in your
 home directory and the environment is named “flowers”, the
 path may be:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">flowers</span><span class="o">/.</span><span class="n">condarc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">flowers</span><span class="o">/.</span><span class="n">condarc</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="allow-other-channels-allow-other-channels">
 <h3><a class="toc-backref" href="#id5">Allow other channels (allow_other_channels)</a><a class="headerlink" href="#allow-other-channels-allow-other-channels" title="Permalink to this headline">¶</a></h3>
-<p>The system-level <code class="docutils literal"><span class="pre">.condarc</span></code> file may specify a set of allowed
+<p>The system-level <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file may specify a set of allowed
 channels, and it may allow users to install packages from other
 channels with the boolean flag allow_other_channels. The default
-is <code class="docutils literal"><span class="pre">True</span></code>.</p>
-<p>If allow_other_channels is set to <code class="docutils literal"><span class="pre">False</span></code>, only those channels
-explicitly specified in the system <code class="docutils literal"><span class="pre">.condarc</span></code> file are allowed:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">allow_other_channels</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>If allow_other_channels is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>, only those channels
+explicitly specified in the system <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file are allowed:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">allow_other_channels</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
-<p>When allow_other_channels is set to <code class="docutils literal"><span class="pre">True</span></code> or not specified,
+<p>When allow_other_channels is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> or not specified,
 each user has access to the default channels and to any channels
-that the user specifies in their local <code class="docutils literal"><span class="pre">.condarc</span></code> file. When
-allow_other_channels is set to <code class="docutils literal"><span class="pre">false</span></code>, if the user specifies
+that the user specifies in their local <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file. When
+allow_other_channels is set to <code class="docutils literal notranslate"><span class="pre">false</span></code>, if the user specifies
 other channels, the other channels are blocked, and the user
 receives a message reporting that channels are blocked. For more
 information, see <a class="reference internal" href="admin-multi-user-install.html#admin-inst"><span class="std std-ref">Example administrator-controlled installation</span></a>.</p>
-<p>If the system <code class="docutils literal"><span class="pre">.condarc</span></code> file specifies a channel_alias,
-it overrides any channel aliases set in a user’s <code class="docutils literal"><span class="pre">.condarc</span></code>
+<p>If the system <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file specifies a channel_alias,
+it overrides any channel aliases set in a user’s <code class="docutils literal notranslate"><span class="pre">.condarc</span></code>
 file. See <a class="reference internal" href="#channel-alias"><span class="std std-ref">Set a channel alias (channel_alias)</span></a>.</p>
 </div>
 <div class="section" id="default-channels-default-channels">
@@ -350,7 +350,7 @@ file. See <a class="reference internal" href="#channel-alias"><span class="std s
 <p>Normally the default repository is <a class="reference external" href="http:repo.continuum.io">repo.continuum.io</a>, but if default_channels is defined,
 it sets the new list of default channels. This is especially
 useful for air gap and enterprise installations:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">&lt;anaconda_dot_org_username&gt;</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">http://some.custom/channel</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file:///some/local/directory</span>
@@ -360,40 +360,40 @@ useful for air gap and enterprise installations:</p>
 </div>
 <div class="section" id="update-conda-automatically-auto-update-conda">
 <h3><a class="toc-backref" href="#id7">Update conda automatically (auto_update_conda)</a><a class="headerlink" href="#update-conda-automatically-auto-update-conda" title="Permalink to this headline">¶</a></h3>
-<p>When <code class="docutils literal"><span class="pre">True</span></code>, conda updates itself any time a user updates or
-installs a package in the root environment. When <code class="docutils literal"><span class="pre">False</span></code>,
+<p>When <code class="docutils literal notranslate"><span class="pre">True</span></code>, conda updates itself any time a user updates or
+installs a package in the root environment. When <code class="docutils literal notranslate"><span class="pre">False</span></code>,
 conda updates itself only if the user manually issues a
-<code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span></code> command. The default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span></code> command. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">auto_update_conda</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">auto_update_conda</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="always-yes-always-yes">
 <h3><a class="toc-backref" href="#id8">Always yes (always_yes)</a><a class="headerlink" href="#always-yes-always-yes" title="Permalink to this headline">¶</a></h3>
-<p>Choose the <code class="docutils literal"><span class="pre">yes</span></code> option whenever asked to proceed, such as
-when installing. Same as using the <code class="docutils literal"><span class="pre">--yes</span></code> flag at the
-command line. The default is <code class="docutils literal"><span class="pre">False</span></code>.</p>
+<p>Choose the <code class="docutils literal notranslate"><span class="pre">yes</span></code> option whenever asked to proceed, such as
+when installing. Same as using the <code class="docutils literal notranslate"><span class="pre">--yes</span></code> flag at the
+command line. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">always_yes</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">always_yes</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="show-channel-urls-show-channel-urls">
 <h3><a class="toc-backref" href="#id9">Show channel URLs (show_channel_urls)</a><a class="headerlink" href="#show-channel-urls-show-channel-urls" title="Permalink to this headline">¶</a></h3>
 <p>Show channel URLs when displaying what is going to be downloaded
-and in <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></code>. The default is <code class="docutils literal"><span class="pre">False</span></code>.</p>
+and in <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">show_channel_urls</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">show_channel_urls</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="change-command-prompt-changeps1">
 <h3><a class="toc-backref" href="#id10">Change command prompt (changeps1)</a><a class="headerlink" href="#change-command-prompt-changeps1" title="Permalink to this headline">¶</a></h3>
-<p>When using <code class="docutils literal"><span class="pre">activate</span></code>, change the command prompt from <code class="docutils literal"><span class="pre">$PS1</span></code>
-to include the activated environment. The default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">activate</span></code>, change the command prompt from <code class="docutils literal notranslate"><span class="pre">$PS1</span></code>
+to include the activated environment. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">changeps1</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">changeps1</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 </div>
@@ -401,19 +401,19 @@ to include the activated environment. The default is <code class="docutils liter
 <h3><a class="toc-backref" href="#id11">Add pip as Python dependency (add_pip_as_python_dependency)</a><a class="headerlink" href="#add-pip-as-python-dependency-add-pip-as-python-dependency" title="Permalink to this headline">¶</a></h3>
 <p>Add pip, wheel and setuptools as dependencies of Python. This
 ensures that pip, wheel and setuptools are always installed any
-time Python is installed. The default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+time Python is installed. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">add_pip_as_python_dependency</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">add_pip_as_python_dependency</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="use-pip-use-pip">
 <h3><a class="toc-backref" href="#id12">Use pip (use_pip)</a><a class="headerlink" href="#use-pip-use-pip" title="Permalink to this headline">¶</a></h3>
-<p>Use pip when listing packages with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></code>. This does not
+<p>Use pip when listing packages with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code>. This does not
 affect any conda command or functionality other than the output
-of the command <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span></code>. The default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+of the command <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code>. The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">use_pip</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">use_pip</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 </div>
@@ -422,7 +422,7 @@ of the command <code class="docutils literal"><span class="pre">conda</span> <sp
 <p>By default, proxy settings are pulled from the HTTP_PROXY and
 HTTPS_PROXY environment variables or the system. Setting them
 here overrides that default:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">proxy_servers</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">proxy_servers</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">http</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://user:pass@corp.com:8080</span>
     <span class="l l-Scalar l-Scalar-Plain">https</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://user:pass@corp.com:8080</span>
 </pre></div>
@@ -430,7 +430,7 @@ here overrides that default:</p>
 <p>To give a proxy for a specific scheme and host, use the
 scheme://hostname form for the key. This matches for any request
 to the given scheme and exact host name:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">proxy_servers</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">proxy_servers</span><span class="p p-Indicator">:</span>
   <span class="s">&#39;http://10.20.1.128&#39;</span><span class="p p-Indicator">:</span> <span class="s">&#39;http://10.10.1.10:5323&#39;</span>
 </pre></div>
 </div>
@@ -439,33 +439,33 @@ authentication fails, conda prompts for a user name and password.</p>
 <p>If your password contains special characters, you need escape
 them as described in <a class="reference external" href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters">Percent-encoding reserved characters</a> ,
 on Wikipedia.</p>
-<p>Be careful not to use <code class="docutils literal"><span class="pre">http</span></code> when you mean https or
-<code class="docutils literal"><span class="pre">https</span></code> when you mean http.</p>
+<p>Be careful not to use <code class="docutils literal notranslate"><span class="pre">http</span></code> when you mean https or
+<code class="docutils literal notranslate"><span class="pre">https</span></code> when you mean http.</p>
 </div>
 <div class="section" id="ssl-verification-ssl-verify">
 <span id="ssl-verification"></span><h3><a class="toc-backref" href="#id14">SSL verification (ssl_verify)</a><a class="headerlink" href="#ssl-verification-ssl-verify" title="Permalink to this headline">¶</a></h3>
 <p>If you are behind a proxy that does SSL inspection such as a
 Cisco IronPort Web Security Appliance (WSA), you may need to use
 ssl_verify to override the SSL verification settings.</p>
-<p>By default this variable is <code class="docutils literal"><span class="pre">True</span></code>, which means that SSL
+<p>By default this variable is <code class="docutils literal notranslate"><span class="pre">True</span></code>, which means that SSL
 verification is used and conda verifies certificates for SSL
-connections. Setting this variable to <code class="docutils literal"><span class="pre">False</span></code> disables the
+connections. Setting this variable to <code class="docutils literal notranslate"><span class="pre">False</span></code> disables the
 connection’s normal security and is not recommended:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ssl_verify</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ssl_verify</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 <p>You can also set ssl_verify to a string path to a certificate,
 which can be used to verify SSL connections:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ssl_verify</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">corp.crt</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ssl_verify</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">corp.crt</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="offline-mode-only-offline">
 <h3><a class="toc-backref" href="#id15">Offline mode only (offline)</a><a class="headerlink" href="#offline-mode-only-offline" title="Permalink to this headline">¶</a></h3>
-<p>Filters out all channel URLs that do not use the <code class="docutils literal"><span class="pre">file://</span></code>
-protocol. The default is <code class="docutils literal"><span class="pre">False</span></code>.</p>
+<p>Filters out all channel URLs that do not use the <code class="docutils literal notranslate"><span class="pre">file://</span></code>
+protocol. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">offline</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">offline</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
@@ -474,50 +474,50 @@ protocol. The default is <code class="docutils literal"><span class="pre">False<
 <h2><a class="toc-backref" href="#id16">Advanced configuration</a><a class="headerlink" href="#advanced-configuration" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="disallow-soft-linking-allow-softlinks">
 <h3><a class="toc-backref" href="#id17">Disallow soft-linking (allow_softlinks)</a><a class="headerlink" href="#disallow-soft-linking-allow-softlinks" title="Permalink to this headline">¶</a></h3>
-<p>When allow_softlinks is <code class="docutils literal"><span class="pre">True</span></code>, conda uses hard-links when
+<p>When allow_softlinks is <code class="docutils literal notranslate"><span class="pre">True</span></code>, conda uses hard-links when
 possible and soft-links—symlinks—when hard-links are not
 possible, such as when installing on a different file system
 than the one that the package cache is on.</p>
-<p>When allow_softlinks is <code class="docutils literal"><span class="pre">False</span></code>, conda still uses
+<p>When allow_softlinks is <code class="docutils literal notranslate"><span class="pre">False</span></code>, conda still uses
 hard-links when possible, but when it is not possible, conda
 copies files. Individual packages can override this option,
 specifying that certain files should never be soft-linked. See
 <a class="reference internal" href="../tasks/build-packages/define-metadata.html#no-link"><span class="std std-ref">No link</span></a>.</p>
-<p>The default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">allow_softlinks</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">allow_softlinks</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="set-a-channel-alias-channel-alias">
 <span id="channel-alias"></span><span id="set-ch-alias"></span><h3><a class="toc-backref" href="#id18">Set a channel alias (channel_alias)</a><a class="headerlink" href="#set-a-channel-alias-channel-alias" title="Permalink to this headline">¶</a></h3>
-<p>Whenever you use the <code class="docutils literal"><span class="pre">-c</span></code> or <code class="docutils literal"><span class="pre">--channel</span></code> flag to give conda a
+<p>Whenever you use the <code class="docutils literal notranslate"><span class="pre">-c</span></code> or <code class="docutils literal notranslate"><span class="pre">--channel</span></code> flag to give conda a
 channel name that is not a URL, conda prepends the channel_alias
 to the name that it was given. The default channel_alias is
 <a class="reference external" href="https://conda.anaconda.org/">https://conda.anaconda.org/</a>.</p>
 <p>EXAMPLE: The command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">asmeurer</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">asmeurer</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>is the same as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">conda</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">asmeurer</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">conda</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">asmeurer</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>You can set channel_alias to your own repository.</p>
 <p>EXAMPLE: To set channel_alias to your repository at
 <a class="reference external" href="https://yourrepo.com">https://yourrepo.com</a>:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channel_alias</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://your.repo/</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channel_alias</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://your.repo/</span>
 </pre></div>
 </div>
 <p>On Windows, you must include a slash (“/”) at the end of the URL:</p>
 <p>EXAMPLE: <a class="reference external" href="https://your.repo/conda/">https://your.repo/conda/</a></p>
 <p>When channel_alias set to your repository at
 <a class="reference external" href="https://yourrepo.com">https://yourrepo.com</a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">jsmith</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">jsmith</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>is the same as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yourrepo</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jsmith</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">--</span><span class="n">channel</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yourrepo</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jsmith</span> <span class="o">&lt;</span><span class="n">package</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -526,10 +526,10 @@ to the name that it was given. The default channel_alias is
 <p>When creating new environments, add the specified packages by
 default. The default packages are installed in every environment
 you create. You can override this option at the command prompt
-with the <code class="docutils literal"><span class="pre">--no-default-packages</span></code> flag. The default is to not
+with the <code class="docutils literal notranslate"><span class="pre">--no-default-packages</span></code> flag. The default is to not
 include any packages.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">create_default_packages</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">create_default_packages</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pip</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ipython</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">scipy=0.15.0</span>
@@ -542,19 +542,19 @@ include any packages.</p>
 to not track any features. This is similar to adding mkl to
 the create_default_packages list.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">track_features</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">track_features</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkl</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="disable-updating-of-dependencies-update-dependencies">
 <h3><a class="toc-backref" href="#id21">Disable updating of dependencies (update_dependencies)</a><a class="headerlink" href="#disable-updating-of-dependencies-update-dependencies" title="Permalink to this headline">¶</a></h3>
-<p>By default, <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code> updates the given package and all
+<p>By default, <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> updates the given package and all
 its dependencies to the latest versions.</p>
 <p>If you prefer to update only the packages given explicitly at
 the command line and avoid updating existing installed packages
-as much as possible, set update_dependencies to <code class="docutils literal"><span class="pre">False</span></code>:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">update_dependencies</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+as much as possible, set update_dependencies to <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">update_dependencies</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 <p>NOTE: Conda still ensures that dependency specifications are
@@ -562,10 +562,10 @@ satisfied. Thus, some dependencies may still be updated or,
 conversely, this may prevent packages given at the command line
 from being updated to their latest versions. You can always
 specify versions at the command line to force conda to install a
-given version, such as <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">numpy=1.9.3</span></code>.</p>
+given version, such as <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">numpy=1.9.3</span></code>.</p>
 <p>You can enable and disable this option
-at the command line with the <code class="docutils literal"><span class="pre">--update-dependencies</span></code> and
-<code class="docutils literal"><span class="pre">--no-update-dependencies</span></code> flags.</p>
+at the command line with the <code class="docutils literal notranslate"><span class="pre">--update-dependencies</span></code> and
+<code class="docutils literal notranslate"><span class="pre">--no-update-dependencies</span></code> flags.</p>
 <p>To avoid updating only specific packages in an environment, a
 better option may be to pin them. For more information, see
 <a class="reference internal" href="../tasks/manage-pkgs.html#pinning-packages"><span class="std std-ref">Preventing packages from updating (pinning)</span></a>.</p>
@@ -575,7 +575,7 @@ better option may be to pin them. For more information, see
 <p>Disallow the installation of certain packages. The default is to
 allow installation of all packages.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">disallow</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">disallow</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">anaconda</span>
 </pre></div>
 </div>
@@ -586,28 +586,28 @@ allow installation of all packages.</p>
 you can set the system configuration so that users automatically
 see private packages. Anaconda.org was formerly known as
 binstar.org. This uses the Anaconda command-line client, which
-you can install with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">anaconda-client</span></code>, to
+you can install with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">anaconda-client</span></code>, to
 automatically add the token to the channel URLs.</p>
-<p>The default is <code class="docutils literal"><span class="pre">True</span></code>.</p>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">add_anaconda_token</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">add_anaconda_token</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
-<p>NOTE: Even when set to <code class="docutils literal"><span class="pre">True</span></code>, this setting is enabled only if
+<p>NOTE: Even when set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, this setting is enabled only if
 the Anaconda command-line client is installed and you are
-logged in with the <code class="docutils literal"><span class="pre">anaconda</span> <span class="pre">login</span></code> command.</p>
+logged in with the <code class="docutils literal notranslate"><span class="pre">anaconda</span> <span class="pre">login</span></code> command.</p>
 </div>
 <div class="section" id="specify-environment-directories-envs-dirs">
 <h3><a class="toc-backref" href="#id24">Specify environment directories (envs_dirs)</a><a class="headerlink" href="#specify-environment-directories-envs-dirs" title="Permalink to this headline">¶</a></h3>
 <p>Specify directories in which environments are located. If this
-key is set, the root prefix <code class="docutils literal"><span class="pre">envs_dir</span></code> is not used unless
+key is set, the root prefix <code class="docutils literal notranslate"><span class="pre">envs_dir</span></code> is not used unless
 explicitly included. This key also determines where the package
 caches are located.</p>
-<p>For each envs here, <code class="docutils literal"><span class="pre">envs/pkgs</span></code> is used as the pkgs cache,
-except for the standard <code class="docutils literal"><span class="pre">envs</span></code> directory in the root
-directory, for which the normal <code class="docutils literal"><span class="pre">root_dir/pkgs</span></code> is used.</p>
+<p>For each envs here, <code class="docutils literal notranslate"><span class="pre">envs/pkgs</span></code> is used as the pkgs cache,
+except for the standard <code class="docutils literal notranslate"><span class="pre">envs</span></code> directory in the root
+directory, for which the normal <code class="docutils literal notranslate"><span class="pre">root_dir/pkgs</span></code> is used.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">envs_dirs</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">envs_dirs</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">~/my-envs</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/opt/anaconda/envs</span>
 </pre></div>
@@ -615,27 +615,27 @@ directory, for which the normal <code class="docutils literal"><span class="pre"
 <p>The CONDA_ENVS_PATH environment variable overwrites this setting:</p>
 <ul class="simple">
 <li>For macOS and Linux:
-<code class="docutils literal"><span class="pre">CONDA_ENVS_PATH=~/my-envs:/opt/anaconda/envs</span></code></li>
+<code class="docutils literal notranslate"><span class="pre">CONDA_ENVS_PATH=~/my-envs:/opt/anaconda/envs</span></code></li>
 <li>For Windows:
-<code class="docutils literal"><span class="pre">set</span> <span class="pre">CONDA_ENVS_PATH=C:\Users\joe\envs;C:\Anaconda\envs</span></code></li>
+<code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">CONDA_ENVS_PATH=C:\Users\joe\envs;C:\Anaconda\envs</span></code></li>
 </ul>
 </div>
 <div class="section" id="specify-package-directories-pkgs-dirs">
 <h3><a class="toc-backref" href="#id25">Specify package directories (pkgs_dirs)</a><a class="headerlink" href="#specify-package-directories-pkgs-dirs" title="Permalink to this headline">¶</a></h3>
 <p>Specify directories in which packages are located. If this
-key is set, the root prefix <code class="docutils literal"><span class="pre">pkgs_dirs</span></code> is not used unless
+key is set, the root prefix <code class="docutils literal notranslate"><span class="pre">pkgs_dirs</span></code> is not used unless
 explicitly included.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">pkgs_dirs</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">pkgs_dirs</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/opt/anaconda/pkgs</span>
 </pre></div>
 </div>
 <p>The CONDA_PKGS_DIRS environment variable overwrites this setting:</p>
 <ul class="simple">
 <li>For macOS and Linux:
-<code class="docutils literal"><span class="pre">CONDA_PKGS_DIRS=/opt/anaconda/pkgs</span></code></li>
+<code class="docutils literal notranslate"><span class="pre">CONDA_PKGS_DIRS=/opt/anaconda/pkgs</span></code></li>
 <li>For Windows:
-<code class="docutils literal"><span class="pre">set</span> <span class="pre">CONDA_PKGS_DIRS=C:\Anaconda\pkgs</span></code></li>
+<code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">CONDA_PKGS_DIRS=C:\Anaconda\pkgs</span></code></li>
 </ul>
 </div>
 </div>
@@ -645,11 +645,11 @@ explicitly included.</p>
 <h3><a class="toc-backref" href="#id27">Specify conda build output root directory (root-dir)</a><a class="headerlink" href="#specify-conda-build-output-root-directory-root-dir" title="Permalink to this headline">¶</a></h3>
 <p>Build output root directory. You can also set this with the
 CONDA_BLD_PATH environment variable. The default is
-<code class="docutils literal"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></code>. If you do not have write
-permissions to <code class="docutils literal"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></code> , the default is
-<code class="docutils literal"><span class="pre">~/conda-bld/</span></code> .</p>
+<code class="docutils literal notranslate"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></code>. If you do not have write
+permissions to <code class="docutils literal notranslate"><span class="pre">&lt;CONDA_PREFIX&gt;/conda-bld/</span></code> , the default is
+<code class="docutils literal notranslate"><span class="pre">~/conda-bld/</span></code> .</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">root-dir</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">~/conda-builds</span>
 </pre></div>
 </div>
@@ -657,9 +657,9 @@ permissions to <code class="docutils literal"><span class="pre">&lt;CONDA_PREFIX
 <div class="section" id="automatically-upload-conda-build-packages-to-anaconda-org-anaconda-upload">
 <h3><a class="toc-backref" href="#id28">Automatically upload conda build packages to Anaconda.org (anaconda_upload)</a><a class="headerlink" href="#automatically-upload-conda-build-packages-to-anaconda-org-anaconda-upload" title="Permalink to this headline">¶</a></h3>
 <p>Automatically upload packages built with conda build to
-<a class="reference external" href="http://anaconda.org">Anaconda.org</a>. The default is <code class="docutils literal"><span class="pre">False</span></code>.</p>
+<a class="reference external" href="http://anaconda.org">Anaconda.org</a>. The default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">anaconda_upload</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">anaconda_upload</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
 </pre></div>
 </div>
 </div>
@@ -670,7 +670,7 @@ You can pass your token to conda-build with this condarc setting, or with a CLI
 argument.  This is unset by default.  Setting it implicitly enables
 anaconda_upload.</p>
 <blockquote>
-<div><div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+<div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">anaconda_token</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">gobbledygook</span>
 </pre></div>
 </div>
@@ -678,9 +678,9 @@ anaconda_upload.</p>
 </div>
 <div class="section" id="limit-build-output-verbosity-conda-build-3-0-quiet">
 <h3><a class="toc-backref" href="#id30">Limit build output verbosity (conda-build 3.0+) (quiet)</a><a class="headerlink" href="#limit-build-output-verbosity-conda-build-3-0-quiet" title="Permalink to this headline">¶</a></h3>
-<p>Conda-build’s output verbosity can be reduced with the <code class="docutils literal"><span class="pre">quiet</span></code> setting. For
-more verbosity use the CLI flag <code class="docutils literal"><span class="pre">--debug</span></code>.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+<p>Conda-build’s output verbosity can be reduced with the <code class="docutils literal notranslate"><span class="pre">quiet</span></code> setting. For
+more verbosity use the CLI flag <code class="docutils literal notranslate"><span class="pre">--debug</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">quiet</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
@@ -690,7 +690,7 @@ more verbosity use the CLI flag <code class="docutils literal"><span class="pre"
 <p>Conda-build 3 adds hashes to filenames to allow greater customization of
 dependency versions. If you find this disruptive, you can disable the hashing
 with the following config entry:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">filename_hashing</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </pre></div>
 </div>
@@ -702,7 +702,7 @@ reflected in the build string, packages will be missing due to clobbering.</p>
 <h3><a class="toc-backref" href="#id32">Disable recipe and package verification (conda-build 3.0+) (no_verify)</a><a class="headerlink" href="#disable-recipe-and-package-verification-conda-build-3-0-no-verify" title="Permalink to this headline">¶</a></h3>
 <p>By default, conda-build uses conda-verify to ensure that your recipe and package
 meet some minimum sanity checks.  You can disable these:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">no_verify</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
@@ -712,9 +712,9 @@ meet some minimum sanity checks.  You can disable these:</p>
 <p>By default, conda-build creates a new folder for each build, named for the
 package name plus a timestamp. This allows you to do multiple builds at once. If
 you have issues with long paths, you may need to disable this behavior. You
-should first try to change the build output root directory with the <code class="docutils literal"><span class="pre">root-dir</span></code>
+should first try to change the build output root directory with the <code class="docutils literal notranslate"><span class="pre">root-dir</span></code>
 setting described above, but fall back to this as necessary:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">set_build_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </pre></div>
 </div>
@@ -724,7 +724,7 @@ setting described above, but fall back to this as necessary:</p>
 <p>By default, conda-build builds all recipes that you specify. You can instead
 skip recipes that are already built. A recipe is skipped if and only if <em>all</em> of
 its outputs are available on your currently configured channels.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">skip_existing</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
@@ -733,14 +733,14 @@ its outputs are available on your currently configured channels.</p>
 <h3><a class="toc-backref" href="#id35">Omit recipe from package (conda-build 3.0+) (include_recipe)</a><a class="headerlink" href="#omit-recipe-from-package-conda-build-3-0-include-recipe" title="Permalink to this headline">¶</a></h3>
 <p>By default, conda-build includes the recipe that was used to build the package.
 If this contains sensitive or proprietary information, you can omit the recipe.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">include_recipe</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </pre></div>
 </div>
 <p>NOTE: If you do not include the recipe, you cannot use conda-build to test
 the package after the build completes. This means that you cannot split your
-build and test steps across two distinct CLI commands (<code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">--notest</span>
-<span class="pre">recipe</span></code> and <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">recipe</span></code>). If you need to omit the recipe and
+build and test steps across two distinct CLI commands (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">--notest</span>
+<span class="pre">recipe</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">recipe</span></code>). If you need to omit the recipe and
 split your steps, your only option is to remove the recipe files from the
 tarball artifacts after your test step. Conda-build does not provide tools for
 doing that.</p>
@@ -752,7 +752,7 @@ executing the build or test scripts. This adds necessary PATH entries, and also
 runs any activate.d scripts you may have. If you disable activation, the PATH
 will still be modified, but the activate.d scripts will not run. This is not
 recommended, but some people prefer this.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">activate</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </pre></div>
 </div>
@@ -760,9 +760,9 @@ recommended, but some people prefer this.</p>
 <div class="section" id="pypi-upload-settings-conda-build-3-0-pypirc">
 <h3><a class="toc-backref" href="#id37">PyPI upload settings (conda-build 3.0+) (pypirc)</a><a class="headerlink" href="#pypi-upload-settings-conda-build-3-0-pypirc" title="Permalink to this headline">¶</a></h3>
 <p>Unset by default.  If you have wheel outputs in your recipe, conda-build will
-try to upload them to the PyPI repository specified by the <code class="docutils literal"><span class="pre">pypi_repository</span></code>
+try to upload them to the PyPI repository specified by the <code class="docutils literal notranslate"><span class="pre">pypi_repository</span></code>
 setting using credentials from this file path.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">pypirc</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">~/.pypirc</span>
 </pre></div>
 </div>
@@ -771,8 +771,8 @@ setting using credentials from this file path.</p>
 <h3><a class="toc-backref" href="#id38">PyPI repository to upload to (conda-build 3.0+) (pypi_repository)</a><a class="headerlink" href="#pypi-repository-to-upload-to-conda-build-3-0-pypi-repository" title="Permalink to this headline">¶</a></h3>
 <p>Unset by default.  If you have wheel outputs in your recipe, conda-build will
 try to upload them to this PyPI repository using credentials from the file
-specified by the <code class="docutils literal"><span class="pre">pypirc</span></code> setting.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
+specified by the <code class="docutils literal notranslate"><span class="pre">pypirc</span></code> setting.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">conda-build</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">pypi_repository</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">pypi</span>
 </pre></div>
 </div>
@@ -780,34 +780,34 @@ specified by the <code class="docutils literal"><span class="pre">pypirc</span><
 </div>
 <div class="section" id="obtaining-information-from-the-condarc-file">
 <h2><a class="toc-backref" href="#id39">Obtaining information from the .condarc file</a><a class="headerlink" href="#obtaining-information-from-the-condarc-file" title="Permalink to this headline">¶</a></h2>
-<p>NOTE: It may be necessary to add the “force” option <code class="docutils literal"><span class="pre">-f</span></code> to
+<p>NOTE: It may be necessary to add the “force” option <code class="docutils literal notranslate"><span class="pre">-f</span></code> to
 the following commands.</p>
 <p>To get all keys and their values:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda config --get
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --get
 </pre></div>
 </div>
 <p>To get the value of a specific key, such as channels:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda config --get channels
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --get channels
 </pre></div>
 </div>
 <p>To add a new value, such as
 <a class="reference external" href="http://conda.anaconda.org/mutirri">http://conda.anaconda.org/mutirri</a>, to a specific key, such as
 channels:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda config --add channels http://conda.anaconda.org/mutirri
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels http://conda.anaconda.org/mutirri
 </pre></div>
 </div>
 <p>To remove an existing value, such as
 <a class="reference external" href="http://conda.anaconda.org/mutirri">http://conda.anaconda.org/mutirri</a> from a specific key, such as
 channels:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda config --remove channels http://conda.anaconda.org/mutirri
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --remove channels http://conda.anaconda.org/mutirri
 </pre></div>
 </div>
 <p>To remove a key, such as channels, and all of its values:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda config --remove-key channels
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --remove-key channels
 </pre></div>
 </div>
 <p>To configure channels and their priority for a single
-environment, make a <code class="docutils literal"><span class="pre">.condarc</span></code> file in the <a class="reference internal" href="#config-channels"><span class="std std-ref">root directory
+environment, make a <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file in the <a class="reference internal" href="#config-channels"><span class="std std-ref">root directory
 of that environment</span></a>.</p>
 </div>
 </div>

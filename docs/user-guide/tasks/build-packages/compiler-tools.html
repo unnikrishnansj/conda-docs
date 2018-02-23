@@ -221,7 +221,7 @@ benefits.</p>
 <div class="section" id="compiler-packages">
 <h2>Compiler packages<a class="headerlink" href="#compiler-packages" title="Permalink to this headline">¶</a></h2>
 <p>Before Anaconda 5.0, compilers were installed using system tools such as XCode
-or <code class="docutils literal"><span class="pre">yum</span> <span class="pre">install</span> <span class="pre">gcc</span></code>. Now there are conda packages for Linux and macOS
+or <code class="docutils literal notranslate"><span class="pre">yum</span> <span class="pre">install</span> <span class="pre">gcc</span></code>. Now there are conda packages for Linux and macOS
 compilers. Unlike the previous gcc 4.8.5 packages that included gcc, g++ and
 gfortran all in the same package, these conda packages are split into separate
 compilers:</p>
@@ -249,19 +249,19 @@ build platform and the host platform.</p>
 <h2>Using the compiler packages<a class="headerlink" href="#using-the-compiler-packages" title="Permalink to this headline">¶</a></h2>
 <p>The compiler packages can be installed with conda. Because they are designed
 with (pseudo) cross-compiling in mind, all of the executables in a compiler
-package are “prefixed.” Instead of <code class="docutils literal"><span class="pre">gcc</span></code>, the executable name of the compiler
-you use will be something like <code class="docutils literal"><span class="pre">x86_64-conda_cos6-linux-gnu-gcc</span></code>. These full
+package are “prefixed.” Instead of <code class="docutils literal notranslate"><span class="pre">gcc</span></code>, the executable name of the compiler
+you use will be something like <code class="docutils literal notranslate"><span class="pre">x86_64-conda_cos6-linux-gnu-gcc</span></code>. These full
 compiler names are shown in the build logs, recording the host platform and
 helping prevent the common mistake of using the wrong compiler.</p>
-<p>Many build tools such as <code class="docutils literal"><span class="pre">make</span></code> and <code class="docutils literal"><span class="pre">cmake</span></code> search by default for a
-compiler named simply <code class="docutils literal"><span class="pre">gcc</span></code>, so we set environment variables to point these
+<p>Many build tools such as <code class="docutils literal notranslate"><span class="pre">make</span></code> and <code class="docutils literal notranslate"><span class="pre">cmake</span></code> search by default for a
+compiler named simply <code class="docutils literal notranslate"><span class="pre">gcc</span></code>, so we set environment variables to point these
 tools to the correct compiler.</p>
-<p>We set these variables in conda <code class="docutils literal"><span class="pre">activate.d</span></code> scripts, so any environment in
+<p>We set these variables in conda <code class="docutils literal notranslate"><span class="pre">activate.d</span></code> scripts, so any environment in
 which you will use the compilers must first be activated so the scripts will
 run. Conda-build does this activation for you using activation hooks installed
-with the compiler packages in <code class="docutils literal"><span class="pre">CONDA_PREFIX/etc/conda/activate.d</span></code>, so no
+with the compiler packages in <code class="docutils literal notranslate"><span class="pre">CONDA_PREFIX/etc/conda/activate.d</span></code>, so no
 additional effort is necessary.</p>
-<p>You can activate the root environment with the command <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">root</span></code>.</p>
+<p>You can activate the root environment with the command <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">root</span></code>.</p>
 </div>
 <div class="section" id="macos-sdk">
 <h2>macOS SDK<a class="headerlink" href="#macos-sdk" title="Permalink to this headline">¶</a></h2>
@@ -272,50 +272,50 @@ from being bundled in the conda package.</p>
 <li><a class="reference external" href="https://github.com/devernay/xcodelegacy">https://github.com/devernay/xcodelegacy</a></li>
 <li><a class="reference external" href="https://github.com/phracker/MacOSX-SDKs">https://github.com/phracker/MacOSX-SDKs</a></li>
 </ul>
-<p>We usually install this SDK at <code class="docutils literal"><span class="pre">/opt/MacOSX10.9.sdk</span></code> but you may install it
+<p>We usually install this SDK at <code class="docutils literal notranslate"><span class="pre">/opt/MacOSX10.9.sdk</span></code> but you may install it
 anywhere.</p>
-<p>Edit your <code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code> file to point to it, like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CONDA_BUILD_SYSROOT</span><span class="p">:</span>
+<p>Edit your <code class="docutils literal notranslate"><span class="pre">conda_build_config.yaml</span></code> file to point to it, like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CONDA_BUILD_SYSROOT</span><span class="p">:</span>
   <span class="o">-</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">MacOSX10</span><span class="o">.</span><span class="mf">9.</span><span class="n">sdk</span>        <span class="c1"># [osx]</span>
 </pre></div>
 </div>
 <p>At Anaconda we have this configuration setting in a centralized
-<code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code> at the root of our recipe repository. Since we run
+<code class="docutils literal notranslate"><span class="pre">conda_build_config.yaml</span></code> at the root of our recipe repository. Since we run
 build commands from that location, the file and the setting are used for all
 recipes.</p>
-<p>The <code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code> search order is described further at
+<p>The <code class="docutils literal notranslate"><span class="pre">conda_build_config.yaml</span></code> search order is described further at
 <a class="reference internal" href="variants.html#conda-build-variant-config-files"><span class="std std-ref">Creating conda-build variant config files</span></a>.</p>
 </div>
 <div class="section" id="backward-compatibility">
 <h2>Backward compatibility<a class="headerlink" href="#backward-compatibility" title="Permalink to this headline">¶</a></h2>
 <p>Some users want to use the latest Anaconda packages but do not yet want to use
 the Anaconda compilers. To enable this, the latest Python package builds have
-a default <code class="docutils literal"><span class="pre">_sysconfigdata</span></code> file. This file sets the compilers provided by the
-system, such as <code class="docutils literal"><span class="pre">gcc</span></code> and <code class="docutils literal"><span class="pre">g++</span></code>, as the default compilers. This way legacy
+a default <code class="docutils literal notranslate"><span class="pre">_sysconfigdata</span></code> file. This file sets the compilers provided by the
+system, such as <code class="docutils literal notranslate"><span class="pre">gcc</span></code> and <code class="docutils literal notranslate"><span class="pre">g++</span></code>, as the default compilers. This way legacy
 recipes will keep working.</p>
-<p>Python packages also include an alternative <code class="docutils literal"><span class="pre">_sysconfigdata</span></code> file that sets
+<p>Python packages also include an alternative <code class="docutils literal notranslate"><span class="pre">_sysconfigdata</span></code> file that sets
 the Anaconda compilers as the default compilers. The Anaconda Python executable
 itself is made with these Anaconda compilers.</p>
 <p>The compiler packages set the environment variable
-<code class="docutils literal"><span class="pre">_PYTHON_SYSCONFIGDATA_NAME</span></code>, which tells Python which <code class="docutils literal"><span class="pre">_sysconfigdata</span></code> file
+<code class="docutils literal notranslate"><span class="pre">_PYTHON_SYSCONFIGDATA_NAME</span></code>, which tells Python which <code class="docutils literal notranslate"><span class="pre">_sysconfigdata</span></code> file
 to use. This variable is set at activation time using the activation hooks
 described above.</p>
-<p>The new <code class="docutils literal"><span class="pre">_sysconfigdata</span></code> customization system is only present in recent
+<p>The new <code class="docutils literal notranslate"><span class="pre">_sysconfigdata</span></code> customization system is only present in recent
 versions of the Python package. Conda-build automatically tries to use the
 latest Python version available in the currently configured channels, which
 normally gets the latest from the default channel. If you’re using something
 other than conda-build while working with the new compilers, conda does not
 automatically update Python, so make sure you have the correct
-<code class="docutils literal"><span class="pre">_sysconfigdata</span></code> files by updating your Python package manually.</p>
+<code class="docutils literal notranslate"><span class="pre">_sysconfigdata</span></code> files by updating your Python package manually.</p>
 </div>
 <div class="section" id="anaconda-compilers-and-conda-build-3">
 <h2>Anaconda compilers and conda-build 3<a class="headerlink" href="#anaconda-compilers-and-conda-build-3" title="Permalink to this headline">¶</a></h2>
 <p>The Anaconda 5.0 compilers and conda-build 3 are designed to work together.</p>
-<p>Conda-build 3 defines a special jinja2 function, <code class="docutils literal"><span class="pre">compiler()</span></code>, to make it
+<p>Conda-build 3 defines a special jinja2 function, <code class="docutils literal notranslate"><span class="pre">compiler()</span></code>, to make it
 easy to specify compiler packages dynamically on many platforms. The
-<code class="docutils literal"><span class="pre">compiler</span></code> function takes at least one argument, the language of the compiler
+<code class="docutils literal notranslate"><span class="pre">compiler</span></code> function takes at least one argument, the language of the compiler
 to use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">requirements</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">requirements</span><span class="p">:</span>
   <span class="n">build</span><span class="p">:</span>
     <span class="o">-</span> <span class="p">{{</span> <span class="n">compiler</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
@@ -327,7 +327,7 @@ section. In this example we set “host” to “zlib” to tell conda-build to 
 the zlib in the conda environment and not the system zlib. This makes sure
 conda-build uses the zlib for the host platform and not the zlib for the build
 platform.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">requirements</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">requirements</span><span class="p">:</span>
   <span class="n">build</span><span class="p">:</span>
     <span class="o">-</span> <span class="p">{{</span> <span class="n">compiler</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="p">}}</span>
   <span class="n">host</span><span class="p">:</span>
@@ -345,7 +345,7 @@ activation scripts and list most of the software they provide as runtime
 dependencies.</p>
 <p>This design is intended to make it easy for you to customize your own compiler
 packages by copying these recipes and changing the flags. You can then edit the
-<code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code> file to specify your own packages.</p>
+<code class="docutils literal notranslate"><span class="pre">conda_build_config.yaml</span></code> file to specify your own packages.</p>
 <p>We have been careful to select good, general purpose, secure and fast flags.
 We have also used them for all packages in Anaconda Distribution 5.0.0, except
 for some minor customizations in a few recipes. When changing these flags,
@@ -357,23 +357,23 @@ and cause incompatibilities.</p>
 The clang package recipe is in the clang folder. The main material is in the
 llvm-compilers-feedstock folder.</p>
 </li>
-<li><p class="first">Edit <code class="docutils literal"><span class="pre">clang/recipe/meta.yaml</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">package</span><span class="p">:</span>
+<li><p class="first">Edit <code class="docutils literal notranslate"><span class="pre">clang/recipe/meta.yaml</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">package</span><span class="p">:</span>
   <span class="n">name</span><span class="p">:</span> <span class="n">clang_</span><span class="p">{{</span> <span class="n">target_platform</span> <span class="p">}}</span>
   <span class="n">version</span><span class="p">:</span> <span class="p">{{</span> <span class="n">version</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>The name here does not matter but the output names below do. Conda-build
 expects any compiler to follow the BASENAME_PLATFORMNAME pattern, so it is
-important to keep the <code class="docutils literal"><span class="pre">{{target_platform}}</span></code> part of the name.</p>
-<p><code class="docutils literal"><span class="pre">{{</span> <span class="pre">version</span> <span class="pre">}}</span></code> is left as an intentionally undefined jinja2 variable. It
-is set later in <code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code>.</p>
+important to keep the <code class="docutils literal notranslate"><span class="pre">{{target_platform}}</span></code> part of the name.</p>
+<p><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">version</span> <span class="pre">}}</span></code> is left as an intentionally undefined jinja2 variable. It
+is set later in <code class="docutils literal notranslate"><span class="pre">conda_build_config.yaml</span></code>.</p>
 </li>
 <li><p class="first">Before any packaging is done, run the build.sh script:
 <a class="reference external" href="https://github.com/AnacondaRecipes/aggregate/blob/master/clang/build.sh">https://github.com/AnacondaRecipes/aggregate/blob/master/clang/build.sh</a></p>
 <p>In this recipe, values are changed here. Those values are inserted into the
 activate scripts that are installed later.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 
 CHOST=${macos_machine}
 
@@ -406,10 +406,10 @@ find . -name &quot;*activate*.sh.bak&quot; -exec rm &quot;{}&quot; \;
 </div>
 </li>
 <li><p class="first">With those changes to the activate scripts in place, it’s time to move on to
-installing things. Look back at the clang folder’s <code class="docutils literal"><span class="pre">meta.yaml</span></code>. Here’s
+installing things. Look back at the clang folder’s <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code>. Here’s
 where we change the package name. Notice what comes before the
-<code class="docutils literal"><span class="pre">{{</span> <span class="pre">target_platform</span> <span class="pre">}}</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">outputs</span><span class="p">:</span>
+<code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">target_platform</span> <span class="pre">}}</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">outputs</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">super_duper_clang_</span><span class="p">{{</span> <span class="n">target_platform</span> <span class="p">}}</span>
     <span class="n">script</span><span class="p">:</span> <span class="n">install</span><span class="o">-</span><span class="n">clang</span><span class="o">.</span><span class="n">sh</span>
     <span class="n">requirements</span><span class="p">:</span>
@@ -419,13 +419,13 @@ where we change the package name. Notice what comes before the
 <p>The script reference here is another place you might add customization.
 You’ll either change the contents of those install scripts, or change the
 scripts that those install scripts are installing.</p>
-<p>Note that we make the package <code class="docutils literal"><span class="pre">clang</span></code> in the main material agree in version
+<p>Note that we make the package <code class="docutils literal notranslate"><span class="pre">clang</span></code> in the main material agree in version
 with our output version. This is implicitly the same as the top-level
-recipe. The <code class="docutils literal"><span class="pre">clang</span></code> package sets no environment variables at all, so it
+recipe. The <code class="docutils literal notranslate"><span class="pre">clang</span></code> package sets no environment variables at all, so it
 may be difficult to use directly.</p>
 </li>
-<li><p class="first">Let’s examine the script <code class="docutils literal"><span class="pre">install-clang.sh</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>#!/bin/bash
+<li><p class="first">Let’s examine the script <code class="docutils literal notranslate"><span class="pre">install-clang.sh</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 
 set -e -x
 
@@ -445,7 +445,7 @@ popd
 conflict with other activate scripts.</p>
 <p>The symlink for clang is a clang implementation detail that sets the host
 platform.</p>
-<p>We define <code class="docutils literal"><span class="pre">macos_machine</span></code> in aggregate’s <code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code>:
+<p>We define <code class="docutils literal notranslate"><span class="pre">macos_machine</span></code> in aggregate’s <code class="docutils literal notranslate"><span class="pre">conda_build_config.yaml</span></code>:
 <a class="reference external" href="https://github.com/AnacondaRecipes/aggregate/blob/master/conda_build_config.yaml#L79">https://github.com/AnacondaRecipes/aggregate/blob/master/conda_build_config.yaml#L79</a></p>
 <p>The activate scripts that are being installed are where we actually set the
 environment variables. Remember that these have been modified by build.sh.</p>
@@ -459,27 +459,27 @@ equivalent package for your platform.</p>
 </div>
 <div class="section" id="using-your-customized-compiler-package-with-conda-build-3">
 <h2>Using your customized compiler package with conda-build 3<a class="headerlink" href="#using-your-customized-compiler-package-with-conda-build-3" title="Permalink to this headline">¶</a></h2>
-<p>Remember the Jinja2 function, <code class="docutils literal"><span class="pre">{{</span> <span class="pre">compiler('c')</span> <span class="pre">}}</span></code>? Here’s where that comes
-in. Specific keys in <code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code> are named for the language
-argument to that jinja2 function. In your <code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code>, add
+<p>Remember the Jinja2 function, <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">compiler('c')</span> <span class="pre">}}</span></code>? Here’s where that comes
+in. Specific keys in <code class="docutils literal notranslate"><span class="pre">conda_build_config.yaml</span></code> are named for the language
+argument to that jinja2 function. In your <code class="docutils literal notranslate"><span class="pre">conda_build_config.yaml</span></code>, add
 this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">c_compiler</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c_compiler</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">super_duper_clang</span>
 </pre></div>
 </div>
-<p>Note that we’re not adding the <code class="docutils literal"><span class="pre">target_platform</span></code> part, which is separate. You
+<p>Note that we’re not adding the <code class="docutils literal notranslate"><span class="pre">target_platform</span></code> part, which is separate. You
 can define that key, too:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">c_compiler</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c_compiler</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">super_duper_clang</span>
 <span class="n">target_platform</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">win</span><span class="o">-</span><span class="mi">64</span>
 </pre></div>
 </div>
 <p>With those two keys defined, conda-build will try to use a compiler package
-named <code class="docutils literal"><span class="pre">super_duper_clang_win-64</span></code>. That package needs to exist for your native
-platform. For example, if you’re on macOS, your native platform is <code class="docutils literal"><span class="pre">osx-64</span></code>.</p>
+named <code class="docutils literal notranslate"><span class="pre">super_duper_clang_win-64</span></code>. That package needs to exist for your native
+platform. For example, if you’re on macOS, your native platform is <code class="docutils literal notranslate"><span class="pre">osx-64</span></code>.</p>
 <p>The package subdirectory for your native platform is the build platform. The
-build platform and the <code class="docutils literal"><span class="pre">target_platform</span></code> can be the same, and they are the
+build platform and the <code class="docutils literal notranslate"><span class="pre">target_platform</span></code> can be the same, and they are the
 same by default, but they can also be different. When they are different,
 you’re cross-compiling.</p>
 <p>If you ever needed a different compiler key for the same language, remember
@@ -487,8 +487,8 @@ that the language key is arbitrary. For example, we might want different
 compilers for Python and for R within one ecosystem. On Windows the Python
 ecosystem uses the Microsoft Visual C compilers, while the R ecosystem uses the
 Mingw compilers.</p>
-<p>Let’s start in <code class="docutils literal"><span class="pre">conda_build_config.yaml</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python_c_compiler</span><span class="p">:</span>
+<p>Let’s start in <code class="docutils literal notranslate"><span class="pre">conda_build_config.yaml</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python_c_compiler</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">vs2015</span>
 <span class="n">r_c_compiler</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">m2w64</span><span class="o">-</span><span class="n">gcc</span>
@@ -497,20 +497,20 @@ Mingw compilers.</p>
 </pre></div>
 </div>
 <p>In Python recipes, you’d have:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">requirements</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">requirements</span><span class="p">:</span>
   <span class="n">build</span><span class="p">:</span>
     <span class="o">-</span> <span class="p">{{</span> <span class="n">compiler</span><span class="p">(</span><span class="s1">&#39;python_c&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p>In R recipes, you’d have:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">requirements</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">requirements</span><span class="p">:</span>
   <span class="n">build</span><span class="p">:</span>
     <span class="o">-</span> <span class="p">{{</span> <span class="n">compiler</span><span class="p">(</span><span class="s1">&#39;r_c&#39;</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
-<p>This example is a little contrived, because the <code class="docutils literal"><span class="pre">m2w64-gcc_win-64</span></code> package is
-not available. You’d need to create a metapackage <code class="docutils literal"><span class="pre">m2w64-gcc_win-64</span></code> to
-point at the <code class="docutils literal"><span class="pre">m2w64-gcc</span></code> package, which does exist on the msys2 channel on
+<p>This example is a little contrived, because the <code class="docutils literal notranslate"><span class="pre">m2w64-gcc_win-64</span></code> package is
+not available. You’d need to create a metapackage <code class="docutils literal notranslate"><span class="pre">m2w64-gcc_win-64</span></code> to
+point at the <code class="docutils literal notranslate"><span class="pre">m2w64-gcc</span></code> package, which does exist on the msys2 channel on
 <a class="reference external" href="https://repo.continuum.io/">repo.continuum.io</a> .</p>
 </div>
 </div>

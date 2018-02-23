@@ -209,16 +209,16 @@ configuration file will override any user-level configuration
 files installed by the user.</li>
 </ol>
 <p>Each user accesses the central conda installation, which reads
-settings from the user <code class="docutils literal"><span class="pre">.condarc</span></code> configuration file located
+settings from the user <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> configuration file located
 in their home directory. The path to the user file is the same
-as the root environment prefix displayed by <code class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span></code>,
+as the root environment prefix displayed by <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span></code>,
 as shown in <a class="reference internal" href="#admin-inst-user"><span class="std std-ref">User configuration file</span></a> below. The user
-<code class="docutils literal"><span class="pre">.condarc</span></code> file is limited by the system <code class="docutils literal"><span class="pre">.condarc</span></code> file.</p>
+<code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file is limited by the system <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file.</p>
 <p>System configuration settings are commonly used in a
-system <code class="docutils literal"><span class="pre">.condarc</span></code> file but may also be used in a
-user <code class="docutils literal"><span class="pre">.condarc</span></code> file. All user configuration settings may
-also be used in a system <code class="docutils literal"><span class="pre">.condarc</span></code> file.</p>
-<p>For information about settings in the <code class="docutils literal"><span class="pre">.condarc</span></code> file,
+system <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file but may also be used in a
+user <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file. All user configuration settings may
+also be used in a system <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file.</p>
+<p>For information about settings in the <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file,
 see <a class="reference internal" href="use-condarc.html"><span class="doc">Using the .condarc conda configuration file</span></a>.</p>
 <div class="section" id="example-administrator-controlled-installation">
 <span id="admin-inst"></span><h2>Example administrator-controlled installation<a class="headerlink" href="#example-administrator-controlled-installation" title="Permalink to this headline">¶</a></h2>
@@ -233,21 +233,21 @@ access the channels allowed by the administrator.</p>
 <ol class="arabic">
 <li><p class="first">The system configuration file must be in the top-level conda
 installation directory. Check the path where conda is located:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ which conda
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ which conda
 /tmp/miniconda/bin/conda
 </pre></div>
 </div>
 </li>
-<li><p class="first">View the contents of the <code class="docutils literal"><span class="pre">.condarc</span></code> file in the
+<li><p class="first">View the contents of the <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file in the
 administrator’s directory:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>cat /tmp/miniconda/.condarc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat /tmp/miniconda/.condarc
 </pre></div>
 </div>
-<p>The following administrative <code class="docutils literal"><span class="pre">.condarc</span></code> file
-sets <code class="docutils literal"><span class="pre">allow_other_channels</span></code> to <code class="docutils literal"><span class="pre">False</span></code>, and it specifies
-that users may download packages only from the <code class="docutils literal"><span class="pre">admin</span></code>
+<p>The following administrative <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file
+sets <code class="docutils literal notranslate"><span class="pre">allow_other_channels</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>, and it specifies
+that users may download packages only from the <code class="docutils literal notranslate"><span class="pre">admin</span></code>
 channel:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat /tmp/miniconda/.condarc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat /tmp/miniconda/.condarc
 allow_other_channels : <span class="nb">false</span>
 channel_alias: https://conda.anaconda.org/
 channels:
@@ -256,7 +256,7 @@ channels:
 </div>
 <p>NOTE: The admin channel can also be expressed as
 <a class="reference external" href="https://conda.anaconda.org/admin/">https://conda.anaconda.org/admin/</a></p>
-<p>Because <code class="docutils literal"><span class="pre">allow_other_channels</span></code> is <code class="docutils literal"><span class="pre">False</span></code> and the
+<p>Because <code class="docutils literal notranslate"><span class="pre">allow_other_channels</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> and the
 channel defaults are not explicitly specified, users are
 disallowed from downloading packages from the default
 channels. You can check this in the next procedure.</p>
@@ -267,7 +267,7 @@ channels. You can check this in the next procedure.</p>
 <span id="admin-inst-user"></span><h3>User configuration file<a class="headerlink" href="#user-configuration-file" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">Check the location of the user’s conda installation:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda info
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda info
 Current conda install:
 . . .
        channel URLs : http://repo.continuum.io/pkgs/free/osx-64/
@@ -275,25 +275,25 @@ Current conda install:
        config file : /Users/gergely/.condarc
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span></code> command shows that conda is using the
-user’s <code class="docutils literal"><span class="pre">.condarc</span> <span class="pre">file</span></code>, located at
-<code class="docutils literal"><span class="pre">/Users/gergely/.condarc</span></code> and that the default channels
-such as <code class="docutils literal"><span class="pre">repo.continuum.io</span></code> are listed as channel URLs.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span></code> command shows that conda is using the
+user’s <code class="docutils literal notranslate"><span class="pre">.condarc</span> <span class="pre">file</span></code>, located at
+<code class="docutils literal notranslate"><span class="pre">/Users/gergely/.condarc</span></code> and that the default channels
+such as <code class="docutils literal notranslate"><span class="pre">repo.continuum.io</span></code> are listed as channel URLs.</p>
 </li>
-<li><p class="first">View the contents of the administrative <code class="docutils literal"><span class="pre">.condarc</span></code> file in
+<li><p class="first">View the contents of the administrative <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file in
 the directory that was located in step 1:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ cat ~/.condarc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat ~/.condarc
 channels:
   - defaults
 </pre></div>
 </div>
-<p>This user’s <code class="docutils literal"><span class="pre">.condarc</span></code> file specifies only the default
+<p>This user’s <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file specifies only the default
 channels, but the administrator config file has blocked
-default channels by specifying that only <code class="docutils literal"><span class="pre">admin</span></code> is
+default channels by specifying that only <code class="docutils literal notranslate"><span class="pre">admin</span></code> is
 allowed. If this user attempts to search for a package in the
 default channels, they get a message telling them what
 channels are allowed:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda search flask
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda search flask
 Fetching package metadata:
 Error: URL <span class="s1">&#39;http://repo.continuum.io/pkgs/pro/osx-64/&#39;</span> not
 in allowed channels.
@@ -301,17 +301,17 @@ Allowed channels are:
  - https://conda.anaconda.org/admin/osx-64/
 </pre></div>
 </div>
-<p>This error message tells the user to add the <code class="docutils literal"><span class="pre">admin</span></code> channel
+<p>This error message tells the user to add the <code class="docutils literal notranslate"><span class="pre">admin</span></code> channel
 to their configuration file.</p>
 </li>
-<li><p class="first">The user must edit their local <code class="docutils literal"><span class="pre">.condarc</span></code> configuration file
+<li><p class="first">The user must edit their local <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> configuration file
 to access the package through the admin channel:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">admin</span>
 </pre></div>
 </div>
 <p>The user can now search for packages in the allowed
-<code class="docutils literal"><span class="pre">admin</span></code> channel.</p>
+<code class="docutils literal notranslate"><span class="pre">admin</span></code> channel.</p>
 </li>
 </ol>
 </div>

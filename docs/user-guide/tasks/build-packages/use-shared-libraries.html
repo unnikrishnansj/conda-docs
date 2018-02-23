@@ -236,8 +236,8 @@ in question. Conda does not currently use side-by-side
 assemblies, but it may turn towards that in the future to resolve
 complications with multiple versions of the same library on the
 same system.</p>
-<p>For now, most DLLs are installed into <code class="docutils literal"><span class="pre">(install</span> <span class="pre">prefix)\\Library\\bin</span></code>.
-This path is added to <code class="docutils literal"><span class="pre">os.environ[&quot;PATH&quot;]</span></code> for all Python processes,
+<p>For now, most DLLs are installed into <code class="docutils literal notranslate"><span class="pre">(install</span> <span class="pre">prefix)\\Library\\bin</span></code>.
+This path is added to <code class="docutils literal notranslate"><span class="pre">os.environ[&quot;PATH&quot;]</span></code> for all Python processes,
 so that DLLs can be located, regardless of the value of the
 system’s PATH environment variable.</p>
 <p>NOTE: PATH is searched from left to right, with the first DLL
@@ -255,9 +255,9 @@ PYTHONPATH, and executables are discovered via PATH. A list of
 search locations is made, and then the library objects are
 searched for in the search locations. By default, as well as by
 design, the system dynamic linker does not have any special
-preference for the conda environment <code class="docutils literal"><span class="pre">lib</span></code> directories.</p>
+preference for the conda environment <code class="docutils literal notranslate"><span class="pre">lib</span></code> directories.</p>
 <p>You can specify both absolute links and relative links. If the
-links are absolute paths, such as <code class="docutils literal"><span class="pre">/Users/jsmith/my_build_env</span></code>,
+links are absolute paths, such as <code class="docutils literal notranslate"><span class="pre">/Users/jsmith/my_build_env</span></code>,
 the library works only on a system where that exact path exists.
 Therefore, relative links are preferred in conda packages.</p>
 <p>Relative links require a special variable in the link itself:</p>
@@ -268,7 +268,7 @@ to this file as it is being executed”.</li>
 <li>&#64;rpath—Allows you to set relative links from the system
 load paths.</li>
 <li>&#64;loader_path—Equivalent to $ORIGIN.</li>
-<li>&#64;executable_path—Supports the Apple <code class="docutils literal"><span class="pre">.app</span></code> directory
+<li>&#64;executable_path—Supports the Apple <code class="docutils literal notranslate"><span class="pre">.app</span></code> directory
 approach, where libraries know where they live relative to
 their calling application.</li>
 </ul>
@@ -279,7 +279,7 @@ because we install into a common root directory and can assume
 that other libraries are also installed into that root. The use
 of the variables allows you to build relocatable binaries that
 can be built on one system and sent everywhere.</p>
-<p>On Linux, <code class="docutils literal"><span class="pre">conda-build</span></code> modifies any shared libraries or
+<p>On Linux, <code class="docutils literal notranslate"><span class="pre">conda-build</span></code> modifies any shared libraries or
 generated executables to use a relative dynamic link by calling
 the patchelf tool. On macOS, the install_name_tool tool is used.</p>
 <p>CAUTION: Setting LD_LIBRARY_PATH on Linux or DYLD_LIBRARY_PATH on
@@ -289,7 +289,7 @@ LD_LIBRARY_PATH.</p>
 <p>EXAMPLE: You install an old version of libcurl into your conda
 environment due to some compatibility issues with the code you’re
 using. Then, you set
-<code class="docutils literal"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH=/home/jsmith/envs/curl_env/lib</span></code>. From
+<code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH=/home/jsmith/envs/curl_env/lib</span></code>. From
 that point on, every program that you execute in that session
 will favor this libcurl to your system libcurl, because it is now
 effectively at the “front” of the dynamic load path.</p>

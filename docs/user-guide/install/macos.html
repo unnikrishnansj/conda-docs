@@ -203,11 +203,11 @@
 <li><p class="first">Install:</p>
 <ul>
 <li><p class="first">Miniconda—In your Terminal window, run:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">MacOSX</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">MacOSX</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Anaconda—Double-click the <code class="docutils literal"><span class="pre">.pkg</span></code> file.</p>
+<li><p class="first">Anaconda—Double-click the <code class="docutils literal notranslate"><span class="pre">.pkg</span></code> file.</p>
 </li>
 </ul>
 </li>
@@ -224,19 +224,19 @@ Terminal window.</p>
 <div class="section" id="installing-in-silent-mode">
 <span id="install-macos-silent"></span><h2>Installing in silent mode<a class="headerlink" href="#installing-in-silent-mode" title="Permalink to this headline">¶</a></h2>
 <p>NOTE: The following instructions are for Miniconda. For Anaconda,
-substitute <code class="docutils literal"><span class="pre">Anaconda</span></code> for <code class="docutils literal"><span class="pre">Miniconda</span></code> in all of the commands.</p>
+substitute <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> for <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code> in all of the commands.</p>
 <p>To run the <a class="reference internal" href="../../glossary.html#silent-mode-glossary"><span class="std std-ref">silent installation</span></a> of
 Miniconda for macOS or Linux, specify the -b and -p arguments of
 the bash installer. The following arguments are supported:</p>
 <ul class="simple">
-<li>-b—Batch mode with no PATH modifications to <code class="docutils literal"><span class="pre">~/.bashrc</span></code>.
+<li>-b—Batch mode with no PATH modifications to <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>.
 Assumes that you agree to the license agreement. Does not edit
-the <code class="docutils literal"><span class="pre">.bashrc</span></code> or <code class="docutils literal"><span class="pre">.bash_profile</span></code> files.</li>
+the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> files.</li>
 <li>-p—Installation prefix/path.</li>
 <li>-f—Force installation even if prefix -p already exists.</li>
 </ul>
 <p>EXAMPLE:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 </pre></div>
@@ -246,17 +246,17 @@ permanently. Trying to use conda when conda is not in your
 PATH causes errors such as “command not found.”</p>
 <p>In each new bash session, before using conda, set the PATH and
 run the activation scripts of your conda packages by running:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>source $HOME/miniconda3/bin/activate
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>source $HOME/miniconda3/bin/activate
 </pre></div>
 </div>
-<p>NOTE: Replace <code class="docutils literal"><span class="pre">$HOME/miniconda3/bin/activate</span></code>
+<p>NOTE: Replace <code class="docutils literal notranslate"><span class="pre">$HOME/miniconda3/bin/activate</span></code>
 with the path to the activate script in your conda installation.</p>
 <p>To set the PATH permanently, you can add a line to your
-<code class="docutils literal"><span class="pre">.bashrc</span></code> file. However, this makes it possible to use conda
+<code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file. However, this makes it possible to use conda
 without running the activation scripts of your conda packages,
 which may produce errors.</p>
 <p>EXAMPLE:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/miniconda3/bin:$PATH&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/miniconda3/bin:$PATH&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -264,8 +264,8 @@ which may produce errors.</p>
 <h2>Updating Anaconda or Miniconda<a class="headerlink" href="#updating-anaconda-or-miniconda" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Open a Terminal window.</li>
-<li>Navigate to the <code class="docutils literal"><span class="pre">anaconda</span></code> directory.</li>
-<li>Run <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code>.</li>
+<li>Navigate to the <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> directory.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code>.</li>
 </ol>
 </div>
 <div class="section" id="uninstalling-anaconda-or-miniconda">
@@ -274,24 +274,24 @@ which may produce errors.</p>
 <li><p class="first">Open a Terminal window.</p>
 </li>
 <li><p class="first">Remove the entire Miniconda install directory with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/</span><span class="n">miniconda</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/</span><span class="n">miniconda</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">You may also:</p>
 </li>
-<li><p class="first">OPTIONAL: Edit <code class="docutils literal"><span class="pre">~/.bash_profile</span></code> to remove the Miniconda
+<li><p class="first">OPTIONAL: Edit <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> to remove the Miniconda
 directory from your PATH environment variable.</p>
 </li>
 <li><p class="first">Remove the following hidden file and folders that may have
 been created in the home directory:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">.condarc</span></code> file</li>
-<li><code class="docutils literal"><span class="pre">.conda</span></code> directory</li>
-<li><code class="docutils literal"><span class="pre">.continuum</span></code> directory</li>
+<li><code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file</li>
+<li><code class="docutils literal notranslate"><span class="pre">.conda</span></code> directory</li>
+<li><code class="docutils literal notranslate"><span class="pre">.continuum</span></code> directory</li>
 </ul>
 <p>By running:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/.</span><span class="n">condarc</span> <span class="o">~/.</span><span class="n">conda</span> <span class="o">~/.</span><span class="n">continuum</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/.</span><span class="n">condarc</span> <span class="o">~/.</span><span class="n">conda</span> <span class="o">~/.</span><span class="n">continuum</span>
 </pre></div>
 </div>
 </li>

@@ -224,18 +224,18 @@ on this page. For details, see <a class="reference internal" href="../../command
 <p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <p>To see if a specific package such as SciPy is available for
 installation:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda search scipy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda search scipy
 </pre></div>
 </div>
 <p>To see if a specific package such as SciPy is available for
 installation from Anaconda.org:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda search --override-channels --channel defaults scipy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda search --override-channels --channel defaults scipy
 </pre></div>
 </div>
 <p>To see if a specific package, such as iminuit, exists in a
 specific channel, such as <a class="reference external" href="http://conda.anaconda.org/mutirri">http://conda.anaconda.org/mutirri</a>,
 and is available for installation:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda search --override-channels --channel http://conda.anaconda.org/mutirri iminuit
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda search --override-channels --channel http://conda.anaconda.org/mutirri iminuit
 </pre></div>
 </div>
 </div>
@@ -244,32 +244,32 @@ and is available for installation:</p>
 <p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <p>To install a specific package such as SciPy into an existing
 environment “myenv”:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install --name myenv scipy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install --name myenv scipy
 </pre></div>
 </div>
 <p>If you do not specify the environment name, which in this
-example is done by <code class="docutils literal"><span class="pre">--name</span> <span class="pre">myenv</span></code>, the package installs
+example is done by <code class="docutils literal notranslate"><span class="pre">--name</span> <span class="pre">myenv</span></code>, the package installs
 into the current environment:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install scipy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install scipy
 </pre></div>
 </div>
 <p>To install a specific version of a package such as SciPy:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span><span class="m">0</span>.15.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span><span class="m">0</span>.15.0
 </pre></div>
 </div>
 <p id="installing-multiple-packages">To install multiple packages at once, such as SciPy and cURL:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install scipy curl
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install scipy curl
 </pre></div>
 </div>
 <p>NOTE: It is best to install all packages at once, so that all of
 the dependencies are installed at the same time.</p>
 <p>To install multiple packages at once and specify the version of
 the package:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span><span class="m">0</span>.15.0 <span class="nv">curl</span><span class="o">=</span><span class="m">7</span>.26.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span><span class="m">0</span>.15.0 <span class="nv">curl</span><span class="o">=</span><span class="m">7</span>.26.0
 </pre></div>
 </div>
 <p>To install a package for a specific Python version:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span><span class="m">0</span>.15.0 <span class="nv">curl</span><span class="o">=</span><span class="m">7</span>.26.0 -n py34_env
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install <span class="nv">scipy</span><span class="o">=</span><span class="m">0</span>.15.0 <span class="nv">curl</span><span class="o">=</span><span class="m">7</span>.26.0 -n py34_env
 </pre></div>
 </div>
 <p>If you want to use a specific Python version, it is best to use
@@ -287,7 +287,7 @@ product, just like Anaconda and Miniconda.</p>
 <ol class="arabic">
 <li><p class="first">In a browser, go to <a class="reference external" href="http://anaconda.org">http://anaconda.org</a>.</p>
 </li>
-<li><p class="first">To find the package named bottleneck, type <code class="docutils literal"><span class="pre">bottleneck</span></code>
+<li><p class="first">To find the package named bottleneck, type <code class="docutils literal notranslate"><span class="pre">bottleneck</span></code>
 in the top-left box named Search Packages.</p>
 </li>
 <li><p class="first">Find the package that you want and click it to go to the
@@ -295,10 +295,10 @@ detail page.</p>
 <p>The detail page displays the name of the channel. In this
 example it is the “pandas” channel.</p>
 </li>
-<li><p class="first">Now that you know the channel name, use the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code>
+<li><p class="first">Now that you know the channel name, use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>
 command to install the package. In your Terminal window or an Anaconda Prompt,
 run:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">pandas</span> <span class="n">bottleneck</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">pandas</span> <span class="n">bottleneck</span>
 </pre></div>
 </div>
 <p>This command tells conda to install the bottleneck package
@@ -306,7 +306,7 @@ from the pandas channel on Anaconda.org.</p>
 </li>
 <li><p class="first">To check that the package is installed, in your Terminal window or an Anaconda Prompt,
 run:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
 <p>A list of packages appears, including bottleneck.</p>
@@ -332,19 +332,19 @@ to activate a virtualenv before using pip.</p>
 <ol class="arabic">
 <li><p class="first">Activate the environment where you want to put the program:</p>
 <ul class="simple">
-<li>On Windows, in your Anaconda Prompt, run <code class="docutils literal"><span class="pre">activate</span> <span class="pre">myenv</span></code>.</li>
-<li>On macOS and Linux,in your Terminal window, run <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">myenv</span></code>.</li>
+<li>On Windows, in your Anaconda Prompt, run <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">myenv</span></code>.</li>
+<li>On macOS and Linux,in your Terminal window, run <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">myenv</span></code>.</li>
 </ul>
 </li>
 <li><p class="first">To use pip to install a program such as See, in your Terminal window or an Anaconda Prompt,
 run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">see</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">see</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">To verify the package was installed, in your Terminal window or an Anaconda Prompt,
 run:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
 </li>
@@ -355,7 +355,7 @@ run:</p>
 <p>Installing a commercial package such as IOPro is the same as
 installing any other package. In your Terminal window or an Anaconda Prompt,
 run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install --name myenv iopro
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install --name myenv iopro
 </pre></div>
 </div>
 <p>This command installs a free trial of one of Anaconda’s
@@ -367,37 +367,37 @@ expires after 30 days.</p>
 <h2><a class="toc-backref" href="#id6">Viewing a list of installed packages</a><a class="headerlink" href="#viewing-a-list-of-installed-packages" title="Permalink to this headline">¶</a></h2>
 <p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <p>To list all of the packages in the active environment:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
 <p>To list all of the packages in a deactivated environment:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span> <span class="o">-</span><span class="n">n</span> <span class="n">myenv</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span> <span class="o">-</span><span class="n">n</span> <span class="n">myenv</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="updating-packages">
 <h2><a class="toc-backref" href="#id7">Updating packages</a><a class="headerlink" href="#updating-packages" title="Permalink to this headline">¶</a></h2>
-<p>Use <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span></code> command to check to see if a new update is
+<p>Use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span></code> command to check to see if a new update is
 available. If conda tells you an update is available, you can
 then choose whether or not to install it.</p>
 <p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <p>To update a specific package:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">biopython</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">biopython</span>
 </pre></div>
 </div>
 <p>To update Python:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">python</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">python</span>
 </pre></div>
 </div>
 <p>To update conda itself:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
 </pre></div>
 </div>
 <p>NOTE: Conda updates to the highest version in its series, so
 Python 2.7 updates to the highest available in the 2.x series and
 3.6 updates to the highest available in the 3.x series.</p>
 <p>To update the Anaconda metapackage:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda update conda
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update conda
 conda update anaconda
 </pre></div>
 </div>
@@ -406,54 +406,54 @@ versions and then reports what is available to install. If no
 updates are available, conda reports “All requested packages are
 already installed.”</p>
 <p>If a newer version of your package is available and you wish to
-update it, type <code class="docutils literal"><span class="pre">y</span></code> to update:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+update it, type <code class="docutils literal notranslate"><span class="pre">y</span></code> to update:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
 </pre></div>
 </div>
 </div>
 <div class="section" id="preventing-packages-from-updating-pinning">
 <span id="pinning-packages"></span><h2><a class="toc-backref" href="#id8">Preventing packages from updating (pinning)</a><a class="headerlink" href="#preventing-packages-from-updating-pinning" title="Permalink to this headline">¶</a></h2>
 <p>Pinning a package specification in an environment prevents
-packages listed in the <code class="docutils literal"><span class="pre">pinned</span></code> file from being updated.</p>
-<p>In the environment’s <code class="docutils literal"><span class="pre">conda-meta</span></code> directory, add a file
-named <code class="docutils literal"><span class="pre">pinned</span></code> that includes a list of the packages that you
+packages listed in the <code class="docutils literal notranslate"><span class="pre">pinned</span></code> file from being updated.</p>
+<p>In the environment’s <code class="docutils literal notranslate"><span class="pre">conda-meta</span></code> directory, add a file
+named <code class="docutils literal notranslate"><span class="pre">pinned</span></code> that includes a list of the packages that you
 do not want updated.</p>
 <p>EXAMPLE: The file below forces NumPy to stay on the 1.7 series,
 which is any version that starts with 1.7, and forces SciPy to
 stay at exactly version 0.14.2:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">numpy</span> <span class="mf">1.7</span><span class="o">.*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span> <span class="mf">1.7</span><span class="o">.*</span>
 <span class="n">scipy</span> <span class="o">==</span><span class="mf">0.14</span><span class="o">.</span><span class="mi">2</span>
 </pre></div>
 </div>
-<p>With this <code class="docutils literal"><span class="pre">pinned</span></code> file, <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span></code> keeps NumPy at
-1.7.1, and <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">scipy=0.15.0</span></code> causes an error.</p>
-<p>Use the <code class="docutils literal"><span class="pre">--no-pin</span></code> flag to override the update restriction on
+<p>With this <code class="docutils literal notranslate"><span class="pre">pinned</span></code> file, <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">numpy</span></code> keeps NumPy at
+1.7.1, and <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">scipy=0.15.0</span></code> causes an error.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">--no-pin</span></code> flag to override the update restriction on
 a package. In the Terminal or an Anaconda Prompt, run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda update numpy --no-pin
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update numpy --no-pin
 </pre></div>
 </div>
-<p>Because the <code class="docutils literal"><span class="pre">pinned</span></code> specs are included with each conda
-install, subsequent <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span></code> commands without
-<code class="docutils literal"><span class="pre">--no-pin</span></code> will revert NumPy back to the 1.7 series.</p>
+<p>Because the <code class="docutils literal notranslate"><span class="pre">pinned</span></code> specs are included with each conda
+install, subsequent <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span></code> commands without
+<code class="docutils literal notranslate"><span class="pre">--no-pin</span></code> will revert NumPy back to the 1.7 series.</p>
 </div>
 <div class="section" id="removing-packages">
 <h2><a class="toc-backref" href="#id9">Removing packages</a><a class="headerlink" href="#removing-packages" title="Permalink to this headline">¶</a></h2>
 <p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
 <p>To remove a package such as SciPy in an environment such as
 myenv:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda remove -n myenv scipy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda remove -n myenv scipy
 </pre></div>
 </div>
 <p>To remove a package such as SciPy in the current environment:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda remove scipy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda remove scipy
 </pre></div>
 </div>
 <p>To remove multiple packages at once, such as SciPy and cURL:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda remove scipy curl
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda remove scipy curl
 </pre></div>
 </div>
 <p>To confirm that a package has been removed:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
 </div>

@@ -278,23 +278,23 @@ checksums are available for
 <a class="reference external" href="https://docs.continuum.io/anaconda/install/hashes/">Anaconda</a>.</p>
 <p>Download the installer file and before installing verify it as follows:</p>
 <ul>
-<li><p class="first">macOS: In iTerm or a Terminal window enter <code class="docutils literal"><span class="pre">md5</span> <span class="pre">filename</span></code> or <code class="docutils literal"><span class="pre">shasum</span> <span class="pre">-a</span> <span class="pre">256</span> <span class="pre">filename</span></code>.</p>
-<p>NOTE: Replace <code class="docutils literal"><span class="pre">filename</span></code> with the actual path and name of the
+<li><p class="first">macOS: In iTerm or a Terminal window enter <code class="docutils literal notranslate"><span class="pre">md5</span> <span class="pre">filename</span></code> or <code class="docutils literal notranslate"><span class="pre">shasum</span> <span class="pre">-a</span> <span class="pre">256</span> <span class="pre">filename</span></code>.</p>
+<p>NOTE: Replace <code class="docutils literal notranslate"><span class="pre">filename</span></code> with the actual path and name of the
 downloaded installer file.</p>
 </li>
-<li><p class="first">Linux: In a Terminal window enter <code class="docutils literal"><span class="pre">md5sum</span> <span class="pre">filename</span></code> or <code class="docutils literal"><span class="pre">sha256sum</span> <span class="pre">filename</span></code>.</p>
-<p>NOTE: Replace <code class="docutils literal"><span class="pre">filename</span></code> with the actual path and name of the
+<li><p class="first">Linux: In a Terminal window enter <code class="docutils literal notranslate"><span class="pre">md5sum</span> <span class="pre">filename</span></code> or <code class="docutils literal notranslate"><span class="pre">sha256sum</span> <span class="pre">filename</span></code>.</p>
+<p>NOTE: Replace <code class="docutils literal notranslate"><span class="pre">filename</span></code> with the actual path and name of the
 downloaded installer file.</p>
 </li>
 <li><p class="first">Windows:</p>
 <ul>
 <li><p class="first">If you have PowerShell V4 or later:</p>
 <p>Open a PowerShell console and verify the file as follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">-</span><span class="n">FileHash</span> <span class="n">filename</span> <span class="o">-</span><span class="n">Algorithm</span> <span class="n">MD5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">-</span><span class="n">FileHash</span> <span class="n">filename</span> <span class="o">-</span><span class="n">Algorithm</span> <span class="n">MD5</span>
 </pre></div>
 </div>
 <p>or:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">-</span><span class="n">FileHash</span> <span class="n">filename</span> <span class="o">-</span><span class="n">Algorithm</span> <span class="n">SHA256</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">-</span><span class="n">FileHash</span> <span class="n">filename</span> <span class="o">-</span><span class="n">Algorithm</span> <span class="n">SHA256</span>
 </pre></div>
 </div>
 <p>NOTE: Replace “filename” with the actual path and name of the downloaded
@@ -313,17 +313,17 @@ on the Microsoft website.</p>
 <li><p class="first">Run one of the following commands:</p>
 <ul>
 <li><p class="first">For MD5:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Start</span><span class="o">-</span><span class="n">PsFCIV</span> <span class="o">-</span><span class="n">Path</span> <span class="n">C</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">to</span>\<span class="n">file</span><span class="o">.</span><span class="n">ext</span> <span class="o">-</span><span class="n">HashAlgorithm</span> <span class="n">MD5</span> <span class="o">-</span><span class="n">Online</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Start</span><span class="o">-</span><span class="n">PsFCIV</span> <span class="o">-</span><span class="n">Path</span> <span class="n">C</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">to</span>\<span class="n">file</span><span class="o">.</span><span class="n">ext</span> <span class="o">-</span><span class="n">HashAlgorithm</span> <span class="n">MD5</span> <span class="o">-</span><span class="n">Online</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">For SHA256:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Start</span><span class="o">-</span><span class="n">PsFCIV</span> <span class="o">-</span><span class="n">Path</span> <span class="n">C</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">to</span>\<span class="n">file</span><span class="o">.</span><span class="n">ext</span> <span class="o">-</span><span class="n">HashAlgorithm</span> <span class="n">SHA256</span> <span class="o">-</span><span class="n">Online</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Start</span><span class="o">-</span><span class="n">PsFCIV</span> <span class="o">-</span><span class="n">Path</span> <span class="n">C</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">to</span>\<span class="n">file</span><span class="o">.</span><span class="n">ext</span> <span class="o">-</span><span class="n">HashAlgorithm</span> <span class="n">SHA256</span> <span class="o">-</span><span class="n">Online</span>
 </pre></div>
 </div>
 </li>
 </ul>
-<p>NOTE: In both commands, replace <code class="docutils literal"><span class="pre">C:\path\to\file.ext</span></code> with
+<p>NOTE: In both commands, replace <code class="docutils literal notranslate"><span class="pre">C:\path\to\file.ext</span></code> with
 the actual path, filename and extension.</p>
 </li>
 </ol>

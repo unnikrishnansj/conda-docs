@@ -218,14 +218,14 @@
 <strong>Start</strong> menu. Conda and conda build handle this with the
 package <a class="reference external" href="https://github.com/ContinuumIO/menuinst">menuinst</a>,
 which currently supports only Windows. For instructions on using
-<code class="docutils literal"><span class="pre">menuinst</span></code>, see
+<code class="docutils literal notranslate"><span class="pre">menuinst</span></code>, see
 <a class="reference external" href="https://github.com/ContinuumIO/menuinst/wiki">the menuinst wiki</a>.</p>
 <p>The easiest way to ensure that a package made with
 <a class="reference external" href="https://github.com/conda/constructor">conda constructor</a> does
-not install any menu shortcuts is to remove <code class="docutils literal"><span class="pre">menuinst</span></code> from
+not install any menu shortcuts is to remove <code class="docutils literal notranslate"><span class="pre">menuinst</span></code> from
 the list of conda packages included. To do this, add the
-following to the <code class="docutils literal"><span class="pre">constuct.yaml</span></code> file:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">exclude</span><span class="p p-Indicator">:</span>
+following to the <code class="docutils literal notranslate"><span class="pre">constuct.yaml</span></code> file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">exclude</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">menuinst</span>
 </pre></div>
 </div>

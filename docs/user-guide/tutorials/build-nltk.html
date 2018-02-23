@@ -200,16 +200,16 @@ data.</p>
 <p>Download the following files: <a class="reference external" href="https://gist.github.com/danielfrg/d17ffffe0dc8ed56712a0470169ff546">https://gist.github.com/danielfrg/d17ffffe0dc8ed56712a0470169ff546</a>
 (click the Download  ZIP button on the top right).</p>
 <p>Unzip the downloaded file and rename the downloaded directory to
-<code class="docutils literal"><span class="pre">/nltk-with-data/</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/nltk-with-data/</span></code>.</p>
 <p>If not already installed, install conda build:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">build</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">build</span>
 </pre></div>
 </div>
 <p>Change directory to one directory above the nltk-with-data directory with
-<code class="docutils literal"><span class="pre">cd</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">cd</span></code>.</p>
 <p>Run conda build for different Python versions that you need, selecting the
 packages for the platform and OS you are running the command on:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">build</span> <span class="n">nltk</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">data</span> <span class="o">--</span><span class="n">python</span> <span class="mf">2.7</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">build</span> <span class="n">nltk</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">data</span> <span class="o">--</span><span class="n">python</span> <span class="mf">2.7</span>
 <span class="n">conda</span> <span class="n">build</span> <span class="n">nltk</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">data</span> <span class="o">--</span><span class="n">python</span> <span class="mf">3.4</span>
 <span class="n">conda</span> <span class="n">build</span> <span class="n">nltk</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">data</span> <span class="o">--</span><span class="n">python</span> <span class="mf">3.5</span>
 <span class="n">conda</span> <span class="n">build</span> <span class="n">nltk</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">data</span> <span class="o">--</span><span class="n">python</span> <span class="mf">3.6</span>
@@ -223,7 +223,7 @@ the packages on.</p>
 <a class="reference external" href="https://anaconda.org">Anaconda Cloud</a> using the
 <a class="reference external" href="https://docs.continuum.io/anaconda/jupyter-notebook-extensions">Anaconda Notebook Extension</a>
 anaconda-client CLI:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>anaconda upload <span class="nv">$CONDA_ROOT</span>/conda-bld/<span class="nv">$ARCH</span>/nltk-with-data.tar.bz2
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>anaconda upload <span class="nv">$CONDA_ROOT</span>/conda-bld/<span class="nv">$ARCH</span>/nltk-with-data.tar.bz2
 anaconda upload <span class="nv">$CONDA_ROOT</span>/conda-bld/<span class="nv">$ARCH</span>/nltk-with-data.tar.bz2
 anaconda upload <span class="nv">$CONDA_ROOT</span>/conda-bld/<span class="nv">$ARCH</span>/nltk-with-data.tar.bz2
 anaconda upload <span class="nv">$CONDA_ROOT</span>/conda-bld/<span class="nv">$ARCH</span>/nltk-with-data.tar.bz2
@@ -235,11 +235,11 @@ for pure Python packages. When newer versions of NLTK are released, you can
 also update the recipe and repeat this process.</p>
 <div class="section" id="install-from-conda">
 <h2>Install from conda<a class="headerlink" href="#install-from-conda" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install nltk-with-data
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install nltk-with-data
 ipython
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk.corpus</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk.corpus</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">corpus</span><span class="o">.</span><span class="n">treebank</span>
 </pre></div>
 </div>

@@ -179,6 +179,7 @@ docs/_static/comment.png
 docs/_static/css/badge_only.css
 docs/_static/css/theme.css
 docs/_static/doctools.js
+docs/_static/documentation_options.js
 docs/_static/down-pressed.png
 docs/_static/down.png
 docs/_static/empty
@@ -193,7 +194,7 @@ docs/_static/fonts/fontawesome-webfont.eot
 docs/_static/fonts/fontawesome-webfont.svg
 docs/_static/fonts/fontawesome-webfont.ttf
 docs/_static/fonts/fontawesome-webfont.woff
-docs/_static/jquery-3.1.0.js
+docs/_static/jquery-3.2.1.js
 docs/_static/jquery.js
 docs/_static/js/modernizr.min.js
 docs/_static/js/theme.js

@@ -201,17 +201,17 @@ repository as private, then only you and those you grant access
 can access your private repository.</p>
 <p>If you do not wish to upload your packages to the Internet, you
 can build a custom repository served either through a web server
-or locally using a <code class="docutils literal"><span class="pre">file://</span></code> URL.</p>
+or locally using a <code class="docutils literal notranslate"><span class="pre">file://</span></code> URL.</p>
 <p>To create a custom channel:</p>
 <ol class="arabic">
 <li><p class="first">If you have not yet used conda build, install conda build:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">build</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">build</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Organize all the packages in subdirectories for the platforms
 you wish to serve:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span> <span class="n">channel</span><span class="o">/</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">channel</span><span class="o">/</span>
 <span class="n">linux</span><span class="o">-</span><span class="mi">64</span><span class="o">/</span>
  <span class="n">package</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
 <span class="n">linux</span><span class="o">-</span><span class="mi">32</span><span class="o">/</span>
@@ -225,33 +225,33 @@ you wish to serve:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Run <code class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></code> on each of the platform subdirectories:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">index</span> <span class="n">channel</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="mi">64</span> <span class="n">channel</span><span class="o">/</span><span class="n">osx</span><span class="o">-</span><span class="mi">64</span>
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">index</span></code> on each of the platform subdirectories:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">index</span> <span class="n">channel</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="mi">64</span> <span class="n">channel</span><span class="o">/</span><span class="n">osx</span><span class="o">-</span><span class="mi">64</span>
 </pre></div>
 </div>
-<p>The conda index command generates a file <code class="docutils literal"><span class="pre">repodata.json</span></code>,
+<p>The conda index command generates a file <code class="docutils literal notranslate"><span class="pre">repodata.json</span></code>,
 saved to each repository directory, which conda uses to get
 the metadata for the packages in the channel.</p>
 <p>NOTE: Each time you add or modify a package in the channel,
-you must rerun <code class="docutils literal"><span class="pre">conda</span> <span class="pre">index</span></code> for conda to see the update.</p>
+you must rerun <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">index</span></code> for conda to see the update.</p>
 </li>
 <li><p class="first">To test custom channels, serve the custom channel using a web
-server or using a <code class="docutils literal"><span class="pre">file://</span> <span class="pre">url</span></code> to the channel directory.
+server or using a <code class="docutils literal notranslate"><span class="pre">file://</span> <span class="pre">url</span></code> to the channel directory.
 Test by sending a search command to the custom channel.</p>
 <p>EXAMPLE: If you want a file in the custom channel location
-<code class="docutils literal"><span class="pre">/opt/channel/linux-64/</span></code>, search for files in that location:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="o">-</span><span class="n">c</span> <span class="n">file</span><span class="p">:</span><span class="o">//</span><span class="n">opt</span><span class="o">/</span><span class="n">channel</span><span class="o">/</span> <span class="o">--</span><span class="n">override</span><span class="o">-</span><span class="n">channels</span>
+<code class="docutils literal notranslate"><span class="pre">/opt/channel/linux-64/</span></code>, search for files in that location:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="o">-</span><span class="n">c</span> <span class="n">file</span><span class="p">:</span><span class="o">//</span><span class="n">opt</span><span class="o">/</span><span class="n">channel</span><span class="o">/</span> <span class="o">--</span><span class="n">override</span><span class="o">-</span><span class="n">channels</span>
 </pre></div>
 </div>
 <p>NOTE: The channel URL does not include the platform, as conda
 automatically detects and adds the platform.</p>
-<p>NOTE: The option  <code class="docutils literal"><span class="pre">--override-channels</span></code> ensures that conda
+<p>NOTE: The option  <code class="docutils literal notranslate"><span class="pre">--override-channels</span></code> ensures that conda
 searches only your specified channel and no other channels,
 such as default channels or any other channels you may have
-listed in your <code class="docutils literal"><span class="pre">.condarc</span></code> file.</p>
+listed in your <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file.</p>
 <p>If you have set up your private repository correctly, you
 get the following output:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">Fetching</span> <span class="n">package</span> <span class="n">metadata</span><span class="p">:</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Fetching</span> <span class="n">package</span> <span class="n">metadata</span><span class="p">:</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
 </pre></div>
 </div>
 <p>This is followed by a list of the conda packages found. This

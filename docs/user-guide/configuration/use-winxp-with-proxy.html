@@ -200,10 +200,10 @@ to support Windows XP. Anaconda 2.4 and later have a version of
 Python 3 built with Visual Studio 2015, which by default does not
 support Windows XP.</p>
 <p>You can install Anaconda 2.3.0 and then update it with
-<code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code> and <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--all</span></code>. Download
-<code class="docutils literal"><span class="pre">Anaconda3-2.3.0-Windows-x86.exe</span></code> at
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--all</span></code>. Download
+<code class="docutils literal notranslate"><span class="pre">Anaconda3-2.3.0-Windows-x86.exe</span></code> at
 <a class="reference external" href="https://repo.continuum.io/archive/">https://repo.continuum.io/archive/</a>. Install it in any location,
-such as <code class="docutils literal"><span class="pre">C:\Anaconda</span></code>.</p>
+such as <code class="docutils literal notranslate"><span class="pre">C:\Anaconda</span></code>.</p>
 <div class="section" id="using-a-proxy-with-windows-xp">
 <h2>Using a proxy with Windows XP<a class="headerlink" href="#using-a-proxy-with-windows-xp" title="Permalink to this headline">¶</a></h2>
 <p>To configure conda for use behind a corporate proxy that uses
@@ -221,22 +221,22 @@ the Use automatic configuration script checkbox.</li>
 <li>Click the Cancel button to close the Internet Options.</li>
 <li>Paste the address into the Internet Explorer address bar,
 then press the Enter key.</li>
-<li>In the PAC file that opens, search for <code class="docutils literal"><span class="pre">return</span></code> until you
+<li>In the PAC file that opens, search for <code class="docutils literal notranslate"><span class="pre">return</span></code> until you
 find what looks like a proxy IP or DNS address with the
 port number, which may take some time in a long file.</li>
 <li>Copy the address and port number.</li>
 </ol>
 </li>
 <li>Follow the <a class="reference internal" href="use-condarc.html#config-overview"><span class="std std-ref">.condarc instructions</span></a>
-to create a file named <code class="docutils literal"><span class="pre">.condarc</span></code> in your home directory or
-the installation directory, such as <code class="docutils literal"><span class="pre">C:\Anaconda\.condarc</span></code>.</li>
-<li>Follow the <a class="reference internal" href="use-condarc.html#config-proxy"><span class="std std-ref">.condarc proxy server instructions</span></a> to add proxy information to the <code class="docutils literal"><span class="pre">.condarc</span></code>
+to create a file named <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> in your home directory or
+the installation directory, such as <code class="docutils literal notranslate"><span class="pre">C:\Anaconda\.condarc</span></code>.</li>
+<li>Follow the <a class="reference internal" href="use-condarc.html#config-proxy"><span class="std std-ref">.condarc proxy server instructions</span></a> to add proxy information to the <code class="docutils literal notranslate"><span class="pre">.condarc</span></code>
 file.</li>
 </ol>
 <p>If you decide to include any passwords, be aware of
 transformations that can affect special characters.</p>
 <p>EXAMPLE: This example shows proxy information with passwords:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy_servers</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proxy_servers</span><span class="p">:</span>
   <span class="n">http</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">user</span><span class="p">:</span><span class="k">pass</span><span class="nd">@corp</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">8080</span>
   <span class="n">https</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">user</span><span class="p">:</span><span class="k">pass</span><span class="nd">@corp</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">8080</span>
 
@@ -246,27 +246,27 @@ transformations that can affect special characters.</p>
 <p>If you include proxy information without passwords, you will be
 asked to answer authentication prompts at the command line.</p>
 <p>EXAMPLE: This example shows proxy information without passwords:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy_servers</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">proxy_servers</span><span class="p">:</span>
   <span class="n">http</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">corp</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">8080</span>
   <span class="n">https</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">corp</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">8080</span>
 
 <span class="n">ssl_verify</span><span class="p">:</span> <span class="kc">False</span>
 </pre></div>
 </div>
-<p>Once the proxy is configured, you can run <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code>
+<p>Once the proxy is configured, you can run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code>
 and then create and manage environments with the Anaconda
 Launcher GUI.</p>
-<p>Some packages such as <code class="docutils literal"><span class="pre">flask-login</span></code> may not be available
+<p>Some packages such as <code class="docutils literal notranslate"><span class="pre">flask-login</span></code> may not be available
 through conda, so you may need to use pip to install them:</p>
 <ol class="arabic">
 <li><p class="first">To use pip securely over https:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">trusted</span><span class="o">-</span><span class="n">host</span> <span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span> <span class="n">package</span><span class="o">-</span><span class="n">name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">trusted</span><span class="o">-</span><span class="n">host</span> <span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span> <span class="n">package</span><span class="o">-</span><span class="n">name</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">If the secure https proxy fails, you can force pip to use an
 insecure http proxy instead:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span> <span class="o">--</span><span class="n">trusted</span><span class="o">-</span><span class="n">host</span> <span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span> <span class="n">package</span><span class="o">-</span><span class="n">name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span> <span class="o">--</span><span class="n">trusted</span><span class="o">-</span><span class="n">host</span> <span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span> <span class="n">package</span><span class="o">-</span><span class="n">name</span>
 </pre></div>
 </div>
 </li>

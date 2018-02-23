@@ -234,12 +234,12 @@ flow of conda build. Conda build sets the CONDA_BUILD_STATE
 environment variable during each of these phases. The possible
 values are:</p>
 <ul class="simple">
-<li>RENDER—Set during evaluation of the <code class="docutils literal"><span class="pre">meta.yaml</span></code> file.</li>
-<li>BUILD—Set during processing of the <code class="docutils literal"><span class="pre">bld.bat</span></code> or
-<code class="docutils literal"><span class="pre">build.sh</span></code> script files.</li>
-<li>TEST—Set during the running of any <code class="docutils literal"><span class="pre">run_test</span></code> scripts,
-which also includes any commands defined in <code class="docutils literal"><span class="pre">meta.yaml</span></code> in
-the <code class="docutils literal"><span class="pre">test/commands</span></code> section.</li>
+<li>RENDER—Set during evaluation of the <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file.</li>
+<li>BUILD—Set during processing of the <code class="docutils literal notranslate"><span class="pre">bld.bat</span></code> or
+<code class="docutils literal notranslate"><span class="pre">build.sh</span></code> script files.</li>
+<li>TEST—Set during the running of any <code class="docutils literal notranslate"><span class="pre">run_test</span></code> scripts,
+which also includes any commands defined in <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> in
+the <code class="docutils literal notranslate"><span class="pre">test/commands</span></code> section.</li>
 </ul>
 <p>The CONDA_BUILD_STATE variable is undefined outside
 of these locations.</p>
@@ -247,11 +247,11 @@ of these locations.</p>
 <div class="section" id="environment-variables-set-during-the-build-process">
 <h2><a class="toc-backref" href="#id2">Environment variables set during the build process</a><a class="headerlink" href="#environment-variables-set-during-the-build-process" title="Permalink to this headline">¶</a></h2>
 <p>During the build process, the following environment variables
-are set, on Windows with <code class="docutils literal"><span class="pre">bld.bat</span></code> and on macOS and Linux with
-<code class="docutils literal"><span class="pre">build.sh</span></code>. By default, these are the only variables available
+are set, on Windows with <code class="docutils literal notranslate"><span class="pre">bld.bat</span></code> and on macOS and Linux with
+<code class="docutils literal notranslate"><span class="pre">build.sh</span></code>. By default, these are the only variables available
 to your build script. Unless otherwise noted, no variables are
 inherited from the shell environment in which you invoke
-<code class="docutils literal"><span class="pre">conda-build</span></code>. To override this behavior, see
+<code class="docutils literal notranslate"><span class="pre">conda-build</span></code>. To override this behavior, see
 <a class="reference internal" href="#inherited-env-vars"><span class="std std-ref">Inherited environment variables</span></a>.</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -260,7 +260,7 @@ inherited from the shell environment in which you invoke
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>ARCH</td>
-<td>Either <code class="docutils literal"><span class="pre">32</span></code> or <code class="docutils literal"><span class="pre">64</span></code>, to specify whether the build is
+<td>Either <code class="docutils literal notranslate"><span class="pre">32</span></code> or <code class="docutils literal notranslate"><span class="pre">64</span></code>, to specify whether the build is
 32-bit or 64-bit.  The value depends on the ARCH
 environment variable and  defaults to the architecture the
 interpreter running conda was
@@ -269,23 +269,23 @@ compiled with.</td>
 <tr class="row-even"><td>CMAKE_GENERATOR</td>
 <td>The CMake generator string for the current build
 environment. On Linux systems, this is always
-<code class="docutils literal"><span class="pre">Unix</span> <span class="pre">Makefiles</span></code>. On Windows, it is generated according
+<code class="docutils literal notranslate"><span class="pre">Unix</span> <span class="pre">Makefiles</span></code>. On Windows, it is generated according
 to the Visual Studio version activated at build time, for
-example, <code class="docutils literal"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">9</span> <span class="pre">2008</span> <span class="pre">Win64</span></code>.</td>
+example, <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">9</span> <span class="pre">2008</span> <span class="pre">Win64</span></code>.</td>
 </tr>
 <tr class="row-odd"><td>CONDA_BUILD=1</td>
 <td>Always set.</td>
 </tr>
 <tr class="row-even"><td>CPU_COUNT</td>
 <td>The number of CPUs on the system, as reported by
-<code class="docutils literal"><span class="pre">multiprocessing.cpu_count()</span></code>.</td>
+<code class="docutils literal notranslate"><span class="pre">multiprocessing.cpu_count()</span></code>.</td>
 </tr>
 <tr class="row-odd"><td>SHLIB_EXT</td>
 <td>The shared library extension.</td>
 </tr>
 <tr class="row-even"><td>DIRTY</td>
-<td>Set to 1 if the <code class="docutils literal"><span class="pre">--dirty</span></code> flag is passed to the
-<code class="docutils literal"><span class="pre">conda-build</span></code> command. May be used to  skip parts of a
+<td>Set to 1 if the <code class="docutils literal notranslate"><span class="pre">--dirty</span></code> flag is passed to the
+<code class="docutils literal notranslate"><span class="pre">conda-build</span></code> command. May be used to  skip parts of a
 build script conditionally for faster iteration time when
 developing recipes. For example, downloads, extraction and
 other things that need not be repeated.</td>
@@ -301,20 +301,20 @@ other things that need not be repeated.</td>
 </tr>
 <tr class="row-even"><td>MAKEFLAGS</td>
 <td>Inherited from your shell environment. May be used to set
-additional arguments to make, such as <code class="docutils literal"><span class="pre">-j2</span></code>, which uses
+additional arguments to make, such as <code class="docutils literal notranslate"><span class="pre">-j2</span></code>, which uses
 2 CPU cores to build your recipe.</td>
 </tr>
 <tr class="row-odd"><td>PY_VER</td>
-<td>Python version building against. Set with the <code class="docutils literal"><span class="pre">--python</span></code> argument
+<td>Python version building against. Set with the <code class="docutils literal notranslate"><span class="pre">--python</span></code> argument
 or with the CONDA_PY environment variable.</td>
 </tr>
 <tr class="row-even"><td>NPY_VER</td>
-<td>NumPy version to build against. Set with the <code class="docutils literal"><span class="pre">--numpy</span></code>
+<td>NumPy version to build against. Set with the <code class="docutils literal notranslate"><span class="pre">--numpy</span></code>
 argument or with the CONDA_NPY environment variable.</td>
 </tr>
 <tr class="row-odd"><td>PATH</td>
 <td>Inherited from your shell environment and augmented with
-<code class="docutils literal"><span class="pre">$PREFIX/bin</span></code>.</td>
+<code class="docutils literal notranslate"><span class="pre">$PREFIX/bin</span></code>.</td>
 </tr>
 <tr class="row-even"><td>PREFIX</td>
 <td>Build prefix to which the build script should install.</td>
@@ -328,11 +328,11 @@ argument or with the CONDA_NPY environment variable.</td>
 <tr class="row-odd"><td>PKG_VERSION</td>
 <td>Version of the package being built.</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">PKG_BUILD_STRING</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_STRING</span></code></td>
 <td>Complete build string of the package being built, including hash.
 EXAMPLE: py27h21422ab_0 . Conda-build 3.0+.</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">PKG_HASH</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">PKG_HASH</span></code></td>
 <td>Hash of the package being built, without leading h. EXAMPLE: 21422ab .
 Conda-build 3.0+.</td>
 </tr>
@@ -342,8 +342,8 @@ is installed only in the build prefix when it is listed as
 a build requirement.</td>
 </tr>
 <tr class="row-odd"><td>PY3K</td>
-<td><code class="docutils literal"><span class="pre">1</span></code> when Python 3 is installed in the build prefix,
-otherwise <code class="docutils literal"><span class="pre">0</span></code>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">1</span></code> when Python 3 is installed in the build prefix,
+otherwise <code class="docutils literal notranslate"><span class="pre">0</span></code>.</td>
 </tr>
 <tr class="row-even"><td>R</td>
 <td>Path to the R executable in the build prefix. R is only
@@ -368,7 +368,7 @@ source file.</td>
 </tbody>
 </table>
 <p>Unix-style packages on Windows, which are usually statically
-linked to executables, are built in a special <code class="docutils literal"><span class="pre">Library</span></code>
+linked to executables, are built in a special <code class="docutils literal notranslate"><span class="pre">Library</span></code>
 directory under the build prefix. The environment variables
 listed in the following table are defined only on Windows.</p>
 <table border="1" class="colwidths-given docutils">
@@ -379,34 +379,34 @@ listed in the following table are defined only on Windows.</p>
 <tbody valign="top">
 <tr class="row-odd"><td>CYGWIN_PREFIX</td>
 <td>Same as PREFIX, but as a Unix-style path, such as
-<code class="docutils literal"><span class="pre">/cygdrive/c/path/to/prefix</span></code>.</td>
+<code class="docutils literal notranslate"><span class="pre">/cygdrive/c/path/to/prefix</span></code>.</td>
 </tr>
 <tr class="row-even"><td>LIBRARY_BIN</td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\bin</span></code>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\bin</span></code>.</td>
 </tr>
 <tr class="row-odd"><td>LIBRARY_INC</td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\include</span></code>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\include</span></code>.</td>
 </tr>
 <tr class="row-even"><td>LIBRARY_LIB</td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\lib</span></code>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library\lib</span></code>.</td>
 </tr>
 <tr class="row-odd"><td>LIBRARY_PREFIX</td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library</span></code>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Library</span></code>.</td>
 </tr>
 <tr class="row-even"><td>SCRIPTS</td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Scripts</span></code>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;\Scripts</span></code>.</td>
 </tr>
 <tr class="row-odd"><td>VS_MAJOR</td>
 <td>The major version number of the Visual Studio version
-activated within the build, such as <code class="docutils literal"><span class="pre">9</span></code>.</td>
+activated within the build, such as <code class="docutils literal notranslate"><span class="pre">9</span></code>.</td>
 </tr>
 <tr class="row-even"><td>VS_VERSION</td>
 <td>The version number of the Visual Studio version activated
-within the build, such as <code class="docutils literal"><span class="pre">9.0</span></code>.</td>
+within the build, such as <code class="docutils literal notranslate"><span class="pre">9.0</span></code>.</td>
 </tr>
 <tr class="row-odd"><td>VS_YEAR</td>
 <td>The release year of the Visual Studio version activated
-within the build, such as <code class="docutils literal"><span class="pre">2008</span></code>.</td>
+within the build, such as <code class="docutils literal notranslate"><span class="pre">2008</span></code>.</td>
 </tr>
 </tbody>
 </table>
@@ -422,7 +422,7 @@ defined only on macOS and Linux.</p>
 <td>Standard $HOME environment variable.</td>
 </tr>
 <tr class="row-even"><td>PKG_CONFIG_PATH</td>
-<td>Path to <code class="docutils literal"><span class="pre">pkgconfig</span></code> directory.</td>
+<td>Path to <code class="docutils literal notranslate"><span class="pre">pkgconfig</span></code> directory.</td>
 </tr>
 </tbody>
 </table>
@@ -435,7 +435,7 @@ defined only on macOS.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>CFLAGS</td>
-<td><code class="docutils literal"><span class="pre">-arch</span></code> flag.</td>
+<td><code class="docutils literal notranslate"><span class="pre">-arch</span></code> flag.</td>
 </tr>
 <tr class="row-even"><td>CXXFLAGS</td>
 <td>Same as CFLAGS.</td>
@@ -444,10 +444,10 @@ defined only on macOS.</p>
 <td>Same as CFLAGS.</td>
 </tr>
 <tr class="row-even"><td>MACOSX_DEPLOYMENT_TARGET</td>
-<td>Same as the Anaconda Python macOS deployment target. Currently <code class="docutils literal"><span class="pre">10.6</span></code>.</td>
+<td>Same as the Anaconda Python macOS deployment target. Currently <code class="docutils literal notranslate"><span class="pre">10.6</span></code>.</td>
 </tr>
 <tr class="row-odd"><td>OSX_ARCH</td>
-<td><code class="docutils literal"><span class="pre">i386</span></code> or <code class="docutils literal"><span class="pre">x86_64</span></code>, depending on Python build.</td>
+<td><code class="docutils literal notranslate"><span class="pre">i386</span></code> or <code class="docutils literal notranslate"><span class="pre">x86_64</span></code>, depending on Python build.</td>
 </tr>
 </tbody>
 </table>
@@ -460,7 +460,7 @@ defined only on Linux.</p>
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>LD_RUN_PATH</td>
-<td><code class="docutils literal"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;/lib</span></code>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;build</span> <span class="pre">prefix&gt;/lib</span></code>.</td>
 </tr>
 </tbody>
 </table>
@@ -482,7 +482,7 @@ GIT_DESCRIBE_HASH by an underscore.</td>
 </tr>
 <tr class="row-even"><td>GIT_DESCRIBE_HASH</td>
 <td>The current commit short-hash as displayed from
-<code class="docutils literal"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span></code>.</td>
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span></code>.</td>
 </tr>
 <tr class="row-odd"><td>GIT_DESCRIBE_NUMBER</td>
 <td>String denoting the number of commits since the most
@@ -490,14 +490,14 @@ recent tag.</td>
 </tr>
 <tr class="row-even"><td>GIT_DESCRIBE_TAG</td>
 <td>String denoting the most recent tag from the current
-commit, based on the output of <code class="docutils literal"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span></code>.</td>
+commit, based on the output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">describe</span> <span class="pre">--tags</span></code>.</td>
 </tr>
 <tr class="row-odd"><td>GIT_FULL_HASH</td>
 <td>String with the full SHA1 of the current HEAD.</td>
 </tr>
 </tbody>
 </table>
-<p>These can be used in conjunction with templated <code class="docutils literal"><span class="pre">meta.yaml</span></code>
+<p>These can be used in conjunction with templated <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code>
 files to set things—such as the build string—based on the
 state of the git repository.</p>
 </div>
@@ -540,8 +540,8 @@ tag.</td>
 <p>Other than those mentioned above, no variables are inherited from
 the environment in which you invoke conda build. You can choose
 to inherit additional environment variables by adding them to
-<code class="docutils literal"><span class="pre">meta.yaml</span></code>:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">script_env</span><span class="p p-Indicator">:</span>
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TMPDIR</span>
    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">LD_LIBRARY_PATH</span> <span class="c1"># [linux]</span>
@@ -554,7 +554,7 @@ no value assigned.</p>
 <p>NOTE: Inheriting environment variables can make it difficult for
 others to reproduce binaries from source with your recipe. Use
 this feature with caution or avoid it.</p>
-<p>NOTE: If you split your build and test phases with <code class="docutils literal"><span class="pre">--no-test</span></code> and <code class="docutils literal"><span class="pre">--test</span></code>,
+<p>NOTE: If you split your build and test phases with <code class="docutils literal notranslate"><span class="pre">--no-test</span></code> and <code class="docutils literal notranslate"><span class="pre">--test</span></code>,
 you need to ensure that the environment variables present at build time and test
 time match. If you do not, the package hashes may use different values, and your
 package may not be testable, because the hashes will differ.</p>
@@ -569,17 +569,17 @@ package may not be testable, because the hashes will differ.</p>
 <tbody valign="top">
 <tr class="row-odd"><td>CONDA_PY</td>
 <td>The Python version used to build the package. Should
-be <code class="docutils literal"><span class="pre">27</span></code>, <code class="docutils literal"><span class="pre">34</span></code>, <code class="docutils literal"><span class="pre">35</span></code> or <code class="docutils literal"><span class="pre">36</span></code>.</td>
+be <code class="docutils literal notranslate"><span class="pre">27</span></code>, <code class="docutils literal notranslate"><span class="pre">34</span></code>, <code class="docutils literal notranslate"><span class="pre">35</span></code> or <code class="docutils literal notranslate"><span class="pre">36</span></code>.</td>
 </tr>
 <tr class="row-even"><td>CONDA_NPY</td>
 <td>The NumPy version used to build the package, such as
-<code class="docutils literal"><span class="pre">19</span></code>, <code class="docutils literal"><span class="pre">110</span></code> or <code class="docutils literal"><span class="pre">111</span></code>.</td>
+<code class="docutils literal notranslate"><span class="pre">19</span></code>, <code class="docutils literal notranslate"><span class="pre">110</span></code> or <code class="docutils literal notranslate"><span class="pre">111</span></code>.</td>
 </tr>
 <tr class="row-odd"><td>CONDA_PREFIX</td>
 <td>The path to the conda environment used to build the
-package, such as <code class="docutils literal"><span class="pre">/path/to/conda/env</span></code>. Useful to pass as
+package, such as <code class="docutils literal notranslate"><span class="pre">/path/to/conda/env</span></code>. Useful to pass as
 the environment prefix parameter to various conda tools,
-usually labeled <code class="docutils literal"><span class="pre">-p</span></code> or <code class="docutils literal"><span class="pre">--prefix</span></code>.</td>
+usually labeled <code class="docutils literal notranslate"><span class="pre">-p</span></code> or <code class="docutils literal notranslate"><span class="pre">--prefix</span></code>.</td>
 </tr>
 </tbody>
 </table>
@@ -597,16 +597,16 @@ control <a class="reference internal" href="features.html"><span class="doc">Fea
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>FEATURE_NOMKL</td>
-<td>Adds the <code class="docutils literal"><span class="pre">nomkl</span></code> feature to the built package.</td>
-<td>Accepts <code class="docutils literal"><span class="pre">0</span></code> for off and <code class="docutils literal"><span class="pre">1</span></code> for on.</td>
+<td>Adds the <code class="docutils literal notranslate"><span class="pre">nomkl</span></code> feature to the built package.</td>
+<td>Accepts <code class="docutils literal notranslate"><span class="pre">0</span></code> for off and <code class="docutils literal notranslate"><span class="pre">1</span></code> for on.</td>
 </tr>
 <tr class="row-even"><td>FEATURE_DEBUG</td>
-<td>Adds the <code class="docutils literal"><span class="pre">debug</span></code> feature to the built package.</td>
-<td>Accepts <code class="docutils literal"><span class="pre">0</span></code> for off and <code class="docutils literal"><span class="pre">1</span></code> for on.</td>
+<td>Adds the <code class="docutils literal notranslate"><span class="pre">debug</span></code> feature to the built package.</td>
+<td>Accepts <code class="docutils literal notranslate"><span class="pre">0</span></code> for off and <code class="docutils literal notranslate"><span class="pre">1</span></code> for on.</td>
 </tr>
 <tr class="row-odd"><td>FEATURE_OPT</td>
-<td>Adds the <code class="docutils literal"><span class="pre">opt</span></code> feature to the built package.</td>
-<td>Accepts <code class="docutils literal"><span class="pre">0</span></code> for off and <code class="docutils literal"><span class="pre">1</span></code> for on.</td>
+<td>Adds the <code class="docutils literal notranslate"><span class="pre">opt</span></code> feature to the built package.</td>
+<td>Accepts <code class="docutils literal notranslate"><span class="pre">0</span></code> for off and <code class="docutils literal notranslate"><span class="pre">1</span></code> for on.</td>
 </tr>
 </tbody>
 </table>

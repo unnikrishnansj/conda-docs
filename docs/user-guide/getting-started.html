@@ -244,26 +244,26 @@ Anaconda</a>.</p>
 <span id="id2"></span><h2>Managing conda<a class="headerlink" href="#managing-conda" title="Permalink to this headline">¶</a></h2>
 <p>Verify that conda is installed and running on your system by typing:</p>
 <blockquote>
-<div><div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+<div><div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>Conda displays the number of the version that you have installed. You do not
 need to navigate to the Anaconda directory.</p>
-<p>EXAMPLE: <code class="docutils literal"><span class="pre">conda</span> <span class="pre">4.4.9</span></code></p>
+<p>EXAMPLE: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">4.4.9</span></code></p>
 <p>NOTE: If you get an error message, make sure you closed and re-opened the
 Terminal window after installing, or do it now. Then verify that you are logged
 into the same user account that you used to install Anaconda or Miniconda.</p>
 <p>Update conda to the current version. Type the following:</p>
 <blockquote>
-<div><div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+<div><div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>Conda compares versions and then displays what is available to install.</p>
-<p>If a newer version of conda is available, type <code class="docutils literal"><span class="pre">y</span></code> to update:</p>
+<p>If a newer version of conda is available, type <code class="docutils literal notranslate"><span class="pre">y</span></code> to update:</p>
 <blockquote>
-<div><div class="code highlight-default"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+<div><div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
 </pre></div>
 </div>
 </div></blockquote>
@@ -274,19 +274,19 @@ into the same user account that you used to install Anaconda or Miniconda.</p>
 <p>Conda allows you to to create separate environments containing files, packages
 and their dependencies that will not interact with other environments.</p>
 <p>When you begin using conda, you already have a default environment named
-<code class="docutils literal"><span class="pre">base</span></code>. You don’t want to put programs into your base environment, though.
+<code class="docutils literal notranslate"><span class="pre">base</span></code>. You don’t want to put programs into your base environment, though.
 Create separate environments to keep your programs isolated from each other.</p>
 <ol class="arabic">
 <li><p class="first">Create a new environment and install a package in it.</p>
-<p>We will name the environment <code class="docutils literal"><span class="pre">snowflakes</span></code> and install the package
+<p>We will name the environment <code class="docutils literal notranslate"><span class="pre">snowflakes</span></code> and install the package
 BioPython. At the Anaconda Prompt or in your Terminal window, type
 the following:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snowflakes</span> <span class="n">biopython</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snowflakes</span> <span class="n">biopython</span>
 </pre></div>
 </div>
 <p>Conda checks to see what additional packages (“dependencies”)
 Biopython will need, and asks if you want to proceed:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>Proceed ([y]/n)? y
 </pre></div>
 </div>
 <p>Type “y” and press Enter to proceed.</p>
@@ -294,20 +294,20 @@ Biopython will need, and asks if you want to proceed:</p>
 <li><p class="first">To use, or “activate” the new environment, type the following:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
-<li>Linux and macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+<li>Windows:  <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
+<li>Linux and macOS: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snowflakes</span></code></li>
 </ul>
 </div></blockquote>
-<p>Now that you are in your <code class="docutils literal"><span class="pre">snowflakes</span></code> environment, any conda
+<p>Now that you are in your <code class="docutils literal notranslate"><span class="pre">snowflakes</span></code> environment, any conda
 commands you type will go to that environment until
 you deactivate it.</p>
 </li>
 <li><p class="first">To see a list of all your environments, type:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
 </pre></div>
 </div>
 <p>A list of environments appears, similar to the following:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">environments</span><span class="p">:</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">environments</span><span class="p">:</span>
 
     <span class="n">base</span>           <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Anaconda3</span>
     <span class="n">snowflakes</span>   <span class="o">*</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">Anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">snowflakes</span>
@@ -318,13 +318,13 @@ you deactivate it.</p>
 <li><p class="first">Change your current environment back to the default (base):</p>
 <blockquote>
 <div><ul class="simple">
-<li>Windows:  <code class="docutils literal"><span class="pre">deactivate</span></code></li>
-<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
+<li>Windows:  <code class="docutils literal notranslate"><span class="pre">deactivate</span></code></li>
+<li>Linux, macOS: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
 </ul>
 </div></blockquote>
 <p>TIP: When the environment is deactivated, its name is no
 longer shown in your prompt, and the asterisk (*) returns to base.
-To verify, you can repeat the  <code class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">--envs</span></code> command.</p>
+To verify, you can repeat the  <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">--envs</span></code> command.</p>
 </li>
 </ol>
 </div>
@@ -336,7 +336,7 @@ version of Python, for example Python 3.5, simply create a new environment and
 specify the version of Python that you want.</p>
 <ol class="arabic">
 <li><p class="first">Create a new environment named “snakes” that contains Python 3.5:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snakes</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.5</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">snakes</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.5</span>
 </pre></div>
 </div>
 <p>When conda asks if you want to proceed, type “y” and press Enter.</p>
@@ -344,18 +344,18 @@ specify the version of Python that you want.</p>
 <li><p class="first">Activate the new environment:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Windows:  <code class="docutils literal"><span class="pre">activate</span> <span class="pre">snakes</span></code></li>
-<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></code></li>
+<li>Windows:  <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">snakes</span></code></li>
+<li>Linux, macOS: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">snakes</span></code></li>
 </ul>
 </div></blockquote>
 </li>
 <li><p class="first">Verify that the snakes environment has been added and is active:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
 </pre></div>
 </div>
 <p>Conda displays the list of all environments with an asterisk (*)
 after the name of the active environment:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="c1"># conda environments:</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># conda environments:</span>
 <span class="c1">#</span>
 <span class="n">base</span>                     <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">anaconda3</span>
 <span class="n">snakes</span>                <span class="o">*</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">snakes</span>
@@ -364,21 +364,21 @@ after the name of the active environment:</p>
 </div>
 <p>The active environment is also displayed in front of your prompt in
 (parentheses) or [brackets] like this:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span>(snakes) $
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span>(snakes) $
 </pre></div>
 </div>
 </li>
 <li><p class="first">Verify which version of Python is in your current
 environment:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Deactivate the snakes environment and return to base environment:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Windows: <code class="docutils literal"><span class="pre">deactivate</span></code></li>
-<li>Linux, macOS: <code class="docutils literal"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
+<li>Windows: <code class="docutils literal notranslate"><span class="pre">deactivate</span></code></li>
+<li>Linux, macOS: <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">deactivate</span></code></li>
 </ul>
 </div></blockquote>
 </li>
@@ -397,19 +397,19 @@ you want to search. Look above for the commands to
 <li><p class="first">Check to see if a package you have not installed named
 “beautifulsoup4” is available from the Anaconda repository
 (must be connected to the Internet):</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="n">beautifulsoup4</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="n">beautifulsoup4</span>
 </pre></div>
 </div>
 <p>Conda displays a list of all packages with that name on the Anaconda
 repository, so we know it is available.</p>
 </li>
 <li><p class="first">Install this package into the current environment:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">beautifulsoup4</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">beautifulsoup4</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Check to see if the newly installed program is in this environment:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
 </li>

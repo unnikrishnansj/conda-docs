@@ -231,20 +231,20 @@ safest and most reliable.</p>
 <div class="section" id="building-a-conda-package-from-a-wheel-file">
 <h2>Building a conda package from a wheel file<a class="headerlink" href="#building-a-conda-package-from-a-wheel-file" title="Permalink to this headline">¶</a></h2>
 <p>To build a conda package from a wheel file, install the .whl file in the conda
-recipe’s <code class="docutils literal"><span class="pre">bld.bat</span></code> or <code class="docutils literal"><span class="pre">build.sh</span></code> file.</p>
+recipe’s <code class="docutils literal notranslate"><span class="pre">bld.bat</span></code> or <code class="docutils literal notranslate"><span class="pre">build.sh</span></code> file.</p>
 <p>You may download the .whl file in the source section of the conda recipe’s
-<code class="docutils literal"><span class="pre">meta.yaml</span></code> file.</p>
-<p>You may instead put the URL directly in the <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code> command.</p>
-<p>EXAMPLE: The conda recipe for TensorFlow has a <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code> command in
+<code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file.</p>
+<p>You may instead put the URL directly in the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command.</p>
+<p>EXAMPLE: The conda recipe for TensorFlow has a <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command in
 <a class="reference external" href="https://github.com/conda/conda-recipes/blob/a796713805ac8eceed191c0cb475b51f4d00718c/python/tensorflow/build.sh#L7">build.sh</a>
 with the URL of a .whl file. The
 <a class="reference external" href="https://github.com/conda/conda-recipes/blob/a796713805ac8eceed191c0cb475b51f4d00718c/python/tensorflow/meta.yaml">meta.yaml</a>
 file does not download or list the .whl file.</p>
-<p>NOTE: It is important to <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code> only the one desired package. Whenever
+<p>NOTE: It is important to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> only the one desired package. Whenever
 possible, install dependencies with conda and not pip.</p>
-<p>We strongly recommend using the <code class="docutils literal"><span class="pre">--no-deps</span></code> option in the <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code>
+<p>We strongly recommend using the <code class="docutils literal notranslate"><span class="pre">--no-deps</span></code> option in the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>
 command.</p>
-<p>If you run <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code> without the <code class="docutils literal"><span class="pre">--no-deps</span></code> option, pip will often
+<p>If you run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> without the <code class="docutils literal notranslate"><span class="pre">--no-deps</span></code> option, pip will often
 install dependencies in your conda recipe and those dependencies will become
 part of your package. This wastes space in the package and increases the
 risk of file overlap, file clobbering, and broken packages.</p>

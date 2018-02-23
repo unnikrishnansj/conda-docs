@@ -727,7 +727,7 @@ changelog: <a class="reference external" href="https://github.com/conda/conda/bl
 <div class="section" id="id9">
 <h3>Bug Fixes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>fix #6643 difference between <code class="docutils literal"><span class="pre">==</span></code> and <code class="docutils literal"><span class="pre">exact_match_</span></code> (#6647)</li>
+<li>fix #6643 difference between <code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">exact_match_</span></code> (#6647)</li>
 <li>fix #6620 KeyError(u’CONDA_PREFIX’,) (#6652)</li>
 <li>fix #6661 remove env from environments.txt (#6662)</li>
 <li>fix #6629 ‘conda update –name’ AssertionError (#6656)</li>
@@ -771,7 +771,7 @@ changelog: <a class="reference external" href="https://github.com/conda/conda/bl
 <div class="section" id="id15">
 <h3>Improvements<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>add <code class="docutils literal"><span class="pre">SUDO_</span></code> env vars to info reports (#6563)</li>
+<li>add <code class="docutils literal notranslate"><span class="pre">SUDO_</span></code> env vars to info reports (#6563)</li>
 <li>add additional information to the #6546 exception (#6551)</li>
 </ul>
 </div>
@@ -846,22 +846,22 @@ changelog: <a class="reference external" href="https://github.com/conda/conda/bl
 <p>With the release of conda 4.4, we recommend a change to how the <cite>conda</cite> command is made available to your shell environment. All the old methods still work as before, but you’ll need the new method to enable the new <cite>conda activate</cite> and <cite>conda deactivate</cite> commands.</p>
 <p>For the “Anaconda Prompt” on Windows, there is no change.</p>
 <p>For Bourne shell derivatives (bash, zsh, dash, etc.), you likely currently have a line similar to:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/conda/bin:$PATH&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/conda/bin:$PATH&quot;</span>
 </pre></div>
 </div>
 <p>in your <cite>~/.bashrc</cite> file (or <cite>~/.bash_profile</cite> file on macOS).  The effect of this line is that your base environment is put on PATH, but without actually <em>activating</em> that environment. (In 4.4 we’ve renamed the ‘root’ environment to the ‘base’ environment.) With conda 4.4, we recommend removing the line where the <cite>PATH</cite> environment variable is modified, and replacing it with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">conda</span><span class="o">.</span><span class="n">sh</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">conda</span><span class="o">.</span><span class="n">sh</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">base</span>
 </pre></div>
 </div>
 <p>In the above, it’s assumed that <cite>/opt/conda</cite> is the location where you installed miniconda or Anaconda.  It may also be something like <cite>~/Anaconda3</cite> or <cite>~/miniconda2</cite>.</p>
 <p>For system-wide conda installs, to make the <cite>conda</cite> command available to all users, rather than manipulating individual <cite>~/.bashrc</cite> (or <cite>~/.bash_profile</cite>) files for each user, just execute once:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ sudo ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 </pre></div>
 </div>
 <p>This will make the <cite>conda</cite> command itself available to all users, but conda’s base (root) environment will <em>not</em> be activated by default.  Users will still need to run <cite>conda activate base</cite> to put the base environment on PATH and gain access to the executables in the base environment.</p>
 <p>After updating to conda 4.4, we also recommend pinning conda to a specific channel.  For example, executing the command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ conda config --system --add pinned_packages conda-canary::conda
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda config --system --add pinned_packages conda-canary::conda
 </pre></div>
 </div>
 <p>will make sure that whenever conda is installed or changed in an environment, the source of the package is always being pulled from the <cite>conda-canary</cite> channel.  This will be useful for people who use <cite>conda-forge</cite>, to prevent conda from flipping back and forth between 4.3 and 4.4.</p>
@@ -877,19 +877,19 @@ changelog: <a class="reference external" href="https://github.com/conda/conda/bl
 </li>
 <li><p class="first"><strong>enhanced package query language</strong>: Conda has a built-in query language for searching for and matching packages, what we often refer to as <cite>MatchSpec</cite>. The MatchSpec is what users input on the command line when they specify packages for <cite>create</cite>, <cite>install</cite>, <cite>update</cite>, and <cite>remove</cite> operations. With this release, MatchSpec (rather than a regex) becomes the default input for <cite>conda search</cite>. We have also substantially enhanced our MatchSpec query language.</p>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="p">::</span><span class="n">python</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="p">::</span><span class="n">python</span>
 </pre></div>
 </div>
 <p>is now a valid command, which specifies that regardless of the active list of channel priorities, the python package itself should come from the <cite>conda-forge</cite> channel. As before, the difference between <cite>python=3.5</cite> and <cite>python==3.5</cite> is that the first contains a “<em>fuzzy</em>” version while the second contains an <em>exact</em> version. The fuzzy spec will match all python packages with versions <cite>&gt;=3.5</cite> and <cite>&lt;3.6</cite>. The exact spec will match only python packages with version <cite>3.5</cite>, <cite>3.5.0</cite>, <cite>3.5.0.0</cite>, etc. The canonical string form for a MatchSpec is thus:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">channel</span><span class="p">::)</span><span class="n">name</span><span class="p">(</span><span class="n">version</span><span class="p">(</span><span class="n">build_string</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">channel</span><span class="p">::)</span><span class="n">name</span><span class="p">(</span><span class="n">version</span><span class="p">(</span><span class="n">build_string</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>which should feel natural to experienced conda users. Specifications however are often necessarily more complicated than this simple form can support, and for these situations we’ve extended the specification to include an optional square bracket <cite>[]</cite> component containing comma-separated key-value pairs to allow matching on most any field contained in a package’s metadata. Take, for example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="s1">&#39;conda-forge/linux-64::*[md5=e42a03f799131d5af4196ce31a1084a7]&#39;</span> <span class="o">--</span><span class="n">info</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">search</span> <span class="s1">&#39;conda-forge/linux-64::*[md5=e42a03f799131d5af4196ce31a1084a7]&#39;</span> <span class="o">--</span><span class="n">info</span>
 </pre></div>
 </div>
 <p>which results in information for the single package:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cytoolz</span> <span class="mf">0.8</span><span class="o">.</span><span class="mi">2</span> <span class="n">py35_0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cytoolz</span> <span class="mf">0.8</span><span class="o">.</span><span class="mi">2</span> <span class="n">py35_0</span>
 <span class="o">--------------------</span>
 <span class="n">file</span> <span class="n">name</span>   <span class="p">:</span> <span class="n">cytoolz</span><span class="o">-</span><span class="mf">0.8</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="n">py35_0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
 <span class="n">name</span>        <span class="p">:</span> <span class="n">cytoolz</span>
@@ -911,7 +911,7 @@ changelog: <a class="reference external" href="https://github.com/conda/conda/bl
 <p>The square bracket notation can also be used for any field that we match on outside the package name, and will override information given in the “simple form” position. To give a contrived example, <cite>python==3.5[version=’&gt;=2.7,&lt;2.8’]</cite> will match <cite>2.7.*</cite> versions and not <cite>3.5</cite>.</p>
 </li>
 <li><p class="first"><strong>environments track user-requested state</strong>: Building on our enhanced MatchSpec query language, conda environments now also track and differentiate (a) packages added to an environment because of an explicit user request from (b) packages brought into an environment to satisfy dependencies. For example, executing:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="p">::</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="p">::</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
 </pre></div>
 </div>
 <p>will confine all future changes to the scikit-learn package in the environment to the conda-forge channel, until the spec is changed again. A subsequent command <cite>conda install scikit-learn=0.18</cite> would drop the <cite>conda-forge</cite> channel restriction from the package. And in this case, scikit-learn is the only user-defined spec, so the solver chooses dependencies from all configured channels and all available versions.</p>
@@ -922,11 +922,11 @@ changelog: <a class="reference external" href="https://github.com/conda/conda/bl
 <li><p class="first"><strong>various UI improvements</strong>: To push through some of the big leaps with transactions in conda 4.3, we accepted some regressions on progress bars and other user interface features. All of those indicators of progress, and more, have been brought back and further improved.</p>
 </li>
 <li><p class="first"><strong>aggressive updates</strong>: Conda now supports an <cite>aggressive_update_packages</cite> configuration parameter that holds a sequence of MatchSpec strings, in addition to the <cite>pinned_packages</cite> configuration parameter. Currently, the default value contains the packages <cite>ca-certificates</cite>, <cite>certifi</cite>, and <cite>openssl</cite>. When manipulating configuration with the <cite>conda config</cite> command, use of the <cite>–system</cite> and <cite>–env</cite> flags will be especially helpful here. For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">aggressive_update_packages</span> <span class="n">defaults</span><span class="p">::</span><span class="n">pyopenssl</span> <span class="o">--</span><span class="n">system</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">aggressive_update_packages</span> <span class="n">defaults</span><span class="p">::</span><span class="n">pyopenssl</span> <span class="o">--</span><span class="n">system</span>
 </pre></div>
 </div>
 <p>would ensure that, system-wide, solves on all environments enforce using the latest version of <cite>pyopenssl</cite> from the <cite>defaults</cite> channel.</p>
-<p><code class="docutils literal"><span class="pre">`conda</span> <span class="pre">config</span> <span class="pre">--add</span> <span class="pre">pinned_packages</span> <span class="pre">python=2.7</span> <span class="pre">--env`</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">`conda</span> <span class="pre">config</span> <span class="pre">--add</span> <span class="pre">pinned_packages</span> <span class="pre">python=2.7</span> <span class="pre">--env`</span></code></p>
 <p>would lock all solves for the current active environment to python versions matching <cite>2.7.*</cite>.</p>
 </li>
 <li><p class="first"><strong>other configuration improvements</strong>: In addition to <cite>conda config –describe</cite>, which shows detailed descriptions and default values for all available configuration parameters, we have a new <cite>conda config –write-default</cite> command. This new command simply writes the contents of <cite>conda config –describe</cite> to a condarc file, which is a great starter template. Without additional arguments, the command will write to the <cite>.condarc</cite> file in the user’s home directory. The command also works with the <cite>–system</cite>, <cite>–env</cite>, and <cite>–file</cite> flags to write the contents to alternate locations.</p>
@@ -1021,7 +1021,7 @@ Behavior is configurable via the <cite>safety_checks</cite> configuration parame
 <li>fix #5132 signal handler can only be used in main thread (#5133)</li>
 <li>fix orphaned –clobber parser arg (#5188)</li>
 <li>fix #3814 don’t remove directory that’s not a conda environment (#5204)</li>
-<li>fix #4468 <code class="docutils literal"><span class="pre">_license</span></code> stack trace (#5206)</li>
+<li>fix #4468 <code class="docutils literal notranslate"><span class="pre">_license</span></code> stack trace (#5206)</li>
 <li>fix #4987 conda update –all no longer displays full list of packages (#5228)</li>
 <li>fix #3489 don’t error on remove –all if environment doesn’t exist (#5231)</li>
 <li>fix #1509 bash doesn’t need full path for pre/post link/unlink scripts on unix (#5252)</li>
@@ -1039,7 +1039,7 @@ Behavior is configurable via the <cite>safety_checks</cite> configuration parame
 <li>use proxy to avoid segfaults (#5716)</li>
 <li>fix #5790 incorrect activation message (4.4.0rc1) (#5820)</li>
 <li>fix #5808 assertion error when loading package cache (4.4.0rc1) (#5815)</li>
-<li>fix #5809 <code class="docutils literal"><span class="pre">_pip_install_via_requirements</span></code> got an unexpected keyword argument ‘prune’ (4.4.0rc1) (#5814)</li>
+<li>fix #5809 <code class="docutils literal notranslate"><span class="pre">_pip_install_via_requirements</span></code> got an unexpected keyword argument ‘prune’ (4.4.0rc1) (#5814)</li>
 <li>fix #5811 change safety_checks default to ‘warn’ for conda 4.4 (4.4.0rc1) (#5824)</li>
 <li>fix #5825 –json output format (4.4.0rc1) (#5831)</li>
 <li>fix force_reinstall for case when packages aren’t actually installed (4.4.0rc1) (#5836)</li>
@@ -1960,7 +1960,7 @@ into conda in a future feature release. (#4064)</li>
 <li>anaconda api token bug fix; additional tests (#3673)</li>
 <li>fix #3667 unicode literals and unicode decode (#3682)</li>
 <li>add conda-env entrypoint (#3743)</li>
-<li>fix #3807 json dump on <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--show</span> <span class="pre">--json</span></code> (#3811)</li>
+<li>fix #3807 json dump on <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--show</span> <span class="pre">--json</span></code> (#3811)</li>
 <li>fix #3801 location of temporary hard links of index.json (#3813)</li>
 <li>fix invalid yml example (#3849)</li>
 <li>add arm platforms back to subdirs (#3852)</li>
@@ -2103,7 +2103,7 @@ into conda in a future feature release. (#4064)</li>
 <ul class="simple">
 <li>fix anaconda api token bug (#3674)</li>
 <li>fix #3646 FileMode enum comparison (#3683)</li>
-<li>fix #3517 <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--mkdir</span></code> (#3684)</li>
+<li>fix #3517 <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--mkdir</span></code> (#3684)</li>
 <li>fix #3560 hack anaconda token coverup on conda info (#3686)</li>
 <li>fix #3469 alias envs_path to envs_dirs (#3685)</li>
 </ul>
@@ -2114,7 +2114,7 @@ into conda in a future feature release. (#4064)</li>
 <div class="section" id="id158">
 <h3>Improvements<a class="headerlink" href="#id158" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>add json output for <code class="docutils literal"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">-s</span></code> (#3588)</li>
+<li>add json output for <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span> <span class="pre">-s</span></code> (#3588)</li>
 <li>ignore certain binary prefixes on windows (#3539)</li>
 <li>allow conda config files to have .yaml extensions or ‘condarc’ anywhere in filename (#3633)</li>
 </ul>
@@ -2145,8 +2145,8 @@ into conda in a future feature release. (#4064)</li>
 <div class="section" id="id162">
 <h3>Bug Fixes<a class="headerlink" href="#id162" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>fix #3536 conda-env messaging to stdout with <code class="docutils literal"><span class="pre">--json</span></code> flag (#3537)</li>
-<li>fix #3525 writing to sys.stdout with <code class="docutils literal"><span class="pre">--json</span></code> flag for post-link scripts (#3538)</li>
+<li>fix #3536 conda-env messaging to stdout with <code class="docutils literal notranslate"><span class="pre">--json</span></code> flag (#3537)</li>
+<li>fix #3525 writing to sys.stdout with <code class="docutils literal notranslate"><span class="pre">--json</span></code> flag for post-link scripts (#3538)</li>
 <li>fix #3492 make NULL falsey with python 3 (#3524)</li>
 </ul>
 </div>
@@ -2163,7 +2163,7 @@ into conda in a future feature release. (#4064)</li>
 <h3>Bug Fixes<a class="headerlink" href="#id165" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>fix #3453 conda fails with create_default_packages (#3454)</li>
-<li>fix #3455 <code class="docutils literal"><span class="pre">--dry-run</span></code> fails (#3457)</li>
+<li>fix #3455 <code class="docutils literal notranslate"><span class="pre">--dry-run</span></code> fails (#3457)</li>
 <li>dial down error messages for rm_rf (#3522)</li>
 <li>fix #3467 AttributeError encountered for map config parameter validation (#3521)</li>
 </ul>
@@ -2174,7 +2174,7 @@ into conda in a future feature release. (#4064)</li>
 <div class="section" id="id167">
 <h3>Deprecations/Breaking Changes<a class="headerlink" href="#id167" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>revert to 4.1.x behavior of <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--export</span></code> (#3450, #3451)</li>
+<li>revert to 4.1.x behavior of <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--export</span></code> (#3450, #3451)</li>
 </ul>
 </div>
 <div class="section" id="id168">
@@ -2223,7 +2223,7 @@ into conda in a future feature release. (#4064)</li>
 <div class="section" id="id175">
 <h3>Improvements<a class="headerlink" href="#id175" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>order output of <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--show</span></code>; make <code class="docutils literal"><span class="pre">--json</span></code> friendly (#3384 via #3386)</li>
+<li>order output of <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--show</span></code>; make <code class="docutils literal notranslate"><span class="pre">--json</span></code> friendly (#3384 via #3386)</li>
 <li>clean the pid based lock on exception (#3325)</li>
 <li>improve file removal on all platforms (#3280 via #3396)</li>
 </ul>
@@ -2231,7 +2231,7 @@ into conda in a future feature release. (#4064)</li>
 <div class="section" id="id176">
 <h3>Bug Fixes<a class="headerlink" href="#id176" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>fix #3332 allow download urls with <code class="docutils literal"><span class="pre">::</span></code> in them (#3335)</li>
+<li>fix #3332 allow download urls with <code class="docutils literal notranslate"><span class="pre">::</span></code> in them (#3335)</li>
 <li>fix always_yes and not-set argparse args overriding other sources (#3374)</li>
 <li>fix ftp fetch timeout (#3392)</li>
 <li>fix #3307 add try/except block for touch lock (#3326)</li>
@@ -2252,9 +2252,9 @@ into conda in a future feature release. (#4064)</li>
 <li>fix local channel channels; add full conda-build unit tests (#3281)</li>
 <li>fix conda install with no package specified (#3284)</li>
 <li>fix #3253 exporting and importing conda environments (#3286)</li>
-<li>fix priority messaging on <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--get</span></code> (#3304)</li>
-<li>fix <code class="docutils literal"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--export</span></code>; additional integration tests (#3291)</li>
-<li>fix <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--all</span></code> idempotence; add integration tests for channel priority (#3306)</li>
+<li>fix priority messaging on <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--get</span></code> (#3304)</li>
+<li>fix <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">--export</span></code>; additional integration tests (#3291)</li>
+<li>fix <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">--all</span></code> idempotence; add integration tests for channel priority (#3306)</li>
 </ul>
 </div>
 <div class="section" id="id179">
@@ -2294,7 +2294,7 @@ into conda in a future feature release. (#4064)</li>
 <h3>Improvements<a class="headerlink" href="#id185" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>enable binary prefix replacement on windows (#3262)</li>
-<li>add <code class="docutils literal"><span class="pre">--verbose</span></code> command line flag (#3237)</li>
+<li>add <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> command line flag (#3237)</li>
 <li>improve logging and exception detail (#3237, #3252)</li>
 <li>do not remove empty environment without asking; raise an error when a named environment can’t be found (#3222)</li>
 </ul>
@@ -2342,11 +2342,11 @@ into conda in a future feature release. (#4064)</li>
 <div class="section" id="id192">
 <h3>New Features<a class="headerlink" href="#id192" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><strong>New Configuration Engine</strong>: Configuration and “operating context” are the foundation of conda’s functionality. Conda now has the ability to pull configuration information from a multitude of on-disk locations, including <code class="docutils literal"><span class="pre">.d</span></code> directories and a <code class="docutils literal"><span class="pre">.condarc</span></code> file <em>within</em> a conda environment), along with full <code class="docutils literal"><span class="pre">CONDA_</span></code> environment variable support. Helpful validation errors are given for improperly-specified configuration. Full documentation updates pending. (#2537, #3160, #3178)</li>
-<li><strong>New Exception Handling Engine</strong>: Previous releases followed a pattern of premature exiting (with hard calls to <code class="docutils literal"><span class="pre">sys.exit()</span></code>) when exceptional circumstances were encountered. This release replaces over 100 <code class="docutils literal"><span class="pre">sys.exit</span></code> calls with python exceptions.  For conda developers, this will result in tests that are easier to write.  For developers using conda, this is a first step on a long path toward conda being directly importable.  For conda users, this will eventually result in more helpful and descriptive errors messages.  (#2899, #2993, #3016, #3152, #3045)</li>
+<li><strong>New Configuration Engine</strong>: Configuration and “operating context” are the foundation of conda’s functionality. Conda now has the ability to pull configuration information from a multitude of on-disk locations, including <code class="docutils literal notranslate"><span class="pre">.d</span></code> directories and a <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file <em>within</em> a conda environment), along with full <code class="docutils literal notranslate"><span class="pre">CONDA_</span></code> environment variable support. Helpful validation errors are given for improperly-specified configuration. Full documentation updates pending. (#2537, #3160, #3178)</li>
+<li><strong>New Exception Handling Engine</strong>: Previous releases followed a pattern of premature exiting (with hard calls to <code class="docutils literal notranslate"><span class="pre">sys.exit()</span></code>) when exceptional circumstances were encountered. This release replaces over 100 <code class="docutils literal notranslate"><span class="pre">sys.exit</span></code> calls with python exceptions.  For conda developers, this will result in tests that are easier to write.  For developers using conda, this is a first step on a long path toward conda being directly importable.  For conda users, this will eventually result in more helpful and descriptive errors messages.  (#2899, #2993, #3016, #3152, #3045)</li>
 <li><strong>Empty Environments</strong>: Conda can now create “empty” environments when no initial packages are specified, alleviating a common source of confusion. (#3072, #3174)</li>
-<li><strong>Conda in Private Env</strong>: Conda can now be configured to live within its own private environment.  While it’s not yet default behavior, this represents a first step toward separating the <code class="docutils literal"><span class="pre">root</span></code> environment into a “conda private” environment and a “user default” environment. (#3068)</li>
-<li><strong>Regex Version Specification</strong>: Regular expressions are now valid version specifiers.  For example, <code class="docutils literal"><span class="pre">^1\.[5-8]\.1$|2.2</span></code>. (#2933)</li>
+<li><strong>Conda in Private Env</strong>: Conda can now be configured to live within its own private environment.  While it’s not yet default behavior, this represents a first step toward separating the <code class="docutils literal notranslate"><span class="pre">root</span></code> environment into a “conda private” environment and a “user default” environment. (#3068)</li>
+<li><strong>Regex Version Specification</strong>: Regular expressions are now valid version specifiers.  For example, <code class="docutils literal notranslate"><span class="pre">^1\.[5-8]\.1$|2.2</span></code>. (#2933)</li>
 </ul>
 </div>
 <div class="section" id="id193">
@@ -2552,23 +2552,23 @@ which gives more robust control over yaml document use.
 <li><strong>Shebang lines over 127 characters are now truncated (Linux, macOS
 only).</strong> <a class="reference external" href="https://en.wikipedia.org/wiki/Shebang_(Unix)">Shebangs</a> are
 the first line of the many executable scripts that tell the operating
-system how to execute the program.  They start with <code class="docutils literal"><span class="pre">#!</span></code>. Most OSes
+system how to execute the program.  They start with <code class="docutils literal notranslate"><span class="pre">#!</span></code>. Most OSes
 don’t support these lines over 127 characters, so conda now checks
 the length and replaces the full interpreter path in long lines with
-<code class="docutils literal"><span class="pre">/usr/bin/env</span></code>. When you’re working in a conda environment that
+<code class="docutils literal notranslate"><span class="pre">/usr/bin/env</span></code>. When you’re working in a conda environment that
 is deeply under many directories, or you otherwise have long paths
 to your conda environment, make sure you activate that environment
 now.</li>
 <li><strong>Changes to conda list command.</strong> When looking for packages that
 aren’t installed with conda, conda list now examines the Python
 site-packages directory rather than relying on pip.</li>
-<li><strong>Changes to conda remove command.</strong> The command  <code class="docutils literal"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--all</span></code>
+<li><strong>Changes to conda remove command.</strong> The command  <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--all</span></code>
 now removes a conda environment without fetching information from a remote
 server on the packages in the environment.</li>
 <li><strong>Conda update can be turned off and on.</strong> When turned off, conda will
 not update itself unless the user manually issues a conda update command.
 Previously conda updated any time a user updated or installed a package
-in the root environment. Use the option <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">set</span> <span class="pre">auto_update_conda</span> <span class="pre">false</span></code>.</li>
+in the root environment. Use the option <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">set</span> <span class="pre">auto_update_conda</span> <span class="pre">false</span></code>.</li>
 <li><strong>Improved support for BeeGFS.</strong> BeeGFS is a parallel cluster file
 system for performance and designed for easy installation and
 management. <a class="reference external" href="http://www.beegfs.com/content/documentation/">More on BeeGFS</a></li>
@@ -2578,12 +2578,12 @@ management. <a class="reference external" href="http://www.beegfs.com/content/do
 <h3>Windows-only changes<a class="headerlink" href="#windows-only-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><strong>Shortcuts are no longer installed by default on Windows.</strong> Shortcuts can
-now be installed with the <code class="docutils literal"><span class="pre">--shortcuts</span></code> option. Example 1: Install a shortcut
-to Spyder with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">spyder</span> <span class="pre">--shortcut</span></code>. Note if you have Anaconda
+now be installed with the <code class="docutils literal notranslate"><span class="pre">--shortcuts</span></code> option. Example 1: Install a shortcut
+to Spyder with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">spyder</span> <span class="pre">--shortcut</span></code>. Note if you have Anaconda
 (not Miniconda), you already have this shortcut and Spyder. Example 2:
-Install the open source package named <code class="docutils literal"><span class="pre">console_shortcut</span></code>. When you click
+Install the open source package named <code class="docutils literal notranslate"><span class="pre">console_shortcut</span></code>. When you click
 the shortcut icon, a terminal window will open with the environment
-containing the <code class="docutils literal"><span class="pre">console_shortcut</span></code> package already activated. <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span>
+containing the <code class="docutils literal notranslate"><span class="pre">console_shortcut</span></code> package already activated. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span>
 <span class="pre">console_shortcut</span> <span class="pre">--shortcuts</span></code></li>
 <li><strong>Skip binary replacement on Windows.</strong> Linux &amp; macOS have binaries that
 are coded with library locations, and this information must sometimes be

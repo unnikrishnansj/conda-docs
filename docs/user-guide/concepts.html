@@ -196,7 +196,7 @@
 <p><strong>ROOT_DIR</strong></p>
 <p>The directory that Anaconda or Miniconda was installed into.</p>
 <p>EXAMPLES:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>/opt/Anaconda
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/Anaconda
 C:\Anaconda
 </pre></div>
 </div>
@@ -211,10 +211,10 @@ created.</p>
 <p>The following subdirectories comprise the default Anaconda
 environment:</p>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/bin</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">/include</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">/lib</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">/share</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/bin</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/include</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/lib</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/share</span></code></div>
 <div class="line"><br /></div>
 </div>
 <p>Other conda environments usually contain the same subdirectories
@@ -230,7 +230,7 @@ testing. If you change one environment, your other environments
 are not affected. You can easily activate or deactivate
 environments, which is how you switch between them. You can also
 share your environment with someone by giving them a copy of your
-<code class="docutils literal"><span class="pre">environment.yaml</span></code> file. For more information, see
+<code class="docutils literal notranslate"><span class="pre">environment.yaml</span></code> file. For more information, see
 <a class="reference internal" href="tasks/manage-environments.html"><span class="doc">Managing environments</span></a>.</p>
 </div>
 <div class="section" id="conda-packages">
@@ -240,7 +240,7 @@ system-level libraries, Python or other modules, executable
 programs and other components. Conda keeps track of the
 dependencies between packages and platforms.</p>
 <p>Conda packages are downloaded from remote channels, which are
-URLs to directories containing conda packages. The <code class="docutils literal"><span class="pre">conda</span></code>
+URLs to directories containing conda packages. The <code class="docutils literal notranslate"><span class="pre">conda</span></code>
 command searches a default set of channels, and packages are
 automatically downloaded and updated from
 <a class="reference external" href="http://repo.continuum.io/pkgs/">http://repo.continuum.io/pkgs/</a>. You can modify what remote
@@ -250,21 +250,21 @@ maintain a private or internal channel. For details, see
 <p>The conda package format is identical across platforms and
 operating systems.</p>
 <p>To install conda packages, in the Terminal or an Anaconda Prompt, run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="p">[</span><span class="n">packagename</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="p">[</span><span class="n">packagename</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>NOTE: Replace <code class="docutils literal"><span class="pre">[packagename]</span></code> with the desired package name.</p>
+<p>NOTE: Replace <code class="docutils literal notranslate"><span class="pre">[packagename]</span></code> with the desired package name.</p>
 <p>A conda package includes a link to a tarball or bzipped tar
 archive, with the extension “.tar.bz2”, which contains metadata
-under the <code class="docutils literal"><span class="pre">info/</span></code> directory and a collection of files that are
-installed directly into an <code class="docutils literal"><span class="pre">install</span></code> prefix.</p>
+under the <code class="docutils literal notranslate"><span class="pre">info/</span></code> directory and a collection of files that are
+installed directly into an <code class="docutils literal notranslate"><span class="pre">install</span></code> prefix.</p>
 <p>During the install process, files are extracted into the
-<code class="docutils literal"><span class="pre">install</span></code> prefix, except for files in the <code class="docutils literal"><span class="pre">info/</span></code>
+<code class="docutils literal notranslate"><span class="pre">install</span></code> prefix, except for files in the <code class="docutils literal notranslate"><span class="pre">info/</span></code>
 directory. Installing the files of a conda package into an
 environment can be thought of as changing the directory to an
 environment, and then downloading and extracting the .zip file
 and its dependencies—all with the single
-<code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">[packagename]</span></code> command.</p>
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">[packagename]</span></code> command.</p>
 </div>
 </div>
 

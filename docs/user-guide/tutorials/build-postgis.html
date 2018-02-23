@@ -230,7 +230,7 @@ C/C++ packages.</p>
 correctly list the dependencies.</p>
 <p>The <a class="reference external" href="https://github.com/postgis/postgis/blob/2.2.2/README.postgis">README.postgis</a> file states that the following packages are
 required along with the minimum required version:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>postgresql version <span class="m">9</span>.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>postgresql version <span class="m">9</span>.1
 proj4 version <span class="m">4</span>.0.6
 geos version <span class="m">3</span>.4
 libxml2 version <span class="m">2</span>.5
@@ -239,18 +239,18 @@ gdal version <span class="m">1</span>.9
 </pre></div>
 </div>
 <p>For each of these dependencies you need a conda package that is
-available for install using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code>, because conda
+available for install using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>, because conda
 build creates a private environment from which the source code
 for postgis is installed and conda must install all required
 dependencies into that environment.</p>
 <ol class="arabic">
-<li><p class="first">Search for each of these packages using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">search</span></code>.</p>
+<li><p class="first">Search for each of these packages using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">search</span></code>.</p>
 <p>The only package that cannot
 be found in the default channel is json-c.</p>
 </li>
 <li><p class="first">To install json-c, add the
-<code class="docutils literal"><span class="pre">jlaura</span></code> channel using the <code class="docutils literal"><span class="pre">conda</span> <span class="pre">config</span></code> command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda config --add channels jlaura
+<code class="docutils literal notranslate"><span class="pre">jlaura</span></code> channel using the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span></code> command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels jlaura
 </pre></div>
 </div>
 </li>
@@ -274,14 +274,14 @@ the Github repository and the desired revision tag.</p>
 some cases the most recent commit is suitable.</p>
 <ol class="arabic">
 <li><p class="first">Create a directory to store the conda recipe files:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mkdir postgis
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir postgis
 <span class="nb">cd</span> postgis
 </pre></div>
 </div>
 </li>
 <li><p class="first">Open a text editor, and then write the following code to a
-file called <code class="docutils literal"><span class="pre">meta.yaml</span></code> inside the <code class="docutils literal"><span class="pre">postgis</span></code> directory:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
+file called <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> inside the <code class="docutils literal notranslate"><span class="pre">postgis</span></code> directory:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">package</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">postgis</span>
   <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="s">&quot;2.2.2&quot;</span>
 
@@ -325,24 +325,24 @@ environment does not affect conda build.</p>
 <p>The final step in preparing the conda build recipe is to write
 the build script. Since postgis is being built for both macOS and
 Linux, you need only a single build script file, called
-<code class="docutils literal"><span class="pre">build.sh</span></code>, in the <code class="docutils literal"><span class="pre">postgis</span></code> directory.</p>
+<code class="docutils literal notranslate"><span class="pre">build.sh</span></code>, in the <code class="docutils literal notranslate"><span class="pre">postgis</span></code> directory.</p>
 <p>The build script file contains all of the commands required to
 configure, build and install the source project. This script must
 run without user intervention.</p>
 <p>The <a class="reference external" href="http://postgis.net/docs/manual-2.2/postgis_installation.html#installation_configuration">postgis compilation documentation</a>
-states that several flags must be provided to the <code class="docutils literal"><span class="pre">configure</span></code>
+states that several flags must be provided to the <code class="docutils literal notranslate"><span class="pre">configure</span></code>
 command to indicate the location of the dependent packages.</p>
-<p>During execution of the <code class="docutils literal"><span class="pre">conda-build</span></code> command, the $PREFIX
+<p>During execution of the <code class="docutils literal notranslate"><span class="pre">conda-build</span></code> command, the $PREFIX
 environment variable is used to refer to the install path
 of conda packages.  In this case, use $PREFIX to inform the
-<code class="docutils literal"><span class="pre">configure</span></code> command of the location of the dependent packages
+<code class="docutils literal notranslate"><span class="pre">configure</span></code> command of the location of the dependent packages
 listed in the build and run requirements of the conda recipe.</p>
 <ol class="arabic">
-<li><p class="first">In a terminal window, navigate to the <code class="docutils literal"><span class="pre">postgis</span></code> directory.</p>
+<li><p class="first">In a terminal window, navigate to the <code class="docutils literal notranslate"><span class="pre">postgis</span></code> directory.</p>
 </li>
-<li><p class="first">In a text editor, create a new file called <code class="docutils literal"><span class="pre">build.sh</span></code>
+<li><p class="first">In a text editor, create a new file called <code class="docutils literal notranslate"><span class="pre">build.sh</span></code>
 with the following content:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sh autogen.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sh autogen.sh
 ./configure <span class="se">\</span>
   --prefix<span class="o">=</span><span class="nv">$PREFIX</span> <span class="se">\</span>
   --with-pgconfig<span class="o">=</span><span class="nv">$PREFIX</span>/bin/pg_config <span class="se">\</span>
@@ -359,7 +359,7 @@ make install
 </pre></div>
 </div>
 <p>NOTE: Without references to the $PREFIX environment variable,
-the <code class="docutils literal"><span class="pre">configure</span></code> command would look in the default system
+the <code class="docutils literal notranslate"><span class="pre">configure</span></code> command would look in the default system
 directories for required packages. Even if the package were
 to build correctly, there is no guarantee that other users
 could install the compiled conda package correctly.</p>
@@ -367,20 +367,20 @@ could install the compiled conda package correctly.</p>
 a C/C++ compiler, autoconf and automake. These packages must
 be installed at the system level and not through conda.</p>
 </li>
-<li><p class="first">Save the file to the <code class="docutils literal"><span class="pre">postgis</span></code> directory.</p>
+<li><p class="first">Save the file to the <code class="docutils literal notranslate"><span class="pre">postgis</span></code> directory.</p>
 </li>
 </ol>
 </div>
 <div class="section" id="building-the-package">
 <span id="build-postgis"></span><h2><a class="toc-backref" href="#id6">Building the package</a><a class="headerlink" href="#building-the-package" title="Permalink to this headline">¶</a></h2>
 <p>Now that the recipe is complete, build the conda package
-with the <code class="docutils literal"><span class="pre">conda-build</span></code> command from within the <code class="docutils literal"><span class="pre">postgis</span></code>
+with the <code class="docutils literal notranslate"><span class="pre">conda-build</span></code> command from within the <code class="docutils literal notranslate"><span class="pre">postgis</span></code>
 directory:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda-build .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda-build .
 </pre></div>
 </div>
-<p>The start of the <code class="docutils literal"><span class="pre">conda-build</span></code> output should read:</p>
-<div class="highlight-text"><div class="highlight"><pre><span></span>Removing old build environment
+<p>The start of the <code class="docutils literal notranslate"><span class="pre">conda-build</span></code> output should read:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Removing old build environment
 Removing old work directory
 BUILD START: postgis-2.2.2-0
 Using Anaconda Cloud api site https://api.anaconda.org
@@ -393,7 +393,7 @@ compiled the source code, it terminates with one of the
 following messages:</p>
 <ul>
 <li><p class="first">macOS:</p>
-<div class="highlight-text"><div class="highlight"><pre><span></span>BUILD END: postgis-2.2.2-0
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>BUILD END: postgis-2.2.2-0
 Nothing to test for: postgis-2.2.2-0
 # If you want to upload this package to anaconda.org later, type:
 #
@@ -405,7 +405,7 @@ Nothing to test for: postgis-2.2.2-0
 </div>
 </li>
 <li><p class="first">Linux:</p>
-<div class="highlight-text"><div class="highlight"><pre><span></span>BUILD END: postgis-2.2.2-0
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>BUILD END: postgis-2.2.2-0
 Nothing to test for: postgis-2.2.2-0
 # If you want to upload this package to anaconda.org later, type:
 #
@@ -420,7 +420,7 @@ Nothing to test for: postgis-2.2.2-0
 <p>NOTE: Your path may be different depending on the install
 location of Anaconda.</p>
 <p>Packages can be installed only on systems of the same
-architecture. You need to run the <code class="docutils literal"><span class="pre">conda-build</span></code> command
+architecture. You need to run the <code class="docutils literal notranslate"><span class="pre">conda-build</span></code> command
 separately on macOS and Linux systems to make packages for both
 architectures.</p>
 </div>
@@ -428,25 +428,25 @@ architectures.</p>
 <span id="install"></span><h2><a class="toc-backref" href="#id7">Distributing and installing the package</a><a class="headerlink" href="#distributing-and-installing-the-package" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">Install the package on your local machine by running:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install postgis --use-local
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install postgis --use-local
 </pre></div>
 </div>
 <p>Alternatively, you can upload the package to your
-<a class="reference external" href="http://anaconda.org/">Anaconda.org</a> channel with the <code class="docutils literal"><span class="pre">anaconda-upload</span></code> command,
-which is displayed at the end of the <code class="docutils literal"><span class="pre">conda-build</span></code> output.</p>
+<a class="reference external" href="http://anaconda.org/">Anaconda.org</a> channel with the <code class="docutils literal notranslate"><span class="pre">anaconda-upload</span></code> command,
+which is displayed at the end of the <code class="docutils literal notranslate"><span class="pre">conda-build</span></code> output.</p>
 </li>
 <li><p class="first">Make the package available to install by any user with:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install -c CHANNEL postgis
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c CHANNEL postgis
 </pre></div>
 </div>
-<p>NOTE: Replace <code class="docutils literal"><span class="pre">CHANNEL</span></code> with your <a class="reference external" href="http://anaconda.org/">Anaconda.org</a> user name.</p>
+<p>NOTE: Replace <code class="docutils literal notranslate"><span class="pre">CHANNEL</span></code> with your <a class="reference external" href="http://anaconda.org/">Anaconda.org</a> user name.</p>
 </li>
 </ol>
 </div>
 <div class="section" id="more-information">
 <h2><a class="toc-backref" href="#id8">More information</a><a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
 <p>For more options that are available in the conda recipe
-<code class="docutils literal"><span class="pre">meta.yaml</span></code> file, see
+<code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> file, see
 <a class="reference internal" href="../tasks/build-packages/define-metadata.html"><span class="doc">Defining metadata (meta.yaml)</span></a> and
 <a class="reference internal" href="../tasks/build-packages/sample-recipes.html"><span class="doc">Sample recipes</span></a>.</p>
 </div>

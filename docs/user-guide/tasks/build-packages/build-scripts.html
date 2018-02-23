@@ -214,13 +214,13 @@
             
   <div class="section" id="build-scripts-build-sh-bld-bat">
 <h1>Build scripts (build.sh, bld.bat)<a class="headerlink" href="#build-scripts-build-sh-bld-bat" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal"><span class="pre">build.sh</span></code> file is the build script for Linux and macOS and <code class="docutils literal"><span class="pre">bld.bat</span></code>
+<p>The <code class="docutils literal notranslate"><span class="pre">build.sh</span></code> file is the build script for Linux and macOS and <code class="docutils literal notranslate"><span class="pre">bld.bat</span></code>
 is the build script for Windows. These scripts contain the logic that carries
 out your build steps. Traditionally it has also included install steps. With
 the traditional one-package-per-recipe way of doing things, anything that your
-build script copies into the <code class="docutils literal"><span class="pre">$PREFIX</span></code> or <code class="docutils literal"><span class="pre">%PREFIX%</span></code> folder will be
-included in your output package. For example, this <code class="docutils literal"><span class="pre">build.sh</span></code>:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>mkdir -p <span class="nv">$PREFIX</span>/bin
+build script copies into the <code class="docutils literal notranslate"><span class="pre">$PREFIX</span></code> or <code class="docutils literal notranslate"><span class="pre">%PREFIX%</span></code> folder will be
+included in your output package. For example, this <code class="docutils literal notranslate"><span class="pre">build.sh</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p <span class="nv">$PREFIX</span>/bin
 cp <span class="nv">$RECIPE_DIR</span>/my_script_with_recipe.sh <span class="nv">$PREFIX</span>/bin/super-cool-script.sh
 </pre></div>
 </div>
@@ -232,16 +232,16 @@ bld.bat. Please see <a class="reference internal" href="environment-variables.ht
 <p>As of conda-build 2.1, you can also define multiple output packages. Each
 package has its own script or list of files to include. The rules for these
 outputs are documented at <a class="reference internal" href="define-metadata.html#package-outputs"><span class="std std-ref">Outputs section</span></a>. When any output is defined,
-this overrides the default behavior of bundling anything in <code class="docutils literal"><span class="pre">$PREFIX</span></code>. So
+this overrides the default behavior of bundling anything in <code class="docutils literal notranslate"><span class="pre">$PREFIX</span></code>. So
 to output multiple packages from a single recipe, remove any installation steps
-from <code class="docutils literal"><span class="pre">build.sh</span></code> or <code class="docutils literal"><span class="pre">bld.bat</span></code> and do them instead in your install script(s)
+from <code class="docutils literal notranslate"><span class="pre">build.sh</span></code> or <code class="docutils literal notranslate"><span class="pre">bld.bat</span></code> and do them instead in your install script(s)
 for each output.</p>
-<p><code class="docutils literal"><span class="pre">build.sh</span></code> and <code class="docutils literal"><span class="pre">bld.bat</span></code> are optional. You can instead use the
-<code class="docutils literal"><span class="pre">build/script</span></code> key in your <code class="docutils literal"><span class="pre">meta.yaml</span></code>, with each value being either a
+<p><code class="docutils literal notranslate"><span class="pre">build.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">bld.bat</span></code> are optional. You can instead use the
+<code class="docutils literal notranslate"><span class="pre">build/script</span></code> key in your <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code>, with each value being either a
 string command or a list of string commands. Any commands you put there must be
 able to run on every platform for which you build. For example, you can’t use
-the <code class="docutils literal"><span class="pre">cp</span></code> command because cmd.exe won’t understand it in Windows.</p>
-<p><code class="docutils literal"><span class="pre">build.sh</span></code> is run with <code class="docutils literal"><span class="pre">bash</span></code> and <code class="docutils literal"><span class="pre">bld.bat</span></code> is run with <code class="docutils literal"><span class="pre">cmd.exe</span></code>.</p>
+the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command because cmd.exe won’t understand it in Windows.</p>
+<p><code class="docutils literal notranslate"><span class="pre">build.sh</span></code> is run with <code class="docutils literal notranslate"><span class="pre">bash</span></code> and <code class="docutils literal notranslate"><span class="pre">bld.bat</span></code> is run with <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code>.</p>
 <p>There is some development towards the ability to use bash scripts in Windows,
 but this is not currently supported.</p>
 </div>

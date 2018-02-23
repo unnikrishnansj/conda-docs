@@ -203,12 +203,12 @@
 <li><p class="first">In your Terminal window, run:</p>
 <ul>
 <li><p class="first">Miniconda:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Anaconda:</p>
-<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">Anaconda</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">Anaconda</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 </li>
@@ -226,8 +226,8 @@ Terminal window.</p>
 </ol>
 <div class="section" id="using-with-fish-shell">
 <span id="install-linux-silent"></span><h2>Using with fish shell<a class="headerlink" href="#using-with-fish-shell" title="Permalink to this headline">¶</a></h2>
-<p>To use conda with fish shell, add the following line in your <code class="docutils literal"><span class="pre">fish.config</span></code> file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="p">(</span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">root</span><span class="p">)</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fish</span><span class="o">/</span><span class="n">conf</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">conda</span><span class="o">.</span><span class="n">fish</span>
+<p>To use conda with fish shell, add the following line in your <code class="docutils literal notranslate"><span class="pre">fish.config</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="p">(</span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">root</span><span class="p">)</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fish</span><span class="o">/</span><span class="n">conf</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">conda</span><span class="o">.</span><span class="n">fish</span>
 </pre></div>
 </div>
 </div>
@@ -240,7 +240,7 @@ Terminal window.</p>
 <h2>Updating Anaconda or Miniconda<a class="headerlink" href="#updating-anaconda-or-miniconda" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Open a Terminal window.</li>
-<li>Run <code class="docutils literal"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code>.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">conda</span></code>.</li>
 </ol>
 </div>
 <div class="section" id="uninstalling-anaconda-or-miniconda">
@@ -249,22 +249,22 @@ Terminal window.</p>
 <li><p class="first">Open a Terminal window.</p>
 </li>
 <li><p class="first">Remove the entire miniconda install directory with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/</span><span class="n">miniconda</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/</span><span class="n">miniconda</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">OPTIONAL: Edit <code class="docutils literal"><span class="pre">~/.bash_profile</span></code> to remove the Miniconda
+<li><p class="first">OPTIONAL: Edit <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> to remove the Miniconda
 directory from your PATH environment variable.</p>
 </li>
 <li><p class="first">OPTIONAL: Remove the following hidden file and folders that
 may have been created in the home directory:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">.condarc</span></code> file</li>
-<li><code class="docutils literal"><span class="pre">.conda</span></code> directory</li>
-<li><code class="docutils literal"><span class="pre">.continuum</span></code> directory</li>
+<li><code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file</li>
+<li><code class="docutils literal notranslate"><span class="pre">.conda</span></code> directory</li>
+<li><code class="docutils literal notranslate"><span class="pre">.continuum</span></code> directory</li>
 </ul>
 <p>By running:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/.</span><span class="n">condarc</span> <span class="o">~/.</span><span class="n">conda</span> <span class="o">~/.</span><span class="n">continuum</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/.</span><span class="n">condarc</span> <span class="o">~/.</span><span class="n">conda</span> <span class="o">~/.</span><span class="n">continuum</span>
 </pre></div>
 </div>
 </li>

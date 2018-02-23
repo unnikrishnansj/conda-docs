@@ -255,11 +255,11 @@ the installation specifications.</li>
 <p>To make conda use the old method and install the newest version
 of a package in any listed channel:</p>
 <ul>
-<li><p class="first">Add <code class="docutils literal"><span class="pre">channel_priority:</span> <span class="pre">false</span></code> to your <code class="docutils literal"><span class="pre">.condarc</span></code> file.</p>
+<li><p class="first">Add <code class="docutils literal notranslate"><span class="pre">channel_priority:</span> <span class="pre">false</span></code> to your <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file.</p>
 <p>OR</p>
 </li>
 <li><p class="first">Run the equivalent command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">channel_priority</span> <span class="n">false</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">channel_priority</span> <span class="n">false</span>
 </pre></div>
 </div>
 </li>
@@ -274,16 +274,16 @@ of a package in any listed channel:</p>
 comparable, build number still comes after channel priority.</p>
 <p>The following command adds the channel “new_channel” to the top
 of the channel list, making it the highest priority:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">new_channel</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">new_channel</span>
 </pre></div>
 </div>
 <p>Conda now has an equivalent command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">prepend</span> <span class="n">channels</span> <span class="n">new_channel</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">prepend</span> <span class="n">channels</span> <span class="n">new_channel</span>
 </pre></div>
 </div>
 <p>Conda also now has a command that adds the new channel to the
 bottom of the channel list, making it the lowest priority:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">append</span> <span class="n">channels</span> <span class="n">new_channel</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">append</span> <span class="n">channels</span> <span class="n">new_channel</span>
 </pre></div>
 </div>
 </div>
