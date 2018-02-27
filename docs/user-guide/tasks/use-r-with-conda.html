@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using R with conda &mdash; Conda   documentation</title>
+  <title>use-r-with-conda &mdash; Conda   documentation</title>
   
 
   
@@ -35,10 +35,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Conda   documentation" href="../../index.html"/>
-        <link rel="up" title="Tasks" href="index.html"/>
-        <link rel="next" title="Using Microsoft R Open with conda" href="use-mro-with-conda.html"/>
-        <link rel="prev" title="Managing Python" href="manage-python.html"/> 
+    <link rel="top" title="Conda   documentation" href="../../index.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -91,36 +88,8 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../concepts.html">Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../getting-started.html">Getting started with conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../install/index.html">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Tasks</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="manage-conda.html">Managing conda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="manage-environments.html">Managing environments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="manage-channels.html">Managing channels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create-custom-channels.html">Creating custom channels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="manage-pkgs.html">Managing packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build-packages/index.html">Building packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="manage-python.html">Managing Python</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Using R with conda</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#installing-r-essentials">Installing R Essentials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#creating-and-sharing-your-own-custom-r-bundle">Creating and sharing your own custom R bundle</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="use-mro-with-conda.html">Using Microsoft R Open with conda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="use-conda-with-travis-ci.html">Using conda with Travis CI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="view-command-line-help.html">Viewing command-line help</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../cheatsheet.html">Cheat sheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
-</ul>
-</li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../help-support.html">Help and support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../commands.html">Command reference</a></li>
@@ -170,11 +139,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../index.html">User guide</a> &raquo;</li>
-        
-          <li><a href="index.html">Tasks</a> &raquo;</li>
-        
-      <li>Using R with conda</li>
+      <li>use-r-with-conda</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,77 +160,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="using-r-with-conda">
-<h1>Using R with conda<a class="headerlink" href="#using-r-with-conda" title="Permalink to this headline">¶</a></h1>
-<p>With a single conda command you can easily install the R
-programming language and over 80 of the most used R packages for
-data science. Conda helps you keep your packages and dependencies
-up to date. You can also easily create and share your own custom
-R packages.</p>
-<p>R Essentials works very much like Anaconda:</p>
-<p>Use the Terminal or an Anaconda Prompt for the following steps.</p>
-<ul>
-<li><p class="first">You can install all of the most popular packages with all of
-their dependencies with a single command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">r</span><span class="o">-</span><span class="n">essentials</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">You can update all of the packages and their dependencies with
-a single command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">r</span><span class="o">-</span><span class="n">essentials</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">If a new version of a package is available in the R channel,
-you can update that package in R Essentials with the following
-command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">r</span><span class="o">-</span><span class="n">XXXX</span>
-</pre></div>
-</div>
-<p>NOTE: Replace <code class="docutils literal notranslate"><span class="pre">XXXX</span></code> with the version number.</p>
-</li>
-</ul>
-<div class="section" id="installing-r-essentials">
-<h2>Installing R Essentials<a class="headerlink" href="#installing-r-essentials" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first"><a class="reference external" href="https://www.continuum.io/downloads">Download</a> and
-<a class="reference external" href="https://docs.continuum.io/anaconda/install/">install</a>
-Anaconda.</p>
-</li>
-<li><p class="first">To install the R Essentials package into the current environment,
-in your Terminal window or an Anaconda Prompt, run:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">r</span><span class="o">-</span><span class="n">essentials</span>
-</pre></div>
-</div>
-</li>
-</ol>
-</div>
-<div class="section" id="creating-and-sharing-your-own-custom-r-bundle">
-<h2>Creating and sharing your own custom R bundle<a class="headerlink" href="#creating-and-sharing-your-own-custom-r-bundle" title="Permalink to this headline">¶</a></h2>
-<p>Creating and sharing your own custom R bundles with others is
-similar to creating and sharing conda packages.</p>
-<p>EXAMPLE: To create a simple custom R bundle metapackage named
-“Custom-R-Bundle” that contains several popular programs and
-their dependencies, in the Terminal window or an Anaconda Prompt, run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">metapackage</span> <span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span> <span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span> <span class="o">--</span><span class="n">dependencies</span> <span class="n">r</span><span class="o">-</span><span class="n">irkernel</span> <span class="n">jupyter</span> <span class="n">r</span><span class="o">-</span><span class="n">ggplot2</span> <span class="n">r</span><span class="o">-</span><span class="n">dplyr</span> <span class="o">--</span><span class="n">summary</span> <span class="s2">&quot;My custom R bundle&quot;</span>
-</pre></div>
-</div>
-<p>Now you can easily share your new metapackage with friends and
-colleagues by uploading it to your channel on <a class="reference external" href="https://anaconda.org">Anaconda Cloud</a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">anaconda</span><span class="o">-</span><span class="n">client</span>
-<span class="n">anaconda</span> <span class="n">login</span>
-<span class="n">anaconda</span> <span class="n">upload</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span><span class="o">-</span><span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mf">0.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
-</pre></div>
-</div>
-<p>Your friends and colleagues can now access your custom R bundle
-from any computer by running in the Terminal window or an Anaconda Prompt:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">anaconda</span><span class="o">.</span><span class="n">org</span> <span class="n">username</span><span class="o">&gt;</span> <span class="n">custom</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">bundle</span>
-</pre></div>
-</div>
-<p>For more information, see <a class="reference external" href="https://www.continuum.io/blog/developer/jupyter-and-conda-r">Jupyter and conda for R language</a>.</p>
-</div>
-</div>
+  <div class="section" id="use-r-with-conda">
+<h1>use-r-with-conda<a class="headerlink" href="#use-r-with-conda" title="Permalink to this headline">¶</a></h1>
+<html><head><meta http-equiv="refresh" content="0; URL='https://docs.anaconda.com/anaconda/user-guide/tasks/use-r-language'" /></head><body></body></html></div>
 
 
            </div>
@@ -274,15 +171,6 @@ from any computer by running in the Terminal window or an Anaconda Prompt:</p>
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="use-mro-with-conda.html" class="btn btn-neutral float-right" title="Using Microsoft R Open with conda" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="manage-python.html" class="btn btn-neutral" title="Managing Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
