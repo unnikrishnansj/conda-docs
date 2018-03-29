@@ -107,6 +107,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#optional-converting-conda-package-for-other-platforms">Optional—Converting conda package for other platforms</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#optional-uploading-packages-to-anaconda-org">Optional—Uploading packages to Anaconda.org</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#troubleshooting-a-sample-issue">Troubleshooting a sample issue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-around-mitm-proxies">Working Around MITM Proxies</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#more-information">More information</a></li>
 </ul>
 </li>
@@ -207,7 +208,8 @@
 <li><a class="reference internal" href="#optional-converting-conda-package-for-other-platforms" id="id5">Optional—Converting conda package for other platforms</a></li>
 <li><a class="reference internal" href="#optional-uploading-packages-to-anaconda-org" id="id6">Optional—Uploading packages to Anaconda.org</a></li>
 <li><a class="reference internal" href="#troubleshooting-a-sample-issue" id="id7">Troubleshooting a sample issue</a></li>
-<li><a class="reference internal" href="#more-information" id="id8">More information</a></li>
+<li><a class="reference internal" href="#working-around-mitm-proxies" id="id8">Working Around MITM Proxies</a></li>
+<li><a class="reference internal" href="#more-information" id="id9">More information</a></li>
 </ul>
 </div>
 <p>This tutorial describes how to quickly build a conda package for
@@ -461,8 +463,22 @@ conda build sgp4
 <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">skeleton</span></code>, but this makes conda recipes for all required
 packages, even those that are already available to conda install.</p>
 </div>
+<div class="section" id="working-around-mitm-proxies">
+<span id="working-around-proxies"></span><h2><a class="toc-backref" href="#id8">Working Around MITM Proxies</a><a class="headerlink" href="#working-around-mitm-proxies" title="Permalink to this headline">¶</a></h2>
+<p>Some corporate environments use proxy services that use Man-In-The-Middle
+(MITM) attacks to sniff encrypted traffic. These services can interfere with
+SSL connections such as those used by conda and pip to download packages from
+repositories such as PyPI.</p>
+<p>If you encounter this interference, you should set up the proxy service’s
+certificates so that the <code class="docutils literal notranslate"><span class="pre">requests</span></code> package used by conda can recognize and
+use the certificates.</p>
+<p>For cases where this is not possible, conda-build versions 3.0.31 and higher
+have an option that disables SSL certificate verification and allows this
+traffic to continue:</p>
+<p><a class="reference internal" href="../configuration/disable-ssl-verification.html"><span class="doc">Disabling SSL verification</span></a></p>
+</div>
 <div class="section" id="more-information">
-<span id="help1"></span><h2><a class="toc-backref" href="#id8">More information</a><a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<span id="help1"></span><h2><a class="toc-backref" href="#id9">More information</a><a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
 <p>For more options, see the full <a class="reference internal" href="../../commands.html"><span class="doc">conda skeleton command documentation</span></a>.</p>
 </div>
 </div>

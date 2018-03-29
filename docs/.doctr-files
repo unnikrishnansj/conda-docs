@@ -111,6 +111,7 @@ docs/_sources/troubleshooting.rst.txt
 docs/_sources/user-guide/cheatsheet.rst.txt
 docs/_sources/user-guide/concepts.rst.txt
 docs/_sources/user-guide/configuration/admin-multi-user-install.rst.txt
+docs/_sources/user-guide/configuration/disable-ssl-verification.rst.txt
 docs/_sources/user-guide/configuration/enable-tab-completion.rst.txt
 docs/_sources/user-guide/configuration/index.rst.txt
 docs/_sources/user-guide/configuration/sample-condarc.rst.txt
@@ -310,6 +311,7 @@ docs/troubleshooting.html
 docs/user-guide/cheatsheet.html
 docs/user-guide/concepts.html
 docs/user-guide/configuration/admin-multi-user-install.html
+docs/user-guide/configuration/disable-ssl-verification.html
 docs/user-guide/configuration/enable-tab-completion.html
 docs/user-guide/configuration/index.html
 docs/user-guide/configuration/sample-condarc.html
