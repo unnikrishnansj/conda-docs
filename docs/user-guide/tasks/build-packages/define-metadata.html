@@ -730,18 +730,46 @@ you need to ensure that the environment variables present at build time and test
 time match. If you do not, the package hashes may use different values, and your
 package may not be testable, because the hashes will differ.</p>
 </div>
-<div class="section" id="pin-downstream">
-<span id="run-exports"></span><h3>Pin downstream<a class="headerlink" href="#pin-downstream" title="Permalink to this headline">¶</a></h3>
-<p>It is often useful to require a particular runtime library to be present at
-runtime when a particular library or package is used at build time. For example,
-if you use a C++ compiler to build a package with dynamic linkage, then it is
-likely that you also need to include the C++ runtime package corresponding to
-that compiler as a runtime requirement. Generally, these imposed pinnings should
-be added to the tool (compiler) or library (jpeg, bzip2, and so on) used at build
-time, rather than to the package using those tools or libraries.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+<div class="section" id="export-runtime-requirements">
+<span id="run-exports"></span><h3>Export runtime requirements<a class="headerlink" href="#export-runtime-requirements" title="Permalink to this headline">¶</a></h3>
+<p>Some build or host <a class="reference internal" href="#requirements"><span class="std std-ref">Requirements section</span></a> will impose a runtime requirement.
+Most commonly this is true for shared libraries (e.g. libpng), which are
+required for linking at build time, and for resolving the link at run time.
+With <code class="docutils literal notranslate"><span class="pre">run_exports</span></code> (new in conda-build 3) such a runtime requirement can be
+implicitly added by host requirements (e.g. libpng exports libpng), and with
+<code class="docutils literal notranslate"><span class="pre">run_exports/strong</span></code> even by build requirements (e.g. gcc exports libgcc).</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># meta.yaml of libpng</span>
+<span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">run_exports</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libstdc++</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libpng</span>
+</pre></div>
+</div>
+<p>Here, because no specific kind of run_exports is specified, libpng’s run_exports
+are considered “weak.” This means they will only apply when libpng is in the
+host section, when they will add their export to the run section.  If libpng were
+listed in the build section, the run_exports would not apply to the run section.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># meta.yaml of gcc compiler</span>
+<span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">run_exports</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">strong</span><span class="p p-Indicator">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libgcc</span>
+</pre></div>
+</div>
+<p>Strong run_exports are used for things like runtimes, where the same runtime
+needs to be present in the host and the run environment, and exactly which
+runtime that should be is determined by what’s present in the build section.
+This mechanism is how we line up appropriate software on windows, where we must
+match MSVC versions used across all of the shared libraries in an environment.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># meta.yaml of some package using gcc and libpng</span>
+<span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">gcc</span>            <span class="c1"># has a strong run export</span>
+  <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libpng</span>         <span class="c1"># has a (weak) run export</span>
+    <span class="c1"># - libgcc       &lt;-- implicitly added by gcc</span>
+  <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
+    <span class="c1"># - libgcc       &lt;-- implicitly added by gcc</span>
+    <span class="c1"># - libpng       &lt;-- implicitly added by libpng</span>
 </pre></div>
 </div>
 <p>You can express version constraints directly, or use any of the jinja2 helper
@@ -750,11 +778,11 @@ functions listed at <a class="reference internal" href="variants.html#extra-jinj
 pinning relative to versions present at build time:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">run_exports</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libstdc++  {{ pin_compatible(&#39;g++&#39;, &#39;x&#39;) }}</span>
+    <span class="p p-Indicator">-</span> <span class="p p-Indicator">{{</span> <span class="nv">pin_subpackage(&#39;libpng&#39;</span><span class="p p-Indicator">,</span> <span class="nv">max_pin=&#39;x.x&#39;)</span> <span class="p p-Indicator">}}</span>
 </pre></div>
 </div>
-<p>With this example, if g++ were version 5.3.0, this pinning expression would
-evaluate to <code class="docutils literal notranslate"><span class="pre">&gt;=5.3.0,&lt;6</span></code>.</p>
+<p>With this example, if libpng were version 1.6.34, this pinning expression would
+evaluate to <code class="docutils literal notranslate"><span class="pre">&gt;=1.6.34,&lt;1.7</span></code>.</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">run_exports</span></code> can be specified both in the build section, and on
 a per-output basis for split packages.</p>
 <p><code class="docutils literal notranslate"><span class="pre">run_exports</span></code> only affects directly named dependencies. For example, if you
@@ -780,7 +808,7 @@ package name in the <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="section" id="requirements-section">
-<h2><a class="toc-backref" href="#id7">Requirements section</a><a class="headerlink" href="#requirements-section" title="Permalink to this headline">¶</a></h2>
+<span id="requirements"></span><h2><a class="toc-backref" href="#id7">Requirements section</a><a class="headerlink" href="#requirements-section" title="Permalink to this headline">¶</a></h2>
 <p>Specifies the build and runtime requirements. Dependencies of
 these requirements are included automatically.</p>
 <p>Versions for requirements must follow the conda match
@@ -791,7 +819,9 @@ specification. See <a class="reference internal" href="package-spec.html#build-v
 the build system and include things such as revision control systems
 (git, svn) make tools (GNU make, Autotool, CMake) and compilers
 (real cross, pseudo-cross, or native when not cross-compiling)
-and any source pre-processors.</p>
+and any source pre-processors.
+Packages which provide “sysroot” files, like the <code class="docutils literal notranslate"><span class="pre">CDT</span></code> packages (see below)
+also belong in the build section.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">git</span>
@@ -889,13 +919,9 @@ that each version is part of the package dependencies, list
 </pre></div>
 </div>
 <p><strong>NOTE</strong>: Instead of manually specifying run requirements, since
-conda-build 3 you can augment the packages used in your build section
-with <code class="docutils literal notranslate"><span class="pre">strong</span> <span class="pre">run_exports</span></code> which are then automatically added to the
-run requirements for you. The same can be done for packages in your
-host section with <code class="docutils literal notranslate"><span class="pre">weak</span> <span class="pre">run_exports</span></code>. <code class="docutils literal notranslate"><span class="pre">strong</span> <span class="pre">run_exports</span></code> allows
-automatically adding things like compiler runtimes when the compiler is
-used. <code class="docutils literal notranslate"><span class="pre">weak</span> <span class="pre">run_exports</span></code> allows you to take advantange of generalized
-and automatic pinning.</p>
+conda-build 3 you can augment the packages used in your build and host
+sections with <a class="reference internal" href="#run-exports"><span class="std std-ref">run_exports</span></a> which are then automatically
+added to the run requirements for you.</p>
 </div>
 </div>
 <div class="section" id="test-section">
@@ -1083,7 +1109,7 @@ requirement:</p>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">libgcc</span>
 </pre></div>
 </div>
-<p>See the <a class="reference internal" href="#run-exports"><span class="std std-ref">Pin downstream</span></a> section for additional information.</p>
+<p>See the <a class="reference internal" href="#run-exports"><span class="std std-ref">Export runtime requirements</span></a> section for additional information.</p>
 <p>Note: Variant expressions are very powerful here. You can express the version
 requirement in the run_exports entry as a jinja function to insert values
 based on the actual version of libgcc produced by the recipe. Read more about
