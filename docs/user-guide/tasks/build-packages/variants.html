@@ -990,45 +990,39 @@ the rest of the recipe into a fork.</p>
 <p>With only a few things supported, we could just add things to the filename, such
 as py27 for python, or np111 for numpy. Variants are meant to support the
 general case, and in the general case this is no longer an option. Instead,
-part of the recipe is hashed using the sha1 algorithm, and that hash is a
+used variant keys and values are hashed using the sha1 algorithm, and that hash is a
 unique identifier. The information that went into the hash is stored with the
-package, in a file at <code class="docutils literal notranslate"><span class="pre">info/hash_input.json</span></code>. Currently, only the first 7
-characters of the hash are stored. Output package names will keep the pyXY and
-npXYY for now, but have added the 7-character hash. Your package names will
-look like:</p>
+package, in a file at <code class="docutils literal notranslate"><span class="pre">info/hash_input.json</span></code>. Packages only have a hash when
+there are any “used” variables beyond the ones that are already accounted for in
+the build string (py, np, etc). The takeaway message is that hashes will appear
+when binary compatibility matters, but not when it doesn’t.</p>
+<p>Currently, only the first 7 characters of the hash are stored. Output package
+names will keep the pyXY and npXYY, but may have added the 7-character hash.
+Your package names will look like:</p>
 <p><code class="docutils literal notranslate"><span class="pre">my-package-1.0-py27h3142afe_0.tar.bz2</span></code></p>
+<p>As of conda-build 3.1.0, this hashing scheme has been simplified. A hash will be
+added if all of these are true for any dependency:</p>
+<ul class="simple">
+<li>package is an explicit dependency in build, host, or run deps</li>
+<li>package has a matching entry in conda_build_config.yaml which is a pin to a
+specific version, not a lower bound</li>
+<li>that package is not ignored by ignore_version</li>
+</ul>
+<p>OR</p>
+<ul class="simple">
+<li>package uses {{ compiler() }} jinja2 function</li>
+</ul>
 <p>Since conflicts only need to be prevented within one version of a package, we
 think this will be adequate. If you run into hash collisions with this limited
 subspace, please file an issue on the <a class="reference external" href="https://github.com/conda/conda-build/issues">conda-build issue tracker</a>.</p>
-<p>The information that goes into this hash is currently defined in conda-build’s
-metadata.py module, in the _get_hash_contents member function. This function
-captures the following information:</p>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">source</span></code> section</li>
-<li><code class="docutils literal notranslate"><span class="pre">requirements</span></code> section</li>
-<li><code class="docutils literal notranslate"><span class="pre">build</span></code> section, except:
-* <code class="docutils literal notranslate"><span class="pre">number</span></code>
-* <code class="docutils literal notranslate"><span class="pre">string</span></code></li>
-<li>any other recipe files in the folder with meta.yaml, such as bld.bat,
-build.sh, etc. Every file other than meta.yaml is part of the hash.</li>
-</ul>
-<p>All “falsey” values such as empty list values are removed.</p>
 <p>There is a CLI tool that just pretty-prints this json file for easy viewing:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda inspect hash-inputs &lt;package path&gt;
 </pre></div>
 </div>
 <p>This produces output such as:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s1">&#39;test_rm_rf_does_not_follow_links-1.0-h7330_0&#39;</span>: <span class="o">{</span>u<span class="s1">&#39;build&#39;</span>: <span class="o">{</span>u<span class="s1">&#39;script&#39;</span>: u<span class="s1">&#39;python setup.py install --single-version-externally-managed --record=record.txt&#39;</span><span class="o">}</span>,
-                                               u<span class="s1">&#39;requirements&#39;</span>: <span class="o">{</span>u<span class="s1">&#39;build&#39;</span>: <span class="o">[</span>u<span class="s1">&#39;openssl 1.0.2k 0&#39;</span>,
-                                                                            u<span class="s1">&#39;pip 9.0.1 py27_1&#39;</span>,
-                                                                            u<span class="s1">&#39;python 2.7.13 0&#39;</span>,
-                                                                            u<span class="s1">&#39;readline 6.2 2&#39;</span>,
-                                                                            u<span class="s1">&#39;setuptools 27.2.0 py27_0&#39;</span>,
-                                                                            u<span class="s1">&#39;sqlite 3.13.0 1&#39;</span>,
-                                                                            u<span class="s1">&#39;tk 8.5.18 0&#39;</span>,
-                                                                            u<span class="s1">&#39;wheel 0.29.0 py27_0&#39;</span>,
-                                                                            u<span class="s1">&#39;zlib 1.2.8 3&#39;</span><span class="o">]}</span>,
-                                               u<span class="s1">&#39;source&#39;</span>: <span class="o">{</span>u<span class="s1">&#39;path&#39;</span>: u<span class="s1">&#39;/Users/msarahan/code/conda-build/tests/test-recipes/split-packages/_rm_rf_stays_within_prefix&#39;</span><span class="o">}}}</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s1">&#39;python-3.6.4-h6538335_1&#39;</span>: <span class="o">{</span><span class="s1">&#39;files&#39;</span>: <span class="o">[]</span>,
+                            <span class="s1">&#39;recipe&#39;</span>: <span class="o">{</span><span class="s1">&#39;c_compiler&#39;</span>: <span class="s1">&#39;vs2015&#39;</span>,
+                                        <span class="s1">&#39;cxx_compiler&#39;</span>: <span class="s1">&#39;vs2015&#39;</span><span class="o">}}}</span>
 </pre></div>
 </div>
 </div>
@@ -1135,6 +1129,38 @@ run_exports key extensively. For example, recipes that include the
 <code class="docutils literal notranslate"><span class="pre">gcc_linux-cos5-x86_64</span></code> package as a build time dependency (either directly,
 or through a <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">compilers('c')</span> <span class="pre">}}</span></code> jinja2 function) will automatically have a
 compatible libgcc runtime dependency added.</p>
+</div>
+<div class="section" id="compiler-versions">
+<h2>Compiler versions<a class="headerlink" href="#compiler-versions" title="Permalink to this headline">¶</a></h2>
+<p>Usually the newest compilers are the best compilers, but in some special cases
+you’ll need to use older compilers.</p>
+<p>For example, NVIDIA’s CUDA libraries only support compilers that they have
+rigorously tested. Often the latest gcc compiler is not supported for use with
+CUDA. If your recipe needs to use CUDA, you’ll need to use an older version of
+GCC.</p>
+<p>There are special keys associated with the compilers. The key name of each
+special key is the compiler key name plus <code class="docutils literal notranslate"><span class="pre">_version</span></code>.</p>
+<p>For example, if your compiler key is <code class="docutils literal notranslate"><span class="pre">c_compiler</span></code>, the version key associated
+with it is <code class="docutils literal notranslate"><span class="pre">c_compiler_version</span></code>. If you have a recipe for Tensorflow with GPU
+support, put a conda_build_config.yaml file alongside meta.yaml, with contents
+like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">c_compiler_version</span><span class="p p-Indicator">:</span>    <span class="c1"># [linux]</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">5.4</span>              <span class="c1"># [linux]</span>
+<span class="l l-Scalar l-Scalar-Plain">cxx_compiler_version</span><span class="p p-Indicator">:</span>  <span class="c1"># [linux]</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">5.4</span>              <span class="c1"># [linux]</span>
+</pre></div>
+</div>
+<p>Specify selectors so that this extra version information is not also applied to
+Windows and Mac. Those platforms have totally different compilers and could
+have their own versions if necessary.</p>
+<p>It is not necessary to specify <code class="docutils literal notranslate"><span class="pre">c_compiler</span></code> or <code class="docutils literal notranslate"><span class="pre">cxx_compiler</span></code>, because the
+default value (<code class="docutils literal notranslate"><span class="pre">gcc</span></code> on linux) will be used. It is necessary to specify both
+<code class="docutils literal notranslate"><span class="pre">c</span></code> and <code class="docutils literal notranslate"><span class="pre">cxx</span></code> versions, even if they are the same, because they are treated
+independently.</p>
+<p>By placing this file in the recipe, it will apply only to this recipe. All other
+recipes will default to the latest compiler.</p>
+<p>NOTE: The version number you specify here must exist as a package in your
+currently configured channels.</p>
 </div>
 <div class="section" id="cross-compiling">
 <h2>Cross-compiling<a class="headerlink" href="#cross-compiling" title="Permalink to this headline">¶</a></h2>

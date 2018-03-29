@@ -787,11 +787,15 @@ these requirements are included automatically.</p>
 specification. See <a class="reference internal" href="package-spec.html#build-version-spec"><span class="std std-ref">Package match specifications</span></a> .</p>
 <div class="section" id="build">
 <h3>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
-<p>Packages required to build the package. Python and NumPy must be
-listed explicitly if they are required.</p>
+<p>Tools required to build the package. These packages are run on
+the build system and include things such as revision control systems
+(git, svn) make tools (GNU make, Autotool, CMake) and compilers
+(real cross, pseudo-cross, or native when not cross-compiling)
+and any source pre-processors.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">git</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cmake</span>
 </pre></div>
 </div>
 </div>
@@ -802,10 +806,14 @@ be specific to the target platform when the target platform is not necessarily
 the same as the native build platform. For example, in order for a recipe to
 “cross-capable”, shared libraries requirements must be listed in the host
 section, rather than the build section, so that the shared libraries that get
-linked are ones for the target platform, rather than the native build platform.</p>
+linked are ones for the target platform, rather than the native build platform.
+You should also include the base interpreter for packages that need one. In other
+words, a Python package would list <code class="docutils literal notranslate"><span class="pre">python</span></code> here and an R package would list
+<code class="docutils literal notranslate"><span class="pre">mro-base</span></code> or <code class="docutils literal notranslate"><span class="pre">r-base</span></code>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">requirements</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="p p-Indicator">{{</span> <span class="nv">compiler(&#39;c&#39;)</span> <span class="p p-Indicator">}}</span>
+    <span class="p p-Indicator">-</span> <span class="p p-Indicator">{{</span> <span class="nv">cdt(&#39;xorg-x11-proto-devel&#39;)</span> <span class="p p-Indicator">}}</span>  <span class="c1"># [linux]</span>
   <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
 </pre></div>
@@ -832,6 +840,18 @@ because you have python only in the build environment, your extension will be
 installed into the build environment. No files will be detected. Also, variables
 such as PYTHON will not be defined when python is not installed into the host
 environment.</p>
+<p>On Linux, using the compiler packages provided by Anaconda Inc. in the <code class="docutils literal notranslate"><span class="pre">defaults</span></code>
+meta-channel you can prevent your build system leaking into the built software by
+using our <code class="docutils literal notranslate"><span class="pre">CDT</span></code> (Core Dependency Tree) packages for any “system” dependencies.
+These packages are repackaged libraries and headers from CentOS6 and are unpacked
+into the sysroot of our pseudo-cross compilers and are found by them automatically.</p>
+<p>Note that what qualifies as a “system” dependency is a matter of opinion. The
+Anaconda Distribution chose not to provide X11 or GL packages, so we use CDT
+packages for X11. Conda-forge chose to provide X11 and GL packages.</p>
+<p>On macOS, you can use the equivalent compiler packages in conjunction with the standard
+MACOSX_DEPLOYMENT_TARGET environment variable and set the CONDA_BUILD_SYSROOT environment variable.
+This will specify a folder containing a macOS SDK. This achieves backwards compatability
+while still providing access to C++14 and C++1z.</p>
 <p><strong>TL;DR</strong>: If you use the new <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">compiler()</span> <span class="pre">}}</span></code> jinja2 to utilize our new
 compilers, you also must move anything that is not strictly a build tool into
 your host dependencies. This includes python, python libraries, and any shared
@@ -868,6 +888,14 @@ that each version is part of the package dependencies, list
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">numpy x.x</span>
 </pre></div>
 </div>
+<p><strong>NOTE</strong>: Instead of manually specifying run requirements, since
+conda-build 3 you can augment the packages used in your build section
+with <code class="docutils literal notranslate"><span class="pre">strong</span> <span class="pre">run_exports</span></code> which are then automatically added to the
+run requirements for you. The same can be done for packages in your
+host section with <code class="docutils literal notranslate"><span class="pre">weak</span> <span class="pre">run_exports</span></code>. <code class="docutils literal notranslate"><span class="pre">strong</span> <span class="pre">run_exports</span></code> allows
+automatically adding things like compiler runtimes when the compiler is
+used. <code class="docutils literal notranslate"><span class="pre">weak</span> <span class="pre">run_exports</span></code> allows you to take advantange of generalized
+and automatic pinning.</p>
 </div>
 </div>
 <div class="section" id="test-section">

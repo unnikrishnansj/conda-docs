@@ -347,14 +347,14 @@ file. See <a class="reference internal" href="#channel-alias"><span class="std s
 </div>
 <div class="section" id="default-channels-default-channels">
 <h3><a class="toc-backref" href="#id6">Default channels (default_channels)</a><a class="headerlink" href="#default-channels-default-channels" title="Permalink to this headline">¶</a></h3>
-<p>Normally the default repository is <a class="reference external" href="http:repo.continuum.io">repo.continuum.io</a>, but if default_channels is defined,
-it sets the new list of default channels. This is especially
-useful for air gap and enterprise installations:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">channels</span><span class="p p-Indicator">:</span>
+<p>Normally the defaults channel points to several channels at the
+<a class="reference external" href="http:repo.continuum.io">repo.continuum.io</a> repository, but if
+default_channels is defined, it sets the new list of default channels.
+This is especially useful for air gap and enterprise installations:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">default_channels</span><span class="p p-Indicator">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">&lt;anaconda_dot_org_username&gt;</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">http://some.custom/channel</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file:///some/local/directory</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defaults</span>
 </pre></div>
 </div>
 </div>

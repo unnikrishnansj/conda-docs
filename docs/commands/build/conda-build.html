@@ -219,8 +219,8 @@ DESCRIPTION
               [--no-error-overlinking]                    [--long-test-prefix]
               [--no-long-test-prefix] [--keep-going]  [--cache-dir  CACHE_DIR]
               [--no-copy-test-source-files] [--merge-build-host] [--stats-file
-              STATS_FILE]  [-c  CHANNEL]   [--override-channels]   RECIPE_PATH
-              [RECIPE_PATH ...]
+              STATS_FILE] [--extra-deps EXTRA_DEPS [EXTRA_DEPS ...]] [-c CHAN‐
+              NEL] [--override-channels] RECIPE_PATH [RECIPE_PATH ...]
 
        Tool  for  building conda packages. A conda package is a binary tarball
        containing system-level libraries, Python modules, executable programs,
@@ -445,6 +445,11 @@ DESCRIPTION
        --stats-file STATS_FILE
               File path to save build statistics to. Stats are in JSON format
 
+       --extra-deps EXTRA_DEPS [EXTRA_DEPS ...]
+              Extra  dependencies  to  add  to all environment creation steps.
+              This is only enabled for testing with the  -t  or  --test  flag.
+              Change meta.yaml or use templates otherwise.
+
        -c CHANNEL, --channel CHANNEL
               Additional  channel  to  search  for  packages.  These  are URLs
               searched in the order they  are  given  (including  file://  for
@@ -484,7 +489,7 @@ DESCRIPTION
 
 
 
-Anaconda, Inc.                   February 2018                        <B>CONDA(1)</B>
+Anaconda, Inc.                    March 2018                          <B>CONDA(1)</B>
 </PRE></div>
 
 

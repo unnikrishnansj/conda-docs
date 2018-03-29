@@ -65,5 +65,5 @@ conda env create
    
    
    
-   Anaconda, Inc.                   February 2018                        <B>CONDA(1)</B>
+   Anaconda, Inc.                    March 2018                          <B>CONDA(1)</B>
    </PRE>
