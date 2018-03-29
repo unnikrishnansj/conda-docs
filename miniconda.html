@@ -206,7 +206,7 @@ installer)</a></p>
 <p>These Miniconda installers contain the conda package manager and Python. Once
 Miniconda is installed, you can use the conda command to install any other
 packages and create environments, etc. For example:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda install numpy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install numpy
 ...
 $ conda create -n py3k anaconda <span class="nv">python</span><span class="o">=</span><span class="m">3</span>
 ...
@@ -216,17 +216,17 @@ $ conda create -n py3k anaconda <span class="nv">python</span><span class="o">=<
 <p>The other difference is that the Python 3 version of Miniconda will default to
 Python 3 when creating new environments and building packages. So for
 instance, the behavior of</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda create -n myenv python
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n myenv python
 </pre></div>
 </div>
 <p>will be to install Python 2.7 with the Python 2 Miniconda and to install
 Python 3.6 with the Python 3 Miniconda. You can override the default by
-explicitly setting <code class="docutils literal"><span class="pre">python=2</span></code> or <code class="docutils literal"><span class="pre">python=3</span></code>. It also determines the
-default value of <code class="docutils literal"><span class="pre">CONDA_PY</span></code> when using <code class="docutils literal"><span class="pre">conda</span> <span class="pre">build</span></code>.</p>
+explicitly setting <code class="docutils literal notranslate"><span class="pre">python=2</span></code> or <code class="docutils literal notranslate"><span class="pre">python=3</span></code>. It also determines the
+default value of <code class="docutils literal notranslate"><span class="pre">CONDA_PY</span></code> when using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">build</span></code>.</p>
 <p><strong>Note</strong>: If you already have Miniconda or Anaconda installed, and you just
-want to upgrade, you should not use the installer. Just use <code class="docutils literal"><span class="pre">conda</span>
+want to upgrade, you should not use the installer. Just use <code class="docutils literal notranslate"><span class="pre">conda</span>
 <span class="pre">update</span></code>. For instance</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ conda update conda
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda update conda
 </pre></div>
 </div>
 <p>will update conda.</p>
@@ -262,7 +262,7 @@ want to upgrade, you should not use the installer. Just use <code class="docutil
   
       <footer>
           &copy; Copyright 2017, Continuum Analytics.
-        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.6.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.2.
       </footer>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

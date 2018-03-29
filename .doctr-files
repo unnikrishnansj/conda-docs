@@ -29,6 +29,7 @@
 ./_static/css/font-awesome.min.css
 ./_static/css/geo-bootstrap.css
 ./_static/doctools.js
+./_static/documentation_options.js
 ./_static/down-pressed.png
 ./_static/down.png
 ./_static/file.png
@@ -44,7 +45,7 @@
 ./_static/img/progress.gif
 ./_static/img/rainbow.gif
 ./_static/img/stars.gif
-./_static/jquery-3.1.0.js
+./_static/jquery-3.2.1.js
 ./_static/jquery.js
 ./_static/js/bootstrap.min.js
 ./_static/js/jquery.min.js
