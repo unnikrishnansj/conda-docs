@@ -1349,6 +1349,58 @@ variables</span></a>.</p>
 <p>Jinja templates are evaluated during the build process. To
 retrieve a fully rendered <code class="docutils literal notranslate"><span class="pre">meta.yaml</span></code> use the
 <a class="reference internal" href="../../../commands/build/conda-render.html"><span class="doc">conda render</span></a>.</p>
+<div class="section" id="conda-build-specific-jinja2-functions">
+<span id="extra-jinja2-meta"></span><h3>Conda-build specific Jinja2 functions<a class="headerlink" href="#conda-build-specific-jinja2-functions" title="Permalink to this headline">¶</a></h3>
+<p>Besides the default Jinja2 functionality, additional Jinja functions are
+available during the conda-build process: <code class="docutils literal notranslate"><span class="pre">pin_compatible</span></code>,
+<code class="docutils literal notranslate"><span class="pre">pin_subpackage</span></code>, <code class="docutils literal notranslate"><span class="pre">compiler</span></code>, and <code class="docutils literal notranslate"><span class="pre">resolved_packages</span></code>. Please see
+<a class="reference internal" href="variants.html#extra-jinja2"><span class="std std-ref">Extra Jinja2 functions</span></a> for the definition of the first three functions. Definition
+of <code class="docutils literal notranslate"><span class="pre">resolved_packages</span></code> is given below:</p>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">resolved_packages('environment_name')</span></code>: Returns the final list of packages
+(in the form of <code class="docutils literal notranslate"><span class="pre">package_name</span> <span class="pre">version</span> <span class="pre">build_string</span></code>) that are listed in
+<code class="docutils literal notranslate"><span class="pre">requirements:host</span></code> or <code class="docutils literal notranslate"><span class="pre">requirements:build</span></code>. This includes all packages
+(including the indirect dependencies) that will be installed in the host or
+build environment. <code class="docutils literal notranslate"><span class="pre">environment_name</span></code> must be either <code class="docutils literal notranslate"><span class="pre">host</span></code> or <code class="docutils literal notranslate"><span class="pre">build</span></code>.
+This function is useful for creating meta packages that will want to pin all
+of their <em>direct</em> and <em>indirect</em> dependencies to their exact match. For
+example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">requirements</span><span class="p">:</span>
+  <span class="n">host</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">curl</span> <span class="mf">7.55</span><span class="o">.</span><span class="mi">1</span>
+  <span class="n">run</span><span class="p">:</span>
+  <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">package</span> <span class="ow">in</span> <span class="n">resolved_packages</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+    <span class="o">-</span> <span class="p">{{</span> <span class="n">package</span> <span class="p">}}</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>might render to (depending on package dependencies and the platform):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">requirements</span><span class="p">:</span>
+    <span class="n">host</span><span class="p">:</span>
+        <span class="o">-</span> <span class="n">ca</span><span class="o">-</span><span class="n">certificates</span> <span class="mf">2017.08</span><span class="o">.</span><span class="mi">26</span> <span class="n">h1d4fec5_0</span>
+        <span class="o">-</span> <span class="n">curl</span> <span class="mf">7.55</span><span class="o">.</span><span class="mi">1</span> <span class="n">h78862de_4</span>
+        <span class="o">-</span> <span class="n">libgcc</span><span class="o">-</span><span class="n">ng</span> <span class="mf">7.2</span><span class="o">.</span><span class="mi">0</span> <span class="n">h7cc24e2_2</span>
+        <span class="o">-</span> <span class="n">libssh2</span> <span class="mf">1.8</span><span class="o">.</span><span class="mi">0</span> <span class="n">h9cfc8f7_4</span>
+        <span class="o">-</span> <span class="n">openssl</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">2</span><span class="n">n</span> <span class="n">hb7f436b_0</span>
+        <span class="o">-</span> <span class="n">zlib</span> <span class="mf">1.2</span><span class="o">.</span><span class="mi">11</span> <span class="n">ha838bed_2</span>
+    <span class="n">run</span><span class="p">:</span>
+        <span class="o">-</span> <span class="n">ca</span><span class="o">-</span><span class="n">certificates</span> <span class="mf">2017.08</span><span class="o">.</span><span class="mi">26</span> <span class="n">h1d4fec5_0</span>
+        <span class="o">-</span> <span class="n">curl</span> <span class="mf">7.55</span><span class="o">.</span><span class="mi">1</span> <span class="n">h78862de_4</span>
+        <span class="o">-</span> <span class="n">libgcc</span><span class="o">-</span><span class="n">ng</span> <span class="mf">7.2</span><span class="o">.</span><span class="mi">0</span> <span class="n">h7cc24e2_2</span>
+        <span class="o">-</span> <span class="n">libssh2</span> <span class="mf">1.8</span><span class="o">.</span><span class="mi">0</span> <span class="n">h9cfc8f7_4</span>
+        <span class="o">-</span> <span class="n">openssl</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">2</span><span class="n">n</span> <span class="n">hb7f436b_0</span>
+        <span class="o">-</span> <span class="n">zlib</span> <span class="mf">1.2</span><span class="o">.</span><span class="mi">11</span> <span class="n">ha838bed_2</span>
+</pre></div>
+</div>
+<p>Here, output of <code class="docutils literal notranslate"><span class="pre">resolved_packages</span></code> was:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;ca-certificates 2017.08.26 h1d4fec5_0&#39;</span><span class="p">,</span> <span class="s1">&#39;curl 7.55.1 h78862de_4&#39;</span><span class="p">,</span>
+<span class="s1">&#39;libgcc-ng 7.2.0 h7cc24e2_2&#39;</span><span class="p">,</span> <span class="s1">&#39;libssh2 1.8.0 h9cfc8f7_4&#39;</span><span class="p">,</span>
+<span class="s1">&#39;openssl 1.0.2n hb7f436b_0&#39;</span><span class="p">,</span> <span class="s1">&#39;zlib 1.2.11 ha838bed_2&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="preprocessing-selectors">
 <span id="preprocess-selectors"></span><h2><a class="toc-backref" href="#id14">Preprocessing selectors</a><a class="headerlink" href="#preprocessing-selectors" title="Permalink to this headline">¶</a></h2>
