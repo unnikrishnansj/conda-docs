@@ -315,10 +315,21 @@ first trying to install any package with conda. If the package is unavailable
 through conda, try installing it with pip. The differences between pip and
 conda packages cause certain unavoidable limits in compatibility, but conda
 works hard to be as compatible with pip as possible.</p>
-<p>NOTE: Both pip and conda are included in Anaconda and Miniconda,
-so you do not need to install them separately.</p>
-<p>NOTE: Conda environments replace virtualenv, so there is no need
-to activate a virtualenv before using pip.</p>
+<p>NOTE: Both pip and conda are included in Anaconda and Miniconda, so you do not
+need to install them separately.</p>
+<p>NOTE: Conda environments replace virtualenv, so there is no need to activate a
+virtualenv before using pip.</p>
+<p>It is possible to have pip installed outside a conda environment or inside a
+conda environment.</p>
+<p>To gain the benefits of conda integration, be sure to install pip inside the
+currently active conda environment, and then install packages with that
+instance of pip. The command <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code> shows packages installed this way,
+with a label showing that they were installed with pip.</p>
+<p>You can install pip in the current conda environment with the command
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pip</span></code>, as discussed in <a class="reference internal" href="manage-environments.html#pip-in-env"><span class="std std-ref">Using pip in an environment</span></a>.</p>
+<p>If there are instances of pip installed both inside and outside the current
+conda environment, the instance of pip installed inside the current conda
+environment is used.</p>
 <p>To install a non-conda package:</p>
 <ol class="arabic">
 <li><p class="first">Activate the environment where you want to put the program:</p>
@@ -338,6 +349,8 @@ run:</p>
 <div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span>
 </pre></div>
 </div>
+<p>If the package is not shown, install pip as described in <a class="reference internal" href="manage-environments.html#pip-in-env"><span class="std std-ref">Using pip in an environment</span></a>
+and try these commands again.</p>
 </li>
 </ol>
 </div>
