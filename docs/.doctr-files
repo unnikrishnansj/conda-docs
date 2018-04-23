@@ -162,7 +162,6 @@ docs/_sources/user-guide/tutorials/build-apps.rst.txt
 docs/_sources/user-guide/tutorials/build-nltk.rst.txt
 docs/_sources/user-guide/tutorials/build-pkgs-skeleton.rst.txt
 docs/_sources/user-guide/tutorials/build-pkgs.rst.txt
-docs/_sources/user-guide/tutorials/build-postgis.rst.txt
 docs/_sources/user-guide/tutorials/build-windows.rst.txt
 docs/_sources/user-guide/tutorials/index.rst.txt
 docs/_sources/using/cheatsheet.rst.txt
@@ -365,7 +364,6 @@ docs/user-guide/tutorials/build-apps.html
 docs/user-guide/tutorials/build-nltk.html
 docs/user-guide/tutorials/build-pkgs-skeleton.html
 docs/user-guide/tutorials/build-pkgs.html
-docs/user-guide/tutorials/build-postgis.html
 docs/user-guide/tutorials/build-windows.html
 docs/user-guide/tutorials/index.html
 docs/using/cheatsheet.html
