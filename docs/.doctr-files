@@ -188,6 +188,8 @@ docs/_static/file.png
 docs/_static/fonts/Inconsolata-Bold.ttf
 docs/_static/fonts/Inconsolata-Regular.ttf
 docs/_static/fonts/Lato-Bold.ttf
+docs/_static/fonts/Lato-BoldItalic.ttf
+docs/_static/fonts/Lato-Italic.ttf
 docs/_static/fonts/Lato-Regular.ttf
 docs/_static/fonts/RobotoSlab-Bold.ttf
 docs/_static/fonts/RobotoSlab-Regular.ttf
@@ -195,6 +197,7 @@ docs/_static/fonts/fontawesome-webfont.eot
 docs/_static/fonts/fontawesome-webfont.svg
 docs/_static/fonts/fontawesome-webfont.ttf
 docs/_static/fonts/fontawesome-webfont.woff
+docs/_static/fonts/fontawesome-webfont.woff2
 docs/_static/jquery-3.2.1.js
 docs/_static/jquery.js
 docs/_static/js/modernizr.min.js

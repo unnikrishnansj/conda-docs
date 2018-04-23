@@ -126,7 +126,7 @@ conda build
           -t, --test
                  Test package (assumes package  is  already  built).   RECIPE_DIR
                  argument  can  be  either recipe directory, in which case source
-                 download may be necessary to resolve packageversion, or path  to
+                 download may be necessary to resolve package version, or path to
                  built  package  .tar.bz2 file, in which case no source is neces‐
                  sary.
    
@@ -142,11 +142,11 @@ conda build
                  conda-upload.
    
           --skip-existing
-                 Skip  recipes  for  which  there  already  exists  an   existing
-                 build(locally or in the channels).
+                 Skip recipes for which there already exists  an  existing  build
+                 (locally or in the channels).
    
           --keep-old-work
-                 Do  not remove anything from environment, even after successful‐
+                 Do  not  remove anything from environment, even after successful
                  build and test.
    
           --dirty
@@ -208,25 +208,25 @@ conda build
    
           --no-locking
                  Disable  locking,  to  avoid  unresolved  race condition issues.
-                 Unsafe to run multiplebuilds at once on  one  system  with  this
+                 Unsafe to run multiple builds at once on one  system  with  this
                  set.
    
           --no-remove-work-dir
                  Disable removal of the work dir before testing. Be careful using
                  this option, as you package may depend on  files  that  are  not
-                 included  in the package, and may passtests, but ultimately fail
+                 included in the package, and may pass tests, but ultimately fail
                  on installed systems.
    
           --error-overlinking
                  Enable error when shared libraries from transitive  dependencies
-                 are  directlylinked  to  any  executables or shared libraries in
-                 built packages. This is disabledby default, but will be  enabled
-                 by default in conda-build 4.0.
+                 are  directly  linked  to any executables or shared libraries in
+                 built packages. This is disabled by default, but will be enabled
+                 by default in condabuild 4.0.
    
           --no-error-overlinking
                  Disable error when shared libraries from transitive dependencies
-                 are directlylinked to any executables  or  shared  libraries  in
-                 built  packages. This is currentlythe default behavior, but will
+                 are directly linked to any executables or  shared  libraries  in
+                 built packages. This is currently the default behavior, but will
                  change in conda-build 4.0.
    
           --long-test-prefix
@@ -305,5 +305,5 @@ conda build
    
    
    
-   Anaconda, Inc.                    March 2018                          <B>CONDA(1)</B>
+   Anaconda, Inc.                    April 2018                          <B>CONDA(1)</B>
    </PRE>

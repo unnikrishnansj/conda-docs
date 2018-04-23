@@ -62,5 +62,5 @@ conda env export
    
    
    
-   Anaconda, Inc.                    March 2018                          <B>CONDA(1)</B>
+   Anaconda, Inc.                    April 2018                          <B>CONDA(1)</B>
    </PRE>

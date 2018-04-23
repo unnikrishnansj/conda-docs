@@ -53,5 +53,5 @@ conda index
    
    
    
-   Anaconda, Inc.                    March 2018                          <B>CONDA(1)</B>
+   Anaconda, Inc.                    April 2018                          <B>CONDA(1)</B>
    </PRE>
