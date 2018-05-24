@@ -62,5 +62,5 @@ conda inspect linkages
    
    
    
-   Anaconda, Inc.                    April 2018                          <B>CONDA(1)</B>
+   Anaconda, Inc.                     May 2018                           <B>CONDA(1)</B>
    </PRE>

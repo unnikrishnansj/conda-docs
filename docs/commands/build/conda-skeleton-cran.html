@@ -167,7 +167,7 @@
         
             
             
-              <a href="https://github.com/conda/conda-docs//master/docs/source/commands/build/conda-skeleton-cran.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/conda/conda-docs/blob/master/docs/source/commands/build/conda-skeleton-cran.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -202,8 +202,8 @@ DESCRIPTION
               [--use-noarch-generic]     [--use-rtools-win]      [--recursive]
               [--no-recursive]        [--no-archive]       [--version-compare]
               [--update-policy      {error,skip-up-to-date,skip-existing,over‐
-              write,merge-keep-build-num,merge-incr-build-num}]       packages
-              [packages ...]
+              write,merge-keep-build-num,merge-incr-build-num}]    [-m   VARI‐
+              ANT_CONFIG_FILES] packages [packages ...]
 
    positional arguments:
        packages
@@ -235,29 +235,28 @@ DESCRIPTION
               find the right URL. (default: False)
 
        --cran-url CRAN_URL
-              URL   to   use   for  as  source  package  repository  (default:
-              https://cran.r-project.org/)
+              URL to use for as source package repository (default: None)
 
        --r-interp R_INTERP
               Declare R interpreter package (default: r-base)
 
        --use-binaries-ver USE_BINARIES_VER
-              Repackage binaries from version provided by argument instead  of
+              Repackage  binaries from version provided by argument instead of
               building from source. (default: None)
 
        --use-noarch-generic
-              Mark  packages that do not need compilation as `noarch: generic`
+              Mark packages that do not need compilation as `noarch:  generic`
               (default: False)
 
        --use-rtools-win
               Use Rtools when building from source on Windows (default: False)
 
        --recursive
-              Create recipes for dependencies if they do  not  already  exist.
+              Create  recipes  for  dependencies if they do not already exist.
               (default: False)
 
        --no-recursive
-              Don't  create  recipes  for  dependencies if they do not already
+              Don't create recipes for dependencies if  they  do  not  already
               exist. (default: True)
 
        --no-archive
@@ -265,23 +264,28 @@ DESCRIPTION
 
        --version-compare
               Compare the package version of the recipe with the one available
-              on  CRAN.  Exits  1 if a newer version is available and 0 other‐
+              on CRAN. Exits 1 if a newer version is available  and  0  other‐
               wise. (default: False)
 
        --update-policy              {error,skip-up-to-date,skip-existing,over‐
        write,merge-keep-build-num,merge-incr-build-num}
-              Dictates  what  to  do when existing packages are encountered in
+              Dictates what to do when existing packages  are  encountered  in
               the output directory (set by --outputdir). In the present imple‐
-              mentation,  the  merge  options  avoid  overwriting  bld.bat and
+              mentation, the  merge  options  avoid  overwriting  bld.bat  and
               build.sh  and  only  manage  copying  across  patches,  and  the
-              `build/{number,script_env}`  fields.  When  the version changes,
-              both merge options reset `build/number` to 0.  When the  version
-              does  not change they either keep the old `build/number` or else
+              `build/{number,script_env}` fields. When  the  version  changes,
+              both  merge options reset `build/number` to 0.  When the version
+              does not change they either keep the old `build/number` or  else
               increase it by one.  (default: error)
 
+       -m VARIANT_CONFIG_FILES, --variant-config-files VARIANT_CONFIG_FILES
+              Variant  config  file  to add. These yaml files can contain keys
+              such as `cran_mirror`. Only one can be provided here.  (default:
+              None)
 
 
-Anaconda, Inc.                    April 2018                          <B>CONDA(1)</B>
+
+Anaconda, Inc.                     May 2018                           <B>CONDA(1)</B>
 </PRE></div>
 
 
@@ -347,9 +351,7 @@ Anaconda, Inc.                    April 2018                          <B>CONDA(1
 
   <script type="text/javascript">
       jQuery(function () {
-          
-          SphinxRtdTheme.Navigation.enableSticky();
-          
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
  
