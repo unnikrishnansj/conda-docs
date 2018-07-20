@@ -76,6 +76,7 @@ docs/_sources/commands/env/conda-env-update.rst.txt
 docs/_sources/commands/env/conda-env-upload.rst.txt
 docs/_sources/commands/env/conda-env.rst.txt
 docs/_sources/config.rst.txt
+docs/_sources/contributing.rst.txt
 docs/_sources/custom-channels.rst.txt
 docs/_sources/download.rst.txt
 docs/_sources/env-commands.rst.txt
@@ -291,6 +292,7 @@ docs/commands/env/conda-env-update.html
 docs/commands/env/conda-env-upload.html
 docs/commands/env/conda-env.html
 docs/config.html
+docs/contributing.html
 docs/custom-channels.html
 docs/download.html
 docs/env-commands.html
