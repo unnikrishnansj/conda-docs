@@ -49,7 +49,7 @@ conda index
    
       conda commands available from other packages:
                  build  convert  develop  env  index  inspect  metapackage render
-                 skeleton verify
+                 skeleton
    
    
    

@@ -199,7 +199,7 @@ DESCRIPTION
        [--numpy NUMPY] [--R R_BASE] [--lua LUA]
               [--bootstrap  BOOTSTRAP]  [--append-file   APPEND_SECTIONS_FILE]
               [--clobber-file CLOBBER_SECTIONS_FILE] [-m VARIANT_CONFIG_FILES]
-              [-e  EXCLUSIVE_CONFIG_FILE]  [--old-build-string]  [-c  CHANNEL]
+              [-e EXCLUSIVE_CONFIG_FILES]  [--old-build-string]  [-c  CHANNEL]
               [--override-channels] [-f FILE] [--verbose] RECIPE_PATH
 
        Tool  for  building conda packages. A conda package is a binary tarball
@@ -262,14 +262,14 @@ OPTIONS
               contain  keys such as `c_compiler` and `target_platform` to form
               a build matrix.
 
-       -e EXCLUSIVE_CONFIG_FILE, --exclusive-config-file EXCLUSIVE_CONFIG_FILE
-              Exclusive variant config file  to  add.  Compared  with  --vari‐
-              ant-config-files, you're allowed only one file here. Providing a
-              file here disables searching in your home directory and in  cwd.
-              The  file  specified  here  comes  at the start of the order, as
-              opposed to the end with --variant-config-files. Any config files
-              in  recipes  and  any  config files specified with --variantcon‐
-              fig-files will override values from this file.
+       -e  EXCLUSIVE_CONFIG_FILES,   --exclusive-config-files   EXCLUSIVE_CON‐
+       FIG_FILES, --exclusive-config-file EXCLUSIVE_CONFIG_FILES
+              Exclusive variant config files to add. Providing files here dis‐
+              ables searching in your home directory and  in  cwd.  The  files
+              specified here come at the start of the order, as opposed to the
+              end with --variant-configfiles. Any config files in recipes  and
+              any  config  files  specified  with  --variant-config-files will
+              override values from these files.
 
        --old-build-string
               Disable hash additions to filenames to distinguish package vari‐
@@ -300,7 +300,7 @@ OPTIONS
 
    conda commands available from other packages:
               build convert  develop  env  index  inspect  metapackage  render
-              skeleton verify
+              skeleton
 
 
 
