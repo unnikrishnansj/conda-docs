@@ -509,11 +509,11 @@ to give the script a name in the form
 <span id="win-save-env-variables"></span><h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">Locate the directory for the conda environment in your
-Anaconda Prompt, such as <code class="docutils literal notranslate"><span class="pre">C:\Users\jsmith\Anaconda3\envs\analytics</span></code>.</p>
+Anaconda Prompt by running in the command shell <code class="docutils literal notranslate"><span class="pre">%CONDA_PREFIX%</span></code>.</p>
 </li>
 <li><p class="first">Enter that directory and create these subdirectories and
 files:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">jsmith</span>\<span class="n">Anaconda3</span>\<span class="n">envs</span>\<span class="n">analytics</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">%</span><span class="n">CONDA_PREFIX</span><span class="o">%</span>
 <span class="n">mkdir</span> <span class="o">.</span>\<span class="n">etc</span>\<span class="n">conda</span>\<span class="n">activate</span><span class="o">.</span><span class="n">d</span>
 <span class="n">mkdir</span> <span class="o">.</span>\<span class="n">etc</span>\<span class="n">conda</span>\<span class="n">deactivate</span><span class="o">.</span><span class="n">d</span>
 <span class="nb">type</span> <span class="n">NUL</span> <span class="o">&gt;</span> <span class="o">.</span>\<span class="n">etc</span>\<span class="n">conda</span>\<span class="n">activate</span><span class="o">.</span><span class="n">d</span>\<span class="n">env_vars</span><span class="o">.</span><span class="n">bat</span>
@@ -541,16 +541,15 @@ When you run <code class="docutils literal notranslate"><span class="pre">deacti
 <div class="section" id="macos-and-linux">
 <span id="macos-linux-save-env-variables"></span><h3>macOS and Linux<a class="headerlink" href="#macos-and-linux" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Locate the directory for the conda environment in your Terminal window, such as
-<code class="docutils literal notranslate"><span class="pre">/home/jsmith/anaconda3/envs/analytics</span></code>.</p>
+<li><p class="first">Locate the directory for the conda environment in your Terminal window by running in the terminal <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$CONDA_PREFIX</span></code>.</p>
 </li>
 <li><p class="first">Enter that directory and create these subdirectories and
 files:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jsmith</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">analytics</span>
-<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">./</span><span class="n">etc</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">activate</span><span class="o">.</span><span class="n">d</span>
-<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">./</span><span class="n">etc</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">deactivate</span><span class="o">.</span><span class="n">d</span>
-<span class="n">touch</span> <span class="o">./</span><span class="n">etc</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">activate</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">env_vars</span><span class="o">.</span><span class="n">sh</span>
-<span class="n">touch</span> <span class="o">./</span><span class="n">etc</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">deactivate</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">env_vars</span><span class="o">.</span><span class="n">sh</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $CONDA_PREFIX
+mkdir -p ./etc/conda/activate.d
+mkdir -p ./etc/conda/deactivate.d
+touch ./etc/conda/activate.d/env_vars.sh
+touch ./etc/conda/deactivate.d/env_vars.sh
 </pre></div>
 </div>
 </li>
