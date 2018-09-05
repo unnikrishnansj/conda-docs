@@ -193,9 +193,10 @@ NAME
        conda - conda index
 
 DESCRIPTION
-       usage: conda-index [-h] [-c] [-f] [-q] [--no-remove]
+       usage: conda-index [-h] [-c] [-s SUBDIR] [-t THREADS] [-p PATCH_GENERA‐
+       TOR]
 
-              [--channel-name CHANNEL_NAME] [dir [dir ...]]
+              [dir [dir ...]] [channel_name]
 
        Update package index metadata files in given directories.
 
@@ -203,34 +204,37 @@ OPTIONS
    positional arguments:
        dir    Directory that contains an index to be updated.
 
+       channel_name
+              Adding a channel name will create an index.html file within  the
+              subdir.
+
    optional arguments:
        -h, --help
               Show this help message and exit.
 
        -c, --check-md5
-              Use  MD5 values instead of file modification times for determin‐
+              Use hash values instead of file modification times for determin‐
               ing if a package's metadata needs to be updated.
 
-       -f, --force
-              Force reading all files.
+       -s SUBDIR, --subdir SUBDIR
+              Optional. The subdir to index. Can be given multiple  times.  If
+              not  provided,  will  default  to  all  of  linux-64,  linux-32,
+              linux-ppc64le,   linux-armv6l,   linux-armv7l,    linux-aarch64,
+              win-64,  win-32,  osx-64,  zos-z,  noarch. If provided, will not
+              create channeldata.json for the channel.
 
-       -q, --quiet
-              Don't show any output.
+       -t THREADS, --threads THREADS
 
-       --no-remove
-              Don't remove entries for files that don't exist.
-
-       --channel-name CHANNEL_NAME
-              Adding a channel name will create an index.html file within  the
-              subdir.
+       -p PATCH_GENERATOR, --patch-generator PATCH_GENERATOR
+              Path to Python file that outputs metadata patch instructions
 
    conda commands available from other packages:
-              build  convert  develop  env  index  inspect  metapackage render
+              build convert  develop  env  index  inspect  metapackage  render
               skeleton
 
 
 
-Anaconda, Inc.                    August 2018                         <B>CONDA(1)</B>
+Anaconda, Inc.                  September 2018                        <B>CONDA(1)</B>
 </PRE></div>
 
 

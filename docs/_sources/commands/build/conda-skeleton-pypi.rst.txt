@@ -21,7 +21,7 @@ conda skeleton pypi
    
           [--all-urls] [--pypi-url PYPI_URL] [--prompt]
                  [--all-extras] [--recursive] [--version-compare]  [--python-ver‐
-                 sion  {2.7,3.4,3.5}]  [--manual-url]  [--noarch-python]  [--set‐
+                 sion {2.7,3.5,3.6,3.7}] [--manual-url] [--noarch-python] [--set‐
                  up-options    SETUP_OPTIONS]    [--pin-numpy]     [--extra-specs
                  EXTRA_SPECS] packages [packages ...]
    
@@ -62,8 +62,8 @@ conda skeleton pypi
                  Compare  the  package  version  of the recipe with all available
                  versions on PyPI.
    
-          --python-version {2.7,3.4,3.5}
-                 Version of Python to use to run setup.py. Default is 3.6.
+          --python-version {2.7,3.5,3.6,3.7}
+                 Version of Python to use to run setup.py. Default is 3.7.
    
           --manual-url
                  Manually  choose  source  url  when  more  than  one  urls   are
@@ -101,5 +101,5 @@ conda skeleton pypi
    
    
    
-   Anaconda, Inc.                    August 2018                         <B>CONDA(1)</B>
+   Anaconda, Inc.                  September 2018                        <B>CONDA(1)</B>
    </PRE>
