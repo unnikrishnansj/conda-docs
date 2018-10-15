@@ -22,10 +22,11 @@ conda skeleton cran
                  [--add-maintainer ADD_MAINTAINER] [--version VERSION] [--git-tag
                  GIT_TAG]   [--all-urls]   [--cran-url   CRAN_URL]    [--r-interp
                  R_INTERP]          [--use-binaries-ver         USE_BINARIES_VER]
-                 [--use-noarch-generic]     [--use-rtools-win]      [--recursive]
-                 [--no-recursive]        [--no-archive]       [--version-compare]
+                 [--use-when-no-binary           {src,old,src-old,old-src,error}]
+                 [--use-noarch-generic]      [--use-rtools-win]     [--recursive]
+                 [--no-recursive]       [--no-archive]        [--version-compare]
                  [--update-policy      {error,skip-up-to-date,skip-existing,over‐
-                 write,merge-keep-build-num,merge-incr-build-num}]    [-m   VARI‐
+                 write,merge-keep-build-num,merge-incr-build-num}]   [-m    VARI‐
                  ANT_CONFIG_FILES] packages [packages ...]
    
       positional arguments:
@@ -40,7 +41,7 @@ conda skeleton cran
                  Directory to write recipes to (default: .).
    
           --output-suffix OUTPUT_SUFFIX
-                 Suffix to add to recipe dir, can contain other dirs (eg:  -feed‐
+                 Suffix  to add to recipe dir, can contain other dirs (eg: -feed‐
                  stock/recipe). (default: )
    
           --add-maintainer ADD_MAINTAINER
@@ -54,7 +55,7 @@ conda skeleton cran
                  Git tag to use for GitHub recipes. (default: None)
    
           --all-urls
-                 Look at all URLs, not just source URLs. Use  this  if  it  can't
+                 Look  at  all  URLs,  not just source URLs. Use this if it can't
                  find the right URL. (default: False)
    
           --cran-url CRAN_URL
@@ -64,8 +65,14 @@ conda skeleton cran
                  Declare R interpreter package (default: r-base)
    
           --use-binaries-ver USE_BINARIES_VER
-                 Repackage  binaries from version provided by argument instead of
+                 Repackage binaries from version provided by argument instead  of
                  building from source. (default: None)
+   
+          --use-when-no-binary {src,old,src-old,old-src,error}
+                 Sometimes  binaries are not available at the correct version for
+                 a given platform (macOS). You can use this flag to specify  what
+                 fallback to take, either compiling from source or using an older
+                 binary or trying one then the other. (default: src)
    
           --use-noarch-generic
                  Mark packages that do not need compilation as `noarch:  generic`
@@ -108,5 +115,5 @@ conda skeleton cran
    
    
    
-   Anaconda, Inc.                  September 2018                        <B>CONDA(1)</B>
+   Anaconda, Inc.                   October 2018                         <B>CONDA(1)</B>
    </PRE>

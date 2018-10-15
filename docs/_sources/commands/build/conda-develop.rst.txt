@@ -63,5 +63,5 @@ conda develop
    
    
    
-   Anaconda, Inc.                  September 2018                        <B>CONDA(1)</B>
+   Anaconda, Inc.                   October 2018                         <B>CONDA(1)</B>
    </PRE>

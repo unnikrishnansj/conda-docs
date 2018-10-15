@@ -22,10 +22,11 @@ conda render
           [--numpy NUMPY] [--R R_BASE] [--lua LUA]
                  [--bootstrap  BOOTSTRAP]  [--append-file   APPEND_SECTIONS_FILE]
                  [--clobber-file CLOBBER_SECTIONS_FILE] [-m VARIANT_CONFIG_FILES]
-                 [-e EXCLUSIVE_CONFIG_FILES]  [--old-build-string]  [-c  CHANNEL]
-                 [--override-channels] [-f FILE] [--verbose] RECIPE_PATH
+                 [-e  EXCLUSIVE_CONFIG_FILES]  [--old-build-string]   [--variants
+                 VARIANTS]  [-c  CHANNEL] [--override-channels] [-f FILE] [--ver‐
+                 bose] RECIPE_PATH
    
-          Tool  for  building conda packages. A conda package is a binary tarball
+          Tool for building conda packages. A conda package is a  binary  tarball
           containing system-level libraries, Python modules, executable programs,
           or other components. conda keeps track of dependencies between packages
           and platform specifics, making it simple to create working environments
@@ -46,7 +47,7 @@ conda render
                  Show the conda-build version number and exit.
    
           -n, --no-source
-                 When  templating can't be completed, do not obtain the source to
+                 When templating can't be completed, do not obtain the source  to
                  try fill in related template variables.
    
           --output
@@ -68,12 +69,12 @@ conda render
                  Set the Lua version used by conda build.
    
           --bootstrap BOOTSTRAP
-                 Provide initial configuration in addition to recipe.  Can  be  a
+                 Provide  initial  configuration in addition to recipe.  Can be a
                  path to or name of an environment, which will be emulated in the
                  package.
    
           --append-file APPEND_SECTIONS_FILE
-                 Append data in meta.yaml with fields from this file.  Jinja2  is
+                 Append  data in meta.yaml with fields from this file.  Jinja2 is
                  not done on appended fields
    
           --clobber-file CLOBBER_SECTIONS_FILE
@@ -81,24 +82,28 @@ conda render
                  not done on clobbered fields.
    
           -m VARIANT_CONFIG_FILES, --variant-config-files VARIANT_CONFIG_FILES
-                 Additional variant config files to add.  These  yaml  files  can
-                 contain  keys such as `c_compiler` and `target_platform` to form
+                 Additional  variant  config  files  to add. These yaml files can
+                 contain keys such as `c_compiler` and `target_platform` to  form
                  a build matrix.
    
-          -e  EXCLUSIVE_CONFIG_FILES,   --exclusive-config-files   EXCLUSIVE_CON‐
+          -e   EXCLUSIVE_CONFIG_FILES,   --exclusive-config-files  EXCLUSIVE_CON‐
           FIG_FILES, --exclusive-config-file EXCLUSIVE_CONFIG_FILES
                  Exclusive variant config files to add. Providing files here dis‐
-                 ables searching in your home directory and  in  cwd.  The  files
+                 ables  searching  in  your  home directory and in cwd. The files
                  specified here come at the start of the order, as opposed to the
-                 end with --variant-configfiles. Any config files in recipes  and
-                 any  config  files  specified  with  --variant-config-files will
+                 end  with --variant-configfiles. Any config files in recipes and
+                 any config  files  specified  with  --variant-config-files  will
                  override values from these files.
    
           --old-build-string
                  Disable hash additions to filenames to distinguish package vari‐
-                 ants  from  one another. NOTE: any filename collisions are yours
-                 to handle. Any variants with overlapping names  within  a  build
+                 ants from one another. NOTE: any filename collisions  are  yours
+                 to  handle.  Any  variants with overlapping names within a build
                  will clobber each other.
+   
+          --variants VARIANTS
+                 Variants to extend the  build  matrix.  Must  be  a  valid  YAML
+                 instance, such as "{python: [3.6, 3.7]}"
    
           -c CHANNEL, --channel CHANNEL
                  Additional  channel  to  search  for  packages.  These  are URLs
@@ -127,5 +132,5 @@ conda render
    
    
    
-   Anaconda, Inc.                  September 2018                        <B>CONDA(1)</B>
+   Anaconda, Inc.                   October 2018                         <B>CONDA(1)</B>
    </PRE>
