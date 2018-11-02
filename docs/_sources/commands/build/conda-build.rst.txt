@@ -321,5 +321,5 @@ conda build
    
    
    
-   Anaconda, Inc.                   October 2018                         <B>CONDA(1)</B>
+   Anaconda, Inc.                   November 2018                        <B>CONDA(1)</B>
    </PRE>
