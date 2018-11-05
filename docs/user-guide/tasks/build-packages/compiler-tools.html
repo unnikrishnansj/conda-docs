@@ -580,18 +580,20 @@ script is regenerated. Before running <code class="docutils literal notranslate"
 </div>
 <div class="section" id="rpaths-specifically-rpath-link">
 <h3>RPATHs (specifically rpath-link)<a class="headerlink" href="#rpaths-specifically-rpath-link" title="Permalink to this headline">¶</a></h3>
-<p>On Linux, transitive DSOs are not searched for by the static linker in any <cite>rpath</cite> entries. Instead, for the
-linker to find these DSOs, it needs prompting via adding <cite>-Wl,-rpath-link,$PREFIX/lib</cite> to <cite>LDFLAGS</cite>. In the
-future we may add this to the Linux compiler activation script. These transitive DSOs are not added as <cite>DT_NEEDED</cite>
-entries in the top-level DSO, theya re inspected by the static linker for symbol resolution purposes only so it
+<p>On Linux, transitive DSOs are not searched for by the static linker in any <code class="docutils literal notranslate"><span class="pre">rpath</span></code> entries. Instead, for the
+linker to find these DSOs, it needs prompting by adding <code class="docutils literal notranslate"><span class="pre">-Wl,-rpath-link,$PREFIX/lib</span></code> to <code class="docutils literal notranslate"><span class="pre">LDFLAGS</span></code>. In the
+future we may add this to the Linux compiler activation script. These transitive DSOs are not added as <code class="docutils literal notranslate"><span class="pre">DT_NEEDED</span></code>
+entries in the top-level DSO, they are inspected by the static linker for symbol resolution purposes only so it
 is generally safe to add this flag.</p>
 </div>
 <div class="section" id="cdt-packages">
 <h3>CDT packages<a class="headerlink" href="#cdt-packages" title="Permalink to this headline">¶</a></h3>
-<p><cite>CDT</cite> packages are an ‘Anaconda Distribution’ invention. They consist of repackaged ‘CentOS6’ packages for libraries
-such as the <cite>X11</cite> and <cite>OpenGL</cite> stacks, unpacked into our compilers inbuilt sysroot. These allow us to link to these
-system libraries in an way that pins the compatibility level to that of ‘CentOS6’. ‘conda-forge’ provide their own
-<cite>X11</cite> libraries and what to do with <cite>OpenGL</cite> is currently a subject of discussion.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CDT</span></code> packages are an ‘Anaconda Distribution’ invention. They consist of repackaged ‘CentOS6’ packages for libraries
+such as the <code class="docutils literal notranslate"><span class="pre">X11</span></code> and <code class="docutils literal notranslate"><span class="pre">OpenGL</span></code> stacks, unpacked into our compilers inbuilt sysroot. These allow us to link to these
+system libraries in a way that pins the compatibility level to that of ‘CentOS6’. ‘conda-forge’ provide their own
+<code class="docutils literal notranslate"><span class="pre">X11</span></code> libraries and what to do with <code class="docutils literal notranslate"><span class="pre">OpenGL</span></code> is currently a subject of discussion. We plan to use meta-packages and
+possibly mutex packages to enable sharing recipes and avoiding conflicts between <code class="docutils literal notranslate"><span class="pre">CDT</span></code> <code class="docutils literal notranslate"><span class="pre">X11</span></code> packages and <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>
+<code class="docutils literal notranslate"><span class="pre">X11</span></code> packages.</p>
 </div>
 </div>
 </div>
