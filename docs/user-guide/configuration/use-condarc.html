@@ -238,10 +238,10 @@
 </div>
 <div class="section" id="overview">
 <span id="config-overview"></span><h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>The conda configuration file, <code class="docutils literal notranslate"><span class="pre">.condarc</span></code>, is an optional
+<p>The conda configuration file, <code class="docutils literal notranslate"><span class="pre">.condarc</span></code>, is an optional,
 runtime configuration file that allows advanced users to
 configure various aspects of conda, such as which channels it
-searches for packages, proxy settings and environment
+searches for packages, proxy settings, and environment
 directories.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file is not included by default, but it is
 automatically created in your home directory the first time you
@@ -262,7 +262,7 @@ configuration. See <a class="reference internal" href="admin-multi-user-install.
 environment name.</li>
 <li>Whether user-built packages should be uploaded to
 <a class="reference external" href="http://anaconda.org">Anaconda.org</a>.</li>
-<li>Default packages or features to include in new environments.</li>
+<li>Which default packages or features to include in new environments.</li>
 </ul>
 <p>To create or modify a <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> file, use
 the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span></code> command or use a text editor to create a
@@ -430,7 +430,7 @@ to the given scheme and exact host name:</p>
 <p>If you do not include the user name and password or if
 authentication fails, conda prompts for a user name and password.</p>
 <p>If your password contains special characters, you need escape
-them as described in <a class="reference external" href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters">Percent-encoding reserved characters</a> ,
+them as described in <a class="reference external" href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters">Percent-encoding reserved characters</a>,
 on Wikipedia.</p>
 <p>Be careful not to use <code class="docutils literal notranslate"><span class="pre">http</span></code> when you mean https or
 <code class="docutils literal notranslate"><span class="pre">https</span></code> when you mean http.</p>
@@ -543,8 +543,8 @@ the create_default_packages list.</p>
 <div class="section" id="disable-updating-of-dependencies-update-dependencies">
 <h3><a class="toc-backref" href="#id21">Disable updating of dependencies (update_dependencies)</a><a class="headerlink" href="#disable-updating-of-dependencies-update-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>By default, <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> updates the given package to the
-latest version, and installs any dependencies necessary for
-that package. However if dependencies that satisfy the package’s
+latest version and installs any dependencies necessary for
+that package. However, if dependencies that satisfy the package’s
 requirements are already installed, conda will not update those
 packages to the latest version.</p>
 <p>In this case, if you would prefer that conda update all dependencies
@@ -741,7 +741,7 @@ doing that.</p>
 <div class="section" id="disable-activation-of-environments-during-build-test-conda-build-3-0-activate">
 <h3><a class="toc-backref" href="#id36">Disable activation of environments during build/test (conda-build 3.0+) (activate)</a><a class="headerlink" href="#disable-activation-of-environments-during-build-test-conda-build-3-0-activate" title="Permalink to this headline">¶</a></h3>
 <p>By default, conda-build activates the build and test environments prior to
-executing the build or test scripts. This adds necessary PATH entries, and also
+executing the build or test scripts. This adds necessary PATH entries and
 runs any activate.d scripts you may have. If you disable activation, the PATH
 will still be modified, but the activate.d scripts will not run. This is not
 recommended, but some people prefer this.</p>

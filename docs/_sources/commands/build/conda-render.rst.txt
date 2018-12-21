@@ -127,10 +127,10 @@ conda render
                  Enable verbose output from download tools and progress updates
    
       conda commands available from other packages:
-                 build convert  develop  env  index  inspect  metapackage  render
+                 build convert debug develop env index inspect metapackage render
                  skeleton
    
    
    
-   Anaconda, Inc.                   November 2018                        <B>CONDA(1)</B>
+   Anaconda, Inc.                   December 2018                        <B>CONDA(1)</B>
    </PRE>

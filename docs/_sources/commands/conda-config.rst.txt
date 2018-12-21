@@ -138,5 +138,5 @@ conda config
    
    
    
-   Anaconda, Inc.                   November 2018                        <B>CONDA(1)</B>
+   Anaconda, Inc.                   December 2018                        <B>CONDA(1)</B>
    </PRE>

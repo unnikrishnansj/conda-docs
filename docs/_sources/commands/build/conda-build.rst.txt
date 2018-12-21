@@ -33,12 +33,12 @@ conda build
                  [--strict-verify]   [--output-folder  OUTPUT_FOLDER]  [--no-pre‐
                  fix-length-fallback] [--prefix-length-fallback] [--prefix-length
                  _PREFIX_LENGTH]       [--no-locking]      [--no-remove-work-dir]
-                 [--error-overlinking] [--no-error-overlinking] [--long-test-pre‐
-                 fix]    [--no-long-test-prefix]    [--keep-going]   [--cache-dir
-                 CACHE_DIR]  [--no-copy-test-source-files]   [--merge-build-host]
-                 [--stats-file  STATS_FILE]  [--extra-deps EXTRA_DEPS [EXTRA_DEPS
-                 ...]]    [-c    CHANNEL]    [--override-channels]    RECIPE_PATH
-                 [RECIPE_PATH ...]
+                 [--error-overlinking] [--no-error-overlinking]  [--error-overde‐
+                 pending]     [--no-error-overdepending]     [--long-test-prefix]
+                 [--no-long-test-prefix] [--keep-going]  [--cache-dir  CACHE_DIR]
+                 [--no-copy-test-source-files] [--merge-build-host] [--stats-file
+                 STATS_FILE] [--extra-deps EXTRA_DEPS [EXTRA_DEPS ...]] [-c CHAN‐
+                 NEL] [--override-channels] RECIPE_PATH [RECIPE_PATH ...]
    
           Tool  for  building conda packages. A conda package is a binary tarball
           containing system-level libraries, Python modules, executable programs,
@@ -245,6 +245,16 @@ conda build
                  built packages. This is currently the default behavior, but will
                  change in conda-build 4.0.
    
+          --error-overdepending
+                 Enable error when packages with names beginning `lib`  or  which
+                 have  `run_exports`  are not auto-loaded by the OSes DSO loading
+                 mechanism by any of the files in this package.
+   
+          --no-error-overdepending
+                 Disable error when packages with names beginning `lib` or  which
+                 have  `run_exports`  are not auto-loaded by the OSes DSO loading
+                 mechanism by any of the files in this package.
+   
           --long-test-prefix
                  Use a long prefix for the test prefix, as well as the build pre‐
                  fix.  Affects  only  Linux  and  Mac.  Prefix length matches the
@@ -316,10 +326,10 @@ conda build
                  PyPI repository to upload to
    
       conda commands available from other packages:
-                 build  convert  develop  env  index  inspect  metapackage render
+                 build convert debug develop env index inspect metapackage render
                  skeleton
    
    
    
-   Anaconda, Inc.                   November 2018                        <B>CONDA(1)</B>
+   Anaconda, Inc.                   December 2018                        <B>CONDA(1)</B>
    </PRE>
