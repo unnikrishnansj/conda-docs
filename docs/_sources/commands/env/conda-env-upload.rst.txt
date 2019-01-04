@@ -63,5 +63,5 @@ conda env upload
    
    
    
-   Anaconda, Inc.                   December 2018                        <B>CONDA(1)</B>
+   Anaconda, Inc.                   January 2019                         <B>CONDA(1)</B>
    </PRE>
